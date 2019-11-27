@@ -1,0 +1,44 @@
+@if ($enable-class-container and $enable-classes) {
+
+/**
+ * Container
+ */
+
+  .container,
+  .container-fluid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-gutter;
+    padding-left: $spacing-gutter;
+  }
+
+  .container {
+
+    @if map-get($breakpoints, "sm") and $enable-viewport {
+      @media (min-width: map-get($breakpoints, "sm")) {
+        padding-right: 0;
+        padding-left: 0;
+        max-width: map-get($viewports, "sm");
+      }
+    }
+
+    @if map-get($breakpoints, "md") and $enable-viewport {
+      @media (min-width: map-get($breakpoints, "md")) {
+        max-width: map-get($viewports, "md");
+      }
+    }
+
+    @if map-get($breakpoints, "lg") and $enable-viewport {
+      @media (min-width: map-get($breakpoints, "lg")) {
+        max-width: map-get($viewports, "lg");
+      }
+    }
+
+    @if map-get($breakpoints, "xl") and $enable-viewport {
+      @media (min-width: map-get($breakpoints, "xl")) {
+        max-width: map-get($viewports, "xl");
+      }
+    }
+  }
+}

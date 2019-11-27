@@ -1,0 +1,34 @@
+/*!
+ * Pico.css v0.1.0 (https://picocss.com)
+ * Copyright 2019 - Licensed under MIT
+ */
+
+// Config
+@import "colors";
+@import "variables";
+
+// Theming
+@import "themes/light";
+@import "themes/dark";
+
+// Layout
+@import "layout/document";        // html
+@import "layout/sectioning";      // body, header, main, footer
+@import "layout/container";       // .container
+@import "layout/section";         // main > section
+@import "layout/grid";            // .grid
+@import "layout/scroller";        // figure
+
+// Content
+@import "content/typography";     // a, headings, p, ul ...
+@import "content/form";           // label, input, select, ...
+@import "content/button";         // button, a[role=button]
+@import "content/table";          // table, tr, td, ...
+@import "content/code";           // pre, code, ...
+@import "content/miscs";          // hr, progress, template, [hidden]
+
+// Components
+@import "components/accordion";   // details, summary
+@import "components/card";        // article
+@import "components/nav";         // nav
+@import "components/tooltip";     // data-tooltip

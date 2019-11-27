@@ -1,0 +1,71 @@
+/**
+ * Nav
+ */
+
+// Inline
+nav,
+nav ul {
+  display: flex;
+}
+
+nav {
+  justify-content: space-between;
+
+  ul {
+    align-items: center;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+
+    &:first-of-type {
+      margin-left: -$spacing-gutter/2;
+    }
+    &:last-of-type {
+      margin-right: -$spacing-gutter/2;
+    }
+  }
+
+  li {
+    display: inline-block;
+    margin: 0;
+    padding: $spacing-gutter $spacing-gutter/2;
+
+    // HACK: Input & Button inside Nav
+    > *,
+    > input:not([type="checkbox"]):not([type="radio"]) {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    display: block;
+    margin: -$spacing-gutter (-$spacing-gutter/2);
+    padding: $spacing-gutter $spacing-gutter/2;
+    border-radius: $round;
+
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+// Vertical Nav
+aside {
+
+  nav,
+  ul,
+  li {
+    display: block;
+  }
+
+  li {
+    padding: $spacing-gutter/2;
+
+    a {
+      margin: -$spacing-gutter/2;
+      padding: $spacing-gutter/2;
+    }
+  }
+}

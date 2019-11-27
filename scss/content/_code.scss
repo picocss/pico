@@ -1,0 +1,113 @@
+/**
+ * Code
+ */
+
+
+// Reboot
+// ––––––––––––––––––––
+
+// 1. Correct the inheritance and scaling of font size in all browsers.
+// 2. Correct the odd `em` font sizing in all browsers.
+pre,
+code,
+kbd,
+samp {
+  font-family: $monospace; // 1
+  font-size: 1rem; // 2
+}
+
+
+// Pico
+// ––––––––––––––––––––
+
+pre,
+code,
+kbd {
+  background: var(--code-inlined);
+  color: var(--muted-text);
+  font-size: 85%;
+  font-weight: 400;
+  line-height: 1;
+
+  @if map-get($breakpoints, "sm") and $enable-responsive-typography {
+    @media (min-width: map-get($breakpoints, "sm")) {
+      font-size: 83%;
+    }
+  }
+
+  @if map-get($breakpoints, "md") and $enable-responsive-typography {
+    @media (min-width: map-get($breakpoints, "md")) {
+      font-size: 81%;
+    }
+  }
+
+  @if map-get($breakpoints, "lg") and $enable-responsive-typography {
+    @media (min-width: map-get($breakpoints, "lg")) {
+      font-size: 79%;
+    }
+  }
+  @if map-get($breakpoints, "lg") and $enable-responsive-typography {
+    @media (min-width: map-get($breakpoints, "xl")) {
+      font-size: 77%;
+    }
+  }
+}
+
+code,
+kbd {
+  display: inline-block;
+  padding: .375rem .5rem;
+  border-radius: $round;
+}
+
+pre {
+  display: block;
+  margin-right: -$spacing-gutter;
+  margin-left: -$spacing-gutter;
+  padding: $spacing-block $spacing-gutter;
+  overflow-x: auto;
+  border-left: .25rem solid var(--code-border);
+  background: var(--code-background);
+
+  @media (min-width: map-get($breakpoints, "sm")) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  > code {
+    display: block;
+    padding: 0;
+    background: transparent;
+    font-size: 14px;
+    line-height: $line-height;
+  }
+}
+
+// Code syntax
+code {
+
+  // Tags
+  b {
+    color: var(--code-color-1);
+    font-weight: normal;
+  }
+
+  // Properties
+  i {
+    color: var(--code-color-2);
+    font-style: normal;
+  }
+
+  // Values
+  u {
+    color: var(--text);
+    text-decoration: none;
+  }
+}
+
+// kbd
+kbd {
+  background-color: var(--secondary);
+  color: var(--secondary-inverse);
+  font-weight: bolder;
+}

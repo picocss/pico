@@ -1,0 +1,137 @@
+/**
+ * Dark theme (Auto)
+ * Automatically enabled if user has Dark mode enabled
+ */
+
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+
+    // Document
+    --background:        #{darken($grey-900, 6%)};
+
+    // Typography
+    --text:              #{$grey-300};
+    --h1:                #{$grey-50};
+    --h2:                #{$grey-100};
+    --h3:                #{$grey-200};
+    --h4:                #{$grey-300};
+    --h5:                #{$grey-400};
+    --h6:                #{$grey-500};
+    --mark:              #{rgba($amber-200, .25)};
+
+    // Call-to-Action
+    --primary:            #{$primary-600};
+    --primary-hover:      #{$primary-500};
+    --primary-focus:      #{rgba($primary-600, .25)};
+    --primary-inverse:    #{$white};
+
+    // Secondary Call-to-Action
+    --secondary:         #{$grey-200};
+    --secondary-hover:   #{$grey-50};
+    --secondary-focus:   #{rgba($grey-200, .25)};
+    --secondary-inverse: #{$grey-900};
+
+    // Form elements
+    --input-background:  #{darken($grey-900, 6%)};
+    --input-border:      #{mix($grey-800, $grey-700)};
+
+    // Utilities states
+    --valid:             #{$green-700};
+    --invalid:           #{$red-900};
+
+    // Utilities states
+    --valid:             #{$green-700};
+    --invalid:           #{$red-900};
+    --muted-text:        #{$grey-500)};
+    --muted-background:  #{darken($grey-900, 6%)};
+    --muted-border:      #{mix($grey-800, $grey-900)};
+
+    // Card
+    --card-background:   #{darken($grey-900, 2%)};
+    --card-shadow:       0 0.125rem 1rem #{rgba($black, 0.06)}, 0 0.125rem 2rem #{rgba($black, 0.12)}, 0 0 0 0.0625rem #{rgba($black, 0.09)};
+
+    // Code
+    --code-background:   #{darken($grey-900, 4%)};
+    --code-border:       #{mix($grey-800, $grey-900)};
+    --code-inlined:      #{rgba($grey-700, .25)};
+    --code-color-1:      #{desaturate($red-700, 10%)};
+    --code-color-2:      #{desaturate($primary-500, 40%)};
+
+    // Badge
+    --badge-background:  #{$grey-800};
+    --badge-text:        #{$grey-300};
+
+    // Table
+    --table-background:  #{darken($grey-900, 4%)};
+    --table-border:      #{darken($grey-900, 6%)};
+  }
+}
+
+
+
+/**
+ * Dark theme (Forced)
+ * Enabled if forced with data-theme="dark"
+ */
+
+[data-theme="dark"] {
+
+  // Document
+  --background:        #{darken($grey-900, 6%)};
+
+  // Typography
+  --text:              #{$grey-300};
+  --h1:                #{$grey-50};
+  --h2:                #{$grey-100};
+  --h3:                #{$grey-200};
+  --h4:                #{$grey-300};
+  --h5:                #{$grey-400};
+  --h6:                #{$grey-500};
+  --mark:              #{rgba($amber-200, .25)};
+
+  // Call-to-Action
+  --primary:            #{$primary-600};
+  --primary-hover:      #{$primary-500};
+  --primary-focus:      #{rgba($primary-600, .25)};
+  --primary-inverse:    #{$white};
+
+  // Secondary Call-to-Action
+  --secondary:         #{$grey-200};
+  --secondary-hover:   #{$grey-50};
+  --secondary-focus:   #{rgba($grey-200, .25)};
+  --secondary-inverse: #{$grey-900};
+
+  // Form elements
+  --input-background:  #{darken($grey-900, 6%)};
+  --input-border:      #{mix($grey-800, $grey-700)};
+
+  // Utilities states
+  --valid:             #{$green-700};
+  --invalid:           #{$red-900};
+
+  // Utilities states
+  --valid:             #{$green-700};
+  --invalid:           #{$red-900};
+  --muted-text:        #{$grey-500)};
+  --muted-background:  #{darken($grey-900, 6%)};
+  --muted-border:      #{mix($grey-800, $grey-900)};
+
+  // Card
+  --card-background:   #{darken($grey-900, 2%)};
+  --card-shadow:       0 0.125rem 1rem #{rgba($black, 0.06)}, 0 0.125rem 2rem #{rgba($black, 0.12)}, 0 0 0 0.0625rem #{rgba($black, 0.09)};
+
+  // Code
+  --code-background:   #{darken($grey-900, 4%)};
+  --code-border:       #{mix($grey-800, $grey-900)};
+  --code-inlined:      #{rgba($grey-700, .25)};
+  --code-color-1:      #{desaturate($red-700, 10%)};
+  --code-color-2:      #{desaturate($primary-500, 40%)};
+
+  // Badge
+  --badge-background:  #{$grey-800};
+  --badge-text:        #{$grey-300};
+
+  // Table
+  --table-background:  #{darken($grey-900, 4%)};
+  --table-border:      #{darken($grey-900, 6%)};
+}

@@ -1,0 +1,63 @@
+/**
+ * Light theme (Default)
+ * Can be forced with data-theme="light"
+ */
+
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+
+  // Document
+  --background:        #{$white};
+
+  // Typography
+  --text:              #{$grey-700};
+  --h1:                #{$grey-900};
+  --h2:                #{$grey-800};
+  --h3:                #{$grey-700};
+  --h4:                #{$grey-600};
+  --h5:                #{$grey-500};
+  --h6:                #{$grey-400};
+  --mark:              #{rgba($amber-200, .5)};
+
+  // Primary Call-to-Action
+  --primary:            #{$primary-600};
+  --primary-hover:      #{$primary-700};
+  --primary-focus:      #{rgba($primary-600, .125)};
+  --primary-inverse:    #{$white};
+
+  // Secondary Call-to-Action
+  --secondary:         #{mix($grey-700, $grey-800)};
+  --secondary-hover:   #{mix($grey-800, $grey-900)};
+  --secondary-focus:   #{rgba(mix($grey-700, $grey-800), .125)};
+  --secondary-inverse: #{$white};
+
+  // Form elements
+  --input-background:  #{$white};
+  --input-border:      #{mix($grey-100, $grey-200)};
+
+  // Utilities states
+  --valid:             #{$green-600};
+  --invalid:           #{$red-700};
+  --muted-text:        #{mix($grey-400, $grey-500)};
+  --muted-background:  #{$grey-50};
+  --muted-border:      #{$grey-50};
+
+  // Card
+  --card-background:   #{$white};
+  --card-shadow:       0 0.125rem 1rem #{rgba($grey-900, 0.04)}, 0 0.125rem 2rem #{rgba($grey-900, 0.08)}, 0 0 0 0.0625rem #{rgba($grey-900, 0.024)};
+
+  // Code
+  --code-background:   #{lighten($grey-50, 2%)};
+  --code-border:       #{$grey-100};
+  --code-inlined:      #{$grey-50};
+  --code-color-1:      #{desaturate($red-700, 20%)};
+  --code-color-2:      #{desaturate($primary-600, 30%)};
+
+  // Badge
+  --badge-background:  #{$grey-500};
+  --badge-text:        #{$white};
+
+  // Table
+  --table-background:  #{$white};
+  --table-border:      #{rgba($grey-50, .75)};
+}

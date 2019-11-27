@@ -1,0 +1,113 @@
+/**
+ * Sectioning
+ * Container and responsive spacings for header, main, footer
+ */
+
+
+// Reboot
+// Based on normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+// ––––––––––––––––––––
+
+// Render the `main` element consistently in IE.
+main {
+  display: block;
+}
+
+
+// Pico
+// ––––––––––––––––––––
+
+body {
+  width: 100%;
+  margin: 0;
+
+  > header,
+  > main,
+  > footer {
+
+    $padding-horizontal: $spacing-gutter !default;
+    $spacing-vertical: $spacing-block !default;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+
+    // xs
+    @if $enable-semantic-container == false {
+      $padding-horizontal: 0;
+    }
+    padding: $spacing-vertical $padding-horizontal;
+
+    // sm
+    @if map-get($breakpoints, "sm")
+      and ($enable-responsive-spacings or $enable-semantic-container) {
+
+      @media (min-width: map-get($breakpoints, "sm")) {
+        @if $enable-viewport and $enable-semantic-container {
+          max-width: map-get($viewports, "sm");
+        }
+        @if $enable-responsive-spacings or $enable-viewport {
+          @if $enable-viewport or $enable-semantic-container == false {
+            $padding-horizontal: 0;
+          }
+          @else {
+            $padding-horizontal: $spacing-gutter;
+          }
+          @if $enable-responsive-spacings and map-get($spacing-factor, "sm") {
+            $spacing-vertical: $spacing-block*map-get($spacing-factor, "sm");
+          }
+          @else {
+            $spacing-vertical: $spacing-block;
+          }
+          padding: $spacing-vertical $padding-horizontal;
+        }
+      }
+    }
+
+    // md
+    @if map-get($breakpoints, "md")
+      and ($enable-responsive-spacings or $enable-semantic-container) {
+
+      @media (min-width: map-get($breakpoints, "md")) {
+        @if $enable-viewport and $enable-semantic-container {
+          max-width: map-get($viewports, "md");
+        }
+        @if $enable-responsive-spacings and map-get($spacing-factor, "md")  {
+          $spacing-vertical: $spacing-block*map-get($spacing-factor, "md");
+          padding: $spacing-vertical $padding-horizontal;
+        }
+      }
+    }
+
+    // lg
+    @if map-get($breakpoints, "lg")
+      and ($enable-responsive-spacings or $enable-semantic-container) {
+
+      @media (min-width: map-get($breakpoints, "lg")) {
+        @if $enable-viewport and $enable-semantic-container {
+          max-width: map-get($viewports, "lg");
+        }
+        @if $enable-responsive-spacings and map-get($spacing-factor, "lg")  {
+          $spacing-vertical: $spacing-block*map-get($spacing-factor, "lg");
+          padding: $spacing-vertical $padding-horizontal;
+        }
+      }
+    }
+
+    // xl
+    @if map-get($breakpoints, "xl")
+      and ($enable-responsive-spacings or $enable-semantic-container) {
+
+      @media (min-width: map-get($breakpoints, "xl")) {
+        @if $enable-viewport and $enable-semantic-container {
+          max-width: map-get($viewports, "xl");
+        }
+        @if $enable-responsive-spacings and map-get($spacing-factor, "xl")  {
+          $spacing-vertical: $spacing-block*map-get($spacing-factor, "xl");
+          padding: $spacing-vertical $padding-horizontal;
+        }
+      }
+    }
+
+
+  }
+}

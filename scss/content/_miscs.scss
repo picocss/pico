@@ -1,0 +1,29 @@
+/**
+ * Miscs
+ */
+
+
+// Reboot
+// Based on normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+// ––––––––––––––––––––
+
+// 1. Add the correct box sizing in Firefox.
+// 2. Show the overflow in Edge and IE.
+hr {
+  box-sizing: content-box; // 1
+  height: 0; // 1
+  overflow: visible; // 2
+  border: none;
+  border-top: 1px solid var(--muted-border);
+}
+
+// Add the correct vertical alignment in Chrome, Firefox, and Opera.
+progress {
+  vertical-align: baseline;
+}
+
+// Add the correct display in IE 10+.
+[hidden],
+template {
+  display: none;
+}

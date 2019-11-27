@@ -1,0 +1,44 @@
+/**
+ * Section
+ * Responsive spacings for section
+ */
+
+section {
+  margin-bottom: $spacing-block*map-get($spacing-factor, "xs")*2;
+
+  @if map-get($breakpoints, "sm") and
+    map-get($spacing-factor, "sm") and
+    $enable-responsive-spacings {
+
+    @media (min-width: map-get($breakpoints, "sm")) {
+      margin-bottom: $spacing-block*map-get($spacing-factor, "sm")*2;
+    }
+  }
+
+  @if map-get($breakpoints, "md") and
+    map-get($spacing-factor, "md") and
+    $enable-responsive-spacings {
+
+    @media (min-width: map-get($breakpoints, "md")) {
+      margin-bottom: $spacing-block*map-get($spacing-factor, "md")*2;
+    }
+  }
+
+  @if map-get($breakpoints, "lg") and
+    map-get($spacing-factor, "lg") and
+    $enable-responsive-spacings {
+
+    @media (min-width: map-get($breakpoints, "lg")) {
+      margin-bottom: $spacing-block*map-get($spacing-factor, "lg")*2;
+    }
+  }
+
+  @if map-get($breakpoints, "xl") and
+    map-get($spacing-factor, "xl") and
+    $enable-responsive-spacings {
+
+    @media (min-width: map-get($breakpoints, "xl")) {
+      margin-bottom: $spacing-block*map-get($spacing-factor, "xl")*2;
+    }
+  }
+}
