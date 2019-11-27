@@ -1,0 +1,51 @@
+/**
+ * Docs: Code inside <article>
+ */
+
+// Custom spacings
+article pre {
+  margin-top: $spacing-block;
+  margin-bottom: -$spacing-gutter*2;
+
+  @if map-get($breakpoints, "sm") and
+    map-get($spacing-factor, "sm") {
+
+    @media (min-width: map-get($breakpoints, "sm")) {
+      padding: $spacing-block ($spacing-block*map-get($spacing-factor, "sm"));
+      margin-bottom: 0;
+    }
+  }
+
+  @if map-get($breakpoints, "md") and
+    map-get($spacing-factor, "md") and
+    $enable-responsive-spacings {
+
+    @media (min-width: map-get($breakpoints, "md")) {
+      padding: $spacing-block ($spacing-block*map-get($spacing-factor, "md"));
+      margin: -$spacing-block*map-get($spacing-factor, "md");
+      margin-top: $spacing-block*map-get($spacing-factor, "md");
+    }
+  }
+
+  @if map-get($breakpoints, "lg") and
+    map-get($spacing-factor, "lg") and
+    $enable-responsive-spacings {
+
+    @media (min-width: map-get($breakpoints, "lg")) {
+      padding: $spacing-block ($spacing-block*map-get($spacing-factor, "lg"));
+      margin: -$spacing-block*map-get($spacing-factor, "lg");
+      margin-top: $spacing-block*map-get($spacing-factor, "lg");
+    }
+  }
+
+  @if map-get($breakpoints, "xl") and
+    map-get($spacing-factor, "xl") and
+    $enable-responsive-spacings {
+
+    @media (min-width: map-get($breakpoints, "xl")) {
+      padding: $spacing-block ($spacing-block*map-get($spacing-factor, "xl"));
+      margin: -$spacing-block*map-get($spacing-factor, "xl");
+      margin-top: $spacing-block*map-get($spacing-factor, "xl");
+    }
+  }
+}

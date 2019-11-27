@@ -1,0 +1,242 @@
+/**
+ * Docs: Global layout
+ */
+
+$navHeight: 3.5rem;
+
+
+// Docs: Commons
+// ––––––––––––––––––––
+
+section > hgroup {
+  margin-bottom: $spacing-typography*2;
+
+  p {
+    color: var(--muted-text);
+    font-size: 1.125rem;
+  }
+}
+a[role=button] {
+  margin-right: $spacing-gutter/4;
+  margin-bottom: $spacing-typography;
+}
+
+
+// Main (Grid)
+// ––––––––––––––––––––
+
+body > main {
+  padding-top:map-get($spacing-factor, "xs") + $navHeight;
+
+  @media (min-width: map-get($breakpoints, "sm")) {
+    padding-top: map-get($spacing-factor, "sm") + $navHeight;
+  }
+
+  @media (min-width: map-get($breakpoints, "md")) {
+    padding-top: map-get($spacing-factor, "md") + $navHeight;
+  }
+
+  @media (min-width: map-get($breakpoints, "lg")) {
+    grid-column-gap: $spacing-gutter*4;
+    display: grid;
+    grid-template-columns: 200px auto;
+    padding-top: map-get($spacing-factor, "lg") + $navHeight;
+  }
+
+  @media (min-width: map-get($breakpoints, "xl")) {
+    padding-top: map-get($spacing-factor, "xl") + $navHeight;
+  }
+
+  > * {
+    min-width: 0; // HACK for childs in overflow
+  }
+}
+
+
+// Anchors hacks for internal links
+// ––––––––––––––––––––
+
+a[name]:not([href])::before {
+  display: block;
+  height: map-get($spacing-factor, "xs") + $navHeight;
+  margin-top: -(map-get($spacing-factor, "xs")+ $navHeight);
+  content: '';
+
+
+  @media (min-width: map-get($breakpoints, "sm")) {
+    height: map-get($spacing-factor, "sm") + $navHeight;
+    margin-top: -(map-get($spacing-factor, "sm") + $navHeight);
+  }
+
+  @media (min-width: map-get($breakpoints, "md")) {
+    height: map-get($spacing-factor, "md") + $navHeight;
+    margin-top: -(map-get($spacing-factor, "md") + $navHeight);
+  }
+
+  @media (min-width: map-get($breakpoints, "lg")) {
+    height: map-get($spacing-factor, "lg") + $navHeight;
+    margin-top: -(map-get($spacing-factor, "lg") + $navHeight);
+  }
+
+  @media (min-width: map-get($breakpoints, "xl")) {
+    height: map-get($spacing-factor, "xl") + $navHeight;
+    margin-top: -(map-get($spacing-factor, "xl") + $navHeight);
+  }
+}
+
+
+// Aside
+// ––––––––––––––––––––
+
+main > aside {
+
+
+  nav {
+    width: 100%;
+    margin-bottom: $spacing-block;
+
+    h1 {
+      margin-bottom: $spacing-typography;
+    }
+
+    @media (min-width: map-get($breakpoints, "lg")) {
+      position: fixed;
+      width: 200px;
+      max-height: calc(100vh - 5.5rem);
+      margin-bottom: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+
+      h1 {
+        display: none;
+      }
+    }
+  }
+
+  li, summary {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 16px;
+  }
+  a,
+  a.secondary {
+    &:focus {
+      background-color: transparent;
+      color: var(--primary-hover);
+    }
+  }
+
+  details {
+    padding-bottom: .25rem;
+    border-bottom: none;
+  }
+
+  details summary {
+    font-weight: 300;
+    text-transform: uppercase;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+[role=document] {
+  section > h1,
+  section > h2,
+  section > h3 {
+    line-height: 1;
+  }
+}
+
+
+// Docs: Customization
+// ––––––––––––––––––––
+
+#customization {
+
+  figure {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-bottom: 0;
+    overflow: hidden;
+
+    @media (min-width: map-get($breakpoints, "sm")) {
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: 1fr;
+    border-top-right-radius: $round;
+    border-top-left-radius: $round;
+    }
+
+    ~ article {
+    margin-top: 0;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    }
+
+  button {
+    margin-bottom: 0;
+    padding: 0;
+    padding-top: 100%;
+    border:none;
+    border-radius: 0;
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      &.picked {
+        // Source: https://feathericons.com/
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFF' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: .66rem auto;
+        box-shadow: inset 0 0 1rem 0 rgba(0,0,0,0.25);
+      }
+      &[data-color="lime"],
+      &[data-color="yellow"],
+      &[data-color="amber"] {
+        &.picked {
+          // Source: https://feathericons.com/
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%232c4049' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+      }
+    }
+  }
+
+  h4 {
+    transition: color $transition;
+  }
+
+  pre[data-theme="generated"] {
+    border-color: var(--primary);
+  }
+}
+
+
+// Docs: Grids
+// ––––––––––––––––––––
+
+#grids {
+
+  button {
+    display: inline-block;
+    width: auto;
+    margin-right: .5rem;
+
+    svg {
+      stroke: var(--secondary);
+      margin-right: .5rem;
+      border: 3px solid currentColor;
+      border-radius: 1rem;
+      background: currentColor;
+    }
+  }
+
+  .grid > * {
+    padding: ($spacing-gutter/2) 0;
+    background: var(--code-background);
+    text-align: center;
+  }
+}

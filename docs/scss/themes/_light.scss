@@ -1,0 +1,10 @@
+/**
+ * Light theme (Default) [Additions for docs]
+ * Can be forced with data-theme="light"
+ */
+
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  --nav-background: #{rgba($white, .7)};
+  --nav-border:     #{rgba($grey-500, .2)};
+}

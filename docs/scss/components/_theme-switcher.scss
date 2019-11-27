@@ -1,0 +1,70 @@
+/**
+ * Docs: Theme switcher
+ */
+
+button.switcher {
+  position: fixed;
+  right: $spacing-gutter/2;
+  bottom: $spacing-gutter;
+  width: auto;
+  max-width: 1rem + $spacing-gutter*2;
+  margin-bottom: 0;
+  padding: .75rem;
+  border-radius: 2rem;
+  line-height: 1;
+  text-align: right;
+  box-shadow: var(--card-shadow);
+
+  &::after {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    background: linear-gradient(to right, currentColor 0%, currentColor 50%, transparent 50%);
+    vertical-align: bottom;
+    content: '';
+    transition: transform $transition;
+  }
+
+  i {
+    display: inline-block;
+    max-width: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: .875rem;
+    font-style: normal;
+    white-space: nowrap;
+  }
+
+  &:hover,
+  &:focus {
+    max-width: 100%;
+    transition: max-width $transition,
+                background-color $transition,
+                color $transition;
+  }
+
+  &:hover {
+
+    &::after {
+      transform: rotate(180deg);
+    }
+
+    i {
+      max-width: 100%;
+      padding: 0 ($spacing-gutter/2) 0 ($spacing-gutter/4);
+      transition: max-width $transition,
+                  padding $transition;
+    }
+  }
+
+  &:focus {
+    box-shadow: var(--card-shadow),
+                0 0 0 0.2rem var(--secondary-focus);
+  }
+
+  @media (min-width: map-get($breakpoints, "sm")) {
+    right: $spacing-gutter;
+  }
+}

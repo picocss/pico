@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+    <meta name="description" content="">
+    <title>Pico.css • Graceful & Minimal CSS design system</title>
+    <link rel="stylesheet" href="../css/pico.min.css">
+    <link rel="stylesheet" href="css/pico.docs.min.css">
+  </head>
+
+  <body>
+
+    <!-- Nav -->
+    <nav class="container-fluid">
+      <ul>
+        <li>
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+              <path fill="currentColor" d="M633.43 429.23c0 118.38-49.76 184.72-138.87 184.72-53 0-92.04-25.37-108.62-67.32h-2.6v203.12H250V249.7h133.67v64.72h2.28c17.24-43.9 55.3-69.92 107-69.92 90.4 0 140.48 66.02 140.48 184.73zm-136.6 0c0-49.76-22.1-81.96-56.9-81.96s-56.9 32.2-57.24 82.28c.33 50.4 22.1 81.63 57.24 81.63 35.12 0 56.9-31.87 56.9-81.95zM682.5 547.5c0-37.32 30.18-67.5 67.5-67.5s67.5 30.18 67.5 67.5S787.32 615 750 615s-67.5-30.18-67.5-67.5z"/>
+            </svg>
+          </a>
+        </li>
+        <li>Documentation</li>
+      </ul>
+      <ul>
+        <li><a href="https://picocss.com/#examples" class="secondary">Examples</a></li>
+        <li><a href="#start" class="secondary">Start</a></li>
+        <li><a href="#docs" class="secondary">Docs</a></li>
+        <li>
+          <a href="#" class="secondary">
+            <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="1rem">
+              <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav><!-- ./ Nav -->
+
+    <!-- Main -->
+    <main class="container">
+
+        <!-- Aside -->
+        <aside id="docs">
+          <a name="docs"></a>
+          <nav>
+            <h1>Documentation</h1>
+            <details open>
+              <summary>Getting started</summary>
+              <ul>
+                <li><a href="#start" class="secondary">Usage</a></li>
+                <li><a href="#themes" class="secondary">Themes</a></li>
+                <li><a href="#customization" class="secondary">Customization</a></li>
+                <li><a href="#classless" class="secondary">Class-less version</a></li>
+              </ul>
+            </details>
+            <details open>
+              <summary>Layout</summary>
+              <ul>
+                <li><a href="#containers" class="secondary">Containers</a></li>
+                <li><a href="#grids" class="secondary">Grids</a></li>
+                <li><a href="#scroller" class="secondary">Horizontal scroller</a></li>
+              </ul>
+            </details>
+            <details open>
+              <summary>Elements</summary>
+              <ul>
+                <li><a href="#typography" class="secondary">Typography</a></li>
+                <li><a href="#buttons" class="secondary">Buttons</a></li>
+                <li><a href="#forms" class="secondary">Forms</a></li>
+              </ul>
+            </details>
+            <details open>
+              <summary>Components</summary>
+              <ul>
+                <li><a href="#accordions" class="secondary">Accordions</a></li>
+                <li><a href="#cards" class="secondary">Cards</a></li>
+                <li><a href="#navs" class="secondary">Navs</a></li>
+                <li><a href="#tooltips" class="secondary">Tooltips</a></li>
+              </ul>
+            </details>
+            <details>
+              <summary>Extend</summary>
+              <ul>
+                <li>
+                  <a href="#love" class="secondary">
+                    We
+                    <svg xmlns="http://www.w3.org/2000/svg" height="0.8rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    .classes
+                  </a>
+                </li>
+              </ul>
+            </details>
+          </nav>
+        </aside><!-- ./ Aside -->
+
+        <!-- Document -->
+        <div role="document">
+
+          <!-- Docs: Start -->
+          <section id="start">
+            <a name="start"></a>
+            <hgroup>
+              <h2>Usage</h2>
+              <p>Work without package manager or dependencies 🙂!</p>
+            </hgroup>
+            <p>1. Download Pico CSS:</p>
+            <p><a href="https://github.com/picocss/pico/archive/master.zip" role="button">Download pico.css</a></p>
+            <p>2. Link the CSS <small>(~5KB minified and gzipped)</small>:</p>
+            <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"css/pico.min.css"</u>&gt;</code></pre>
+            <p><strong>Customization:</strong></p>
+            <p>You can compile your own version of Pico: SCSS sources are included.</p>
+            <p>A <a href="#classless">class-less version</a> is also included in the library.</p>
+            <p></p>
+          </section><!-- ./ Docs: Start -->
+
+          <!-- Docs: Themes -->
+          <section id="themes">
+            <a name="themes"></a>
+            <hgroup>
+              <h2>Customize</h2>
+              <p>Pico is shipped with 2 consistents themes: Light & Dark.<p>
+            </hgroup>
+            <p>The Light theme is used by default. The Dark theme is automatically enabled if user has dark mode enabled <code><i>prefers-color-scheme</i>: <u>dark</u></code>.</p>
+            <p>Themes can be forced on document level <code>&lt;<b>html</b> <i>data-theme</i>=<u>"light"</u>&gt;</code> or on any HTML element <code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;</code>.</p>
+            <article data-theme="light">
+              <h4>Light theme</h4>
+              <section class="grid">
+                <div>
+                  <input type="text" name="login" placeholder="Login" aria-label="Login" required>
+                </div>
+                <div>
+                  <input type="password" name="password" placeholder="Password" aria-label="Password" required>
+                </div>
+                <div>
+                  <button type="submit">Login</button>
+                </div>
+              </section>
+
+<pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"light"</u>&gt;
+  ...
+&lt;/<b>article</b>&gt;</code></pre>
+
+            </article>
+            <article data-theme="dark">
+              <h4>Dark theme</h4>
+              <section class="grid">
+                <div>
+                  <input type="text" name="login" placeholder="Login" aria-label="Login" required>
+                </div>
+                <div>
+                  <input type="password" name="password" placeholder="Password" aria-label="Password" required>
+                </div>
+                <div>
+                  <button type="submit">Login</button>
+                </div>
+              </section>
+
+<pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;
+  ...
+&lt;/<b>article</b>&gt;</code></pre>
+
+            </article>
+          </section><!-- ./ Themes -->
+
+          <!-- Docs: Customization-->
+          <section id="customization">
+            <a name="customization"></a>
+            <hgroup>
+              <h2>Customization</h2>
+              <p>You can customize themes with SCSS or you can simply edit the CSS variables.</p>
+            </hgroup>
+            <h5>Pick a color!</h5>
+            <article data-theme="generated">
+              <h4><span class="name">Custom theme</span></h4>
+              <section class="grid">
+                <div>
+                  <input type="text" name="login" placeholder="Login" aria-label="Login" required>
+                </div>
+                <div>
+                  <input type="password" name="password" placeholder="Password" aria-label="Password" required>
+                </div>
+                <div>
+                  <button type="submit">Login</button>
+                </div>
+              </section>
+              <fieldset>
+                <label for="remember">
+                  <input type="checkbox" role="switch" id="remember" name="remember" checked>
+                  Remember me
+                </label>
+              </fieldset>
+            </article>
+
+            <p>SCSS:</p>
+
+<pre data-theme="generated"><code>// <span class="name">Custom colors</span>
+<i>$primary-500</i>: <u class="c500">...</u>;
+<i>$primary-600</i>: <u class="c600">...</u>;
+<i>$primary-700</i>: <u class="c700">...</u>;
+
+// Pico library
+<b>@import</b> <u>"path/pico"</u>;</code></pre>
+
+            <p>CSS:</p>
+
+<pre data-theme="generated"><code>/* <span class="name"></span>Light theme (Default) */
+/* Can be forced with data-theme="light" */
+<b>[data-theme=<u>"light"</u>]</b>,
+<b>:root:not([data-theme=<u>"dark"</u>])</b> {
+  <i>--primary</i>:            <u class="c600">...</u>;
+  <i>--primary-hover</i>:      <u class="c700">...</u>;
+  <i>--primary-focus</i>:      <u class="c600-outline-light">...</u>;
+  <i>--primary-inverse</i>:    <u class="inverse">...</u>;
+}
+
+
+/* <span class="name"></span>Dark theme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+<i>@media</i> only <b>screen</b> and <b>(prefers-color-scheme: <u>dark</u>)</b> {
+  <b>:root:not([data-theme="light"])</b> {
+    <i>--primary</i>:          <u class="c600">...</u>;
+    <i>--primary-hover</i>:    <u class="c500">...</u>;
+    <i>--primary-focus</i>:    <u class="c600-outline-dark">...</u>;
+    <i>--primary-inverse</i>:  <u class="inverse">...</u>;
+}
+
+
+/* <span class="name"></span>Dark theme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+<b>[data-theme="<u>dark</u>"]</b> {
+  <i>--primary</i>:            <u class="c600">...</u>;
+  <i>--primary-hover</i>:      <u class="c500">...</u>;
+  <i>--primary-focus</i>:      <u class="c600-outline-dark">...</u>;
+  <i>--primary-inverse</i>:    <u class="inverse">...</u>;
+}</code></pre>
+
+          </section><!-- ./ Docs: Customization -->
+
+
+          <!-- Docs: Classless -->
+          <section id="classless">
+            <a name="classless"></a>
+            <hgroup>
+              <h2>Class-less version</h2>
+              <p>For wild HTML purists! 😈</p>
+            </hgroup>
+            <p>Pico provide a <code>.classless</code> version (<a href="https://picocss.com/examples/classless/">Example</a>).</p>
+            <p>Obviously this version do not include <code>.container</code>, <code>.container-fluid</code>, <code>.grid</code>, <code>.secondary</code> and <code>.outline</code>.</p>
+            <p>In this version, <code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code> and <code>&lt;<b>footer</b>&gt;</code> act as <a href="#containers">containers</a> to define a centered or a fluid viewport.</p>
+            <p><strong>Usage:</strong></p>
+            <p>Use the default <code>.classless</code> version if you need centered viewports:</p>
+
+<pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet</u>" <i>href</i>=<u>"css/pico.classless.min.css"</u>&gt;</code></pre>
+
+            <p>Or use the <code>.fluid.classless</code>  version if you need a fluid container:</p>
+
+<pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet</u>" <i>href</i>=<u>"css/pico.fluid.classless.min.css"</u>&gt;</code></pre>
+
+          </section><!-- ./ Docs: Classless -->
+
+          <!-- Docs: Container -->
+          <section id="containers">
+            <a name="containers"></a>
+            <hgroup>
+              <h2>Containers</h2>
+              <p><code>.container</code> enable a centered viewport.</p>
+              <p><code>.container-fluid</code> enable a <code>100%</code> layout.</p>
+            </hgroup>
+
+<pre><code>&lt;<b>body</b>&gt;
+  &lt;<b>main</b> <i>class</i>=<u>"container"</u>&gt;&lt;/<b>main</b>&gt;
+&lt;/<b>body</b>&gt;</code></pre>
+
+            <p>Pico use the same breakpoints and viewports sizes as <a href="https://getbootstrap.com/docs/4.3/layout/grid/#grid-options">Bootstrap</a>.</p>
+            <figure>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Device</th>
+                    <th>Extra&nbsp;small</th>
+                    <th>Small</th>
+                    <th>Medium</th>
+                    <th>Large</th>
+                    <th>Extra&nbsp;large</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Breakpoint</th>
+                    <td>&lt;576px</td>
+                    <td>≥576px</td>
+                    <td>≥768px</td>
+                    <td>≥992px</td>
+                    <td>≥1200px</td>
+                  </tr>
+                  <tr>
+                    <th>Viewport</th>
+                    <td>None&nbsp;(auto)</td>
+                    <td>540px</td>
+                    <td>720px</td>
+                    <td>960px</td>
+                    <td>1140px</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+            <p><code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code> and <code>&lt;<b>footer</b>&gt;</code> as direct childs of <code>&lt;<b>body</b>&gt;</code> provide a responsive vertical <code><i>padding</i></code>.</p>
+            <p><code>&lt;<b>section</b>&gt;</code> as direct child of <code>&lt;<b>main</b>&gt;</code> provide a responsive <code><i>margin-bottom</i></code> to separate your sections.</p>
+          </section><!-- ./ Docs: Container -->
+
+          <!-- Docs: Grid -->
+          <section id="grids">
+            <a name="grids"></a>
+            <hgroup>
+              <h2>Grids</h2>
+              <p><code>.grid</code> enable a minimal grid system with auto-layout columns.</p>
+            </hgroup>
+            <article>
+              <section class="grid">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+              </section>
+
+<pre><code>&lt;<b>section</b> <i>class</i>=<u>"grid"</u>&gt;
+  &lt;<b>div</b>&gt;1&lt;/<b>div</b>&gt;
+  &lt;<b>div</b>&gt;2&lt;/<b>div</b>&gt;
+  &lt;<b>div</b>&gt;3&lt;/<b>div</b>&gt;
+  &lt;<b>div</b>&gt;4&lt;/<b>div</b>&gt;
+&lt;/<b>section</b>&gt;</code></pre>
+
+            </article>
+            <p>Columns intentionally collapses for small and medium devices (below <code><u>992px</u></code>).</p>
+          </section><!-- ./ Docs: Grid -->
+
+          <!-- Docs: Horizontal scroller -->
+          <section id="scroller">
+            <a name="scroller"></a>
+            <hgroup>
+              <h2>Horizontal scroller</h2>
+              <p><code>&lt;<b>figure</b>&gt;</code> act as a container to make any content horizontally scrollable.</p>
+            </hgroup>
+            </figure>
+            <p>Useful to have responsives <code>&lt;<b>table</b>&gt;</code>.</p>
+            <figure>
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+
+<pre><code>&lt;<b>figure</b>&gt;
+  &lt;<b>table</b>&gt;
+    ...
+  &lt;/<b>table</b>&gt;
+&lt;/<b>figure</b>&gt;</code></pre>
+
+          </section><!-- ./ Docs: Horizontal scroller -->
+
+          <!-- Docs: Typography -->
+          <section id="typography">
+            <a name="typography"></a>
+            <hgroup>
+              <h2>Typography</h2>
+              <p>All typographic elements are responsives, allowing text to scale gracefully across devices and viewport sizes.</p>
+            </hgroup>
+            <figure>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Device</th>
+                    <th>Extra&nbsp;small</th>
+                    <th>Small</th>
+                    <th>Medium</th>
+                    <th>Large</th>
+                    <th>Extra&nbsp;large</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Root&nbsp;size&nbsp;<code>rem</code></th>
+                    <td>16px</td>
+                    <td>17px</td>
+                    <td>18px</td>
+                    <td>19px</td>
+                    <td>20px</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+            <p>Headings:</p>
+            <article>
+              <hgroup>
+                <h1>Heading 1</h1>
+                <p><small><code>32px</code> on extra small devices, <code>40px</code> extra large devices</small></p>
+              </hgroup>
+              <hgroup>
+                <h2>Heading 2</h2>
+                <p><small><code>28px</code> on extra small devices, <code>35px</code> extra large devices</small></p>
+              </hgroup>
+              <hgroup>
+                <h3>Heading 3</h3>
+                <p><small><code>24px</code> on extra small devices, <code>30px</code> extra large devices</small></p>
+              </hgroup>
+              <hgroup>
+                <h4>Heading 4</h4>
+                <p><small><code>20px</code> on extra small devices, <code>25px</code> extra large devices</small></p>
+              </hgroup>
+              <hgroup>
+                <h5>Heading 5</h5>
+                <p><small><code>18px</code> on extra small devices, <code>22.5px</code> extra large devices</small></p>
+              </hgroup>
+              <hgroup>
+                <h6>Heading 6</h6>
+                <p><small><code>16px</code> on extra small devices, <code>20px</code> extra large devices</small></p>
+              </hgroup>
+              <hgroup>
+                <p>Paragraph</p>
+                <p><small><code>16px</code> on extra small devices, <code>20px</code> extra large devices</small></p>
+              </hgroup>
+
+<pre><code>&lt;<b>h1</b>&gt;Heading 1&lt;/<b>h1</b></b>&gt;
+&lt;<b>h2</b>&gt;Heading 2&lt;/<b>h2</b>&gt;
+&lt;<b>h3</b>&gt;Heading 3&lt;/<b>h3</b>&gt;
+&lt;<b>h4</b>&gt;Heading 4&lt;/<b>h4</b>&gt;
+&lt;<b>h5</b>&gt;Heading 5&lt;/<b>h5</b>&gt;
+&lt;<b>h6</b>&gt;Heading 6&lt;/<b>h6</b>&gt;
+&lt;<b>p</b>&gt;Paragraph&lt;/<b>p</b>&gt;</code></pre>
+
+            </article>
+            <p>Inside a <code>&lt;<b>header</b>&gt;</code> all headings are 50% bigger.</p>
+            <p>Inside a <code>&lt;<b>hgroup</b>&gt;</code> all <code><i>margin-bottom</i></code> are collapsed.</p>
+            <article>
+              <hgroup>
+                <h2>Heading 2</h2>
+                <p>Subtitle for heading 2</p>
+              </hgroup>
+
+<pre><code>&lt;<b>hgroup</b>&gt;
+  &lt;<b>h2</b>&gt;Heading 2&lt;/<b>h2</b>&gt;
+  &lt;<b>p</b>&gt;Subtitle for heading 2&lt;/<b>p</b>&gt;
+&lt;<b>hgroup</b>&gt;</code></pre>
+
+            </article>
+            <p>Inline text elements:</p>
+            <article>
+              <div class="grid">
+                <div>
+                  <p><abbr title="Abbreviation">Abbr.</abbr> <code>abbr</code></p>
+                  <p><strong>Bold</strong> <code>strong</code> <code>b</code></p>
+                  <p><em>Italic</em> <code>i</code> <code>em</code> <code>cite</code></p>
+                  <p><del>Deleted</del> <code>del</code></p>
+                  <p><ins>Inserted</ins> <code>ins</code></p>
+                  <p><kbd>Ctrl + S</kbd> <code>kbd</code></p>
+                </div>
+                <div>
+                  <p><mark>Highlighted</mark> <code>mark</code></p>
+                  <p><s>Strikethrough</s> <code>s</code></p>
+                  <p><small>Small </small> <code>small</code></p>
+                  <p>Text <sub>Sub</sub> <code>sub</code></p>
+                  <p>Text <sup>Sup</sup> <code>sup</code></p>
+                  <p><u>Underline</u> <code>u</code></p>
+                </div>
+              </div>
+            </article>
+          </section><!-- ./ Docs: Typography -->
+
+          <!-- Docs: Button -->
+          <section id="buttons">
+            <a name="buttons"></a>
+            <hgroup>
+              <h2>Buttons</h2>
+              <p>The essential button in pure html, without <code>.classes</code> for the default style.</p>
+            </hgroup>
+            <article>
+              <button>Button</button>
+              <input type="submit">
+
+<pre><code>&lt;<b>button</b>&gt;Button&lt;/<b>button</b>&gt;
+&lt;<b>input</b> <i>type</i>=<u>"submit"</u>&gt;</code></pre>
+
+            </article>
+            <p>Buttons are <code><i>width</i>: <u>100%</u>;</code> by default. Use <code>&lt;<b>a</b> <i>role</i>=<u>"button"&gt;</u></code> if you need an inline element.</p>
+            <article>
+              <a href="#" role="button">Link</a>
+              <a href="#" role="button">Link</a>
+
+<pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u>&gt;Link&lt;/<b>a</b>&gt;
+&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u>&gt;Link&lt;/<b>a</b>&gt;</code></pre>
+
+            </article>
+            <p>Buttons come with a <code>.secondary</code> neutral style.</p>
+            <article>
+              <a href="#" role="button" class="secondary">Link</a>
+              <button class="secondary">Button</button>
+              <input type="submit" class="secondary">
+              <input type="reset">
+
+<pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"secondary"</u>&gt;Link&lt;/<b>a</b>&gt;
+&lt;<b>button</b>&gt;Button&lt;/<b>button</b> <i>class</i>=<u>"secondary"</u>&gt;
+&lt;<b>input</b> <i>type</i>=<u>"submit"</u> <i>class</i>=<u>"secondary"</u>&gt;
+&lt;<b>input</b> <i>type</i>=<u>"reset"</u>&gt;</code></pre>
+
+            </article>
+            <p>Also includes the classic <code>.outline</code> style.</p>
+            <article>
+              <a href="#" role="button" class="outline">Link</a>
+              <a href="#" role="button" class="outline secondary">Link</a>
+              <button class="outline">Button</button>
+              <button class="outline secondary">Button</button>
+
+<pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"outline"</u>&gt;Link&lt;/<b>a</b>&gt;
+&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"outline secondary"</u>&gt;Link&lt;/<b>a</b>&gt;
+&lt;<b>button</b> <i>class</i>=<u>"outline"</u>&gt;Button&lt;/<b>button</b>&gt;
+&lt;<b>button</b> <i>class</i>=<u>"outline secondary"</u>&gt;Button&lt;/<b>button</b>&gt;</code></pre>
+            </article>
+          </section><!-- ./ Docs: Button -->
+
+          <!-- Docs: Form -->
+          <section id="forms">
+            <a name="forms"></a>
+            <hgroup>
+              <h2>Forms</h2>
+              <p>All form elements in pure html, without <code>.classes</code> and responsives, allowing forms to scale gracefully across devices and viewport sizes.</p>
+            </hgroup>
+            <p>Input are <code><i>width</i>: <u>100%</u>;</code> by default. You can use <code>.grid</code> inside a form.</p>
+            <p>All natives form elements are fully customized and themables with CSS variables.</p>
+            <article>
+              <form>
+                <section class="grid">
+                  <div>
+                    <label for="firstname">
+                      First name
+                      <input type="text" id="firstname" name="firstname" placeholder="First name" required>
+                    </label>
+                  </div>
+                  <div>
+                    <label for="lastname">
+                      Last name
+                      <input type="text" id="lastname" name="lastname" placeholder="Last name" required>
+                    </label>
+                  </div>
+                </section>
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="Email address" required>
+                <small>We'll never share your email with anyone else.</small>
+                <button type="submit">Submit</button>
+              </form>
+
+<pre><code>
+&lt;<b>form</b>&gt;
+
+  &lt;!-- Grid --&gt;
+  &lt;<b>section</b> <i>class</i>=<u>"grid"</u>&gt;
+
+    &lt;<b>div</b>&gt;
+      &lt;!-- Markup example 1: input is inside label --&gt;
+      &lt;<b>label</b> <i>for</i>=<u>"firstname"</u>&gt;
+        First name
+        &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>id</i>=<u>"firstname"</u> <i>name</i>=<u>"firstname"</u> <i>placeholder</i>=<u>"First name"</u> <i>required</i>&gt;
+      &lt;/<b>label</b>&gt;
+    &lt;/<b>div</b>&gt;
+
+    &lt;<b>div</b>&gt;
+      &lt;<b>label</b> <i>for</i>=<u>"lastname"</u>&gt;
+        Last name
+        &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>id</i>=<u>"lastname"</u> <i>name</i>=<u>"lastname"</u> <i>placeholder</i>=<u>"Last name"</u> <i>required</i>&gt;
+      &lt;/<b>label</b>&gt;
+    &lt;/<b>div</b>&gt;
+
+  &lt;/<b>section</b>&gt;
+
+  &lt;!-- Markup example 2: input is after label --&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"email"</u>&gt;Email address&lt;/<b>label</b>&gt;
+  &lt;<b>input</b> <i>type</i>=<u>"email"</u> <i>id</i>=<u>"email"</u> <i>name</i>=<u>"email"</u> <i>placeholder</i>=<u>"Email address"</u> <i>required</i>&gt;
+  &lt;<b>small</b>&gt;We'll never share your email with anyone else.&lt;/<b>small</b>&gt;
+
+  &lt;!-- Button --&gt;
+  &lt;<b>button</b> <i>type</i>=<u>"submit"</u>&gt;Submit&lt;/<b>button</b>&gt;
+
+&lt;/<b>form</b>&gt;</code></pre>
+
+            </article>
+            <p>Disabled and validation states:</p>
+            <article>
+              <form>
+                <section class="grid">
+                  <div>
+                    <input type="text" placeholder="Valid" aria-label="Valid" valid>
+                  </div>
+                  <div>
+                    <input type="text" placeholder="Invalid" aria-label="Invalid" invalid>
+                  </div>
+                  <div>
+                    <input type="text" placeholder="Disabled" aria-label="Disabled" disabled>
+                  </div>
+                  <div>
+                    <input type="text" value="Readonly" aria-label="Readonly" readonly>
+                  </div>
+                </section>
+              </form>
+
+<pre><code>&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Valid"</u> <i>valid</i>&gt;
+&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Invalid"</u> <i>invalid</i>&gt;
+&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Disabled"</u> <i>disabled</i>&gt;
+&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>value</i>=<u>"Readonly"</u> <i>readonly</i>&gt;</code></pre>
+
+            </article>
+            <p><code>&lt;<b>fieldset</b>&gt;</code> are unstyled and act as a container for radios and checkboxes providing a consistent <code><i>margin-bottom</i></code> for the set.</p>
+            <p><code><i>role</i>=<u>"switch"</u></code> on a <code><i>type</i>=<u>"checkbox"</u></code> enable a custom switch.</p>
+            <article>
+              <label for="country">Country</label>
+              <select id="country">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+              <fieldset>
+                <legend>Gender</legend>
+                <label for="male">
+                  <input type="radio" id="male" name="gender" value="male" checked>
+                  Male
+                </label>
+                <label for="female">
+                  <input type="radio" id="female" name="gender" value="female">
+                  Female
+                </label>
+                <label for="other">
+                  <input type="radio" id="other" name="gender" value="other">
+                  Other
+                </label>
+              </fieldset>
+              <fieldset>
+                <label for="terms">
+                  <input type="checkbox" id="terms" name="terms">
+                  I agree to the Terms and Conditions
+                </label>
+              </fieldset>
+              <fieldset>
+                <label for="switch">
+                  <input type="checkbox" id="switch" name="switch" role="switch">
+                  Publish on my profile
+                </label>
+              </fieldset>
+
+<pre><code>&lt;!-- Select --&gt;
+&lt;<b>label</b> <i>for</i>=<u>"country"</u>&gt;Country&lt;/<b>label</b>&gt;
+&lt;<b>select</b> <i>id</i>=<u>"country</u>"&gt;
+  &lt;<b>option</b> <i>selected</i>&gt;Choose...&lt;/<b>option</b>&gt;
+  &lt;<b>option</b>&gt;...&lt;/<b>option</b>&gt;
+&lt;/<b>select</b>&gt;
+
+&lt;!-- Radios --&gt;
+&lt;<b>fieldset</b>&gt;
+  &lt;<b>legend</b>&gt;Gender&lt;/<b>legend</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"male"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"male"</u> <i>name</i>=<u>"gender"</u> <i>value</i>=<u>"male"</u> <i>checked</i>&gt;
+    Male
+  &lt;/<b>label</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"female"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"female"</u> <i>name</i>=<u>"gender"</u> <i>value</i>=<u>"female"</u>&gt;
+    Female
+  &lt;/<b>label</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"other"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"other"</u> <i>name</i>=<u>"gender"</u> <i>value</i>=<u>"other"</u>&gt;
+    Other
+  &lt;/<b>label</b>&gt;
+&lt;/<b>fieldset</b>&gt;
+
+&lt;!-- Checkbox --&gt;
+&lt;<b>fieldset</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"terms"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u> <i>id</i>=<u>"terms"</u> <i>name</i>=<u>"terms"</u>&gt;
+    I agree to the Terms and Conditions
+  &lt;/<b>label</b>&gt;
+&lt;/<b>fieldset</b>&gt;
+
+&lt;!-- Switch --&gt;
+&lt;<b>fieldset</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"switch"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u> <i>id</i>=<u>"switch"</u> <i>name</i>=<u>"switch"</u> <i>role</i>=<u>"switch"</u>&gt;
+    Publish on my profile
+  &lt;/<b>label</b>&gt;
+&lt;/<b>fieldset</b>&gt;</code></pre>
+
+            </article>
+          </section><!-- ./ Docs: Form -->
+
+          <!-- Docs: Accordions -->
+          <section id="accordions">
+            <a name="accordions"></a>
+            <hgroup>
+              <h2>Accordions</h2>
+              <p>Toggle sections of content in pure HTML, without Javascript.</p>
+            </hgroup>
+            <article>
+              <details>
+                <summary>Collapsible elements 1</summary>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque urna diam, tincidunt nec porta sed, auctor id velit. Etiam venenatis nisl ut orci consequat, vitae tempus quam commodo. Nulla non mauris ipsum. Aliquam eu posuere orci. Nulla convallis lectus rutrum quam hendrerit, in facilisis elit sollicitudin. Mauris pulvinar pulvinar mi, dictum tristique elit auctor quis. Maecenas ac ipsum ultrices, porta turpis sit amet, congue turpis.</p>
+              </details>
+              <details>
+                <summary>Collapsible elements 2</summary>
+                <ul>
+                  <li>Vestibulum id elit quis massa interdum sodales.</li>
+                  <li>Nunc quis eros vel odio pretium tincidunt nec quis neque.</li>
+                  <li>Quisque sed eros non eros ornare elementum.</li>
+                  <li>Cras sed libero aliquet, porta dolor quis, dapibus ipsum.</li>
+                </ul>
+              </details>
+
+<pre><code>&lt;<b>details</b>&gt;
+  &lt;<b>summary</b>&gt;Collapsible elements 1&lt;/<b>summary</b>&gt;
+  &lt;<b>p</b>&gt;...&lt;/<b>p</b>&gt;
+&lt;/<b>details</b>&gt;
+
+&lt;<b>details</b>&gt;
+  &lt;<b>summary</b>&gt;Collapsible elements 2&lt;/<b>summary</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;...&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>details</b>&gt;</code></pre>
+
+            </article>
+
+          </section><!-- ./ Docs: Accordions -->
+
+          <!-- Docs: Cards -->
+          <section id="cards">
+            <a name="cards"></a>
+            <hgroup>
+              <h2>Cards</h2>
+              <p>A flexible container with graceful spacings across devices and viewport sizes.</p>
+            </hgroup>
+            <article>
+              I'm a card!
+            </article>
+
+<pre><code>&lt;<b>article</b>&gt;
+  I'm a card!
+&lt;/<b>article</b>&gt;</code></pre>
+
+          </section><!-- ./ Docs: Card -->
+
+          <!-- Docs: Navs -->
+          <section id="navs">
+            <a name="navs"></a>
+            <hgroup>
+              <h2>Navs</h2>
+              <p>The essential navbar in pure semantic HTML.</p>
+            </hgroup>
+            <article>
+              <nav>
+                <ul>
+                  <li><strong>Brand</strong></li>
+                </ul>
+                <ul>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                  <li><a href="#">Link</a></li>
+                </ul>
+              </nav>
+
+<pre><code>&lt;<b>nav</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>strong</b>&gt;Brand&lt;/<b>strong</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>nav</b>&gt;</code></pre>
+
+            </article>
+            <p><code>&lt;<b>ul</b>&gt;</code> are automatically distributed horizontally.</p>
+            <p><code>&lt;<b>li</b>&gt;</code> are unstyled and inlined.</p>
+            <article>
+              <nav>
+                <ul>
+                  <li>
+                    <a href="#" class="secondary">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12">
+                        </line><line x1="3" y1="6" x2="21" y2="6">
+                        </line><line x1="3" y1="18" x2="21" y2="18">
+                        </line>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+                <ul>
+                  <li><strong>Brand</strong></li>
+                </ul>
+                <ul>
+                  <li>
+                    <a href="#" class="secondary">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+<pre><code>&lt;<b>nav</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"secondary"</u>&gt;...&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>strong</b>&gt;Brand&lt;/<b>strong</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"secondary"</u>&gt;...&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>nav</b>&gt;</code></pre>
+
+            </article>
+            <p>Inside <code>&lt;<b>aside</b>&gt;</code>, navs are stacked vertically.</p>
+            <article>
+              <aside>
+                <nav>
+                  <ul>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                    <li><a href="#">Link</a></li>
+                  </ul>
+                </nav>
+              </aside>
+
+<pre><code>&lt;<b>aside</b>&gt;
+  &lt;<b>nav</b>&gt;
+    &lt;<b>ul</b>&gt;
+      &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+      &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+      &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;/<b>ul</b>&gt;
+  &lt;/<b>nav</b>&gt;
+&lt;/<b>aside</b>&gt;</code></pre>
+
+            </article>
+          </section><!-- ./ Docs: Nav -->
+
+          <!-- Docs: Tooltips -->
+          <section id="tooltips">
+            <a name="tooltips"></a>
+            <hgroup>
+              <h2>Tooltips</h2>
+              <p>Enable tooltips everywhere in pure HTML, without Javascript.</p>
+            </hgroup>
+            <article>
+              <p>Tooltip on a <a href="#" data-tooltip="Tooltip">link</a></p>
+              <p>Tooltip on <em data-tooltip="Tooltip">inline element</em></p>
+              <p><button data-tooltip="Tooltip">Tooltip on a button</button></p>
+
+<pre><code>&lt;<b>p</b>&gt;Tooltip on a &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>data-tooltip</i>=<u>"Tooltip"</u>&gt;link&lt;/<b>a</b>&gt;&lt;/<b>p</b>&gt;
+&lt;<b>p</b>&gt;Tooltip on &lt;<b>em</b> <i>data-tooltip</i>=<u>"Tooltip"</u>&gt;inline element&lt;/<b>em</b>&gt;&lt;/<b>p</b>&gt;
+&lt;<b>p</b>&gt;&lt;<b>button</b> <i>data-tooltip</i>=<u>"Tooltip"</u>&gt;Tooltip on a button&lt;/<b>button</b>&gt;&lt;/p&gt;</code></pre>
+
+            </article>
+          </section><!-- ./ Docs: Nav -->
+
+          <!-- Love -->
+          <section id="love">
+            <a name="love"></a>
+            <hgroup>
+              <h2>
+                We
+                <svg xmlns="http://www.w3.org/2000/svg" height="1.75rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                </svg>
+                <code>.classes</code>
+              </h2>
+            </hgroup>
+
+            <p>As a starting point, Pico chose to be as neutral and semantic as possible using very few <code>.classes</code>.</p>
+            <p>But, off course, <code>.classes</code> are not a bad practice at all.</p>
+            <p>Feel free to use <em>modifiers</em>.</p>
+            <section data-theme="valid">
+
+<pre><code>&lt;<b>button</b> <i>class</i>=<u>"warning"</u>&gt;Action&lt;/<b>button</b>&gt;<br></code></pre>
+
+            </section>
+            <p>Just try to keep your HTML clean and semantic to keep the <em>Pico spirit</em>.</p>
+            <section data-theme="invalid">
+
+<pre><code>&lt;<b>button</b> <i>class</i>=<u>"button-red margin-large padding-medium"</u>&gt;Action&lt;/<b>button</b>&gt;<br></code></pre>
+
+            </section>
+          </section><!-- ./ Love -->
+
+          <!-- Footer -->
+          <footer>
+            <p><small>Openly inspired by <a href="https://getbootstrap.com/" class="secondary">Bootstrap</a>, <a href="https://picturepan2.github.io/spectre/" class="secondary">Spectre</a>, <a href=" https://kbrsh.github.io/wing/" class="secondary">Wing</a>, <a href="https://www.cssbed.com/" class="secondary">CSS Bed</a> & <a href="http://necolas.github.io/normalize.css/" class="secondary">Normalize</a>.</small></p>
+          </footer><!-- ./ Footer -->
+
+        </div> <!-- ./ Document -->
+
+    </main><!-- ./ Main -->
+
+    <!-- Javascript -->
+    <script src="js/pico.docs.min.js"></script>
+
+  </body>
+
+</html>

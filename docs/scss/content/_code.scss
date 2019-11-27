@@ -1,0 +1,107 @@
+/**
+ * Docs: Code
+ */
+
+// Custom spacings for <pre> (vertically aligned with <article> content)
+pre {
+
+  @if map-get($breakpoints, "sm") and
+    map-get($spacing-factor, "sm") and
+    $enable-responsive-spacings {
+
+    @media (min-width: map-get($breakpoints, "sm")) {
+      padding: $spacing-block ($spacing-block*map-get($spacing-factor, "sm"));
+    }
+  }
+
+  @if map-get($breakpoints, "md") and
+    map-get($spacing-factor, "md") and
+    $enable-responsive-spacings {
+
+    @media (min-width: map-get($breakpoints, "md")) {
+      padding: $spacing-block ($spacing-block*map-get($spacing-factor, "md"));
+    }
+  }
+
+  @if map-get($breakpoints, "lg") and
+    map-get($spacing-factor, "lg") and
+    $enable-responsive-spacings {
+
+    @media (min-width: map-get($breakpoints, "lg")) {
+      padding: $spacing-block ($spacing-block*map-get($spacing-factor, "lg"));
+    }
+  }
+
+  @if map-get($breakpoints, "xl") and
+    map-get($spacing-factor, "xl") and
+    $enable-responsive-spacings {
+
+    @media (min-width: map-get($breakpoints, "xl")) {
+      padding: $spacing-block ($spacing-block*map-get($spacing-factor, "xl"));
+    }
+  }
+}
+
+// Badge for Valid & Invalid code
+[data-theme="invalid"],
+[data-theme="valid"] {
+  position: relative;
+  margin-bottom: 0 !important;
+
+  // Label
+  &:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -$spacing-gutter;
+    padding: .375rem .75rem;
+    border-radius: 0;
+    color: var(--primary-inverse);
+    font-size: 14px;
+    line-height: 1;
+
+    @media (min-width: map-get($breakpoints, "sm")) {
+      right: 0;
+    }
+
+    @media (min-width: map-get($breakpoints, "lg")) {
+      top: $spacing-gutter;
+      right: $spacing-gutter;
+    }
+  }
+
+  // Spacing for Valid & Invalid badge
+  pre {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+// Color for Valid & Invalid code
+[data-theme="invalid"] {
+  &:before {
+    background: var(--invalid);
+    content: 'Bulky';
+  }
+
+  pre {
+    border-color: var(--invalid);
+  }
+}
+
+[data-theme="valid"] {
+  &:before {
+    background: var(--valid);
+    content: 'Great';
+  }
+
+  pre {
+    border-color: var(--valid);
+  }
+}
+
+section[title="love"] [data-theme="invalid"] {
+  &:before {
+    content: 'Not so great';
+  }
+}
