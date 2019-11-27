@@ -45,6 +45,15 @@ details {
     &:focus {
       outline: none;
     }
+
+    ~ * {
+      margin-top: $spacing-typography/2;
+
+      ~ * {
+        margin-top: 0;
+      }
+    }
+
   }
 
   // Open
