@@ -1,0 +1,64 @@
+/**
+ * Docs: Main (Grid)
+ */
+
+$navHeight: 3.5rem;
+
+body > main {
+  padding-top:map-get($spacing-factor, "xs") + $navHeight;
+
+  @media (min-width: map-get($breakpoints, "sm")) {
+    padding-top: map-get($spacing-factor, "sm") + $navHeight;
+  }
+
+  @media (min-width: map-get($breakpoints, "md")) {
+    padding-top: map-get($spacing-factor, "md") + $navHeight;
+  }
+
+  @media (min-width: map-get($breakpoints, "lg")) {
+    grid-column-gap: $spacing-gutter*4;
+    display: grid;
+    grid-template-columns: 200px auto;
+    padding-top: map-get($spacing-factor, "lg") + $navHeight;
+  }
+
+  @media (min-width: map-get($breakpoints, "xl")) {
+    padding-top: map-get($spacing-factor, "xl") + $navHeight;
+  }
+
+  > * {
+    min-width: 0; // HACK for childs in overflow
+  }
+}
+
+
+// Anchors hacks for internal links
+// ––––––––––––––––––––
+
+a[name]:not([href])::before {
+  display: block;
+  height: map-get($spacing-factor, "xs") + $navHeight;
+  margin-top: -(map-get($spacing-factor, "xs")+ $navHeight);
+  content: '';
+
+
+  @media (min-width: map-get($breakpoints, "sm")) {
+    height: map-get($spacing-factor, "sm") + $navHeight;
+    margin-top: -(map-get($spacing-factor, "sm") + $navHeight);
+  }
+
+  @media (min-width: map-get($breakpoints, "md")) {
+    height: map-get($spacing-factor, "md") + $navHeight;
+    margin-top: -(map-get($spacing-factor, "md") + $navHeight);
+  }
+
+  @media (min-width: map-get($breakpoints, "lg")) {
+    height: map-get($spacing-factor, "lg") + $navHeight;
+    margin-top: -(map-get($spacing-factor, "lg") + $navHeight);
+  }
+
+  @media (min-width: map-get($breakpoints, "xl")) {
+    height: map-get($spacing-factor, "xl") + $navHeight;
+    margin-top: -(map-get($spacing-factor, "xl") + $navHeight);
+  }
+}

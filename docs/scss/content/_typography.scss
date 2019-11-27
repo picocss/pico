@@ -1,0 +1,23 @@
+/**
+ * Docs: Typography
+ */
+
+ section > hgroup {
+   margin-bottom: $spacing-typography*2;
+
+   p {
+     color: var(--muted-text);
+     font-size: 1.125rem;
+   }
+ }
+ a[role=button] {
+   margin-right: $spacing-gutter/4;
+   margin-bottom: $spacing-typography;
+ }
+ [role=document] {
+   section > h1,
+   section > h2,
+   section > h3 {
+     line-height: 1;
+   }
+ }

@@ -11,9 +11,12 @@
 @import "themes/dark";
 
 // Layout
-@import "layout/layout";
+@import "layout/main";
+@import "layout/aside";
+@import "layout/documentation";
 
 // Content
+@import "content/typography";
 @import "content/code";
 
 // Components
