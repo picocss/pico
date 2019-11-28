@@ -28,7 +28,7 @@ $enable-classes: true !default;
 // ––––––––––––––––––––
 
 // Gutters and horizontals margins
-// For <body>, '.row' (grids), <nav>, <table>
+// For <body>, .grid, <nav>, <table>
 $spacing-gutter:       1rem !default;
 
 // Blocks verticals margins and paddings
@@ -41,7 +41,6 @@ $spacing-block:        2rem !default;
 $spacing-typography:   1.5rem !default;
 
 // Padding for <input> and <button>
-// (Vertical Horizontal)
 $spacing-input-button: .75rem 1rem !default;
 
 
@@ -66,7 +65,7 @@ $heading-weight: 700 !default;
 // Blocks
 // ––––––––––––––––––––
 
-// For <form> elements, <button>, card (<article>), inlined code, badge (<u>)
+// For <form> elements, <button>, <article>, <details> inlined code, tooltips
 $round: .25rem !default;
 
 
@@ -107,7 +106,7 @@ $breakpoints: (
 
 // Viewports
 $viewports: (
-// 'null' disable the viewport (max-width) on a breakpoint
+// 'null' disable the viewport on a breakpoint
   sm: 510px,
   md: 700px,
   lg: 920px,

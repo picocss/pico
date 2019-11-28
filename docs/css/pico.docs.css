@@ -411,7 +411,8 @@ article pre {
 @media (min-width: 576px) {
   article pre {
     padding: 2rem 2.5rem;
-    margin-bottom: 0;
+    margin: -2.5rem;
+    margin-top: 2.5rem;
   }
 }
 

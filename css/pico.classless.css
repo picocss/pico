@@ -17,10 +17,10 @@
   --h5:                #73848c;
   --h6:                #8a9ba3;
   --mark:              rgba(255, 223, 128, 0.5);
-  --primary:            #1086c1;
-  --primary-hover:      #086a9b;
-  --primary-focus:      rgba(16, 134, 193, 0.125);
-  --primary-inverse:    #FFF;
+  --primary:           #1086c1;
+  --primary-hover:     #086a9b;
+  --primary-focus:     rgba(16, 134, 193, 0.125);
+  --primary-inverse:   #FFF;
   --secondary:         #374b56;
   --secondary-hover:   #23353e;
   --secondary-focus:   rgba(55, 75, 86, 0.125);
@@ -60,10 +60,10 @@
     --h5:                #8a9ba3;
     --h6:                #73848c;
     --mark:              rgba(255, 223, 128, 0.25);
-    --primary:            #1086c1;
-    --primary-hover:      #1aa2e6;
-    --primary-focus:      rgba(16, 134, 193, 0.25);
-    --primary-inverse:    #FFF;
+    --primary:           #1086c1;
+    --primary-hover:     #1aa2e6;
+    --primary-focus:     rgba(16, 134, 193, 0.25);
+    --primary-inverse:   #FFF;
     --secondary:         #bbc7ce;
     --secondary-hover:   #edf1f3;
     --secondary-focus:   rgba(187, 199, 206, 0.25);
@@ -105,10 +105,10 @@
   --h5:                #8a9ba3;
   --h6:                #73848c;
   --mark:              rgba(255, 223, 128, 0.25);
-  --primary:            #1086c1;
-  --primary-hover:      #1aa2e6;
-  --primary-focus:      rgba(16, 134, 193, 0.25);
-  --primary-inverse:    #FFF;
+  --primary:           #1086c1;
+  --primary-hover:     #1aa2e6;
+  --primary-focus:     rgba(16, 134, 193, 0.25);
+  --primary-inverse:   #FFF;
   --secondary:         #bbc7ce;
   --secondary-hover:   #edf1f3;
   --secondary-focus:   rgba(187, 199, 206, 0.25);
@@ -716,6 +716,10 @@ select[valid]:not(:focus),
 textarea[valid]:not(:focus) {
   border-bottom: 1px solid var(--valid);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23288a6a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+input[type="color"] {
+  height: calc(3rem + 2px);
 }
 
 select::-ms-expand {

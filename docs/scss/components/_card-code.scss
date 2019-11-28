@@ -12,7 +12,8 @@ article pre {
 
     @media (min-width: map-get($breakpoints, "sm")) {
       padding: $spacing-block ($spacing-block*map-get($spacing-factor, "sm"));
-      margin-bottom: 0;
+      margin: -$spacing-block*map-get($spacing-factor, "sm");
+      margin-top: $spacing-block*map-get($spacing-factor, "sm");
     }
   }
 

@@ -20,10 +20,10 @@
   --mark:              #{rgba($amber-200, .5)};
 
   // Primary Call-to-Action
-  --primary:            #{$primary-600};
-  --primary-hover:      #{$primary-700};
-  --primary-focus:      #{rgba($primary-600, .125)};
-  --primary-inverse:    #{$white};
+  --primary:           #{$primary-600};
+  --primary-hover:     #{$primary-700};
+  --primary-focus:     #{rgba($primary-600, .125)};
+  --primary-inverse:   #{$white};
 
   // Secondary Call-to-Action
   --secondary:         #{mix($grey-700, $grey-800)};

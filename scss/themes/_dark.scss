@@ -20,10 +20,10 @@
     --mark:              #{rgba($amber-200, .25)};
 
     // Call-to-Action
-    --primary:            #{$primary-600};
-    --primary-hover:      #{$primary-500};
-    --primary-focus:      #{rgba($primary-600, .25)};
-    --primary-inverse:    #{$white};
+    --primary:           #{$primary-600};
+    --primary-hover:     #{$primary-500};
+    --primary-focus:     #{rgba($primary-600, .25)};
+    --primary-inverse:   #{$white};
 
     // Secondary Call-to-Action
     --secondary:         #{$grey-200};
@@ -90,10 +90,10 @@
   --mark:              #{rgba($amber-200, .25)};
 
   // Call-to-Action
-  --primary:            #{$primary-600};
-  --primary-hover:      #{$primary-500};
-  --primary-focus:      #{rgba($primary-600, .25)};
-  --primary-inverse:    #{$white};
+  --primary:           #{$primary-600};
+  --primary-hover:     #{$primary-500};
+  --primary-focus:     #{rgba($primary-600, .25)};
+  --primary-inverse:   #{$white};
 
   // Secondary Call-to-Action
   --secondary:         #{$grey-200};

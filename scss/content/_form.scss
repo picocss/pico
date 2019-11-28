@@ -196,6 +196,11 @@ textarea {
   }
 }
 
+// Color
+input[type="color"] {
+  height: calc(3rem + 2px); // HACK
+}
+
 // Select
 select {
   // Unstyle the caret on `<select>`s in IE10+.
