@@ -38,10 +38,6 @@
     // Utilities states
     --valid:             #{$green-700};
     --invalid:           #{$red-900};
-
-    // Utilities states
-    --valid:             #{$green-700};
-    --invalid:           #{$red-900};
     --muted-text:        #{$grey-500)};
     --muted-background:  #{darken($grey-900, 6%)};
     --muted-border:      #{mix($grey-800, $grey-900)};
@@ -56,10 +52,6 @@
     --code-inlined:      #{rgba($grey-700, .25)};
     --code-color-1:      #{desaturate($red-700, 10%)};
     --code-color-2:      #{desaturate($primary-500, 40%)};
-
-    // Badge
-    --badge-background:  #{$grey-800};
-    --badge-text:        #{$grey-300};
 
     // Table
     --table-background:  #{darken($grey-900, 4%)};
@@ -108,10 +100,6 @@
   // Utilities states
   --valid:             #{$green-700};
   --invalid:           #{$red-900};
-
-  // Utilities states
-  --valid:             #{$green-700};
-  --invalid:           #{$red-900};
   --muted-text:        #{$grey-500)};
   --muted-background:  #{darken($grey-900, 6%)};
   --muted-border:      #{mix($grey-800, $grey-900)};
@@ -126,10 +114,6 @@
   --code-inlined:      #{rgba($grey-700, .25)};
   --code-color-1:      #{desaturate($red-700, 10%)};
   --code-color-2:      #{desaturate($primary-500, 40%)};
-
-  // Badge
-  --badge-background:  #{$grey-800};
-  --badge-text:        #{$grey-300};
 
   // Table
   --table-background:  #{darken($grey-900, 4%)};

@@ -39,8 +39,6 @@
   --code-inlined:      #edf1f3;
   --code-color-1:      #9f6060;
   --code-color-2:      #2f7ca2;
-  --badge-background:  #73848c;
-  --badge-text:        #FFF;
   --table-background:  #FFF;
   --table-border:      rgba(237, 241, 243, 0.75);
 }
@@ -72,8 +70,6 @@
     --input-border:      #374b56;
     --valid:             #1f7a5c;
     --invalid:           #943838;
-    --valid:             #1f7a5c;
-    --invalid:           #943838;
     --muted-text:        #73848c;
     --muted-background:  #10191e;
     --muted-border:      #23353e;
@@ -84,8 +80,6 @@
     --code-inlined:      rgba(65, 87, 98, 0.25);
     --code-color-1:      #ac5353;
     --code-color-2:      #4d91b3;
-    --badge-background:  #2c4049;
-    --badge-text:        #a2b1b9;
     --table-background:  #141f24;
     --table-border:      #10191e;
   }
@@ -117,8 +111,6 @@
   --input-border:      #374b56;
   --valid:             #1f7a5c;
   --invalid:           #943838;
-  --valid:             #1f7a5c;
-  --invalid:           #943838;
   --muted-text:        #73848c;
   --muted-background:  #10191e;
   --muted-border:      #23353e;
@@ -129,8 +121,6 @@
   --code-inlined:      rgba(65, 87, 98, 0.25);
   --code-color-1:      #ac5353;
   --code-color-2:      #4d91b3;
-  --badge-background:  #2c4049;
-  --badge-text:        #a2b1b9;
   --table-background:  #141f24;
   --table-border:      #10191e;
 }

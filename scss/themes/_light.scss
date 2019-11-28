@@ -53,10 +53,6 @@
   --code-color-1:      #{desaturate($red-700, 20%)};
   --code-color-2:      #{desaturate($primary-600, 30%)};
 
-  // Badge
-  --badge-background:  #{$grey-500};
-  --badge-text:        #{$white};
-
   // Table
   --table-background:  #{$white};
   --table-border:      #{rgba($grey-50, .75)};
