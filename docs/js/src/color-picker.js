@@ -361,7 +361,7 @@
       if (data.hasOwnProperty(color)) {
 
         // Buttons
-        colorButtons += '<button data-color="'+ color +'"></button>';
+        colorButtons += '<button data-color="'+ color +'" aria-label="Activate '+ color +' theme"></button>';
 
         // CSS Styles
         colors.styles += 'button[data-color="'+ color +'"] {'

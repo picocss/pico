@@ -10,7 +10,7 @@
 // Add the correct font weight in Chrome, Edge, and Safari.
 b,
 strong {
-  font-weight: border;
+  font-weight: bolder;
 }
 
 // Prevent `sub` and `sup` elements from affecting the line height in all browsers.
@@ -188,9 +188,13 @@ hgroup {
   h3,
   h4,
   h5,
-  h6,
-  p {
+  h6{
     margin-bottom: 0;
+  }
+  *:last-child {
+    color: var(--muted-text);
+    font-size: 1.125rem;
+    font-weight: normal;
   }
 }
 

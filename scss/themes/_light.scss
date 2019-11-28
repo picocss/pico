@@ -54,6 +54,6 @@
   --code-color-2:      #{desaturate($primary-600, 30%)};
 
   // Table
-  --table-background:  #{$white};
   --table-border:      #{rgba($grey-50, .75)};
+  --table-stripping:   #{rgba($grey-900,.033)};
 }

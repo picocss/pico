@@ -54,8 +54,8 @@
     --code-color-2:      #{desaturate($primary-500, 40%)};
 
     // Table
-    --table-background:  #{darken($grey-900, 4%)};
     --table-border:      #{darken($grey-900, 6%)};
+    --table-stripping:   #{rgba($grey-50,.033)};
   }
 }
 
@@ -116,6 +116,6 @@
   --code-color-2:      #{desaturate($primary-500, 40%)};
 
   // Table
-  --table-background:  #{darken($grey-900, 4%)};
   --table-border:      #{darken($grey-900, 6%)};
+  --table-stripping:   #{rgba($grey-50,.033)};
 }

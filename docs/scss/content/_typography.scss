@@ -4,11 +4,6 @@
 
  section > hgroup {
    margin-bottom: $spacing-typography*2;
-
-   p {
-     color: var(--muted-text);
-     font-size: 1.125rem;
-   }
  }
  a[role=button] {
    margin-right: $spacing-gutter/4;

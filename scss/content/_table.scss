@@ -5,7 +5,6 @@
 table {
   width: 100%;
   border-spacing: 0;
-  background: var(--table-background);
 }
 
 // Cells
@@ -35,11 +34,7 @@ thead {
   }
 }
 
-// Fine striping
+// Striping
 tbody tr:nth-child(odd) {
-  background-color: rgba($grey-50,.02);
-}
-thead tr,
-tbody tr:nth-child(even) {
-  background-color: rgba($grey-900,.02);
+  background-color: var(--table-stripping);
 }

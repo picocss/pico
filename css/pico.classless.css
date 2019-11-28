@@ -39,8 +39,8 @@
   --code-inlined:      #edf1f3;
   --code-color-1:      #9f6060;
   --code-color-2:      #2f7ca2;
-  --table-background:  #FFF;
   --table-border:      rgba(237, 241, 243, 0.75);
+  --table-stripping:   rgba(27, 42, 50, 0.033);
 }
 
 /**
@@ -80,8 +80,8 @@
     --code-inlined:      rgba(65, 87, 98, 0.25);
     --code-color-1:      #ac5353;
     --code-color-2:      #4d91b3;
-    --table-background:  #141f24;
     --table-border:      #10191e;
+    --table-stripping:   rgba(237, 241, 243, 0.033);
   }
 }
 
@@ -121,8 +121,8 @@
   --code-inlined:      rgba(65, 87, 98, 0.25);
   --code-color-1:      #ac5353;
   --code-color-2:      #4d91b3;
-  --table-background:  #141f24;
   --table-border:      #10191e;
+  --table-stripping:   rgba(237, 241, 243, 0.033);
 }
 
 /**
@@ -293,7 +293,7 @@ figure figcaption {
  */
 b,
 strong {
-  font-weight: border;
+  font-weight: bolder;
 }
 
 sub,
@@ -436,9 +436,14 @@ hgroup h2,
 hgroup h3,
 hgroup h4,
 hgroup h5,
-hgroup h6,
-hgroup p {
+hgroup h6 {
   margin-bottom: 0;
+}
+
+hgroup *:last-child {
+  color: var(--muted-text);
+  font-size: 1.125rem;
+  font-weight: normal;
 }
 
 p {
@@ -909,7 +914,6 @@ a[role="button"][disabled] {
 table {
   width: 100%;
   border-spacing: 0;
-  background: var(--table-background);
 }
 
 th,
@@ -935,12 +939,7 @@ thead td {
 }
 
 tbody tr:nth-child(odd) {
-  background-color: rgba(237, 241, 243, 0.02);
-}
-
-thead tr,
-tbody tr:nth-child(even) {
-  background-color: rgba(27, 42, 50, 0.02);
+  background-color: var(--table-stripping);
 }
 
 /**

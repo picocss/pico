@@ -255,11 +255,6 @@ section > hgroup {
   margin-bottom: 3rem;
 }
 
-section > hgroup p {
-  color: var(--muted-text);
-  font-size: 1.125rem;
-}
-
 a[role=button] {
   margin-right: 0.25rem;
   margin-bottom: 1.5rem;
