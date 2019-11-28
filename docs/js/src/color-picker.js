@@ -16,6 +16,7 @@
     target:         '#customization h5',                 // Buttons inserted after target
     selectorButton: '#customization button[data-color]', // Button selector in Dom
     selectorTheme:  '#customization',                    // Theme selector in Dom
+    styles:         '',
 
     // Source: https://material.io/design/color/the-color-system.html
     system: {
@@ -354,7 +355,6 @@
 
     // Vars
     var colorButtons = '';
-    var colorStyles  = '';
 
     // Colors
     for (var color in data) {
@@ -364,21 +364,21 @@
         colorButtons += '<button data-color="'+ color +'"></button>';
 
         // CSS Styles
-        colorStyles += 'button[data-color="'+ color +'"] {'
-                     +   'background-color: '+ data[color]['600'] +'; '
-                     + '}'
+        colors.styles += 'button[data-color="'+ color +'"] {'
+                      +   'background-color: '+ data[color]['600'] +'; '
+                      + '}'
 
-                     + '[data-theme="light"] button[data-color="'+ color +'"]:hover, '
-                     + '[data-theme="light"] button[data-color="'+ color +'"]:active, '
-                     + '[data-theme="light"] button[data-color="'+ color +'"]:focus {'
-                     +   'background-color: '+ data[color]['700'] +'; '
-                     + '}'
+                      + '[data-theme="light"] button[data-color="'+ color +'"]:hover, '
+                      + '[data-theme="light"] button[data-color="'+ color +'"]:active, '
+                      + '[data-theme="light"] button[data-color="'+ color +'"]:focus {'
+                      +   'background-color: '+ data[color]['700'] +'; '
+                      + '}'
 
-                     + '[data-theme="dark"] button[data-color="'+ color +'"]:hover, '
-                     + '[data-theme="dark"] button[data-color="'+ color +'"]:active, '
-                     + '[data-theme="dark"] button[data-color="'+ color +'"]:focus {'
-                     +   'background-color: '+ data[color]['500'] +'; '
-                     + '}'
+                      + '[data-theme="dark"] button[data-color="'+ color +'"]:hover, '
+                      + '[data-theme="dark"] button[data-color="'+ color +'"]:active, '
+                      + '[data-theme="dark"] button[data-color="'+ color +'"]:focus {'
+                      +   'background-color: '+ data[color]['500'] +'; '
+                      + '}'
       }
     }
 
@@ -399,8 +399,8 @@
     // Insert CSS Styles
     var styles = document.createElement('STYLE');
     styles.setAttribute('title', 'color-picker');
-    styles.innerHTML = colorStyles;
-    document.querySelector('head link').after(styles);
+    styles.innerHTML = colors.styles;
+    document.querySelector('head').appendChild(styles);
   }
 
 
@@ -498,16 +498,7 @@
                         + '}';
 
     // Insert CSS Styles
-    var selectorGenerated = document.querySelector('style:not([title="color-picker"])');
-    if(typeof(selectorGenerated) != 'undefined' && selectorGenerated != null) {
-      selectorGenerated.innerHTML = generatedStyles;
-    }
-    else {
-      var styles = document.createElement('STYLE');
-      styles.innerHTML = generatedStyles;
-      document.querySelector('head link').after(styles);
-    }
-    document.querySelector(colors.selectorTheme + ' .grid').setAttribute('data-theme', name);
+    document.querySelector('style[title="color-picker"]').innerHTML = colors.styles + generatedStyles;
   }
 
 

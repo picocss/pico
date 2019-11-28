@@ -44,9 +44,11 @@
   function internalClick(link) {
     event.preventDefault();
     var anchor = link.href.split("#");
-    anchor = setAnchor(anchor[1]);
-    anchor = document.getElementById(anchor);
-    scrollToAnchor(anchor);
+    if (anchor[1] != '') {
+      anchor = setAnchor(anchor[1]);
+      anchor = document.getElementById(anchor);
+      scrollToAnchor(anchor);
+    }
   }
 
 

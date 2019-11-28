@@ -18,7 +18,7 @@
       on:         '<i>Turn on dark mode</i>',
       off:        '<i>Turn off dark mode</i>'
     },
-    target:       'main', // Button inserted after target
+    target:       'body', // Button append in target
     selector:     'button.switcher', // Button selector in Dom
     currentTheme: systemColorScheme()
   };
@@ -59,7 +59,7 @@
     // Insert Switcher
     var button = document.createElement(switcher.button.element);
     button.className = switcher.button.class;
-    document.querySelector(switcher.target).after(button);
+    document.querySelector(switcher.target).appendChild(button);
 
     // Set Current Theme
     setTheme(switcher.currentTheme);
