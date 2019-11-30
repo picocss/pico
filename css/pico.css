@@ -318,26 +318,21 @@ section {
  * Minimal grid system with auto-layout columns
  */
 .grid {
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
   margin: 0;
 }
 
 @media (min-width: 992px) {
   .grid {
-    grid-column-gap: 1rem;
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
   }
 }
 
 .grid > * {
   min-width: 0;
-  margin-bottom: 1rem;
-}
-
-@media (min-width: 992px) {
-  .grid > * {
-    margin-bottom: 0;
-  }
 }
 
 /**

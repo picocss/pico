@@ -39,8 +39,11 @@ button.switcher {
   &:hover,
   &:focus {
     max-width: 100%;
-    transition: background-color $transition,
-                color $transition;
+    transition:
+      background-color $transition,
+      border-color $transition,
+      color $transition,
+      box-shadow $transition;
   }
 
   &:hover {

@@ -66,7 +66,6 @@
 
     // Click Listener on Switcher
     var switchers = document.querySelectorAll(switcher.selector);
-    console.log(switchers);
     for (var i = 0; i < switchers.length; i++) {
       switchers[i].addEventListener('click', function(event) {
 

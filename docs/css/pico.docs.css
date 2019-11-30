@@ -507,7 +507,7 @@ button.switcher i {
 
 button.switcher:hover, button.switcher:focus {
   max-width: 100%;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 button.switcher:hover::after {

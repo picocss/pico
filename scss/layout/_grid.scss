@@ -6,25 +6,20 @@
  */
 
   .grid {
+    grid-column-gap: $spacing-gutter;
+    grid-row-gap: $spacing-gutter;
+    display: grid;
+    grid-template-columns: 1fr;
     margin: 0;
 
     @if map-get($breakpoints, "lg") {
       @media (min-width: map-get($breakpoints, "lg")) {
-        grid-column-gap: $spacing-gutter;
-        display: grid;
         grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
       }
     }
 
     & > * {
       min-width: 0; // HACK for childs in overflow
-      margin-bottom: $spacing-gutter;
-
-      @if map-get($breakpoints, "md") {
-        @media (min-width: map-get($breakpoints, "lg")) {
-          margin-bottom: 0;
-        }
-      }
     }
   }
 }
