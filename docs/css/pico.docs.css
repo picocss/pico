@@ -69,7 +69,7 @@ body > main > * {
   min-width: 0;
 }
 
-a[name]:not([href])::before {
+div[role="document"] > section::before {
   display: block;
   height: 4.5rem;
   margin-top: -4.5rem;
@@ -77,31 +77,42 @@ a[name]:not([href])::before {
 }
 
 @media (min-width: 576px) {
-  a[name]:not([href])::before {
+  div[role="document"] > section::before {
     height: 4.75rem;
     margin-top: -4.75rem;
   }
 }
 
 @media (min-width: 768px) {
-  a[name]:not([href])::before {
+  div[role="document"] > section::before {
     height: 5rem;
     margin-top: -5rem;
   }
 }
 
 @media (min-width: 992px) {
-  a[name]:not([href])::before {
+  div[role="document"] > section::before {
     height: 5.25rem;
     margin-top: -5.25rem;
   }
 }
 
 @media (min-width: 1200px) {
-  a[name]:not([href])::before {
+  div[role="document"] > section::before {
     height: 5.5rem;
     margin-top: -5.5rem;
   }
+}
+
+div[role="document"] section a[href^="https://"]:not([href*="https://picocss.com"]):not([role])::after {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23808080' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: .66rem auto;
+  content: '';
 }
 
 /**
@@ -158,10 +169,15 @@ main > aside details {
 main > aside details summary {
   font-weight: 300;
   text-transform: uppercase;
+  color: var(--h3);
 }
 
 main > aside details summary::after {
   display: none;
+}
+
+main > aside details[open] summary {
+  color: var(--h3);
 }
 
 [role=document] section > h1,
@@ -173,6 +189,10 @@ main > aside details summary::after {
 /**
  * Docs: Documentation
  */
+#themes button i {
+  font-style: normal;
+}
+
 #customization figure {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
@@ -229,9 +249,17 @@ main > aside details summary::after {
 }
 
 #grids button {
-  display: inline-block;
-  width: auto;
-  margin-right: .5rem;
+  display: block;
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 576px) {
+  #grids button {
+    display: inline-block;
+    width: auto;
+    margin-right: .5rem;
+  }
 }
 
 #grids button svg {
@@ -246,6 +274,10 @@ main > aside details summary::after {
   padding: 0.5rem 0;
   background: var(--code-background);
   text-align: center;
+}
+
+#grids details {
+  margin-top: 3rem;
 }
 
 /**
@@ -386,7 +418,7 @@ body > nav ul:first-of-type li:first-of-type a {
 body > nav ul:first-of-type li:nth-of-type(2) {
   display: none;
   margin-left: 1rem;
-  color: var(--muted-text);
+  color: var(--h1);
 }
 
 @media (min-width: 992px) {

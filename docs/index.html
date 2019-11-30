@@ -28,7 +28,7 @@
         <li><a href="#" class="secondary">Examples</a></li>
         <li><a href="#docs" class="secondary">Docs</a></li>
         <li>
-          <a href="https://github.com/picocss/pico" class="secondary" aria-label="Pico GitHub repository">
+          <a href="https://github.com/picocss/pico" class="contrast" aria-label="Pico GitHub repository">
             <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="1rem">
               <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
             </svg>
@@ -106,7 +106,10 @@
             </hgroup>
             <p>1. Download Pico:</p>
             <p><a href="https://github.com/picocss/pico/archive/master.zip" role="button">Download pico.css</a></p>
-            <p>2. Link the CSS <small>(~5KB minified and gzipped)</small>:</p>
+            <p>
+              2. Link the CSS:<br>
+              <small>(~5KB minified and gzipped)</small>
+            </p>
             <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"css/pico.min.css"</u>&gt;</code></pre>
             <p>Starter template:</p>
 
@@ -124,6 +127,7 @@
     &lt;/<b>main</b>&gt;
   &lt;/<b>body</b>&gt;
 &lt;/<b>html</b>&gt;</code></pre>
+
           </section><!-- ./ Docs: Start -->
 
           <!-- Docs: Themes -->
@@ -133,6 +137,9 @@
               <h3>Pico is shipped with 2 consistents themes: Light & Dark.</h3>
             </hgroup>
             <p>The Light theme is used by default. The Dark theme is automatically enabled if user has dark mode enabled <code><i>prefers-color-scheme</i>: <u>dark</u></code>.</p>
+            <article>
+              <button class="contrast theme-switcher">...</button>
+            </article>
             <p>Themes can be forced on document level <code>&lt;<b>html</b> <i>data-theme</i>=<u>"light"</u>&gt;</code> or on any HTML element <code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;</code>.</p>
             <article data-theme="light">
               <h4>Light theme</h4>
@@ -254,10 +261,10 @@
           <section id="classless">
             <hgroup>
               <h2>Class-less version</h2>
-              <h3>For wild HTML purists! 😈</h3>
+              <h3>For wild HTML purists!</h3>
             </hgroup>
             <p>Pico provide a <code>.classless</code> version (<a href="https://picocss.com/examples/classless/">Example</a>).</p>
-            <p>Obviously this version do not include <code>.container</code>, <code>.container-fluid</code>, <code>.grid</code>, <code>.secondary</code> and <code>.outline</code>.</p>
+            <p>Obviously this version do not include <code>.container</code>, <code>.container-fluid</code>, <code>.grid</code>, <code>.secondary</code>, <code>.contrast</code> and <code>.outline</code>.</p>
             <p>In this version, <code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code> and <code>&lt;<b>footer</b>&gt;</code> act as <a href="#containers">containers</a> to define a centered or a fluid viewport.</p>
             <p><strong>Usage:</strong></p>
             <p>Use the default <code>.classless</code> version if you need centered viewports:</p>
@@ -344,6 +351,22 @@
 
             </article>
             <p>Columns intentionally collapses below large devices <code>(<u>992px</u>)</code>.</p>
+            <details>
+              <summary>
+                <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                &nbsp;More about grids
+              </summary>
+              <p>As Pico focus on native HTML elements, we kept this grid system very minimalist.</p>
+              <p>A full grid system in flexbox, with all the ordering, offsetting and breakpoints utilities can be +140% of the whole Pico library size. Not really in the <em>Pico spirit</em>.</p>
+              <p>If you need a quick way to prototyping or build a complex layouts, you can look about <strong>Flexbox grid layouts</strong>. For example: <a href="https://getbootstrap.com/docs/4.2/getting-started/contents/">Bootstrap Grid System only</a> or <a href="https://grid.layoutit.com/">Flexbox Grid</a>.</p>
+              <p>If you need a light and custom grid, you can look about <strong>CSS Grid Generators</strong>. For example: <a href="https://cssgrid-generator.netlify.com/">CSS Grid Generator</a>, <a href="https://grid.layoutit.com/">Layoutit!</a> or <a href="https://griddy.io/">Griddy</a>.</p>
+              <p>Alternatively you can <a href="https://learncssgrid.com/">Learn about CSS Grid</a>.</p>
+            </details>
+
           </section><!-- ./ Docs: Grid -->
 
           <!-- Docs: Horizontal scroller -->
@@ -542,6 +565,17 @@
                 </div>
               </div>
             </article>
+            <p>Links come with <code>.secondary</code> and <code>.contrast</code> styles.</p>
+            <article>
+              <a href="#">Primary</a><br>
+              <a href="#"class="secondary">Secondary</a><br>
+              <a href="#"class="contrast">Contrast</a><br>
+
+<pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Primary&lt;/<b>a</b>&gt;
+&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"secondary"</u>&gt;Secondary&lt;/<b>a</b>&gt;
+&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"contrast"</u>&gt;Contrast&lt;/<b>a</b>&gt;</code></pre>
+
+            </article>
           </section><!-- ./ Docs: Typography -->
 
           <!-- Docs: Button -->
@@ -567,30 +601,25 @@
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u>&gt;Link&lt;/<b>a</b>&gt;</code></pre>
 
             </article>
-            <p>Buttons come with a <code>.secondary</code> neutral style.</p>
+            <p>Buttons come with <code>.secondary</code> and <code>.contrast</code> styles.</p>
             <article>
-              <a href="#" role="button" class="secondary">Link</a>
-              <button class="secondary" aria-label="Example button">Button</button>
-              <input type="submit" class="secondary">
-              <input type="reset">
+              <a href="#" role="button" class="secondary">Secondary</a>
+              <a href="#" role="button" class="contrast">Contrast</a>
 
-<pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"secondary"</u>&gt;Link&lt;/<b>a</b>&gt;
-&lt;<b>button</b>&gt;Button&lt;/<b>button</b> <i>class</i>=<u>"secondary"</u>&gt;
-&lt;<b>input</b> <i>type</i>=<u>"submit"</u> <i>class</i>=<u>"secondary"</u>&gt;
-&lt;<b>input</b> <i>type</i>=<u>"reset"</u>&gt;</code></pre>
+<pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"secondary"</u>&gt;Secondary&lt;/<b>a</b>&gt;
+&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"contrast"</u>&gt;Contrast&lt;/<b>a</b>&gt;</code></pre>
 
             </article>
-            <p>Also includes the classic <code>.outline</code> style.</p>
+            <p>And a classic <code>.outline</code> variant.</p>
             <article>
-              <a href="#" role="button" class="outline">Link</a>
-              <a href="#" role="button" class="outline secondary">Link</a>
-              <button class="outline" aria-label="Example button">Button</button>
-              <button class="outline secondary" aria-label="Example button">Button</button>
+              <a href="#" role="button" class="outline">Primary</a>
+              <a href="#" role="button" class="secondary outline">Secondary</a>
+              <a href="#" role="button" class="contrast outline">Contrast</a>
 
-<pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"outline"</u>&gt;Link&lt;/<b>a</b>&gt;
-&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"outline secondary"</u>&gt;Link&lt;/<b>a</b>&gt;
-&lt;<b>button</b> <i>class</i>=<u>"outline"</u>&gt;Button&lt;/<b>button</b>&gt;
-&lt;<b>button</b> <i>class</i>=<u>"outline secondary"</u>&gt;Button&lt;/<b>button</b>&gt;</code></pre>
+<pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"outline"</u>&gt;Primary&lt;/<b>a</b>&gt;
+&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"secondary outline"</u>&gt;Secondary&lt;/<b>a</b>&gt;
+&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"contrast outline"</u>&gt;Contrast&lt;/<b>a</b>&gt;</code></pre>
+
             </article>
           </section><!-- ./ Docs: Button -->
 
@@ -773,7 +802,7 @@
                 <summary>Collapsible elements 1</summary>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque urna diam, tincidunt nec porta sed, auctor id velit. Etiam venenatis nisl ut orci consequat, vitae tempus quam commodo. Nulla non mauris ipsum. Aliquam eu posuere orci. Nulla convallis lectus rutrum quam hendrerit, in facilisis elit sollicitudin. Mauris pulvinar pulvinar mi, dictum tristique elit auctor quis. Maecenas ac ipsum ultrices, porta turpis sit amet, congue turpis.</p>
               </details>
-              <details>
+              <details open>
                 <summary>Collapsible elements 2</summary>
                 <ul>
                   <li>Vestibulum id elit quis massa interdum sodales.</li>
@@ -961,7 +990,7 @@
 
           <!-- Footer -->
           <footer>
-            <p><small>Openly inspired by <a href="https://getbootstrap.com/" class="secondary">Bootstrap</a>, <a href="https://picturepan2.github.io/spectre/" class="secondary">Spectre</a>, <a href=" https://kbrsh.github.io/wing/" class="secondary">Wing</a>, <a href="https://www.cssbed.com/" class="secondary">CSS Bed</a> & <a href="http://necolas.github.io/normalize.css/" class="secondary">Normalize</a>.</small></p>
+            <p><small>Openly inspired by <a href="https://getbootstrap.com/" class="secondary">Bootstrap</a>, <a href="https://picturepan2.github.io/spectre/" class="secondary">Spectre</a>, <a href=" https://kbrsh.github.io/wing/" class="secondary">Wing</a>, <a href="https://www.cssbed.com/" class="secondary">CSS Bed</a> & <a href="https://necolas.github.io/normalize.css/" class="secondary">Normalize</a>.</small></p>
           </footer><!-- ./ Footer -->
 
         </div><!-- ./ Document -->

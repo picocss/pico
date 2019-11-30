@@ -13,7 +13,7 @@ figure {
   figcaption {
     color: var(--muted-text);
     font-size: 87.5%;
-    padding: 0 $spacing-gutter ;
+    padding: ($spacing-gutter/2) $spacing-gutter;
   }
 
   @if map-get($breakpoints, "sm") {
@@ -22,7 +22,7 @@ figure {
       margin-left: 0;
 
       figcaption {
-        padding: 0;
+        padding: ($spacing-gutter/2) 0;
       }
     }
   }

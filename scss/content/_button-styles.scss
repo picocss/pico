@@ -1,0 +1,111 @@
+@if $enable-classes {
+
+/**
+ * Button Styles
+ */
+
+  // Button .secondary
+  button.secondary,
+  input.secondary[type="submit"],
+  input[type="reset"],
+  a.secondary[role="button"] {
+    border: 1px solid var(--secondary);
+    background-color: var(--secondary);
+    color: var(--secondary-inverse);
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid var(--secondary-hover);
+      background-color: var(--secondary-hover);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem var(--secondary-focus);
+    }
+  }
+
+
+  // Button .contrast
+  button.contrast,
+  input.contrast[type="submit"],
+  input.contrast[type="reset"],
+  a.contrast[role="button"] {
+    border: 1px solid var(--contrast);
+    background-color: var(--contrast);
+    color: var(--contrast-inverse);
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid var(--contrast-hover);
+      background-color: var(--contrast-hover);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem var(--contrast-focus);
+    }
+  }
+
+
+  // Button .outline
+  button.outline,
+  input.outline[type="submit"],
+  a.outline[role="button"] {
+    border: 1px solid var(--primary);
+    background-color: transparent;
+    color: var(--primary);
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid var(--primary-hover);
+      color: var(--primary-hover);
+    }
+  }
+
+
+  // Button .outline.secondary
+  button.outline.secondary,
+  input.outline.secondary[type="submit"],
+  input.outline[type="reset"],
+  a.outline.secondary[role="button"] {
+    border: 1px solid var(--secondary);
+    background-color: transparent;
+    color: var(--secondary);
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid var(--secondary-hover);
+      color: var(--secondary-hover);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem var(--secondary-focus);
+    }
+  }
+
+
+  // Button .outline.contrast
+  button.outline.contrast,
+  input.outline.contrast[type="submit"],
+  input.outline.contrast[type="reset"],
+  a.outline.contrast[role="button"] {
+    border: 1px solid var(--contrast);
+    background-color: transparent;
+    color: var(--contrast);
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid var(--contrast-hover);
+      color: var(--contrast-hover);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem var(--contrast-focus);
+    }
+  }
+
+}

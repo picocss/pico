@@ -17,19 +17,28 @@
     --h4:                #{$grey-300};
     --h5:                #{$grey-400};
     --h6:                #{$grey-500};
-    --mark:              #{rgba($amber-200, .25)};
 
-    // Call-to-Action
+    // Primary Call-to-Action and links
     --primary:           #{$primary-600};
     --primary-hover:     #{$primary-500};
     --primary-focus:     #{rgba($primary-600, .25)};
     --primary-inverse:   #{$white};
 
-    // Secondary Call-to-Action
-    --secondary:         #{$grey-200};
-    --secondary-hover:   #{$grey-50};
-    --secondary-focus:   #{rgba($grey-200, .25)};
-    --secondary-inverse: #{$grey-900};
+    @if $enable-classes {
+
+      // Secondary Call-to-Action and links
+      --secondary:         #{$grey-600};
+      --secondary-hover:   #{$grey-500};
+      --secondary-focus:   #{rgba($grey-600, .25)};
+      --secondary-inverse: #{$white};
+
+      // Contrast Call-to-Action and Tooltips
+      --contrast:          #{$grey-100};
+      --contrast-hover:    #{$white};
+      --contrast-focus:    #{rgba($grey-600, .25)};
+      --contrast-border:   #{rgba($amber-200, .33)}; // For links
+      --contrast-inverse:  #{darken($grey-900, 6%)};
+    }
 
     // Form elements
     --input-background:  #{darken($grey-900, 6%)};
@@ -38,6 +47,8 @@
     // Utilities states
     --valid:             #{$green-700};
     --invalid:           #{$red-900};
+    --mark:              #{rgba($amber-200, .5)};
+    --mark-text:         #{$white};
     --muted-text:        #{$grey-500)};
     --muted-background:  #{darken($grey-900, 6%)};
     --muted-border:      #{mix($grey-800, $grey-900)};
@@ -79,19 +90,28 @@
   --h4:                #{$grey-300};
   --h5:                #{$grey-400};
   --h6:                #{$grey-500};
-  --mark:              #{rgba($amber-200, .25)};
 
-  // Call-to-Action
+  // Primary Call-to-Action and links
   --primary:           #{$primary-600};
   --primary-hover:     #{$primary-500};
   --primary-focus:     #{rgba($primary-600, .25)};
   --primary-inverse:   #{$white};
 
-  // Secondary Call-to-Action
-  --secondary:         #{$grey-200};
-  --secondary-hover:   #{$grey-50};
-  --secondary-focus:   #{rgba($grey-200, .25)};
-  --secondary-inverse: #{$grey-900};
+  @if $enable-classes {
+
+    // Secondary Call-to-Action and links
+    --secondary:         #{$grey-600};
+    --secondary-hover:   #{$grey-500};
+    --secondary-focus:   #{rgba($grey-600, .25)};
+    --secondary-inverse: #{$white};
+
+    // Contrast Call-to-Action and Tooltips
+    --contrast:          #{$grey-100};
+    --contrast-hover:    #{$white};
+    --contrast-focus:    #{rgba($grey-600, .25)};
+    --contrast-border:   #{rgba($amber-200, .33)}; // For links
+    --contrast-inverse:  #{darken($grey-900, 6%)};
+  }
 
   // Form elements
   --input-background:  #{darken($grey-900, 6%)};
@@ -100,6 +120,8 @@
   // Utilities states
   --valid:             #{$green-700};
   --invalid:           #{$red-900};
+  --mark:              #{rgba($amber-200, .5)};
+  --mark-text:         #{$white};
   --muted-text:        #{$grey-500)};
   --muted-background:  #{darken($grey-900, 6%)};
   --muted-border:      #{mix($grey-800, $grey-900)};

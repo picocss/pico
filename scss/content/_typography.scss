@@ -103,6 +103,24 @@ a {
   }
 }
 
+// Link .contrast
+@if $enable-classes {
+  a.contrast:not([role="button"]) {
+    box-shadow: inset 0 -.33rem 0 var(--contrast-border);
+    color: var(--contrast);
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: var(--contrast-hover);
+    }
+
+    &:focus {
+      background-color: var(--contrast-focus);
+    }
+  }
+}
+
 // Headings
 // Because vertical margins can collapse, we avoid `margin-top`
 h1,
@@ -191,7 +209,7 @@ hgroup {
   h6{
     margin-bottom: 0;
   }
-  *:last-child {
+  > *:last-child {
     color: var(--muted-text);
     font-size: 1.125rem;
     font-weight: normal;
@@ -248,7 +266,7 @@ ul li {
 mark {
   padding: .125rem .25rem;
   background: var(--mark);
-  color: var(--text);
+  color: var(--mark-text);
   vertical-align: middle;
 }
 

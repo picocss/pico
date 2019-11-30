@@ -51,14 +51,19 @@ main > aside {
   details {
     padding-bottom: .25rem;
     border-bottom: none;
-  }
 
-  details summary {
-    font-weight: 300;
-    text-transform: uppercase;
+    summary {
+      font-weight: 300;
+      text-transform: uppercase;
+      color: var(--h3);
 
-    &::after {
-      display: none;
+      &::after {
+        display: none;
+      }
+    }
+
+    &[open] summary {
+      color: var(--h3);
     }
   }
 }

@@ -35,7 +35,7 @@ body > nav {
     &:nth-of-type(2) {
       display: none;
       margin-left: $spacing-gutter;
-      color: var(--muted-text);
+      color: var(--h1);
 
       @media (min-width: map-get($breakpoints, "lg")) {
         display: inline;

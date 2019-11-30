@@ -14,12 +14,12 @@
   var switcher = {
     button: {
       element:    'BUTTON',
-      class:      'secondary switcher',
+      class:      'contrast switcher theme-switcher',
       on:         '<i>Turn on dark mode</i>',
       off:        '<i>Turn off dark mode</i>'
     },
     target:       'body', // Button append in target
-    selector:     'button.switcher', // Button selector in Dom
+    selector:    'button.theme-switcher',  // Button selector in Dom
     currentTheme: systemColorScheme()
   };
 
@@ -65,17 +65,21 @@
     setTheme(switcher.currentTheme);
 
     // Click Listener on Switcher
-    document.querySelector(switcher.selector).addEventListener('click', function() {
+    var switchers = document.querySelectorAll(switcher.selector);
+    console.log(switchers);
+    for (var i = 0; i < switchers.length; i++) {
+      switchers[i].addEventListener('click', function(event) {
 
-      // Switch Theme
-      if (switcher.currentTheme == 'light') {
-        setTheme('dark');
-      }
-      else {
-        setTheme('light');
-      }
-    }, false);
+        // Switch Theme
+        if (switcher.currentTheme == 'light') {
+          setTheme('dark');
+        }
+        else {
+          setTheme('light');
+        }
 
+      }, false);
+    }
   }
 
 

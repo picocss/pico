@@ -16,19 +16,25 @@
   --h4:                #596e78;
   --h5:                #73848c;
   --h6:                #8a9ba3;
-  --mark:              rgba(255, 223, 128, 0.5);
   --primary:           #1086c1;
   --primary-hover:     #086a9b;
   --primary-focus:     rgba(16, 134, 193, 0.125);
   --primary-inverse:   #FFF;
-  --secondary:         #374b56;
-  --secondary-hover:   #23353e;
-  --secondary-focus:   rgba(55, 75, 86, 0.125);
+  --secondary:         #73848c;
+  --secondary-hover:   #415762;
+  --secondary-focus:   rgba(115, 132, 140, 0.125);
   --secondary-inverse: #FFF;
+  --contrast:          #2c4049;
+  --contrast-hover:    #0d1519;
+  --contrast-focus:    rgba(115, 132, 140, 0.125);
+  --contrast-border:   rgba(255, 223, 128, 0.5);
+  --contrast-inverse:  #FFF;
   --input-background:  #FFF;
   --input-border:      #c8d2d8;
   --valid:             #288a6a;
   --invalid:           #b94646;
+  --mark:              rgba(255, 223, 128, 0.5);
+  --mark-text:         #2c4049;
   --muted-text:        #7e8f98;
   --muted-background:  #edf1f3;
   --muted-border:      #edf1f3;
@@ -57,19 +63,25 @@
     --h4:                #a2b1b9;
     --h5:                #8a9ba3;
     --h6:                #73848c;
-    --mark:              rgba(255, 223, 128, 0.25);
     --primary:           #1086c1;
     --primary-hover:     #1aa2e6;
     --primary-focus:     rgba(16, 134, 193, 0.25);
     --primary-inverse:   #FFF;
-    --secondary:         #bbc7ce;
-    --secondary-hover:   #edf1f3;
-    --secondary-focus:   rgba(187, 199, 206, 0.25);
-    --secondary-inverse: #1b2a32;
+    --secondary:         #596e78;
+    --secondary-hover:   #73848c;
+    --secondary-focus:   rgba(89, 110, 120, 0.25);
+    --secondary-inverse: #FFF;
+    --contrast:          #d5dde2;
+    --contrast-hover:    #FFF;
+    --contrast-focus:    rgba(89, 110, 120, 0.25);
+    --contrast-border:   rgba(255, 223, 128, 0.33);
+    --contrast-inverse:  #10191e;
     --input-background:  #10191e;
     --input-border:      #374b56;
     --valid:             #1f7a5c;
     --invalid:           #943838;
+    --mark:              rgba(255, 223, 128, 0.5);
+    --mark-text:         #FFF;
     --muted-text:        #73848c;
     --muted-background:  #10191e;
     --muted-border:      #23353e;
@@ -98,19 +110,25 @@
   --h4:                #a2b1b9;
   --h5:                #8a9ba3;
   --h6:                #73848c;
-  --mark:              rgba(255, 223, 128, 0.25);
   --primary:           #1086c1;
   --primary-hover:     #1aa2e6;
   --primary-focus:     rgba(16, 134, 193, 0.25);
   --primary-inverse:   #FFF;
-  --secondary:         #bbc7ce;
-  --secondary-hover:   #edf1f3;
-  --secondary-focus:   rgba(187, 199, 206, 0.25);
-  --secondary-inverse: #1b2a32;
+  --secondary:         #596e78;
+  --secondary-hover:   #73848c;
+  --secondary-focus:   rgba(89, 110, 120, 0.25);
+  --secondary-inverse: #FFF;
+  --contrast:          #d5dde2;
+  --contrast-hover:    #FFF;
+  --contrast-focus:    rgba(89, 110, 120, 0.25);
+  --contrast-border:   rgba(255, 223, 128, 0.33);
+  --contrast-inverse:  #10191e;
   --input-background:  #10191e;
   --input-border:      #374b56;
   --valid:             #1f7a5c;
   --invalid:           #943838;
+  --mark:              rgba(255, 223, 128, 0.5);
+  --mark-text:         #FFF;
   --muted-text:        #73848c;
   --muted-background:  #10191e;
   --muted-border:      #23353e;
@@ -336,7 +354,7 @@ figure {
 figure figcaption {
   color: var(--muted-text);
   font-size: 87.5%;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
 }
 
 @media (min-width: 576px) {
@@ -345,7 +363,7 @@ figure figcaption {
     margin-left: 0;
   }
   figure figcaption {
-    padding: 0;
+    padding: 0.5rem 0;
   }
 }
 
@@ -428,6 +446,19 @@ a.secondary:hover, a.secondary:active, a.secondary:focus {
 
 a.secondary:focus {
   background-color: var(--secondary-focus);
+}
+
+a.contrast:not([role="button"]) {
+  box-shadow: inset 0 -0.33rem 0 var(--contrast-border);
+  color: var(--contrast);
+}
+
+a.contrast:not([role="button"]):hover, a.contrast:not([role="button"]):active, a.contrast:not([role="button"]):focus {
+  color: var(--contrast-hover);
+}
+
+a.contrast:not([role="button"]):focus {
+  background-color: var(--contrast-focus);
 }
 
 h1,
@@ -513,7 +544,7 @@ hgroup h6 {
   margin-bottom: 0;
 }
 
-hgroup *:last-child {
+hgroup > *:last-child {
   color: var(--muted-text);
   font-size: 1.125rem;
   font-weight: normal;
@@ -568,7 +599,7 @@ ul li {
 mark {
   padding: .125rem .25rem;
   background: var(--mark);
-  color: var(--text);
+  color: var(--mark-text);
   vertical-align: middle;
 }
 
@@ -973,6 +1004,17 @@ input[type="reset"] {
   cursor: pointer;
 }
 
+button[disabled],
+input[type="submit"][disabled],
+input[type="reset"][disabled],
+a[role="button"][disabled] {
+  opacity: .5;
+  pointer-events: none;
+}
+
+/**
+ * Button Styles
+ */
 button.secondary,
 input.secondary[type="submit"],
 input[type="reset"],
@@ -1001,6 +1043,36 @@ input.secondary[type="submit"]:focus,
 input[type="reset"]:focus,
 a.secondary[role="button"]:focus {
   box-shadow: 0 0 0 0.2rem var(--secondary-focus);
+}
+
+button.contrast,
+input.contrast[type="submit"],
+input.contrast[type="reset"],
+a.contrast[role="button"] {
+  border: 1px solid var(--contrast);
+  background-color: var(--contrast);
+  color: var(--contrast-inverse);
+}
+
+button.contrast:hover, button.contrast:active, button.contrast:focus,
+input.contrast[type="submit"]:hover,
+input.contrast[type="submit"]:active,
+input.contrast[type="submit"]:focus,
+input.contrast[type="reset"]:hover,
+input.contrast[type="reset"]:active,
+input.contrast[type="reset"]:focus,
+a.contrast[role="button"]:hover,
+a.contrast[role="button"]:active,
+a.contrast[role="button"]:focus {
+  border: 1px solid var(--contrast-hover);
+  background-color: var(--contrast-hover);
+}
+
+button.contrast:focus,
+input.contrast[type="submit"]:focus,
+input.contrast[type="reset"]:focus,
+a.contrast[role="button"]:focus {
+  box-shadow: 0 0 0 0.2rem var(--contrast-focus);
 }
 
 button.outline,
@@ -1052,12 +1124,34 @@ a.outline.secondary[role="button"]:focus {
   box-shadow: 0 0 0 0.2rem var(--secondary-focus);
 }
 
-button[disabled],
-input[type="submit"][disabled],
-input[type="reset"][disabled],
-a[role="button"][disabled] {
-  opacity: .5;
-  pointer-events: none;
+button.outline.contrast,
+input.outline.contrast[type="submit"],
+input.outline.contrast[type="reset"],
+a.outline.contrast[role="button"] {
+  border: 1px solid var(--contrast);
+  background-color: transparent;
+  color: var(--contrast);
+}
+
+button.outline.contrast:hover, button.outline.contrast:active, button.outline.contrast:focus,
+input.outline.contrast[type="submit"]:hover,
+input.outline.contrast[type="submit"]:active,
+input.outline.contrast[type="submit"]:focus,
+input.outline.contrast[type="reset"]:hover,
+input.outline.contrast[type="reset"]:active,
+input.outline.contrast[type="reset"]:focus,
+a.outline.contrast[role="button"]:hover,
+a.outline.contrast[role="button"]:active,
+a.outline.contrast[role="button"]:focus {
+  border: 1px solid var(--contrast-hover);
+  color: var(--contrast-hover);
+}
+
+button.outline.contrast:focus,
+input.outline.contrast[type="submit"]:focus,
+input.outline.contrast[type="reset"]:focus,
+a.outline.contrast[role="button"]:focus {
+  box-shadow: 0 0 0 0.2rem var(--contrast-focus);
 }
 
 /**
@@ -1374,6 +1468,10 @@ nav a:hover, nav a:active, nav a:focus {
   text-decoration: none;
 }
 
+nav a.contrast:not([role="button"]) {
+  box-shadow: none;
+}
+
 aside nav,
 aside ul,
 aside li {
@@ -1412,8 +1510,8 @@ aside li a {
   overflow: hidden;
   transform: translate(-50%, -0.25rem);
   border-radius: 0.25rem;
-  background: var(--secondary);
-  color: var(--secondary-inverse);
+  background: var(--contrast);
+  color: var(--contrast-inverse);
   font-size: .85rem;
   font-style: normal;
   font-weight: normal;
@@ -1423,7 +1521,6 @@ aside li a {
   content: attr(data-tooltip);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease-in-out;
 }
 
 [data-tooltip]::after {
@@ -1434,7 +1531,7 @@ aside li a {
   border-left: .3rem solid transparent;
   border-radius: 0;
   background-color: transparent;
-  color: var(--secondary);
+  color: var(--contrast);
   content: '';
 }
 

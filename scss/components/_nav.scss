@@ -48,6 +48,12 @@ nav {
     &:focus {
       text-decoration: none;
     }
+
+    @if $enable-classes {
+      &.contrast:not([role="button"]) {
+        box-shadow: none;
+      }
+    }
   }
 }
 

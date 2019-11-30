@@ -2,6 +2,15 @@
  * Docs: Documentation
  */
 
+// Docs: Themes
+// ––––––––––––––––––––
+
+#themes {
+  button i {
+    font-style: normal;
+  }
+}
+
 // Docs: Customization
 // ––––––––––––––––––––
 
@@ -73,9 +82,15 @@
 #grids {
 
   button {
-    display: inline-block;
-    width: auto;
-    margin-right: .5rem;
+    display: block;
+    width: 100%;
+    margin-bottom: $spacing-typography/2;
+
+    @media (min-width: map-get($breakpoints, "sm")) {
+      display: inline-block;
+      width: auto;
+      margin-right: .5rem;
+    }
 
     svg {
       stroke: var(--secondary);
@@ -90,5 +105,9 @@
     padding: ($spacing-gutter/2) 0;
     background: var(--code-background);
     text-align: center;
+  }
+
+  details {
+    margin-top: $spacing-typography*2;
   }
 }

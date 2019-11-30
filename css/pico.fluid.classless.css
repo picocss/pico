@@ -16,19 +16,16 @@
   --h4:                #596e78;
   --h5:                #73848c;
   --h6:                #8a9ba3;
-  --mark:              rgba(255, 223, 128, 0.5);
   --primary:           #1086c1;
   --primary-hover:     #086a9b;
   --primary-focus:     rgba(16, 134, 193, 0.125);
   --primary-inverse:   #FFF;
-  --secondary:         #374b56;
-  --secondary-hover:   #23353e;
-  --secondary-focus:   rgba(55, 75, 86, 0.125);
-  --secondary-inverse: #FFF;
   --input-background:  #FFF;
   --input-border:      #c8d2d8;
   --valid:             #288a6a;
   --invalid:           #b94646;
+  --mark:              rgba(255, 223, 128, 0.5);
+  --mark-text:         #2c4049;
   --muted-text:        #7e8f98;
   --muted-background:  #edf1f3;
   --muted-border:      #edf1f3;
@@ -57,19 +54,16 @@
     --h4:                #a2b1b9;
     --h5:                #8a9ba3;
     --h6:                #73848c;
-    --mark:              rgba(255, 223, 128, 0.25);
     --primary:           #1086c1;
     --primary-hover:     #1aa2e6;
     --primary-focus:     rgba(16, 134, 193, 0.25);
     --primary-inverse:   #FFF;
-    --secondary:         #bbc7ce;
-    --secondary-hover:   #edf1f3;
-    --secondary-focus:   rgba(187, 199, 206, 0.25);
-    --secondary-inverse: #1b2a32;
     --input-background:  #10191e;
     --input-border:      #374b56;
     --valid:             #1f7a5c;
     --invalid:           #943838;
+    --mark:              rgba(255, 223, 128, 0.5);
+    --mark-text:         #FFF;
     --muted-text:        #73848c;
     --muted-background:  #10191e;
     --muted-border:      #23353e;
@@ -98,19 +92,16 @@
   --h4:                #a2b1b9;
   --h5:                #8a9ba3;
   --h6:                #73848c;
-  --mark:              rgba(255, 223, 128, 0.25);
   --primary:           #1086c1;
   --primary-hover:     #1aa2e6;
   --primary-focus:     rgba(16, 134, 193, 0.25);
   --primary-inverse:   #FFF;
-  --secondary:         #bbc7ce;
-  --secondary-hover:   #edf1f3;
-  --secondary-focus:   rgba(187, 199, 206, 0.25);
-  --secondary-inverse: #1b2a32;
   --input-background:  #10191e;
   --input-border:      #374b56;
   --valid:             #1f7a5c;
   --invalid:           #943838;
+  --mark:              rgba(255, 223, 128, 0.5);
+  --mark-text:         #FFF;
   --muted-text:        #73848c;
   --muted-background:  #10191e;
   --muted-border:      #23353e;
@@ -271,7 +262,7 @@ figure {
 figure figcaption {
   color: var(--muted-text);
   font-size: 87.5%;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
 }
 
 @media (min-width: 576px) {
@@ -280,7 +271,7 @@ figure figcaption {
     margin-left: 0;
   }
   figure figcaption {
-    padding: 0;
+    padding: 0.5rem 0;
   }
 }
 
@@ -436,7 +427,7 @@ hgroup h6 {
   margin-bottom: 0;
 }
 
-hgroup *:last-child {
+hgroup > *:last-child {
   color: var(--muted-text);
   font-size: 1.125rem;
   font-weight: normal;
@@ -491,7 +482,7 @@ ul li {
 mark {
   padding: .125rem .25rem;
   background: var(--mark);
-  color: var(--text);
+  color: var(--mark-text);
   vertical-align: middle;
 }
 
@@ -1256,8 +1247,8 @@ aside li a {
   overflow: hidden;
   transform: translate(-50%, -0.25rem);
   border-radius: 0.25rem;
-  background: var(--secondary);
-  color: var(--secondary-inverse);
+  background: var(--contrast);
+  color: var(--contrast-inverse);
   font-size: .85rem;
   font-style: normal;
   font-weight: normal;
@@ -1267,7 +1258,6 @@ aside li a {
   content: attr(data-tooltip);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease-in-out;
 }
 
 [data-tooltip]::after {
@@ -1278,7 +1268,7 @@ aside li a {
   border-left: .3rem solid transparent;
   border-radius: 0;
   background-color: transparent;
-  color: var(--secondary);
+  color: var(--contrast);
   content: '';
 }
 

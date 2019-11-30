@@ -22,8 +22,8 @@
      overflow: hidden;
      transform: translate(-50%, -.25rem);
      border-radius: $round;
-     background: var(--secondary);
-     color: var(--secondary-inverse);
+     background: var(--contrast);
+     color: var(--contrast-inverse);
      font-size: .85rem;
      font-style: normal;
      font-weight: normal;
@@ -33,9 +33,9 @@
      content: attr(data-tooltip);
      opacity: 0;
      pointer-events: none;
-     transition: opacity $transition;
    }
 
+   // Caret
    &::after {
      padding: 0;
      transform: translate(-50%, 0rem);
@@ -44,7 +44,7 @@
      border-left: .3rem solid transparent;
      border-radius: 0;
      background-color: transparent;
-     color: var(--secondary);
+     color: var(--contrast);
      content: '';
    }
 
