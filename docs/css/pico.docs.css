@@ -8,7 +8,7 @@
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
   --nav-background: rgba(255, 255, 255, 0.7);
-  --nav-border:     rgba(115, 132, 140, 0.2);
+  --nav-border:     rgba(115, 130, 140, 0.2);
 }
 
 /**
@@ -17,8 +17,8 @@
  */
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --nav-background: rgba(16, 25, 30, 0.8);
-    --nav-border:     rgba(115, 132, 140, 0.2);
+    --nav-background: rgba(16, 24, 30, 0.8);
+    --nav-border:     rgba(115, 130, 140, 0.2);
   }
 }
 
@@ -27,8 +27,8 @@
  * Enabled if forced with data-theme="dark"
  */
 [data-theme="dark"] {
-  --nav-background: rgba(16, 25, 30, 0.8);
-  --nav-border:     rgba(115, 132, 140, 0.2);
+  --nav-background: rgba(16, 24, 30, 0.8);
+  --nav-border:     rgba(115, 130, 140, 0.2);
 }
 
 /**
@@ -167,9 +167,10 @@ main > aside details {
 }
 
 main > aside details summary {
+  color: var(--h3);
+  font-size: 14px;
   font-weight: 300;
   text-transform: uppercase;
-  color: var(--h3);
 }
 
 main > aside details summary::after {
@@ -370,17 +371,9 @@ a[role=button] {
   content: 'Bulky';
 }
 
-[data-theme="invalid"] pre {
-  border-color: var(--invalid);
-}
-
 [data-theme="valid"]:before {
   background: var(--valid);
   content: 'Great';
-}
-
-[data-theme="valid"] pre {
-  border-color: var(--valid);
 }
 
 section[title="love"] [data-theme="invalid"]:before {
@@ -424,46 +417,6 @@ body > nav ul:first-of-type li:nth-of-type(2) {
 @media (min-width: 992px) {
   body > nav ul:first-of-type li:nth-of-type(2) {
     display: inline;
-  }
-}
-
-/**
- * Docs: Code inside <article>
- */
-article pre {
-  margin-top: 2rem;
-  margin-bottom: -2rem;
-}
-
-@media (min-width: 576px) {
-  article pre {
-    padding: 2rem 2.5rem;
-    margin: -2.5rem;
-    margin-top: 2.5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  article pre {
-    padding: 2rem 3rem;
-    margin: -3rem;
-    margin-top: 3rem;
-  }
-}
-
-@media (min-width: 992px) {
-  article pre {
-    padding: 2rem 3.5rem;
-    margin: -3.5rem;
-    margin-top: 3.5rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  article pre {
-    padding: 2rem 4rem;
-    margin: -4rem;
-    margin-top: 4rem;
   }
 }
 

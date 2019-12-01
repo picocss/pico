@@ -1,0 +1,145 @@
+/**
+ * Card sectionning (<article> > header, footer|pre)
+ */
+
+article {
+  > header,
+  > footer {
+    background-color: var(--card-sections);
+  }
+  > header,
+  > footer,
+  > pre {
+    margin: -$spacing-gutter;
+    padding: $spacing-block $spacing-gutter;
+
+    @if map-get($breakpoints, "sm") and
+      map-get($spacing-factor, "sm") and
+      $enable-responsive-spacings {
+
+      @media (min-width: map-get($breakpoints, "sm")) {
+        margin: -$spacing-block*map-get($spacing-factor, "sm");
+        padding: $spacing-block ($spacing-block*map-get($spacing-factor, "sm"));
+      }
+    }
+
+    @if map-get($breakpoints, "md") and
+      map-get($spacing-factor, "md") and
+      $enable-responsive-spacings {
+
+      @media (min-width: map-get($breakpoints, "md")) {
+        margin: -$spacing-block*map-get($spacing-factor, "md");
+        padding: $spacing-block ($spacing-block*map-get($spacing-factor, "md"));
+      }
+    }
+
+    @if map-get($breakpoints, "lg") and
+      map-get($spacing-factor, "lg") and
+      $enable-responsive-spacings {
+
+      @media (min-width: map-get($breakpoints, "lg")) {
+        margin: -$spacing-block*map-get($spacing-factor, "lg");
+        padding: $spacing-block ($spacing-block*map-get($spacing-factor, "lg"));
+      }
+    }
+
+    @if map-get($breakpoints, "xl") and
+      map-get($spacing-factor, "xl") and
+      $enable-responsive-spacings {
+
+      @media (min-width: map-get($breakpoints, "xl")) {
+        margin: -$spacing-block*map-get($spacing-factor, "xl");
+        padding: $spacing-block ($spacing-block*map-get($spacing-factor, "xl"));
+      }
+    }
+  }
+  > header {
+    margin-top: -$spacing-gutter*2;
+    margin-bottom: $spacing-block;
+
+    @if map-get($breakpoints, "sm") and
+      map-get($spacing-factor, "sm") and
+      $enable-responsive-spacings {
+
+      @media (min-width: map-get($breakpoints, "sm")) {
+        margin-top: -($spacing-block*map-get($spacing-factor, "sm"));
+        margin-bottom: $spacing-block*map-get($spacing-factor, "sm");
+      }
+    }
+
+    @if map-get($breakpoints, "md") and
+      map-get($spacing-factor, "md") and
+      $enable-responsive-spacings {
+
+      @media (min-width: map-get($breakpoints, "md")) {
+        margin-top: -($spacing-block*map-get($spacing-factor, "md"));
+        margin-bottom: $spacing-block*map-get($spacing-factor, "md");
+      }
+    }
+
+    @if map-get($breakpoints, "lg") and
+      map-get($spacing-factor, "lg") and
+      $enable-responsive-spacings {
+
+      @media (min-width: map-get($breakpoints, "lg")) {
+        margin-top: -($spacing-block*map-get($spacing-factor, "lg"));
+        margin-bottom: $spacing-block*map-get($spacing-factor, "lg");
+      }
+    }
+
+    @if map-get($breakpoints, "xl") and
+      map-get($spacing-factor, "xl") and
+      $enable-responsive-spacings {
+
+      @media (min-width: map-get($breakpoints, "xl")) {
+        margin-top: -($spacing-block*map-get($spacing-factor, "xl"));
+        margin-bottom: $spacing-block*map-get($spacing-factor, "xl");
+      }
+    }
+  }
+  > footer,
+  > pre {
+    margin-top: $spacing-block;
+    margin-bottom: -$spacing-gutter*2;
+
+    @if map-get($breakpoints, "sm") and
+      map-get($spacing-factor, "sm") and
+      $enable-responsive-spacings {
+
+      @media (min-width: map-get($breakpoints, "sm")) {
+        margin-top: $spacing-block*map-get($spacing-factor, "sm");
+        margin-bottom: -($spacing-block*map-get($spacing-factor, "sm"));
+      }
+    }
+
+    @if map-get($breakpoints, "md") and
+      map-get($spacing-factor, "md") and
+      $enable-responsive-spacings {
+
+      @media (min-width: map-get($breakpoints, "md")) {
+        margin-top: $spacing-block*map-get($spacing-factor, "md");
+        margin-bottom: -($spacing-block*map-get($spacing-factor, "md"));
+      }
+    }
+
+    @if map-get($breakpoints, "lg") and
+      map-get($spacing-factor, "lg") and
+      $enable-responsive-spacings {
+
+      @media (min-width: map-get($breakpoints, "lg")) {
+        margin-top: $spacing-block*map-get($spacing-factor, "lg");
+        margin-bottom: -($spacing-block*map-get($spacing-factor, "lg"));
+      }
+    }
+
+    @if map-get($breakpoints, "xl") and
+      map-get($spacing-factor, "xl") and
+      $enable-responsive-spacings {
+
+      @media (min-width: map-get($breakpoints, "xl")) {
+        margin-top: $spacing-block*map-get($spacing-factor, "xl");
+        margin-bottom: -($spacing-block*map-get($spacing-factor, "xl"));
+      }
+    }
+  }
+}

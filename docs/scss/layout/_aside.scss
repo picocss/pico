@@ -53,9 +53,10 @@ main > aside {
     border-bottom: none;
 
     summary {
+      color: var(--h3);
+      font-size: 14px;
       font-weight: 300;
       text-transform: uppercase;
-      color: var(--h3);
 
       &::after {
         display: none;

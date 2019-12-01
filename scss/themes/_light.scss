@@ -25,7 +25,6 @@
   --primary-inverse:   #{$white};
 
   @if $enable-classes {
-
     // Secondary Call-to-Action and links
     --secondary:         #{$grey-500};
     --secondary-hover:   #{$grey-700};
@@ -55,16 +54,18 @@
 
   // Card
   --card-background:   #{$white};
+  --card-sections:     #{lighten($grey-50, 2%)};
   --card-shadow:       0 0.125rem 1rem #{rgba($grey-900, 0.04)}, 0 0.125rem 2rem #{rgba($grey-900, 0.08)}, 0 0 0 0.0625rem #{rgba($grey-900, 0.024)};
 
   // Code
   --code-background:   #{lighten($grey-50, 2%)};
-  --code-border:       #{$grey-100};
   --code-inlined:      #{$grey-50};
-  --code-color-1:      #{desaturate($red-700, 20%)};
-  --code-color-2:      #{desaturate($primary-600, 30%)};
+  --code-color-2:      #{hsl(330, 30%, 50%)};
+  --code-color-3:      #{hsl(185, 30%, 40%)};
+  --code-color-4:      #{hsl(40,  20%, 50%)};
+  --code-color-5:      #{mix($grey-300, $grey-400)};
 
   // Table
   --table-border:      #{rgba($grey-50, .75)};
-  --table-stripping:   #{rgba($grey-900,.033)};
+  --table-stripping:   #{rgba($grey-900,.02)};
 }

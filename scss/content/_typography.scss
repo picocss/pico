@@ -309,3 +309,8 @@ ins {
 del {
   color: var(--invalid);
 }
+
+// selection
+::selection {
+  background-color: var(--primary-focus);
+}

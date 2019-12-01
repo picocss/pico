@@ -7,6 +7,7 @@ article {
   margin-right: -$spacing-gutter;
   margin-left: -$spacing-gutter;
   padding: $spacing-block $spacing-gutter;
+  overflow: hidden;
   background: var(--card-background);
   box-shadow: var(--card-shadow);
 
@@ -52,5 +53,10 @@ article {
       margin: ($spacing-block*map-get($spacing-factor, "xl")) 0;
       padding: $spacing-block*map-get($spacing-factor, "xl");
     }
+  }
+
+  // Remove last-child margin bottom
+  > *:not(footer):not(pre):last-child {
+    margin-bottom: 0;
   }
 }

@@ -19,7 +19,7 @@
       off:        '<i>Turn off dark mode</i>'
     },
     target:       'body', // Button append in target
-    selector:    'button.theme-switcher',  // Button selector in Dom
+    selector:     'button.theme-switcher',  // Button selector in Dom
     currentTheme: systemColorScheme()
   };
 
@@ -101,8 +101,11 @@
 
     // Apply theme
     document.querySelector('html').setAttribute('data-theme', set);
-    document.querySelector(switcher.selector).innerHTML = label;
-    document.querySelector(switcher.selector).setAttribute('aria-label', stripTags(label));
+    var switchers = document.querySelectorAll(switcher.selector);
+    for (var i = 0; i < switchers.length; i++) {
+      switchers[i].innerHTML = label;
+      switchers[i].setAttribute('aria-label', stripTags(label));
+    }
     switcher.currentTheme = set;
   }
 

@@ -83,20 +83,12 @@ pre {
     background: var(--invalid);
     content: 'Bulky';
   }
-
-  pre {
-    border-color: var(--invalid);
-  }
 }
 
 [data-theme="valid"] {
   &:before {
     background: var(--valid);
     content: 'Great';
-  }
-
-  pre {
-    border-color: var(--valid);
   }
 }
 

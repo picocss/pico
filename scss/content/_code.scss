@@ -24,7 +24,7 @@ pre,
 code,
 kbd {
   background: var(--code-inlined);
-  color: var(--muted-text);
+  color: var(--code-color-1);
   font-size: 85%;
   font-weight: 400;
   line-height: 1;
@@ -66,7 +66,6 @@ pre {
   margin-left: -$spacing-gutter;
   padding: $spacing-block $spacing-gutter;
   overflow-x: auto;
-  border-left: .25rem solid var(--code-border);
   background: var(--code-background);
 
   @media (min-width: map-get($breakpoints, "sm")) {
@@ -88,20 +87,26 @@ code {
 
   // Tags
   b {
-    color: var(--code-color-1);
+    color: var(--code-color-2);
     font-weight: normal;
   }
 
   // Properties
   i {
-    color: var(--code-color-2);
+    color: var(--code-color-3);
     font-style: normal;
   }
 
   // Values
   u {
-    color: var(--text);
+    color: var(--code-color-4);
     text-decoration: none;
+  }
+
+  // Comments
+  em {
+    color: var(--code-color-5);
+    font-style: normal;
   }
 }
 

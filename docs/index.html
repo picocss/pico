@@ -113,7 +113,7 @@
             <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"css/pico.min.css"</u>&gt;</code></pre>
             <p>Starter template:</p>
 
-<pre><code>&lt;!doctype html&gt;
+<pre><code><em>&lt;!doctype html&gt;</em>
 &lt;<b>html</b> <i>lang</i>=<u>"en"</u>&gt;
   &lt;<b>head</b>&gt;
     &lt;<b>meta</b> <i>charset</i>=<u>"utf-8"</u>&gt;
@@ -211,18 +211,18 @@
 
             <p>SCSS:</p>
 
-<pre data-theme="generated"><code>// <span class="name">Custom colors</span>
+<pre><code><em>// <span class="name">Custom colors</em></span>
 <i>$primary-500</i>: <u class="c500">...</u>;
 <i>$primary-600</i>: <u class="c600">...</u>;
 <i>$primary-700</i>: <u class="c700">...</u>;
 
-// Pico library
+<em>// Pico library</em>
 <b>@import</b> <u>"path/pico"</u>;</code></pre>
 
             <p>CSS:</p>
 
-<pre data-theme="generated"><code>/* <span class="name"></span>Light theme (Default) */
-/* Can be forced with data-theme="light" */
+<pre><code><em>/* <span class="name"></span>Light theme (Default) */
+/* Can be forced with data-theme="light" */</em>
 <b>[data-theme=<u>"light"</u>]</b>,
 <b>:root:not([data-theme=<u>"dark"</u>])</b> {
   <i>--primary</i>:            <u class="c600">...</u>;
@@ -232,8 +232,8 @@
 }
 
 
-/* <span class="name"></span>Dark theme (Auto) */
-/* Automatically enabled if user has Dark mode enabled */
+<em>/* <span class="name"></span>Dark theme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */</em>
 <i>@media</i> only <b>screen</b> and <b>(prefers-color-scheme: <u>dark</u>)</b> {
   <b>:root:not([data-theme="light"])</b> {
     <i>--primary</i>:          <u class="c600">...</u>;
@@ -243,8 +243,8 @@
 }
 
 
-/* <span class="name"></span>Dark theme (Forced) */
-/* Enabled if forced with data-theme="dark" */
+<em>/* <span class="name"></span>Dark theme (Forced) */
+/* Enabled if forced with data-theme="dark" */</em>
 <b>[data-theme="<u>dark</u>"]</b> {
   <i>--primary</i>:            <u class="c600">...</u>;
   <i>--primary-hover</i>:      <u class="c500">...</u>;
@@ -264,7 +264,6 @@
               <h3>For wild HTML purists!</h3>
             </hgroup>
             <p>Pico provide a <code>.classless</code> version (<a href="https://picocss.com/examples/classless/">Example</a>).</p>
-            <p>Obviously this version do not include <code>.container</code>, <code>.container-fluid</code>, <code>.grid</code>, <code>.secondary</code>, <code>.contrast</code> and <code>.outline</code>.</p>
             <p>In this version, <code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code> and <code>&lt;<b>footer</b>&gt;</code> act as <a href="#containers">containers</a> to define a centered or a fluid viewport.</p>
             <p><strong>Usage:</strong></p>
             <p>Use the default <code>.classless</code> version if you need centered viewports:</p>
@@ -656,11 +655,11 @@
 <pre><code>
 &lt;<b>form</b>&gt;
 
-  &lt;!-- Grid --&gt;
+  <em>&lt;!-- Grid --&gt;</em>
   &lt;<b>section</b> <i>class</i>=<u>"grid"</u>&gt;
 
     &lt;<b>div</b>&gt;
-      &lt;!-- Markup example 1: input is inside label --&gt;
+      <em>&lt;!-- Markup example 1: input is inside label --&gt;</em>
       &lt;<b>label</b> <i>for</i>=<u>"firstname"</u>&gt;
         First name
         &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>id</i>=<u>"firstname"</u> <i>name</i>=<u>"firstname"</u> <i>placeholder</i>=<u>"First name"</u> <i>required</i>&gt;
@@ -676,12 +675,12 @@
 
   &lt;/<b>section</b>&gt;
 
-  &lt;!-- Markup example 2: input is after label --&gt;
+  <em>&lt;!-- Markup example 2: input is after label --&gt;</em>
   &lt;<b>label</b> <i>for</i>=<u>"email"</u>&gt;Email address&lt;/<b>label</b>&gt;
   &lt;<b>input</b> <i>type</i>=<u>"email"</u> <i>id</i>=<u>"email"</u> <i>name</i>=<u>"email"</u> <i>placeholder</i>=<u>"Email address"</u> <i>required</i>&gt;
   &lt;<b>small</b>&gt;We'll never share your email with anyone else.&lt;/<b>small</b>&gt;
 
-  &lt;!-- Button --&gt;
+  <em>&lt;!-- Button --&gt;</em>
   &lt;<b>button</b> <i>type</i>=<u>"submit"</u>&gt;Submit&lt;/<b>button</b>&gt;
 
 &lt;/<b>form</b>&gt;</code></pre>
@@ -748,14 +747,14 @@
                 </label>
               </fieldset>
 
-<pre><code>&lt;!-- Select --&gt;
+<pre><code><em>&lt;!-- Select --&gt;</em>
 &lt;<b>label</b> <i>for</i>=<u>"country"</u>&gt;Country&lt;/<b>label</b>&gt;
 &lt;<b>select</b> <i>id</i>=<u>"country</u>"&gt;
   &lt;<b>option</b> <i>selected</i>&gt;Choose...&lt;/<b>option</b>&gt;
   &lt;<b>option</b>&gt;...&lt;/<b>option</b>&gt;
 &lt;/<b>select</b>&gt;
 
-&lt;!-- Radios --&gt;
+<em>&lt;!-- Radios --&gt;</em>
 &lt;<b>fieldset</b>&gt;
   &lt;<b>legend</b>&gt;Gender&lt;/<b>legend</b>&gt;
   &lt;<b>label</b> <i>for</i>=<u>"male"</u>&gt;
@@ -772,7 +771,7 @@
   &lt;/<b>label</b>&gt;
 &lt;/<b>fieldset</b>&gt;
 
-&lt;!-- Checkbox --&gt;
+<em>&lt;!-- Checkbox --&gt;</em>
 &lt;<b>fieldset</b>&gt;
   &lt;<b>label</b> <i>for</i>=<u>"terms"</u>&gt;
     &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u> <i>id</i>=<u>"terms"</u> <i>name</i>=<u>"terms"</u>&gt;
@@ -780,7 +779,7 @@
   &lt;/<b>label</b>&gt;
 &lt;/<b>fieldset</b>&gt;
 
-&lt;!-- Switch --&gt;
+<em>&lt;!-- Switch --&gt;</em>
 &lt;<b>fieldset</b>&gt;
   &lt;<b>label</b> <i>for</i>=<u>"switch"</u>&gt;
     &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u> <i>id</i>=<u>"switch"</u> <i>name</i>=<u>"switch"</u> <i>role</i>=<u>"switch"</u>&gt;
@@ -840,6 +839,27 @@
 
 <pre><code>&lt;<b>article</b>&gt;
   I'm a card!
+&lt;/<b>article</b>&gt;</code></pre>
+
+            <p>You can use <code>&lt;<b>header</b>&gt;</code> and footer <code>&lt;<b>footer</b>&gt;</code> inside <code>&lt;<b>article</b>&gt;</code></p>
+            <article>
+              <header>
+                Header
+              </header>
+              Body
+              <footer>
+                Footer
+              </footer>
+            </article>
+
+<pre><code>&lt;<b>article</b>&gt;
+  &lt;<b>header</b>&gt;
+    Header
+  &lt;/<b>header</b>&gt;
+  Body
+  &lt;<b>footer</b>&gt;
+    Footer
+  &lt;/<b>footer</b>&gt;
 &lt;/<b>article</b>&gt;</code></pre>
 
           </section><!-- ./ Docs: Card -->
