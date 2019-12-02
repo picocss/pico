@@ -1052,6 +1052,7 @@ a.contrast[role="button"]:focus {
 button.outline,
 input.outline[type="submit"],
 a.outline[role="button"] {
+  border: 1px solid var(--primary);
   background-color: transparent;
   color: var(--primary);
 }
@@ -1063,6 +1064,7 @@ input.outline[type="submit"]:focus,
 a.outline[role="button"]:hover,
 a.outline[role="button"]:active,
 a.outline[role="button"]:focus {
+  border: 1px solid var(--primary-hover);
   color: var(--primary-hover);
 }
 
@@ -1070,6 +1072,7 @@ button.outline.secondary,
 input.outline.secondary[type="submit"],
 input.outline[type="reset"],
 a.outline.secondary[role="button"] {
+  border: 1px solid var(--secondary);
   background-color: transparent;
   color: var(--secondary);
 }
@@ -1084,6 +1087,7 @@ input.outline[type="reset"]:focus,
 a.outline.secondary[role="button"]:hover,
 a.outline.secondary[role="button"]:active,
 a.outline.secondary[role="button"]:focus {
+  border: 1px solid var(--secondary-hover);
   color: var(--secondary-hover);
 }
 
@@ -1098,6 +1102,7 @@ button.outline.contrast,
 input.outline.contrast[type="submit"],
 input.outline.contrast[type="reset"],
 a.outline.contrast[role="button"] {
+  border: 1px solid var(--contrast);
   background-color: transparent;
   color: var(--contrast);
 }
@@ -1112,6 +1117,7 @@ input.outline.contrast[type="reset"]:focus,
 a.outline.contrast[role="button"]:hover,
 a.outline.contrast[role="button"]:active,
 a.outline.contrast[role="button"]:focus {
+  border: 1px solid var(--contrast-hover);
   color: var(--contrast-hover);
 }
 
