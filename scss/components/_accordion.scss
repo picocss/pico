@@ -39,7 +39,10 @@ details {
       background-repeat: no-repeat;
       background-size: 1rem auto;
       content: '';
-      transition: transform $transition;
+
+      @if $enable-transitions {
+        transition: transform $transition;
+      }
     }
 
     &:focus {

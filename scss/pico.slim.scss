@@ -13,8 +13,11 @@
 // Enable responsive spacings for <header>, <main>, <footer>, <section>, <article>
 $enable-responsive-spacings: false;
 
-// Enable validation states for inputs
+// Enable validation states for <input>
 $enable-input-states: false;
+
+// Enable transitions for <a>, <button>, <input>, <details>
+$enable-transitions: false;
 
 
 // Pico Lib

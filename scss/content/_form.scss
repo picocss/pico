@@ -122,12 +122,15 @@ textarea {
   color: var(--text);
   font-weight: normal;
   vertical-align: middle;
-  transition:
-    background-color $transition,
-    border-color $transition,
-    color $transition,
-    border-color $transition,
-    box-shadow $transition;
+
+  @if $enable-transitions {
+    transition:
+      background-color $transition,
+      border-color $transition,
+      color $transition,
+      border-color $transition,
+      box-shadow $transition;
+    }
 
   &::placeholder {
     color: var(--muted-text);

@@ -502,30 +502,6 @@ h6 {
   font-size: 1rem;
 }
 
-header h1 {
-  font-size: 3rem;
-}
-
-header h2 {
-  font-size: 2.625rem;
-}
-
-header h3 {
-  font-size: 2.25rem;
-}
-
-header h4 {
-  font-size: 1.875rem;
-}
-
-header h5 {
-  font-size: 1.6875rem;
-}
-
-header h6 {
-  font-size: 1.5rem;
-}
-
 hgroup {
   margin-bottom: 1.5rem;
 }
@@ -852,9 +828,10 @@ label > textarea {
  */
 [type="checkbox"],
 [type="radio"] {
+  font-size: 1.125rem;
   display: inline-block;
-  width: 1rem;
-  height: 1rem;
+  width: 1em;
+  height: 1em;
   margin-right: .375rem;
   margin-bottom: 0.125rem;
   vertical-align: middle;
@@ -896,17 +873,17 @@ label > textarea {
 }
 
 [type="checkbox"][role="switch"] {
-  width: 1.85rem;
-  height: 1rem;
+  width: 1.85em;
+  height: 1em;
   border: 2px solid var(--input-border);
-  border-radius: 1rem;
+  border-radius: 1em;
   background-color: var(--input-border);
-  line-height: 1rem;
+  line-height: 1em;
 }
 
 [type="checkbox"][role="switch"]:before {
   display: block;
-  width: calc(1rem - 4px);
+  width: calc(1em - 4px);
   height: 100%;
   border-radius: 50%;
   background-color: var(--primary-inverse);
@@ -922,7 +899,7 @@ label > textarea {
 
 [type="checkbox"][role="switch"]:checked::before {
   margin-right: 0;
-  margin-left: calc(0.925rem - 2px);
+  margin-left: calc(0.925em - 2px);
 }
 
 /**
@@ -971,8 +948,8 @@ a[role="button"] {
 button,
 input[type="submit"],
 a[role="button"] {
+  border: 1px solid transparent;
   padding: 0.75rem 1rem;
-  border: 1px solid var(--primary);
   border-radius: 0.25rem;
   outline: none;
   background-color: var(--primary);
@@ -982,7 +959,7 @@ a[role="button"] {
   line-height: 1.5;
   text-align: center;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 button:hover, button:active, button:focus,
@@ -992,7 +969,6 @@ input[type="submit"]:focus,
 a[role="button"]:hover,
 a[role="button"]:active,
 a[role="button"]:focus {
-  border: 1px solid var(--primary-hover);
   background-color: var(--primary-hover);
 }
 
@@ -1021,7 +997,6 @@ button.secondary,
 input.secondary[type="submit"],
 input[type="reset"],
 a.secondary[role="button"] {
-  border: 1px solid var(--secondary);
   background-color: var(--secondary);
   color: var(--secondary-inverse);
 }
@@ -1036,7 +1011,6 @@ input[type="reset"]:focus,
 a.secondary[role="button"]:hover,
 a.secondary[role="button"]:active,
 a.secondary[role="button"]:focus {
-  border: 1px solid var(--secondary-hover);
   background-color: var(--secondary-hover);
 }
 
@@ -1051,7 +1025,6 @@ button.contrast,
 input.contrast[type="submit"],
 input.contrast[type="reset"],
 a.contrast[role="button"] {
-  border: 1px solid var(--contrast);
   background-color: var(--contrast);
   color: var(--contrast-inverse);
 }
@@ -1066,7 +1039,6 @@ input.contrast[type="reset"]:focus,
 a.contrast[role="button"]:hover,
 a.contrast[role="button"]:active,
 a.contrast[role="button"]:focus {
-  border: 1px solid var(--contrast-hover);
   background-color: var(--contrast-hover);
 }
 
@@ -1080,7 +1052,6 @@ a.contrast[role="button"]:focus {
 button.outline,
 input.outline[type="submit"],
 a.outline[role="button"] {
-  border: 1px solid var(--primary);
   background-color: transparent;
   color: var(--primary);
 }
@@ -1092,7 +1063,6 @@ input.outline[type="submit"]:focus,
 a.outline[role="button"]:hover,
 a.outline[role="button"]:active,
 a.outline[role="button"]:focus {
-  border: 1px solid var(--primary-hover);
   color: var(--primary-hover);
 }
 
@@ -1100,7 +1070,6 @@ button.outline.secondary,
 input.outline.secondary[type="submit"],
 input.outline[type="reset"],
 a.outline.secondary[role="button"] {
-  border: 1px solid var(--secondary);
   background-color: transparent;
   color: var(--secondary);
 }
@@ -1115,7 +1084,6 @@ input.outline[type="reset"]:focus,
 a.outline.secondary[role="button"]:hover,
 a.outline.secondary[role="button"]:active,
 a.outline.secondary[role="button"]:focus {
-  border: 1px solid var(--secondary-hover);
   color: var(--secondary-hover);
 }
 
@@ -1130,7 +1098,6 @@ button.outline.contrast,
 input.outline.contrast[type="submit"],
 input.outline.contrast[type="reset"],
 a.outline.contrast[role="button"] {
-  border: 1px solid var(--contrast);
   background-color: transparent;
   color: var(--contrast);
 }
@@ -1145,7 +1112,6 @@ input.outline.contrast[type="reset"]:focus,
 a.outline.contrast[role="button"]:hover,
 a.outline.contrast[role="button"]:active,
 a.outline.contrast[role="button"]:focus {
-  border: 1px solid var(--contrast-hover);
   color: var(--contrast-hover);
 }
 

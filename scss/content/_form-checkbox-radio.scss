@@ -5,9 +5,10 @@
 // Checkboxes & Radios
 [type="checkbox"],
 [type="radio"] {
+  font-size: 1.125rem;
   display: inline-block;
-  width: 1rem;
-  height: 1rem;
+  width: 1em;
+  height: 1em;
   margin-right: .375rem;
   margin-bottom: $spacing-label-input;
   vertical-align: middle;
@@ -51,8 +52,8 @@
 [type="checkbox"][role="switch"] {
 
   // Config
-  $switch-height:      1rem;
-  $switch-width:       1.85rem;
+  $switch-height:      1em;
+  $switch-width:       1.85em;
   $switch-border:      2px;
   $switch-transition:  .1s ease-in-out;
 
@@ -71,7 +72,10 @@
     border-radius: 50%;
     background-color: var(--primary-inverse);
     content: '';
-    transition: margin $switch-transition;
+
+    @if $enable-transitions {
+      transition: margin $switch-transition;
+    }
   }
 
   &:checked {

@@ -23,8 +23,11 @@ $enable-responsive-typography: true !default;
 // .classless version if disabled
 $enable-classes: true !default;
 
-// Enable validation states for inputs
+// Enable validation states for <input>
 $enable-input-states: true !default;
+
+// Enable transitions for <a>, <button>, <input>, <details>
+$enable-transitions: true !default;
 
 
 // Spacings

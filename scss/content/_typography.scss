@@ -67,11 +67,14 @@ a {
   background-color: transparent; // 1
   color: var(--primary);
   text-decoration: none;
-  transition:
-    background-color $transition,
-    color $transition,
-    text-decoration $transition,
-    box-shadow $transition;
+
+  @if $enable-transitions {
+    transition:
+      background-color $transition,
+      color $transition,
+      text-decoration $transition,
+      box-shadow $transition;
+  }
 
   &:hover,
   &:active,
@@ -167,33 +170,6 @@ h5 {
 h6 {
   color: var(--h6);
   font-size: 1rem;
-}
-
-// Increase headings font size inside <header>
-header {
-  h1 {
-    font-size: 2rem*1.5;
-  }
-
-  h2 {
-    font-size: 1.75rem*1.5;
-  }
-
-  h3 {
-    font-size: 1.5rem*1.5;
-  }
-
-  h4 {
-    font-size: 1.25rem*1.5;
-  }
-
-  h5 {
-    font-size: 1.125rem*1.5;
-  }
-
-  h6 {
-    font-size: 1rem*1.5;
-  }
 }
 
 // Multi-level heading

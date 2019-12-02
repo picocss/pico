@@ -60,8 +60,8 @@ a[role="button"] {
 button,
 input[type="submit"],
 a[role="button"] {
+  border: 1px solid transparent;
   padding: $spacing-input-button;
-  border: 1px solid var(--primary);
   border-radius: $round;
   outline: none;
   background-color: var(--primary);
@@ -71,16 +71,17 @@ a[role="button"] {
   line-height: $line-height;
   text-align: center;
   cursor: pointer;
-  transition:
-    background-color $transition,
-    border-color $transition,
-    color $transition,
-    box-shadow $transition;
+
+  @if $enable-transitions {
+    transition:
+      background-color $transition,
+      color $transition,
+      box-shadow $transition;
+  }
 
   &:hover,
   &:active,
   &:focus {
-    border: 1px solid var(--primary-hover);
     background-color: var(--primary-hover);
   }
 
