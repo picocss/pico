@@ -95,7 +95,7 @@ div[role="document"] > section::before {
   }
 }
 
-div[role="document"] section a[href^="https://"]:not([href*="https://picocss.com"]):not([role])::after {
+div[role="document"] section a[href*="//"]:not([href*="https://picocss.com"]):not([role])::after {
   display: inline-block;
   width: 1rem;
   height: 1rem;

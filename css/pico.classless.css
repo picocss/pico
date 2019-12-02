@@ -1202,7 +1202,7 @@ article {
   }
 }
 
-article > *:not(footer):not(pre):last-child {
+article > *:not(header):not(footer):not(pre):last-child {
   margin-bottom: 0;
 }
 

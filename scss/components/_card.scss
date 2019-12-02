@@ -56,7 +56,7 @@ article {
   }
 
   // Remove last-child margin bottom
-  > *:not(footer):not(pre):last-child {
+  > *:not(header):not(footer):not(pre):last-child {
     margin-bottom: 0;
   }
 }

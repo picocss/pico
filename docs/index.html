@@ -38,10 +38,10 @@
     </nav><!-- ./ Nav -->
 
     <!-- Main -->
-    <main class="container">
+    <main class="container" id="docs">
 
         <!-- Aside -->
-        <aside id="docs">
+        <aside>
           <nav>
             <h1>Documentation</h1>
             <details open>
@@ -82,13 +82,7 @@
               <summary>Extend</summary>
               <ul>
                 <li>
-                  <a href="#love" class="secondary">
-                    We
-                    <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1rem" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                    </svg>
-                    .classes
-                  </a>
+                  <a href="#love" class="secondary">We love .classes</a>
                 </li>
               </ul>
             </details>
@@ -254,6 +248,7 @@
 
             <p>Colors can be modified in <a href="https://github.com/picocss/pico/tree/master/scss/themes">scss/themes/</a>.</p>
             <p>Spacings, Typography, Rounded, Transitions, Breakpoints, etc. can be modified in <a href="https://github.com/picocss/pico/blob/master/scss/_variables.scss">scss/_variables.scss</a>.</p>
+            <p>You can also compile pico with only the modules you need to generate a slimer version. Example in <a href="https://github.com/picocss/pico/blob/master/scss/pico.slim.scss">scss/pico.slim.scss</a>.</p>
           </section><!-- ./ Docs: Customization -->
 
 
@@ -360,9 +355,9 @@
                 &nbsp;More about grids
               </summary>
               <p>As Pico focus on native HTML elements, we kept this grid system very minimalist.</p>
-              <p>A full grid system in flexbox, with all the ordering, offsetting and breakpoints utilities can be +140% of the whole Pico library size. Not really in the <em>Pico spirit</em>.</p>
-              <p>If you need a quick way to prototyping or build a complex layouts, you can look about <strong>Flexbox grid layouts</strong>. For example: <a href="https://getbootstrap.com/docs/4.2/getting-started/contents/">Bootstrap Grid System only</a> or <a href="https://grid.layoutit.com/">Flexbox Grid</a>.</p>
-              <p>If you need a light and custom grid, you can look about <strong>CSS Grid Generators</strong>. For example: <a href="https://cssgrid-generator.netlify.com/">CSS Grid Generator</a>, <a href="https://grid.layoutit.com/">Layoutit!</a> or <a href="https://griddy.io/">Griddy</a>.</p>
+              <p>A full grid system in flexbox, with all the ordering, offsetting and breakpoints utilities can be +140% of the whole Pico library size. Not really in the Pico spirit.</p>
+              <p>If you need a quick way to prototyping or build a complex layouts, you can look about <strong>Flexbox grid layouts</strong>. For example: <a href="https://getbootstrap.com/docs/4.2/getting-started/contents/">Bootstrap Grid System only</a> or <a href="http://flexboxgrid.com/">Flexbox Grid</a>.</p>
+              <p>If you need a light and custom grid, you can look about <strong>CSS Grid Generators</strong>. For example: <a href="https://cssgrid-generator.netlify.com/">CSS Grid Generator</a>, <a href="http://grid.layoutit.com/">Layoutit!</a> or <a href="https://griddy.io/">Griddy</a>.</p>
               <p>Alternatively you can <a href="https://learncssgrid.com/">Learn about CSS Grid</a>.</p>
             </details>
 
@@ -816,9 +811,10 @@
   &lt;<b>p</b>&gt;...&lt;/<b>p</b>&gt;
 &lt;/<b>details</b>&gt;
 
-&lt;<b>details</b>&gt;
+&lt;<b>details</b> <i>open</i>&gt;
   &lt;<b>summary</b>&gt;Collapsible elements 2&lt;/<b>summary</b>&gt;
   &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;...&lt;/<b>li</b>&gt;
     &lt;<b>li</b>&gt;...&lt;/<b>li</b>&gt;
   &lt;/<b>ul</b>&gt;
 &lt;/<b>details</b>&gt;</code></pre>
@@ -836,30 +832,16 @@
             <article>
               I'm a card!
             </article>
-
-<pre><code>&lt;<b>article</b>&gt;
-  I'm a card!
-&lt;/<b>article</b>&gt;</code></pre>
-
+            <pre><code>&lt;<b>article</b>&gt;I'm a card!&lt;/<b>article</b>&gt;</code></pre>
             <p>You can use <code>&lt;<b>header</b>&gt;</code> and footer <code>&lt;<b>footer</b>&gt;</code> inside <code>&lt;<b>article</b>&gt;</code></p>
             <article>
-              <header>
-                Header
-              </header>
               Body
-              <footer>
-                Footer
-              </footer>
+              <footer>Footer</footer>
             </article>
 
 <pre><code>&lt;<b>article</b>&gt;
-  &lt;<b>header</b>&gt;
-    Header
-  &lt;/<b>header</b>&gt;
   Body
-  &lt;<b>footer</b>&gt;
-    Footer
-  &lt;/<b>footer</b>&gt;
+  &lt;<b>footer</b>&gt;Footer&lt;/<b>footer</b>&gt;
 &lt;/<b>article</b>&gt;</code></pre>
 
           </section><!-- ./ Docs: Card -->
@@ -982,16 +964,7 @@
 
           <!-- Love -->
           <section id="love">
-            <hgroup>
-              <h2>
-                We
-                <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1.75rem" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg>
-                <code>.classes</code>
-              </h2>
-            </hgroup>
-
+            <h2>We love <code>.classes</code></h2>
             <p>As a starting point, Pico chose to be as neutral and semantic as possible using very few <code>.classes</code>.</p>
             <p>But off course, <code>.classes</code> are not a bad practice at all.</p>
             <p>Feel free to use <em>modifiers</em>.</p>
@@ -1000,7 +973,7 @@
 <pre><code>&lt;<b>button</b> <i>class</i>=<u>"warning"</u>&gt;Action&lt;/<b>button</b>&gt;<br></code></pre>
 
             </section>
-            <p>Just try to keep your HTML clean and semantic to keep the <em>Pico spirit</em>.</p>
+            <p>Just try to keep your HTML clean and semantic to keep the Pico spirit.</p>
             <section data-theme="invalid">
 
 <pre><code>&lt;<b>button</b> <i>class</i>=<u>"button-red margin-large padding-medium"</u>&gt;Action&lt;/<b>button</b>&gt;<br></code></pre>

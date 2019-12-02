@@ -6,8 +6,19 @@
  * You can export only the modules you need
  */
 
+
+// Config
+// --------------------
+
+// Enable responsive spacings for <header>, <main>, <footer>, <section>, <article>
 $enable-responsive-spacings: false;
+
+// Enable validation states for inputs
 $enable-input-states: false;
+
+
+// Pico Lib
+// --------------------
 
 // Config
 @import "variables";
