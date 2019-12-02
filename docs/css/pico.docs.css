@@ -2,8 +2,7 @@
  * Pico: Customs styles for Docs
  */
 /**
- * Light theme (Default) [Additions for docs]
- * Can be forced with data-theme="light"
+ * Theme: Additions for docs
  */
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
@@ -11,10 +10,6 @@
   --nav-border:     rgba(115, 130, 140, 0.2);
 }
 
-/**
- * Dark theme (Auto) [Additions for docs]
- * Automatically enabled if user has Dark mode enabled
- */
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --nav-background: rgba(16, 24, 30, 0.8);
@@ -22,10 +17,6 @@
   }
 }
 
-/**
- * Dark theme (Forced) [Additions for docs]
- * Enabled if forced with data-theme="dark"
- */
 [data-theme="dark"] {
   --nav-background: rgba(16, 24, 30, 0.8);
   --nav-border:     rgba(115, 130, 140, 0.2);

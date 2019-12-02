@@ -3,8 +3,7 @@
  * Copyright 2019 - Licensed under MIT
  */
 /**
- * Light theme (Default)
- * Can be forced with data-theme="light"
+ * Theme: default
  */
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
@@ -20,6 +19,15 @@
   --primary-hover:     #08769b;
   --primary-focus:     rgba(16, 149, 193, 0.125);
   --primary-inverse:   #FFF;
+  --secondary:         #73828c;
+  --secondary-hover:   #415462;
+  --secondary-focus:   rgba(115, 130, 140, 0.125);
+  --secondary-inverse: #FFF;
+  --contrast:          #2c3d49;
+  --contrast-hover:    #0d1419;
+  --contrast-focus:    rgba(115, 130, 140, 0.125);
+  --contrast-border:   rgba(255, 223, 128, 0.5);
+  --contrast-inverse:  #FFF;
   --input-background:  #FFF;
   --input-border:      #c8d1d8;
   --valid:             #288a6a;
@@ -34,18 +42,15 @@
   --card-shadow:       0 0.125rem 1rem rgba(27, 40, 50, 0.04), 0 0.125rem 2rem rgba(27, 40, 50, 0.08), 0 0 0 0.0625rem rgba(27, 40, 50, 0.024);
   --code-background:   #f3f5f7;
   --code-inlined:      #edf0f3;
-  --code-color-2:      #a65980;
-  --code-color-3:      #478085;
+  --code-color-1:      #73828c;
+  --code-color-2:      #b34d80;
+  --code-color-3:      #3d888f;
   --code-color-4:      #998866;
   --code-color-5:      #96a4ae;
   --table-border:      rgba(237, 240, 243, 0.75);
   --table-stripping:   rgba(27, 40, 50, 0.02);
 }
 
-/**
- * Dark theme (Auto)
- * Automatically enabled if user has Dark mode enabled
- */
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --background:        #10181e;
@@ -60,6 +65,15 @@
     --primary-hover:     #1ab3e6;
     --primary-focus:     rgba(16, 149, 193, 0.25);
     --primary-inverse:   #FFF;
+    --secondary:         #596b78;
+    --secondary-hover:   #73828c;
+    --secondary-focus:   rgba(89, 107, 120, 0.25);
+    --secondary-inverse: #FFF;
+    --contrast:          #d5dce2;
+    --contrast-hover:    #FFF;
+    --contrast-focus:    rgba(89, 107, 120, 0.25);
+    --contrast-border:   rgba(255, 223, 128, 0.33);
+    --contrast-inverse:  #10181e;
     --input-background:  #10181e;
     --input-border:      #374956;
     --valid:             #1f7a5c;
@@ -84,10 +98,6 @@
   }
 }
 
-/**
- * Dark theme (Forced)
- * Enabled if forced with data-theme="dark"
- */
 [data-theme="dark"] {
   --background:        #10181e;
   --text:              #a2afb9;
@@ -101,6 +111,15 @@
   --primary-hover:     #1ab3e6;
   --primary-focus:     rgba(16, 149, 193, 0.25);
   --primary-inverse:   #FFF;
+  --secondary:         #596b78;
+  --secondary-hover:   #73828c;
+  --secondary-focus:   rgba(89, 107, 120, 0.25);
+  --secondary-inverse: #FFF;
+  --contrast:          #d5dce2;
+  --contrast-hover:    #FFF;
+  --contrast-focus:    rgba(89, 107, 120, 0.25);
+  --contrast-border:   rgba(255, 223, 128, 0.33);
+  --contrast-inverse:  #10181e;
   --input-background:  #10181e;
   --input-border:      #374956;
   --valid:             #1f7a5c;
@@ -732,6 +751,24 @@ select:not([multiple]) {
   background-size: 1rem auto;
 }
 
+form small {
+  color: var(--muted-text);
+}
+
+input + small {
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+}
+
+label > input:not([type="checkbox"]):not([type="radio"]),
+label > select,
+label > textarea {
+  margin-top: 0.125rem;
+}
+
+/**
+ * Form elements
+ */
 [type="checkbox"],
 [type="radio"] {
   display: inline-block;
@@ -805,21 +842,6 @@ select:not([multiple]) {
 [type="checkbox"][role="switch"]:checked::before {
   margin-right: 0;
   margin-left: calc(0.925rem - 2px);
-}
-
-form small {
-  color: var(--muted-text);
-}
-
-input + small {
-  margin-top: -1rem;
-  margin-bottom: 1.5rem;
-}
-
-label > input:not([type="checkbox"]):not([type="radio"]),
-label > select,
-label > textarea {
-  margin-top: 0.125rem;
 }
 
 /**
@@ -932,7 +954,6 @@ td {
 th,
 thead td {
   color: var(--text);
-  font-weight: bolder;
   font-size: 1rem;
 }
 
@@ -1186,7 +1207,7 @@ article > *:not(footer):not(pre):last-child {
 }
 
 /**
- * Card sectionning (<article> > header, footer|pre)
+ * Card sectionning (<article> > header, footer, pre)
  */
 article > header,
 article > footer {

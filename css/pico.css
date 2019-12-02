@@ -3,8 +3,7 @@
  * Copyright 2019 - Licensed under MIT
  */
 /**
- * Light theme (Default)
- * Can be forced with data-theme="light"
+ * Theme: default
  */
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
@@ -43,18 +42,15 @@
   --card-shadow:       0 0.125rem 1rem rgba(27, 40, 50, 0.04), 0 0.125rem 2rem rgba(27, 40, 50, 0.08), 0 0 0 0.0625rem rgba(27, 40, 50, 0.024);
   --code-background:   #f3f5f7;
   --code-inlined:      #edf0f3;
-  --code-color-2:      #a65980;
-  --code-color-3:      #478085;
+  --code-color-1:      #73828c;
+  --code-color-2:      #b34d80;
+  --code-color-3:      #3d888f;
   --code-color-4:      #998866;
   --code-color-5:      #96a4ae;
   --table-border:      rgba(237, 240, 243, 0.75);
   --table-stripping:   rgba(27, 40, 50, 0.02);
 }
 
-/**
- * Dark theme (Auto)
- * Automatically enabled if user has Dark mode enabled
- */
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --background:        #10181e;
@@ -102,10 +98,6 @@
   }
 }
 
-/**
- * Dark theme (Forced)
- * Enabled if forced with data-theme="dark"
- */
 [data-theme="dark"] {
   --background:        #10181e;
   --text:              #a2afb9;
@@ -840,6 +832,24 @@ select:not([multiple]) {
   background-size: 1rem auto;
 }
 
+form small {
+  color: var(--muted-text);
+}
+
+input + small {
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+}
+
+label > input:not([type="checkbox"]):not([type="radio"]),
+label > select,
+label > textarea {
+  margin-top: 0.125rem;
+}
+
+/**
+ * Form elements
+ */
 [type="checkbox"],
 [type="radio"] {
   display: inline-block;
@@ -913,21 +923,6 @@ select:not([multiple]) {
 [type="checkbox"][role="switch"]:checked::before {
   margin-right: 0;
   margin-left: calc(0.925rem - 2px);
-}
-
-form small {
-  color: var(--muted-text);
-}
-
-input + small {
-  margin-top: -1rem;
-  margin-bottom: 1.5rem;
-}
-
-label > input:not([type="checkbox"]):not([type="radio"]),
-label > select,
-label > textarea {
-  margin-top: 0.125rem;
 }
 
 /**
@@ -1182,7 +1177,6 @@ td {
 th,
 thead td {
   color: var(--text);
-  font-weight: bolder;
   font-size: 1rem;
 }
 
@@ -1436,7 +1430,7 @@ article > *:not(footer):not(pre):last-child {
 }
 
 /**
- * Card sectionning (<article> > header, footer|pre)
+ * Card sectionning (<article> > header, footer, pre)
  */
 article > header,
 article > footer {

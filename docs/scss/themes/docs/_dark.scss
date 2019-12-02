@@ -1,8 +1,5 @@
-/**
- * Dark theme (Auto) [Additions for docs]
- * Automatically enabled if user has Dark mode enabled
- */
-
+// Dark theme (Auto) [Additions for docs]
+// Automatically enabled if user has Dark mode enabled
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --nav-background: #{rgba(darken($grey-900, 6%), .8)};
@@ -12,11 +9,8 @@
 
 
 
-/**
- * Dark theme (Forced) [Additions for docs]
- * Enabled if forced with data-theme="dark"
- */
-
+// Dark theme (Forced) [Additions for docs]
+// Enabled if forced with data-theme="dark"
 [data-theme="dark"] {
   --nav-background: #{rgba(darken($grey-900, 6%), .8)};
   --nav-border:     #{rgba($grey-500, .2)};

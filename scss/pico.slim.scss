@@ -1,0 +1,41 @@
+/*!
+ * Pico.css v0.1.0 (https://picocss.com)
+ * Copyright 2019 - Licensed under MIT
+ *
+ * Slim version example
+ * You can export only the modules you need
+ */
+
+$enable-responsive-spacings: false;
+$enable-input-states: false;
+
+// Config
+@import "variables";
+
+// Theming
+@import "themes/default";
+
+// Layout
+@import "layout/document";                // html
+@import "layout/sectioning";              // body, header, main, footer
+@import "layout/container";               // .container, .container-fluid
+// @import "layout/section";              // section
+@import "layout/grid";                    // .grid
+@import "layout/scroller";                // figure
+
+// Content
+@import "content/typography";             // a, headings, p, ul, blockquote ...
+@import "content/form";                   // label, input, select, ...
+@import "content/form-checkbox-radio";    // type=checkbox, type=radio, role=switch
+@import "content/button";                 // button, a[role=button], ...
+// @import "content/button-styles";       // .secondary, .contrast, .outline
+@import "content/table";                  // table, tr, td, ...
+// @import "content/code";                // pre, code, ...
+// @import "content/miscs";               // hr, progress, template, [hidden]
+
+// Components
+// @import "components/accordion";        // details, summary
+// @import "components/card";             // article
+// @import "components/card-sectioning";  // article > header, footer, pre
+// @import "components/nav";              // nav
+// @import "components/tooltip";          // data-tooltip

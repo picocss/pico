@@ -3,12 +3,10 @@
  */
 
 // Config
-@import "../../scss/colors";
 @import "../../scss/variables";
 
 // Theming
-@import "themes/light";
-@import "themes/dark";
+@import "themes/docs";
 
 // Layout
 @import "layout/main";
@@ -21,5 +19,4 @@
 
 // Components
 @import "components/nav";
-//@import "components/card-code";
 @import "components/theme-switcher";

@@ -171,7 +171,6 @@ h6 {
 
 // Increase headings font size inside <header>
 header {
-
   h1 {
     font-size: 2rem*1.5;
   }
@@ -258,6 +257,7 @@ ol {
     margin-bottom: $spacing-typography/2;
   }
 }
+
 ul li {
   list-style: square;
 }
@@ -305,6 +305,7 @@ ins {
   color: var(--valid);
   text-decoration: none;
 }
+
 // del
 del {
   color: var(--invalid);

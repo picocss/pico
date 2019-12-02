@@ -1,8 +1,5 @@
-/**
- * Light theme (Default)
- * Can be forced with data-theme="light"
- */
-
+// Light theme (Default)
+// Can be forced with data-theme="light"
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
 
@@ -24,20 +21,18 @@
   --primary-focus:     #{rgba($primary-600, .125)};
   --primary-inverse:   #{$white};
 
-  @if $enable-classes {
-    // Secondary Call-to-Action and links
-    --secondary:         #{$grey-500};
-    --secondary-hover:   #{$grey-700};
-    --secondary-focus:   #{rgba($grey-500, .125)};
-    --secondary-inverse: #{$white};
+  // Secondary Call-to-Action, links and kbd
+  --secondary:         #{$grey-500};
+  --secondary-hover:   #{$grey-700};
+  --secondary-focus:   #{rgba($grey-500, .125)};
+  --secondary-inverse: #{$white};
 
-    // Contrast Call-to-Action and Tooltips
-    --contrast:          #{$grey-800};
-    --contrast-hover:    #{mix($grey-900, $black)};
-    --contrast-focus:    #{rgba($grey-500, .125)};
-    --contrast-border:   #{rgba($amber-200, .5)}; // For links
-    --contrast-inverse:  #{$white};
-  }
+  // Contrast Call-to-Action and Tooltips
+  --contrast:          #{$grey-800};
+  --contrast-hover:    #{mix($grey-900, $black)};
+  --contrast-focus:    #{rgba($grey-500, .125)};
+  --contrast-border:   #{rgba($amber-200, .5)}; // For links
+  --contrast-inverse:  #{$white};
 
   // Form elements
   --input-background:  #{$white};
@@ -60,8 +55,9 @@
   // Code
   --code-background:   #{lighten($grey-50, 2%)};
   --code-inlined:      #{$grey-50};
-  --code-color-2:      #{hsl(330, 30%, 50%)};
-  --code-color-3:      #{hsl(185, 30%, 40%)};
+  --code-color-1:      #{$grey-500)};
+  --code-color-2:      #{hsl(330, 40%, 50%)};
+  --code-color-3:      #{hsl(185, 40%, 40%)};
   --code-color-4:      #{hsl(40,  20%, 50%)};
   --code-color-5:      #{mix($grey-300, $grey-400)};
 
