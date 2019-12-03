@@ -250,17 +250,8 @@ mark {
 blockquote {
   display: block;
   margin: ($spacing-typography*2) 0;
-  margin-right: -$spacing-gutter;
-  margin-left: -$spacing-gutter;
   padding: $spacing-gutter;
   border-left: .25rem solid var(--muted-border);
-
-  @if map-get($breakpoints, "sm") {
-    @media (min-width: map-get($breakpoints, "sm")) {
-      margin-right: 0;
-      margin-left: 0;
-    }
-  }
 
   footer {
     margin-top: $spacing-typography/2;

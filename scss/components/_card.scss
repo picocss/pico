@@ -3,11 +3,10 @@
  */
 
 article {
-  margin: $spacing-block;
-  margin-right: -$spacing-gutter;
-  margin-left: -$spacing-gutter;
+  margin: $spacing-block 0;
   padding: $spacing-block $spacing-gutter;
   overflow: hidden;
+  border-radius: $round;
   background: var(--card-background);
   box-shadow: var(--card-shadow);
 
@@ -21,7 +20,6 @@ article {
         margin: $spacing-block 0;
         padding: $spacing-block;
       }
-      border-radius: $round;
     }
   }
 

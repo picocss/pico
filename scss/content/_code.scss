@@ -62,16 +62,10 @@ kbd {
 
 pre {
   display: block;
-  margin-right: -$spacing-gutter;
-  margin-left: -$spacing-gutter;
+  margin-bottom: $spacing-block;
   padding: $spacing-block $spacing-gutter;
   overflow-x: auto;
   background: var(--code-background);
-
-  @media (min-width: map-get($breakpoints, "sm")) {
-    margin-right: 0;
-    margin-left: 0;
-  }
 
   > code {
     display: block;

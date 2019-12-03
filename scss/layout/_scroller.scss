@@ -5,25 +5,12 @@
 // Wrapper to make any content responsive across all viewports
 figure {
   display: block;
-  margin-right: -$spacing-gutter;
-  margin-left: -$spacing-gutter;
+  margin:0;
   padding: 0;
   overflow-x: auto;
 
   figcaption {
+    padding: ($spacing-gutter/2) 0;
     color: var(--muted-text);
-    font-size: 87.5%;
-    padding: ($spacing-gutter/2) $spacing-gutter;
-  }
-
-  @if map-get($breakpoints, "sm") {
-    @media (min-width: map-get($breakpoints, "sm")) {
-      margin-right: 0;
-      margin-left: 0;
-
-      figcaption {
-        padding: ($spacing-gutter/2) 0;
-      }
-    }
   }
 }

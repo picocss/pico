@@ -328,19 +328,12 @@ a[role=button] {
   display: block;
   position: absolute;
   top: 0;
-  right: -1rem;
+  right: 0;
   padding: .375rem .75rem;
   border-radius: 0;
   color: var(--primary-inverse);
   font-size: 14px;
   line-height: 1;
-}
-
-@media (min-width: 576px) {
-  [data-theme="invalid"]:before,
-  [data-theme="valid"]:before {
-    right: 0;
-  }
 }
 
 @media (min-width: 992px) {
@@ -351,24 +344,19 @@ a[role=button] {
   }
 }
 
-[data-theme="invalid"] pre,
-[data-theme="valid"] pre {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+[data-theme="invalid"] code,
+[data-theme="valid"] code {
+  padding: 1rem 0;
 }
 
 [data-theme="invalid"]:before {
   background: var(--invalid);
-  content: 'Bulky';
+  content: 'Not so great';
 }
 
 [data-theme="valid"]:before {
   background: var(--valid);
   content: 'Great';
-}
-
-section[title="love"] [data-theme="invalid"]:before {
-  content: 'Not so great';
 }
 
 /**

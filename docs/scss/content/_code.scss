@@ -53,16 +53,12 @@ pre {
     display: block;
     position: absolute;
     top: 0;
-    right: -$spacing-gutter;
+    right: 0;
     padding: .375rem .75rem;
     border-radius: 0;
     color: var(--primary-inverse);
     font-size: 14px;
     line-height: 1;
-
-    @media (min-width: map-get($breakpoints, "sm")) {
-      right: 0;
-    }
 
     @media (min-width: map-get($breakpoints, "lg")) {
       top: $spacing-gutter;
@@ -71,9 +67,8 @@ pre {
   }
 
   // Spacing for Valid & Invalid badge
-  pre {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+  code {
+    padding: 1rem 0;
   }
 }
 
@@ -81,7 +76,7 @@ pre {
 [data-theme="invalid"] {
   &:before {
     background: var(--invalid);
-    content: 'Bulky';
+    content: 'Not so great';
   }
 }
 
@@ -89,11 +84,5 @@ pre {
   &:before {
     background: var(--valid);
     content: 'Great';
-  }
-}
-
-section[title="love"] [data-theme="invalid"] {
-  &:before {
-    content: 'Not so great';
   }
 }
