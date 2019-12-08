@@ -547,9 +547,9 @@
             </article>
             <p>Links come with <code>.secondary</code> and <code>.contrast</code> styles.</p>
             <article>
-              <a href="#">Primary</a><br>
-              <a href="#"class="secondary">Secondary</a><br>
-              <a href="#"class="contrast">Contrast</a><br>
+              <a href="#" onclick="event.preventDefault()">Primary</a><br>
+              <a href="#" onclick="event.preventDefault()" class="secondary">Secondary</a><br>
+              <a href="#" onclick="event.preventDefault()" class="contrast">Contrast</a><br>
 
 <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Primary&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"secondary"</u>&gt;Secondary&lt;/<b>a</b>&gt;
@@ -574,8 +574,8 @@
             </article>
             <p>Buttons are <code><i>width</i>: <u>100%</u>;</code> by default. Use <code>&lt;<b>a</b> <i>role</i>=<u>"button"&gt;</u></code> if you need an inline element.</p>
             <article>
-              <a href="#" role="button">Link</a>
-              <a href="#" role="button">Link</a>
+              <a href="#" onclick="event.preventDefault()" role="button">Link</a>
+              <a href="#" onclick="event.preventDefault()" role="button">Link</a>
 
 <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u>&gt;Link&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u>&gt;Link&lt;/<b>a</b>&gt;</code></pre>
@@ -583,8 +583,8 @@
             </article>
             <p>Buttons come with <code>.secondary</code> and <code>.contrast</code> styles.</p>
             <article>
-              <a href="#" role="button" class="secondary">Secondary</a>
-              <a href="#" role="button" class="contrast">Contrast</a>
+              <a href="#" onclick="event.preventDefault()" role="button" class="secondary">Secondary</a>
+              <a href="#" onclick="event.preventDefault()" role="button" class="contrast">Contrast</a>
 
 <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"secondary"</u>&gt;Secondary&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"contrast"</u>&gt;Contrast&lt;/<b>a</b>&gt;</code></pre>
@@ -592,9 +592,9 @@
             </article>
             <p>And a classic <code>.outline</code> variant.</p>
             <article>
-              <a href="#" role="button" class="outline">Primary</a>
-              <a href="#" role="button" class="secondary outline">Secondary</a>
-              <a href="#" role="button" class="contrast outline">Contrast</a>
+              <a href="#" onclick="event.preventDefault()" role="button" class="outline">Primary</a>
+              <a href="#" onclick="event.preventDefault()" role="button" class="secondary outline">Secondary</a>
+              <a href="#" onclick="event.preventDefault()" role="button" class="contrast outline">Contrast</a>
 
 <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"outline"</u>&gt;Primary&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"secondary outline"</u>&gt;Secondary&lt;/<b>a</b>&gt;
@@ -826,9 +826,9 @@
                   <li><strong>Brand</strong></li>
                 </ul>
                 <ul>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
-                  <li><a href="#">Link</a></li>
+                  <li><a href="#" onclick="event.preventDefault()">Link</a></li>
+                  <li><a href="#" onclick="event.preventDefault()">Link</a></li>
+                  <li><a href="#" onclick="event.preventDefault()">Link</a></li>
                 </ul>
               </nav>
 
@@ -850,7 +850,7 @@
               <nav>
                 <ul>
                   <li>
-                    <a href="#" class="secondary" aria-label="Menu">
+                    <a href="#" onclick="event.preventDefault()" class="secondary" aria-label="Menu">
                       <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1rem" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <line x1="3" y1="12" x2="21" y2="12">
                         </line><line x1="3" y1="6" x2="21" y2="6">
@@ -865,7 +865,7 @@
                 </ul>
                 <ul>
                   <li>
-                    <a href="#" class="secondary" aria-label="Twitter">
+                    <a href="#" onclick="event.preventDefault()" class="secondary" aria-label="Twitter">
                       <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="1rem" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
                       </svg>
@@ -892,9 +892,9 @@
               <aside>
                 <nav>
                   <ul>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
+                    <li><a href="#" onclick="event.preventDefault()">Link</a></li>
+                    <li><a href="#" onclick="event.preventDefault()">Link</a></li>
+                    <li><a href="#" onclick="event.preventDefault()">Link</a></li>
                   </ul>
                 </nav>
               </aside>
@@ -919,7 +919,7 @@
               <h3>Enable tooltips everywhere in pure HTML, without JavaScript.</h3>
             </hgroup>
             <article>
-              <p>Tooltip on a <a href="#" data-tooltip="Tooltip">link</a></p>
+              <p>Tooltip on a <a href="#" onclick="event.preventDefault()" data-tooltip="Tooltip">link</a></p>
               <p>Tooltip on <em data-tooltip="Tooltip">inline element</em></p>
               <p><button data-tooltip="Tooltip" aria-label="Example button">Tooltip on a button</button></p>
 
