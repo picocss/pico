@@ -48,7 +48,7 @@
   --code-color-4:      #998866;
   --code-color-5:      #96a4ae;
   --table-border:      rgba(237, 240, 243, 0.75);
-  --table-stripping:   rgba(27, 40, 50, 0.02);
+  --table-stripping:   rgba(115, 130, 140, 0.04);
 }
 
 @media only screen and (prefers-color-scheme: dark) {
@@ -85,7 +85,7 @@
     --muted-border:      #23333e;
     --card-background:   #17232b;
     --card-sections:     #141d24;
-    --card-shadow:       0 0.125rem 1rem rgba(0, 0, 0, 0.06), 0 0.125rem 2rem rgba(0, 0, 0, 0.12), 0 0 0 0.0625rem rgba(0, 0, 0, 0.09);
+    --card-shadow:       0 0.125rem 1rem rgba(0, 0, 0, 0.08), 0 0.125rem 2rem rgba(0, 0, 0, 0.04), 0 0 0 0.0625rem rgba(0, 0, 0, 0.1);
     --code-background:   #141d24;
     --code-inlined:      rgba(65, 84, 98, 0.25);
     --code-color-1:      #73828c;
@@ -94,7 +94,7 @@
     --code-color-4:      #8c8473;
     --code-color-5:      #4d606d;
     --table-border:      #10181e;
-    --table-stripping:   rgba(237, 240, 243, 0.02);
+    --table-stripping:   rgba(115, 130, 140, 0.02);
   }
 }
 
@@ -131,7 +131,7 @@
   --muted-border:      #23333e;
   --card-background:   #17232b;
   --card-sections:     #141d24;
-  --card-shadow:       0 0.125rem 1rem rgba(0, 0, 0, 0.06), 0 0.125rem 2rem rgba(0, 0, 0, 0.12), 0 0 0 0.0625rem rgba(0, 0, 0, 0.09);
+  --card-shadow:       0 0.125rem 1rem rgba(0, 0, 0, 0.08), 0 0.125rem 2rem rgba(0, 0, 0, 0.04), 0 0 0 0.0625rem rgba(0, 0, 0, 0.1);
   --code-background:   #141d24;
   --code-inlined:      rgba(65, 84, 98, 0.25);
   --code-color-1:      #73828c;
@@ -140,7 +140,7 @@
   --code-color-4:      #8c8473;
   --code-color-5:      #4d606d;
   --table-border:      #10181e;
-  --table-stripping:   rgba(237, 240, 243, 0.02);
+  --table-stripping:   rgba(115, 130, 140, 0.02);
 }
 
 /**
@@ -726,14 +726,16 @@ label > textarea {
  */
 [type="checkbox"],
 [type="radio"] {
-  font-size: 1.125rem;
   display: inline-block;
   width: 1em;
   height: 1em;
   margin-right: .375rem;
   margin-bottom: 0.125rem;
+  border-width: 2px;
+  font-size: 1.125rem;
   vertical-align: middle;
   cursor: pointer;
+  transition: none;
 }
 
 [type="checkbox"]::-ms-check,
@@ -1083,7 +1085,6 @@ details summary::after {
   background-repeat: no-repeat;
   background-size: 1rem auto;
   content: '';
-  transition: transform 0.2s ease-in-out;
 }
 
 details summary:focus {

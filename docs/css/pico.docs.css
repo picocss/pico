@@ -23,6 +23,13 @@
 }
 
 /**
+ * Docs: Document
+ */
+html {
+  scroll-behavior: smooth;
+}
+
+/**
  * Docs: Main (Grid)
  */
 body > main {
@@ -106,6 +113,11 @@ div[role="document"] section a[href*="//"]:not([href*="https://picocss.com"]):no
   content: '';
 }
 
+form.grid > input:not([type=checkbox]):not([type=radio]),
+form.grid > button {
+  margin-bottom: 0;
+}
+
 /**
  * Docs: Aside
  */
@@ -181,6 +193,11 @@ main > aside details[open] summary {
 /**
  * Docs: Documentation
  */
+#start a[role="button"] svg {
+  padding-left: .66rem;
+  vertical-align: baseline;
+}
+
 #themes button i {
   font-style: normal;
 }

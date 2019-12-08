@@ -5,14 +5,16 @@
 // Checkboxes & Radios
 [type="checkbox"],
 [type="radio"] {
-  font-size: 1.125rem;
   display: inline-block;
   width: 1em;
   height: 1em;
   margin-right: .375rem;
   margin-bottom: $spacing-label-input;
+  border-width: 2px;
+  font-size: 1.125rem;
   vertical-align: middle;
   cursor: pointer;
+  transition: none; // Prevent frozen state on mobile devices
 
   &::-ms-check {
     display: none; // unstyle IE checkboxes

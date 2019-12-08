@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
     <meta name="description" content="">
     <title>Pico.css • Graceful & Minimal CSS design system</title>
+    <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="stylesheet" href="../css/pico.min.css">
     <link rel="stylesheet" href="css/pico.docs.min.css">
   </head>
@@ -25,7 +26,7 @@
         <li>Documentation</li>
       </ul>
       <ul>
-        <!--<li><a href="https://picocss.com#examples" class="secondary">Examples</a></li>-->
+        <li><a href="https://picocss.com#examples" class="secondary">Examples</a></li>
         <li><a href="#docs" class="secondary">Docs</a></li>
         <li>
           <a href="https://github.com/picocss/pico" class="contrast" aria-label="Pico GitHub repository">
@@ -99,10 +100,16 @@
               <h3>Work without package manager or dependencies 🙂!</h3>
             </hgroup>
             <p>1. Download Pico:</p>
-            <p><a href="https://github.com/picocss/pico/archive/master.zip" role="button">Download pico.css</a></p>
+            <p>
+              <a href="https://github.com/picocss/pico/archive/master.zip" role="button">
+                Download pico.css
+                <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="0.66rem">
+                  <path fill="currentColor" d="M216 0h80c13.3 0 24 10.7 24 24v168h87.7c17.8 0 26.7 21.5 14.1 34.1L269.7 378.3c-7.5 7.5-19.8 7.5-27.3 0L90.1 226.1c-12.6-12.6-3.7-34.1 14.1-34.1H192V24c0-13.3 10.7-24 24-24zm296 376v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h146.7l49 49c20.1 20.1 52.5 20.1 72.6 0l49-49H488c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z"></path>
+                </svg>
+              </a></p>
             <p>
               2. Link the CSS:<br>
-              <small>(~5KB minified and gzipped)</small>
+              <small>(5.6 KB minified and gzipped)</small>
             </p>
             <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"css/pico.min.css"</u>&gt;</code></pre>
             <p>Starter template:</p>
@@ -137,17 +144,11 @@
             <p>Themes can be forced on document level <code>&lt;<b>html</b> <i>data-theme</i>=<u>"light"</u>&gt;</code> or on any HTML element <code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;</code>.</p>
             <article data-theme="light">
               <h4>Light theme</h4>
-              <section class="grid">
-                <div>
-                  <input type="text" name="login" placeholder="Login" aria-label="Login" required>
-                </div>
-                <div>
-                  <input type="password" name="password" placeholder="Password" aria-label="Password" required>
-                </div>
-                <div>
-                  <button type="submit" aria-label="Example button">Login</button>
-                </div>
-              </section>
+              <form class="grid">
+                <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="login" required>
+                <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="password" required>
+                <button type="submit" aria-label="Example button">Login</button>
+              </form>
 
 <pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"light"</u>&gt;
   ...
@@ -156,17 +157,11 @@
             </article>
             <article data-theme="dark">
               <h4>Dark theme</h4>
-              <section class="grid">
-                <div>
-                  <input type="text" name="login" placeholder="Login" aria-label="Login" required>
-                </div>
-                <div>
-                  <input type="password" name="password" placeholder="Password" aria-label="Password" required>
-                </div>
-                <div>
-                  <button type="submit" aria-label="Example button">Login</button>
-                </div>
-              </section>
+              <form class="grid">
+                <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="login" required>
+                <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="password" required>
+                <button type="submit" aria-label="Example button">Login</button>
+              </form>
 
 <pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;
   ...
@@ -184,23 +179,19 @@
             <h5>Pick a color!</h5>
             <article data-theme="generated">
               <h4><span class="name">Custom theme</span></h4>
-              <section class="grid">
-                <div>
-                  <input type="text" name="login" placeholder="Login" aria-label="Login" required>
-                </div>
-                <div>
-                  <input type="password" name="password" placeholder="Password" aria-label="Password" required>
-                </div>
-                <div>
+              <form>
+                <section class="grid">
+                  <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="login" required>
+                  <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="password" required>
                   <button type="submit" aria-label="Example button">Login</button>
-                </div>
-              </section>
-              <fieldset>
-                <label for="remember">
-                  <input type="checkbox" role="switch" id="remember" name="remember" checked aria-checked="true">
-                  Remember me
-                </label>
-              </fieldset>
+                </section>
+                <fieldset>
+                  <label for="remember">
+                    <input type="checkbox" role="switch" id="remember" name="remember" checked aria-checked="true">
+                    Remember me
+                  </label>
+                </fieldset>
+              </form>
             </article>
 
             <p>SCSS:</p>
@@ -262,13 +253,9 @@
             <p>In this version, <code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code> and <code>&lt;<b>footer</b>&gt;</code> act as <a href="#containers">containers</a> to define a centered or a fluid viewport.</p>
             <p><strong>Usage:</strong></p>
             <p>Use the default <code>.classless</code> version if you need centered viewports:</p>
-
-<pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet</u>" <i>href</i>=<u>"css/pico.classless.min.css"</u>&gt;</code></pre>
-
+            <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet</u>" <i>href</i>=<u>"css/pico.classless.min.css"</u>&gt;</code></pre>
             <p>Or use the <code>.fluid.classless</code>  version if you need a fluid container:</p>
-
-<pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet</u>" <i>href</i>=<u>"css/pico.fluid.classless.min.css"</u>&gt;</code></pre>
-
+            <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet</u>" <i>href</i>=<u>"css/pico.fluid.classless.min.css"</u>&gt;</code></pre>
           </section><!-- ./ Docs: Classless -->
 
           <!-- Docs: Container -->
@@ -301,25 +288,25 @@
                 <tbody>
                   <tr>
                     <th>Breakpoint</th>
-                    <td>&lt;576px</td>
-                    <td>≥576px</td>
-                    <td>≥768px</td>
-                    <td>≥992px</td>
-                    <td>≥1200px</td>
+                    <td>&lt;576<small>px</small></td>
+                    <td>≥576<small>px</small></td>
+                    <td>≥768<small>px</small></td>
+                    <td>≥992<small>px</small></td>
+                    <td>≥1200<small>px</small></td>
                   </tr>
                   <tr>
                     <th>Viewport</th>
-                    <td>None&nbsp;(auto)</td>
-                    <td>540px</td>
-                    <td>720px</td>
-                    <td>960px</td>
-                    <td>1140px</td>
+                    <td>None&nbsp;<small>(auto)</small></td>
+                    <td>540<small>px</small></td>
+                    <td>720<small>px</small></td>
+                    <td>960<small>px</small></td>
+                    <td>1140<small>px</small></td>
                   </tr>
                 </tbody>
               </table>
             </figure>
             <p><code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code> and <code>&lt;<b>footer</b>&gt;</code> as direct childs of <code>&lt;<b>body</b>&gt;</code> provide a responsive vertical <code><i>padding</i></code>.</p>
-            <p><code>&lt;<b>section</b>&gt;</code> as direct child of <code>&lt;<b>main</b>&gt;</code> provide a responsive <code><i>margin-bottom</i></code> to separate your sections.</p>
+            <p><code>&lt;<b>section</b>&gt;</code> provide a responsive <code><i>margin-bottom</i></code> to separate your sections.</p>
           </section><!-- ./ Docs: Container -->
 
           <!-- Docs: Grid -->
@@ -448,59 +435,59 @@
                 <tbody>
                   <tr>
                     <th>Base&nbsp;font</th>
-                    <td>16px</td>
-                    <td>17px</td>
-                    <td>18px</td>
-                    <td>19px</td>
-                    <td>20px</td>
+                    <td>16<small>px</small></td>
+                    <td>17<small>px</small></td>
+                    <td>18<small>px</small></td>
+                    <td>19<small>px</small></td>
+                    <td>20<small>px</small></td>
                   </tr>
                   <tr>
                     <th>h1</th>
-                    <td>32px</td>
-                    <td>34px</td>
-                    <td>36px</td>
-                    <td>38px</td>
-                    <td>40px</td>
+                    <td>32<small>px</small></td>
+                    <td>34<small>px</small></td>
+                    <td>36<small>px</small></td>
+                    <td>38<small>px</small></td>
+                    <td>40<small>px</small></td>
                   </tr>
                   <tr>
                     <th>h2</th>
-                    <td>28px</td>
-                    <td>29.75px</td>
-                    <td>31.5px</td>
-                    <td>33.25px</td>
-                    <td>35px</td>
+                    <td>28<small>px</small></td>
+                    <td>29<small>px</small></td>
+                    <td>31.5<small>px</small></td>
+                    <td>33.25<small>px</small></td>
+                    <td>35<small>px</small></td>
                   </tr>
                   <tr>
                     <th>h3</th>
-                    <td>24px</td>
-                    <td>25.5px</td>
-                    <td>27px</td>
-                    <td>28.5px</td>
-                    <td>30px</td>
+                    <td>24<small>px</small></td>
+                    <td>25.5<small>px</small></td>
+                    <td>27<small>px</small></td>
+                    <td>28.5<small>px</small></td>
+                    <td>30<small>px</small></td>
                   </tr>
                   <tr>
                     <th>h4</th>
-                    <td>20px</td>
-                    <td>21.25px</td>
-                    <td>22.5px</td>
-                    <td>23.75px</td>
-                    <td>35px</td>
+                    <td>20<small>px</small></td>
+                    <td>21.25<small>px</small></td>
+                    <td>22.5<small>px</small></td>
+                    <td>23.75<small>px</small></td>
+                    <td>25<small>px</small></td>
                   </tr>
                   <tr>
                     <th>h5</th>
-                    <td>18px</td>
-                    <td>19.125px</td>
-                    <td>20.25px</td>
-                    <td>21.375px</td>
-                    <td>22.5px</td>
+                    <td>18<small>px</small></td>
+                    <td>19.125<small>px</small></td>
+                    <td>20.25<small>px</small></td>
+                    <td>21.375<small>px</small></td>
+                    <td>22.5<small>px</small></td>
                   </tr>
                   <tr>
                     <th>h6</th>
-                    <td>16px</td>
-                    <td>17px</td>
-                    <td>18px</td>
-                    <td>19px</td>
-                    <td>20px</td>
+                    <td>16<small>px</small></td>
+                    <td>17<small>px</small></td>
+                    <td>18<small>px</small></td>
+                    <td>19<small>px</small></td>
+                    <td>20<small>px</small></td>
                   </tr>
                 </tbody>
               </table>
@@ -627,18 +614,14 @@
             <article>
               <form>
                 <section class="grid">
-                  <div>
-                    <label for="firstname">
-                      First name
-                      <input type="text" id="firstname" name="firstname" placeholder="First name" required>
-                    </label>
-                  </div>
-                  <div>
-                    <label for="lastname">
-                      Last name
-                      <input type="text" id="lastname" name="lastname" placeholder="Last name" required>
-                    </label>
-                  </div>
+                  <label for="firstname">
+                    First name
+                    <input type="text" id="firstname" name="firstname" placeholder="First name" required>
+                  </label>
+                  <label for="lastname">
+                    Last name
+                    <input type="text" id="lastname" name="lastname" placeholder="Last name" required>
+                  </label>
                 </section>
                 <label for="email">Email address</label>
                 <input type="email" id="email" name="email" placeholder="Email address" required>
@@ -652,20 +635,16 @@
   <em>&lt;!-- Grid --&gt;</em>
   &lt;<b>section</b> <i>class</i>=<u>"grid"</u>&gt;
 
-    &lt;<b>div</b>&gt;
-      <em>&lt;!-- Markup example 1: input is inside label --&gt;</em>
-      &lt;<b>label</b> <i>for</i>=<u>"firstname"</u>&gt;
-        First name
-        &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>id</i>=<u>"firstname"</u> <i>name</i>=<u>"firstname"</u> <i>placeholder</i>=<u>"First name"</u> <i>required</i>&gt;
-      &lt;/<b>label</b>&gt;
-    &lt;/<b>div</b>&gt;
+    <em>&lt;!-- Markup example 1: input is inside label --&gt;</em>
+    &lt;<b>label</b> <i>for</i>=<u>"firstname"</u>&gt;
+      First name
+      &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>id</i>=<u>"firstname"</u> <i>name</i>=<u>"firstname"</u> <i>placeholder</i>=<u>"First name"</u> <i>required</i>&gt;
+    &lt;/<b>label</b>&gt;
 
-    &lt;<b>div</b>&gt;
-      &lt;<b>label</b> <i>for</i>=<u>"lastname"</u>&gt;
-        Last name
-        &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>id</i>=<u>"lastname"</u> <i>name</i>=<u>"lastname"</u> <i>placeholder</i>=<u>"Last name"</u> <i>required</i>&gt;
-      &lt;/<b>label</b>&gt;
-    &lt;/<b>div</b>&gt;
+    &lt;<b>label</b> <i>for</i>=<u>"lastname"</u>&gt;
+      Last name
+      &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>id</i>=<u>"lastname"</u> <i>name</i>=<u>"lastname"</u> <i>placeholder</i>=<u>"Last name"</u> <i>required</i>&gt;
+    &lt;/<b>label</b>&gt;
 
   &lt;/<b>section</b>&gt;
 
@@ -682,21 +661,11 @@
             </article>
             <p>Disabled and validation states:</p>
             <article>
-              <form>
-                <section class="grid">
-                  <div>
-                    <input type="text" placeholder="Valid" aria-label="Valid" valid>
-                  </div>
-                  <div>
-                    <input type="text" placeholder="Invalid" aria-label="Invalid" invalid>
-                  </div>
-                  <div>
-                    <input type="text" placeholder="Disabled" aria-label="Disabled" disabled>
-                  </div>
-                  <div>
-                    <input type="text" value="Readonly" aria-label="Readonly" readonly>
-                  </div>
-                </section>
+              <form class="grid">
+                <input type="text" placeholder="Valid" aria-label="Valid" valid>
+                <input type="text" placeholder="Invalid" aria-label="Invalid" invalid>
+                <input type="text" placeholder="Disabled" aria-label="Disabled" disabled>
+                <input type="text" value="Readonly" aria-label="Readonly" readonly>
               </form>
 
 <pre><code>&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Valid"</u> <i>valid</i>&gt;
@@ -968,21 +937,23 @@
             <p>But off course, <code>.classes</code> are not a bad practice at all.</p>
             <p>Feel free to use <em>modifiers</em>.</p>
             <section data-theme="valid">
-
-<pre><code>&lt;<b>button</b> <i>class</i>=<u>"warning"</u>&gt;Action&lt;/<b>button</b>&gt;<br></code></pre>
-
+              <pre><code>&lt;<b>button</b> <i>class</i>=<u>"warning"</u>&gt;Action&lt;/<b>button</b>&gt;<br></code></pre>
             </section>
             <p>Just try to keep your HTML clean and semantic to keep the Pico spirit.</p>
             <section data-theme="invalid">
-
-<pre><code>&lt;<b>button</b> <i>class</i>=<u>"button-red margin-large padding-medium"</u>&gt;Action&lt;/<b>button</b>&gt;<br></code></pre>
-
+              <pre><code>&lt;<b>button</b> <i>class</i>=<u>"button-red margin-large padding-medium"</u>&gt;Action&lt;/<b>button</b>&gt;<br></code></pre>
             </section>
           </section><!-- ./ Love -->
 
           <!-- Footer -->
           <footer>
-            <p><small>Openly inspired by <a href="https://getbootstrap.com/" class="secondary">Bootstrap</a>, <a href="https://picturepan2.github.io/spectre/" class="secondary">Spectre</a>, <a href=" https://kbrsh.github.io/wing/" class="secondary">Wing</a>, <a href="https://www.cssbed.com/" class="secondary">CSS Bed</a> & <a href="https://necolas.github.io/normalize.css/" class="secondary">Normalize</a>.</small></p>
+            <hr>
+            <p>
+              <small>
+                Openly inspired by <a href="https://getbootstrap.com/" class="secondary">Bootstrap</a>, <a href="https://picturepan2.github.io/spectre/" class="secondary">Spectre</a>, <a href=" https://kbrsh.github.io/wing/" class="secondary">Wing</a>, <a href="https://www.cssbed.com/" class="secondary">CSS Bed</a> & <a href="https://necolas.github.io/normalize.css/" class="secondary">Normalize</a><br>
+                Licensed under the <a href="https://github.com/picocss/pico/blob/master/LICENSE.md" class="secondary">MIT License</a><br>
+              </small>
+            </p>
           </footer><!-- ./ Footer -->
 
         </div><!-- ./ Document -->

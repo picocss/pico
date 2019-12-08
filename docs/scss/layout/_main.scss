@@ -79,3 +79,13 @@ div[role="document"] section a[href*="//"]:not([href*="https://picocss.com"]):no
   background-size: .66rem auto;
   content: '';
 }
+
+// Form grid
+// ––––––––––––––––––––
+
+form.grid {
+  > input:not([type=checkbox]):not([type=radio]),
+  > button {
+    margin-bottom: 0;
+  }
+}

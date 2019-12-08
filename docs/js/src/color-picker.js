@@ -12,7 +12,6 @@
    */
 
   var colors = {
-    list:           'json/material-colors.json',
     target:         '#customization h5',                 // Buttons inserted after target
     selectorButton: '#customization button[data-color]', // Button selector in Dom
     selectorTheme:  '#customization',                    // Theme selector in Dom

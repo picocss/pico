@@ -50,7 +50,7 @@
     // Card
     --card-background:   #{darken($grey-900, 2%)};
     --card-sections:     #{darken($grey-900, 4%)};
-    --card-shadow:       0 0.125rem 1rem #{rgba($black, 0.06)}, 0 0.125rem 2rem #{rgba($black, 0.12)}, 0 0 0 0.0625rem #{rgba($black, 0.09)};
+    --card-shadow:       0 0.125rem 1rem #{rgba($black, 0.08)}, 0 0.125rem 2rem #{rgba($black, 0.04)}, 0 0 0 0.0625rem #{rgba($black, 0.1)};
 
     // Code
     --code-background:   #{darken($grey-900, 4%)};
@@ -63,7 +63,7 @@
 
     // Table
     --table-border:      #{darken($grey-900, 6%)};
-    --table-stripping:   #{rgba($grey-50,.02)};
+    --table-stripping:   #{rgba($grey-500,.02)};
   }
 }
 
@@ -120,7 +120,7 @@
   // Card
   --card-background:   #{darken($grey-900, 2%)};
   --card-sections:     #{darken($grey-900, 4%)};
-  --card-shadow:       0 0.125rem 1rem #{rgba($black, 0.06)}, 0 0.125rem 2rem #{rgba($black, 0.12)}, 0 0 0 0.0625rem #{rgba($black, 0.09)};
+  --card-shadow:       0 0.125rem 1rem #{rgba($black, 0.08)}, 0 0.125rem 2rem #{rgba($black, 0.04)}, 0 0 0 0.0625rem #{rgba($black, 0.1)};
 
   // Code
   --code-background:   #{darken($grey-900, 4%)};
@@ -133,5 +133,5 @@
 
   // Table
   --table-border:      #{darken($grey-900, 6%)};
-  --table-stripping:   #{rgba($grey-50,.02)};
+  --table-stripping:   #{rgba($grey-500,.02)};
 }
