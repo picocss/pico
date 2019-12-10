@@ -53,6 +53,7 @@ Elegant styles for all natives HTML elements without `.classes` and dark mode au
 - [Tooltips](https://picocss.com/docs/#tooltips)
 
 ## Copyright and license
+
 - Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LICENSE.md)
 - Openly inspired by [Bootstrap](https://github.com/twbs/bootstrap) ([MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE)), [Spectre](https://github.com/picturepan2/spectre) ([MIT](https://github.com/picturepan2/spectre/blob/master/LICENSE)), [Wing](https://github.com/kbrsh/wing/) ([MIT](https://github.com/kbrsh/wing/blob/master/LICENSE)), [CSS Bed](https://github.com/ubershmekel/cssbed) & [Normalize](https://github.com/necolas/normalize.css/) ([MIT](https://github.com/necolas/normalize.css/blob/master/LICENSE.md))
 - Library icons by [Feather](https://github.com/feathericons/feather) ([MIT](https://github.com/feathericons/feather/blob/master/LICENSE))

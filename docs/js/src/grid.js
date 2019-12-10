@@ -116,8 +116,8 @@
 
    var colsHTML     = '';
    var colsCode     = '';
-   var colsCodePref = '&lt;<b>section</b> <i>class</i>=<u>"grid"</u>&gt;\n';
-   var colsCodeSuff = '&lt;/<b>section</b>&gt;';
+   var colsCodePref = '&lt;<b>div</b> <i>class</i>=<u>"grid"</u>&gt;\n';
+   var colsCodeSuff = '&lt;/<b>div</b>&gt;';
 
    for (var i=0; i<cols; i++) {
      colsHTML += '<div>' + (i+1) + '</div>';
