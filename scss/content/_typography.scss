@@ -176,14 +176,10 @@ h6 {
 hgroup {
   margin-bottom: $spacing-typography;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6{
+  *{
     margin-bottom: 0;
   }
+  
   > *:last-child {
     color: var(--muted-text);
     font-size: 1.125rem;

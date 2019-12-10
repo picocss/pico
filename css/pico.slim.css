@@ -432,12 +432,7 @@ hgroup {
   margin-bottom: 1.5rem;
 }
 
-hgroup h1,
-hgroup h2,
-hgroup h3,
-hgroup h4,
-hgroup h5,
-hgroup h6 {
+hgroup * {
   margin-bottom: 0;
 }
 

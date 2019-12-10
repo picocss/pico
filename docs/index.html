@@ -138,15 +138,15 @@
               <h3>Pico is shipped with 2 consistents themes: Light & Dark.</h3>
             </hgroup>
             <p>The Light theme is used by default. The Dark theme is automatically enabled if user has dark mode enabled <code><i>prefers-color-scheme</i>: <u>dark</u></code>.</p>
-            <article>
+            <article aria-label="Theme switcher">
               <button class="contrast theme-switcher">...</button>
             </article>
             <p>Themes can be forced on document level <code>&lt;<b>html</b> <i>data-theme</i>=<u>"light"</u>&gt;</code> or on any HTML element <code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;</code>.</p>
             <article data-theme="light">
               <h4>Light theme</h4>
               <form class="grid">
-                <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="login" required>
-                <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="password" required>
+                <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required>
+                <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
                 <button type="submit" aria-label="Example button">Login</button>
               </form>
 
@@ -158,8 +158,8 @@
             <article data-theme="dark">
               <h4>Dark theme</h4>
               <form class="grid">
-                <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="login" required>
-                <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="password" required>
+                <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required>
+                <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
                 <button type="submit" aria-label="Example button">Login</button>
               </form>
 
@@ -180,11 +180,11 @@
             <article data-theme="generated">
               <h4><span class="name">Custom theme</span></h4>
               <form>
-                <section class="grid">
-                  <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="login" required>
-                  <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="password" required>
+                <div class="grid">
+                  <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required>
+                  <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
                   <button type="submit" aria-label="Example button">Login</button>
-                </section>
+                </div>
                 <fieldset>
                   <label for="remember">
                     <input type="checkbox" role="switch" id="remember" name="remember" checked aria-checked="true">
@@ -315,20 +315,20 @@
               <h2>Grids</h2>
               <h3><code>.grid</code> enable a minimal grid system with auto-layout columns.</h3>
             </hgroup>
-            <article>
-              <section class="grid">
+            <article aria-label="Grid example">
+              <div class="grid">
                 <div>1</div>
                 <div>2</div>
                 <div>3</div>
                 <div>4</div>
-              </section>
+              </div>
 
-<pre><code>&lt;<b>section</b> <i>class</i>=<u>"grid"</u>&gt;
+<pre><code>&lt;<b>div</b> <i>class</i>=<u>"grid"</u>&gt;
   &lt;<b>div</b>&gt;1&lt;/<b>div</b>&gt;
   &lt;<b>div</b>&gt;2&lt;/<b>div</b>&gt;
   &lt;<b>div</b>&gt;3&lt;/<b>div</b>&gt;
   &lt;<b>div</b>&gt;4&lt;/<b>div</b>&gt;
-&lt;/<b>section</b>&gt;</code></pre>
+&lt;/<b>div</b>&gt;</code></pre>
 
             </article>
             <p>Columns intentionally collapses below large devices <code>(<u>992px</u>)</code>.</p>
@@ -493,7 +493,7 @@
               </table>
             </figure>
             <p>Headings:</p>
-            <article>
+            <article aria-label="Headings examples">
               <h1>Heading 1</h1>
               <h2>Heading 2</h2>
               <h3>Heading 3</h3>
@@ -512,7 +512,7 @@
 
             </article>
             <p>Inside a <code>&lt;<b>hgroup</b>&gt;</code> all <code><i>margin-bottom</i></code> are collapsed and the <code>:last-child</code> is styled.</p>
-            <article>
+            <article aria-label="Hgroup example">
               <hgroup>
                 <h2>Heading 2</h2>
                 <h3>Subtitle for heading 2</h3>
@@ -525,7 +525,7 @@
 
             </article>
             <p>Inline text elements:</p>
-            <article>
+            <article aria-label="Iinline text examples">
               <div class="grid">
                 <div>
                   <p><abbr title="Abbreviation">Abbr.</abbr> <code>abbr</code></p>
@@ -546,7 +546,7 @@
               </div>
             </article>
             <p>Links come with <code>.secondary</code> and <code>.contrast</code> styles.</p>
-            <article>
+            <article aria-label="Links examples">
               <a href="#" onclick="event.preventDefault()">Primary</a><br>
               <a href="#" onclick="event.preventDefault()" class="secondary">Secondary</a><br>
               <a href="#" onclick="event.preventDefault()" class="contrast">Contrast</a><br>
@@ -564,7 +564,7 @@
               <h2>Buttons</h2>
               <h3>The essential button in pure HTML, without <code>.classes</code> for the default style.</h3>
             </hgroup>
-            <article>
+            <article aria-label="Grid example">
               <button aria-label="Example button">Button</button>
               <input type="submit">
 
@@ -573,7 +573,7 @@
 
             </article>
             <p>Buttons are <code><i>width</i>: <u>100%</u>;</code> by default. Use <code>&lt;<b>a</b> <i>role</i>=<u>"button"&gt;</u></code> if you need an inline element.</p>
-            <article>
+            <article aria-label="Inline buttons examples">
               <a href="#" onclick="event.preventDefault()" role="button">Link</a>
               <a href="#" onclick="event.preventDefault()" role="button">Link</a>
 
@@ -582,7 +582,7 @@
 
             </article>
             <p>Buttons come with <code>.secondary</code> and <code>.contrast</code> styles.</p>
-            <article>
+            <article aria-label="Buttons styles examples">
               <a href="#" onclick="event.preventDefault()" role="button" class="secondary">Secondary</a>
               <a href="#" onclick="event.preventDefault()" role="button" class="contrast">Contrast</a>
 
@@ -591,7 +591,7 @@
 
             </article>
             <p>And a classic <code>.outline</code> variant.</p>
-            <article>
+            <article aria-label="Outline style examples">
               <a href="#" onclick="event.preventDefault()" role="button" class="outline">Primary</a>
               <a href="#" onclick="event.preventDefault()" role="button" class="secondary outline">Secondary</a>
               <a href="#" onclick="event.preventDefault()" role="button" class="contrast outline">Contrast</a>
@@ -611,9 +611,9 @@
             </hgroup>
             <p>Input are <code><i>width</i>: <u>100%</u>;</code> by default. You can use <code>.grid</code> inside a form.</p>
             <p>All natives form elements are fully customized and themables with CSS variables.</p>
-            <article>
+            <article aria-label="Form example">
               <form>
-                <section class="grid">
+                <div class="grid">
                   <label for="firstname">
                     First name
                     <input type="text" id="firstname" name="firstname" placeholder="First name" required>
@@ -622,7 +622,7 @@
                     Last name
                     <input type="text" id="lastname" name="lastname" placeholder="Last name" required>
                   </label>
-                </section>
+                </div>
                 <label for="email">Email address</label>
                 <input type="email" id="email" name="email" placeholder="Email address" required>
                 <small>We'll never share your email with anyone else.</small>
@@ -633,7 +633,7 @@
 &lt;<b>form</b>&gt;
 
   <em>&lt;!-- Grid --&gt;</em>
-  &lt;<b>section</b> <i>class</i>=<u>"grid"</u>&gt;
+  &lt;<b>div</b> <i>class</i>=<u>"grid"</u>&gt;
 
     <em>&lt;!-- Markup example 1: input is inside label --&gt;</em>
     &lt;<b>label</b> <i>for</i>=<u>"firstname"</u>&gt;
@@ -646,7 +646,7 @@
       &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>id</i>=<u>"lastname"</u> <i>name</i>=<u>"lastname"</u> <i>placeholder</i>=<u>"Last name"</u> <i>required</i>&gt;
     &lt;/<b>label</b>&gt;
 
-  &lt;/<b>section</b>&gt;
+  &lt;/<b>div</b>&gt;
 
   <em>&lt;!-- Markup example 2: input is after label --&gt;</em>
   &lt;<b>label</b> <i>for</i>=<u>"email"</u>&gt;Email address&lt;/<b>label</b>&gt;
@@ -660,23 +660,23 @@
 
             </article>
             <p>Disabled and validation states:</p>
-            <article>
+            <article aria-label="Validation states examples">
               <form class="grid">
-                <input type="text" placeholder="Valid" aria-label="Valid" valid>
-                <input type="text" placeholder="Invalid" aria-label="Invalid" invalid>
+                <input type="text" placeholder="Valid" aria-label="Valid" class="valid">
+                <input type="text" placeholder="Invalid" aria-label="Invalid"  class="invalid">
                 <input type="text" placeholder="Disabled" aria-label="Disabled" disabled>
                 <input type="text" value="Readonly" aria-label="Readonly" readonly>
               </form>
 
-<pre><code>&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Valid"</u> <i>valid</i>&gt;
-&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Invalid"</u> <i>invalid</i>&gt;
+<pre><code>&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Valid"</u> <i>class</i>=<u>"valid"</u>&gt;
+&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Invalid"</u> <i>class</i>=<u>"invalid"</u>&gt;
 &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Disabled"</u> <i>disabled</i>&gt;
 &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>value</i>=<u>"Readonly"</u> <i>readonly</i>&gt;</code></pre>
 
             </article>
             <p><code>&lt;<b>fieldset</b>&gt;</code> are unstyled and act as a container for radios and checkboxes providing a consistent <code><i>margin-bottom</i></code> for the set.</p>
             <p><code><i>role</i>=<u>"switch"</u></code> on a <code><i>type</i>=<u>"checkbox"</u></code> enable a custom switch.</p>
-            <article>
+            <article aria-label="Select, radios, checkboxes, switch examples">
               <label for="country">Country</label>
               <select id="country">
                 <option selected>Choose...</option>
@@ -759,7 +759,7 @@
               <h2>Accordions</h2>
               <h3>Toggle sections of content in pure HTML, without JavaScript.</h3>
             </hgroup>
-            <article>
+            <article aria-label="Accordions examples">
               <details>
                 <summary>Collapsible elements 1</summary>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque urna diam, tincidunt nec porta sed, auctor id velit. Etiam venenatis nisl ut orci consequat, vitae tempus quam commodo. Nulla non mauris ipsum. Aliquam eu posuere orci. Nulla convallis lectus rutrum quam hendrerit, in facilisis elit sollicitudin. Mauris pulvinar pulvinar mi, dictum tristique elit auctor quis. Maecenas ac ipsum ultrices, porta turpis sit amet, congue turpis.</p>
@@ -797,12 +797,12 @@
               <h2>Cards</h2>
               <h3>A flexible container with graceful spacings across devices and viewport sizes.</h3>
             </hgroup>
-            <article>
+            <article aria-label="Card example">
               I'm a card!
             </article>
             <pre><code>&lt;<b>article</b>&gt;I'm a card!&lt;/<b>article</b>&gt;</code></pre>
             <p>You can use <code>&lt;<b>header</b>&gt;</code> and footer <code>&lt;<b>footer</b>&gt;</code> inside <code>&lt;<b>article</b>&gt;</code></p>
-            <article>
+            <article aria-label="Card sectioning example">
               Body
               <footer>Footer</footer>
             </article>
@@ -820,7 +820,7 @@
               <h2>Navs</h2>
               <h3>The essential navbar component in pure semantic HTML.</h3>
             </hgroup>
-            <article>
+            <article aria-label="Nav example">
               <nav>
                 <ul>
                   <li><strong>Brand</strong></li>
@@ -846,7 +846,7 @@
             </article>
             <p><code>&lt;<b>ul</b>&gt;</code> are automatically distributed horizontally.</p>
             <p><code>&lt;<b>li</b>&gt;</code> are unstyled and inlined.</p>
-            <article>
+            <article aria-label="Nav example">
               <nav>
                 <ul>
                   <li>
@@ -888,7 +888,7 @@
 
             </article>
             <p>Inside <code>&lt;<b>aside</b>&gt;</code>, navs are stacked vertically.</p>
-            <article>
+            <article aria-label="Vertical nav example">
               <aside>
                 <nav>
                   <ul>
@@ -918,7 +918,7 @@
               <h2>Tooltips</h2>
               <h3>Enable tooltips everywhere in pure HTML, without JavaScript.</h3>
             </hgroup>
-            <article>
+            <article aria-label="Tooltips examples">
               <p>Tooltip on a <a href="#" onclick="event.preventDefault()" data-tooltip="Tooltip">link</a></p>
               <p>Tooltip on <em data-tooltip="Tooltip">inline element</em></p>
               <p><button data-tooltip="Tooltip" aria-label="Example button">Tooltip on a button</button></p>
@@ -936,13 +936,13 @@
             <p>As a starting point, Pico chose to be as neutral and semantic as possible using very few <code>.classes</code>.</p>
             <p>But off course, <code>.classes</code> are not a bad practice at all.</p>
             <p>Feel free to use <em>modifiers</em>.</p>
-            <section data-theme="valid">
+            <div data-theme="valid">
               <pre><code>&lt;<b>button</b> <i>class</i>=<u>"warning"</u>&gt;Action&lt;/<b>button</b>&gt;<br></code></pre>
-            </section>
+            </div>
             <p>Just try to keep your HTML clean and semantic to keep the Pico spirit.</p>
-            <section data-theme="invalid">
+            <div data-theme="invalid">
               <pre><code>&lt;<b>button</b> <i>class</i>=<u>"button-red margin-large padding-medium"</u>&gt;Action&lt;/<b>button</b>&gt;<br></code></pre>
-            </section>
+            </div>
           </section><!-- ./ Love -->
 
           <!-- Footer -->
