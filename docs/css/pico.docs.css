@@ -289,6 +289,10 @@ main > aside details[open] summary {
   margin-top: 3rem;
 }
 
+#forms div.grid {
+  grid-row-gap: 0;
+}
+
 /**
  * Docs: Typography
  */

@@ -209,11 +209,13 @@ input[type="color"] {
 
 // Select
 select {
+
   // Unstyle the caret on `<select>`s in IE10+.
   &::-ms-expand {
     border: 0;
     background-color: transparent;
   }
+
   &:not([multiple]) {
     // Source: https://feathericons.com/
     $caret-icon-color: "808080"; // Without '#' !important
@@ -236,7 +238,6 @@ input + small {
 
 // Styles for Input inside a label
 label {
-
   & > input:not([type="checkbox"]):not([type="radio"]),
   & > select,
   & > textarea {
