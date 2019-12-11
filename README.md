@@ -17,11 +17,28 @@ Elegant styles for all natives HTML elements without `.classes` and dark mode au
 
 ## Usage
 
-[Download Pico](https://github.com/picocss/pico/archive/v1.0.1.zip) and link `/css/pico.min.css` in the `<head>` of your website.
+There are 3 ways to get started with pico.css:
+
+### Install manually
+[Download Pico](https://github.com/picocss/pico/archive/v1.0.2.zip) and link `/css/pico.min.css` in the `<head>` of your website.
 
 ```html
 <link rel="stylesheet" href="css/pico.min.css">
 ```
+
+### Install from CDN
+Alternatively, you can use the [unpkg CDN](https://unpkg.com/@picocss/pico@latest/) to link pico.css.
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+```
+
+### Install with NPM
+```shell
+npm install @picocss/pico
+```
+
+
 
 ## Examples
 

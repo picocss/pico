@@ -191,11 +191,6 @@ main > aside details[open] summary {
 /**
  * Docs: Documentation
  */
-#start a[role="button"] svg {
-  padding-left: .66rem;
-  vertical-align: baseline;
-}
-
 #themes button i {
   font-style: normal;
 }

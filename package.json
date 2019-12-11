@@ -1,14 +1,14 @@
 {
   "name": "@picocss/pico",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Graceful & Minimal CSS design system in pure semantic HTML",
-  "author": "Lucas Larroche <lucas@larroche.com>",
-  "main": "css/pico.min.css",
+  "author": "Lucas Larroche",
+  "main": "./css/pico.min.css",
   "homepage": "https://picocss.com",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/picocss/pico.git"
+    "url": "git+https://github.com/picocss/pico.git"
   },
   "keywords": [
     "css",
@@ -18,7 +18,7 @@
     "semantic",
     "minimal",
     "lightweight",
-    "scss-framwork",
+    "scss-framework",
     "native-html"
   ],
   "bugs": {
