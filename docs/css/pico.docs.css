@@ -158,10 +158,14 @@ main > aside li a svg {
   vertical-align: middle;
 }
 
-main > aside a:focus,
 main > aside a.secondary:focus {
   background-color: transparent;
   color: var(--primary-hover);
+}
+
+main > aside a.active,
+main > aside a.active:hover {
+  color: var(--primary);
 }
 
 main > aside details {
@@ -182,12 +186,6 @@ main > aside details summary::after {
 
 main > aside details[open] summary {
   color: var(--h3);
-}
-
-[role=document] section > h1,
-[role=document] section > h2,
-[role=document] section > h3 {
-  line-height: 1;
 }
 
 /**
@@ -395,7 +393,7 @@ body > nav {
   box-shadow: 0px 1px 0 var(--nav-border);
 }
 
-body > nav li a {
+body > nav a {
   border-radius: 0;
 }
 
@@ -423,7 +421,7 @@ body > nav ul:first-of-type li:nth-of-type(2) {
 /**
  * Docs: Theme switcher
  */
-button.switcher {
+.switcher {
   position: fixed;
   right: 0.5rem;
   bottom: 1rem;
@@ -436,7 +434,7 @@ button.switcher {
   box-shadow: var(--card-shadow);
 }
 
-button.switcher::after {
+.switcher::after {
   display: inline-block;
   width: 1rem;
   height: 1rem;
@@ -448,7 +446,7 @@ button.switcher::after {
   transition: transform 0.2s ease-in-out;
 }
 
-button.switcher i {
+.switcher i {
   display: inline-block;
   max-width: 0;
   padding: 0;
@@ -458,27 +456,27 @@ button.switcher i {
   white-space: nowrap;
 }
 
-button.switcher:hover, button.switcher:focus {
+.switcher:hover, .switcher:focus {
   max-width: 100%;
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-button.switcher:hover::after {
+.switcher:hover::after {
   transform: rotate(180deg);
 }
 
-button.switcher:hover i {
+.switcher:hover i {
   max-width: 100%;
   padding: 0 0.5rem 0 0.25rem;
   transition: max-width 0.2s ease-in-out, padding 0.2s ease-in-out;
 }
 
-button.switcher:focus {
+.switcher:focus {
   box-shadow: var(--card-shadow), 0 0 0 0.2rem var(--secondary-focus);
 }
 
 @media (min-width: 576px) {
-  button.switcher {
+  .switcher {
     right: 1rem;
   }
 }

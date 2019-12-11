@@ -125,8 +125,6 @@
 // Docs: Forms
 // ––––––––––––––––––––
 
-#forms {
-  div.grid {
-    grid-row-gap: 0;
-  }
+#forms div.grid {
+  grid-row-gap: 0;
 }

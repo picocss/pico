@@ -2,17 +2,19 @@
  * Docs: Typography
  */
 
- section > hgroup {
-   margin-bottom: $spacing-typography*2;
- }
- a[role=button] {
-   margin-right: $spacing-gutter/4;
-   margin-bottom: $spacing-typography;
- }
- [role=document] {
-   section > h1,
-   section > h2,
-   section > h3 {
-     line-height: 1;
-   }
- }
+section > hgroup {
+  margin-bottom: $spacing-typography*2;
+}
+
+a[role=button] {
+  margin-right: $spacing-gutter/4;
+  margin-bottom: $spacing-typography;
+}
+
+[role=document] {
+  section > h1,
+  section > h2,
+  section > h3 {
+    line-height: 1;
+  }
+}

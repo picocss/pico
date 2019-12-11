@@ -7,13 +7,16 @@
 
 (function() {
 
-  // Close details if aside > nav have a scrollbar
-  var nav        = document.querySelector("aside nav");
-  var navDetails = document.querySelectorAll("aside details");
+  if (window.matchMedia("(min-width: 992px)").matches) {
 
-  if (nav.clientHeight < nav.scrollHeight) {
-    for (var i = 1; i < navDetails.length; i++) {
-      navDetails[i].removeAttribute("open");
+    // Close details if aside > nav have a scrollbar
+    var nav        = document.querySelector("aside nav");
+    var navDetails = document.querySelectorAll("aside details");
+
+    if (nav.clientHeight < nav.scrollHeight) {
+      for (var i = 1; i < navDetails.length; i++) {
+        navDetails[i].removeAttribute("open");
+      }
     }
   }
 

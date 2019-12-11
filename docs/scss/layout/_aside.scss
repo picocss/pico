@@ -40,12 +40,14 @@ main > aside {
     }
   }
 
-  a,
-  a.secondary {
-    &:focus {
-      background-color: transparent;
-      color: var(--primary-hover);
-    }
+  a.secondary:focus {
+    background-color: transparent;
+    color: var(--primary-hover);
+  }
+
+  a.active,
+  a.active:hover {
+    color: var(--primary);
   }
 
   details {
@@ -66,13 +68,5 @@ main > aside {
     &[open] summary {
       color: var(--h3);
     }
-  }
-}
-
-[role=document] {
-  section > h1,
-  section > h2,
-  section > h3 {
-    line-height: 1;
   }
 }
