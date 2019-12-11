@@ -17,9 +17,11 @@ Elegant styles for all natives HTML elements without `.classes` and dark mode au
 
 ## Usage
 
-[Download Pico](https://github.com/picocss/pico/archive/v1.0.0.zip) and link `/css/pico.min.css` in the `<head>` of your website.
+[Download Pico](https://github.com/picocss/pico/archive/v1.0.1.zip) and link `/css/pico.min.css` in the `<head>` of your website.
 
-``<link rel="stylesheet" href="css/pico.min.css">``
+```html
+<link rel="stylesheet" href="css/pico.min.css">
+```
 
 ## Examples
 
