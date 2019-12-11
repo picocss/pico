@@ -1,6 +1,6 @@
 
 <a href="https://picocss.com/">
-  <img src="docs/img/logo.svg" width="64" height="64">
+  <img src="https://picocss.com/img/logo.svg" width="64" height="64">
 </a>
 
 # Pico.css
