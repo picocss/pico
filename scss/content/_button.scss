@@ -34,14 +34,6 @@ button::-moz-focus-inner,
    border-style: none;
 }
 
-// Restore the focus styles unset by the previous rule.
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
 
 // Pico
 // ––––––––––––––––––––

@@ -160,12 +160,6 @@ textarea {
     background-color: var(--muted-background);
     opacity: .5;
   }
-
-  // Undo the Firefox inner focus ring
-  &:focus:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 #000;
-  }
 }
 
 // Text, Select & Textarea
