@@ -43,7 +43,7 @@
     --invalid:           #{$red-900};
     --mark:              #{rgba($amber-200, .5)};
     --mark-text:         #{$white};
-    --muted-text:        #{$grey-500)};
+    --muted-text:        #{$grey-500};
     --muted-background:  #{darken($grey-900, 6%)};
     --muted-border:      #{mix($grey-800, $grey-900)};
 
@@ -55,7 +55,7 @@
     // Code
     --code-background:   #{darken($grey-900, 4%)};
     --code-inlined:      #{rgba($grey-700, .25)};
-    --code-color-1:      #{$grey-500)};
+    --code-color-1:      #{$grey-500};
     --code-color-2:      #{hsl(330, 30%, 50%)};
     --code-color-3:      #{hsl(185, 30%, 50%)};
     --code-color-4:      #{hsl(40,  10%, 50%)};
@@ -113,7 +113,7 @@
   --invalid:           #{$red-900};
   --mark:              #{rgba($amber-200, .5)};
   --mark-text:         #{$white};
-  --muted-text:        #{$grey-500)};
+  --muted-text:        #{$grey-500};
   --muted-background:  #{darken($grey-900, 6%)};
   --muted-border:      #{mix($grey-800, $grey-900)};
 
@@ -125,7 +125,7 @@
   // Code
   --code-background:   #{darken($grey-900, 4%)};
   --code-inlined:      #{rgba($grey-700, .25)};
-  --code-color-1:      #{$grey-500)};
+  --code-color-1:      #{$grey-500};
   --code-color-2:      #{hsl(330, 30%, 50%)};
   --code-color-3:      #{hsl(185, 30%, 50%)};
   --code-color-4:      #{hsl(40,  10%, 50%)};
