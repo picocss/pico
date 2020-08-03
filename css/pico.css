@@ -779,7 +779,7 @@ form small {
   color: var(--muted-text);
 }
 
-input + small {
+input + small, select + small {
   margin-top: -1rem;
   margin-bottom: 1.5rem;
 }
