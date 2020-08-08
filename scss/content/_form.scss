@@ -225,9 +225,13 @@ form small {
   color: var(--muted-text);
 }
 
-input + small {
-  margin-top: -$spacing-typography/1.5;
-  margin-bottom: $spacing-typography;
+input,
+select,
+textarea {
+  + small {
+    margin-top: -$spacing-typography/1.5;
+    margin-bottom: $spacing-typography;
+  }
 }
 
 // Styles for Input inside a label

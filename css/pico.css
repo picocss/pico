@@ -27,6 +27,7 @@
   --contrast-hover:    #0d1419;
   --contrast-focus:    rgba(115, 130, 140, 0.125);
   --contrast-border:   rgba(255, 223, 128, 0.5);
+  --contrast-border-h: #ffdf80;
   --contrast-inverse:  #FFF;
   --input-background:  #FFF;
   --input-border:      #c8d1d8;
@@ -73,6 +74,7 @@
     --contrast-hover:    #FFF;
     --contrast-focus:    rgba(89, 107, 120, 0.25);
     --contrast-border:   rgba(255, 223, 128, 0.33);
+    --contrast-border-h: rgba(255, 223, 128, 0.5);
     --contrast-inverse:  #10181e;
     --input-background:  #10181e;
     --input-border:      #374956;
@@ -437,7 +439,9 @@ a.contrast:not([role="button"]) {
 }
 
 a.contrast:not([role="button"]):hover, a.contrast:not([role="button"]):active, a.contrast:not([role="button"]):focus {
+  box-shadow: inset 0 -0.33rem 0 var(--contrast-border-h);
   color: var(--contrast-hover);
+  text-decoration: none;
 }
 
 a.contrast:not([role="button"]):focus {
@@ -779,7 +783,9 @@ form small {
   color: var(--muted-text);
 }
 
-input + small {
+input + small,
+select + small,
+textarea + small {
   margin-top: -1rem;
   margin-bottom: 1.5rem;
 }

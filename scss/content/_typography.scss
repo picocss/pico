@@ -115,7 +115,9 @@ a {
     &:hover,
     &:active,
     &:focus {
+      box-shadow: inset 0 -.33rem 0 var(--contrast-border-h);
       color: var(--contrast-hover);
+      text-decoration: none;
     }
 
     &:focus {
@@ -179,7 +181,7 @@ hgroup {
   *{
     margin-bottom: 0;
   }
-  
+
   > *:last-child {
     color: var(--muted-text);
     font-size: 1.125rem;

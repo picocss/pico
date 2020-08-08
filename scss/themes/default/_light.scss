@@ -31,7 +31,8 @@
   --contrast:          #{$grey-800};
   --contrast-hover:    #{mix($grey-900, $black)};
   --contrast-focus:    #{rgba($grey-500, .125)};
-  --contrast-border:   #{rgba($amber-200, .5)}; // For links
+  --contrast-border:   #{rgba($amber-200, .5)}; // Links underline
+  --contrast-border-h: #{rgba($amber-200, 1)};  // Links hover underline
   --contrast-inverse:  #{$white};
 
   // Form elements
