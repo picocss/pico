@@ -8,7 +8,7 @@
 
 <p align="center">
   <strong>Graceful & Minimal CSS design system in pure semantic HTML.</strong><br>
-  Elegant styles for all natives HTML elements without `.classes` and dark mode automatically enabled.<br><br>
+  Elegant styles for all natives HTML elements without <code>.classes</code> and dark mode automatically enabled.<br><br>
   <a href="https://picocss.com/#examples">Examples</a> ·
   <a href="https://picocss.com/docs/">Documentation</a>
 </p>
@@ -27,7 +27,7 @@
 There are 3 ways to get started with pico.css:
 
 ### Install manually
-[Download Pico](https://github.com/picocss/pico/archive/v1.0.4.zip) and link `/css/pico.min.css` in the `<head>` of your website.
+[Download Pico](https://github.com/picocss/pico/archive/v1.0.5.zip) and link `/css/pico.min.css` in the `<head>` of your website.
 
 ```html
 <link rel="stylesheet" href="css/pico.min.css">
