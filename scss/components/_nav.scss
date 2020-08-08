@@ -49,8 +49,12 @@ nav {
       text-decoration: none;
     }
 
+    // Disable underline for a.contrast in nav
     @if $enable-classes {
-      &.contrast:not([role="button"]) {
+      &.contrast:not([role="button"]),
+      &.contrast:not([role="button"]):hover,
+      &.contrast:not([role="button"]):active,
+      &.contrast:not([role="button"]):focus  {
         box-shadow: none;
       }
     }

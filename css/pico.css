@@ -1529,7 +1529,7 @@ nav a:hover, nav a:active, nav a:focus {
   text-decoration: none;
 }
 
-nav a.contrast:not([role="button"]) {
+nav a.contrast:not([role="button"]), nav a.contrast:not([role="button"]):hover, nav a.contrast:not([role="button"]):active, nav a.contrast:not([role="button"]):focus {
   box-shadow: none;
 }
 
