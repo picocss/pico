@@ -1,12 +1,19 @@
+<p align="center">
+  <a href="https://picocss.com/">
+    <img src="https://picocss.com/img/logo.svg" width="64" height="64">
+  </a>
+</p>
 
-<a href="https://picocss.com/">
-  <img src="https://picocss.com/img/logo.svg" width="64" height="64">
-</a>
+<h3 align="center">Pico.css</h3>
+
+<p align="center">
+  <strong>Graceful & Minimal CSS design system in pure semantic HTML.</strong><br>
+  Elegant styles for all natives HTML elements without `.classes` and dark mode automatically enabled.<br><br>
+  <a href="https://picocss.com/#examples">Examples</a> ·
+  <a href="https://picocss.com/docs/">Documentation</a>
+</p>
 
 # Pico.css
-
-**Graceful & Minimal CSS design system in pure semantic HTML.**  
-Elegant styles for all natives HTML elements without `.classes` and dark mode automatically enabled.
 
 `5.6 KB` minified and gzipped
 
