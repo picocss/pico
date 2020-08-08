@@ -38,9 +38,11 @@ Alternatively, you can use the [unpkg CDN](https://unpkg.com/@picocss/pico@lates
 npm install @picocss/pico
 ```
 
-
-
 ## Examples
+
+<a href="https://picocss.com/#examples">
+  <img src="https://picocss.com/img/examples.jpg">
+</a>
 
 - [**Class-less**](https://picocss.com/examples/classless/): Just a pure semantic HTML markup, without `.classes`
 - [**Company**](https://picocss.com/examples/company/): A classic company or blog layout with a sidebar.
