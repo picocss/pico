@@ -598,10 +598,6 @@ textarea {
   line-height: 1.5;
 }
 
-/**
- * 1. Change the inconsistent appearance in all browsers (opinionated).
- * 2. Add typography inheritance in all browsers (opinionated).
- */
 input {
   overflow: visible;
 }
