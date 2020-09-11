@@ -30,26 +30,31 @@ $enable-transitions: false;
 @import "themes/default";
 
 // Layout
-@import "layout/document";                // html
-@import "layout/sectioning";              // body, header, main, footer
-@import "layout/container";               // .container, .container-fluid
-// @import "layout/section";              // section
-@import "layout/grid";                    // .grid
-@import "layout/scroller";                // figure
+@import "layout/document";               // html
+@import "layout/sectioning";             // body, header, main, footer
+@import "layout/container";              // .container, .container-fluid
+// @import "layout/section";             // section
+@import "layout/grid";                   // .grid
+@import "layout/scroller";               // figure
 
 // Content
-@import "content/typography";             // a, headings, p, ul, blockquote ...
-@import "content/form";                   // label, input, select, ...
-@import "content/form-checkbox-radio";    // type=checkbox, type=radio, role=switch
-@import "content/button";                 // button, a[role=button], ...
-// @import "content/button-styles";       // .secondary, .contrast, .outline
-@import "content/table";                  // table, tr, td, ...
-// @import "content/code";                // pre, code, ...
-// @import "content/miscs";               // hr, progress, template, [hidden]
+@import "content/typography";            // a, headings, p, ul, blockquote, ...
+@import "content/embedded";              // audio, canvas, iframe, img, svg, video
+@import "content/form";                  // label, input, select, ...
+@import "content/form-checkbox-radio";   // type=checkbox, type=radio, role=switch
+@import "content/button";                // button, a[role=button], ...
+// @import "content/button-styles";      // .secondary, .contrast, .outline
+@import "content/table";                 // table, tr, td, ...
+// @import "content/code";               // pre, code, ...
+@import "content/accessibility";         // -ms-touch-action, aria-*
+// @import "content/miscs";              // hr, progress, template, [hidden], dialog
 
 // Components
-// @import "components/accordion";        // details, summary
-// @import "components/card";             // article
-// @import "components/card-sectioning";  // article > header, footer, pre
-// @import "components/nav";              // nav
-// @import "components/tooltip";          // data-tooltip
+// @import "components/accordion";       // details, summary
+// @import "components/card";            // article
+// @import "components/card-sectioning"; // article > header, footer, pre
+// @import "components/nav";             // nav
+// @import "components/tooltip";         // data-tooltip
+
+// Reduce motion
+// @import "content/reduce-motion";      // prefers-reduced-motion

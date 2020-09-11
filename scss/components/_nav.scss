@@ -11,6 +11,7 @@ nav ul {
 nav {
   justify-content: space-between;
 
+  ol,
   ul {
     align-items: center;
     margin-bottom: 0;
@@ -65,6 +66,7 @@ nav {
 aside {
 
   nav,
+  ol,
   ul,
   li {
     display: block;

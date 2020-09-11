@@ -15,7 +15,7 @@
 
 # Pico.css
 
-`5.6 KB` minified and gzipped
+`6.2 KB` minified and gzipped
 
 - **Class-light and semantic**: we use simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
 - **Great styles with just one CSS file**: No dependencies, package manager, external files or JavaScript.
@@ -83,6 +83,6 @@ npm install @picocss/pico
 ## Copyright and license
 
 - Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LICENSE.md)
-- Openly inspired by [Bootstrap](https://github.com/twbs/bootstrap) ([MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE)), [Spectre](https://github.com/picturepan2/spectre) ([MIT](https://github.com/picturepan2/spectre/blob/master/LICENSE)), [Wing](https://github.com/kbrsh/wing/) ([MIT](https://github.com/kbrsh/wing/blob/master/LICENSE)), [CSS Bed](https://github.com/ubershmekel/cssbed) & [Normalize](https://github.com/necolas/normalize.css/) ([MIT](https://github.com/necolas/normalize.css/blob/master/LICENSE.md))
+- Openly inspired by [Bootstrap](https://github.com/twbs/bootstrap) ([MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE)), [Spectre](https://github.com/picturepan2/spectre) ([MIT](https://github.com/picturepan2/spectre/blob/master/LICENSE)), [Wing](https://github.com/kbrsh/wing/) ([MIT](https://github.com/kbrsh/wing/blob/master/LICENSE)), [CSS Bed](https://github.com/ubershmekel/cssbed), [Normalize](https://github.com/necolas/normalize.css/) ([MIT](https://github.com/necolas/normalize.css/blob/master/LICENSE.md)) & [Sanitize](https://csstools.github.io/sanitize.css/) ([CC0 1.0](https://github.com/csstools/sanitize.css/blob/master/LICENSE.md))
 - Library icons by [Feather](https://github.com/feathericons/feather) ([MIT](https://github.com/feathericons/feather/blob/master/LICENSE))
 - Website icons by [Font Awesome](https://github.com/FortAwesome/Font-Awesome) ([CC BY 4.0](https://fontawesome.com/license/free))
