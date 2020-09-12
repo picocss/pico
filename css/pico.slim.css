@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.0.5 (https://picocss.com)
+ * Pico.css v1.0.6 (https://picocss.com)
  * Copyright 2020 - Licensed under MIT
  *
  * Slim version example
@@ -158,16 +158,26 @@
   box-sizing: border-box;
 }
 
+::before,
+::after {
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tab-size: 4;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
   background: var(--background);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
+  cursor: default;
 }
 
 @media (min-width: 576px) {
@@ -230,9 +240,9 @@ body > footer {
 
 @media (min-width: 576px) {
   .container {
+    max-width: 510px;
     padding-right: 0;
     padding-left: 0;
-    max-width: 510px;
   }
 }
 
@@ -315,15 +325,19 @@ sup {
   top: -0.5rem;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  border-style: none;
+dl dl,
+dl ol,
+dl ul,
+ol dl,
+ul dl {
+  margin: 0;
 }
 
-svg,
-img {
-  vertical-align: text-bottom;
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 0;
 }
 
 address,
@@ -432,6 +446,84 @@ h6 {
   font-size: 1rem;
 }
 
+address ~ h1,
+blockquote ~ h1,
+dl ~ h1,
+figure ~ h1,
+form ~ h1,
+ol ~ h1,
+p ~ h1,
+pre ~ h1,
+table ~ h1,
+ul ~ h1 {
+  margin-top: 3rem;
+}
+
+address ~ h2,
+blockquote ~ h2,
+dl ~ h2,
+figure ~ h2,
+form ~ h2,
+ol ~ h2,
+p ~ h2,
+pre ~ h2,
+table ~ h2,
+ul ~ h2 {
+  margin-top: 2.625rem;
+}
+
+address ~ h3,
+blockquote ~ h3,
+dl ~ h3,
+figure ~ h3,
+form ~ h3,
+ol ~ h3,
+p ~ h3,
+pre ~ h3,
+table ~ h3,
+ul ~ h3 {
+  margin-top: 2.25rem;
+}
+
+address ~ h4,
+blockquote ~ h4,
+dl ~ h4,
+figure ~ h4,
+form ~ h4,
+ol ~ h4,
+p ~ h4,
+pre ~ h4,
+table ~ h4,
+ul ~ h4 {
+  margin-top: 1.875rem;
+}
+
+address ~ h5,
+blockquote ~ h5,
+dl ~ h5,
+figure ~ h5,
+form ~ h5,
+ol ~ h5,
+p ~ h5,
+pre ~ h5,
+table ~ h5,
+ul ~ h5 {
+  margin-top: 1.6875rem;
+}
+
+address ~ h6,
+blockquote ~ h6,
+dl ~ h6,
+figure ~ h6,
+form ~ h6,
+ol ~ h6,
+p ~ h6,
+pre ~ h6,
+table ~ h6,
+ul ~ h6 {
+  margin-top: 1.5rem;
+}
+
 hgroup {
   margin-bottom: 1.5rem;
 }
@@ -531,6 +623,46 @@ del {
 }
 
 /**
+ * Embedded content
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+audio,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+iframe {
+  border-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-style: none;
+}
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/**
  * Form elements
  */
 input,
@@ -540,6 +672,7 @@ textarea {
   margin: 0;
   font-family: inherit;
   font-size: 1rem;
+  letter-spacing: inherit;
   line-height: 1.5;
 }
 
@@ -560,7 +693,10 @@ legend {
 }
 
 textarea {
+  margin: 0;
   overflow: auto;
+  resize: vertical;
+  resize: block;
 }
 
 [type="checkbox"],
@@ -568,7 +704,8 @@ textarea {
   padding: 0;
 }
 
-[type="number"]::-webkit-inner-spin-button {
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -584,6 +721,29 @@ textarea {
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   font: inherit;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+::-ms-expand {
+  display: none;
+}
+
+[type="color"],
+[type="range"] {
+  padding: 0;
+  border-width: 0;
 }
 
 fieldset {
@@ -623,9 +783,11 @@ textarea {
   vertical-align: middle;
 }
 
-input::placeholder,
+input::placeholder, input::-webkit-input-placeholder,
 select::placeholder,
-textarea::placeholder {
+select::-webkit-input-placeholder,
+textarea::placeholder,
+textarea::-webkit-input-placeholder {
   color: var(--muted-text);
   opacity: 1;
 }
@@ -684,8 +846,8 @@ select::-ms-expand {
   background-color: transparent;
 }
 
-select:not([multiple]) {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23808080' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+select:not([multiple]):not([size]) {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(115, 130, 140, 0.66)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-position: center right .75rem;
   background-repeat: no-repeat;
   background-size: 1rem auto;
@@ -827,8 +989,8 @@ a[role="button"] {
 button,
 input[type="submit"],
 a[role="button"] {
-  border: 1px solid transparent;
   padding: 0.75rem 1rem;
+  border: 1px solid transparent;
   border-radius: 0.25rem;
   outline: none;
   background-color: var(--primary);
@@ -873,7 +1035,10 @@ a[role="button"][disabled] {
  */
 table {
   width: 100%;
+  border-color: inherit;
+  border-collapse: collapse;
   border-spacing: 0;
+  text-indent: 0;
 }
 
 th,
@@ -881,9 +1046,9 @@ td {
   padding: 0.5rem 1rem;
   border-bottom: 1px solid var(--table-border);
   color: var(--muted-text);
+  font-size: 0.875rem;
   font-weight: 400;
   text-align: left;
-  font-size: 0.875rem;
 }
 
 th,
@@ -899,4 +1064,41 @@ thead td {
 
 tbody tr:nth-child(odd) {
   background-color: var(--table-stripping);
+}
+
+/**
+ * Accessibility & User interaction
+ */
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+[aria-controls] {
+  cursor: pointer;
+}
+
+[aria-disabled="true"],
+[disabled] {
+  cursor: not-allowed;
+}
+
+[aria-hidden="false"][hidden] {
+  display: initial;
+}
+
+[aria-hidden="false"][hidden]:not(:focus) {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation;
 }

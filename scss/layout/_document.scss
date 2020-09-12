@@ -4,23 +4,38 @@
  */
 
 
-// Reboot
-// Based on normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+// Reboot based on :
+// - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+// - sanitize.css v12.0.1 | CC0 1.0 Universal | github.com/csstools/sanitize.css
 // ––––––––––––––––––––
 
-// Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `border`.
+// Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `border`
 *,
 *::before,
 *::after {
   box-sizing: border-box; // 1
 }
 
-// 1. Correct the line height in all browsers.
-// 2. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
-// 3. Change the default tap highlight to be completely transparent in iOS.
+// 1. Add text decoration inheritance in all browsers (opinionated)
+// 2. Add vertical alignment inheritance in all browsers (opinionated)
+::before,
+::after {
+  text-decoration: inherit; // 1
+  vertical-align: inherit; // 2
+}
+
+// 1. Correct the line height in all browsers
+// 2. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS
+// 3. Change the default tap highlight to be completely transparent in iOS
+// 4. Use the default cursor in all browsers (opinionated)
+// 5. Use a 4-space tab width in all browsers (opinionated)
+// 6. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS
 html {
   -webkit-text-size-adjust: 100%; // 2
   -webkit-tap-highlight-color: rgba(0,0,0,0); // 3
+  -moz-tab-size: 4; // 5
+  -ms-text-size-adjust: 100%; // 6
+  -webkit-text-size-adjust: 100%; // 6
   background: var(--background);
   color: var(--text);
   font-family: $sans-serif;
@@ -28,6 +43,7 @@ html {
   font-weight: $text-weight;
   line-height: $line-height; // 1
   text-rendering: optimizeLegibility;
+  cursor: default; // 4
 
   @if map-get($breakpoints, "sm") and
     map-get($base-font, "sm") and
@@ -64,5 +80,4 @@ html {
       font-size: map-get($base-font, "xl");
     }
   }
-
 }

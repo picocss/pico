@@ -54,14 +54,38 @@ $spacing-input-button: .75rem 1rem !default;
 // ––––––––––––––––––––
 
 // Sans serif native font stack
-$sans-serif:     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                 "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-                 "Apple Color Emoji", "Segoe UI Emoji",
-                 "Segoe UI Symbol", "Noto Color Emoji" !default;
+// Source: github.com/csstools/sanitize.css/blob/master/typography.css
+$sans-serif:
+  system-ui,
+  -apple-system,       // macOS 10.11-10.12
+  "Segoe UI",          // Windows 6+
+  "Roboto",            // Android 4+
+  "Ubuntu",            // Ubuntu 10.10+
+  "Cantarell",         // Gnome 3+
+  "Noto Sans",         // KDE Plasma 5+
+  sans-serif,          // Fallback
+  "Apple Color Emoji", // macOS emoji
+  "Segoe UI Emoji",    // Windows emoji
+  "Segoe UI Symbol",   // Windows emoji
+  "Noto Color Emoji"   // Linux emoji
+  !default;
 
 // Monospace native font stack
-$monospace:      SFMono-Regular, Menlo, Monaco, Consolas,
-                 "Liberation Mono", "Courier New", monospace !default;
+// // Source: github.com/csstools/sanitize.css/blob/master/typography.css
+$monospace:
+  "Menlo",             // macOS 10.10+
+  "Consolas",          // Windows 6+
+  "Roboto Mono",       // Android 4+
+  "Ubuntu Monospace",  // Ubuntu 10.10+
+  "Noto Mono",         // KDE Plasma 5+
+  "Oxygen Mono",       // KDE Plasma 4+
+  "Liberation Mono",   // Linux/OpenOffice fallback
+  monospace,           // Fallback
+  "Apple Color Emoji", // macOS emoji
+  "Segoe UI Emoji",    // Windows emoji
+  "Segoe UI Symbol",   // Windows emoji
+  "Noto Color Emoji"   // Linux emoji
+  !default;
 
 $line-height:    1.5 !default;
 $text-weight:    400 !default;

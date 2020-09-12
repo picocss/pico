@@ -3,17 +3,25 @@
  */
 
 
-// Reboot
+// Reboot based on :
+// - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+// - sanitize.css v12.0.1 | CC0 1.0 Universal | github.com/csstools/sanitize.css
 // ––––––––––––––––––––
 
-// 1. Correct the inheritance and scaling of font size in all browsers.
-// 2. Correct the odd `em` font sizing in all browsers.
+// 1. Correct the inheritance and scaling of font size in all browsers
+// 2. Correct the odd `em` font sizing in all browsers
 pre,
 code,
 kbd,
 samp {
   font-family: $monospace; // 1
   font-size: 1rem; // 2
+}
+
+// Prevent overflow of the container in all browsers (opinionated)
+pre {
+  -ms-overflow-style: scrollbar;
+  overflow: auto;
 }
 
 
@@ -27,7 +35,7 @@ kbd {
   color: var(--code-color-1);
   font-size: 85%;
   font-weight: 400;
-  line-height: 1;
+  line-height: initial;
 
   @if map-get($breakpoints, "sm") and $enable-responsive-typography {
     @media (min-width: map-get($breakpoints, "sm")) {

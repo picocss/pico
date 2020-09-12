@@ -3,17 +3,18 @@
  */
 
 
-// Reboot
-// Based on normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+// Reboot based on :
+// - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+// - sanitize.css v12.0.1 | CC0 1.0 Universal | github.com/csstools/sanitize.css
 // ––––––––––––––––––––
 
-// Add the correct font weight in Chrome, Edge, and Safari.
+// Add the correct font weight in Chrome, Edge, and Safari
 b,
 strong {
   font-weight: bolder;
 }
 
-// Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+// Prevent `sub` and `sup` elements from affecting the line height in all browsers
 sub,
 sup {
   position: relative;
@@ -28,16 +29,21 @@ sup {
   top: -0.5rem;
 }
 
-// 1. Remove the border on images inside links in IE 10.
-// 2. Responsive by default
-img {
-  max-width: 100%; // 2
-  height: auto; // 2
-  border-style: none; // 1
+// Remove the margin on nested lists in Chrome, Edge, IE, and Safari
+dl dl,
+dl ol,
+dl ul,
+ol dl,
+ul dl {
+  margin: 0;
 }
-svg,
-img {
-  vertical-align: text-bottom;
+
+// Remove the margin on nested lists in Edge 18- and IE
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 0;
 }
 
 
@@ -62,7 +68,7 @@ ul {
 }
 
 // Links
-// 1. Remove the gray background on active links in IE 10.
+// 1. Remove the gray background on active links in IE 10
 a {
   background-color: transparent; // 1
   color: var(--primary);
@@ -174,6 +180,43 @@ h6 {
   font-size: 1rem;
 }
 
+// Margin-top for headings after a typography block
+address,
+blockquote,
+dl,
+figure,
+form,
+ol,
+p,
+pre,
+table,
+ul {
+  & ~ h1 {
+    margin-top: $spacing-typography*2;
+  }
+
+  & ~ h2 {
+    margin-top: $spacing-typography*1.75;
+  }
+
+  & ~ h3 {
+    margin-top: $spacing-typography*1.5;
+  }
+
+  & ~ h4 {
+    margin-top: $spacing-typography*1.25;
+  }
+
+  & ~ h5 {
+    margin-top: $spacing-typography*1.125;
+  }
+
+  & ~ h6 {
+    margin-top: $spacing-typography;
+  }
+}
+
+
 // Multi-level heading
 hgroup {
   margin-bottom: $spacing-typography;
@@ -258,7 +301,7 @@ blockquote {
 }
 
 // Abbreviations
-// 1. Remove underline decoration in Chrome, Edge, IE, Opera, and Safari.
+// 1. Remove underline decoration in Chrome, Edge, IE, Opera, and Safari
 abbr[title] {
   border-bottom: 1px dotted;
   text-decoration: none; // 1

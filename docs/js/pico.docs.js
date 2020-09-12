@@ -5,9 +5,9 @@
  * Copyright 2019 - Licensed under MIT
  */
 
-// @prepros-append src/aside.js
-// @prepros-append src/theme-switcher.js
-// @prepros-append src/grid.js
-// @prepros-append src/color-picker.js
-// @prepros-append src/most-visible.js
-// @prepros-append src/scrollspy.js
+// @append src/aside.js
+// @append src/theme-switcher.js
+// @append src/grid.js
+// @append src/color-picker.js
+// @append src/most-visible.js
+// @append src/scrollspy.js

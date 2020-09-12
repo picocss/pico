@@ -17,9 +17,9 @@
 
     @if map-get($breakpoints, "sm") and $enable-viewport {
       @media (min-width: map-get($breakpoints, "sm")) {
+        max-width: map-get($viewports, "sm");
         padding-right: 0;
         padding-left: 0;
-        max-width: map-get($viewports, "sm");
       }
     }
 

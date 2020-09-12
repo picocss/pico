@@ -3,11 +3,12 @@
  */
 
 
-// Reboot
-// Based on normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+// Reboot based on :
+// - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+// - sanitize.css v12.0.1 | CC0 1.0 Universal | github.com/csstools/sanitize.css
 // ––––––––––––––––––––
 
-// 1. Change the font styles in all browsers.
+// 1. Change the font styles in all browsers
 // 2. Remove the margin in Firefox and Safari
 // 3. Show the overflow in Edge
 button {
@@ -17,7 +18,7 @@ button {
   text-transform: none; // 1
 }
 
-// Correct the inability to style clickable types in iOS and Safari.
+// Correct the inability to style clickable types in iOS and Safari
 button,
 [type="button"],
 [type="reset"],
@@ -25,7 +26,7 @@ button,
   -webkit-appearance: button;
 }
 
-// Remove the inner border and padding in Firefox.
+// Remove the inner border and padding in Firefox
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -52,8 +53,8 @@ a[role="button"] {
 button,
 input[type="submit"],
 a[role="button"] {
-  border: 1px solid transparent;
   padding: $spacing-input-button;
+  border: 1px solid transparent;
   border-radius: $round;
   outline: none;
   background-color: var(--primary);

@@ -4,11 +4,12 @@
  */
 
 
-// Reboot
-// Based on normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+// Reboot based on :
+// - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+// - sanitize.css v12.0.1 | CC0 1.0 Universal | github.com/csstools/sanitize.css
 // ––––––––––––––––––––
 
-// Render the `main` element consistently in IE.
+// Render the `main` element consistently in IE
 main {
   display: block;
 }

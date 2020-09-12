@@ -1,0 +1,29 @@
+@if $enable-transitions {
+
+  /**
+   * Reduce Motion Features
+   */
+
+
+  // Based on :
+  // - sanitize.css v12.0.1 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // 1. Remove animations when motion is reduced (opinionated)
+  // 2. Remove fixed background attachments when motion is reduced (opinionated)
+  // 3. Remove timed scrolling behaviors when motion is reduced (opinionated)
+  // 4. Remove transitions when motion is reduced (opinionated)
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      background-attachment: initial; // 2
+      animation-duration: 1ms; // 1
+      animation-delay: -1ms; // 1
+      animation-iteration-count: 1; // 1
+      scroll-behavior: auto; // 3
+      transition-delay: 0s; // 4
+      transition-duration: 0s; // 4
+    }
+  }
+}
