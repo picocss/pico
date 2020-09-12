@@ -180,25 +180,17 @@ h6 {
   font-size: 1rem;
 }
 
-// Multi-level heading
-hgroup {
-  margin-bottom: $spacing-typography;
-
-  *{
-    margin-bottom: 0;
-  }
-
-  > *:last-child {
-    color: var(--muted-text);
-    font-size: 1.125rem;
-    font-weight: normal;
-  }
-}
-
-// Paragraphs
-p {
-  margin-bottom: $spacing-typography/2;
-
+// Margin-top for headings after a typography block
+address,
+blockquote,
+dl,
+figure,
+form,
+ol,
+p,
+pre,
+table,
+ul {
   & ~ h1 {
     margin-top: $spacing-typography*2;
   }
@@ -222,6 +214,27 @@ p {
   & ~ h6 {
     margin-top: $spacing-typography;
   }
+}
+
+
+// Multi-level heading
+hgroup {
+  margin-bottom: $spacing-typography;
+
+  *{
+    margin-bottom: 0;
+  }
+
+  > *:last-child {
+    color: var(--muted-text);
+    font-size: 1.125rem;
+    font-weight: normal;
+  }
+}
+
+// Paragraphs
+p {
+  margin-bottom: $spacing-typography/2;
 }
 
 // Small

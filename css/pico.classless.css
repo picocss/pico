@@ -425,6 +425,84 @@ h6 {
   font-size: 1rem;
 }
 
+address ~ h1,
+blockquote ~ h1,
+dl ~ h1,
+figure ~ h1,
+form ~ h1,
+ol ~ h1,
+p ~ h1,
+pre ~ h1,
+table ~ h1,
+ul ~ h1 {
+  margin-top: 3rem;
+}
+
+address ~ h2,
+blockquote ~ h2,
+dl ~ h2,
+figure ~ h2,
+form ~ h2,
+ol ~ h2,
+p ~ h2,
+pre ~ h2,
+table ~ h2,
+ul ~ h2 {
+  margin-top: 2.625rem;
+}
+
+address ~ h3,
+blockquote ~ h3,
+dl ~ h3,
+figure ~ h3,
+form ~ h3,
+ol ~ h3,
+p ~ h3,
+pre ~ h3,
+table ~ h3,
+ul ~ h3 {
+  margin-top: 2.25rem;
+}
+
+address ~ h4,
+blockquote ~ h4,
+dl ~ h4,
+figure ~ h4,
+form ~ h4,
+ol ~ h4,
+p ~ h4,
+pre ~ h4,
+table ~ h4,
+ul ~ h4 {
+  margin-top: 1.875rem;
+}
+
+address ~ h5,
+blockquote ~ h5,
+dl ~ h5,
+figure ~ h5,
+form ~ h5,
+ol ~ h5,
+p ~ h5,
+pre ~ h5,
+table ~ h5,
+ul ~ h5 {
+  margin-top: 1.6875rem;
+}
+
+address ~ h6,
+blockquote ~ h6,
+dl ~ h6,
+figure ~ h6,
+form ~ h6,
+ol ~ h6,
+p ~ h6,
+pre ~ h6,
+table ~ h6,
+ul ~ h6 {
+  margin-top: 1.5rem;
+}
+
 hgroup {
   margin-bottom: 1.5rem;
 }
@@ -441,30 +519,6 @@ hgroup > *:last-child {
 
 p {
   margin-bottom: 0.75rem;
-}
-
-p ~ h1 {
-  margin-top: 3rem;
-}
-
-p ~ h2 {
-  margin-top: 2.625rem;
-}
-
-p ~ h3 {
-  margin-top: 2.25rem;
-}
-
-p ~ h4 {
-  margin-top: 1.875rem;
-}
-
-p ~ h5 {
-  margin-top: 1.6875rem;
-}
-
-p ~ h6 {
-  margin-top: 1.5rem;
 }
 
 small {
