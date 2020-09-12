@@ -464,6 +464,30 @@ p {
   margin-bottom: 0.75rem;
 }
 
+p ~ h1 {
+  margin-top: 3rem;
+}
+
+p ~ h2 {
+  margin-top: 2.625rem;
+}
+
+p ~ h3 {
+  margin-top: 2.25rem;
+}
+
+p ~ h4 {
+  margin-top: 1.875rem;
+}
+
+p ~ h5 {
+  margin-top: 1.6875rem;
+}
+
+p ~ h6 {
+  margin-top: 1.5rem;
+}
+
 small {
   font-size: 85%;
 }

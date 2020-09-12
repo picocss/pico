@@ -198,6 +198,30 @@ hgroup {
 // Paragraphs
 p {
   margin-bottom: $spacing-typography/2;
+
+  & ~ h1 {
+    margin-top: $spacing-typography*2;
+  }
+
+  & ~ h2 {
+    margin-top: $spacing-typography*1.75;
+  }
+
+  & ~ h3 {
+    margin-top: $spacing-typography*1.5;
+  }
+
+  & ~ h4 {
+    margin-top: $spacing-typography*1.25;
+  }
+
+  & ~ h5 {
+    margin-top: $spacing-typography*1.125;
+  }
+
+  & ~ h6 {
+    margin-top: $spacing-typography;
+  }
 }
 
 // Small
