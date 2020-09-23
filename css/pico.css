@@ -1839,8 +1839,8 @@ aside li a {
 }
 
 /**
-   * Reduce Motion Features
-   */
+ * Reduce Motion Features
+ */
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,
