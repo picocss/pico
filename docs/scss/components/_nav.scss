@@ -15,6 +15,10 @@ body > nav {
 
   a {
     border-radius: 0;
+
+    svg {
+      vertical-align: text-bottom;
+    }
   }
 
   ul:first-of-type li {
