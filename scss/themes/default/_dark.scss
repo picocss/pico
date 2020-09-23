@@ -63,8 +63,8 @@
     --code-color-5:      #{mix($grey-600, $grey-700)};
 
     // Table
-    --table-border:      #{darken($grey-900, 6%)};
-    --table-stripping:   #{rgba($grey-500,.02)};
+    --table-border:      #{rgba($grey-500, .06)};
+    --table-stripping:   #{rgba($grey-500, .02)};
   }
 }
 
@@ -133,6 +133,6 @@
   --code-color-5:      #{mix($grey-600, $grey-700)};
 
   // Table
-  --table-border:      #{darken($grey-900, 6%)};
-  --table-stripping:   #{rgba($grey-500,.02)};
+  --table-border:      #{rgba($grey-500, .06)};
+  --table-stripping:   #{rgba($grey-500, .02)};
 }

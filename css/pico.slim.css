@@ -98,7 +98,7 @@
     --code-color-3:      #599fa6;
     --code-color-4:      #8c8473;
     --code-color-5:      #4d606d;
-    --table-border:      #10181e;
+    --table-border:      rgba(115, 130, 140, 0.06);
     --table-stripping:   rgba(115, 130, 140, 0.02);
   }
 }
@@ -144,7 +144,7 @@
   --code-color-3:      #599fa6;
   --code-color-4:      #8c8473;
   --code-color-5:      #4d606d;
-  --table-border:      #10181e;
+  --table-border:      rgba(115, 130, 140, 0.06);
   --table-stripping:   rgba(115, 130, 140, 0.02);
 }
 
