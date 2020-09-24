@@ -3,22 +3,8 @@
  * Alternatives input types (Not Checkboxes & Radios)
  */
 
-// Force height
-[type="color"],
-[type="date"],
-[type="datetime-local"],
-[type="month"],
-[type="time"],
-[type="week"],
-[type="search"] {
-  height: calc(#{1rem*$line-height} + #{$spacing-input-button-vertical*2} + 2px);
-}
-
 // Color
 [type="color"] {
-  position: relative;
-  padding: 0;
-  overflow: hidden;
 
   // Wrapper
   &::-webkit-color-swatch-wrapper {
@@ -31,9 +17,11 @@
   // Swatch
   &::-webkit-color-swatch {
     border: none;
+    border-radius: $round/2;
   }
   &::-moz-color-swatch {
     border: none;
+    border-radius: $round/2;
   }
 }
 
@@ -245,14 +233,14 @@
     }
   }
 
-  &:focus  {
+  &:focus {
     box-shadow: none;
   }
 }
 
 // Search
-[type="search"]{
-  padding-left: #{$spacing-input-button-horizontal + 1.5rem};
+input[type="search"] {
+  padding-left: #{$spacing-input-button-horizontal + 1.5rem} !important;
   border-radius: #{1rem*$line-height + $spacing-input-button-vertical*2};
   // Source: https://feathericons.com/
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{$icon-color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
