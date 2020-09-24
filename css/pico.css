@@ -725,6 +725,236 @@ svg:not(:root) {
 }
 
 /**
+ * Button
+ */
+button {
+  margin: 0;
+  overflow: visible;
+  font-family: inherit;
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+button {
+  display: block;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+a[role="button"] {
+  display: inline-block;
+  text-decoration: none;
+}
+
+button,
+input[type="submit"],
+input[type="button"],
+[type="file"]::-webkit-file-upload-button,
+a[role="button"] {
+  padding: 0.75rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  outline: none;
+  background-color: var(--primary);
+  color: var(--primary-inverse);
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+button:hover, button:active, button:focus,
+input[type="submit"]:hover,
+input[type="submit"]:active,
+input[type="submit"]:focus,
+input[type="button"]:hover,
+input[type="button"]:active,
+input[type="button"]:focus,
+[type="file"]::-webkit-file-upload-button:hover,
+[type="file"]::-webkit-file-upload-button:active,
+[type="file"]::-webkit-file-upload-button:focus,
+a[role="button"]:hover,
+a[role="button"]:active,
+a[role="button"]:focus {
+  background-color: var(--primary-hover);
+}
+
+button:focus,
+input[type="submit"]:focus,
+input[type="button"]:focus,
+[type="file"]::-webkit-file-upload-button:focus,
+a[role="button"]:focus {
+  box-shadow: 0 0 0 0.2rem var(--primary-focus);
+}
+
+input[type="reset"] {
+  cursor: pointer;
+}
+
+button[disabled],
+input[type="submit"][disabled],
+input[type="button"][disabled],
+input[type="reset"][disabled],
+a[role="button"][disabled] {
+  opacity: .5;
+  pointer-events: none;
+}
+
+/**
+ * Button Styles
+ */
+button.secondary,
+input[type="submit"].secondary,
+input[type="reset"],
+a[role="button"].secondary {
+  background-color: var(--secondary);
+  color: var(--secondary-inverse);
+}
+
+button.secondary:hover, button.secondary:active, button.secondary:focus,
+input[type="submit"].secondary:hover,
+input[type="submit"].secondary:active,
+input[type="submit"].secondary:focus,
+input[type="reset"]:hover,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+a[role="button"].secondary:hover,
+a[role="button"].secondary:active,
+a[role="button"].secondary:focus {
+  background-color: var(--secondary-hover);
+}
+
+button.secondary:focus,
+input[type="submit"].secondary:focus,
+input[type="reset"]:focus,
+a[role="button"].secondary:focus {
+  box-shadow: 0 0 0 0.2rem var(--secondary-focus);
+}
+
+button.contrast,
+input[type="submit"].contrast,
+input[type="reset"].contrast,
+a[role="button"].contrast {
+  background-color: var(--contrast);
+  color: var(--contrast-inverse);
+}
+
+button.contrast:hover, button.contrast:active, button.contrast:focus,
+input[type="submit"].contrast:hover,
+input[type="submit"].contrast:active,
+input[type="submit"].contrast:focus,
+input[type="reset"].contrast:hover,
+input[type="reset"].contrast:active,
+input[type="reset"].contrast:focus,
+a[role="button"].contrast:hover,
+a[role="button"].contrast:active,
+a[role="button"].contrast:focus {
+  background-color: var(--contrast-hover);
+}
+
+button.contrast:focus,
+input[type="submit"].contrast:focus,
+input[type="reset"].contrast:focus,
+a[role="button"].contrast:focus {
+  box-shadow: 0 0 0 0.2rem var(--contrast-focus);
+}
+
+button.outline,
+input[type="submit"].outline,
+a.outline[role="button"] {
+  border: 1px solid var(--primary);
+  background-color: transparent;
+  color: var(--primary);
+}
+
+button.outline:hover, button.outline:active, button.outline:focus,
+input[type="submit"].outline:hover,
+input[type="submit"].outline:active,
+input[type="submit"].outline:focus,
+a.outline[role="button"]:hover,
+a.outline[role="button"]:active,
+a.outline[role="button"]:focus {
+  border: 1px solid var(--primary-hover);
+  color: var(--primary-hover);
+}
+
+button.outline.secondary,
+input[type="submit"].outline.secondary,
+input[type="reset"].outline,
+a[role="button"].outline.secondary {
+  border: 1px solid var(--secondary);
+  background-color: transparent;
+  color: var(--secondary);
+}
+
+button.outline.secondary:hover, button.outline.secondary:active, button.outline.secondary:focus,
+input[type="submit"].outline.secondary:hover,
+input[type="submit"].outline.secondary:active,
+input[type="submit"].outline.secondary:focus,
+input[type="reset"].outline:hover,
+input[type="reset"].outline:active,
+input[type="reset"].outline:focus,
+a[role="button"].outline.secondary:hover,
+a[role="button"].outline.secondary:active,
+a[role="button"].outline.secondary:focus {
+  border: 1px solid var(--secondary-hover);
+  color: var(--secondary-hover);
+}
+
+button.outline.secondary:focus,
+input[type="submit"].outline.secondary:focus,
+input[type="reset"].outline:focus,
+a[role="button"].outline.secondary:focus {
+  box-shadow: 0 0 0 0.2rem var(--secondary-focus);
+}
+
+button.outline.contrast,
+input[type="submit"].outline.contrast,
+input[type="reset"].outline.contrast,
+a[role="button"].outline.contrast {
+  border: 1px solid var(--contrast);
+  background-color: transparent;
+  color: var(--contrast);
+}
+
+button.outline.contrast:hover, button.outline.contrast:active, button.outline.contrast:focus,
+input[type="submit"].outline.contrast:hover,
+input[type="submit"].outline.contrast:active,
+input[type="submit"].outline.contrast:focus,
+input[type="reset"].outline.contrast:hover,
+input[type="reset"].outline.contrast:active,
+input[type="reset"].outline.contrast:focus,
+a[role="button"].outline.contrast:hover,
+a[role="button"].outline.contrast:active,
+a[role="button"].outline.contrast:focus {
+  border: 1px solid var(--contrast-hover);
+  color: var(--contrast-hover);
+}
+
+button.outline.contrast:focus,
+input[type="submit"].outline.contrast:focus,
+input[type="reset"].outline.contrast:focus,
+a[role="button"].outline.contrast:focus {
+  box-shadow: 0 0 0 0.2rem var(--contrast-focus);
+}
+
+/**
  * Form elements
  */
 input,
@@ -843,7 +1073,7 @@ textarea {
   color: var(--text);
   font-weight: normal;
   vertical-align: middle;
-  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 input::placeholder, input::-webkit-input-placeholder,
@@ -886,21 +1116,27 @@ textarea[disabled] ~ label {
   color: var(--muted-text);
 }
 
+input[disabled]:not([type="reset"]):not([type="submit"]):not([type="button"]),
+select[disabled]:not([type="reset"]):not([type="submit"]):not([type="button"]),
+textarea[disabled]:not([type="reset"]):not([type="submit"]):not([type="button"]) {
+  background-color: var(--muted-background);
+}
+
 input[disabled],
 select[disabled],
 textarea[disabled] {
-  background-color: var(--muted-background);
+  cursor: not-allowed;
   opacity: .5;
 }
 
-input:not([type="checkbox"]):not([type="radio"]),
+input,
 select,
 textarea {
   margin-bottom: 1.5rem;
   padding: 0.75rem 1rem;
 }
 
-input:not([type="checkbox"]):not([type="radio"]).valid, input:not([type="checkbox"]):not([type="radio"]).invalid,
+input.valid, input.invalid,
 select.valid,
 select.invalid,
 textarea.valid,
@@ -911,22 +1147,16 @@ textarea.invalid {
   background-size: 1rem auto;
 }
 
-input:not([type="checkbox"]):not([type="radio"]).valid,
+input.valid,
 select.valid,
 textarea.valid {
-  border-bottom: 1px solid var(--valid);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(40, 138, 106, 0.99)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(40, 138, 106, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
 }
 
-input:not([type="checkbox"]):not([type="radio"]).invalid,
+input.invalid,
 select.invalid,
 textarea.invalid {
-  border-bottom: 1px solid var(--invalid);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(185, 70, 70, 0.99)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
-}
-
-input[type="color"] {
-  height: calc(3rem + 2px);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(185, 70, 70, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
 }
 
 select::-ms-expand {
@@ -935,7 +1165,8 @@ select::-ms-expand {
 }
 
 select:not([multiple]):not([size]) {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(115, 130, 140, 0.66)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(115, 130, 140, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-position: center right .75rem;
   background-repeat: no-repeat;
   background-size: 1rem auto;
@@ -952,7 +1183,7 @@ textarea + small {
   margin-bottom: 1.5rem;
 }
 
-label > input:not([type="checkbox"]):not([type="radio"]),
+label > input,
 label > select,
 label > textarea {
   margin-top: 0.125rem;
@@ -960,19 +1191,17 @@ label > textarea {
 
 /**
  * Form elements
+ * Checkboxes & Radios
  */
 [type="checkbox"],
 [type="radio"] {
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  width: 1.25rem;
+  height: 1.25rem;
   margin-right: .375rem;
   margin-bottom: 0.125rem;
   border-width: 2px;
-  font-size: 1.125rem;
-  vertical-align: middle;
   cursor: pointer;
-  transition: none;
 }
 
 [type="checkbox"]::-ms-check,
@@ -987,7 +1216,7 @@ label > textarea {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFF' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: .66rem auto;
+  background-size: .75rem auto;
 }
 
 [type="checkbox"] ~ label,
@@ -1010,17 +1239,17 @@ label > textarea {
 }
 
 [type="checkbox"][role="switch"] {
-  width: 1.85em;
-  height: 1em;
-  border: 2px solid var(--input-border);
-  border-radius: 1em;
+  width: 2.25rem;
+  height: 1.25rem;
+  border: 3px solid var(--input-border);
+  border-radius: 1.25rem;
   background-color: var(--input-border);
-  line-height: 1em;
+  line-height: 1.25rem;
 }
 
 [type="checkbox"][role="switch"]:before {
   display: block;
-  width: calc(1em - 4px);
+  width: calc(1.25rem - 6px);
   height: 100%;
   border-radius: 50%;
   background-color: var(--primary-inverse);
@@ -1036,226 +1265,222 @@ label > textarea {
 
 [type="checkbox"][role="switch"]:checked::before {
   margin-right: 0;
-  margin-left: calc(0.925em - 2px);
+  margin-left: calc(1.125rem - 3px);
 }
 
 /**
- * Button
+ * Form elements
+ * Alternatives input types (Not Checkboxes & Radios)
  */
-button {
-  margin: 0;
-  overflow: visible;
-  font-family: inherit;
-  text-transform: none;
+[type="color"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="time"],
+[type="week"],
+[type="search"] {
+  height: calc(1.5rem + 1.5rem + 2px);
 }
 
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-}
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type="color"] {
+  position: relative;
   padding: 0;
-  border-style: none;
+  overflow: hidden;
 }
 
-button {
-  display: block;
-  width: 100%;
-  margin-bottom: 1.5rem;
+[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
 }
 
-a[role="button"] {
-  display: inline-block;
-  text-decoration: none;
+[type="color"]::-moz-focus-inner {
+  padding: 0;
 }
 
-button,
-input[type="submit"],
-a[role="button"] {
-  padding: 0.75rem 1rem;
-  border: 1px solid transparent;
-  border-radius: 0.25rem;
-  outline: none;
-  background-color: var(--primary);
-  color: var(--primary-inverse);
-  font-size: 1rem;
-  font-weight: normal;
-  line-height: 1.5;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+[type="color"]::-webkit-color-swatch {
+  border: none;
 }
 
-button:hover, button:active, button:focus,
-input[type="submit"]:hover,
-input[type="submit"]:active,
-input[type="submit"]:focus,
-a[role="button"]:hover,
-a[role="button"]:active,
-a[role="button"]:focus {
-  background-color: var(--primary-hover);
+[type="color"]::-moz-color-swatch {
+  border: none;
 }
 
-button:focus,
-input[type="submit"]:focus,
-a[role="button"]:focus {
-  box-shadow: 0 0 0 0.2rem var(--primary-focus);
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="time"],
+[type="week"] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(115, 130, 140, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-calendar'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+  background-position: center right .75rem;
+  background-repeat: no-repeat;
+  background-size: 1rem auto;
 }
 
-input[type="reset"] {
-  cursor: pointer;
+[type="date"]::-webkit-calendar-picker-indicator,
+[type="datetime-local"]::-webkit-calendar-picker-indicator,
+[type="month"]::-webkit-calendar-picker-indicator,
+[type="time"]::-webkit-calendar-picker-indicator,
+[type="week"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
 }
 
-button[disabled],
-input[type="submit"][disabled],
-input[type="reset"][disabled],
-a[role="button"][disabled] {
-  opacity: .5;
-  pointer-events: none;
+[type="time"] {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(115, 130, 140, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-clock'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
 }
 
-/**
- * Button Styles
- */
-button.secondary,
-input.secondary[type="submit"],
-input[type="reset"],
-a.secondary[role="button"] {
+[type="file"] {
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: var(--muted-text);
+}
+
+[type="file"]::-webkit-file-upload-button {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   background-color: var(--secondary);
   color: var(--secondary-inverse);
 }
 
-button.secondary:hover, button.secondary:active, button.secondary:focus,
-input.secondary[type="submit"]:hover,
-input.secondary[type="submit"]:active,
-input.secondary[type="submit"]:focus,
-input[type="reset"]:hover,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-a.secondary[role="button"]:hover,
-a.secondary[role="button"]:active,
-a.secondary[role="button"]:focus {
+[type="file"]:hover, [type="file"]:active, [type="file"]:focus {
+  border: none;
+}
+
+[type="file"]:hover::-webkit-file-upload-button, [type="file"]:active::-webkit-file-upload-button, [type="file"]:focus::-webkit-file-upload-button {
   background-color: var(--secondary-hover);
 }
 
-button.secondary:focus,
-input.secondary[type="submit"]:focus,
-input[type="reset"]:focus,
-a.secondary[role="button"]:focus {
+[type="file"]:focus {
+  box-shadow: none;
+}
+
+[type="file"]:focus::-webkit-file-upload-button {
   box-shadow: 0 0 0 0.2rem var(--secondary-focus);
 }
 
-button.contrast,
-input.contrast[type="submit"],
-input.contrast[type="reset"],
-a.contrast[role="button"] {
-  background-color: var(--contrast);
-  color: var(--contrast-inverse);
+[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 1.25rem;
+  background: transparent;
 }
 
-button.contrast:hover, button.contrast:active, button.contrast:focus,
-input.contrast[type="submit"]:hover,
-input.contrast[type="submit"]:active,
-input.contrast[type="submit"]:focus,
-input.contrast[type="reset"]:hover,
-input.contrast[type="reset"]:active,
-input.contrast[type="reset"]:focus,
-a.contrast[role="button"]:hover,
-a.contrast[role="button"]:active,
-a.contrast[role="button"]:focus {
-  background-color: var(--contrast-hover);
+[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: var(--input-border);
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-button.contrast:focus,
-input.contrast[type="submit"]:focus,
-input.contrast[type="reset"]:focus,
-a.contrast[role="button"]:focus {
-  box-shadow: 0 0 0 0.2rem var(--contrast-focus);
+[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: var(--input-border);
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-button.outline,
-input.outline[type="submit"],
-a.outline[role="button"] {
-  border: 1px solid var(--primary);
-  background-color: transparent;
-  color: var(--primary);
+[type="range"]::-ms-track {
+  width: 100%;
+  height: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: var(--input-border);
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-button.outline:hover, button.outline:active, button.outline:focus,
-input.outline[type="submit"]:hover,
-input.outline[type="submit"]:active,
-input.outline[type="submit"]:focus,
-a.outline[role="button"]:hover,
-a.outline[role="button"]:active,
-a.outline[role="button"]:focus {
-  border: 1px solid var(--primary-hover);
-  color: var(--primary-hover);
+[type="range"]::-ms-fill-lower {
+  background-color: var(--input-border);
 }
 
-button.outline.secondary,
-input.outline.secondary[type="submit"],
-input.outline[type="reset"],
-a.outline.secondary[role="button"] {
-  border: 1px solid var(--secondary);
-  background-color: transparent;
-  color: var(--secondary);
+[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: -0.5rem;
+  border: 0;
+  border: 2px solid var(--background);
+  border-radius: 50%;
+  background-color: var(--text);
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
-button.outline.secondary:hover, button.outline.secondary:active, button.outline.secondary:focus,
-input.outline.secondary[type="submit"]:hover,
-input.outline.secondary[type="submit"]:active,
-input.outline.secondary[type="submit"]:focus,
-input.outline[type="reset"]:hover,
-input.outline[type="reset"]:active,
-input.outline[type="reset"]:focus,
-a.outline.secondary[role="button"]:hover,
-a.outline.secondary[role="button"]:active,
-a.outline.secondary[role="button"]:focus {
-  border: 1px solid var(--secondary-hover);
-  color: var(--secondary-hover);
+[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: -0.5rem;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--text);
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
-button.outline.secondary:focus,
-input.outline.secondary[type="submit"]:focus,
-input.outline[type="reset"]:focus,
-a.outline.secondary[role="button"]:focus {
-  box-shadow: 0 0 0 0.2rem var(--secondary-focus);
+[type="range"]::-ms-thumb {
+  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: -0.5rem;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--text);
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
-button.outline.contrast,
-input.outline.contrast[type="submit"],
-input.outline.contrast[type="reset"],
-a.outline.contrast[role="button"] {
-  border: 1px solid var(--contrast);
-  background-color: transparent;
-  color: var(--contrast);
+[type="range"]:focus::-webkit-slider-runnable-track {
+  background-color: var(--muted-text);
+  box-shadow: 0 0 0 0.1rem var(--primary-focus);
 }
 
-button.outline.contrast:hover, button.outline.contrast:active, button.outline.contrast:focus,
-input.outline.contrast[type="submit"]:hover,
-input.outline.contrast[type="submit"]:active,
-input.outline.contrast[type="submit"]:focus,
-input.outline.contrast[type="reset"]:hover,
-input.outline.contrast[type="reset"]:active,
-input.outline.contrast[type="reset"]:focus,
-a.outline.contrast[role="button"]:hover,
-a.outline.contrast[role="button"]:active,
-a.outline.contrast[role="button"]:focus {
-  border: 1px solid var(--contrast-hover);
-  color: var(--contrast-hover);
+[type="range"]:focus::-moz-range-track {
+  background-color: var(--muted-text);
+  box-shadow: 0 0 0 0.1rem var(--primary-focus);
 }
 
-button.outline.contrast:focus,
-input.outline.contrast[type="submit"]:focus,
-input.outline.contrast[type="reset"]:focus,
-a.outline.contrast[role="button"]:focus {
-  box-shadow: 0 0 0 0.2rem var(--contrast-focus);
+[type="range"]:focus::-ms-track {
+  background-color: var(--muted-text);
+  box-shadow: 0 0 0 0.1rem var(--primary-focus);
+}
+
+[type="range"]:focus::-ms-fill-lower {
+  background-color: var(--muted-text);
+  box-shadow: 0 0 0 0.1rem var(--primary-focus);
+}
+
+[type="range"]:active::-webkit-slider-thumb {
+  transform: scale(1.25);
+  background-color: var(--primary-hover);
+}
+
+[type="range"]:active::-moz-range-thumb {
+  transform: scale(1.25);
+  background-color: var(--primary-hover);
+}
+
+[type="range"]:active::-ms-thumb {
+  transform: scale(1.25);
+  background-color: var(--primary-hover);
+}
+
+[type="range"]:focus {
+  box-shadow: none;
+}
+
+[type="search"] {
+  padding-left: 2.5rem;
+  border-radius: 3rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(115, 130, 140, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+  background-position: center left .75rem;
+  background-repeat: no-repeat;
+  background-size: 1rem auto;
+}
+
+[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  display: none;
 }
 
 /**
@@ -1520,7 +1745,7 @@ details summary::after {
   height: 1rem;
   float: right;
   transform: rotate(-90deg);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(115, 130, 140, 0.66)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(115, 130, 140, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 1rem auto;

@@ -164,9 +164,8 @@ textarea {
       background-color $transition,
       border-color $transition,
       color $transition,
-      border-color $transition,
       box-shadow $transition;
-    }
+  }
 
   &::placeholder,
   &::-webkit-input-placeholder {
@@ -193,18 +192,22 @@ textarea {
     }
   }
 
-  &[disabled] {
+  &[disabled]:not([type="reset"]):not([type="submit"]):not([type="button"]) {
     background-color: var(--muted-background);
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
     opacity: .5;
   }
 }
 
 // Text, Select & Textarea
-input:not([type="checkbox"]):not([type="radio"]),
+input,
 select,
 textarea {
   margin-bottom: $spacing-typography;
-  padding: $spacing-input-button;
+  padding: $spacing-input-button-vertical $spacing-input-button-horizontal;
 
   @if $enable-input-states and $enable-classes {
 
@@ -218,22 +221,17 @@ textarea {
     }
 
     &.valid {
-      border-bottom: 1px solid var(--valid);
+      // border-bottom: 1px solid var(--valid);
       // Source: https://feathericons.com/
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{rgba($green-600, .99)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{rgba($green-600, .999)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
     }
 
     &.invalid {
-      border-bottom: 1px solid var(--invalid);
+      // border-bottom: 1px solid var(--invalid);
       // Source: https://feathericons.com/
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{rgba($red-700, .99)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{rgba($red-700, .999)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
     }
   }
-}
-
-// Color
-input[type="color"] {
-  height: calc(3rem + 2px); // HACK
 }
 
 // Select
@@ -246,8 +244,9 @@ select {
   }
 
   &:not([multiple]):not([size]) {
+    padding-right: #{$spacing-input-button-horizontal + 1.5rem};
     // Source: https://feathericons.com/
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{rgba($grey-500, .66)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{$icon-color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     background-position: center right .75rem;
     background-repeat: no-repeat;
     background-size: 1rem auto;
@@ -270,7 +269,7 @@ textarea {
 
 // Styles for Input inside a label
 label {
-  & > input:not([type="checkbox"]):not([type="radio"]),
+  & > input,
   & > select,
   & > textarea {
     margin-top: $spacing-label-input;

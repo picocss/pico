@@ -1,0 +1,268 @@
+/**
+ * Form elements
+ * Alternatives input types (Not Checkboxes & Radios)
+ */
+
+// Force height
+[type="color"],
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="time"],
+[type="week"],
+[type="search"] {
+  height: calc(#{1rem*$line-height} + #{$spacing-input-button-vertical*2} + 2px);
+}
+
+// Color
+[type="color"] {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+
+  // Wrapper
+  &::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  &::-moz-focus-inner {
+    padding: 0;
+  }
+
+  // Swatch
+  &::-webkit-color-swatch {
+    border: none;
+  }
+  &::-moz-color-swatch {
+    border: none;
+  }
+}
+
+// Date & Time
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="time"],
+[type="week"] {
+
+  // Source: https://feathericons.com/
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{$icon-color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-calendar'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+  background-position: center right .75rem;
+  background-repeat: no-repeat;
+  background-size: 1rem auto;
+
+  &::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+}
+
+// Time
+[type="time"] {
+  // Source: https://feathericons.com/
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{$icon-color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-clock'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+// File
+[type="file"] {
+  padding: $spacing-input-button-horizontal/2 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: var(--muted-text);
+
+  &::-webkit-file-upload-button {
+    padding-top: $spacing-input-button-horizontal/2;
+    padding-bottom: $spacing-input-button-horizontal/2;
+    background-color: var(--secondary);
+    color: var(--secondary-inverse);
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    border: none;
+    &::-webkit-file-upload-button {
+      background-color: var(--secondary-hover);
+    }
+  }
+
+  &:focus {
+    box-shadow: none;
+    &::-webkit-file-upload-button {
+      box-shadow: 0 0 0 0.2rem var(--secondary-focus);
+    }
+  }
+}
+
+// Range
+[type="range"]{
+  // Config
+  $height-track: .25rem;
+  $height-thumb: 1.25rem;
+  $border-thumb: 2px;
+
+  // Styles
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: block;
+  width: 100%;
+  height: $height-thumb;
+  background: transparent;
+
+  // Slider Track
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: $height-track;
+    border-radius: $round;
+    background-color: var(--input-border);
+
+    @if $enable-transitions {
+      transition:
+        background-color $transition,
+        box-shadow $transition;
+    }
+  }
+  &::-moz-range-track {
+    width: 100%;
+    height:$height-track;
+    border-radius: $round;
+    background-color: var(--input-border);
+
+    @if $enable-transitions {
+      transition:
+        background-color $transition,
+        box-shadow $transition;
+    }
+  }
+
+  &::-ms-track {
+    width: 100%;
+    height: $height-track;
+    border-radius: $round;
+    background-color: var(--input-border);
+
+    @if $enable-transitions {
+      transition:
+        background-color $transition,
+        box-shadow $transition;
+    }
+  }
+
+  &::-ms-fill-lower {
+    background-color: var(--input-border);
+  }
+
+  // Slider Thumb
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: $height-thumb;
+    height: $height-thumb;
+    margin-top: #{(-($height-thumb/2) + ($height-track/2))};
+    border: 0;
+    border: $border-thumb solid var(--background);
+    border-radius: 50%;
+    background-color: var(--text);
+
+    @if $enable-transitions {
+      transition:
+        background-color $transition,
+        transform $transition;
+    }
+  }
+
+  &::-moz-range-thumb {
+    -webkit-appearance: none;
+    width: $height-thumb;
+    height: $height-thumb;
+    margin-top: #{(-($height-thumb/2) + ($height-track/2))};
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--text);
+
+    @if $enable-transitions {
+      transition:
+        background-color $transition,
+        transform $transition;
+    }
+  }
+
+  &::-ms-thumb {
+    -webkit-appearance: none;
+    width: $height-thumb;
+    height: $height-thumb;
+    margin-top: #{(-($height-thumb/2) + ($height-track/2))};
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--text);
+
+    @if $enable-transitions {
+      transition:
+        background-color $transition,
+        transform $transition;
+    }
+  }
+
+  &:focus {
+
+    // Slider Track
+    &::-webkit-slider-runnable-track {
+      background-color: var(--muted-text);
+      box-shadow: 0 0 0 0.1rem var(--primary-focus);
+    }
+
+    &::-moz-range-track {
+      background-color: var(--muted-text);
+      box-shadow: 0 0 0 0.1rem var(--primary-focus);
+    }
+
+    &::-ms-track {
+      background-color: var(--muted-text);
+      box-shadow: 0 0 0 0.1rem var(--primary-focus);
+    }
+
+    &::-ms-fill-lower {
+      background-color: var(--muted-text);
+      box-shadow: 0 0 0 0.1rem var(--primary-focus);
+    }
+  }
+
+  &:active {
+
+    // Slider Thumb
+    &::-webkit-slider-thumb {
+      transform: scale(1.25);
+      background-color: var(--primary-hover);
+    }
+
+    &::-moz-range-thumb {
+      transform: scale(1.25);
+      background-color: var(--primary-hover);
+    }
+
+    &::-ms-thumb {
+      transform: scale(1.25);
+      background-color: var(--primary-hover);
+    }
+  }
+
+  &:focus  {
+    box-shadow: none;
+  }
+}
+
+// Search
+[type="search"]{
+  padding-left: #{$spacing-input-button-horizontal + 1.5rem};
+  border-radius: #{1rem*$line-height + $spacing-input-button-vertical*2};
+  // Source: https://feathericons.com/
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{$icon-color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+  background-position: center left .75rem;
+  background-repeat: no-repeat;
+  background-size: 1rem auto;
+
+  // Cancel button
+  &::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+    display: none;
+  }
+}

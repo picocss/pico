@@ -6,9 +6,9 @@
 
   // Button .secondary
   button.secondary,
-  input.secondary[type="submit"],
+  input[type="submit"].secondary,
   input[type="reset"],
-  a.secondary[role="button"] {
+  a[role="button"].secondary {
     background-color: var(--secondary);
     color: var(--secondary-inverse);
 
@@ -26,9 +26,9 @@
 
   // Button .contrast
   button.contrast,
-  input.contrast[type="submit"],
-  input.contrast[type="reset"],
-  a.contrast[role="button"] {
+  input[type="submit"].contrast,
+  input[type="reset"].contrast,
+  a[role="button"].contrast {
     background-color: var(--contrast);
     color: var(--contrast-inverse);
 
@@ -46,7 +46,7 @@
 
   // Button .outline
   button.outline,
-  input.outline[type="submit"],
+  input[type="submit"].outline,
   a.outline[role="button"] {
     border: 1px solid var(--primary);
     background-color: transparent;
@@ -63,9 +63,9 @@
 
   // Button .outline.secondary
   button.outline.secondary,
-  input.outline.secondary[type="submit"],
-  input.outline[type="reset"],
-  a.outline.secondary[role="button"] {
+  input[type="submit"].outline.secondary,
+  input[type="reset"].outline,
+  a[role="button"].outline.secondary {
     border: 1px solid var(--secondary);
     background-color: transparent;
     color: var(--secondary);
@@ -85,9 +85,9 @@
 
   // Button .outline.contrast
   button.outline.contrast,
-  input.outline.contrast[type="submit"],
-  input.outline.contrast[type="reset"],
-  a.outline.contrast[role="button"] {
+  input[type="submit"].outline.contrast,
+  input[type="reset"].outline.contrast,
+  a[role="button"].outline.contrast {
     border: 1px solid var(--contrast);
     background-color: transparent;
     color: var(--contrast);
