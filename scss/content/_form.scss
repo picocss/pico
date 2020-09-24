@@ -117,7 +117,7 @@ textarea {
 // ––––––––––––––––––––
 
 // Force height for alternatives input types
-input:not([type="checkbox"]):not([type="radio"]) {
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
   height: calc(#{1rem*$line-height} + #{$spacing-input-button-vertical*2} + 2px);
 }
 
@@ -127,15 +127,6 @@ fieldset {
   margin-bottom: $spacing-typography;
   padding: 0;
   border: 0;
-}
-
-// Layout
-input:not([type="checkbox"]):not([type="radio"]),
-select,
-textarea,
-form small {
-  display: block;
-  width: 100%;
 }
 
 // Spacing beteen label and input
@@ -149,7 +140,16 @@ fieldset legend {
   vertical-align: middle;
 }
 
-// Inputs (Not Checkboxes, Radios, Range, File)
+// Global layout
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea,
+form small {
+  display: block;
+  width: 100%;
+}
+
+// Reset appearance (Not Checkboxes, Radios, Range and File)
 input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]),
 select,
 textarea {
@@ -160,14 +160,7 @@ textarea {
   vertical-align: middle;
 }
 
-// Inputs (Not Checkboxes, Radios)
-input:not([type="checkbox"]):not([type="radio"]),
-select,
-textarea {
-  margin-bottom: $spacing-typography;
-}
-
-// Inputs (Commons styles)
+// Commons styles
 input,
 select,
 textarea {
@@ -198,10 +191,6 @@ textarea {
     border-color: var(--primary);
   }
 
-  &:focus  {
-    box-shadow: 0 0 0 0.2rem var(--primary-focus);
-  }
-
   &[readonly],
   &[disabled] {
     border-color: var(--muted-border);
@@ -220,13 +209,8 @@ textarea {
     cursor: not-allowed;
     opacity: .5;
   }
-}
 
-// Validation states for Text, Select & Textarea
-input,
-select,
-textarea {
-
+  // Validation states
   @if $enable-input-states and $enable-classes {
 
     // Validation states
@@ -248,6 +232,22 @@ textarea {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{rgba($red-700, .999)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
     }
   }
+}
+
+// Margin bottom (Not Checkboxes andRadios)
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  margin-bottom: $spacing-typography;
+}
+
+// Focus styles (Not Range and File)
+input:not([type="range"]):not([type="file"]),
+select,
+textarea {
+  &:focus  {
+    box-shadow: 0 0 0 0.2rem var(--primary-focus);
+ }
 }
 
 // Select
@@ -274,6 +274,7 @@ form small {
   color: var(--muted-text);
 }
 
+// Helper: padding
 input,
 select,
 textarea {

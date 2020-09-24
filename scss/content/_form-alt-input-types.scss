@@ -150,6 +150,7 @@
     border: $border-thumb solid var(--background);
     border-radius: 50%;
     background-color: var(--text);
+    cursor: pointer;
 
     @if $enable-transitions {
       transition:
@@ -166,6 +167,7 @@
     border: 0;
     border-radius: 50%;
     background-color: var(--text);
+    cursor: pointer;
 
     @if $enable-transitions {
       transition:
@@ -182,6 +184,7 @@
     border: 0;
     border-radius: 50%;
     background-color: var(--text);
+    cursor: pointer;
 
     @if $enable-transitions {
       transition:
@@ -239,7 +242,7 @@
 }
 
 // Search
-input[type="search"] {
+[type="search"] {
   padding-left: #{$spacing-input-button-horizontal + 1.5rem} !important;
   border-radius: #{1rem*$line-height + $spacing-input-button-vertical*2};
   // Source: https://feathericons.com/

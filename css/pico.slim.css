@@ -837,7 +837,7 @@ textarea {
   border-width: 0;
 }
 
-input:not([type="checkbox"]):not([type="radio"]) {
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
   height: calc(1.5rem + 1.5rem + 2px);
 }
 
@@ -848,19 +848,19 @@ fieldset {
   border: 0;
 }
 
+label,
+fieldset legend {
+  display: block;
+  margin-bottom: 0.125rem;
+  vertical-align: middle;
+}
+
 input:not([type="checkbox"]):not([type="radio"]),
 select,
 textarea,
 form small {
   display: block;
   width: 100%;
-}
-
-label,
-fieldset legend {
-  display: block;
-  margin-bottom: 0.125rem;
-  vertical-align: middle;
 }
 
 input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]),
@@ -871,12 +871,6 @@ textarea {
   appearance: none;
   padding: 0.75rem 1rem;
   vertical-align: middle;
-}
-
-input:not([type="checkbox"]):not([type="radio"]),
-select,
-textarea {
-  margin-bottom: 1.5rem;
 }
 
 input,
@@ -907,12 +901,6 @@ textarea:focus {
   border-color: var(--primary);
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-  box-shadow: 0 0 0 0.2rem var(--primary-focus);
-}
-
 input[readonly], input[disabled],
 select[readonly],
 select[disabled],
@@ -941,6 +929,18 @@ select[disabled],
 textarea[disabled] {
   cursor: not-allowed;
   opacity: .5;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  margin-bottom: 1.5rem;
+}
+
+input:not([type="range"]):not([type="file"]):focus,
+select:focus,
+textarea:focus {
+  box-shadow: 0 0 0 0.2rem var(--primary-focus);
 }
 
 select::-ms-expand {

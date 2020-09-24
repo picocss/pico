@@ -813,7 +813,7 @@ textarea {
   border-width: 0;
 }
 
-input:not([type="checkbox"]):not([type="radio"]) {
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
   height: calc(1.5rem + 1.5rem + 2px);
 }
 
@@ -824,19 +824,19 @@ fieldset {
   border: 0;
 }
 
+label,
+fieldset legend {
+  display: block;
+  margin-bottom: 0.125rem;
+  vertical-align: middle;
+}
+
 input:not([type="checkbox"]):not([type="radio"]),
 select,
 textarea,
 form small {
   display: block;
   width: 100%;
-}
-
-label,
-fieldset legend {
-  display: block;
-  margin-bottom: 0.125rem;
-  vertical-align: middle;
 }
 
 input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]),
@@ -847,12 +847,6 @@ textarea {
   appearance: none;
   padding: 0.75rem 1rem;
   vertical-align: middle;
-}
-
-input:not([type="checkbox"]):not([type="radio"]),
-select,
-textarea {
-  margin-bottom: 1.5rem;
 }
 
 input,
@@ -884,12 +878,6 @@ textarea:focus {
   border-color: var(--primary);
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-  box-shadow: 0 0 0 0.2rem var(--primary-focus);
-}
-
 input[readonly], input[disabled],
 select[readonly],
 select[disabled],
@@ -918,6 +906,18 @@ select[disabled],
 textarea[disabled] {
   cursor: not-allowed;
   opacity: .5;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  margin-bottom: 1.5rem;
+}
+
+input:not([type="range"]):not([type="file"]):focus,
+select:focus,
+textarea:focus {
+  box-shadow: 0 0 0 0.2rem var(--primary-focus);
 }
 
 select::-ms-expand {
@@ -1156,6 +1156,7 @@ label > textarea {
   border: 2px solid var(--background);
   border-radius: 50%;
   background-color: var(--text);
+  cursor: pointer;
   transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
@@ -1167,6 +1168,7 @@ label > textarea {
   border: 0;
   border-radius: 50%;
   background-color: var(--text);
+  cursor: pointer;
   transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
@@ -1178,6 +1180,7 @@ label > textarea {
   border: 0;
   border-radius: 50%;
   background-color: var(--text);
+  cursor: pointer;
   transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
@@ -1220,7 +1223,7 @@ label > textarea {
   box-shadow: none;
 }
 
-input[type="search"] {
+[type="search"] {
   padding-left: 2.5rem !important;
   border-radius: 3rem;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(115, 130, 140, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
@@ -1229,7 +1232,7 @@ input[type="search"] {
   background-size: 1rem auto;
 }
 
-input[type="search"]::-webkit-search-cancel-button {
+[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
   display: none;
 }
