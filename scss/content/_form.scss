@@ -129,14 +129,11 @@ fieldset {
   border: 0;
 }
 
-// Spacing beteen label and input
-$spacing-label-input: $spacing-typography/12;
-
 // Label & legend
 label,
 fieldset legend {
   display: block;
-  margin-bottom: $spacing-label-input;
+  margin-bottom: $spacing-form-elements;
   vertical-align: middle;
 }
 
@@ -289,6 +286,6 @@ label {
   & > input,
   & > select,
   & > textarea {
-    margin-top: $spacing-label-input;
+    margin-top: $spacing-form-elements;
   }
 }

@@ -1052,7 +1052,7 @@ fieldset {
 label,
 fieldset legend {
   display: block;
-  margin-bottom: 0.125rem;
+  margin-bottom: 0.25rem;
   vertical-align: middle;
 }
 
@@ -1195,7 +1195,7 @@ textarea + small {
 label > input,
 label > select,
 label > textarea {
-  margin-top: 0.125rem;
+  margin-top: 0.25rem;
 }
 
 /**
@@ -1211,9 +1211,9 @@ label > textarea {
   width: 1.25rem;
   height: 1.25rem;
   margin-right: .375rem;
-  margin-bottom: 0.125rem;
+  margin-bottom: 0.25rem;
   border-width: 2px;
-  vertical-align: bottom;
+  vertical-align: middle;
   cursor: pointer;
 }
 

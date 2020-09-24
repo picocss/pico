@@ -851,7 +851,7 @@ fieldset {
 label,
 fieldset legend {
   display: block;
-  margin-bottom: 0.125rem;
+  margin-bottom: 0.25rem;
   vertical-align: middle;
 }
 
@@ -970,7 +970,7 @@ textarea + small {
 label > input,
 label > select,
 label > textarea {
-  margin-top: 0.125rem;
+  margin-top: 0.25rem;
 }
 
 /**
