@@ -969,7 +969,7 @@ label > textarea {
   margin-right: .375rem;
   margin-bottom: 0.125rem;
   border-width: 2px;
-  vertical-align: middle;
+  vertical-align: bottom;
   cursor: pointer;
 }
 
