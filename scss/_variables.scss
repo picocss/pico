@@ -29,25 +29,32 @@ $enable-input-states: true !default;
 // Enable transitions for <a>, <button>, <input>
 $enable-transitions: true !default;
 
+// Enable overriding with !important (used for <article>, `reduce-motion`, [type="search"])
+$enable-important: true !default;
+
 
 // Spacings
 // ––––––––––––––––––––
 
 // Gutters and horizontals margins
 // For <body>, .grid, <nav>, <table>
-$spacing-gutter:       1rem !default;
+$spacing-gutter: 1rem !default;
 
 // Blocks verticals margins and paddings
 // For <header>, <main>, <footer>, <section>, <article>
 // This value is proportionally multiplied according breakpoints for great responsive spacings
-$spacing-block:        2rem !default;
+$spacing-block: 2rem !default;
 
 // Vertical margins for Typography and Form elements
 // This value is proportionally multiplied according breakpoints for great responsive spacings
-$spacing-typography:   1.5rem !default;
+$spacing-typography: 1.5rem !default;
+
+// Spacing between: Label and Input, Checkboxes, Radios
+$spacing-form-elements: $spacing-typography/6 !default;
 
 // Padding for <input> and <button>
-$spacing-input-button: .75rem 1rem !default;
+$spacing-input-button-vertical:   .75rem !default;
+$spacing-input-button-horizontal: 1rem !default;
 
 
 // Typography

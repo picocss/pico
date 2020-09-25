@@ -21,8 +21,11 @@
 
 
 - **Class-light and semantic**: we use simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
+
 - **Great styles with just one CSS file**: No dependencies, package manager, external files or JavaScript.
+
 - **Responsive everything**: Elegant and consistent adaptatives spacings and typography on all devices.
+
 - **Light or Dark mode**: Shipped with two beautiful color themes, automatically enabled according to the user preference.
 
 ## Usage
@@ -50,14 +53,27 @@ npm install @picocss/pico
 
 ## Examples
 
-<a href="https://picocss.com/#examples">
-  <img src="https://picocss.com/img/examples.jpg">
-</a>
+[![Examples](https://picocss.com/img/examples.jpg)](https://picocss.com/#examples)
 
-- [**Class-less**](https://picocss.com/examples/classless/): Just a pure semantic HTML markup, without `.classes`
-- [**Company**](https://picocss.com/examples/company/): A classic company or blog layout with a sidebar.
-- [**Google Amp**](https://picocss.com/examples/google-amp/): A simple layout for Google Amp, with inlined CSS.
-- [**Sign in**](https://picocss.com/examples/sign-in/): A minimalist layout for Login pages.
+- **[Class-less](https://picocss.com/examples/classless/)**  
+  Just a pure semantic HTML markup, without `.classes`
+
+- **[Company](https://picocss.com/examples/company/)**  
+  A classic company or blog layout with a sidebar
+
+- **[Google Amp](https://picocss.com/examples/google-amp/)**   
+  A simple layout for Google Amp, with inlined CSS
+
+- **[Sign in](https://picocss.com/examples/sign-in/)**  
+  A minimalist layout for Login pages
+
+- **[Form elements](https://picocss.com/examples/form-elements/)**  
+  Semantic HTML form markup, without any `.classes` or `JavaScript`
+
+- **[Bootstrap grid system](https://picocss.com/examples/bootstrap-grid/)**  
+  Custom CSS build with the Bootstrap grid system to manage complex grid layouts in Pico
+
+All examples are open-sourced in [picocss/examples](https://github.com/picocss/examples).
 
 ## Documentation
 

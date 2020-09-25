@@ -52,8 +52,10 @@ a[role="button"] {
 
 button,
 input[type="submit"],
+input[type="button"],
+[type="file"]::-webkit-file-upload-button,
 a[role="button"] {
-  padding: $spacing-input-button;
+  padding: $spacing-input-button-vertical $spacing-input-button-horizontal;
   border: 1px solid transparent;
   border-radius: $round;
   outline: none;
@@ -91,6 +93,7 @@ input[type="reset"] {
 // Button [disabled]
 button,
 input[type="submit"],
+input[type="button"],
 input[type="reset"],
 a[role="button"] {
 

@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.0.6 (https://picocss.com)
+ * Pico.css v1.1.0 (https://picocss.com)
  * Copyright 2020 - Licensed under MIT
  *
  * Slim version example
@@ -19,6 +19,9 @@ $enable-input-states: false;
 // Enable transitions for <a>, <button>, <input>, <details>
 $enable-transitions: false;
 
+// Enable overriding with !important (used for <article>, `reduce-motion`, [type="search"])
+$enable-important: false;
+
 
 // Pico Lib
 // --------------------
@@ -30,31 +33,32 @@ $enable-transitions: false;
 @import "themes/default";
 
 // Layout
-@import "layout/document";               // html
-@import "layout/sectioning";             // body, header, main, footer
-@import "layout/container";              // .container, .container-fluid
-// @import "layout/section";             // section
-@import "layout/grid";                   // .grid
-@import "layout/scroller";               // figure
+@import "layout/document";                 // html
+@import "layout/sectioning";               // body, header, main, footer
+@import "layout/container";                // .container, .container-fluid
+// @import "layout/section";               // section
+@import "layout/grid";                     // .grid
+@import "layout/scroller";                 // figure
 
 // Content
-@import "content/typography";            // a, headings, p, ul, blockquote, ...
-@import "content/embedded";              // audio, canvas, iframe, img, svg, video
-@import "content/form";                  // label, input, select, ...
-@import "content/form-checkbox-radio";   // type=checkbox, type=radio, role=switch
-@import "content/button";                // button, a[role=button], ...
-// @import "content/button-styles";      // .secondary, .contrast, .outline
-@import "content/table";                 // table, tr, td, ...
-// @import "content/code";               // pre, code, ...
-@import "content/accessibility";         // -ms-touch-action, aria-*
-// @import "content/miscs";              // hr, progress, template, [hidden], dialog
+@import "content/typography";              // a, headings, p, ul, blockquote, ...
+@import "content/embedded";                // audio, canvas, iframe, img, svg, video
+@import "content/button";                  // button, a[role=button], type=button, type=submit, ...
+// @import "content/button-styles";        // .secondary, .contrast, .outline
+@import "content/form";                    // input, select, textarea, label, fieldset, legend
+// @import "content/form-checkbox-radio";  // type=checkbox, type=radio, role=switch
+// @import "content/form-alt-input-types"; // type=color, type=date, type=file, type=search, ...
+@import "content/table";                   // table, tr, td, ...
+// @import "content/code";                 // pre, code, ...
+@import "content/accessibility";           // -ms-touch-action, aria-*
+// @import "content/miscs";                // hr, progress, template, [hidden], dialog
 
 // Components
-// @import "components/accordion";       // details, summary
-// @import "components/card";            // article
-// @import "components/card-sectioning"; // article > header, footer, pre
-// @import "components/nav";             // nav
-// @import "components/tooltip";         // data-tooltip
+// @import "components/accordion";         // details, summary
+// @import "components/card";              // article
+// @import "components/card-sectioning";   // article > header, footer, pre
+// @import "components/nav";               // nav
+// @import "components/tooltip";           // data-tooltip
 
 // Reduce motion
-// @import "content/reduce-motion";      // prefers-reduced-motion
+// @import "content/reduce-motion";        // prefers-reduced-motion
