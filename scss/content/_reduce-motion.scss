@@ -1,4 +1,4 @@
-@if $enable-transitions {
+@if $enable-transitions and $enable-important {
 
 /**
  * Reduce Motion Features
@@ -17,13 +17,13 @@
     *,
     ::before,
     ::after {
-      background-attachment: initial; // 2
-      animation-duration: 1ms; // 1
-      animation-delay: -1ms; // 1
-      animation-iteration-count: 1; // 1
-      scroll-behavior: auto; // 3
-      transition-delay: 0s; // 4
-      transition-duration: 0s; // 4
+      background-attachment: initial !important; // 2
+      animation-duration: 1ms !important; // 1
+      animation-delay: -1ms !important; // 1
+      animation-iteration-count: 1 !important; // 1
+      scroll-behavior: auto !important; // 3
+      transition-delay: 0s !important; // 4
+      transition-duration: 0s !important; // 4
     }
   }
 }

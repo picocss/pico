@@ -1228,8 +1228,8 @@ label > textarea {
 }
 
 [type="search"] {
-  padding-left: 2.5rem !important;
   border-radius: 3rem;
+  padding-left: 2.5rem !important;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(115, 130, 140, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
   background-position: center left .75rem;
   background-repeat: no-repeat;
@@ -1572,7 +1572,7 @@ article {
 }
 
 article > *:not(header):not(footer):not(pre):last-child {
-  margin-bottom: 0;
+  margin-bottom: 0 !important;
 }
 
 /**
@@ -1824,12 +1824,12 @@ aside li a {
   *,
   ::before,
   ::after {
-    background-attachment: initial;
-    animation-duration: 1ms;
-    animation-delay: -1ms;
-    animation-iteration-count: 1;
-    scroll-behavior: auto;
-    transition-delay: 0s;
-    transition-duration: 0s;
+    background-attachment: initial !important;
+    animation-duration: 1ms !important;
+    animation-delay: -1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-delay: 0s !important;
+    transition-duration: 0s !important;
   }
 }

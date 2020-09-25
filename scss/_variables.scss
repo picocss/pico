@@ -29,6 +29,9 @@ $enable-input-states: true !default;
 // Enable transitions for <a>, <button>, <input>
 $enable-transitions: true !default;
 
+// Enable overriding with !important (used for <article>, `reduce-motion`, [type="search"])
+$enable-important: true !default;
+
 
 // Spacings
 // ––––––––––––––––––––

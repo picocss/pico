@@ -54,7 +54,9 @@ article {
   }
 
   // Remove last-child margin bottom
-  > *:not(header):not(footer):not(pre):last-child {
-    margin-bottom: 0;
+  @if $enable-important {
+    > *:not(header):not(footer):not(pre):last-child {
+      margin-bottom: 0 !important;
+    }
   }
 }

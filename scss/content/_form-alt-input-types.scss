@@ -243,13 +243,16 @@
 
 // Search
 [type="search"] {
-  padding-left: #{$spacing-input-button-horizontal + 1.5rem} !important;
   border-radius: #{1rem*$line-height + $spacing-input-button-vertical*2};
-  // Source: https://feathericons.com/
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{$icon-color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
-  background-position: center left .75rem;
-  background-repeat: no-repeat;
-  background-size: 1rem auto;
+
+  @if $enable-important {
+    padding-left: #{$spacing-input-button-horizontal + 1.5rem} !important;
+    // Source: https://feathericons.com/
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{$icon-color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+    background-position: center left .75rem;
+    background-repeat: no-repeat;
+    background-size: 1rem auto;
+  }
 
   // Cancel button
   &::-webkit-search-cancel-button{
