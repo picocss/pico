@@ -486,7 +486,7 @@
                         + '[data-theme="generated"] {'
                         +   '--primary-border: var(--primary);'
                         +   '--primary-hover-border: var(--primary-hover);'
-                        +   '--input-hover-border: var(--primary-hover);'
+                        +   '--input-hover-border: var(--primary);'
                         +   '--input-focus: var(--primary-focus);'
                         +   '--input-inverse: var(--primary-inverse);'
                         + '}';
