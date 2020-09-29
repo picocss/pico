@@ -14,7 +14,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: $monospace; // 1
+  font-family: var(--code-font); // 1
   font-size: 1rem; // 2
 }
 
@@ -34,7 +34,7 @@ kbd {
   background: var(--code-inlined);
   color: var(--code-color-1);
   font-size: 85%;
-  font-weight: 400;
+  font-weight: var(--code-weight);
   line-height: initial;
 
   @if map-get($breakpoints, "sm") and $enable-responsive-typography {
@@ -65,13 +65,13 @@ code,
 kbd {
   display: inline-block;
   padding: .375rem .5rem;
-  border-radius: $round;
+  border-radius: var(--block-round);
 }
 
 pre {
   display: block;
-  margin-bottom: $spacing-block;
-  padding: $spacing-block $spacing-gutter;
+  margin-bottom: var(--spacing-block);
+  padding: var(--spacing-block) var(--spacing-gutter);
   overflow-x: auto;
   background: var(--code-background);
 
@@ -80,7 +80,7 @@ pre {
     padding: 0;
     background: transparent;
     font-size: 14px;
-    line-height: $line-height;
+    line-height: var(--line-height);
   }
 }
 
@@ -90,7 +90,7 @@ code {
   // Tags
   b {
     color: var(--code-color-2);
-    font-weight: normal;
+    font-weight: var(--code-weight);
   }
 
   // Properties

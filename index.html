@@ -1,0 +1,370 @@
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+    <title>Class-less example • Pico.css</title>
+    <meta name="description" content="Just a pure semantic HTML markup, without .classes. Built with Pico CSS.">
+    <link rel="shortcut icon" href="https://picocss.com/favicon.ico">
+    <link rel="canonical" href="https://picocss.com/examples/classless/">
+
+     <!-- Pico.css -->
+    <link rel="stylesheet" href="css/pico.css">
+  </head>
+
+  <body>
+
+    <header class="container">
+      <hgroup>
+        <h1>Pico</h1>
+        <h2>Graceful & Minimal CSS design system in pure semantic HTML</h2>
+      </hgroup>
+      <nav>
+        <ul>
+          <li>Color scheme:</a></li>
+          <li><a href="#" data-theme-switcher="auto">Auto</a></li>
+          <li><a href="#" data-theme-switcher="light">Light</a></li>
+          <li><a href="#" data-theme-switcher="dark">Dark</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+
+      <section>
+
+        <h2>Buttons</h2>
+        <div class="grid">
+          <button>Primary</button>
+          <button class="secondary">Secondary</button>
+          <button class="contrast">Contrast</button>
+        </div>
+        <div class="grid">
+          <button class="outline">Primary outline</button>
+          <button class="outline secondary">Secondary outline</button>
+          <button class="outline contrast">Contrast outline</button>
+        </div>
+
+      </section>
+
+      <section>
+        <form>
+          <h2>Form elements</h2>
+
+          <!-- Search -->
+          <input type="search" id="search" name="search" placeholder="Search">
+
+          <!-- Text -->
+          <label for="firstname">First name</label>
+          <input type="text" id="firstname" name="firstname" placeholder="First name">
+          <small>Curabitur consequat lacus at lacus porta finibus.</small>
+
+          <!-- States -->
+          <div class="grid">
+            <label for="valid">
+              Valid
+              <input type="text" id="valid" name="valid" placeholder="Valid" aria-label="Valid" class="valid">
+            </label>
+            <label for="invalid">
+              Invalid
+              <input type="text" id="invalid" name="invalid" placeholder="Invalid" aria-label="Invalid"  class="invalid">
+            </label>
+            <label for="disabled">
+              Disabled
+              <input type="text" id="disabled" name="disabled" placeholder="Disabled" aria-label="Disabled" disabled>
+            </label>
+          </div>
+
+          <!-- Date-->
+          <label for="date">Birthdate</label>
+          <input type="date" id="date" name="date" >
+
+          <!-- Select -->
+          <label for="select">Select</label>
+          <select id="select" name="select">
+            <option selected>Choose...</option>
+            <option>...</option>
+          </select>
+
+          <div class="grid">
+
+            <!-- Checkboxes -->
+            <fieldset>
+              <legend><strong>Checkboxes</strong></legend>
+              <label for="checkbox-1">
+                <input type="checkbox" id="checkbox-1" name="checkbox-1" checked>
+                Checkbox
+              </label>
+              <label for="checkbox-2">
+                <input type="checkbox" id="checkbox-2" name="checkbox-2">
+                Checkbox
+              </label>
+              <label for="checkbox-3">
+                <input type="checkbox" id="checkbox-3" name="checkbox-3">
+                Checkbox
+              </label>
+            </fieldset>
+
+            <!-- Radio buttons -->
+            <fieldset>
+              <legend><strong>Radio buttons</strong></legend>
+              <label for="radio-1">
+                <input type="radio" id="radio-1" name="radio" value="radio-1" checked>
+                Radio button
+              </label>
+              <label for="radio-2">
+                <input type="radio" id="radio-2" name="radio" value="radio-2">
+                Radio button
+              </label>
+            </fieldset>
+
+            <!-- Switch -->
+            <fieldset>
+              <legend><strong>Switches</strong></legend>
+              <label for="switch-1">
+                <input type="checkbox" id="switch-1" name="switch-1" role="switch" aria-checked="true" checked>
+                Switch
+              </label>
+              <label for="switch-2">
+                <input type="checkbox" id="switch-2" name="switch-2" role="switch" aria-checked="false">
+                Switch
+              </label>
+            </fieldset>
+
+          </div>
+
+          <!-- File browser -->
+          <label for="file">File browser
+            <input type="file" id="file" name="file">
+          </label>
+
+          <!-- Range slider control -->
+          <label for="range">Range slider
+            <input type="range" min="0" max="100" value="50" id="range" name="range">
+          </label>
+
+          <!-- Buttons -->
+          <input type="reset" value="Reset">
+          <input type="submit" value="Submit">
+
+        </form>
+      </section>
+
+      <article>
+
+        <header>
+          Test
+        </header>
+
+        <h3>Article example</h3>
+        <p>Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor. Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet suscipit sapien. Nulla iaculis eros a elit pharetra egestas. Nunc placerat facilisis cursus. Sed vestibulum metus eget dolor pharetra rutrum.</p>
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>Nulla pellentesque elit nec velit convallis, sit amet accumsan odio pulvinar.</li>
+          <li>Aliquam venenatis massa a ornare ullamcorper.</li>
+        </ul>
+
+        <footer>
+          Test
+        </footer>
+
+      </article>
+
+      <section>
+
+        <h2>Typography</h2>
+        <p>Aliquam lobortis vitae nibh nec rhoncus. Morbi mattis neque eget efficitur feugiat. Vivamus porta nunc a erat mattis, mattis feugiat turpis pretium. Quisque sed tristique felis.</p>
+
+        <blockquote>
+          "Blockquote example: Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui sit amet ipsum cursus ornare."
+          <footer>
+            <cite>- Phasellus eget lacinia</cite>
+          </footer>
+        </blockquote>
+
+        <h3>Lists</h3>
+        <ul>
+          <li>Aliquam lobortis lacus eu libero ornare facilisis.</li>
+          <li>Nam et magna at libero scelerisque egestas.</li>
+          <li>Suspendisse id nisl ut leo finibus vehicula quis eu ex.</li>
+          <li>Proin ultricies turpis et volutpat vehicula.</li>
+        </ul>
+
+        <h3>Inline text elements</h3>
+        <div class="grid">
+          <p><a href="#">Primary link</a></p>
+          <p><a href="#" class="secondary">Secondary link</a></p>
+          <p><a href="#" class="contrast">Contrast link</a></p>
+        </div>
+        <div class="grid">
+          <p><strong>Bold</strong></p>
+          <p><em>Italic</em></p>
+          <p><u>Underline</u></p>
+        </div>
+        <div class="grid">
+          <p><del>Deleted</del></p>
+          <p><ins>Inserted</ins></p>
+          <p><s>Strikethrough</s></p>
+        </div>
+        <div class="grid">
+          <p><small>Small </small></p>
+          <p>Text <sub>Sub</sub></p>
+          <p>Text <sup>Sup</sup></p>
+        </div>
+        <div class="grid">
+          <p><abbr title="Abbreviation">Abbr.</abbr></p>
+          <p><kbd>Kbd</kbd></p>
+          <p><mark>Highlighted</mark></p>
+        </div>
+
+        <h3>Heading 3</h3>
+        <p>Integer bibendum malesuada libero vel eleifend. Fusce iaculis turpis ipsum, at efficitur sem scelerisque vel. Aliquam auctor diam ut purus cursus fringilla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+        <h4>Heading 4</h4>
+        <p>Cras fermentum velit vitae auctor aliquet. Nunc non congue urna, at blandit nibh. Donec ac fermentum felis. Vivamus tincidunt arcu ut lacus hendrerit, eget mattis dui finibus.</p>
+
+        <h5>Heading 5</h5>
+        <p>Donec nec egestas nulla. Sed varius placerat felis eu suscipit. Mauris maximus ante in consequat luctus. Morbi euismod sagittis efficitur. Aenean non eros orci. Vivamus ut diam sem.</p>
+
+        <h6>Heading 6</h6>
+        <p>Ut sed quam non mauris placerat consequat vitae id risus. Vestibulum tincidunt nulla ut tortor posuere, vitae malesuada tortor molestie. Sed nec interdum dolor. Vestibulum id auctor nisi, a efficitur sem. Aliquam sollicitudin efficitur turpis, sollicitudin hendrerit ligula semper id. Nunc risus felis, egestas eu tristique eget, convallis in velit.</p>
+
+        <figure>
+          <img src="https://source.unsplash.com/a562ZEFKW8I/2000x1000" alt="Minimal landscape">
+          <figcaption>Image from <a href="https://unsplash.com">unsplash.com</a></figcaption>
+        </figure>
+
+      </section>
+
+      <section aria-label="Responsive table example">
+        <p>Responsive table example</p>
+        <figure>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+
+        <figure>
+          <table role="grid">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+                <td>Cell</td>
+              </tr>
+            </tbody>
+          </table>
+        </figure>
+      </section>
+
+
+
+    </main>
+
+    <footer class="container">
+      <small>Built with <a href="https://picocss.com">Pico</a> • <a href="https://github.com/picocss/examples/blob/master/classless/index.html">Source code</a></small>
+    </footer>
+
+
+    <script>
+    // Minimal theme switcher
+    (function() {
+     var buttonsTheme = document.querySelectorAll('a[data-theme-switcher]');
+     for (var i = 0; i < buttonsTheme.length; i++) {
+       buttonsTheme[i].addEventListener('click', function(event) {
+         event.preventDefault();
+         document.querySelector('html').setAttribute(
+           'data-theme',
+           event.target.getAttribute('data-theme-switcher'));
+       }, false);
+     }
+    })();
+
+    // Set undeterminate checkbox
+   document.getElementById('checkbox-2').indeterminate = true;
+
+    </script>
+
+  </body>
+
+</html>

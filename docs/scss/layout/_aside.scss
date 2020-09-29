@@ -6,10 +6,10 @@ main > aside {
 
   nav {
     width: 100%;
-    margin-bottom: $spacing-block;
+    margin-bottom: var(--spacing-block);
 
     h1 {
-      margin-bottom: $spacing-typography;
+      margin-bottom: var(--spacing-typography);
     }
 
     @media (min-width: map-get($breakpoints, "lg")) {

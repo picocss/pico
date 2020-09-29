@@ -1,0 +1,93 @@
+// Commons Styles
+
+:root {
+
+  // Typography
+  // ––––––––––––––––––––
+
+  // Fonts family
+  // Source: github.com/csstools/sanitize.css/blob/master/typography.css
+  --text-font:                       system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --titles-font:                     var(--text-font);
+  --code-font:                       "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  // Typography styles
+  --line-height:                     1.5;
+  --text-weight:                     400;
+  --titles-weight:                   700;
+  --form-element-weight:             var(--text-weight);
+  --buttons-weight:                  var(--text-weight);
+  --code-weight:                     var(--text-weight);
+
+  // Base font sizes
+  // All the others sizes are relative to this font base sizes (rem)
+  --base-font-xs:                    16px;
+  --base-font-sm:                    17px;
+  --base-font-md:                    18px;
+  --base-font-lg:                    19px;
+  --base-font-xl:                    20px;
+
+  // Font sizes
+  // All the others sizes are relative to this sizes
+  --h1-size:                         2rem;
+  --h2-size:                         1.75rem;
+  --h3-size:                         1.5rem;
+  --h4-size:                         1.25rem;
+  --h5-size:                         1.125rem;
+
+
+  // Styles
+  // ––––––––––––––––––––
+
+  // Blocks styles: <form> elements, <article>, inlined <code>, [data-tooltip]
+  --block-round:                     .25rem ;
+
+  // Form elements
+  --form-element-border-width:       1px;
+  --form-element-outline-width:      3px;
+  --checkbox-radio-border-width:     2px;
+  --switch-border-width:             3px;
+  --form-element-spacing-vertical:   .75rem;
+  --form-element-spacing-horizontal: 1rem;
+
+  // Buttons
+  --button-round:                    var(--block-round);
+  --button-border-width:             var(--form-element-border-width);
+  --button-outline-width:            var(--form-element-outline-width);
+  --button-spacing-vertical:         var(--form-element-spacing-vertical);
+  --button-spacing-horizontal:       var(--form-element-spacing-horizontal);
+
+
+  // Spacings
+  // ––––––––––––––––––––
+
+  // Gutters and horizontals margins
+  // For <body>, ,container, .grid, <nav>, <table>, <article>, <pre>
+  --spacing-gutter:                  1rem;
+
+  // Vertical spacing for blocks
+  // For <header>, <main>, <footer>, <section>, <article>
+  --spacing-block:                   2rem;
+
+  // Multiplication factor for --spacing-block
+  // '1' disable spacing factor on a breakpoint
+  --spacing-factor-xs:               1;
+  --spacing-factor-sm:               1.25;
+  --spacing-factor-md:               1.5;
+  --spacing-factor-lg:               1.75;
+  --spacing-factor-xl:               2;
+
+  // Vertical margins for typography elements
+  --spacing-typography:              1.5rem;
+
+  // Spacing between <form> elements
+  --spacing-form-element:            .25rem;
+
+
+  // Transitions
+  // ––––––––––––––––––––
+
+  // Transitions: <a>, <form> elements and <button>
+  --transition:                      .2s ease-in-out;
+
+}

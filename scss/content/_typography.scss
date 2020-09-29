@@ -61,7 +61,7 @@ pre,
 table,
 ul {
   margin-top: 0;
-  margin-bottom: $spacing-typography;
+  margin-bottom: var(--spacing-typography);
   color: var(--text);
   font-size: 1rem;
   font-style: normal;
@@ -76,10 +76,10 @@ a {
 
   @if $enable-transitions {
     transition:
-      background-color $transition,
-      color $transition,
-      text-decoration $transition,
-      box-shadow $transition;
+      background-color var(--transition),
+      color var(--transition),
+      text-decoration var(--transition),
+      box-shadow var(--transition);
   }
 
   &:hover,
@@ -99,6 +99,7 @@ a {
 @if $enable-classes {
   a.secondary {
     color: var(--secondary);
+    text-decoration: underline;
 
     &:hover,
     &:active,
@@ -114,16 +115,14 @@ a {
 
 // Link .contrast
 @if $enable-classes {
-  a.contrast:not([role="button"]) {
-    box-shadow: inset 0 -.33rem 0 var(--contrast-border);
+  a.contrast {
     color: var(--contrast);
+    text-decoration: underline;
 
     &:hover,
     &:active,
     &:focus {
-      box-shadow: inset 0 -.33rem 0 var(--contrast-border-h);
       color: var(--contrast-hover);
-      text-decoration: none;
     }
 
     &:focus {
@@ -141,43 +140,43 @@ h4,
 h5,
 h6 {
   margin-top: 0;
-  margin-bottom: $spacing-typography;
-  font-weight: $heading-weight;
+  margin-bottom: var(--spacing-typography);
+  font-weight: var(--titles-weight);
 }
 
 h1 {
-  margin-bottom: $spacing-typography*2;
+  margin-bottom: calc(var(--spacing-typography) * 2);
   color: var(--h1);
-  font-size: 2rem;
+  font-size: var(--h1-size);
 }
 
 h2 {
-  margin-bottom: $spacing-typography*1.75;
+  margin-bottom: calc(var(--spacing-typography) * 1.75);
   color: var(--h2);
-  font-size: 1.75rem;
+  font-size: var(--h2-size);
 }
 
 h3 {
-  margin-bottom: $spacing-typography*1.5;
+  margin-bottom: calc(var(--spacing-typography) * 1.5);
   color: var(--h3);
-  font-size: 1.5rem;
+  font-size: var(--h3-size);
 }
 
 h4 {
-  margin-bottom: $spacing-typography*1.25;
+  margin-bottom: calc(var(--spacing-typography) * 1.25);
   color: var(--h4);
-  font-size: 1.25rem;
+  font-size: var(--h4-size);
 }
 
 h5 {
-  margin-bottom: $spacing-typography*1.125;
+  margin-bottom: calc(var(--spacing-typography) * 1.125);
   color: var(--h5);
-  font-size: 1.125rem;
+  font-size: var(--h5-size);
 }
 
 h6 {
   color: var(--h6);
-  font-size: 1rem;
+  font-size: var(--h6-size);
 }
 
 // Margin-top for headings after a typography block
@@ -192,34 +191,34 @@ pre,
 table,
 ul {
   & ~ h1 {
-    margin-top: $spacing-typography*2;
+    margin-top: calc(var(--spacing-typography) * 2);
   }
 
   & ~ h2 {
-    margin-top: $spacing-typography*1.75;
+    margin-top: calc(var(--spacing-typography) * 1.75);
   }
 
   & ~ h3 {
-    margin-top: $spacing-typography*1.5;
+    margin-top: calc(var(--spacing-typography) * 1.5);
   }
 
   & ~ h4 {
-    margin-top: $spacing-typography*1.25;
+    margin-top: calc(var(--spacing-typography) * 1.25);
   }
 
   & ~ h5 {
-    margin-top: $spacing-typography*1.125;
+    margin-top: calc(var(--spacing-typography) * 1.125);
   }
 
   & ~ h6 {
-    margin-top: $spacing-typography;
+    margin-top: calc(var(--spacing-typography));
   }
 }
 
 
 // Multi-level heading
 hgroup {
-  margin-bottom: $spacing-typography;
+  margin-bottom: var(--spacing-typography);
 
   *{
     margin-bottom: 0;
@@ -228,13 +227,13 @@ hgroup {
   > *:last-child {
     color: var(--muted-text);
     font-size: 1.125rem;
-    font-weight: normal;
+    font-weight: unset;
   }
 }
 
 // Paragraphs
 p {
-  margin-bottom: $spacing-typography/2;
+  margin-bottom: var(--spacing-typography);
 }
 
 // Small
@@ -268,10 +267,10 @@ small {
 // Lists
 ul,
 ol {
-  padding-left: $spacing-typography;
+  padding-left: var(--spacing-typography);
 
   li {
-    margin-bottom: $spacing-typography/4;
+    margin-bottom: calc(var(--spacing-typography) / 4);
   }
 }
 
@@ -290,12 +289,12 @@ mark {
 // Blockquote
 blockquote {
   display: block;
-  margin: ($spacing-typography*2) 0;
-  padding: $spacing-gutter;
+  margin: var(--spacing-typography) 0;
+  padding: var(--spacing-gutter);
   border-left: .25rem solid var(--muted-border);
 
   footer {
-    margin-top: $spacing-typography/2;
+    margin-top: calc(var(--spacing-typography) / 2);
     color: var(--muted-text);
   }
 }

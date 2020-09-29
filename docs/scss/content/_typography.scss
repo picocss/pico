@@ -3,12 +3,12 @@
  */
 
 section > hgroup {
-  margin-bottom: $spacing-typography*2;
+  margin-bottom: calc(var(--spacing-typography) * 2);
 }
 
 a[role=button] {
-  margin-right: $spacing-gutter/4;
-  margin-bottom: $spacing-typography;
+  margin-right: calc(var(--spacing-typography) / 4);
+  margin-bottom: var(--spacing-typography);
 }
 
 [role=document] {

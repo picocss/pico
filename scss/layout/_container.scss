@@ -9,8 +9,8 @@
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding-right: $spacing-gutter;
-    padding-left: $spacing-gutter;
+    padding-right: var(--spacing-gutter);
+    padding-left: var(--spacing-gutter);
   }
 
   .container {

@@ -35,9 +35,3 @@ $green-600: hsl(160, 55%,  35%) !default;
 $green-700: hsl(160, 60%,  30%) !default;
 $red-700:   hsl(0,   45%,  50%) !default;
 $red-900:   hsl(0,   45%,  40%) !default;
-
-// Icons color
-// For <details>, [type="date"], <select>, etc.
-// Must be neutral to work in light or dark mode
-// HACK: .99 opacity is used to force rgba() vs #hex
-$icon-color: #{rgba($grey-500, .999)};

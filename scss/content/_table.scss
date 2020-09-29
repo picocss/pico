@@ -26,11 +26,11 @@ table {
 // Cells
 th,
 td {
-  padding: ($spacing-gutter/2) $spacing-gutter;
+  padding: calc(var(--spacing-gutter) / 2) var(--spacing-gutter);
   border-bottom: 1px solid var(--table-border);
   color: var(--muted-text);
   font-size: 0.875rem;
-  font-weight: $text-weight;
+  font-weight: var(--text-weight);
   text-align: left;
 }
 
@@ -50,6 +50,8 @@ thead {
 }
 
 // Striping
-tbody tr:nth-child(odd) {
-  background-color: var(--table-stripping);
+table[role="grid"] {
+  tbody tr:nth-child(odd) {
+    background-color: var(--table-stripping);
+  }
 }

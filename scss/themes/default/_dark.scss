@@ -1,70 +1,83 @@
 // Dark theme (Auto)
 // Automatically enabled if user has Dark mode enabled
+
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
 
     // Document
-    --background:        #{darken($grey-900, 6%)};
+    --background:              #{darken($grey-900, 6%)};
 
     // Typography
-    --text:              #{$grey-300};
-    --h1:                #{$grey-50};
-    --h2:                #{$grey-100};
-    --h3:                #{$grey-200};
-    --h4:                #{$grey-300};
-    --h5:                #{$grey-400};
-    --h6:                #{$grey-500};
+    --text:                    #{$grey-300};
+    --h1:                      #{$grey-50};
+    --h2:                      #{$grey-100};
+    --h3:                      #{$grey-200};
+    --h4:                      #{$grey-300};
+    --h5:                      #{$grey-400};
+    --h6:                      #{$grey-500};
 
     // Primary Call-to-Action and links
-    --primary:           #{$primary-600};
-    --primary-hover:     #{$primary-500};
-    --primary-focus:     #{rgba($primary-600, .25)};
-    --primary-inverse:   #{$white};
+    --primary:                 #{$primary-600};
+    --primary-border:          #{$primary-600};
+    --primary-hover:           #{$primary-500};
+    --primary-hover-border:    #{$primary-500};
+    --primary-focus:           #{rgba($primary-600, .25)};
+    --primary-inverse:         #{$white};
 
     // // Secondary Call-to-Action, links and kbd
-    --secondary:         #{$grey-600};
-    --secondary-hover:   #{$grey-500};
-    --secondary-focus:   #{rgba($grey-600, .25)};
-    --secondary-inverse: #{$white};
+    --secondary:               #{$grey-600};
+    --secondary-border:        #{$grey-600};
+    --secondary-hover:         #{$grey-500};
+    --secondary-hover-border:  #{$grey-500};
+    --secondary-focus:         #{rgba($grey-600, .25)};
+    --secondary-inverse:       #{$white};
 
     // Contrast Call-to-Action and Tooltips
-    --contrast:          #{$grey-100};
-    --contrast-hover:    #{$white};
-    --contrast-focus:    #{rgba($grey-600, .25)};
-    --contrast-border:   #{rgba($amber-200, .33)}; // Links underline for
-    --contrast-border-h: #{rgba($amber-200, .5)};  // Links hover underline
-    --contrast-inverse:  #{darken($grey-900, 6%)};
+    --contrast:                #{$grey-100};
+    --contrast-border:         #{$grey-100};
+    --contrast-hover:          #{$white};
+    --contrast-hover-border:   #{$white};
+    --contrast-focus:          #{rgba($grey-600, .25)};
+    --contrast-inverse:        #{darken($grey-900, 6%)};
 
     // Form elements
-    --input-background:  #{darken($grey-900, 6%)};
-    --input-border:      #{mix($grey-800, $grey-700)};
+    --input-background:        #{darken($grey-900, 6%)};
+    --input-border:            #{mix($grey-800, $grey-700)};
+    --input-hover-background:  #{darken($grey-900, 6%)};
+    --input-hover-border:      #{$primary-600};
+    --input-focus:             #{rgba($primary-600, .25)};
+    --input-inverse:           #{$white};
+
+    // Button
+    --button-shadow:           0 0 0 0 rgba(0, 0, 0, 0);
+    --button-hover-shadow:     0 0 0 0 rgba(0, 0, 0, 0);
 
     // Utilities states
-    --valid:             #{$green-700};
-    --invalid:           #{$red-900};
-    --mark:              #{rgba($amber-200, .5)};
-    --mark-text:         #{$white};
-    --muted-text:        #{$grey-500};
-    --muted-background:  #{darken($grey-900, 6%)};
-    --muted-border:      #{mix($grey-800, $grey-900)};
+    --valid:                   #{$green-700};
+    --invalid:                 #{$red-900};
+    --mark:                    #{rgba($amber-200, .5)};
+    --mark-text:               #{$white};
+    --muted-text:              #{$grey-500};
+    --muted-background:        #{mix($grey-800, $grey-900)};
+    --muted-border:            #{mix($grey-800, $grey-900)};
 
     // Card
-    --card-background:   #{darken($grey-900, 2%)};
-    --card-sections:     #{darken($grey-900, 4%)};
-    --card-shadow:       0 0.125rem 1rem #{rgba($black, 0.08)}, 0 0.125rem 2rem #{rgba($black, 0.04)}, 0 0 0 0.0625rem #{rgba($black, 0.1)};
+    --card-background:         #{darken($grey-900, 2%)};
+    --card-sections:           #{darken($grey-900, 4%)};
+    --card-shadow:             0 0.125rem 1rem #{rgba($black, 0.08)}, 0 0.125rem 2rem #{rgba($black, 0.04)}, 0 0 0 0.0625rem #{rgba($black, 0.1)};
 
     // Code
-    --code-background:   #{darken($grey-900, 4%)};
-    --code-inlined:      #{rgba($grey-700, .25)};
-    --code-color-1:      #{$grey-500};
-    --code-color-2:      #{hsl(330, 30%, 50%)};
-    --code-color-3:      #{hsl(185, 30%, 50%)};
-    --code-color-4:      #{hsl(40,  10%, 50%)};
-    --code-color-5:      #{mix($grey-600, $grey-700)};
+    --code-background:         #{darken($grey-900, 4%)};
+    --code-inlined:            #{rgba($grey-700, .25)};
+    --code-color-1:            #{$grey-500};
+    --code-color-2:            #{hsl(330, 30%, 50%)};
+    --code-color-3:            #{hsl(185, 30%, 50%)};
+    --code-color-4:            #{hsl(40,  10%, 50%)};
+    --code-color-5:            #{mix($grey-600, $grey-700)};
 
     // Table
-    --table-border:      #{rgba($grey-500, .06)};
-    --table-stripping:   #{rgba($grey-500, .02)};
+    --table-border:            #{rgba($grey-500, .075)};
+    --table-stripping:         #{rgba($grey-500, .05)};
   }
 }
 
@@ -75,64 +88,77 @@
 [data-theme="dark"] {
 
   // Document
-  --background:        #{darken($grey-900, 6%)};
+  --background:              #{darken($grey-900, 6%)};
 
   // Typography
-  --text:              #{$grey-300};
-  --h1:                #{$grey-50};
-  --h2:                #{$grey-100};
-  --h3:                #{$grey-200};
-  --h4:                #{$grey-300};
-  --h5:                #{$grey-400};
-  --h6:                #{$grey-500};
+  --text:                    #{$grey-300};
+  --h1:                      #{$grey-50};
+  --h2:                      #{$grey-100};
+  --h3:                      #{$grey-200};
+  --h4:                      #{$grey-300};
+  --h5:                      #{$grey-400};
+  --h6:                      #{$grey-500};
 
   // Primary Call-to-Action and links
-  --primary:           #{$primary-600};
-  --primary-hover:     #{$primary-500};
-  --primary-focus:     #{rgba($primary-600, .25)};
-  --primary-inverse:   #{$white};
+  --primary:                 #{$primary-600};
+  --primary-border:          #{$primary-600};
+  --primary-hover:           #{$primary-500};
+  --primary-hover-border:    #{$primary-500};
+  --primary-focus:           #{rgba($primary-600, .25)};
+  --primary-inverse:         #{$white};
 
-  // Secondary Call-to-Action, links and kbd
-  --secondary:         #{$grey-600};
-  --secondary-hover:   #{$grey-500};
-  --secondary-focus:   #{rgba($grey-600, .25)};
-  --secondary-inverse: #{$white};
+  // // Secondary Call-to-Action, links and kbd
+  --secondary:               #{$grey-600};
+  --secondary-border:        #{$grey-600};
+  --secondary-hover:         #{$grey-500};
+  --secondary-hover-border:  #{$grey-500};
+  --secondary-focus:         #{rgba($grey-600, .25)};
+  --secondary-inverse:       #{$white};
 
   // Contrast Call-to-Action and Tooltips
-  --contrast:          #{$grey-100};
-  --contrast-hover:    #{$white};
-  --contrast-focus:    #{rgba($grey-600, .25)};
-  --contrast-border:   #{rgba($amber-200, .33)}; // For links
-  --contrast-inverse:  #{darken($grey-900, 6%)};
+  --contrast:                #{$grey-100};
+  --contrast-border:         #{$grey-100};
+  --contrast-hover:          #{$white};
+  --contrast-hover-border:   #{$white};
+  --contrast-focus:          #{rgba($grey-600, .25)};
+  --contrast-inverse:        #{darken($grey-900, 6%)};
 
   // Form elements
-  --input-background:  #{darken($grey-900, 6%)};
-  --input-border:      #{mix($grey-800, $grey-700)};
+  --input-background:        #{darken($grey-900, 6%)};
+  --input-border:            #{mix($grey-800, $grey-700)};
+  --input-hover-background:  #{darken($grey-900, 6%)};
+  --input-hover-border:      #{$primary-600};
+  --input-focus:             #{rgba($primary-600, .25)};
+  --input-inverse:           #{$white};
+
+  // Button
+  --button-shadow:           0 0 0 0 rgba(0, 0, 0, 0);
+  --button-hover-shadow:     0 0 0 0 rgba(0, 0, 0, 0);
 
   // Utilities states
-  --valid:             #{$green-700};
-  --invalid:           #{$red-900};
-  --mark:              #{rgba($amber-200, .5)};
-  --mark-text:         #{$white};
-  --muted-text:        #{$grey-500};
-  --muted-background:  #{darken($grey-900, 6%)};
-  --muted-border:      #{mix($grey-800, $grey-900)};
+  --valid:                   #{$green-700};
+  --invalid:                 #{$red-900};
+  --mark:                    #{rgba($amber-200, .5)};
+  --mark-text:               #{$white};
+  --muted-text:              #{$grey-500};
+  --muted-background:        #{mix($grey-800, $grey-900)};
+  --muted-border:            #{mix($grey-800, $grey-900)};
 
   // Card
-  --card-background:   #{darken($grey-900, 2%)};
-  --card-sections:     #{darken($grey-900, 4%)};
-  --card-shadow:       0 0.125rem 1rem #{rgba($black, 0.08)}, 0 0.125rem 2rem #{rgba($black, 0.04)}, 0 0 0 0.0625rem #{rgba($black, 0.1)};
+  --card-background:         #{darken($grey-900, 2%)};
+  --card-sections:           #{darken($grey-900, 4%)};
+  --card-shadow:             0 0.125rem 1rem #{rgba($black, 0.08)}, 0 0.125rem 2rem #{rgba($black, 0.04)}, 0 0 0 0.0625rem #{rgba($black, 0.1)};
 
   // Code
-  --code-background:   #{darken($grey-900, 4%)};
-  --code-inlined:      #{rgba($grey-700, .25)};
-  --code-color-1:      #{$grey-500};
-  --code-color-2:      #{hsl(330, 30%, 50%)};
-  --code-color-3:      #{hsl(185, 30%, 50%)};
-  --code-color-4:      #{hsl(40,  10%, 50%)};
-  --code-color-5:      #{mix($grey-600, $grey-700)};
+  --code-background:         #{darken($grey-900, 4%)};
+  --code-inlined:            #{rgba($grey-700, .25)};
+  --code-color-1:            #{$grey-500};
+  --code-color-2:            #{hsl(330, 30%, 50%)};
+  --code-color-3:            #{hsl(185, 30%, 50%)};
+  --code-color-4:            #{hsl(40,  10%, 50%)};
+  --code-color-5:            #{mix($grey-600, $grey-700)};
 
   // Table
-  --table-border:      #{rgba($grey-500, .06)};
-  --table-stripping:   #{rgba($grey-500, .02)};
+  --table-border:            #{rgba($grey-500, .075)};
+  --table-stripping:         #{rgba($grey-500, .05)};
 }

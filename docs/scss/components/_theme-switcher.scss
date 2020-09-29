@@ -4,15 +4,15 @@
 
 .switcher {
   position: fixed;
-  right: $spacing-gutter/2;
-  bottom: $spacing-gutter;
+  right: calc(var(--spacing-gutter) / 2);
+  bottom: var(--spacing-gutter);
   width: auto;
   margin-bottom: 0;
   padding: .75rem;
   border-radius: 2rem;
+  box-shadow: var(--card-shadow);
   line-height: 1;
   text-align: right;
-  box-shadow: var(--card-shadow);
 
   &::after {
     display: inline-block;
@@ -23,7 +23,7 @@
     background: linear-gradient(to right, currentColor 0%, currentColor 50%, transparent 50%);
     vertical-align: bottom;
     content: '';
-    transition: transform $transition;
+    transition: transform var(--transition);
   }
 
   i {
@@ -40,10 +40,10 @@
   &:focus {
     max-width: 100%;
     transition:
-      background-color $transition,
-      border-color $transition,
-      color $transition,
-      box-shadow $transition;
+      background-color var(--transition),
+      border-color var(--transition),
+      color var(--transition),
+      box-shadow var(--transition);
   }
 
   &:hover {
@@ -53,9 +53,9 @@
 
     i {
       max-width: 100%;
-      padding: 0 ($spacing-gutter/2) 0 ($spacing-gutter/4);
-      transition: max-width $transition,
-                  padding $transition;
+      padding: 0 calc(var(--spacing-gutter) / 2) 0 calc(var(--spacing-gutter) / 4);
+      transition: max-width var(--transition),
+                  padding var(--transition);
     }
   }
 
@@ -65,6 +65,6 @@
   }
 
   @media (min-width: map-get($breakpoints, "sm")) {
-    right: $spacing-gutter;
+    right: var(--spacing-gutter);
   }
 }

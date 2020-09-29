@@ -6,8 +6,8 @@
  */
 
   .grid {
-    grid-column-gap: $spacing-gutter;
-    grid-row-gap: $spacing-gutter;
+    grid-column-gap: var(--spacing-gutter);
+    grid-row-gap: var(--spacing-gutter);
     display: grid;
     grid-template-columns: 1fr;
     margin: 0;
