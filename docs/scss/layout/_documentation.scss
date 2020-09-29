@@ -58,7 +58,7 @@
       &[data-color="yellow"],
       &[data-color="amber"] {
         &.picked {
-          // TODO
+          background-image: var(--icon-check-dark);
         }
       }
     }
