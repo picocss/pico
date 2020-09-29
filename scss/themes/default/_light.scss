@@ -20,7 +20,7 @@
   --primary:                 #{$primary-600};
   --primary-border:          var(--primary);
   --primary-hover:           #{$primary-700};
-  --primary-hover-border:    var(--primary-hover-border);
+  --primary-hover-border:    var(--primary-hover);
   --primary-focus:           #{rgba($primary-600, .125)};
   --primary-inverse:         #{$white};
 
@@ -43,8 +43,8 @@
   // Form elements
   --input-background:        #{$white};
   --input-border:            #{mix($grey-100, $grey-200)};
-  --input-hover-background:  #{$white};
-  --input-hover-border:      var(--primary-hover-border);
+  --input-hover-background:  var(--input-background);
+  --input-hover-border:      var(--primary);
   --input-focus:             var(--primary-focus);
   --input-inverse:           var(--primary-inverse);
 

@@ -18,33 +18,33 @@
 
     // Primary Call-to-Action and links
     --primary:                 #{$primary-600};
-    --primary-border:          #{$primary-600};
+    --primary-border:          var(--primary);
     --primary-hover:           #{$primary-500};
-    --primary-hover-border:    #{$primary-500};
+    --primary-hover-border:    var(--primary-hover);
     --primary-focus:           #{rgba($primary-600, .25)};
     --primary-inverse:         #{$white};
 
     // // Secondary Call-to-Action, links and kbd
     --secondary:               #{$grey-600};
-    --secondary-border:        #{$grey-600};
+    --secondary-border:        var(--secondary);
     --secondary-hover:         #{$grey-500};
-    --secondary-hover-border:  #{$grey-500};
+    --secondary-hover-border:  var(--secondary-hover);
     --secondary-focus:         #{rgba($grey-600, .25)};
     --secondary-inverse:       #{$white};
 
     // Contrast Call-to-Action and Tooltips
     --contrast:                #{$grey-100};
-    --contrast-border:         #{$grey-100};
+    --contrast-border:         var(--contrast);
     --contrast-hover:          #{$white};
-    --contrast-hover-border:   #{$white};
+    --contrast-hover-border:   var(--contrast-hover);
     --contrast-focus:          #{rgba($grey-600, .25)};
     --contrast-inverse:        #{darken($grey-900, 6%)};
 
     // Form elements
     --input-background:        #{darken($grey-900, 6%)};
     --input-border:            #{mix($grey-800, $grey-700)};
-    --input-hover-background:  #{darken($grey-900, 6%)};
-    --input-hover-border:      var(--primary-hover-border);
+    --input-hover-background:  var(--input-background);
+    --input-hover-border:      var(--primary);
     --input-focus:             var(--primary-focus);
     --input-inverse:           var(--primary-inverse);
 
@@ -101,33 +101,33 @@
 
   // Primary Call-to-Action and links
   --primary:                 #{$primary-600};
-  --primary-border:          #{$primary-600};
+  --primary-border:          var(--primary);
   --primary-hover:           #{$primary-500};
-  --primary-hover-border:    #{$primary-500};
+  --primary-hover-border:    var(--primary-hover);
   --primary-focus:           #{rgba($primary-600, .25)};
   --primary-inverse:         #{$white};
 
   // // Secondary Call-to-Action, links and kbd
   --secondary:               #{$grey-600};
-  --secondary-border:        #{$grey-600};
+  --secondary-border:        var(--secondary);
   --secondary-hover:         #{$grey-500};
-  --secondary-hover-border:  #{$grey-500};
+  --secondary-hover-border:  var(--secondary-hover);
   --secondary-focus:         #{rgba($grey-600, .25)};
   --secondary-inverse:       #{$white};
 
   // Contrast Call-to-Action and Tooltips
   --contrast:                #{$grey-100};
-  --contrast-border:         #{$grey-100};
+  --contrast-border:         var(--contrast);
   --contrast-hover:          #{$white};
-  --contrast-hover-border:   #{$white};
+  --contrast-hover-border:   var(--contrast-hover);
   --contrast-focus:          #{rgba($grey-600, .25)};
   --contrast-inverse:        #{darken($grey-900, 6%)};
 
   // Form elements
   --input-background:        #{darken($grey-900, 6%)};
   --input-border:            #{mix($grey-800, $grey-700)};
-  --input-hover-background:  #{darken($grey-900, 6%)};
-  --input-hover-border:      var(--primary-hover-border);
+  --input-hover-background:  var(--input-background);
+  --input-hover-border:      var(--primary);
   --input-focus:             var(--primary-focus);
   --input-inverse:           var(--primary-inverse);
 
