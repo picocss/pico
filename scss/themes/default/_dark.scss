@@ -44,9 +44,9 @@
     --input-background:        #{darken($grey-900, 6%)};
     --input-border:            #{mix($grey-800, $grey-700)};
     --input-hover-background:  #{darken($grey-900, 6%)};
-    --input-hover-border:      #{$primary-600};
-    --input-focus:             #{rgba($primary-600, .25)};
-    --input-inverse:           #{$white};
+    --input-hover-border:      var(--primary-hover-border);
+    --input-focus:             var(--primary-focus);
+    --input-inverse:           var(--primary-inverse);
 
     // Button
     --button-shadow:           0 0 0 0 rgba(0, 0, 0, 0);
@@ -127,9 +127,9 @@
   --input-background:        #{darken($grey-900, 6%)};
   --input-border:            #{mix($grey-800, $grey-700)};
   --input-hover-background:  #{darken($grey-900, 6%)};
-  --input-hover-border:      #{$primary-600};
-  --input-focus:             #{rgba($primary-600, .25)};
-  --input-inverse:           #{$white};
+  --input-hover-border:      var(--primary-hover-border);
+  --input-focus:             var(--primary-focus);
+  --input-inverse:           var(--primary-inverse);
 
   // Button
   --button-shadow:           0 0 0 0 rgba(0, 0, 0, 0);
