@@ -273,7 +273,7 @@ main > aside details[open] summary {
 #grids button svg {
   stroke: var(--secondary);
   margin-right: .5rem;
-  border: 3px solid currentColor;
+  border: 2px solid currentColor;
   border-radius: 1rem;
   background: currentColor;
 }
@@ -286,6 +286,10 @@ main > aside details[open] summary {
 
 #grids details {
   margin-top: calc(var(--spacing-typography) * 2);
+}
+
+#grids details svg {
+  vertical-align: bottom;
 }
 
 #forms div.grid {

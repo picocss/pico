@@ -93,7 +93,7 @@
     svg {
       stroke: var(--secondary);
       margin-right: .5rem;
-      border: 3px solid currentColor;
+      border: 2px solid currentColor;
       border-radius: 1rem;
       background: currentColor;
     }
@@ -107,6 +107,10 @@
 
   details {
     margin-top: calc(var(--spacing-typography) * 2);
+
+    svg {
+      vertical-align: bottom;
+    }
   }
 }
 

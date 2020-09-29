@@ -68,6 +68,7 @@
                 <li><a href="#typography" class="secondary">Typography</a></li>
                 <li><a href="#buttons" class="secondary">Buttons</a></li>
                 <li><a href="#forms" class="secondary">Forms</a></li>
+                <li><a href="#tables" class="secondary">Tables</a></li>
               </ul>
             </details>
             <details open>
@@ -108,7 +109,7 @@
             <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@picocss/pico@latest/css/pico.min.css"</u>&gt;</code></pre>
             <h4>Install with NPM</h4>
             <pre><code><b>npm</b> <i>install</i> <u>@picocss/pico</u></code></pre>
-            <p>Starter template:</p>
+            <p>Starter HTML template:</p>
 
 <pre><code><em>&lt;!doctype html&gt;</em>
 &lt;<b>html</b> <i>lang</i>=<u>"en"</u>&gt;
@@ -297,7 +298,7 @@
 
             <p>Pico use the same breakpoints and viewports sizes as <a href="https://getbootstrap.com/docs/4.3/layout/grid/#grid-options">Bootstrap</a>.</p>
             <figure>
-              <table>
+              <table role="grid">
                 <thead>
                   <tr>
                     <th>Device</th>
@@ -382,7 +383,7 @@
             </hgroup>
             <p>Useful to have responsives <code>&lt;<b>table</b>&gt;</code></p>
             <figure>
-              <table>
+              <table role="grid">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -453,7 +454,7 @@
               <h3>All typographic elements are responsives, allowing text to scale gracefully across devices and viewport sizes.</h3>
             </hgroup>
             <figure>
-              <table>
+              <table role="grid">
                 <thead>
                   <tr>
                     <th>Device</th>
@@ -532,15 +533,13 @@
               <h4>Heading 4</h4>
               <h5>Heading 5</h5>
               <h6>Heading 6</h6>
-              <p>Paragraph</p>
 
 <pre><code>&lt;<b>h1</b>&gt;Heading 1&lt;/<b>h1</b>&gt;
 &lt;<b>h2</b>&gt;Heading 2&lt;/<b>h2</b>&gt;
 &lt;<b>h3</b>&gt;Heading 3&lt;/<b>h3</b>&gt;
 &lt;<b>h4</b>&gt;Heading 4&lt;/<b>h4</b>&gt;
 &lt;<b>h5</b>&gt;Heading 5&lt;/<b>h5</b>&gt;
-&lt;<b>h6</b>&gt;Heading 6&lt;/<b>h6</b>&gt;
-&lt;<b>p</b>&gt;Paragraph&lt;/<b>p</b>&gt;</code></pre>
+&lt;<b>h6</b>&gt;Heading 6&lt;/<b>h6</b>&gt;</code></pre>
 
             </article>
             <p>Inside a <code>&lt;<b>hgroup</b>&gt;</code> all <code><i>margin-bottom</i></code> are collapsed and the <code>:last-child</code> is styled.</p>
@@ -586,6 +585,23 @@
 <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Primary&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"secondary"</u>&gt;Secondary&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"contrast"</u>&gt;Contrast&lt;/<b>a</b>&gt;</code></pre>
+
+            </article>
+            <p>Blockquote:</p>
+            <article aria-label="Links examples">
+              <blockquote>
+                "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui sit amet ipsum cursus ornare."
+                <footer>
+                  <cite>- Phasellus eget lacinia</cite>
+                </footer>
+              </blockquote>
+
+<pre><code>&lt;<b>blockquote</b>&gt;
+  "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui sit amet ipsum cursus ornare."
+  &lt;<b>footer</b>&gt;
+    &lt;<b>cite</b>&gt;- Phasellus eget lacinia&lt;/<b>cite</b>&gt;
+  &lt;/<b>footer</b>&gt;
+&lt;/<b>blockquote</b>&gt;</code></pre>
 
             </article>
           </section><!-- ./ Docs: Typography -->
@@ -784,6 +800,120 @@
             </article>
             <p>Advanced example with all form elements supported in Pico <a href="https://picocss.com/examples/form-elements/">here</a>.</p>
           </section><!-- ./ Docs: Form -->
+
+          <!-- Docs: Tables -->
+          <section id="tables">
+            <hgroup>
+              <h2>Tables</h2>
+              <h3>Default styles for tables without <code>.classes</code></h3>
+            </hgroup>
+            <figure>
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+
+<pre><code>&lt;<b>table</b>&gt;
+  &lt;<b>thead</b>&gt;
+    &lt;<b>tr</b>&gt;
+      &lt;<b>th</b> <i>scope</i>=<u>"col"</u>&gt;#&lt;/<b>th</b>&gt;
+      &lt;<b>th</b> <i>scope</i>=<u>"col"</u>&gt;Heading<&lt;/<b>th</b>&gt;
+      &lt;<b>th</b> <i>scope</i>=<u>"col"</u>&gt;Heading&lt;/<b>th</b>&gt;
+      &lt;<b>th</b> <i>scope</i>=<u>"col"</u>&gt;Heading&lt;/<b>th</b>&gt;
+    &lt;/<b>tr</b>&gt;
+  &lt;/<b>thead</b>&gt;
+  &lt;<b>tbody</b>&gt;
+    &lt;<b>tr</b>&gt;
+      &lt;<b>th</b> <i>scope</i>=<u>"row"</u>>1&lt;/<b>th</b>&gt;
+      &lt;<b>td</b>>Cell&lt;/<b>td</b>&gt;
+      &lt;<b>td</b>>Cell&lt;/<b>td</b>&gt;
+      &lt;<b>td</b>>Cell&lt;/<b>td</b>&gt;
+    &lt;/<b>tr</b>&gt;
+  &lt;/<b>tbody</b>&gt;
+&lt;/<b>table</b>&gt;</code></pre>
+
+            <p><code><i>role</i>=<u>"grid"</u></code> enable striped rows.</p>
+            <figure>
+              <table role="grid">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+
+<pre><code>&lt;<b>table</b> <i>role</i>=<u>"grid"</u>&gt;
+  <em>...</em>
+&lt;/<b>table</b>&gt;</code></pre>
+
+          </section><!-- ./ Docs: Tables -->
 
           <!-- Docs: Accordions -->
           <section id="accordions">
