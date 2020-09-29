@@ -12,9 +12,9 @@
    */
 
   var colors = {
-    target:         '#customization h5',                 // Buttons inserted after target
-    selectorButton: '#customization button[data-color]', // Button selector in Dom
-    selectorTheme:  '#customization',                    // Theme selector in Dom
+    target:         '#customization article[data-theme="generated"]', // Buttons inserted before target
+    selectorButton: '#customization button[data-color]',              // Button selector in Dom
+    selectorTheme:  '#customization',                                 // Theme selector in Dom
     styles:         '',
 
     // Source: https://material.io/design/color/the-color-system.html
@@ -384,7 +384,7 @@
     // Insert buttons
     var buttons = document.createElement('FIGURE');
     buttons.innerHTML = colorButtons;
-    document.querySelector(colors.target).after(buttons);
+    document.querySelector(colors.target).before(buttons);
 
     // Buttons listeners
     var buttonsAll = document.querySelectorAll(colors.selectorButton);

@@ -172,7 +172,8 @@
               <h2>Customization</h2>
               <h3>You can customize themes with SCSS or you can simply edit the CSS variables.</h3>
             </hgroup>
-            <h5>Pick a color!</h5>
+            <p>Example: <strong>pick a color!</strong></p>
+
             <article data-theme="generated">
               <h4><span class="name">Custom theme</span></h4>
               <form>
@@ -189,53 +190,79 @@
                 </fieldset>
               </form>
             </article>
+            <p>There are 2 ways to customize your version of Pico.css:</p>
+            <h4>Importing SASS</h4>
+            <p>It is recommended to customize Pico by importing SASS source files in your project. This way you can keep Pico up to date without conflicts since Pico code and your custom code are separated.</p>
+            <p>Compile the SASS file to CSS to get a custom version of Pico.</p>
 
-            <p>SCSS:</p>
+<pre><code><em>/* Custom <span class="name"> </span>version */</em>
 
-<pre><code><em>// <span class="name">Custom colors</span></em>
+<em>// Override default variables</em>
 <i>$primary-500</i>: <u class="c500">...</u>;
 <i>$primary-600</i>: <u class="c600">...</u>;
 <i>$primary-700</i>: <u class="c700">...</u>;
 
-<em>// Pico library</em>
+<em>// Import full Pico source code</em>
 <b>@import</b> <u>"path/pico"</u>;</code></pre>
 
-            <p>CSS:</p>
+            <p>Alternatively, you can create a custom theme and import it in your project with the components you need.</p>
+
+<pre><code><em>/* Custom <span class="name"> </span>version */</em>
+
+<em>// Custom theme</em>
+<b>@import</b> <u>"path/themes/custom"</u>;
+
+<em>// Import needed components</em>
+<b>@import</b> <u>"path/layout/document"</u>;
+<b>@import</b> <u>"path/layout/sectioning"</u>;
+<em>...</em>
+</code></pre>
+
+            <p>This allows to create a lighter version with only the components that are useful to you. Example here: <a href="https://github.com/picocss/pico/blob/master/scss/pico.slim.scss">scss/pico.slim.scss</a>.</p>
+            <h4>Overriding CSS variables</h4>
+            <p>All Pico's styles and colors are set with <em>CSS custom properties</em> (variables). Just override the CSS variables to customize your version of Pico.</p>
 
 <pre><code><em>/* <span class="name"></span>Light scheme (Default) */
 /* Can be forced with data-theme="light" */</em>
 <b>[data-theme=<u>"light"</u>]</b>,
 <b>:root:not([data-theme=<u>"dark"</u>])</b> {
-  <i>--primary</i>:            <u class="c600">...</u>;
-  <i>--primary-hover</i>:      <u class="c700">...</u>;
-  <i>--primary-focus</i>:      <u class="c600-outline-light">...</u>;
-  <i>--primary-inverse</i>:    <u class="inverse">...</u>;
+  <i>--primary</i>:              <u class="c600">...</u>;
+  <i>--primary-hover</i>:        <u class="c700">...</u>;
+  <i>--primary-focus</i>:        <u class="c600-outline-light">...</u>;
+  <i>--primary-inverse</i>:      <u class="inverse">...</u>;
 }
-
 
 <em>/* <span class="name"></span>Dark scheme (Auto) */
 /* Automatically enabled if user has Dark mode enabled */</em>
 <i>@media</i> only <b>screen</b> and <b>(prefers-color-scheme: <u>dark</u>)</b> {
-  <b>:root:not([data-theme="light"])</b> {
-    <i>--primary</i>:          <u class="c600">...</u>;
-    <i>--primary-hover</i>:    <u class="c500">...</u>;
-    <i>--primary-focus</i>:    <u class="c600-outline-dark">...</u>;
-    <i>--primary-inverse</i>:  <u class="inverse">...</u>;
+  <b>:root:not([data-theme=<u>"light"</u>])</b> {
+    <i>--primary</i>:            <u class="c600">...</u>;
+    <i>--primary-hover</i>:      <u class="c500">...</u>;
+    <i>--primary-focus</i>:      <u class="c600-outline-dark">...</u>;
+    <i>--primary-inverse</i>:    <u class="inverse">...</u>;
+  }
 }
-
 
 <em>/* <span class="name"></span>Dark scheme (Forced) */
 /* Enabled if forced with data-theme="dark" */</em>
-<b>[data-theme="<u>dark</u>"]</b> {
-  <i>--primary</i>:            <u class="c600">...</u>;
-  <i>--primary-hover</i>:      <u class="c500">...</u>;
-  <i>--primary-focus</i>:      <u class="c600-outline-dark">...</u>;
-  <i>--primary-inverse</i>:    <u class="inverse">...</u>;
-}</code></pre>
+<b>[data-theme=<u>"dark"</u>]</b> {
+  <i>--primary</i>:              <u class="c600">...</u>;
+  <i>--primary-hover</i>:        <u class="c500">...</u>;
+  <i>--primary-focus</i>:        <u class="c600-outline-dark">...</u>;
+  <i>--primary-inverse</i>:      <u class="inverse">...</u>;
+}
 
-            <p>Colors can be modified in <a href="https://github.com/picocss/pico/tree/master/scss/themes">scss/themes/</a>.</p>
-            <p>Spacings, Typography, Rounded, Transitions, Breakpoints, etc. can be modified in <a href="https://github.com/picocss/pico/blob/master/scss/_variables.scss">scss/_variables.scss</a>.</p>
-            <p>You can also compile pico with only the modules you need to generate a slimer version. Example in <a href="https://github.com/picocss/pico/blob/master/scss/pico.slim.scss">scss/pico.slim.scss</a>.</p>
+<em>/* <span class="name"></span>(Common styles) */</em>
+<b>:root</b> {
+  <i>--primary-border</i>:       <u>var</u>(<i>--primary</i>) <b>!important</b>;
+  <i>--primary-hover-border</i>: <u>var</u>(<i>--primary-hover</i>) <b>!important</b>;
+  <i>--input-hover-border</i>:   <u>var</u>(<i>--primary-hover</i>) <b>!important</b>;
+  <i>--input-focus</i>:          <u>var</u>(<i>--primary-focus</i>) <b>!important</b>;
+  <i>--input-inverse</i>:        <u>var</u>(<i>--primary-inverse</i>) <b>!important</b>;
+}
+</code></pre>
+
+            <p>You can find all the CSS variables used in the default theme here: <a href="https://github.com/picocss/pico/blob/master/css/themes/default.css">css/default.css</a></p>
           </section><!-- ./ Docs: Customization -->
 
 
