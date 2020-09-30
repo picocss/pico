@@ -82,9 +82,8 @@
   }
 
   &:focus {
-    box-shadow: none;
     &::-webkit-file-upload-button {
-      box-shadow: var(--button-hover-shadow), 0 0 0 var(--button-outline-width) var(--secondary-focus);
+      box-shadow: none;
     }
   }
 }

@@ -1219,12 +1219,8 @@ label > textarea {
   background-color: var(--secondary-hover);
 }
 
-[type="file"]:focus {
-  box-shadow: none;
-}
-
 [type="file"]:focus::-webkit-file-upload-button {
-  box-shadow: var(--button-hover-shadow), 0 0 0 var(--button-outline-width) var(--secondary-focus);
+  box-shadow: none;
 }
 
 [type="range"] {
@@ -1983,6 +1979,37 @@ progress:indeterminate::-moz-progress-bar {
 
 [data-tooltip]:focus::before, [data-tooltip]:focus::after, [data-tooltip]:hover::before, [data-tooltip]:hover::after {
   opacity: 1;
+  animation-duration: .2s;
+  animation-name: slide;
+}
+
+[data-tooltip]:focus::after, [data-tooltip]:hover::after {
+  animation-name: slideCaret;
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 0.75rem);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -0.25rem);
+  }
+}
+
+@keyframes slideCaret {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    transform: translate(-50%, -0.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0rem);
+  }
 }
 
 /**
