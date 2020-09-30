@@ -49,13 +49,13 @@
   --input-inverse:           var(--primary-inverse);
 
   // Button
-  --button-shadow:           0 0 0 0 rgba(0, 0, 0, 0);;
+  --button-shadow:           0 0 0 0 rgba(0, 0, 0, 0);
   --button-hover-shadow:     0 0 0 0 rgba(0, 0, 0, 0);
 
   // Utilities states
   --valid:                   #{$green-600};
   --invalid:                 #{$red-700};
-  --mark:                    #{rgba($amber-200, .5)};
+  --mark:                    #{rgba($amber-200, .33)};
   --mark-text:               #{$grey-800};
   --muted-text:              #{mix($grey-400, $grey-500)};
   --muted-background:        #{$grey-50};

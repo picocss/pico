@@ -141,6 +141,7 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: var(--spacing-typography);
+  font-family: var(--titles-font);
   font-weight: var(--titles-weight);
 }
 
@@ -226,6 +227,7 @@ hgroup {
 
   > *:last-child {
     color: var(--muted-text);
+    font-family: unset;
     font-size: 1.125rem;
     font-weight: unset;
   }

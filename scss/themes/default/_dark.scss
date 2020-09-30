@@ -55,7 +55,7 @@
     // Utilities states
     --valid:                   #{$green-700};
     --invalid:                 #{$red-900};
-    --mark:                    #{rgba($amber-200, .5)};
+    --mark:                    #{rgba($amber-200, .1875)};
     --mark-text:               #{$white};
     --muted-text:              #{$grey-500};
     --muted-background:        #{mix($grey-800, $grey-900)};
@@ -138,7 +138,7 @@
   // Utilities states
   --valid:                   #{$green-700};
   --invalid:                 #{$red-900};
-  --mark:                    #{rgba($amber-200, .5)};
+  --mark:                    #{rgba($amber-200, .1875)};
   --mark-text:               #{$white};
   --muted-text:              #{$grey-500};
   --muted-background:        #{mix($grey-800, $grey-900)};

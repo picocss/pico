@@ -226,17 +226,17 @@
     // Slider Thumb
     &::-webkit-slider-thumb {
       transform: scale(1.25);
-      background-color: var(--primary-hover);
+      background-color: var(--primary);
     }
 
     &::-moz-range-thumb {
       transform: scale(1.25);
-      background-color: var(--primary-hover);
+      background-color: var(--primary);
     }
 
     &::-ms-thumb {
       transform: scale(1.25);
-      background-color: var(--primary-hover);
+      background-color: var(--primary);
     }
   }
 

@@ -25,7 +25,7 @@
   --h3-size:                         1.5rem;
   --h4-size:                         1.25rem;
   --h5-size:                         1.125rem;
-  --block-round:                     .25rem ;
+  --block-round:                     .25rem;
   --form-element-border-width:       1px;
   --form-element-outline-width:      3px;
   --checkbox-radio-border-width:     2px;
@@ -98,7 +98,7 @@
   --button-hover-shadow:     0 0 0 0 rgba(0, 0, 0, 0);
   --valid:                   #288a6a;
   --invalid:                 #b94646;
-  --mark:                    rgba(255, 223, 128, 0.5);
+  --mark:                    rgba(255, 223, 128, 0.33);
   --mark-text:               #2c3d49;
   --muted-text:              #7e8d98;
   --muted-background:        #edf0f3;
@@ -155,7 +155,7 @@
     --button-hover-shadow:     0 0 0 0 rgba(0, 0, 0, 0);
     --valid:                   #1f7a5c;
     --invalid:                 #943838;
-    --mark:                    rgba(255, 223, 128, 0.5);
+    --mark:                    rgba(255, 223, 128, 0.1875);
     --mark-text:               #FFF;
     --muted-text:              #73828c;
     --muted-background:        #23333e;
@@ -212,7 +212,7 @@
   --button-hover-shadow:     0 0 0 0 rgba(0, 0, 0, 0);
   --valid:                   #1f7a5c;
   --invalid:                 #943838;
-  --mark:                    rgba(255, 223, 128, 0.5);
+  --mark:                    rgba(255, 223, 128, 0.1875);
   --mark-text:               #FFF;
   --muted-text:              #73828c;
   --muted-background:        #23333e;
@@ -555,6 +555,7 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: var(--spacing-typography);
+  font-family: var(--titles-font);
   font-weight: var(--titles-weight);
 }
 
@@ -681,6 +682,7 @@ hgroup * {
 
 hgroup > *:last-child {
   color: var(--muted-text);
+  font-family: unset;
   font-size: 1.125rem;
   font-weight: unset;
 }
@@ -987,7 +989,7 @@ input[type="submit"].outline:focus,
 a.outline[role="button"]:hover,
 a.outline[role="button"]:active,
 a.outline[role="button"]:focus {
-  border: 1px solid var(--primary-hover-border);
+  border: var(--button-border-width) solid var(--primary-hover-border);
   color: var(--primary-hover);
 }
 
@@ -1010,7 +1012,7 @@ input[type="reset"].outline:focus,
 a[role="button"].outline.secondary:hover,
 a[role="button"].outline.secondary:active,
 a[role="button"].outline.secondary:focus {
-  border: 1px solid var(--secondary-hover-border);
+  border: var(--button-border-width) solid var(--secondary-hover-border);
   color: var(--secondary-hover);
 }
 
@@ -1033,7 +1035,7 @@ input[type="reset"].outline.contrast:focus,
 a[role="button"].outline.contrast:hover,
 a[role="button"].outline.contrast:active,
 a[role="button"].outline.contrast:focus {
-  border: 1px solid var(--contrast-hover-border);
+  border: var(--button-border-width) solid var(--contrast-hover-border);
   color: var(--contrast-hover);
 }
 
@@ -1552,17 +1554,17 @@ label > textarea {
 
 [type="range"]:active::-webkit-slider-thumb {
   transform: scale(1.25);
-  background-color: var(--primary-hover);
+  background-color: var(--primary);
 }
 
 [type="range"]:active::-moz-range-thumb {
   transform: scale(1.25);
-  background-color: var(--primary-hover);
+  background-color: var(--primary);
 }
 
 [type="range"]:active::-ms-thumb {
   transform: scale(1.25);
-  background-color: var(--primary-hover);
+  background-color: var(--primary);
 }
 
 [type="range"]:focus {

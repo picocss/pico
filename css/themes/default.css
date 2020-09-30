@@ -21,7 +21,7 @@
   --h3-size:                         1.5rem;
   --h4-size:                         1.25rem;
   --h5-size:                         1.125rem;
-  --block-round:                     .25rem ;
+  --block-round:                     .25rem;
   --form-element-border-width:       1px;
   --form-element-outline-width:      3px;
   --checkbox-radio-border-width:     2px;
@@ -94,7 +94,7 @@
   --button-hover-shadow:     0 0 0 0 rgba(0, 0, 0, 0);
   --valid:                   #288a6a;
   --invalid:                 #b94646;
-  --mark:                    rgba(255, 223, 128, 0.5);
+  --mark:                    rgba(255, 223, 128, 0.33);
   --mark-text:               #2c3d49;
   --muted-text:              #7e8d98;
   --muted-background:        #edf0f3;
@@ -151,7 +151,7 @@
     --button-hover-shadow:     0 0 0 0 rgba(0, 0, 0, 0);
     --valid:                   #1f7a5c;
     --invalid:                 #943838;
-    --mark:                    rgba(255, 223, 128, 0.5);
+    --mark:                    rgba(255, 223, 128, 0.1875);
     --mark-text:               #FFF;
     --muted-text:              #73828c;
     --muted-background:        #23333e;
@@ -208,7 +208,7 @@
   --button-hover-shadow:     0 0 0 0 rgba(0, 0, 0, 0);
   --valid:                   #1f7a5c;
   --invalid:                 #943838;
-  --mark:                    rgba(255, 223, 128, 0.5);
+  --mark:                    rgba(255, 223, 128, 0.1875);
   --mark-text:               #FFF;
   --muted-text:              #73828c;
   --muted-background:        #23333e;
