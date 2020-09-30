@@ -1541,11 +1541,6 @@ hr {
   border-top: 1px solid var(--muted-border);
 }
 
-progress {
-  display: inline-block;
-  vertical-align: baseline;
-}
-
 [hidden],
 template {
   display: none;
@@ -1874,6 +1869,64 @@ aside li {
 aside li a {
   margin: calc(var(--spacing-gutter) * -0.5);
   padding: calc(var(--spacing-gutter) / 2);
+}
+
+/**
+ * Progress
+ */
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 100%;
+  height: .5rem;
+  margin-bottom: calc(var(--spacing-typography) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--block-round);
+  background-color: var(--muted-background);
+  color: var(--primary);
+}
+
+progress::-webkit-progress-bar {
+  border-radius: var(--block-round);
+  background: transparent;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: var(--primary);
+}
+
+progress::-moz-progress-bar {
+  background-color: var(--primary);
+}
+
+progress:indeterminate {
+  background: var(--muted-background) linear-gradient(to right, var(--primary) 30%, var(--muted-background) 30%) top left/150% 150% no-repeat;
+  animation: progress-indeterminate 1s linear infinite;
+}
+
+progress:indeterminate[value]::-webkit-progress-value {
+  background-color: transparent;
+}
+
+progress:indeterminate::-moz-progress-bar {
+  background-color: transparent;
+}
+
+@keyframes progress-indeterminate {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 /**

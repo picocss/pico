@@ -51,13 +51,14 @@ $enable-important: false;
 @import "content/table";                   // table, tr, td, ...
 // @import "content/code";                 // pre, code, ...
 @import "content/accessibility";           // -ms-touch-action, aria-*
-// @import "content/miscs";                // hr, progress, template, [hidden], dialog
+// @import "content/miscs";                // hr, template, [hidden], dialog, canvas
 
 // Components
 // @import "components/accordion";         // details, summary
 // @import "components/card";              // article
 // @import "components/card-sectioning";   // article > header, footer, pre
 // @import "components/nav";               // nav
+// @import "components/progress";          // progress
 // @import "components/tooltip";           // data-tooltip
 
 // Reduce motion
