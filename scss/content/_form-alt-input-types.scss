@@ -201,7 +201,13 @@
   }
 
   &:focus {
-    background: transparent;
+
+    @if $enable-important {
+      background: transparent !important;
+    }
+    @else {
+      background: transparent;
+    }
 
     // Slider Track
     &::-webkit-slider-runnable-track {
@@ -222,6 +228,13 @@
   }
 
   &:active {
+
+    @if $enable-important {
+      background: transparent !important;
+    }
+    @else {
+      background: transparent;
+    }
 
     // Slider Thumb
     &::-webkit-slider-thumb {

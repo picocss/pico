@@ -1533,7 +1533,7 @@ label > textarea {
 }
 
 [type="range"]:focus {
-  background: transparent;
+  background: transparent !important;
 }
 
 [type="range"]:focus::-webkit-slider-runnable-track {
@@ -1550,6 +1550,10 @@ label > textarea {
 
 [type="range"]:focus::-ms-fill-lower {
   box-shadow: 0 0 0 0.1rem var(--input-focus);
+}
+
+[type="range"]:active {
+  background: transparent !important;
 }
 
 [type="range"]:active::-webkit-slider-thumb {
