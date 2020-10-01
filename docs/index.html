@@ -256,11 +256,11 @@
 
 <em>/* <span class="name"></span>(Common styles) */</em>
 <b>:root</b> {
-  <i>--primary-border</i>:       <u>var</u>(<i>--primary</i>) <b>!important</b>;
-  <i>--primary-hover-border</i>: <u>var</u>(<i>--primary-hover</i>) <b>!important</b>;
-  <i>--input-hover-border</i>:   <u>var</u>(<i>--primary</i>) <b>!important</b>;
-  <i>--input-focus</i>:          <u>var</u>(<i>--primary-focus</i>) <b>!important</b>;
-  <i>--input-inverse</i>:        <u>var</u>(<i>--primary-inverse</i>) <b>!important</b>;
+  <i>--primary-border</i>:       <u>var</u>(<i>--primary</i>);
+  <i>--primary-hover-border</i>: <u>var</u>(<i>--primary-hover</i>);
+  <i>--input-hover-border</i>:   <u>var</u>(<i>--primary</i>);
+  <i>--input-focus</i>:          <u>var</u>(<i>--primary-focus</i>);
+  <i>--input-inverse</i>:        <u>var</u>(<i>--primary-inverse</i>);
 }
 </code></pre>
 
@@ -799,7 +799,62 @@
 &lt;/<b>fieldset</b>&gt;</code></pre>
 
             </article>
-            <p>Advanced example with all form elements supported in Pico <a href="https://picocss.com/examples/form-elements/">here</a>.</p>
+            <p>You can change a checkbox to indeterminate state by setting the <code>indeterminate</code> property of input checkboxes to <code>true</code></p>
+            <article>
+              <label for="indeterminate">
+                <input type="checkbox" id="indeterminate" name="indeterminate" indeterminate="true">
+                Select all
+              </label>
+              <script>
+              // Set indeterminate checkbox
+              document.getElementById('indeterminate').indeterminate = true;
+              </script>
+            </article>
+
+            <p>Others input types:</p>
+            <article aria-label="File browser, range slider, date, time, color examples">
+              <label for="file">File browser
+                <input type="file" id="file" name="file">
+              </label>
+              <label for="range">Range slider
+                <input type="range" min="0" max="100" value="50" id="range" name="range">
+              </label>
+              <label for="date">Date
+                <input type="date" id="date" name="date">
+              </label>
+              <label for="time">Time
+                <input type="time" id="time" name="time">
+              </label>
+              <label for="color">Color
+                <input type="color" id="color" name="color" value="#0eaaaa">
+              </label>
+
+<pre><code><em>&lt;!-- File browser --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"file"</u>&gt;File browser
+  &lt;<b>input</b> <i>type</i>=<u>"file"</u> <i>id</i>=<u>"file"</u> <i>name</i>=<u>"file"</u>&gt;
+&lt;/<b>label</b>&gt;
+
+<em>&lt;!-- Range slider --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"range"</u>&gt;Range slider
+  &lt;<b>input</b> <i>type</i>=<u>"range"</u> <i>min</i>=<u>"0"</u> <i>max</i>=<u>"100"</u> <i>value</i>=<u>"50"</u> <i>id</i>=<u>"range"</u> <i>name</i>=<u>"range"</u>&gt;
+&lt;/<b>label</b>&gt;
+
+<em>&lt;!-- Date --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"date"</u>&gt;Date
+  &lt;<b>input</b> <i>type</i>=<u>"date"</u> <i>id</i>=<u>"date"</u> <i>name</i>=<u>"date"</u></u>&gt;
+&lt;/<b>label</b>&gt;
+
+<em>&lt;!-- Time --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"time"</u>&gt;Time
+  &lt;<b>input</b> <i>type</i>=<u>"time"</u> <i>id</i>=<u>"time"</u> <i>name</i>=<u>"time"</u>&gt;
+&lt;/<b>label</b>&gt;
+
+<em>&lt;!-- Color --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"color"</u>&gt;Color
+  &lt;<b>input</b> <i>type</i>=<u>"color"</u> <i>id</i>=<u>"color"</u> <i>name</i>=<u>"color"</u> <i>value</i>=<u>"#0eaaaa"</u>>
+&lt;/<b>label</b>&gt;</code></pre>
+
+            </article>
           </section><!-- ./ Docs: Form -->
 
           <!-- Docs: Tables -->
@@ -1129,7 +1184,7 @@
             <hr>
             <p>
               <small>
-                Openly inspired by <a href="https://getbootstrap.com/" class="secondary">Bootstrap</a>, <a href="https://picturepan2.github.io/spectre/" class="secondary">Spectre</a>, <a href=" https://kbrsh.github.io/wing/" class="secondary">Wing</a>, <a href="https://www.cssbed.com/" class="secondary">CSS Bed</a>, <a href="https://necolas.github.io/normalize.css/" class="secondary">Normalize</a> & <a href="https://csstools.github.io/sanitize.css/" class="secondary">Sanitize</a><br>
+                Openly inspired by <a href="https://getbootstrap.com/" class="secondary">Bootstrap</a>, <a href="https://www.cssbed.com/" class="secondary">CSS Bed</a>, <a href="https://necolas.github.io/normalize.css/" class="secondary">Normalize</a>,  <a href="https://csstools.github.io/sanitize.css/" class="secondary">Sanitize</a>, <a href="https://picturepan2.github.io/spectre/" class="secondary">Spectre</a> & <a href=" https://kbrsh.github.io/wing/" class="secondary">Wing</a><br>
                 Licensed under the <a href="https://github.com/picocss/pico/blob/master/LICENSE.md" class="secondary">MIT License</a><br>
               </small>
             </p>
