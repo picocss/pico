@@ -6,38 +6,34 @@
 pre {
 
   @if map-get($breakpoints, "sm") and
-    map-get($spacing-factor, "sm") and
     $enable-responsive-spacings {
 
     @media (min-width: map-get($breakpoints, "sm")) {
-      padding: $spacing-block ($spacing-block*map-get($spacing-factor, "sm"));
+      padding: var(--spacing-block) calc(var(--spacing-block) * var(--spacing-factor-sm));
     }
   }
 
   @if map-get($breakpoints, "md") and
-    map-get($spacing-factor, "md") and
     $enable-responsive-spacings {
 
     @media (min-width: map-get($breakpoints, "md")) {
-      padding: $spacing-block ($spacing-block*map-get($spacing-factor, "md"));
+      padding: var(--spacing-block) calc(var(--spacing-block) * var(--spacing-factor-md));
     }
   }
 
   @if map-get($breakpoints, "lg") and
-    map-get($spacing-factor, "lg") and
     $enable-responsive-spacings {
 
     @media (min-width: map-get($breakpoints, "lg")) {
-      padding: $spacing-block ($spacing-block*map-get($spacing-factor, "lg"));
+      padding: var(--spacing-block) calc(var(--spacing-block) * var(--spacing-factor-lg));
     }
   }
 
   @if map-get($breakpoints, "xl") and
-    map-get($spacing-factor, "xl") and
     $enable-responsive-spacings {
 
     @media (min-width: map-get($breakpoints, "xl")) {
-      padding: $spacing-block ($spacing-block*map-get($spacing-factor, "xl"));
+      padding: var(--spacing-block) calc(var(--spacing-block) * var(--spacing-factor-xl));
     }
   }
 }
@@ -61,8 +57,8 @@ pre {
     line-height: 1;
 
     @media (min-width: map-get($breakpoints, "lg")) {
-      top: $spacing-gutter;
-      right: $spacing-gutter;
+      top: var(--spacing-gutter);
+      right: var(--spacing-gutter);
     }
   }
 

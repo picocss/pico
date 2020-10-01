@@ -28,7 +28,7 @@ body > nav {
       a {
         width: 3.5rem;
         height: 3.5rem;
-        margin-left: -$spacing-gutter;
+        margin-left: calc(var(--spacing-gutter) * -1);
         padding: 0;
         background: var(--h1);
         color: var(--background);
@@ -38,7 +38,7 @@ body > nav {
     // Title
     &:nth-of-type(2) {
       display: none;
-      margin-left: $spacing-gutter;
+      margin-left: var(--spacing-gutter);
       color: var(--h1);
 
       @media (min-width: map-get($breakpoints, "lg")) {

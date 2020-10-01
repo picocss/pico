@@ -53,10 +53,18 @@ npm install @picocss/pico
 
 ## Examples
 
+Minimalist templates to discover Pico in action:
+
 [![Examples](https://picocss.com/img/examples.jpg)](https://picocss.com/#examples)
+
+- **[Preview](https://picocss.com/examples/preview/)**  
+  A starter example with all elements and components used in Pico
 
 - **[Class-less](https://picocss.com/examples/classless/)**  
   Just a pure semantic HTML markup, without `.classes`
+
+- **[Basic template](https://picocss.com/examples/basic-template/)**  
+  A basic custom template for Pico using only CSS custom properties (variables)
 
 - **[Company](https://picocss.com/examples/company/)**  
   A classic company or blog layout with a sidebar
@@ -66,9 +74,6 @@ npm install @picocss/pico
 
 - **[Sign in](https://picocss.com/examples/sign-in/)**  
   A minimalist layout for Login pages
-
-- **[Form elements](https://picocss.com/examples/form-elements/)**  
-  Semantic HTML form markup, without any `.classes` or `JavaScript`
 
 - **[Bootstrap grid system](https://picocss.com/examples/bootstrap-grid/)**  
   Custom CSS build with the Bootstrap grid system to manage complex grid layouts in Pico
@@ -101,15 +106,6 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 
 ## Copyright and license
 
-- Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LICENSE.md)
-- Library icons by [Feather](https://github.com/feathericons/feather) ([MIT](https://github.com/feathericons/feather/blob/master/LICENSE))
-- Website icons by [Font Awesome](https://github.com/FortAwesome/Font-Awesome) ([CC BY 4.0](https://fontawesome.com/license/free))
+Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LICENSE.md).
 
-Openly inspired by:  
-
-- [Bootstrap](https://github.com/twbs/bootstrap) ([MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE))
-- [Spectre](https://github.com/picturepan2/spectre) ([MIT](https://github.com/picturepan2/spectre/blob/master/LICENSE))
-- [Wing](https://github.com/kbrsh/wing/) ([MIT](https://github.com/kbrsh/wing/blob/master/LICENSE))
-- [CSS Bed](https://github.com/ubershmekel/cssbed)
-- [Normalize](https://github.com/necolas/normalize.css/) ([MIT](https://github.com/necolas/normalize.css/blob/master/LICENSE.md))
-- [Sanitize](https://csstools.github.io/sanitize.css/) ([CC0 1.0](https://github.com/csstools/sanitize.css/blob/master/LICENSE.md))
+Openly inspired by: [Bootstrap](https://github.com/twbs/bootstrap), [CSS Bed](https://github.com/ubershmekel/cssbed), [Normalize](https://github.com/necolas/normalize.css/), [Sanitize](https://csstools.github.io/sanitize.css/), [Spectre](https://github.com/picturepan2/spectre), [Wing](https://github.com/kbrsh/wing/).

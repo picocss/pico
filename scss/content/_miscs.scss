@@ -18,13 +18,6 @@ hr {
   border-top: 1px solid var(--muted-border);
 }
 
-// 1. Add the correct display in Edge 18- and IE
-// 2. Add the correct vertical alignment in Chrome, Edge, and Firefox
-progress {
-  display: inline-block; // 1
-  vertical-align: baseline; // 2
-}
-
 // Add the correct display in IE 10+
 [hidden],
 template {

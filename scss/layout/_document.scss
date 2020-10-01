@@ -38,46 +38,42 @@ html {
   -webkit-text-size-adjust: 100%; // 6
   background: var(--background);
   color: var(--text);
-  font-family: $sans-serif;
-  font-size: map-get($base-font, "xs");
-  font-weight: $text-weight;
-  line-height: $line-height; // 1
+  font-family: var(--text-font);
+  font-size: var(--base-font-xs);
+  font-weight: var(--text-weight);
+  line-height: var(--line-height); // 1
   text-rendering: optimizeLegibility;
   cursor: default; // 4
 
   @if map-get($breakpoints, "sm") and
-    map-get($base-font, "sm") and
     $enable-responsive-typography {
 
     @media (min-width: map-get($breakpoints, "sm")) {
-      font-size: map-get($base-font, "sm");
+      font-size: var(--base-font-sm);
     }
   }
 
   @if map-get($breakpoints, "md") and
-    map-get($base-font, "md") and
     $enable-responsive-typography {
 
     @media (min-width: map-get($breakpoints, "md")) {
-      font-size: map-get($base-font, "md");
+      font-size: var(--base-font-md);
     }
   }
 
   @if map-get($breakpoints, "lg") and
-    map-get($base-font, "lg") and
     $enable-responsive-typography {
 
     @media (min-width: map-get($breakpoints, "lg")) {
-      font-size: map-get($base-font, "lg");
+      font-size: var(--base-font-lg);
     }
   }
 
   @if map-get($breakpoints, "xl") and
-    map-get($base-font, "xl") and
     $enable-responsive-typography {
 
     @media (min-width: map-get($breakpoints, "xl")) {
-      font-size: map-get($base-font, "xl");
+      font-size: var(--base-font-xl);
     }
   }
 }

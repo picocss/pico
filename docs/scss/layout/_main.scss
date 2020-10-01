@@ -5,25 +5,25 @@
 $navHeight: 3.5rem;
 
 body > main {
-  padding-top:map-get($spacing-factor, "xs") + $navHeight;
+  padding-top: calc(1rem * var(--spacing-factor-xs) + #{$navHeight});
 
   @media (min-width: map-get($breakpoints, "sm")) {
-    padding-top: map-get($spacing-factor, "sm") + $navHeight;
+    padding-top: calc(1rem * var(--spacing-factor-sm) + #{$navHeight});
   }
 
   @media (min-width: map-get($breakpoints, "md")) {
-    padding-top: map-get($spacing-factor, "md") + $navHeight;
+    padding-top: calc(1rem * var(--spacing-factor-md) + #{$navHeight});
   }
 
   @media (min-width: map-get($breakpoints, "lg")) {
-    grid-column-gap: $spacing-gutter*4;
+    grid-column-gap: calc(var(--spacing-gutter) * 4);
     display: grid;
     grid-template-columns: 200px auto;
-    padding-top: map-get($spacing-factor, "lg") + $navHeight;
+    padding-top: calc(1rem * var(--spacing-factor-lg) + #{$navHeight});
   }
 
   @media (min-width: map-get($breakpoints, "xl")) {
-    padding-top: map-get($spacing-factor, "xl") + $navHeight;
+    padding-top: calc(1rem * var(--spacing-factor-xl) + #{$navHeight});
   }
 
   > * {
@@ -37,29 +37,29 @@ body > main {
 
 div[role="document"] > section::before {
   display: block;
-  height: map-get($spacing-factor, "xs") + $navHeight;
-  margin-top: -(map-get($spacing-factor, "xs")+ $navHeight);
+  height: calc(1rem * var(--spacing-factor-xs) + #{$navHeight});
+  margin-top: calc(-1rem * var(--spacing-factor-xs) - #{$navHeight});
   content: '';
 
 
   @media (min-width: map-get($breakpoints, "sm")) {
-    height: map-get($spacing-factor, "sm") + $navHeight;
-    margin-top: -(map-get($spacing-factor, "sm") + $navHeight);
+    height: calc(1rem * var(--spacing-factor-sm) + #{$navHeight});
+    margin-top: calc(-1rem * var(--spacing-factor-sm) - #{$navHeight});
   }
 
   @media (min-width: map-get($breakpoints, "md")) {
-    height: map-get($spacing-factor, "md") + $navHeight;
-    margin-top: -(map-get($spacing-factor, "md") + $navHeight);
+    height: calc(1rem * var(--spacing-factor-md) + #{$navHeight});
+    margin-top: calc(-1rem * var(--spacing-factor-md) - #{$navHeight});
   }
 
   @media (min-width: map-get($breakpoints, "lg")) {
-    height: map-get($spacing-factor, "lg") + $navHeight;
-    margin-top: -(map-get($spacing-factor, "lg") + $navHeight);
+    height: calc(1rem * var(--spacing-factor-lg) + #{$navHeight});
+    margin-top: calc(-1rem * var(--spacing-factor-lg) - #{$navHeight});
   }
 
   @media (min-width: map-get($breakpoints, "xl")) {
-    height: map-get($spacing-factor, "xl") + $navHeight;
-    margin-top: -(map-get($spacing-factor, "xl") + $navHeight);
+    height: calc(1rem * var(--spacing-factor-xl) + #{$navHeight});
+    margin-top: calc(-1rem * var(--spacing-factor-xl) - #{$navHeight});
   }
 }
 
@@ -71,8 +71,7 @@ div[role="document"] section a[href*="//"]:not([href*="https://picocss.com"]):no
   display: inline-block;
   width: 1rem;
   height: 1rem;
-  // Source: https://feathericons.com/
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{$icon-color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'%3E%3C/path%3E%3Cpolyline points='15 3 21 3 21 9'%3E%3C/polyline%3E%3Cline x1='10' y1='14' x2='21' y2='3'%3E%3C/line%3E%3C/svg%3E");
+  background-image: var(--icon-external);
   background-position: top center;
   background-repeat: no-repeat;
   background-size: .66rem auto;

@@ -5,8 +5,8 @@
 
 details {
   display: block;
-  margin-bottom: $spacing-typography;
-  padding-bottom: $spacing-typography/2;
+  margin-bottom: var(--spacing-typography);
+  padding-bottom: calc(var(--spacing-typography) / 2);
   border-bottom: 1px solid var(--muted-border);
 
   summary {
@@ -32,12 +32,15 @@ details {
       height: 1rem;
       float: right;
       transform: rotate(-90deg);
-      // Source: https://feathericons.com/
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{$icon-color}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-image: var(--icon-chevron);
       background-position: center;
       background-repeat: no-repeat;
       background-size: 1rem auto;
       content: '';
+
+      @if $enable-transitions {
+        transition: transform var(--transition);
+      }
     }
 
     &:focus {
@@ -45,7 +48,7 @@ details {
     }
 
     ~ * {
-      margin-top: $spacing-typography/2;
+      margin-top: calc(var(--spacing-typography) / 2);
 
       ~ * {
         margin-top: 0;
@@ -57,7 +60,7 @@ details {
   &[open] {
 
     summary {
-      margin-bottom: $spacing-typography/4;
+      margin-bottom: calc(var(--spacing-typography) / 4);
       color: var(--muted-text);
 
       &::after {

@@ -3,53 +3,50 @@
  */
 
 article {
-  margin: $spacing-block 0;
-  padding: $spacing-block $spacing-gutter;
+  margin: var(--spacing-block) 0;
+  padding: var(--spacing-block) var(--spacing-gutter);
   overflow: hidden;
-  border-radius: $round;
+  border-radius: var(--block-round);
   background: var(--card-background);
   box-shadow: var(--card-shadow);
 
   @if map-get($breakpoints, "sm") {
     @media (min-width: map-get($breakpoints, "sm")) {
-      @if map-get($spacing-factor, "sm") and $enable-responsive-spacings {
-        margin: ($spacing-block*map-get($spacing-factor, "sm")) 0;
-        padding: $spacing-block*map-get($spacing-factor, "sm");
+      @if $enable-responsive-spacings {
+        margin: calc(var(--spacing-block) * var(--spacing-factor-sm)) 0;
+        padding: calc(var(--spacing-block) * var(--spacing-factor-sm));
       }
       @else {
-        margin: $spacing-block 0;
-        padding: $spacing-block;
+        margin: var(--spacing-block) 0;
+        padding: var(--spacing-block);
       }
     }
   }
 
   @if map-get($breakpoints, "md") and
-    map-get($spacing-factor, "md") and
     $enable-responsive-spacings {
 
     @media (min-width: map-get($breakpoints, "md")) {
-      margin: ($spacing-block*map-get($spacing-factor, "md")) 0;
-      padding: $spacing-block*map-get($spacing-factor, "md");
+      margin: calc(var(--spacing-block) * var(--spacing-factor-md)) 0;
+      padding: calc(var(--spacing-block) * var(--spacing-factor-md));
     }
   }
 
   @if map-get($breakpoints, "lg") and
-    map-get($spacing-factor, "lg") and
     $enable-responsive-spacings {
 
     @media (min-width: map-get($breakpoints, "lg")) {
-      margin: ($spacing-block*map-get($spacing-factor, "lg")) 0;
-      padding: $spacing-block*map-get($spacing-factor, "lg");
+      margin: calc(var(--spacing-block) * var(--spacing-factor-lg)) 0;
+      padding: calc(var(--spacing-block) * var(--spacing-factor-lg));
     }
   }
 
   @if map-get($breakpoints, "xl") and
-    map-get($spacing-factor, "xl") and
     $enable-responsive-spacings {
 
     @media (min-width: map-get($breakpoints, "xl")) {
-      margin: ($spacing-block*map-get($spacing-factor, "xl")) 0;
-      padding: $spacing-block*map-get($spacing-factor, "xl");
+      margin: calc(var(--spacing-block) * var(--spacing-factor-xl)) 0;
+      padding: calc(var(--spacing-block) * var(--spacing-factor-xl));
     }
   }
 

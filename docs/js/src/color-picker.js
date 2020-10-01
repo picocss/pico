@@ -12,9 +12,9 @@
    */
 
   var colors = {
-    target:         '#customization h5',                 // Buttons inserted after target
-    selectorButton: '#customization button[data-color]', // Button selector in Dom
-    selectorTheme:  '#customization',                    // Theme selector in Dom
+    target:         '#customization article[data-theme="generated"]', // Buttons inserted before target
+    selectorButton: '#customization button[data-color]',              // Button selector in Dom
+    selectorTheme:  '#customization',                                 // Theme selector in Dom
     styles:         '',
 
     // Source: https://material.io/design/color/the-color-system.html
@@ -221,7 +221,7 @@
         "a200": "#eeff41",
         "a400": "#c6ff00",
         "a700": "#aeea00",
-        "inverse": "#000"
+        "inverse": "rgba(0, 0, 0, 0.75)"
       },
       "yellow": {
         "50": "#fffde7",
@@ -238,7 +238,7 @@
         "a200": "#ffff00",
         "a400": "#ffea00",
         "a700": "#ffd600",
-        "inverse": "#000"
+        "inverse": "rgba(0, 0, 0, 0.75)"
       },
       "amber": {
         "50": "#fff8e1",
@@ -255,7 +255,7 @@
         "a200": "#ffd740",
         "a400": "#ffc400",
         "a700": "#ffab00",
-        "inverse": "#000"
+        "inverse": "rgba(0, 0, 0, 0.75)"
       },
       "orange": {
         "50": "#fff3e0",
@@ -360,31 +360,31 @@
       if (data.hasOwnProperty(color)) {
 
         // Buttons
-        colorButtons += '<button data-color="'+ color +'" aria-label="Activate '+ color +' theme"></button>';
+        colorButtons  += '<button data-color="'+ color +'" aria-label="Activate '+ color +' theme"></button>';
 
         // CSS Styles
         colors.styles += 'button[data-color="'+ color +'"] {'
-                      +   'background-color: '+ data[color]['600'] +'; '
-                      + '}'
+                      +    'background-color: '+ data[color]['600'] +'; '
+                      +  '}'
 
-                      + '[data-theme="light"] button[data-color="'+ color +'"]:hover, '
-                      + '[data-theme="light"] button[data-color="'+ color +'"]:active, '
-                      + '[data-theme="light"] button[data-color="'+ color +'"]:focus {'
-                      +   'background-color: '+ data[color]['700'] +'; '
-                      + '}'
+                      +  '[data-theme="light"] button[data-color="'+ color +'"]:hover, '
+                      +  '[data-theme="light"] button[data-color="'+ color +'"]:active, '
+                      +  '[data-theme="light"] button[data-color="'+ color +'"]:focus {'
+                      +    'background-color: '+ data[color]['700'] +'; '
+                      +  '}'
 
-                      + '[data-theme="dark"] button[data-color="'+ color +'"]:hover, '
-                      + '[data-theme="dark"] button[data-color="'+ color +'"]:active, '
-                      + '[data-theme="dark"] button[data-color="'+ color +'"]:focus {'
-                      +   'background-color: '+ data[color]['500'] +'; '
-                      + '}'
+                      +  '[data-theme="dark"] button[data-color="'+ color +'"]:hover, '
+                      +  '[data-theme="dark"] button[data-color="'+ color +'"]:active, '
+                      +  '[data-theme="dark"] button[data-color="'+ color +'"]:focus {'
+                      +    'background-color: '+ data[color]['500'] +'; '
+                      +  '}';
       }
     }
 
     // Insert buttons
     var buttons = document.createElement('FIGURE');
     buttons.innerHTML = colorButtons;
-    document.querySelector(colors.target).after(buttons);
+    document.querySelector(colors.target).before(buttons);
 
     // Buttons listeners
     var buttonsAll = document.querySelectorAll(colors.selectorButton);
@@ -438,41 +438,28 @@
 
   function generateTheme(name, data) {
 
-    // Code and Color name
-    // TODO: Create a function
-    var cName = document.querySelectorAll(colors.selectorTheme + ' .name');
-    for (var i = 0; i < cName.length; ++i) {
-      cName[i].innerHTML = name.charAt(0).toUpperCase() + name.substring(1) + ' ';
-    }
-    var c500 = document.querySelectorAll(colors.selectorTheme + ' .c500');
-    for (var i = 0; i < c500.length; ++i) {
-      c500[i].innerHTML = data[500];
-    }
-    var c600 = document.querySelectorAll(colors.selectorTheme + ' .c600');
-    for (var i = 0; i < c600.length; ++i) {
-      c600[i].innerHTML = data[600];
-    }
-    var c700 = document.querySelectorAll(colors.selectorTheme + ' .c700');
-    for (var i = 0; i < c700.length; ++i) {
-      c700[i].innerHTML = data[700];
-    }
-    var c600OutlineLight = document.querySelectorAll(colors.selectorTheme + ' .c600-outline-light');
-    for (var i = 0; i < c600OutlineLight.length; ++i) {
-      c600OutlineLight[i].innerHTML = hexToRgbA(data[600], .125);
-    }
-    var c600OutlineDark = document.querySelectorAll(colors.selectorTheme + ' .c600-outline-dark');
-    for (var i = 0; i < c600OutlineDark.length; ++i) {
-      c600OutlineDark[i].innerHTML = hexToRgbA(data[600], .25);
-    }
-    var inverse = document.querySelectorAll(colors.selectorTheme + ' .inverse');
-    for (var i = 0; i < inverse.length; ++i) {
-      inverse[i].innerHTML = data['inverse'];
+    // Update name and colors in demo code
+    var swap = {
+      '.name' : name.charAt(0).toUpperCase() + name.substring(1) + ' ',
+      '.c500' : data[500],
+      '.c600' : data[600],
+      '.c700' : data[700],
+      '.c600-outline-light' : hexToRgbA(data[600], .125),
+      '.c600-outline-dark'  : hexToRgbA(data[600], .25),
+      '.inverse' : data['inverse'],
     }
 
-    // CSS Style
+    Object.keys(swap).forEach(function(key) {
+      var target = document.querySelectorAll(colors.selectorTheme + ' ' + key);
+      for (var i = 0; i < target.length; ++i) {
+        target[i].innerHTML = swap[key];
+      }
+    });
+
+    // Update CSS Style
     var generatedStyles = '[data-theme="generated"] {'
-                        +   '--primary:' + data[600] + ';'
                         +   '--h4:' + data[700] + ';'
+                        +   '--primary:' + data[600] + ';'
                         +   '--primary-hover:' + data[700] + ';'
                         +   '--primary-focus:' + hexToRgbA(data[600], .125) + ';'
                         +   '--primary-inverse:' + data['inverse'] + ';'
@@ -480,8 +467,8 @@
 
                         + '@media only screen and (prefers-color-scheme: dark) {'
                         +    ':root:not([data-theme="light"]) [data-theme="generated"] {'
-                        +     '--primary:' + data[600] + ';'
                         +     '--h4:' + data[400] + ';'
+                        +     '--primary:' + data[600] + ';'
                         +     '--primary-hover:' + data[500] + ';'
                         +     '--primary-focus:' + hexToRgbA(data[600], .25) + ';'
                         +     '--primary-inverse:' + data['inverse'] + ';'
@@ -489,11 +476,19 @@
                         + '}'
 
                         + '[data-theme="dark"] [data-theme="generated"] {'
-                        +   '--primary:' + data[600] + ';'
                         +   '--h4:' + data[500] + ';'
+                        +   '--primary:' + data[600] + ';'
                         +   '--primary-hover:' + data[500] + ';'
                         +   '--primary-focus:' + hexToRgbA(data[600], .25) + ';'
                         +   '--primary-inverse:' + data['inverse'] + ';'
+                        + '}'
+
+                        + '[data-theme="generated"] {'
+                        +   '--primary-border: var(--primary);'
+                        +   '--primary-hover-border: var(--primary-hover);'
+                        +   '--input-hover-border: var(--primary);'
+                        +   '--input-focus: var(--primary-focus);'
+                        +   '--input-inverse: var(--primary-inverse);'
                         + '}';
 
     // Insert CSS Styles
@@ -518,7 +513,7 @@
         c= [c[0], c[0], c[1], c[1], c[2], c[2]];
       }
       c= '0x' + c.join('');
-      return 'rgba(' + [(c>>16)&255, (c>>8)&255, c&255].join(',') + ',' + alpha + ')';
+      return 'rgba(' + [(c>>16)&255, (c>>8)&255, c&255].join(', ') + ', ' + alpha + ')';
     }
     throw new Error('Bad Hex');
   }

@@ -42,7 +42,7 @@ button::-moz-focus-inner,
 button {
   display: block;
   width: 100%;
-  margin-bottom: $spacing-typography;
+  margin-bottom: var(--spacing-typography);
 }
 
 a[role="button"] {
@@ -53,35 +53,40 @@ a[role="button"] {
 button,
 input[type="submit"],
 input[type="button"],
+input[type="reset"],
 [type="file"]::-webkit-file-upload-button,
 a[role="button"] {
-  padding: $spacing-input-button-vertical $spacing-input-button-horizontal;
-  border: 1px solid transparent;
-  border-radius: $round;
+  padding: var(--button-spacing-vertical) var(--button-spacing-horizontal);
+  border: var(--button-border-width) solid var(--primary-border);
+  border-radius: var(--button-round);
   outline: none;
   background-color: var(--primary);
+  box-shadow: var(--button-shadow);
   color: var(--primary-inverse);
   font-size: 1rem;
-  font-weight: normal;
-  line-height: $line-height;
+  font-weight: var(--buttons-weight);
+  line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
 
   @if $enable-transitions {
     transition:
-      background-color $transition,
-      color $transition,
-      box-shadow $transition;
+      background-color var(--transition),
+      border-color var(--transition),
+      color var(--transition),
+      box-shadow var(--transition);
   }
 
   &:hover,
   &:active,
   &:focus {
+    border-color: var(--primary-hover-border);
     background-color: var(--primary-hover);
+    box-shadow: var(--button-hover-shadow);
   }
 
   &:focus {
-    box-shadow: 0 0 0 0.2rem var(--primary-focus);
+    box-shadow: var(--button-hover-shadow), 0 0 0 var(--button-outline-width) var(--primary-focus);
   }
 }
 

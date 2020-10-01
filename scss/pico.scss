@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.1.0 (https://picocss.com)
+ * Pico.css v1.2.0 (https://picocss.com)
  * Copyright 2020 - Licensed under MIT
  */
 
@@ -28,13 +28,14 @@
 @import "content/table";                 // table, tr, td, ...
 @import "content/code";                  // pre, code, ...
 @import "content/accessibility";         // -ms-touch-action, aria-*
-@import "content/miscs";                 // hr, progress, template, [hidden], dialog, canvas
+@import "content/miscs";                 // hr, template, [hidden], dialog, canvas
 
 // Components
 @import "components/accordion";          // details, summary
 @import "components/card";               // article
 @import "components/card-sectioning";    // article > header, footer, pre
 @import "components/nav";                // nav
+@import "components/progress";           // progress
 @import "components/tooltip";            // data-tooltip
 
 // Reduce motion

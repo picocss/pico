@@ -9,17 +9,24 @@
   input[type="submit"].secondary,
   input[type="reset"],
   a[role="button"].secondary {
+    border: var(--button-border-width) solid var(--secondary-border);
     background-color: var(--secondary);
     color: var(--secondary-inverse);
 
     &:hover,
     &:active,
     &:focus {
+      border-color: var(--secondary-hover-border);
       background-color: var(--secondary-hover);
     }
 
     &:focus {
-      box-shadow: 0 0 0 0.2rem var(--secondary-focus);
+      @if $enable-important {
+        box-shadow: var(--button-hover-shadow), 0 0 0 var(--button-outline-width) var(--secondary-focus) !important;
+      }
+      @else {
+        box-shadow: var(--button-hover-shadow), 0 0 0 var(--button-outline-width) var(--secondary-focus);
+      }
     }
   }
 
@@ -29,17 +36,19 @@
   input[type="submit"].contrast,
   input[type="reset"].contrast,
   a[role="button"].contrast {
+    border: var(--button-border-width) solid var(--contrast-border);
     background-color: var(--contrast);
     color: var(--contrast-inverse);
 
     &:hover,
     &:active,
     &:focus {
+      border-color: var(--contrast-hover-border);
       background-color: var(--contrast-hover);
     }
 
     &:focus {
-      box-shadow: 0 0 0 0.2rem var(--contrast-focus);
+      box-shadow: var(--button-hover-shadow), 0 0 0 var(--button-outline-width) var(--contrast-focus);
     }
   }
 
@@ -48,14 +57,14 @@
   button.outline,
   input[type="submit"].outline,
   a.outline[role="button"] {
-    border: 1px solid var(--primary);
+    border: var(--button-border-width) solid var(--primary-border);
     background-color: transparent;
     color: var(--primary);
 
     &:hover,
     &:active,
     &:focus {
-      border: 1px solid var(--primary-hover);
+      border: var(--button-border-width) solid var(--primary-hover-border);
       color: var(--primary-hover);
     }
   }
@@ -66,19 +75,15 @@
   input[type="submit"].outline.secondary,
   input[type="reset"].outline,
   a[role="button"].outline.secondary {
-    border: 1px solid var(--secondary);
+    border: var(--button-border-width) solid var(--secondary-border);
     background-color: transparent;
     color: var(--secondary);
 
     &:hover,
     &:active,
     &:focus {
-      border: 1px solid var(--secondary-hover);
+      border: var(--button-border-width)solid var(--secondary-hover-border);
       color: var(--secondary-hover);
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 0.2rem var(--secondary-focus);
     }
   }
 
@@ -88,19 +93,41 @@
   input[type="submit"].outline.contrast,
   input[type="reset"].outline.contrast,
   a[role="button"].outline.contrast {
-    border: 1px solid var(--contrast);
+    border: var(--button-border-width) solid var(--contrast-border);
     background-color: transparent;
     color: var(--contrast);
 
     &:hover,
     &:active,
     &:focus {
-      border: 1px solid var(--contrast-hover);
+      border: var(--button-border-width) solid var(--contrast-hover-border);
       color: var(--contrast-hover);
+    }
+  }
+}
+
+@else {
+
+  // Button reset only for classless version
+  input[type="reset"] {
+    border: var(--button-border-width) solid var(--secondary-border);
+    background-color: var(--secondary);
+    color: var(--secondary-inverse);
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-color: var(--secondary-hover-border);
+      background-color: var(--secondary-hover);
     }
 
     &:focus {
-      box-shadow: 0 0 0 0.2rem var(--contrast-focus);
+      @if $enable-important {
+        box-shadow: var(--button-hover-shadow), 0 0 0 var(--button-outline-width) var(--secondary-focus) !important;
+      }
+      @else {
+        box-shadow: var(--button-hover-shadow), 0 0 0 var(--button-outline-width) var(--secondary-focus);
+      }
     }
   }
 }

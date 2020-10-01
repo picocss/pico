@@ -33,86 +33,6 @@ $enable-transitions: true !default;
 $enable-important: true !default;
 
 
-// Spacings
-// ––––––––––––––––––––
-
-// Gutters and horizontals margins
-// For <body>, .grid, <nav>, <table>
-$spacing-gutter: 1rem !default;
-
-// Blocks verticals margins and paddings
-// For <header>, <main>, <footer>, <section>, <article>
-// This value is proportionally multiplied according breakpoints for great responsive spacings
-$spacing-block: 2rem !default;
-
-// Vertical margins for Typography and Form elements
-// This value is proportionally multiplied according breakpoints for great responsive spacings
-$spacing-typography: 1.5rem !default;
-
-// Spacing between: Label and Input, Checkboxes, Radios
-$spacing-form-elements: $spacing-typography/6 !default;
-
-// Padding for <input> and <button>
-$spacing-input-button-vertical:   .75rem !default;
-$spacing-input-button-horizontal: 1rem !default;
-
-
-// Typography
-// ––––––––––––––––––––
-
-// Sans serif native font stack
-// Source: github.com/csstools/sanitize.css/blob/master/typography.css
-$sans-serif:
-  system-ui,
-  -apple-system,       // macOS 10.11-10.12
-  "Segoe UI",          // Windows 6+
-  "Roboto",            // Android 4+
-  "Ubuntu",            // Ubuntu 10.10+
-  "Cantarell",         // Gnome 3+
-  "Noto Sans",         // KDE Plasma 5+
-  sans-serif,          // Fallback
-  "Apple Color Emoji", // macOS emoji
-  "Segoe UI Emoji",    // Windows emoji
-  "Segoe UI Symbol",   // Windows emoji
-  "Noto Color Emoji"   // Linux emoji
-  !default;
-
-// Monospace native font stack
-// // Source: github.com/csstools/sanitize.css/blob/master/typography.css
-$monospace:
-  "Menlo",             // macOS 10.10+
-  "Consolas",          // Windows 6+
-  "Roboto Mono",       // Android 4+
-  "Ubuntu Monospace",  // Ubuntu 10.10+
-  "Noto Mono",         // KDE Plasma 5+
-  "Oxygen Mono",       // KDE Plasma 4+
-  "Liberation Mono",   // Linux/OpenOffice fallback
-  monospace,           // Fallback
-  "Apple Color Emoji", // macOS emoji
-  "Segoe UI Emoji",    // Windows emoji
-  "Segoe UI Symbol",   // Windows emoji
-  "Noto Color Emoji"   // Linux emoji
-  !default;
-
-$line-height:    1.5 !default;
-$text-weight:    400 !default;
-$heading-weight: 700 !default;
-
-
-// Blocks
-// ––––––––––––––––––––
-
-// For <form> elements, <button>, <article>, <details> inlined code, tooltips
-$round: .25rem !default;
-
-
-// Transitions
-// ––––––––––––––––––––
-
-// For <a>, <form> elements and <button>
-$transition: .2s ease-in-out !default;
-
-
 // Responsive
 // ––––––––––––––––––––
 
@@ -126,7 +46,6 @@ $transition: .2s ease-in-out !default;
 // To provide an easy and fine styling on each breakpoint
 // we didn't use @each, @mixin or @include.
 // That means you need to edit each CSS selector file to add a breakpoint
-// You can disable any viewports, base-font and spacing-factor with 'null'
 
 // Breakpoints
 // 'null' disable the breakpoint
@@ -145,25 +64,4 @@ $viewports: (
   md: 700px,
   lg: 920px,
   xl: 1130px
-) !default;
-
-// Base font for .rem
-// 'null' disable the base font on a breakpoint
-// 'xs' should not be 'null'
-$base-font: (
-  xs: 16px,
-  sm: 17px,
-  md: 18px,
-  lg: 19px,
-  xl: 20px
-) !default;
-
-// Multiplication factor for spacings
-// 'null' disable spacing factor on a breakpoint
-$spacing-factor: (
-  xs: 1,
-  sm: 1.25,
-  md: 1.5,
-  lg: 1.75,
-  xl: 2
 ) !default;

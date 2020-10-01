@@ -19,17 +19,17 @@ nav {
     list-style: none;
 
     &:first-of-type {
-      margin-left: -$spacing-gutter/2;
+      margin-left: calc(var(--spacing-gutter) * -0.5);
     }
     &:last-of-type {
-      margin-right: -$spacing-gutter/2;
+      margin-right: calc(var(--spacing-gutter) * -0.5);
     }
   }
 
   li {
     display: inline-block;
     margin: 0;
-    padding: $spacing-gutter $spacing-gutter/2;
+    padding: var(--spacing-gutter) calc(var(--spacing-gutter) / 2);
 
     // HACK: Input & Button inside Nav
     > *,
@@ -40,23 +40,25 @@ nav {
 
   a {
     display: block;
-    margin: -$spacing-gutter (-$spacing-gutter/2);
-    padding: $spacing-gutter $spacing-gutter/2;
-    border-radius: $round;
+    margin: calc(var(--spacing-gutter) * -1) calc(var(--spacing-gutter) * -0.5);
+    padding: var(--spacing-gutter) calc(var(--spacing-gutter) / 2);
+    border-radius: var(--block-round);
+
+    @if $enable-important {
+      text-decoration: none !important;
+    }
+    @else {
+      text-decoration: none;
+    }
 
     &:hover,
     &:active,
     &:focus {
-      text-decoration: none;
-    }
-
-    // Disable underline for a.contrast in nav
-    @if $enable-classes {
-      &.contrast:not([role="button"]),
-      &.contrast:not([role="button"]):hover,
-      &.contrast:not([role="button"]):active,
-      &.contrast:not([role="button"]):focus  {
-        box-shadow: none;
+      @if $enable-important {
+        text-decoration: none !important;
+      }
+      @else {
+        text-decoration: none;
       }
     }
   }
@@ -73,11 +75,11 @@ aside {
   }
 
   li {
-    padding: $spacing-gutter/2;
+    padding: calc(var(--spacing-gutter) / 2);
 
     a {
-      margin: -$spacing-gutter/2;
-      padding: $spacing-gutter/2;
+      margin: calc(var(--spacing-gutter) * -0.5);
+      padding: calc(var(--spacing-gutter) / 2);
     }
   }
 }

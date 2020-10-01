@@ -68,6 +68,7 @@
                 <li><a href="#typography" class="secondary">Typography</a></li>
                 <li><a href="#buttons" class="secondary">Buttons</a></li>
                 <li><a href="#forms" class="secondary">Forms</a></li>
+                <li><a href="#tables" class="secondary">Tables</a></li>
               </ul>
             </details>
             <details open>
@@ -76,6 +77,7 @@
                 <li><a href="#accordions" class="secondary">Accordions</a></li>
                 <li><a href="#cards" class="secondary">Cards</a></li>
                 <li><a href="#navs" class="secondary">Navs</a></li>
+                <li><a href="#progress" class="secondary">Progress</a></li>
                 <li><a href="#tooltips" class="secondary">Tooltips</a></li>
               </ul>
             </details>
@@ -108,7 +110,7 @@
             <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@picocss/pico@latest/css/pico.min.css"</u>&gt;</code></pre>
             <h4>Install with NPM</h4>
             <pre><code><b>npm</b> <i>install</i> <u>@picocss/pico</u></code></pre>
-            <p>Starter template:</p>
+            <p>Starter HTML template:</p>
 
 <pre><code><em>&lt;!doctype html&gt;</em>
 &lt;<b>html</b> <i>lang</i>=<u>"en"</u>&gt;
@@ -133,17 +135,17 @@
               <h2>Themes</h2>
               <h3>Pico is shipped with 2 consistents themes: Light & Dark.</h3>
             </hgroup>
-            <p>The Light theme is used by default. The Dark theme is automatically enabled if user has dark mode enabled <code><i>prefers-color-scheme</i>: <u>dark</u></code>.</p>
+            <p>The Light theme is used by default. The Dark theme is automatically enabled if user has dark mode enabled <code><i>prefers-color-scheme</i>: <u>dark</u></code></p>
             <article aria-label="Theme switcher">
               <button class="contrast theme-switcher">...</button>
             </article>
-            <p>Themes can be forced on document level <code>&lt;<b>html</b> <i>data-theme</i>=<u>"light"</u>&gt;</code> or on any HTML element <code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;</code>.</p>
+            <p>Themes can be forced on document level <code>&lt;<b>html</b> <i>data-theme</i>=<u>"light"</u>&gt;</code> or on any HTML element <code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;</code></p>
             <article data-theme="light">
               <h4>Light theme</h4>
               <form class="grid">
                 <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required>
                 <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
-                <button type="submit" aria-label="Example button">Login</button>
+                <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login</button>
               </form>
 
 <pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"light"</u>&gt;
@@ -156,7 +158,7 @@
               <form class="grid">
                 <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required>
                 <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
-                <button type="submit" aria-label="Example button">Login</button>
+                <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login</button>
               </form>
 
 <pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;
@@ -172,14 +174,15 @@
               <h2>Customization</h2>
               <h3>You can customize themes with SCSS or you can simply edit the CSS variables.</h3>
             </hgroup>
-            <h5>Pick a color!</h5>
+            <p>Example: <strong>pick a color!</strong></p>
+
             <article data-theme="generated">
               <h4><span class="name">Custom theme</span></h4>
               <form>
                 <div class="grid">
                   <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required>
                   <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
-                  <button type="submit" aria-label="Example button">Login</button>
+                  <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login</button>
                 </div>
                 <fieldset>
                   <label for="remember">
@@ -189,53 +192,79 @@
                 </fieldset>
               </form>
             </article>
+            <p>There are 2 ways to customize your version of Pico.css:</p>
+            <h4>Importing SASS</h4>
+            <p>It is recommended to customize Pico by importing SASS source files in your project. This way you can keep Pico up to date without conflicts since Pico code and your custom code are separated.</p>
+            <p>Compile the SASS file to CSS to get a custom version of Pico.</p>
 
-            <p>SCSS:</p>
+<pre><code><em>/* Custom <span class="name"> </span>version */</em>
 
-<pre><code><em>// <span class="name">Custom colors</span></em>
+<em>// Override default variables</em>
 <i>$primary-500</i>: <u class="c500">...</u>;
 <i>$primary-600</i>: <u class="c600">...</u>;
 <i>$primary-700</i>: <u class="c700">...</u>;
 
-<em>// Pico library</em>
+<em>// Import full Pico source code</em>
 <b>@import</b> <u>"path/pico"</u>;</code></pre>
 
-            <p>CSS:</p>
+            <p>Alternatively, you can create a custom theme and import it in your project with the components you need.</p>
 
-<pre><code><em>/* <span class="name"></span>Light theme (Default) */
+<pre><code><em>/* Custom <span class="name"> </span>version */</em>
+
+<em>// Custom theme</em>
+<b>@import</b> <u>"path/themes/custom"</u>;
+
+<em>// Import needed components</em>
+<b>@import</b> <u>"path/layout/document"</u>;
+<b>@import</b> <u>"path/layout/sectioning"</u>;
+<em>...</em>
+</code></pre>
+
+            <p>This allows to create a lighter version with only the components that are useful to you. Example here: <a href="https://github.com/picocss/pico/blob/master/scss/pico.slim.scss">scss/pico.slim.scss</a>.</p>
+            <h4>Overriding CSS variables</h4>
+            <p>All Pico's styles and colors are set with <em>CSS custom properties</em> (variables). Just override the CSS variables to customize your version of Pico.</p>
+
+<pre><code><em>/* <span class="name"></span>Light scheme (Default) */
 /* Can be forced with data-theme="light" */</em>
 <b>[data-theme=<u>"light"</u>]</b>,
 <b>:root:not([data-theme=<u>"dark"</u>])</b> {
-  <i>--primary</i>:            <u class="c600">...</u>;
-  <i>--primary-hover</i>:      <u class="c700">...</u>;
-  <i>--primary-focus</i>:      <u class="c600-outline-light">...</u>;
-  <i>--primary-inverse</i>:    <u class="inverse">...</u>;
+  <i>--primary</i>:              <u class="c600">...</u>;
+  <i>--primary-hover</i>:        <u class="c700">...</u>;
+  <i>--primary-focus</i>:        <u class="c600-outline-light">...</u>;
+  <i>--primary-inverse</i>:      <u class="inverse">...</u>;
 }
 
-
-<em>/* <span class="name"></span>Dark theme (Auto) */
+<em>/* <span class="name"></span>Dark scheme (Auto) */
 /* Automatically enabled if user has Dark mode enabled */</em>
 <i>@media</i> only <b>screen</b> and <b>(prefers-color-scheme: <u>dark</u>)</b> {
-  <b>:root:not([data-theme="light"])</b> {
-    <i>--primary</i>:          <u class="c600">...</u>;
-    <i>--primary-hover</i>:    <u class="c500">...</u>;
-    <i>--primary-focus</i>:    <u class="c600-outline-dark">...</u>;
-    <i>--primary-inverse</i>:  <u class="inverse">...</u>;
+  <b>:root:not([data-theme=<u>"light"</u>])</b> {
+    <i>--primary</i>:            <u class="c600">...</u>;
+    <i>--primary-hover</i>:      <u class="c500">...</u>;
+    <i>--primary-focus</i>:      <u class="c600-outline-dark">...</u>;
+    <i>--primary-inverse</i>:    <u class="inverse">...</u>;
+  }
 }
 
-
-<em>/* <span class="name"></span>Dark theme (Forced) */
+<em>/* <span class="name"></span>Dark scheme (Forced) */
 /* Enabled if forced with data-theme="dark" */</em>
-<b>[data-theme="<u>dark</u>"]</b> {
-  <i>--primary</i>:            <u class="c600">...</u>;
-  <i>--primary-hover</i>:      <u class="c500">...</u>;
-  <i>--primary-focus</i>:      <u class="c600-outline-dark">...</u>;
-  <i>--primary-inverse</i>:    <u class="inverse">...</u>;
-}</code></pre>
+<b>[data-theme=<u>"dark"</u>]</b> {
+  <i>--primary</i>:              <u class="c600">...</u>;
+  <i>--primary-hover</i>:        <u class="c500">...</u>;
+  <i>--primary-focus</i>:        <u class="c600-outline-dark">...</u>;
+  <i>--primary-inverse</i>:      <u class="inverse">...</u>;
+}
 
-            <p>Colors can be modified in <a href="https://github.com/picocss/pico/tree/master/scss/themes">scss/themes/</a>.</p>
-            <p>Spacings, Typography, Rounded, Transitions, Breakpoints, etc. can be modified in <a href="https://github.com/picocss/pico/blob/master/scss/_variables.scss">scss/_variables.scss</a>.</p>
-            <p>You can also compile pico with only the modules you need to generate a slimer version. Example in <a href="https://github.com/picocss/pico/blob/master/scss/pico.slim.scss">scss/pico.slim.scss</a>.</p>
+<em>/* <span class="name"></span>(Common styles) */</em>
+<b>:root</b> {
+  <i>--primary-border</i>:       <u>var</u>(<i>--primary</i>);
+  <i>--primary-hover-border</i>: <u>var</u>(<i>--primary-hover</i>);
+  <i>--input-hover-border</i>:   <u>var</u>(<i>--primary</i>);
+  <i>--input-focus</i>:          <u>var</u>(<i>--primary-focus</i>);
+  <i>--input-inverse</i>:        <u>var</u>(<i>--primary-inverse</i>);
+}
+</code></pre>
+
+            <p>You can find all the CSS variables used in the default theme here: <a href="https://github.com/picocss/pico/blob/master/css/themes/default.css">css/default.css</a></p>
           </section><!-- ./ Docs: Customization -->
 
 
@@ -270,7 +299,7 @@
 
             <p>Pico use the same breakpoints and viewports sizes as <a href="https://getbootstrap.com/docs/4.3/layout/grid/#grid-options">Bootstrap</a>.</p>
             <figure>
-              <table>
+              <table role="grid">
                 <thead>
                   <tr>
                     <th>Device</th>
@@ -301,7 +330,7 @@
                 </tbody>
               </table>
             </figure>
-            <p><code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code> and <code>&lt;<b>footer</b>&gt;</code> as direct childs of <code>&lt;<b>body</b>&gt;</code> provide a responsive vertical <code><i>padding</i></code>.</p>
+            <p><code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code> and <code>&lt;<b>footer</b>&gt;</code> as direct childs of <code>&lt;<b>body</b>&gt;</code> provide a responsive vertical <code><i>padding</i></code></p>
             <p><code>&lt;<b>section</b>&gt;</code> provide a responsive <code><i>margin-bottom</i></code> to separate your sections.</p>
           </section><!-- ./ Docs: Container -->
 
@@ -327,7 +356,7 @@
 &lt;/<b>div</b>&gt;</code></pre>
 
             </article>
-            <p>Columns intentionally collapses below large devices <code>(<u>992px</u>)</code>.</p>
+            <p>Columns intentionally collapses below large devices <code>(<u>992px</u>)</code></p>
             <p>To go further, discover how to <a href="https://picocss.com/examples/bootstrap-grid/">merge Pico with the Bootstrap grid system</a>.</p>
             <details>
               <summary>
@@ -353,9 +382,9 @@
               <h2>Horizontal scroller</h2>
               <h3><code>&lt;<b>figure</b>&gt;</code> act as a container to make any content scrollable horizontally.</h3>
             </hgroup>
-            <p>Useful to have responsives <code>&lt;<b>table</b>&gt;</code>.</p>
+            <p>Useful to have responsives <code>&lt;<b>table</b>&gt;</code></p>
             <figure>
-              <table>
+              <table role="grid">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -426,7 +455,7 @@
               <h3>All typographic elements are responsives, allowing text to scale gracefully across devices and viewport sizes.</h3>
             </hgroup>
             <figure>
-              <table>
+              <table role="grid">
                 <thead>
                   <tr>
                     <th>Device</th>
@@ -505,15 +534,13 @@
               <h4>Heading 4</h4>
               <h5>Heading 5</h5>
               <h6>Heading 6</h6>
-              <p>Paragraph</p>
 
 <pre><code>&lt;<b>h1</b>&gt;Heading 1&lt;/<b>h1</b>&gt;
 &lt;<b>h2</b>&gt;Heading 2&lt;/<b>h2</b>&gt;
 &lt;<b>h3</b>&gt;Heading 3&lt;/<b>h3</b>&gt;
 &lt;<b>h4</b>&gt;Heading 4&lt;/<b>h4</b>&gt;
 &lt;<b>h5</b>&gt;Heading 5&lt;/<b>h5</b>&gt;
-&lt;<b>h6</b>&gt;Heading 6&lt;/<b>h6</b>&gt;
-&lt;<b>p</b>&gt;Paragraph&lt;/<b>p</b>&gt;</code></pre>
+&lt;<b>h6</b>&gt;Heading 6&lt;/<b>h6</b>&gt;</code></pre>
 
             </article>
             <p>Inside a <code>&lt;<b>hgroup</b>&gt;</code> all <code><i>margin-bottom</i></code> are collapsed and the <code>:last-child</code> is styled.</p>
@@ -559,6 +586,23 @@
 <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Primary&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"secondary"</u>&gt;Secondary&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"contrast"</u>&gt;Contrast&lt;/<b>a</b>&gt;</code></pre>
+
+            </article>
+            <p>Blockquote:</p>
+            <article aria-label="Links examples">
+              <blockquote>
+                "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui sit amet ipsum cursus ornare."
+                <footer>
+                  <cite>- Phasellus eget lacinia</cite>
+                </footer>
+              </blockquote>
+
+<pre><code>&lt;<b>blockquote</b>&gt;
+  "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui sit amet ipsum cursus ornare."
+  &lt;<b>footer</b>&gt;
+    &lt;<b>cite</b>&gt;- Phasellus eget lacinia&lt;/<b>cite</b>&gt;
+  &lt;/<b>footer</b>&gt;
+&lt;/<b>blockquote</b>&gt;</code></pre>
 
             </article>
           </section><!-- ./ Docs: Typography -->
@@ -631,7 +675,7 @@
                 <label for="email">Email address</label>
                 <input type="email" id="email" name="email" placeholder="Email address" required>
                 <small>We'll never share your email with anyone else.</small>
-                <button type="submit" aria-label="Example button">Submit</button>
+                <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Submit</button>
               </form>
 
 <pre><code>&lt;<b>form</b>&gt;
@@ -755,8 +799,177 @@
 &lt;/<b>fieldset</b>&gt;</code></pre>
 
             </article>
-            <p>Advanced example with all form elements supported in Pico <a href="https://picocss.com/examples/form-elements/">here</a>.</p>
+            <p>You can change a checkbox to indeterminate state by setting the <code>indeterminate</code> property of input checkboxes to <code>true</code></p>
+            <article>
+              <label for="indeterminate">
+                <input type="checkbox" id="indeterminate" name="indeterminate" indeterminate="true">
+                Select all
+              </label>
+              <script>
+              // Set indeterminate checkbox
+              document.getElementById('indeterminate').indeterminate = true;
+              </script>
+            </article>
+
+            <p>Others input types:</p>
+            <article aria-label="File browser, range slider, date, time, color examples">
+              <label for="file">File browser
+                <input type="file" id="file" name="file">
+              </label>
+              <label for="range">Range slider
+                <input type="range" min="0" max="100" value="50" id="range" name="range">
+              </label>
+              <label for="date">Date
+                <input type="date" id="date" name="date">
+              </label>
+              <label for="time">Time
+                <input type="time" id="time" name="time">
+              </label>
+              <label for="color">Color
+                <input type="color" id="color" name="color" value="#0eaaaa">
+              </label>
+
+<pre><code><em>&lt;!-- File browser --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"file"</u>&gt;File browser
+  &lt;<b>input</b> <i>type</i>=<u>"file"</u> <i>id</i>=<u>"file"</u> <i>name</i>=<u>"file"</u>&gt;
+&lt;/<b>label</b>&gt;
+
+<em>&lt;!-- Range slider --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"range"</u>&gt;Range slider
+  &lt;<b>input</b> <i>type</i>=<u>"range"</u> <i>min</i>=<u>"0"</u> <i>max</i>=<u>"100"</u> <i>value</i>=<u>"50"</u> <i>id</i>=<u>"range"</u> <i>name</i>=<u>"range"</u>&gt;
+&lt;/<b>label</b>&gt;
+
+<em>&lt;!-- Date --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"date"</u>&gt;Date
+  &lt;<b>input</b> <i>type</i>=<u>"date"</u> <i>id</i>=<u>"date"</u> <i>name</i>=<u>"date"</u></u>&gt;
+&lt;/<b>label</b>&gt;
+
+<em>&lt;!-- Time --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"time"</u>&gt;Time
+  &lt;<b>input</b> <i>type</i>=<u>"time"</u> <i>id</i>=<u>"time"</u> <i>name</i>=<u>"time"</u>&gt;
+&lt;/<b>label</b>&gt;
+
+<em>&lt;!-- Color --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"color"</u>&gt;Color
+  &lt;<b>input</b> <i>type</i>=<u>"color"</u> <i>id</i>=<u>"color"</u> <i>name</i>=<u>"color"</u> <i>value</i>=<u>"#0eaaaa"</u>>
+&lt;/<b>label</b>&gt;</code></pre>
+
+            </article>
           </section><!-- ./ Docs: Form -->
+
+          <!-- Docs: Tables -->
+          <section id="tables">
+            <hgroup>
+              <h2>Tables</h2>
+              <h3>Default styles for tables without <code>.classes</code></h3>
+            </hgroup>
+            <figure>
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+
+<pre><code>&lt;<b>table</b>&gt;
+  &lt;<b>thead</b>&gt;
+    &lt;<b>tr</b>&gt;
+      &lt;<b>th</b> <i>scope</i>=<u>"col"</u>&gt;#&lt;/<b>th</b>&gt;
+      &lt;<b>th</b> <i>scope</i>=<u>"col"</u>&gt;Heading<&lt;/<b>th</b>&gt;
+      &lt;<b>th</b> <i>scope</i>=<u>"col"</u>&gt;Heading&lt;/<b>th</b>&gt;
+      &lt;<b>th</b> <i>scope</i>=<u>"col"</u>&gt;Heading&lt;/<b>th</b>&gt;
+    &lt;/<b>tr</b>&gt;
+  &lt;/<b>thead</b>&gt;
+  &lt;<b>tbody</b>&gt;
+    &lt;<b>tr</b>&gt;
+      &lt;<b>th</b> <i>scope</i>=<u>"row"</u>>1&lt;/<b>th</b>&gt;
+      &lt;<b>td</b>>Cell&lt;/<b>td</b>&gt;
+      &lt;<b>td</b>>Cell&lt;/<b>td</b>&gt;
+      &lt;<b>td</b>>Cell&lt;/<b>td</b>&gt;
+    &lt;/<b>tr</b>&gt;
+  &lt;/<b>tbody</b>&gt;
+&lt;/<b>table</b>&gt;</code></pre>
+
+            <p><code><i>role</i>=<u>"grid"</u></code> enable striped rows.</p>
+            <figure>
+              <table role="grid">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+
+<pre><code>&lt;<b>table</b> <i>role</i>=<u>"grid"</u>&gt;
+  <em>...</em>
+&lt;/<b>table</b>&gt;</code></pre>
+
+          </section><!-- ./ Docs: Tables -->
 
           <!-- Docs: Accordions -->
           <section id="accordions">
@@ -917,6 +1130,22 @@
             </article>
           </section><!-- ./ Docs: Nav -->
 
+          <!-- Docs: Progress -->
+          <section id="progress">
+            <hgroup>
+              <h2>Progress</h2>
+              <h3>Progress bar element in pure HTML, without JavaScript.</h3>
+            </hgroup>
+            <article aria-label="Tooltips examples">
+              <progress value="25" max="100"></progress>
+              <progress indeterminate="true"></progress>
+
+<pre><code>&lt;<b>progress</b> <i>value</i>=<u>"25</u></i>" <i>max</i>=<u>"100"</u>&gt;&lt;/<b>progress</b>&gt;
+&lt;<b>progress</b> <i>indeterminate</i>=<u>"true"</u>&gt;&lt;/<b>progress</b>&gt;</code></pre>
+
+            </article>
+          </section><!-- ./ Docs: Progress -->
+
           <!-- Docs: Tooltips -->
           <section id="tooltips">
             <hgroup>
@@ -933,12 +1162,12 @@
 &lt;<b>p</b>&gt;&lt;<b>button</b> <i>data-tooltip</i>=<u>"Tooltip"</u>&gt;Tooltip on a button&lt;/<b>button</b>&gt;&lt;/<b>p</b>&gt;</code></pre>
 
             </article>
-          </section><!-- ./ Docs: Nav -->
+          </section><!-- ./ Docs: Tooltips -->
 
           <!-- Love -->
           <section id="love">
             <h2>We love <code>.classes</code></h2>
-            <p>As a starting point, Pico chose to be as neutral and semantic as possible using very few <code>.classes</code>.</p>
+            <p>As a starting point, Pico chose to be as neutral and semantic as possible using very few <code>.classes</code></p>
             <p>But off course, <code>.classes</code> are not a bad practice at all.</p>
             <p>Feel free to use <em>modifiers</em>.</p>
             <div data-theme="valid">
@@ -955,7 +1184,7 @@
             <hr>
             <p>
               <small>
-                Openly inspired by <a href="https://getbootstrap.com/" class="secondary">Bootstrap</a>, <a href="https://picturepan2.github.io/spectre/" class="secondary">Spectre</a>, <a href=" https://kbrsh.github.io/wing/" class="secondary">Wing</a>, <a href="https://www.cssbed.com/" class="secondary">CSS Bed</a>, <a href="https://necolas.github.io/normalize.css/" class="secondary">Normalize</a> & <a href="https://csstools.github.io/sanitize.css/" class="secondary">Sanitize</a><br>
+                Openly inspired by <a href="https://getbootstrap.com/" class="secondary">Bootstrap</a>, <a href="https://www.cssbed.com/" class="secondary">CSS Bed</a>, <a href="https://necolas.github.io/normalize.css/" class="secondary">Normalize</a>,  <a href="https://csstools.github.io/sanitize.css/" class="secondary">Sanitize</a>, <a href="https://picturepan2.github.io/spectre/" class="secondary">Spectre</a> & <a href=" https://kbrsh.github.io/wing/" class="secondary">Wing</a><br>
                 Licensed under the <a href="https://github.com/picocss/pico/blob/master/LICENSE.md" class="secondary">MIT License</a><br>
               </small>
             </p>

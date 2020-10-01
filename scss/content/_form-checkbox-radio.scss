@@ -11,9 +11,9 @@
   display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
+  margin-top: -.125rem;
   margin-right: .375rem;
-  margin-bottom: $spacing-form-elements;
-  border-width: 2px;
+  border-width: var(--checkbox-radio-border-width);
   vertical-align: middle;
   cursor: pointer;
 
@@ -21,14 +21,18 @@
     display: none; // unstyle IE checkboxes
   }
 
-  &:checked {
-    border-color: var(--primary);
-    background-color: var(--primary);
-    // Source: https://feathericons.com/
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFF' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  &:checked,
+  &:indeterminate {
+    border-color: var(--input-hover-border);
+    background-color: var(--input-hover-border);
+    background-image: var(--icon-checkbox);
     background-position: center;
     background-repeat: no-repeat;
     background-size: .75rem auto;
+  }
+
+  &:indeterminate {
+    background-image: var(--icon-minus);
   }
 
   & ~ label {
@@ -45,8 +49,8 @@
 
   &:checked {
     border-width: .33rem;
-    border-color: var(--primary);
-    background-color: var(--primary-inverse);
+    border-color: var(--input-hover-border);
+    background-color: var(--input-inverse);
     background-image: none;
   }
 }
@@ -57,23 +61,22 @@
   // Config
   $switch-height:      1.25rem;
   $switch-width:       2.25rem;
-  $switch-border:      3px;
   $switch-transition:  .1s ease-in-out;
 
   // Styles
   width: $switch-width;
   height: $switch-height;
-  border: $switch-border solid var(--input-border);
+  border: var(--switch-border-width) solid var(--input-border);
   border-radius: $switch-height;
   background-color: var(--input-border);
   line-height: $switch-height;
 
   &:before {
     display: block;
-    width: calc(#{$switch-height} - #{$switch-border*2});
+    width: calc(#{$switch-height} - (var(--switch-border-width)*2));
     height: 100%;
     border-radius: 50%;
-    background-color: var(--primary-inverse);
+    background-color: var(--input-inverse);
     content: '';
 
     @if $enable-transitions {
@@ -82,13 +85,13 @@
   }
 
   &:checked {
-    border-color: var(--primary);
-    background-color: var(--primary);
+    border-color: var(--input-hover-border);
+    background-color: var(--input-hover-border);
     background-image: none;
 
     &::before {
       margin-right: 0;
-      margin-left: calc(#{$switch-width/2} - #{$switch-border});
+      margin-left: calc(#{$switch-width/2} - var(--switch-border-width));
     }
   }
 }

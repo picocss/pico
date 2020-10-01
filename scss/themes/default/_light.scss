@@ -1,68 +1,81 @@
 // Light theme (Default)
 // Can be forced with data-theme="light"
+
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
 
   // Document
-  --background:        #{$white};
+  --background:              #{$white};
 
   // Typography
-  --text:              #{$grey-700};
-  --h1:                #{$grey-900};
-  --h2:                #{$grey-800};
-  --h3:                #{$grey-700};
-  --h4:                #{$grey-600};
-  --h5:                #{$grey-500};
-  --h6:                #{$grey-400};
+  --text:                    #{$grey-700};
+  --h1:                      #{$grey-900};
+  --h2:                      #{$grey-800};
+  --h3:                      #{$grey-700};
+  --h4:                      #{$grey-600};
+  --h5:                      #{$grey-500};
+  --h6:                      #{$grey-400};
 
   // Primary Call-to-Action and links
-  --primary:           #{$primary-600};
-  --primary-hover:     #{$primary-700};
-  --primary-focus:     #{rgba($primary-600, .125)};
-  --primary-inverse:   #{$white};
+  --primary:                 #{$primary-600};
+  --primary-border:          var(--primary);
+  --primary-hover:           #{$primary-700};
+  --primary-hover-border:    var(--primary-hover);
+  --primary-focus:           #{rgba($primary-600, .125)};
+  --primary-inverse:         #{$white};
 
   // Secondary Call-to-Action, links and kbd
-  --secondary:         #{$grey-500};
-  --secondary-hover:   #{$grey-700};
-  --secondary-focus:   #{rgba($grey-500, .125)};
-  --secondary-inverse: #{$white};
+  --secondary:               #{$grey-500};
+  --secondary-border:        var(--secondary);
+  --secondary-hover:         #{$grey-700};
+  --secondary-hover-border:  var(--secondary-hover);
+  --secondary-focus:         #{rgba($grey-500, .125)};
+  --secondary-inverse:       #{$white};
 
   // Contrast Call-to-Action and Tooltips
-  --contrast:          #{$grey-800};
-  --contrast-hover:    #{mix($grey-900, $black)};
-  --contrast-focus:    #{rgba($grey-500, .125)};
-  --contrast-border:   #{rgba($amber-200, .5)}; // Links underline
-  --contrast-border-h: #{rgba($amber-200, 1)};  // Links hover underline
-  --contrast-inverse:  #{$white};
+  --contrast:                #{$grey-800};
+  --contrast-border:         var(--contrast);
+  --contrast-hover:          #{mix($grey-900, $black)};
+  --contrast-hover-border:   var(--contrast-hover);
+  --contrast-focus:          #{rgba($grey-500, .125)};
+  --contrast-inverse:        #{$white};
 
   // Form elements
-  --input-background:  #{$white};
-  --input-border:      #{mix($grey-100, $grey-200)};
+  --input-background:        #{$white};
+  --input-border:            #{mix($grey-100, $grey-200)};
+  --input-hover-background:  var(--input-background);
+  --input-hover-border:      var(--primary);
+  --input-focus:             var(--primary-focus);
+  --input-inverse:           var(--primary-inverse);
+
+  // Button
+  --button-shadow:           0 0 0 0 rgba(0, 0, 0, 0);
+  --button-hover-shadow:     0 0 0 0 rgba(0, 0, 0, 0);
 
   // Utilities states
-  --valid:             #{$green-600};
-  --invalid:           #{$red-700};
-  --mark:              #{rgba($amber-200, .5)};
-  --mark-text:         #{$grey-800};
-  --muted-text:        #{mix($grey-400, $grey-500)};
-  --muted-background:  #{$grey-50};
-  --muted-border:      #{$grey-50};
+  --valid:                   #{$green-600};
+  --invalid:                 #{$red-700};
+  --mark:                    #{rgba($amber-200, .33)};
+  --mark-text:               #{$grey-800};
+  --muted-text:              #{mix($grey-400, $grey-500)};
+  --muted-background:        #{$grey-50};
+  --muted-border:            #{$grey-50};
 
   // Card
-  --card-background:   #{$white};
-  --card-sections:     #{lighten($grey-50, 2%)};
-  --card-shadow:       0 0.125rem 1rem #{rgba($grey-900, 0.04)}, 0 0.125rem 2rem #{rgba($grey-900, 0.08)}, 0 0 0 0.0625rem #{rgba($grey-900, 0.024)};
+  --card-background:         #{$white};
+  --card-sections:           #{lighten($grey-50, 2%)};
+  --card-shadow:             0 0.125rem 1rem #{rgba($grey-900, 0.04)}, 0 0.125rem 2rem #{rgba($grey-900, 0.08)}, 0 0 0 0.0625rem #{rgba($grey-900, 0.024)};
 
   // Code
-  --code-background:   #{lighten($grey-50, 2%)};
-  --code-inlined:      #{$grey-50};
-  --code-color-1:      #{$grey-500};
-  --code-color-2:      #{hsl(330, 40%, 50%)};
-  --code-color-3:      #{hsl(185, 40%, 40%)};
-  --code-color-4:      #{hsl(40,  20%, 50%)};
-  --code-color-5:      #{mix($grey-300, $grey-400)};
+  --code-background:         #{lighten($grey-50, 2%)};
+  --code-inlined:            #{$grey-50};
+  --code-color-1:            #{$grey-500};
+  --code-color-2:            #{hsl(330, 40%, 50%)};
+  --code-color-3:            #{hsl(185, 40%, 40%)};
+  --code-color-4:            #{hsl(40,  20%, 50%)};
+  --code-color-5:            #{mix($grey-300, $grey-400)};
 
   // Table
-  --table-border:      #{rgba($grey-50,  .75)};
-  --table-stripping:   #{rgba($grey-500, .04)};
+  --table-border:            #{rgba($grey-50,  .75)};
+  --table-stripping:         #{rgba($grey-500, .075)};
 }
