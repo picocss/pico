@@ -96,11 +96,13 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 - [Typography](https://picocss.com/docs/#typography)
 - [Buttons](https://picocss.com/docs/#buttons)
 - [Forms](https://picocss.com/docs/#forms)
+- [Tables](https://picocss.com/docs/#tables)
 
 **Components**
 - [Accordions](https://picocss.com/docs/#accordions)
 - [Cards](https://picocss.com/docs/#cards)
 - [Navs](https://picocss.com/docs/#navs)
+- [Progress](https://picocss.com/docs/#progress)
 - [Tooltips](https://picocss.com/docs/#tooltips)
 
 ## Copyright and license
