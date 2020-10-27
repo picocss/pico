@@ -115,6 +115,11 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 | Google Amp | [![CSS Gzipped](https://img.badgesize.io/picocss/examples/master/google-amp/css/pico.google-amp.min.css?compression=gzip&color=1095c1&label=Gzipped)](https://github.com/picocss/examples/blob/master/google-amp/css/pico.google-amp.min.css) | [pico.google-amp.scss](https://github.com/picocss/examples/blob/master/google-amp/scss/pico.google-amp.scss) | [Google Amp](https://picocss.com/examples/google-amp/) |
 | Pico + Bootstrap grid system | [![CSS Gzipped](https://img.badgesize.io/picocss/examples/master/bootstrap-grid/css/pico-bootstrap-grid.min.css?compression=gzip&color=1095c1&label=Gzipped)](https://github.com/picocss/examples/blob/master/bootstrap-grid/css/pico-bootstrap-grid.min.css) | [pico-bootstrap-grid.scss](https://github.com/picocss/examples/blob/master/bootstrap-grid/scss/pico-bootstrap-grid.scss) | [Bootstrap grid system](https://picocss.com/examples/bootstrap-grid/) |
 
+## Contributing
+
+- [dev/](https://github.com/picocss/pico/tree/dev) branch is open to pull requests.
+- Do not edit [/css](https://github.com/picocss/pico/tree/master/css) files directly. Those files are automatically generated. You should edit the source files in [scss/](https://github.com/picocss/pico/tree/master/scss).
+
 ## Copyright and license
 
 Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LICENSE.md).
