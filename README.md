@@ -19,7 +19,6 @@
 [![npm version](https://img.shields.io/npm/v/@picocss/pico?color=1095c1)](https://www.npmjs.com/package/@picocss/pico)
 [![License](https://img.shields.io/badge/license-MIT-%231095c1)](https://github.com/picocss/pico/blob/master/LICENSE.md)
 
-
 - **Class-light and semantic**: we use simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
 
 - **Great styles with just one CSS file**: No dependencies, package manager, external files or JavaScript.
@@ -55,7 +54,7 @@ npm install @picocss/pico
 
 Minimalist templates to discover Pico in action:
 
-[![Examples](https://picocss.com/img/examples.jpg)](https://picocss.com/#examples)
+[![Examples](https://picocss.com/img/examples.jpg?version=1.2.0)](https://picocss.com/#examples)
 
 - **[Preview](https://picocss.com/examples/preview/)**  
   A starter example with all elements and components used in Pico
@@ -97,11 +96,13 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 - [Typography](https://picocss.com/docs/#typography)
 - [Buttons](https://picocss.com/docs/#buttons)
 - [Forms](https://picocss.com/docs/#forms)
+- [Tables](https://picocss.com/docs/#tables)
 
 **Components**
 - [Accordions](https://picocss.com/docs/#accordions)
 - [Cards](https://picocss.com/docs/#cards)
 - [Navs](https://picocss.com/docs/#navs)
+- [Progress](https://picocss.com/docs/#progress)
 - [Tooltips](https://picocss.com/docs/#tooltips)
 
 ## Copyright and license
