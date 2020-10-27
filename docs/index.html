@@ -710,14 +710,14 @@
             <p>Disabled and validation states:</p>
             <article aria-label="Validation states examples">
               <form class="grid">
-                <input type="text" placeholder="Valid" aria-label="Valid" class="valid">
-                <input type="text" placeholder="Invalid" aria-label="Invalid"  class="invalid">
+                <input type="text" placeholder="Valid" aria-label="Valid" aria-invalid="false">
+                <input type="text" placeholder="Invalid" aria-label="Invalid"  aria-invalid="true">
                 <input type="text" placeholder="Disabled" aria-label="Disabled" disabled>
                 <input type="text" value="Readonly" aria-label="Readonly" readonly>
               </form>
 
-<pre><code>&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Valid"</u> <i>class</i>=<u>"valid"</u>&gt;
-&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Invalid"</u> <i>class</i>=<u>"invalid"</u>&gt;
+<pre><code>&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Valid"</u> <i>aria-invalid</i>=<u>"false"</u>&gt;
+&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Invalid"</u> <i>aria-invalid</i>=<u>"true"</u>&gt;
 &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Disabled"</u> <i>disabled</i>&gt;
 &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>value</i>=<u>"Readonly"</u> <i>readonly</i>&gt;</code></pre>
 

@@ -221,24 +221,19 @@ textarea {
   }
 
   // Validation states
-  @if $enable-input-states and $enable-classes {
+  &[aria-invalid] {
+    padding-right: 2rem;
+    background-position: center right .75rem;
+    background-repeat: no-repeat;
+    background-size: 1rem auto;
+  }
 
-    // Validation states
-    &.valid,
-    &.invalid {
-      padding-right: 2rem;
-      background-position: center right .75rem;
-      background-repeat: no-repeat;
-      background-size: 1rem auto;
-    }
+  &[aria-invalid="false"] {
+    background-image: var(--icon-valid);
+  }
 
-    &.valid {
-      background-image: var(--icon-valid);
-    }
-
-    &.invalid {
-      background-image: var(--icon-invalid);
-    }
+  &[aria-invalid="true"]{
+    background-image: var(--icon-invalid);
   }
 }
 

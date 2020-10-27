@@ -977,7 +977,7 @@ a[role="button"].contrast:focus {
 
 button.outline,
 input[type="submit"].outline,
-a.outline[role="button"] {
+a[role="button"].outline {
   border: var(--button-border-width) solid var(--primary-border);
   background-color: transparent;
   color: var(--primary);
@@ -987,9 +987,9 @@ button.outline:hover, button.outline:active, button.outline:focus,
 input[type="submit"].outline:hover,
 input[type="submit"].outline:active,
 input[type="submit"].outline:focus,
-a.outline[role="button"]:hover,
-a.outline[role="button"]:active,
-a.outline[role="button"]:focus {
+a[role="button"].outline:hover,
+a[role="button"].outline:active,
+a[role="button"].outline:focus {
   border: var(--button-border-width) solid var(--primary-hover-border);
   color: var(--primary-hover);
 }
@@ -1230,26 +1230,24 @@ textarea[disabled] {
   opacity: .66;
 }
 
-input.valid, input.invalid,
-select.valid,
-select.invalid,
-textarea.valid,
-textarea.invalid {
+input[aria-invalid],
+select[aria-invalid],
+textarea[aria-invalid] {
   padding-right: 2rem;
   background-position: center right .75rem;
   background-repeat: no-repeat;
   background-size: 1rem auto;
 }
 
-input.valid,
-select.valid,
-textarea.valid {
+input[aria-invalid="false"],
+select[aria-invalid="false"],
+textarea[aria-invalid="false"] {
   background-image: var(--icon-valid);
 }
 
-input.invalid,
-select.invalid,
-textarea.invalid {
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
   background-image: var(--icon-invalid);
 }
 
