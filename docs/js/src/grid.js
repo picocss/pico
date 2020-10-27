@@ -61,7 +61,7 @@
   function addButtons() {
     var buttons = document.createElement('P');
     buttons.innerHTML = '<button class="secondary add">'
-                     +   '<svg xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">'
+                     +   '<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">'
                      +     '<line x1="12" y1="5" x2="12" y2="19">'
                      +     '</line><line x1="5" y1="12" x2="19" y2="12">'
                      +     '</line>'
@@ -70,7 +70,7 @@
                      + '</button>'
 
                      + '<button class="secondary remove">'
-                     +   '<svg xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">'
+                     +   '<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">'
                      +     '<line x1="5" y1="12" x2="19" y2="12"></line>'
                      +   '</svg>'
                      +   ' Remove column'
