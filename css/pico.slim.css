@@ -1038,8 +1038,13 @@ textarea[disabled] {
   opacity: .66;
 }
 
-input[aria-invalid],
+input .valid,
+input .invalid, input[aria-invalid],
+select .valid,
+select .invalid,
 select[aria-invalid],
+textarea .valid,
+textarea .invalid,
 textarea[aria-invalid] {
   padding-right: 2rem;
   background-position: center right .75rem;
@@ -1047,14 +1052,18 @@ textarea[aria-invalid] {
   background-size: 1rem auto;
 }
 
-input[aria-invalid="false"],
+input .valid, input[aria-invalid="false"],
+select .valid,
 select[aria-invalid="false"],
+textarea .valid,
 textarea[aria-invalid="false"] {
   background-image: var(--icon-valid);
 }
 
-input[aria-invalid="true"],
+input .invalid, input[aria-invalid="true"],
+select .invalid,
 select[aria-invalid="true"],
+textarea .invalid,
 textarea[aria-invalid="true"] {
   background-image: var(--icon-invalid);
 }

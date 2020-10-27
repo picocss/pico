@@ -220,20 +220,44 @@ textarea {
     opacity: .66;
   }
 
-  // Validation states
-  &[aria-invalid] {
-    padding-right: 2rem;
-    background-position: center right .75rem;
-    background-repeat: no-repeat;
-    background-size: 1rem auto;
+  // Validation states: with aria-invalid only
+  @if $enable-classes {
+    .valid,
+    .invalid,
+    &[aria-invalid] {
+      padding-right: 2rem;
+      background-position: center right .75rem;
+      background-repeat: no-repeat;
+      background-size: 1rem auto;
+    }
+
+    .valid,
+    &[aria-invalid="false"] {
+      background-image: var(--icon-valid);
+    }
+
+    .invalid,
+    &[aria-invalid="true"]{
+      background-image: var(--icon-invalid);
+    }
   }
 
-  &[aria-invalid="false"] {
-    background-image: var(--icon-valid);
-  }
+  // Validation states: with aria-invalid and classes (.valid & .invalid)
+  @else {
+    &[aria-invalid] {
+      padding-right: 2rem;
+      background-position: center right .75rem;
+      background-repeat: no-repeat;
+      background-size: 1rem auto;
+    }
 
-  &[aria-invalid="true"]{
-    background-image: var(--icon-invalid);
+    &[aria-invalid="false"] {
+      background-image: var(--icon-valid);
+    }
+
+    &[aria-invalid="true"]{
+      background-image: var(--icon-invalid);
+    }
   }
 }
 
