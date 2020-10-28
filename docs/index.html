@@ -140,7 +140,7 @@
               <button class="contrast theme-switcher">...</button>
             </article>
             <p>Themes can be forced on document level <code>&lt;<b>html</b> <i>data-theme</i>=<u>"light"</u>&gt;</code> or on any HTML element <code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;</code></p>
-            <article data-theme="light">
+            <article data-theme="light" aria-label="Forced light theme example">
               <h4>Light theme</h4>
               <form class="grid">
                 <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required>
@@ -153,7 +153,7 @@
 &lt;/<b>article</b>&gt;</code></pre>
 
             </article>
-            <article data-theme="dark">
+            <article data-theme="dark" aria-label="Forced dark theme example">
               <h4>Dark theme</h4>
               <form class="grid">
                 <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required>
@@ -176,7 +176,7 @@
             </hgroup>
             <p>Example: <strong>pick a color!</strong></p>
 
-            <article data-theme="generated">
+            <article data-theme="generated" aria-label="Generated theme example">
               <h4><span class="name">Custom theme</span></h4>
               <form>
                 <div class="grid">
@@ -589,7 +589,7 @@
 
             </article>
             <p>Blockquote:</p>
-            <article aria-label="Links examples">
+            <article aria-label="Blockquote example">
               <blockquote>
                 "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui sit amet ipsum cursus ornare."
                 <footer>
@@ -613,8 +613,8 @@
               <h2>Buttons</h2>
               <h3>The essential button in pure HTML, without <code>.classes</code> for the default style.</h3>
             </hgroup>
-            <article aria-label="Grid example">
-              <button aria-label="Example button">Button</button>
+            <article aria-label="Button example">
+              <button aria-label="Button">Button</button>
               <input type="submit">
 
 <pre><code>&lt;<b>button</b>&gt;Button&lt;/<b>button</b>&gt;
@@ -800,15 +800,12 @@
 
             </article>
             <p>You can change a checkbox to indeterminate state by setting the <code>indeterminate</code> property of input checkboxes to <code>true</code></p>
-            <article>
+            <article aria-label="Indeterminate checkbox example">
               <label for="indeterminate">
-                <input type="checkbox" id="indeterminate" name="indeterminate" indeterminate="true">
+                <input type="checkbox" id="indeterminate-checkbox" name="indeterminate-checkbox" indeterminate="true">
                 Select all
               </label>
-              <script>
-              // Set indeterminate checkbox
-              document.getElementById('indeterminate').indeterminate = true;
-              </script>
+              <script>document.getElementById('indeterminate-checkbox').indeterminate = true;</script>
             </article>
 
             <p>Others input types:</p>
@@ -1136,14 +1133,20 @@
               <h2>Progress</h2>
               <h3>Progress bar element in pure HTML, without JavaScript.</h3>
             </hgroup>
-            <article aria-label="Progress examples">
+            <article aria-label="Progress bar example">
               <progress value="25" max="100"></progress>
-              <progress indeterminate="true"></progress>
 
-<pre><code>&lt;<b>progress</b> <i>value</i>=<u>"25</u>" <i>max</i>=<u>"100"</u>&gt;&lt;/<b>progress</b>&gt;
-&lt;<b>progress</b> <i>indeterminate</i>=<u>"true"</u>&gt;&lt;/<b>progress</b>&gt;</code></pre>
+<pre><code>&lt;<b>progress</b> <i>value</i>=<u>"25</u>" <i>max</i>=<u>"100"</u>&gt;&lt;/<b>progress</b>&gt;</code></pre>
 
             </article>
+
+            <p>You can change a progress bar to indeterminate state by setting the <code>indeterminate</code> property to <code>true</code></p>
+
+            <article aria-label="Indeterminate progress bar example">
+              <progress id="indeterminate-progress"></progress>
+              <script>document.getElementById('indeterminate-progress').indeterminate = true;</script>
+            </article>
+
           </section><!-- ./ Docs: Progress -->
 
           <!-- Docs: Tooltips -->
