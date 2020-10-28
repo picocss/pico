@@ -124,6 +124,10 @@ form.grid > button {
   margin-bottom: 0;
 }
 
+svg {
+  height: 1rem;
+}
+
 /**
  * Docs: Aside
  */
@@ -402,7 +406,7 @@ body > nav a {
   border-radius: 0;
 }
 
-body > nav a svg {
+body > nav svg {
   vertical-align: text-bottom;
 }
 
@@ -413,6 +417,10 @@ body > nav ul:first-of-type li:first-of-type a {
   padding: 0;
   background: var(--h1);
   color: var(--background);
+}
+
+body > nav ul:first-of-type li:first-of-type a svg {
+  height: 3.5rem;
 }
 
 body > nav ul:first-of-type li:nth-of-type(2) {

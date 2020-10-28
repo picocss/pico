@@ -56,7 +56,7 @@
   // Button .outline
   button.outline,
   input[type="submit"].outline,
-  a.outline[role="button"] {
+  a[role="button"].outline {
     border: var(--button-border-width) solid var(--primary-border);
     background-color: transparent;
     color: var(--primary);

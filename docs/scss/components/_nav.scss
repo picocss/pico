@@ -15,12 +15,13 @@ body > nav {
 
   a {
     border-radius: 0;
-
-    svg {
-      vertical-align: text-bottom;
-    }
   }
 
+  svg {
+    vertical-align: text-bottom;
+  }
+
+  // Band & Title
   ul:first-of-type li {
 
     // Brand
@@ -32,6 +33,10 @@ body > nav {
         padding: 0;
         background: var(--h1);
         color: var(--background);
+
+        svg {
+          height: 3.5rem;
+        }
       }
     }
 

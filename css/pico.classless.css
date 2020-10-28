@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.2.0 (https://picocss.com)
+ * Pico.css v1.2.1 (https://picocss.com)
  * Copyright 2020 - Licensed under MIT
  */
 /**
@@ -1035,6 +1035,27 @@ textarea[disabled] {
   opacity: .66;
 }
 
+input[aria-invalid],
+select[aria-invalid],
+textarea[aria-invalid] {
+  padding-right: 2rem;
+  background-position: center right .75rem;
+  background-repeat: no-repeat;
+  background-size: 1rem auto;
+}
+
+input[aria-invalid="false"],
+select[aria-invalid="false"],
+textarea[aria-invalid="false"] {
+  background-image: var(--icon-valid);
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  background-image: var(--icon-invalid);
+}
+
 input:not([type="checkbox"]):not([type="radio"]),
 select,
 textarea {
@@ -1067,7 +1088,7 @@ form small {
 input + small,
 select + small,
 textarea + small {
-  margin-top: calc(var(--spacing-typography) * -0.5);
+  margin-top: calc(var(--spacing-typography) * -0.75);
   margin-bottom: var(--spacing-typography);
 }
 

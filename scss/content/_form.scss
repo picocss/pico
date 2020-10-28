@@ -220,23 +220,42 @@ textarea {
     opacity: .66;
   }
 
-  // Validation states
-  @if $enable-input-states and $enable-classes {
-
-    // Validation states
-    &.valid,
-    &.invalid {
+  // Validation states: with aria-invalid only
+  @if $enable-classes {
+    .valid,
+    .invalid,
+    &[aria-invalid] {
       padding-right: 2rem;
       background-position: center right .75rem;
       background-repeat: no-repeat;
       background-size: 1rem auto;
     }
 
-    &.valid {
+    .valid,
+    &[aria-invalid="false"] {
       background-image: var(--icon-valid);
     }
 
-    &.invalid {
+    .invalid,
+    &[aria-invalid="true"]{
+      background-image: var(--icon-invalid);
+    }
+  }
+
+  // Validation states: with aria-invalid and classes (.valid & .invalid)
+  @else {
+    &[aria-invalid] {
+      padding-right: 2rem;
+      background-position: center right .75rem;
+      background-repeat: no-repeat;
+      background-size: 1rem auto;
+    }
+
+    &[aria-invalid="false"] {
+      background-image: var(--icon-valid);
+    }
+
+    &[aria-invalid="true"]{
       background-image: var(--icon-invalid);
     }
   }
@@ -285,7 +304,7 @@ input,
 select,
 textarea {
   + small {
-    margin-top: calc(var(--spacing-typography) * -0.5);
+    margin-top: calc(var(--spacing-typography) * -0.75);
     margin-bottom: var(--spacing-typography);
   }
 }
