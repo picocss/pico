@@ -289,7 +289,7 @@
               <h2>Containers</h2>
               <h3>
                 <code>.container</code> enable a centered viewport.<br>
-                <code>.container-fluid</code> enable a <code>100%</code> layout.
+                <code>.container-fluid</code> enable a <code><u>100%</u></code> layout.
               </h3>
             </hgroup>
 
@@ -799,13 +799,18 @@
 &lt;/<b>fieldset</b>&gt;</code></pre>
 
             </article>
-            <p>You can change a checkbox to indeterminate state by setting the <code>indeterminate</code> property of input checkboxes to <code>true</code></p>
+            <p>You can change a checkbox to indeterminate state by setting the <code><i>indeterminate</i></code> property to <code><u>true</u></code></p>
             <article aria-label="Indeterminate checkbox example">
               <label for="indeterminate">
-                <input type="checkbox" id="indeterminate-checkbox" name="indeterminate-checkbox" indeterminate="true">
+                <input type="checkbox" id="indeterminate-checkbox" name="indeterminate-checkbox">
                 Select all
               </label>
               <script>document.getElementById('indeterminate-checkbox').indeterminate = true;</script>
+
+<pre><code>&lt;<b>script</b>&gt;
+  <i>document</i>.<b>getElementById</b>(<u>'indeterminate-checkbox'</u>).<i>indeterminate</i> = <u>true</u>;
+&lt;/<b>script</b>&gt;</code></pre>
+
             </article>
 
             <p>Others input types:</p>
@@ -1140,11 +1145,16 @@
 
             </article>
 
-            <p>You can change a progress bar to indeterminate state by setting the <code>indeterminate</code> property to <code>true</code></p>
+            <p>You can change a progress bar to indeterminate state by setting the <code><i>indeterminate</i></code> property to <code><u>true</u></code></p>
 
             <article aria-label="Indeterminate progress bar example">
               <progress id="indeterminate-progress"></progress>
               <script>document.getElementById('indeterminate-progress').indeterminate = true;</script>
+
+<pre><code>&lt;<b>script</b>&gt;
+  <i>document</i>.<b>getElementById</b>(<u>'indeterminate-progress'</u>).<i>indeterminate</i> = <u>true</u>;
+&lt;/<b>script</b>&gt;</code></pre>
+
             </article>
 
           </section><!-- ./ Docs: Progress -->
