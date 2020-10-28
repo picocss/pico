@@ -304,7 +304,7 @@ input,
 select,
 textarea {
   + small {
-    margin-top: calc(var(--spacing-typography) * -0.5);
+    margin-top: calc(var(--spacing-typography) * -0.75);
     margin-bottom: var(--spacing-typography);
   }
 }
