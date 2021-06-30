@@ -1670,12 +1670,12 @@ details summary ~ * ~ * {
   margin-top: 0;
 }
 
-details[open] summary {
+details[open] > summary {
   margin-bottom: calc(var(--spacing-typography) / 4);
   color: var(--muted-text);
 }
 
-details[open] summary::after {
+details[open] > summary::after {
   transform: rotate(0);
 }
 

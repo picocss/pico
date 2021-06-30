@@ -59,7 +59,7 @@ details {
   // Open
   &[open] {
 
-    summary {
+    > summary {
       margin-bottom: calc(var(--spacing-typography) / 4);
       color: var(--muted-text);
 
