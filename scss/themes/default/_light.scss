@@ -38,7 +38,7 @@
   --contrast-inverse: #{$white};
 
   // Highlighted text (<mark>)
-  --mark-background-color: #{mix($amber-50, $amber-100)};
+  --mark-background-color: #{mix($amber-100, $amber-50)};
   --mark-color: #{mix($grey-900, $amber-900, 75%)};
 
   // Inserted (<ins>) & Deleted (<ins>)
@@ -85,7 +85,7 @@
 
   // Table
   --table-border-color: var(--muted-border-color);
-  --table-row-stripped-background-color:#{mix($white, $grey-50)};
+  --table-row-stripped-background-color:#{mix($grey-50, $white)};
 
   // Code
   --code-background-color: #{$grey-50};
@@ -106,7 +106,7 @@
   --card-background-color: var(--background-color);
   --card-border-color: var(--muted-border-color);
   --card-box-shadow: 0 0.125rem 1rem #{rgba($grey-900, 0.04)}, 0 0.125rem 2rem #{rgba($grey-900, 0.08)}, 0 0 0 0.0625rem #{rgba($grey-900, 0.024)};
-  --card-sectionning-background-color: #{mix($white, $grey-50, 75%)};
+  --card-sectionning-background-color: #{mix($grey-50, $white, 25%)};
 
   // Progress
   --progress-background-color: #{$grey-100};

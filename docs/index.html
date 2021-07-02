@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>Pico.css • Graceful & Minimal CSS design system</title>
     <link rel="shortcut icon" href="img/favicon.ico">
@@ -116,7 +116,7 @@
 &lt;<b>html</b> <i>lang</i>=<u>"en"</u>&gt;
   &lt;<b>head</b>&gt;
     &lt;<b>meta</b> <i>charset</i>=<u>"utf-8"</u>&gt;
-    &lt;<b>meta</b> <i>name</i>=<u>"viewport"</u> <i>content</i>=<u>"width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover"</u>&gt;
+    &lt;<b>meta</b> <i>name</i>=<u>"viewport"</u> <i>content</i>=<u>"width=device-width, initial-scale=1"</u>&gt;
     &lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"css/pico.min.css"</u>&gt;
     &lt;<b>title</b>>Hello, world!&lt;/<b>title</b>&gt;
   &lt;/<b>head</b>&gt;
@@ -200,7 +200,6 @@
 
             </article>
 
-
             <p>There are 2 ways to customize your version of Pico.css:</p>
             <h4>Overriding CSS variables</h4>
             <p>All Pico's styles and colors are set with <em>CSS custom properties</em> (variables). Just override the CSS variables to customize your version of Pico.</p>
@@ -275,20 +274,28 @@
             <p>This allows to create a lighter version with only the components that are useful to you. Example here: <a href="https://github.com/picocss/pico/blob/master/scss/pico.slim.scss">scss/pico.slim.scss</a>.</p>
           </section><!-- ./ Docs: Customization -->
 
-
           <!-- Docs: Classless -->
           <section id="classless">
             <hgroup>
               <h2>Class-less version</h2>
               <h3>For wild HTML purists!</h3>
             </hgroup>
-            <p>Pico provide a <code>.classless</code> version (<a href="https://picocss.com/examples/classless/">Example</a>).</p>
+            <p>Pico provide a <code>.classless</code> version (<a href="https://picocss.com/examples/classless/">example</a>).</p>
             <p>In this version, <code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code> and <code>&lt;<b>footer</b>&gt;</code> act as <a href="#containers">containers</a> to define a centered or a fluid viewport.</p>
             <p><strong>Usage:</strong></p>
             <p>Use the default <code>.classless</code> version if you need centered viewports:</p>
             <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet</u>" <i>href</i>=<u>"css/pico.classless.min.css"</u>&gt;</code></pre>
-            <p>Or use the <code>.fluid.classless</code>  version if you need a fluid container:</p>
+            <p>Or use the <code>.fluid.classless</code> version if you need a fluid container:</p>
             <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet</u>" <i>href</i>=<u>"css/pico.fluid.classless.min.css"</u>&gt;</code></pre>
+            <p>These <code>.classless</code> versions are also available on <a href="https://unpkg.com/@picocss/pico@latest/">unpkg CDN</a>:</p>
+
+<pre><code><em>// Centered viewports</em>
+&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css"</u>&gt;
+
+<em>// Fluid viewports</em>
+&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@picocss/pico@latest/css/pico.fluid.classless.min.css"</u>&gt;
+</code></pre>
+
           </section><!-- ./ Docs: Classless -->
 
           <!-- Docs: Container -->

@@ -8,11 +8,11 @@
   // Texts colors
   --color: #{$grey-200};
   --h1-color: #{$grey-50};
-  --h2-color: #{mix($grey-50, $grey-100)};
+  --h2-color: #{mix($grey-100, $grey-50)};
   --h3-color: #{$grey-100};
-  --h4-color: #{mix($grey-100, $grey-200)};
+  --h4-color: #{mix($grey-200, $grey-100)};
   --h5-color: #{$grey-200};
-  --h6-color: #{mix($grey-200, $grey-300)};
+  --h6-color: #{mix($grey-300, $grey-200)};
 
   // Muted colors
   --muted-color: #{$grey-500};
@@ -94,7 +94,7 @@
   --code-tag-color: #{hsl(330, 30%, 50%)};
   --code-property-color: #{hsl(185, 30%, 50%)};
   --code-value-color: #{hsl(40,  10%, 50%)};
-  --code-comment-color: #{mix($grey-600, $grey-700)};
+  --code-comment-color: #{mix($grey-700, $grey-600)};
 
   // Accordion (<details>)
   --accordion-border-color: var(--muted-border-color);
