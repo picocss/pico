@@ -13,6 +13,7 @@ details {
     color: var(--accordion-close-summary-color);
     line-height: 1rem;
     list-style-type: none;
+    list-style-type: none;
     cursor: pointer;
 
     @if $enable-transitions {
@@ -23,9 +24,11 @@ details {
     &::-webkit-details-marker {
       display: none;
     }
+
     &::marker {
       display: none;
     }
+
     &::-moz-list-bullet {
       list-style-type: none;
     }
@@ -49,8 +52,8 @@ details {
     }
 
     &:focus {
-      color: var(--accordion-active-summary-color);
       outline: none;
+      color: var(--accordion-active-summary-color);
     }
 
     ~ * {

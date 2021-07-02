@@ -1691,6 +1691,7 @@ details summary {
   color: var(--accordion-close-summary-color);
   line-height: 1rem;
   list-style-type: none;
+  list-style-type: none;
   cursor: pointer;
   transition: color var(--transition);
 }
@@ -1722,8 +1723,8 @@ details summary::after {
 }
 
 details summary:focus {
-  color: var(--accordion-active-summary-color);
   outline: none;
+  color: var(--accordion-active-summary-color);
 }
 
 details summary ~ * {
