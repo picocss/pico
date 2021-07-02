@@ -353,7 +353,7 @@ kbd {
   }
 }
 
-[data-theme="dark"] :root:not([data-theme="light"]) {
+[data-theme="dark"] {
   color-scheme: dark;
   --background-color: #11191f;
   --color: #bbc6ce;

@@ -1,6 +1,7 @@
 // Default: Dark theme
-:root:not([data-theme="light"]) {
 
+@mixin dark {
+  
   // Document
   color-scheme: dark;
   --background-color: #{mix($black, $grey-900, 37.5%)};

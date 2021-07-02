@@ -15,12 +15,15 @@
 
 // Dark theme (Auto)
 // Automatically enabled if user has Dark mode enabled
+@import "default/dark";
 @media only screen and (prefers-color-scheme: dark) {
-  @import "default/dark";
+  :root:not([data-theme="light"]) {
+    @include dark;
+  }
 }
 
 // Dark theme (Forced)
 // Enabled if forced with data-theme="dark"
 [data-theme="dark"] {
-  @import "default/dark";
+  @include dark;
 }

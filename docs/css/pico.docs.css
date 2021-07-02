@@ -320,10 +320,6 @@ a[role=button] {
 /**
  * Docs: Code
  */
-code {
-  --font-weight: 400;
-}
-
 section > pre {
   margin: var(--block-spacing-vertical) 0;
   padding: calc(var(--block-spacing-vertical) / 1.5) var(--block-spacing-horizontal);

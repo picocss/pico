@@ -357,7 +357,7 @@ kbd {
   }
 }
 
-[data-theme="dark"] :root:not([data-theme="light"]) {
+[data-theme="dark"] {
   color-scheme: dark;
   --background-color: #11191f;
   --color: #bbc6ce;
@@ -740,9 +740,9 @@ hgroup > * {
 
 hgroup > *:last-child {
   --color: var(--muted-color);
+  --font-weight: unset;
   font-family: unset;
   font-size: 1rem;
-  font-weight: unset;
 }
 
 p {

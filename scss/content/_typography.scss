@@ -195,9 +195,9 @@ hgroup {
 
   > *:last-child {
     --color: var(--muted-color);
+    --font-weight: unset;
     font-family: unset;
     font-size: 1rem;
-    font-weight: unset;
   }
 }
 
