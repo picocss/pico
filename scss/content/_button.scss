@@ -58,7 +58,7 @@ a[role="button"] {
   --background-color: var(--primary);
   --border-color: var(--primary);
   --color: var(--primary-inverse);
-  --box-shadow: none;
+  --box-shadow: var(--button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
@@ -85,10 +85,11 @@ a[role="button"] {
   &:focus {
     --background-color: var(--primary-hover);
     --border-color: var(--primary-hover);
+    --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
   }
 
   &:focus {
-    --box-shadow: 0 0 0 var(--outline-width) var(--primary-focus);
+    --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--primary-focus);
   }
 }
 
@@ -107,7 +108,8 @@ input[type="reset"] {
   }
 
   &:focus {
-    --box-shadow: 0 0 0 var(--outline-width) var(--secondary-focus);
+    // --box-shadow: 0 0 0 var(--outline-width) var(--secondary-focus);
+    --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--secondary-focus);
   }
 }
 
@@ -134,7 +136,8 @@ input[type="reset"] {
       }
 
       &:focus {
-        --box-shadow: 0 0 0 var(--outline-width) var(--secondary-focus);
+        // --box-shadow: 0 0 0 var(--outline-width) var(--secondary-focus);
+        --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--secondary-focus);
       }
     }
 
@@ -152,7 +155,8 @@ input[type="reset"] {
       }
 
       &:focus {
-        --box-shadow: 0 0 0 var(--outline-width) var(--contrast-focus);
+        // --box-shadow: 0 0 0 var(--outline-width) var(--contrast-focus);
+        --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--contrast-focus);
       }
     }
 

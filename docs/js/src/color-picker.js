@@ -472,7 +472,7 @@
 
                         + '[data-theme="generated"] {'
                         +   '--form-element-active-border-color: var(--primary);'
-                        +   '--form-element-focus: var(--primary-focus);'
+                        +   '--form-element-focus-color: var(--primary-focus);'
                         +   '--switch-color: var(--primary-inverse);'
                         +   '--switch-checked-background-color: var(--primary);'
                         + '}';

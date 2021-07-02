@@ -157,13 +157,15 @@ kbd {
   --del-color: #C62828;
   --blockquote-border-color: var(--muted-border-color);
   --blockquote-footer-color: var(--muted-color);
+  --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --form-element-background-color: transparent;
   --form-element-border-color: #a2afb9;
   --form-element-color: var(--color);
   --form-element-placeholder-color: var(--muted-color);
   --form-element-active-background-color: transparent;
   --form-element-active-border-color: var(--primary);
-  --form-element-focus: var(--primary-focus);
+  --form-element-focus-color: var(--primary-focus);
   --form-element-disabled-background-color: #d5dce2;
   --form-element-disabled-border-color: #a2afb9;
   --form-element-invalid-border-color: #C62828;
@@ -241,13 +243,15 @@ kbd {
     --del-color: #C62828;
     --blockquote-border-color: var(--muted-border-color);
     --blockquote-footer-color: var(--muted-color);
+    --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     --form-element-background-color: #11191f;
     --form-element-border-color: #374956;
     --form-element-color: var(--color);
     --form-element-placeholder-color: var(--muted-color);
     --form-element-active-background-color: var(--form-element-background-color);
     --form-element-active-border-color: var(--primary);
-    --form-element-focus: var(--primary-focus);
+    --form-element-focus-color: var(--primary-focus);
     --form-element-disabled-background-color: #2c3d49;
     --form-element-disabled-border-color: #415462;
     --form-element-invalid-border-color: #B71C1C;
@@ -326,13 +330,15 @@ kbd {
   --del-color: #C62828;
   --blockquote-border-color: var(--muted-border-color);
   --blockquote-footer-color: var(--muted-color);
+  --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --form-element-background-color: #11191f;
   --form-element-border-color: #374956;
   --form-element-color: var(--color);
   --form-element-placeholder-color: var(--muted-color);
   --form-element-active-background-color: var(--form-element-background-color);
   --form-element-active-border-color: var(--primary);
-  --form-element-focus: var(--primary-focus);
+  --form-element-focus-color: var(--primary-focus);
   --form-element-disabled-background-color: #2c3d49;
   --form-element-disabled-border-color: #415462;
   --form-element-invalid-border-color: #B71C1C;
@@ -875,7 +881,7 @@ a[role="button"] {
   --background-color: var(--primary);
   --border-color: var(--primary);
   --color: var(--primary-inverse);
-  --box-shadow: none;
+  --box-shadow: var(--button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
@@ -905,6 +911,7 @@ a[role="button"]:active,
 a[role="button"]:focus {
   --background-color: var(--primary-hover);
   --border-color: var(--primary-hover);
+  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
 }
 
 button:focus,
@@ -912,7 +919,7 @@ input[type="submit"]:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 a[role="button"]:focus {
-  --box-shadow: 0 0 0 var(--outline-width) var(--primary-focus);
+  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--primary-focus);
 }
 
 input[type="reset"] {
@@ -928,7 +935,7 @@ input[type="reset"]:hover, input[type="reset"]:active, input[type="reset"]:focus
 }
 
 input[type="reset"]:focus {
-  --box-shadow: 0 0 0 var(--outline-width) var(--secondary-focus);
+  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--secondary-focus);
 }
 
 button.secondary,
@@ -964,7 +971,7 @@ input[type="submit"].secondary:focus,
 input[type="button"].secondary:focus,
 input[type="reset"].secondary:focus,
 a[role="button"].secondary:focus {
-  --box-shadow: 0 0 0 var(--outline-width) var(--secondary-focus);
+  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--secondary-focus);
 }
 
 button.contrast,
@@ -999,7 +1006,7 @@ input[type="submit"].contrast:focus,
 input[type="button"].contrast:focus,
 input[type="reset"].contrast:focus,
 a[role="button"].contrast:focus {
-  --box-shadow: 0 0 0 var(--outline-width) var(--contrast-focus);
+  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--contrast-focus);
 }
 
 button.outline,
@@ -1238,7 +1245,7 @@ textarea:focus {
 input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="range"]):not([type="file"]):not([readonly]):focus,
 select:focus,
 textarea:focus {
-  --box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus);
+  --box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
 }
 
 input:not([type="submit"]):not([type="button"]):not([type="reset"])[disabled],

@@ -10,7 +10,7 @@
   &::-webkit-color-swatch-wrapper {
     padding: 0;
   }
-  
+
   &::-moz-focus-inner {
     padding: 0;
   }
@@ -86,9 +86,9 @@
   &:hover,
   &:active,
   &:focus {
+    --color: var(--color);
     border: none;
     background: none;
-    --color: var(--color);
 
     &::-webkit-file-upload-button {
       --background-color: var(--secondary-hover);

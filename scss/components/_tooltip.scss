@@ -55,8 +55,8 @@
       opacity: 1;
 
       @if $enable-transitions {
-        animation-duration: .2s;
         animation-name: slide;
+        animation-duration: .2s;
       }
     }
 
@@ -72,12 +72,12 @@
 @if $enable-transitions {
   @keyframes slide {
     from {
-      opacity: 0;
       transform: translate(-50%, .75rem);
+      opacity: 0;
     }
     to {
-      opacity: 1;
       transform: translate(-50%, -.25rem);
+      opacity: 1;
     }
   }
 
@@ -86,12 +86,12 @@
       opacity: 0;
     }
     50% {
-      opacity: 0;
       transform: translate(-50%, -.25rem);
+      opacity: 0;
     }
     to {
-      opacity: 1;
       transform: translate(-50%, 0rem);
+      opacity: 1;
     }
   }
 }

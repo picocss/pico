@@ -209,7 +209,7 @@ input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="r
 select,
 textarea {
   &:focus {
-    --box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus);
+    --box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
   }
 }
 

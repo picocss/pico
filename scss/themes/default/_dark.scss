@@ -48,6 +48,12 @@
   --blockquote-border-color: var(--muted-border-color);
   --blockquote-footer-color: var(--muted-color);
 
+  // Button
+  // To disable box-shadow, remove the var or set to '0 0 0 rgba(0, 0, 0, 0)'
+  // Don't use, 'none, 'false, 'null', '0', etc.
+  --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
   // Form elements
   --form-element-background-color: #{mix($black, $grey-900, 37.5%)};
   --form-element-border-color: #{mix($grey-800, $grey-700)};
@@ -55,7 +61,7 @@
   --form-element-placeholder-color: var(--muted-color);
   --form-element-active-background-color: var(--form-element-background-color);
   --form-element-active-border-color: var(--primary);
-  --form-element-focus: var(--primary-focus);
+  --form-element-focus-color: var(--primary-focus);
   --form-element-disabled-background-color: #{$grey-800};
   --form-element-disabled-border-color: #{$grey-700};
   --form-element-invalid-border-color: #{$red-900};
