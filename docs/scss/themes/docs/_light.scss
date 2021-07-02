@@ -2,6 +2,9 @@
 // Can be forced with data-theme="light"
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
-  --nav-background: #{rgba($white, .7)};
-  --nav-border:     #{rgba($grey-500, .2)};
+  --invalid-color: #{$red-800};
+  --valid-color: #{$green-700};
+  --nav-background-color: #{rgba($white, .7)};
+  --nav-border-color: #{rgba($grey-500, .2)};
+  --nav-logo-color: #{$white};
 }

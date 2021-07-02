@@ -12,20 +12,29 @@
 
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
-  --nav-background: rgba(255, 255, 255, 0.7);
-  --nav-border:     rgba(115, 130, 140, 0.2);
+  --invalid-color: #C62828;
+  --valid-color: #388E3C;
+  --nav-background-color: rgba(255, 255, 255, 0.7);
+  --nav-border-color: rgba(115, 130, 140, 0.2);
+  --nav-logo-color: #FFF;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --nav-background: rgba(16, 24, 30, 0.8);
-    --nav-border:     rgba(115, 130, 140, 0.2);
+    --invalid-color: rgba(183, 28, 28, 0.5);
+    --valid-color: rgba(46, 125, 50, 0.5);
+    --nav-background-color: rgba(16, 24, 30, 0.8);
+    --nav-border-color: rgba(115, 130, 140, 0.2);
+    --nav-logo-color: #0d1419;
   }
 }
 
 [data-theme="dark"] {
+  --invalid-color: rgba(183, 28, 28, 0.5);
+  --valid-color: rgba(46, 125, 50, 0.5);
   --nav-background: rgba(16, 24, 30, 0.8);
-  --nav-border:     rgba(115, 130, 140, 0.2);
+  --nav-border-color: rgba(115, 130, 140, 0.2);
+  --nav-logo-color: #0d1419;
 }
 
 /**
@@ -39,72 +48,61 @@ html {
  * Docs: Main (Grid)
  */
 body > main {
-  padding-top: calc(1rem * var(--spacing-factor-xs) + 3.5rem);
-}
-
-@media (min-width: 576px) {
-  body > main {
-    padding-top: calc(1rem * var(--spacing-factor-sm) + 3.5rem);
-  }
-}
-
-@media (min-width: 768px) {
-  body > main {
-    padding-top: calc(1rem * var(--spacing-factor-md) + 3.5rem);
-  }
+  padding-top: calc(var(--block-spacing-vertical) + 3.5rem);
 }
 
 @media (min-width: 992px) {
   body > main {
-    grid-column-gap: calc(var(--spacing-gutter) * 4);
+    --block-spacing-horizontal: calc(var(--spacing) * 1.75);
+    grid-column-gap: calc(var(--block-spacing-horizontal) * 4);
     display: grid;
     grid-template-columns: 200px auto;
-    padding-top: calc(1rem * var(--spacing-factor-lg) + 3.5rem);
   }
 }
 
 @media (min-width: 1200px) {
   body > main {
-    padding-top: calc(1rem * var(--spacing-factor-xl) + 3.5rem);
+    --block-spacing-horizontal: calc(var(--spacing) * 2);
   }
 }
 
-body > main > * {
+body > main > aside,
+body > main div[role="document"] {
   min-width: 0;
 }
 
 div[role="document"] > section::before {
   display: block;
-  height: calc(1rem * var(--spacing-factor-xs) + 3.5rem);
-  margin-top: calc(-1rem * var(--spacing-factor-xs) - 3.5rem);
+  height: calc(2rem + 3.5rem - .5rem);
+  margin-top: calc(-2rem - 3.5rem + .5rem);
   content: '';
 }
 
 @media (min-width: 576px) {
   div[role="document"] > section::before {
-    height: calc(1rem * var(--spacing-factor-sm) + 3.5rem);
-    margin-top: calc(-1rem * var(--spacing-factor-sm) - 3.5rem);
+    height: calc(2.5rem + 3.5rem - .5rem);
+    height: calc(-2.5rem - 3.5rem + .5rem);
   }
 }
 
 @media (min-width: 768px) {
   div[role="document"] > section::before {
-    height: calc(1rem * var(--spacing-factor-md) + 3.5rem);
-    margin-top: calc(-1rem * var(--spacing-factor-md) - 3.5rem);
+    height: calc(3rem + 3.5rem - .5rem);
+    margin-top: calc(-3rem - 3.5rem + .5rem);
   }
 }
 
 @media (min-width: 992px) {
   div[role="document"] > section::before {
-    height: calc(1rem * var(--spacing-factor-lg) + 3.5rem);
-    margin-top: calc(-1rem * var(--spacing-factor-lg) - 3.5rem);
+    height: calc(3.5rem + 3.5rem - .5rem);
+    margin-top: calc(-3.5rem - 3.5rem + .5rem);
   }
 }
 
 @media (min-width: 1200px) {
   div[role="document"] > section::before {
-    height: calc(1rem * var(--spacing-factor-xl) + 3.5rem);
-    margin-top: calc(-1rem * var(--spacing-factor-xl) - 3.5rem);
+    height: calc(4rem + 3.5rem - .5rem);
+    margin-top: calc(-4rem - 3.5rem + .5rem);
   }
 }
 
@@ -119,11 +117,6 @@ div[role="document"] section a[href*="//"]:not([href*="https://picocss.com"]):no
   content: '';
 }
 
-form.grid > input:not([type=checkbox]):not([type=radio]),
-form.grid > button {
-  margin-bottom: 0;
-}
-
 svg {
   height: 1rem;
 }
@@ -133,11 +126,11 @@ svg {
  */
 main > aside nav {
   width: 100%;
-  margin-bottom: var(--spacing-block);
+  margin-bottom: var(--block-spacing-vertical);
 }
 
 main > aside nav h1 {
-  margin-bottom: var(--spacing-typography);
+  margin-bottom: calc(var(--typography-spacing-vertical) / 2);
 }
 
 @media (min-width: 992px) {
@@ -184,7 +177,7 @@ main > aside details {
 }
 
 main > aside details summary {
-  color: var(--h3);
+  color: var(--h3-color);
   font-size: 14px;
   font-weight: 300;
   text-transform: uppercase;
@@ -195,7 +188,7 @@ main > aside details summary::after {
 }
 
 main > aside details[open] summary {
-  color: var(--h3);
+  color: var(--h3-color);
 }
 
 /**
@@ -217,8 +210,8 @@ main > aside details[open] summary {
   #customization figure {
     grid-template-columns: repeat(18, 1fr);
     grid-template-rows: 1fr;
-    border-top-right-radius: var(--block-round);
-    border-top-left-radius: var(--block-round);
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
   }
 }
 
@@ -260,10 +253,14 @@ main > aside details[open] summary {
   border-color: var(--primary);
 }
 
+#grids {
+  --grid-spacing-vertical: 1rem;
+}
+
 #grids button {
   display: block;
   width: 100%;
-  margin-bottom: calc(var(--spacing-typography) / 2);
+  margin-bottom: var(--spacing);
 }
 
 @media (min-width: 576px) {
@@ -283,13 +280,15 @@ main > aside details[open] summary {
 }
 
 #grids .grid > * {
-  padding: calc(var(--spacing-gutter) / 2) 0;
-  background: var(--code-background);
+  padding: calc(var(--spacing) / 2) 0;
+  background: var(--secondary);
+  color: var(--secondary-inverse);
   text-align: center;
+  opacity: .5;
 }
 
 #grids details {
-  margin-top: calc(var(--spacing-typography) * 2);
+  margin-top: calc(var(--typography-spacing-vertical) * 2);
 }
 
 #grids details svg {
@@ -304,12 +303,12 @@ main > aside details[open] summary {
  * Docs: Typography
  */
 section > hgroup {
-  margin-bottom: calc(var(--spacing-typography) * 2);
+  margin-bottom: calc(var(--typography-spacing-vertical) * 2);
 }
 
 a[role=button] {
-  margin-right: calc(var(--spacing-typography) / 4);
-  margin-bottom: var(--spacing-typography);
+  margin-right: calc(var(--typography-spacing-vertical) / 4);
+  margin-bottom: var(--typography-spacing-vertical);
 }
 
 [role=document] section > h1,
@@ -321,28 +320,15 @@ a[role=button] {
 /**
  * Docs: Code
  */
-@media (min-width: 576px) {
-  pre {
-    padding: var(--spacing-block) calc(var(--spacing-block) * var(--spacing-factor-sm));
-  }
+code {
+  --font-weight: 400;
 }
 
-@media (min-width: 768px) {
-  pre {
-    padding: var(--spacing-block) calc(var(--spacing-block) * var(--spacing-factor-md));
-  }
-}
-
-@media (min-width: 992px) {
-  pre {
-    padding: var(--spacing-block) calc(var(--spacing-block) * var(--spacing-factor-lg));
-  }
-}
-
-@media (min-width: 1200px) {
-  pre {
-    padding: var(--spacing-block) calc(var(--spacing-block) * var(--spacing-factor-xl));
-  }
+section > pre {
+  margin: var(--block-spacing-vertical) 0;
+  padding: calc(var(--block-spacing-vertical) / 1.5) var(--block-spacing-horizontal);
+  background-color: var(--card-sectionning-background-color);
+  box-shadow: var(--card-box-shadow);
 }
 
 [data-theme="invalid"],
@@ -367,8 +353,8 @@ a[role=button] {
 @media (min-width: 992px) {
   [data-theme="invalid"]:before,
   [data-theme="valid"]:before {
-    top: var(--spacing-gutter);
-    right: var(--spacing-gutter);
+    top: var(--spacing);
+    right: var(--spacing);
   }
 }
 
@@ -378,12 +364,12 @@ a[role=button] {
 }
 
 [data-theme="invalid"]:before {
-  background: var(--invalid);
+  background: var(--invalid-color);
   content: 'Not so great';
 }
 
 [data-theme="valid"]:before {
-  background: var(--valid);
+  background: var(--valid-color);
   content: 'Great';
 }
 
@@ -398,8 +384,8 @@ body > nav {
   right: 0;
   left: 0;
   backdrop-filter: saturate(180%) blur(20px);
-  background-color: var(--nav-background);
-  box-shadow: 0px 1px 0 var(--nav-border);
+  background-color: var(--nav-background-color);
+  box-shadow: 0px 1px 0 var(--nav-border-color);
 }
 
 body > nav a {
@@ -413,10 +399,10 @@ body > nav svg {
 body > nav ul:first-of-type li:first-of-type a {
   width: 3.5rem;
   height: 3.5rem;
-  margin-left: calc(var(--spacing-gutter) * -1);
+  margin-left: calc(var(--spacing) * -1);
   padding: 0;
-  background: var(--h1);
-  color: var(--background);
+  background: var(--h1-color);
+  color: var(--nav-logo-color);
 }
 
 body > nav ul:first-of-type li:first-of-type a svg {
@@ -425,8 +411,8 @@ body > nav ul:first-of-type li:first-of-type a svg {
 
 body > nav ul:first-of-type li:nth-of-type(2) {
   display: none;
-  margin-left: var(--spacing-gutter);
-  color: var(--h1);
+  margin-left: var(--spacing);
+  color: var(--h1-color);
 }
 
 @media (min-width: 992px) {
@@ -440,13 +426,13 @@ body > nav ul:first-of-type li:nth-of-type(2) {
  */
 .switcher {
   position: fixed;
-  right: calc(var(--spacing-gutter) / 2);
-  bottom: var(--spacing-gutter);
+  right: calc(var(--spacing) / 2);
+  bottom: var(--spacing);
   width: auto;
   margin-bottom: 0;
   padding: .75rem;
   border-radius: 2rem;
-  box-shadow: var(--card-shadow);
+  box-shadow: var(--card-box-shadow);
   line-height: 1;
   text-align: right;
 }
@@ -484,16 +470,16 @@ body > nav ul:first-of-type li:nth-of-type(2) {
 
 .switcher:hover i {
   max-width: 100%;
-  padding: 0 calc(var(--spacing-gutter) / 2) 0 calc(var(--spacing-gutter) / 4);
+  padding: 0 calc(var(--spacing) / 2) 0 calc(var(--spacing) / 4);
   transition: max-width var(--transition), padding var(--transition);
 }
 
 .switcher:focus {
-  box-shadow: var(--card-shadow), 0 0 0 0.2rem var(--secondary-focus);
+  box-shadow: var(--card-box-shadow), 0 0 0 0.2rem var(--secondary-focus);
 }
 
 @media (min-width: 576px) {
   .switcher {
-    right: var(--spacing-gutter);
+    right: var(--spacing);
   }
 }

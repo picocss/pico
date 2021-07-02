@@ -1,93 +1,214 @@
 // Commons Styles
-
 :root {
 
   // Typography
-  // ––––––––––––––––––––
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --line-height: 1.5;
+  --font-weight: 400;
+  --font-size: 16px;
 
-  // Fonts family
-  // Source: github.com/csstools/sanitize.css/blob/master/typography.css
-  --text-font:                       system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --titles-font:                     var(--text-font);
-  --code-font:                       "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  // Responsive typography
+  @if $enable-responsive-typography {
 
-  // Typography styles
-  --line-height:                     1.5;
-  --text-weight:                     400;
-  --titles-weight:                   700;
-  --form-element-weight:             var(--text-weight);
-  --buttons-weight:                  var(--text-weight);
-  --code-weight:                     var(--text-weight);
+    @if map-get($breakpoints, "sm") {
+      @media (min-width: map-get($breakpoints, "sm")) {
+        --font-size: 17px;
+      }
+    }
 
-  // Base font sizes
-  // All the others sizes are relative to this font base sizes (rem)
-  --base-font-xs:                    16px;
-  --base-font-sm:                    17px;
-  --base-font-md:                    18px;
-  --base-font-lg:                    19px;
-  --base-font-xl:                    20px;
+    @if map-get($breakpoints, "md") {
+      @media (min-width: map-get($breakpoints, "md")) {
+        --font-size: 18px;
+      }
+    }
 
-  // Font sizes
-  // All the others sizes are relative to this sizes
-  --h1-size:                         2rem;
-  --h2-size:                         1.75rem;
-  --h3-size:                         1.5rem;
-  --h4-size:                         1.25rem;
-  --h5-size:                         1.125rem;
-  --h6-size:                         1rem;
+    @if map-get($breakpoints, "lg") {
+      @media (min-width: map-get($breakpoints, "lg")) {
+        --font-size: 19px;
+      }
+    }
 
+    @if map-get($breakpoints, "xl") {
+      @media (min-width: map-get($breakpoints, "xl")) {
+        --font-size: 20px;
+      }
+    }
+  }
 
-  // Styles
-  // ––––––––––––––––––––
-
-  // Blocks styles: <form> elements, <article>, inlined <code>, [data-tooltip]
-  --block-round:                     .25rem;
-
-  // Form elements
-  --form-element-border-width:       1px;
-  --form-element-outline-width:      3px;
-  --checkbox-radio-border-width:     2px;
-  --switch-border-width:             3px;
-  --form-element-spacing-vertical:   .75rem;
-  --form-element-spacing-horizontal: 1rem;
-
-  // Buttons
-  --button-round:                    var(--block-round);
-  --button-border-width:             var(--form-element-border-width);
-  --button-outline-width:            var(--form-element-outline-width);
-  --button-spacing-vertical:         var(--form-element-spacing-vertical);
-  --button-spacing-horizontal:       var(--form-element-spacing-horizontal);
-
+  // Borders
+  --border-radius: .25rem;
+  --border-width: 1px;
+  --outline-width: 3px;
 
   // Spacings
-  // ––––––––––––––––––––
+  --spacing: 1rem;
 
-  // Gutters and horizontals margins
-  // For <body>, ,container, .grid, <nav>, <table>, <article>, <pre>
-  --spacing-gutter:                  1rem;
+  // Spacings for typography elements
+  --typography-spacing-vertical: 1.5rem;
 
-  // Vertical spacing for blocks
-  // For <header>, <main>, <footer>, <section>, <article>
-  --spacing-block:                   2rem;
+  // Spacings for body > header, body > main, body > footer, section, article
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
 
-  // Multiplication factor for --spacing-block
-  // '1' disable spacing factor on a breakpoint
-  --spacing-factor-xs:               1;
-  --spacing-factor-sm:               1.25;
-  --spacing-factor-md:               1.5;
-  --spacing-factor-lg:               1.75;
-  --spacing-factor-xl:               2;
+  // Spacings .grid
+  --grid-spacing-vertical: 0;
+  --grid-spacing-horizontal: var(--spacing);
 
-  // Vertical margins for typography elements
-  --spacing-typography:              1.5rem;
-
-  // Spacing between <form> elements
-  --spacing-form-element:            .25rem;
-
+  // Spacings for form elements and button
+  --form-element-spacing-vertical: .75rem;
+  --form-element-spacing-horizontal: 1rem;
 
   // Transitions
-  // ––––––––––––––––––––
+  --transition: .2s ease-in-out;
+}
 
-  // Transitions: <a>, <form> elements and <button>
-  --transition:                      .2s ease-in-out;
+// Responsives spacings
+@if $enable-responsive-spacings {
+
+  // Sectionning
+  body > header,
+  body > main,
+  body > footer,
+  section {
+
+    @if map-get($breakpoints, "sm") {
+      @media (min-width: map-get($breakpoints, "sm")) {
+        --block-spacing-vertical: calc(var(--spacing) * 2.5);
+      }
+    }
+
+    @if map-get($breakpoints, "md") {
+      @media (min-width: map-get($breakpoints, "md")) {
+        --block-spacing-vertical: calc(var(--spacing) * 3);
+      }
+    }
+
+    @if map-get($breakpoints, "lg") {
+      @media (min-width: map-get($breakpoints, "lg")) {
+        --block-spacing-vertical: calc(var(--spacing) * 3.5);
+      }
+    }
+
+    @if map-get($breakpoints, "xl") {
+      @media (min-width: map-get($breakpoints, "xl")) {
+        --block-spacing-vertical: calc(var(--spacing) * 4);
+      }
+    }
+  }
+
+  // Card (<article>)
+  article {
+
+    @if map-get($breakpoints, "sm") {
+      @media (min-width: map-get($breakpoints, "sm")) {
+        --block-spacing-horizontal: calc(var(--spacing) * 1.25);
+      }
+    }
+
+    @if map-get($breakpoints, "md") {
+      @media (min-width: map-get($breakpoints, "md")) {
+        --block-spacing-horizontal: calc(var(--spacing) * 1.5);
+      }
+    }
+
+    @if map-get($breakpoints, "lg") {
+      @media (min-width: map-get($breakpoints, "lg")) {
+        --block-spacing-horizontal: calc(var(--spacing) * 1.75);
+      }
+    }
+
+    @if map-get($breakpoints, "xl") {
+      @media (min-width: map-get($breakpoints, "xl")) {
+        --block-spacing-horizontal: calc(var(--spacing) * 2);
+      }
+    }
+  }
+}
+
+// Link
+a {
+  --text-decoration: none;
+
+  // Secondary & Contrast
+  &.secondary,
+  &.contrast {
+    --text-decoration: underline;
+  }
+}
+
+// Small
+small {
+  --font-size: 0.875rem;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  --font-weight: 700;
+}
+
+h1 {
+  --font-size: 2rem;
+  --typography-spacing-vertical: 3rem;
+}
+
+h2 {
+  --font-size: 1.75rem;
+  --typography-spacing-vertical: 2.625rem;
+}
+
+h3 {
+  --font-size: 1.5rem;
+  --typography-spacing-vertical: 2.25rem;
+}
+
+h4 {
+  --font-size: 1.25rem;
+  --typography-spacing-vertical: 1.874rem;
+}
+
+h5 {
+  --font-size: 1.125rem;
+  --typography-spacing-vertical: 1.6875rem;
+}
+
+// Forms elements
+[type="checkbox"],
+[type="radio"] {
+  --border-width: 2px;
+}
+
+[type="checkbox"][role="switch"] {
+  --border-width: 3px;
+}
+
+// Table
+table {
+
+  thead {
+    th,
+    td {
+      --border-width: 3px;
+    }
+  }
+
+  :not(thead) td {
+    --font-size: 0.875rem;
+  }
+}
+
+// Code
+pre,
+code,
+kbd,
+samp {
+  --font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+kbd {
+  --font-weight: bolder;
 }

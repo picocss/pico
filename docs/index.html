@@ -191,9 +191,61 @@
                   </label>
                 </fieldset>
               </form>
+
+<pre><code><em>// Simplified example</em>
+<b>:root</b> {
+  <i>--primary</i>: <u class="c500">...</u>;
+}
+</code></pre>
+
             </article>
+
+
             <p>There are 2 ways to customize your version of Pico.css:</p>
-            <h4>Importing SASS</h4>
+            <h4>Overriding CSS variables</h4>
+            <p>All Pico's styles and colors are set with <em>CSS custom properties</em> (variables). Just override the CSS variables to customize your version of Pico.</p>
+
+<pre><code><em>/* <span class="name"></span>Light scheme (Default) */
+/* Can be forced with data-theme="light" */</em>
+<b>[data-theme=<u>"light"</u>]</b>,
+<b>:root:not([data-theme=<u>"dark"</u>])</b> {
+  <i>--primary</i>: <u class="c600">...</u>;
+  <i>--primary-hover</i>: <u class="c700">...</u>;
+  <i>--primary-focus</i>: <u class="c600-outline-light">...</u>;
+  <i>--primary-inverse</i>: <u class="inverse">...</u>;
+}
+
+<em>/* <span class="name"></span>Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */</em>
+<i>@media</i> only <b>screen</b> and <b>(prefers-color-scheme: <u>dark</u>)</b> {
+  <b>:root:not([data-theme=<u>"light"</u>])</b> {
+    <i>--primary</i>: <u class="c600">...</u>;
+    <i>--primary-hover</i>: <u class="c500">...</u>;
+    <i>--primary-focus</i>: <u class="c600-outline-dark">...</u>;
+    <i>--primary-inverse</i>: <u class="inverse">...</u>;
+  }
+}
+
+<em>/* <span class="name"></span>Dark scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */</em>
+<b>[data-theme=<u>"dark"</u>]</b> {
+  <i>--primary</i>: <u class="c600">...</u>;
+  <i>--primary-hover</i>: <u class="c500">...</u>;
+  <i>--primary-focus</i>: <u class="c600-outline-dark">...</u>;
+  <i>--primary-inverse</i>: <u class="inverse">...</u>;
+}
+
+<em>/* <span class="name"></span>(Common styles) */</em>
+<b>:root</b> {
+  <i>--form-element-active-border-color</i>: <u>var</u>(<i>--primary</i>);
+  <i>--form-element-focus:</i>: <u>var</u>(<i>--primary-focus</i>);
+  <i>--switch-color</i>: <u>var</u>(<i>--primary-inverse</i>);
+  <i>--switch-checked-background-color:</i>: <u>var</u>(<i>--primary</i>);
+}
+</code></pre>
+
+            <p>You can find all the CSS variables used in the default theme here: <a href="https://github.com/picocss/pico/blob/master/css/themes/default.css">css/themes/default.css</a></p>
+            <h4>Importing Pico SASS library</h4>
             <p>It is recommended to customize Pico by importing SASS source files in your project. This way you can keep Pico up to date without conflicts since Pico code and your custom code are separated.</p>
             <p>Compile the SASS file to CSS to get a custom version of Pico.</p>
 
@@ -221,50 +273,6 @@
 </code></pre>
 
             <p>This allows to create a lighter version with only the components that are useful to you. Example here: <a href="https://github.com/picocss/pico/blob/master/scss/pico.slim.scss">scss/pico.slim.scss</a>.</p>
-            <h4>Overriding CSS variables</h4>
-            <p>All Pico's styles and colors are set with <em>CSS custom properties</em> (variables). Just override the CSS variables to customize your version of Pico.</p>
-
-<pre><code><em>/* <span class="name"></span>Light scheme (Default) */
-/* Can be forced with data-theme="light" */</em>
-<b>[data-theme=<u>"light"</u>]</b>,
-<b>:root:not([data-theme=<u>"dark"</u>])</b> {
-  <i>--primary</i>:              <u class="c600">...</u>;
-  <i>--primary-hover</i>:        <u class="c700">...</u>;
-  <i>--primary-focus</i>:        <u class="c600-outline-light">...</u>;
-  <i>--primary-inverse</i>:      <u class="inverse">...</u>;
-}
-
-<em>/* <span class="name"></span>Dark scheme (Auto) */
-/* Automatically enabled if user has Dark mode enabled */</em>
-<i>@media</i> only <b>screen</b> and <b>(prefers-color-scheme: <u>dark</u>)</b> {
-  <b>:root:not([data-theme=<u>"light"</u>])</b> {
-    <i>--primary</i>:            <u class="c600">...</u>;
-    <i>--primary-hover</i>:      <u class="c500">...</u>;
-    <i>--primary-focus</i>:      <u class="c600-outline-dark">...</u>;
-    <i>--primary-inverse</i>:    <u class="inverse">...</u>;
-  }
-}
-
-<em>/* <span class="name"></span>Dark scheme (Forced) */
-/* Enabled if forced with data-theme="dark" */</em>
-<b>[data-theme=<u>"dark"</u>]</b> {
-  <i>--primary</i>:              <u class="c600">...</u>;
-  <i>--primary-hover</i>:        <u class="c500">...</u>;
-  <i>--primary-focus</i>:        <u class="c600-outline-dark">...</u>;
-  <i>--primary-inverse</i>:      <u class="inverse">...</u>;
-}
-
-<em>/* <span class="name"></span>(Common styles) */</em>
-<b>:root</b> {
-  <i>--primary-border</i>:       <u>var</u>(<i>--primary</i>);
-  <i>--primary-hover-border</i>: <u>var</u>(<i>--primary-hover</i>);
-  <i>--input-hover-border</i>:   <u>var</u>(<i>--primary</i>);
-  <i>--input-focus</i>:          <u>var</u>(<i>--primary-focus</i>);
-  <i>--input-inverse</i>:        <u>var</u>(<i>--primary-inverse</i>);
-}
-</code></pre>
-
-            <p>You can find all the CSS variables used in the default theme here: <a href="https://github.com/picocss/pico/blob/master/css/themes/default.css">css/default.css</a></p>
           </section><!-- ./ Docs: Customization -->
 
 
@@ -313,19 +321,19 @@
                 <tbody>
                   <tr>
                     <th>Breakpoint</th>
-                    <td>&lt;576<small>px</small></td>
-                    <td>≥576<small>px</small></td>
-                    <td>≥768<small>px</small></td>
-                    <td>≥992<small>px</small></td>
-                    <td>≥1200<small>px</small></td>
+                    <td>&lt;576px</td>
+                    <td>≥576px</td>
+                    <td>≥768px</td>
+                    <td>≥992px</td>
+                    <td>≥1200px</td>
                   </tr>
                   <tr>
                     <th>Viewport</th>
                     <td>None&nbsp;<small>(auto)</small></td>
-                    <td>540<small>px</small></td>
-                    <td>720<small>px</small></td>
-                    <td>960<small>px</small></td>
-                    <td>1140<small>px</small></td>
+                    <td>540px</td>
+                    <td>720px</td>
+                    <td>960px</td>
+                    <td>1140px</td>
                   </tr>
                 </tbody>
               </table>
@@ -469,59 +477,59 @@
                 <tbody>
                   <tr>
                     <th>Base&nbsp;font</th>
-                    <td>16<small>px</small></td>
-                    <td>17<small>px</small></td>
-                    <td>18<small>px</small></td>
-                    <td>19<small>px</small></td>
-                    <td>20<small>px</small></td>
+                    <td>16px</td>
+                    <td>17px</td>
+                    <td>18px</td>
+                    <td>19px</td>
+                    <td>20px</td>
                   </tr>
                   <tr>
                     <th>h1</th>
-                    <td>32<small>px</small></td>
-                    <td>34<small>px</small></td>
-                    <td>36<small>px</small></td>
-                    <td>38<small>px</small></td>
-                    <td>40<small>px</small></td>
+                    <td>32px</td>
+                    <td>34px</td>
+                    <td>36px</td>
+                    <td>38px</td>
+                    <td>40px</td>
                   </tr>
                   <tr>
                     <th>h2</th>
-                    <td>28<small>px</small></td>
-                    <td>29<small>px</small></td>
-                    <td>31.5<small>px</small></td>
-                    <td>33.25<small>px</small></td>
-                    <td>35<small>px</small></td>
+                    <td>28px</td>
+                    <td>29px</td>
+                    <td>31.5px</td>
+                    <td>33.25px</td>
+                    <td>35px</td>
                   </tr>
                   <tr>
                     <th>h3</th>
-                    <td>24<small>px</small></td>
-                    <td>25.5<small>px</small></td>
-                    <td>27<small>px</small></td>
-                    <td>28.5<small>px</small></td>
-                    <td>30<small>px</small></td>
+                    <td>24px</td>
+                    <td>25.5px</td>
+                    <td>27px</td>
+                    <td>28.5px</td>
+                    <td>30px</td>
                   </tr>
                   <tr>
                     <th>h4</th>
-                    <td>20<small>px</small></td>
-                    <td>21.25<small>px</small></td>
-                    <td>22.5<small>px</small></td>
-                    <td>23.75<small>px</small></td>
-                    <td>25<small>px</small></td>
+                    <td>20px</td>
+                    <td>21.25px</td>
+                    <td>22.5px</td>
+                    <td>23.75px</td>
+                    <td>25px</td>
                   </tr>
                   <tr>
                     <th>h5</th>
-                    <td>18<small>px</small></td>
-                    <td>19.125<small>px</small></td>
-                    <td>20.25<small>px</small></td>
-                    <td>21.375<small>px</small></td>
-                    <td>22.5<small>px</small></td>
+                    <td>18px</td>
+                    <td>19.125px</td>
+                    <td>20.25px</td>
+                    <td>21.375px</td>
+                    <td>22.5px</td>
                   </tr>
                   <tr>
                     <th>h6</th>
-                    <td>16<small>px</small></td>
-                    <td>17<small>px</small></td>
-                    <td>18<small>px</small></td>
-                    <td>19<small>px</small></td>
-                    <td>20<small>px</small></td>
+                    <td>16px</td>
+                    <td>17px</td>
+                    <td>18px</td>
+                    <td>19px</td>
+                    <td>20px</td>
                   </tr>
                 </tbody>
               </table>
@@ -543,7 +551,7 @@
 &lt;<b>h6</b>&gt;Heading 6&lt;/<b>h6</b>&gt;</code></pre>
 
             </article>
-            <p>Inside a <code>&lt;<b>hgroup</b>&gt;</code> all <code><i>margin-bottom</i></code> are collapsed and the <code>:last-child</code> is styled.</p>
+            <p>Inside a <code>&lt;<b>hgroup</b>&gt;</code> all <code><i>margin-bottom</i></code> are collapsed and the <code>:last-child</code> is muted.</p>
             <article aria-label="Hgroup example">
               <hgroup>
                 <h2>Heading 2</h2>

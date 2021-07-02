@@ -31,8 +31,8 @@ button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
-   padding: 0;
-   border-style: none;
+  padding: 0;
+  border-style: none;
 }
 
 
@@ -42,7 +42,7 @@ button::-moz-focus-inner,
 button {
   display: block;
   width: 100%;
-  margin-bottom: var(--spacing-typography);
+  margin-bottom: var(--spacing);
 }
 
 a[role="button"] {
@@ -54,17 +54,20 @@ button,
 input[type="submit"],
 input[type="button"],
 input[type="reset"],
-[type="file"]::-webkit-file-upload-button,
 a[role="button"] {
-  padding: var(--button-spacing-vertical) var(--button-spacing-horizontal);
-  border: var(--button-border-width) solid var(--primary-border);
-  border-radius: var(--button-round);
+  --background-color: var(--primary);
+  --border-color: var(--primary);
+  --color: var(--primary-inverse);
+  --box-shadow: none;
+  padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
   outline: none;
-  background-color: var(--primary);
-  box-shadow: var(--button-shadow);
-  color: var(--primary-inverse);
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow);
+  color: var(--color);
   font-size: 1rem;
-  font-weight: var(--buttons-weight);
+  font-weight: var(--font-weight);
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
@@ -80,19 +83,114 @@ a[role="button"] {
   &:hover,
   &:active,
   &:focus {
-    border-color: var(--primary-hover-border);
-    background-color: var(--primary-hover);
-    box-shadow: var(--button-hover-shadow);
+    --background-color: var(--primary-hover);
+    --border-color: var(--primary-hover);
   }
 
   &:focus {
-    box-shadow: var(--button-hover-shadow), 0 0 0 var(--button-outline-width) var(--primary-focus);
+    --box-shadow: 0 0 0 var(--outline-width) var(--primary-focus);
   }
 }
 
-// Input [type="reset"]
+// Secondary button without .class
 input[type="reset"] {
+  --background-color: var(--secondary);
+  --border-color: var(--secondary);
+  --color: var(--secondary-inverse);
   cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    --background-color: var(--secondary-hover);
+    --border-color: var(--secondary-hover);
+  }
+
+  &:focus {
+    --box-shadow: 0 0 0 var(--outline-width) var(--secondary-focus);
+  }
+}
+
+// .secondary, .contrast & .outline
+@if $enable-classes {
+  button,
+  input[type="submit"],
+  input[type="button"],
+  input[type="reset"],
+  a[role="button"] {
+
+    // Secondary
+    &.secondary {
+      --background-color: var(--secondary);
+      --border-color: var(--secondary);
+      --color: var(--secondary-inverse);
+      cursor: pointer;
+
+      &:hover,
+      &:active,
+      &:focus {
+        --background-color: var(--secondary-hover);
+        --border-color: var(--secondary-hover);
+      }
+
+      &:focus {
+        --box-shadow: 0 0 0 var(--outline-width) var(--secondary-focus);
+      }
+    }
+
+    // Contrast
+    &.contrast {
+      --background-color: var(--contrast);
+      --border-color: var(--contrast);
+      --color: var(--contrast-inverse);
+
+      &:hover,
+      &:active,
+      &:focus {
+        --background-color: var(--contrast-hover);
+        --border-color: var(--contrast-hover);
+      }
+
+      &:focus {
+        --box-shadow: 0 0 0 var(--outline-width) var(--contrast-focus);
+      }
+    }
+
+    // Outline (primary)
+    &.outline {
+      --background-color: transparent;
+      --color: var(--primary);
+
+      &:hover,
+      &:active,
+      &:focus {
+        --background-color: transparent;
+        --color: var(--primary-hover);
+      }
+    }
+
+    // Outline (secondary)
+    &.outline.secondary {
+      --color: var(--secondary);
+
+      &:hover,
+      &:active,
+      &:focus {
+        --color: var(--secondary-hover);
+      }
+    }
+
+    // Outline (contrast)
+    &.outline.contrast {
+      --color: var(--contrast);
+
+      &:hover,
+      &:active,
+      &:focus {
+        --color: var(--contrast-hover);
+      }
+    }
+  }
 }
 
 // Button [disabled]

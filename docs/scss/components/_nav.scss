@@ -10,8 +10,8 @@ body > nav {
   right: 0;
   left: 0;
   backdrop-filter: saturate(180%) blur(20px);
-  background-color: var(--nav-background);
-  box-shadow: 0px 1px 0 var(--nav-border);
+  background-color: var(--nav-background-color);
+  box-shadow: 0px 1px 0 var(--nav-border-color);
 
   a {
     border-radius: 0;
@@ -29,10 +29,10 @@ body > nav {
       a {
         width: 3.5rem;
         height: 3.5rem;
-        margin-left: calc(var(--spacing-gutter) * -1);
+        margin-left: calc(var(--spacing) * -1);
         padding: 0;
-        background: var(--h1);
-        color: var(--background);
+        background: var(--h1-color);
+        color: var(--nav-logo-color);
 
         svg {
           height: 3.5rem;
@@ -43,8 +43,8 @@ body > nav {
     // Title
     &:nth-of-type(2) {
       display: none;
-      margin-left: var(--spacing-gutter);
-      color: var(--h1);
+      margin-left: var(--spacing);
+      color: var(--h1-color);
 
       @media (min-width: map-get($breakpoints, "lg")) {
         display: inline;

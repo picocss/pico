@@ -10,7 +10,7 @@ figure {
   overflow-x: auto;
 
   figcaption {
-    padding: calc(var(--spacing-gutter) / 2) 0;
-    color: var(--muted-text);
+    padding: calc(var(--spacing) / 2) 0;
+    color: var(--muted-color);
   }
 }

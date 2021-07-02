@@ -25,87 +25,48 @@ body {
   > header,
   > main,
   > footer {
-    $padding-horizontal: var(--spacing-gutter) !default;
-    $spacing-vertical: var(--spacing-block) !default;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
 
-    // xs
-    @if $enable-semantic-container == false {
-      $padding-horizontal: 0;
-    }
-    padding: $spacing-vertical $padding-horizontal;
+    // Semantic container
+    @if $enable-semantic-container {
+      padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
 
-    // sm
-    @if map-get($breakpoints, "sm")
-      and ($enable-responsive-spacings or $enable-semantic-container) {
+      // Centered viewport
+      @if $enable-viewport {
 
-      @media (min-width: map-get($breakpoints, "sm")) {
-        @if $enable-viewport and $enable-semantic-container {
-          max-width: map-get($viewports, "sm");
+        @if map-get($breakpoints, "sm") and $enable-viewport {
+          @media (min-width: map-get($breakpoints, "sm")) {
+            max-width: map-get($viewports, "sm");
+            padding-right: 0;
+            padding-left: 0;
+          }
         }
-        @if $enable-responsive-spacings or $enable-viewport {
-          @if $enable-viewport or $enable-semantic-container == false {
-            $padding-horizontal: 0;
+
+        @if map-get($breakpoints, "md") and $enable-viewport {
+          @media (min-width: map-get($breakpoints, "md")) {
+            max-width: map-get($viewports, "md");
           }
-          @else {
-            $padding-horizontal: var(--spacing-gutter);
+        }
+
+        @if map-get($breakpoints, "lg") and $enable-viewport {
+          @media (min-width: map-get($breakpoints, "lg")) {
+            max-width: map-get($viewports, "lg");
           }
-          @if $enable-responsive-spacings {
-            $spacing-vertical: calc(var(--spacing-block) * var(--spacing-factor-sm));
+        }
+
+        @if map-get($breakpoints, "xl") and $enable-viewport {
+          @media (min-width: map-get($breakpoints, "xl")) {
+            max-width: map-get($viewports, "xl");
           }
-          @else {
-            $spacing-vertical: var(--spacing-block);
-          }
-          padding: $spacing-vertical $padding-horizontal;
         }
       }
     }
 
-    // md
-    @if map-get($breakpoints, "md")
-      and ($enable-responsive-spacings or $enable-semantic-container) {
-
-      @media (min-width: map-get($breakpoints, "md")) {
-        @if $enable-viewport and $enable-semantic-container {
-          max-width: map-get($viewports, "md");
-        }
-        @if $enable-responsive-spacings {
-          $spacing-vertical: calc(var(--spacing-block) * var(--spacing-factor-md));
-          padding: $spacing-vertical $padding-horizontal;
-        }
-      }
-    }
-
-    // lg
-    @if map-get($breakpoints, "lg")
-      and ($enable-responsive-spacings or $enable-semantic-container) {
-
-      @media (min-width: map-get($breakpoints, "lg")) {
-        @if $enable-viewport and $enable-semantic-container {
-          max-width: map-get($viewports, "lg");
-        }
-        @if $enable-responsive-spacings {
-          $spacing-vertical: calc(var(--spacing-block) * var(--spacing-factor-lg));
-          padding: $spacing-vertical $padding-horizontal;
-        }
-      }
-    }
-
-    // xl
-    @if map-get($breakpoints, "xl")
-      and ($enable-responsive-spacings or $enable-semantic-container) {
-
-      @media (min-width: map-get($breakpoints, "xl")) {
-        @if $enable-viewport and $enable-semantic-container {
-          max-width: map-get($viewports, "xl");
-        }
-        @if $enable-responsive-spacings {
-          $spacing-vertical: calc(var(--spacing-block) * var(--spacing-factor-xl));
-          padding: $spacing-vertical $padding-horizontal;
-        }
-      }
+    // Semantic container
+    @else {
+      padding: var(--block-spacing-vertical) 0;
     }
   }
 }

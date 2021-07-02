@@ -3,57 +3,32 @@
  */
 
 article {
-  margin: var(--spacing-block) 0;
-  padding: var(--spacing-block) var(--spacing-gutter);
+  margin: var(--block-spacing-vertical) 0;
+  padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
   overflow: hidden;
-  border-radius: var(--block-round);
-  background: var(--card-background);
-  box-shadow: var(--card-shadow);
+  border-radius: var(--border-radius);
+  background: var(--card-background-color);
+  box-shadow: var(--card-box-shadow);
 
-  @if map-get($breakpoints, "sm") {
-    @media (min-width: map-get($breakpoints, "sm")) {
-      @if $enable-responsive-spacings {
-        margin: calc(var(--spacing-block) * var(--spacing-factor-sm)) 0;
-        padding: calc(var(--spacing-block) * var(--spacing-factor-sm));
-      }
-      @else {
-        margin: var(--spacing-block) 0;
-        padding: var(--spacing-block);
-      }
-    }
+  > header,
+  > footer,
+  > pre {
+    margin-right: calc(var(--block-spacing-horizontal) * -1);
+    margin-left: calc(var(--block-spacing-horizontal) * -1);
+    padding: calc(var(--block-spacing-vertical) / 1.5) var(--block-spacing-horizontal);
+    background-color: var(--card-sectionning-background-color);
   }
 
-  @if map-get($breakpoints, "md") and
-    $enable-responsive-spacings {
-
-    @media (min-width: map-get($breakpoints, "md")) {
-      margin: calc(var(--spacing-block) * var(--spacing-factor-md)) 0;
-      padding: calc(var(--spacing-block) * var(--spacing-factor-md));
-    }
+  > header {
+    margin-top: calc(var(--block-spacing-vertical) * -1);
+    margin-bottom: var(--block-spacing-vertical);
+    border-bottom: var(--border-width) solid var(--card-border-color);
   }
 
-  @if map-get($breakpoints, "lg") and
-    $enable-responsive-spacings {
-
-    @media (min-width: map-get($breakpoints, "lg")) {
-      margin: calc(var(--spacing-block) * var(--spacing-factor-lg)) 0;
-      padding: calc(var(--spacing-block) * var(--spacing-factor-lg));
-    }
-  }
-
-  @if map-get($breakpoints, "xl") and
-    $enable-responsive-spacings {
-
-    @media (min-width: map-get($breakpoints, "xl")) {
-      margin: calc(var(--spacing-block) * var(--spacing-factor-xl)) 0;
-      padding: calc(var(--spacing-block) * var(--spacing-factor-xl));
-    }
-  }
-
-  // Remove last-child margin bottom
-  @if $enable-important {
-    > *:not(header):not(footer):not(pre):last-child {
-      margin-bottom: 0 !important;
-    }
+  > footer,
+  > pre {
+    margin-top: var(--block-spacing-vertical);
+    margin-bottom: calc(var(--block-spacing-vertical) * -1);
+    border-top: var(--border-width) solid var(--card-border-color);
   }
 }

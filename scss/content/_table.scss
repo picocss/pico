@@ -26,32 +26,24 @@ table {
 // Cells
 th,
 td {
-  padding: calc(var(--spacing-gutter) / 2) var(--spacing-gutter);
-  border-bottom: 1px solid var(--table-border);
-  color: var(--muted-text);
-  font-size: 0.875rem;
-  font-weight: var(--text-weight);
+  padding: calc(var(--spacing) / 2) var(--spacing);
+  border-bottom: var(--border-width) solid var(--table-border-color);
+  color: var(--color);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
   text-align: left;
 }
 
-// Titles
-th,
-thead td {
-  color: var(--text);
-  font-size: 1rem;
+// Rows
+tr {
+  background-color: var(--background-color);
 }
 
-// First row
-thead {
-  th,
-  td {
-    border-bottom: 3px solid var(--table-border);
-  }
-}
-
-// Striping
-table[role="grid"] {
-  tbody tr:nth-child(odd) {
-    background-color: var(--table-stripping);
+// Striped
+table {
+  &[role="grid"] {
+    tbody tr:nth-child(odd) {
+      --background-color: var(--table-row-stripped-background-color);
+    }
   }
 }

@@ -14,8 +14,8 @@ pre,
 code,
 kbd,
 samp {
-  font-family: var(--code-font); // 1
-  font-size: 1rem; // 2
+  font-family: var(--font-family); // 1
+  font-size: .875rem; // 2
 }
 
 // Prevent overflow of the container in all browsers (opinionated)
@@ -31,49 +31,25 @@ pre {
 pre,
 code,
 kbd {
-  background: var(--code-inlined);
-  color: var(--code-color-1);
-  font-size: 85%;
-  font-weight: var(--code-weight);
+  background: var(--code-background-color);
+  color: var(--code-color);
+  font-weight: var(--font-weight);
   line-height: initial;
-
-  @if map-get($breakpoints, "sm") and $enable-responsive-typography {
-    @media (min-width: map-get($breakpoints, "sm")) {
-      font-size: 83%;
-    }
-  }
-
-  @if map-get($breakpoints, "md") and $enable-responsive-typography {
-    @media (min-width: map-get($breakpoints, "md")) {
-      font-size: 81%;
-    }
-  }
-
-  @if map-get($breakpoints, "lg") and $enable-responsive-typography {
-    @media (min-width: map-get($breakpoints, "lg")) {
-      font-size: 79%;
-    }
-  }
-  @if map-get($breakpoints, "lg") and $enable-responsive-typography {
-    @media (min-width: map-get($breakpoints, "xl")) {
-      font-size: 77%;
-    }
-  }
 }
 
 code,
 kbd {
   display: inline-block;
   padding: .375rem .5rem;
-  border-radius: var(--block-round);
+  border-radius: var(--border-radius);
 }
 
 pre {
   display: block;
-  margin-bottom: var(--spacing-block);
-  padding: var(--spacing-block) var(--spacing-gutter);
+  margin-bottom: var(--spacing);
+  padding: var(--spacing);
   overflow-x: auto;
-  background: var(--code-background);
+  background: var(--code-background-color);
 
   > code {
     display: block;
@@ -84,37 +60,37 @@ pre {
   }
 }
 
-// Code Syntax highlighting
+// Code Syntax
 code {
 
   // Tags
   b {
-    color: var(--code-color-2);
-    font-weight: var(--code-weight);
+    color: var(--code-tag-color);
+    font-weight: var(--font-weight);
   }
 
   // Properties
   i {
-    color: var(--code-color-3);
+    color: var(--code-property-color);
     font-style: normal;
   }
 
   // Values
   u {
-    color: var(--code-color-4);
+    color: var(--code-value-color);
     text-decoration: none;
   }
 
   // Comments
   em {
-    color: var(--code-color-5);
+    color: var(--code-comment-color);
     font-style: normal;
   }
 }
 
 // kbd
 kbd {
-  background-color: var(--secondary);
-  color: var(--secondary-inverse);
-  font-weight: bolder;
+  background-color: var(--code-kbd-background-color);
+  color: var(--code-kbd-color);
+  vertical-align: middle;
 }

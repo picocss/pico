@@ -3,8 +3,6 @@
  */
 
 // Docs: Themes
-// ––––––––––––––––––––
-
 #themes {
   button i {
     font-style: normal;
@@ -12,8 +10,6 @@
 }
 
 // Docs: Customization
-// ––––––––––––––––––––
-
 #customization {
 
   figure {
@@ -26,8 +22,8 @@
     @media (min-width: map-get($breakpoints, "sm")) {
       grid-template-columns: repeat(18, 1fr);
       grid-template-rows: 1fr;
-      border-top-right-radius: var(--block-round);
-      border-top-left-radius: var(--block-round);
+      border-top-right-radius: var(--border-radius);
+      border-top-left-radius: var(--border-radius);
     }
 
     ~ article {
@@ -75,14 +71,14 @@
 
 
 // Docs: Grids
-// ––––––––––––––––––––
-
 #grids {
+
+  --grid-spacing-vertical: 1rem;
 
   button {
     display: block;
     width: 100%;
-    margin-bottom: calc(var(--spacing-typography) / 2);
+    margin-bottom: var(--spacing);
 
     @media (min-width: map-get($breakpoints, "sm")) {
       display: inline-block;
@@ -99,14 +95,18 @@
     }
   }
 
-  .grid > * {
-    padding: calc(var(--spacing-gutter) / 2) 0;
-    background: var(--code-background);
-    text-align: center;
+  .grid {
+    > * {
+      padding: calc(var(--spacing) / 2) 0;
+      background: var(--secondary);
+      color: var(--secondary-inverse);
+      text-align: center;
+      opacity: .5;
+    }
   }
 
   details {
-    margin-top: calc(var(--spacing-typography) * 2);
+    margin-top: calc(var(--typography-spacing-vertical) * 2);
 
     svg {
       vertical-align: bottom;
@@ -115,8 +115,6 @@
 }
 
 // Docs: Forms
-// ––––––––––––––––––––
-
 #forms div.grid {
   grid-row-gap: 0;
 }

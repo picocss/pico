@@ -1,6 +1,6 @@
 /*!
  * Pico.css v1.2.1 (https://picocss.com)
- * Copyright 2020 - Licensed under MIT
+ * Copyright 2019-2021 - Licensed under MIT
  */
 
 // Config
@@ -21,7 +21,6 @@
 @import "content/typography";            // a, headings, p, ul, blockquote, ...
 @import "content/embedded";              // audio, canvas, iframe, img, svg, video
 @import "content/button";                // button, a[role=button], type=button, type=submit ...
-@import "content/button-styles";         // .secondary, .contrast, .outline
 @import "content/form";                  // input, select, textarea, label, fieldset, legend
 @import "content/form-checkbox-radio";   // type=checkbox, type=radio, role=switch
 @import "content/form-alt-input-types";  // type=color, type=date, type=file, type=search, ...
@@ -33,7 +32,6 @@
 // Components
 @import "components/accordion";          // details, summary
 @import "components/card";               // article
-@import "components/card-sectioning";    // article > header, footer, pre
 @import "components/nav";                // nav
 @import "components/progress";           // progress
 @import "components/tooltip";            // data-tooltip

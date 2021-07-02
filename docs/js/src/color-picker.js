@@ -2,7 +2,7 @@
  * Color Picker
  *
  * Pico.css - https://picocss.com
- * Copyright 2019 - Licensed under MIT
+ * Copyright 2019-2021 - Licensed under MIT
  */
 
 (function() {
@@ -291,19 +291,6 @@
         "a700": "#dd2c00",
         "inverse": "#FFF"
       },
-      /*"brown": {
-        "50": "#efebe9",
-        "100": "#d7ccc8",
-        "200": "#bcaaa4",
-        "300": "#a1887f",
-        "400": "#8d6e63",
-        "500": "#795548",
-        "600": "#6d4c41",
-        "700": "#5d4037",
-        "800": "#4e342e",
-        "900": "#3e2723",
-        "inverse": "#FFF"
-      },*/
       "grey": {
         "50": "#fafafa",
         "100": "#f5f5f5",
@@ -458,7 +445,7 @@
 
     // Update CSS Style
     var generatedStyles = '[data-theme="generated"] {'
-                        +   '--h4:' + data[700] + ';'
+                        +   '--h4-color:' + data[700] + ';'
                         +   '--primary:' + data[600] + ';'
                         +   '--primary-hover:' + data[700] + ';'
                         +   '--primary-focus:' + hexToRgbA(data[600], .125) + ';'
@@ -467,7 +454,7 @@
 
                         + '@media only screen and (prefers-color-scheme: dark) {'
                         +    ':root:not([data-theme="light"]) [data-theme="generated"] {'
-                        +     '--h4:' + data[400] + ';'
+                        +     '--h4-color:' + data[400] + ';'
                         +     '--primary:' + data[600] + ';'
                         +     '--primary-hover:' + data[500] + ';'
                         +     '--primary-focus:' + hexToRgbA(data[600], .25) + ';'
@@ -476,7 +463,7 @@
                         + '}'
 
                         + '[data-theme="dark"] [data-theme="generated"] {'
-                        +   '--h4:' + data[500] + ';'
+                        +   '--h4-color:' + data[500] + ';'
                         +   '--primary:' + data[600] + ';'
                         +   '--primary-hover:' + data[500] + ';'
                         +   '--primary-focus:' + hexToRgbA(data[600], .25) + ';'
@@ -484,11 +471,10 @@
                         + '}'
 
                         + '[data-theme="generated"] {'
-                        +   '--primary-border: var(--primary);'
-                        +   '--primary-hover-border: var(--primary-hover);'
-                        +   '--input-hover-border: var(--primary);'
-                        +   '--input-focus: var(--primary-focus);'
-                        +   '--input-inverse: var(--primary-inverse);'
+                        +   '--form-element-active-border-color: var(--primary);'
+                        +   '--form-element-focus: var(--primary-focus);'
+                        +   '--switch-color: var(--primary-inverse);'
+                        +   '--switch-checked-background-color: var(--primary);'
                         + '}';
 
     // Insert CSS Styles

@@ -61,8 +61,8 @@ pre,
 table,
 ul {
   margin-top: 0;
-  margin-bottom: var(--spacing-typography);
-  color: var(--text);
+  margin-bottom: var(--typography-spacing-vertical);
+  color: var(--color);
   font-size: 1rem;
   font-style: normal;
 }
@@ -70,9 +70,12 @@ ul {
 // Links
 // 1. Remove the gray background on active links in IE 10
 a {
-  background-color: transparent; // 1
-  color: var(--primary);
-  text-decoration: none;
+  --color: var(--primary);
+  --background-color: transparent;
+  outline: none;
+  background-color: var(--background-color); // 1
+  color: var(--color);
+  text-decoration: var(--text-decoration);
 
   @if $enable-transitions {
     transition:
@@ -85,54 +88,49 @@ a {
   &:hover,
   &:active,
   &:focus {
-    color: var(--primary-hover);
-    text-decoration: underline;
+    --color: var(--primary-hover);
+    --text-decoration: underline;
   }
 
   &:focus {
-    outline: none;
-    background-color: var(--primary-focus);
+    --background-color: var(--primary-focus);
   }
-}
 
-// Link .secondary
-@if $enable-classes {
-  a.secondary {
-    color: var(--secondary);
-    text-decoration: underline;
+  @if $enable-classes {
 
-    &:hover,
-    &:active,
-    &:focus {
-      color: var(--secondary-hover);
+    // Secondary
+    &.secondary {
+      --color: var(--secondary);
+
+      &:hover,
+      &:active,
+      &:focus {
+        --color: var(--secondary-hover);
+      }
+
+      &:focus {
+        --background-color: var(--secondary-focus);
+      }
     }
 
-    &:focus {
-      background-color: var(--secondary-focus);
-    }
-  }
-}
+    // Contrast
+    &.contrast {
+      --color: var(--contrast);
 
-// Link .contrast
-@if $enable-classes {
-  a.contrast {
-    color: var(--contrast);
-    text-decoration: underline;
+      &:hover,
+      &:active,
+      &:focus {
+        --color: var(--contrast-hover);
+      }
 
-    &:hover,
-    &:active,
-    &:focus {
-      color: var(--contrast-hover);
-    }
-
-    &:focus {
-      background-color: var(--contrast-focus);
+      &:focus {
+        --background-color: var(--contrast-focus);
+      }
     }
   }
 }
 
 // Headings
-// Because vertical margins can collapse, we avoid `margin-top`
 h1,
 h2,
 h3,
@@ -140,44 +138,30 @@ h4,
 h5,
 h6 {
   margin-top: 0;
-  margin-bottom: var(--spacing-typography);
-  font-family: var(--titles-font);
-  font-weight: var(--titles-weight);
+  margin-bottom: var(--typography-spacing-vertical);
+  color: var(--color);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
 }
 
 h1 {
-  margin-bottom: calc(var(--spacing-typography) * 2);
-  color: var(--h1);
-  font-size: var(--h1-size);
+  --color: var(--h1-color);
 }
-
 h2 {
-  margin-bottom: calc(var(--spacing-typography) * 1.75);
-  color: var(--h2);
-  font-size: var(--h2-size);
+  --color: var(--h2-color);
 }
-
 h3 {
-  margin-bottom: calc(var(--spacing-typography) * 1.5);
-  color: var(--h3);
-  font-size: var(--h3-size);
+  --color: var(--h3-color);
 }
-
 h4 {
-  margin-bottom: calc(var(--spacing-typography) * 1.25);
-  color: var(--h4);
-  font-size: var(--h4-size);
+  --color: var(--h4-color);
 }
-
 h5 {
-  margin-bottom: calc(var(--spacing-typography) * 1.125);
-  color: var(--h5);
-  font-size: var(--h5-size);
+  --color: var(--h5-color);
 }
-
 h6 {
-  color: var(--h6);
-  font-size: var(--h6-size);
+  --color: var(--h6-color);
 }
 
 // Margin-top for headings after a typography block
@@ -191,88 +175,49 @@ p,
 pre,
 table,
 ul {
-  & ~ h1 {
-    margin-top: calc(var(--spacing-typography) * 2);
-  }
-
-  & ~ h2 {
-    margin-top: calc(var(--spacing-typography) * 1.75);
-  }
-
-  & ~ h3 {
-    margin-top: calc(var(--spacing-typography) * 1.5);
-  }
-
-  & ~ h4 {
-    margin-top: calc(var(--spacing-typography) * 1.25);
-  }
-
-  & ~ h5 {
-    margin-top: calc(var(--spacing-typography) * 1.125);
-  }
-
+  & ~ h1,
+  & ~ h2,
+  & ~ h3,
+  & ~ h4,
+  & ~ h5,
   & ~ h6 {
-    margin-top: calc(var(--spacing-typography));
+    margin-top: var(--typography-spacing-vertical);
   }
 }
 
-
-// Multi-level heading
+// Heading group
 hgroup {
-  margin-bottom: var(--spacing-typography);
+  margin-bottom: var(--typography-spacing-vertical);
 
-  *{
+  > * {
     margin-bottom: 0;
   }
 
   > *:last-child {
-    color: var(--muted-text);
+    --color: var(--muted-color);
     font-family: unset;
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: unset;
   }
 }
 
 // Paragraphs
 p {
-  margin-bottom: var(--spacing-typography);
+  margin-bottom: var(--typography-spacing-vertical);
 }
 
 // Small
 small {
-  font-size: 85%;
-
-  @if map-get($breakpoints, "sm") and $enable-responsive-typography {
-    @media (min-width: map-get($breakpoints, "sm")) {
-      font-size: 83%;
-    }
-  }
-
-  @if map-get($breakpoints, "md") and $enable-responsive-typography {
-    @media (min-width: map-get($breakpoints, "md")) {
-      font-size: 81%;
-    }
-  }
-
-  @if map-get($breakpoints, "lg") and $enable-responsive-typography {
-    @media (min-width: map-get($breakpoints, "lg")) {
-      font-size: 79%;
-    }
-  }
-  @if map-get($breakpoints, "lg") and $enable-responsive-typography {
-    @media (min-width: map-get($breakpoints, "xl")) {
-      font-size: 77%;
-    }
-  }
+  font-size: var(--font-size);
 }
 
 // Lists
 ul,
 ol {
-  padding-left: var(--spacing-typography);
+  padding-left: var(--spacing);
 
   li {
-    margin-bottom: calc(var(--spacing-typography) / 4);
+    margin-bottom: calc(var(--typography-spacing-vertical) / 4);
   }
 }
 
@@ -280,24 +225,24 @@ ul li {
   list-style: square;
 }
 
-// Marked text
+// Highlighted text
 mark {
   padding: .125rem .25rem;
-  background: var(--mark);
-  color: var(--mark-text);
+  background-color: var(--mark-background-color);
+  color: var(--mark-color);
   vertical-align: middle;
 }
 
 // Blockquote
 blockquote {
   display: block;
-  margin: var(--spacing-typography) 0;
-  padding: var(--spacing-gutter);
-  border-left: .25rem solid var(--muted-border);
+  margin: var(--typography-spacing-vertical) 0;
+  padding: var(--spacing);
+  border-left: .25rem solid var(--blockquote-border-color);
 
   footer {
-    margin-top: calc(var(--spacing-typography) / 2);
-    color: var(--muted-text);
+    margin-top: calc(var(--typography-spacing-vertical) / 2);
+    color: var(--blockquote-footer-color);
   }
 }
 
@@ -311,13 +256,13 @@ abbr[title] {
 
 // Ins
 ins {
-  color: var(--valid);
+  color: var(--ins-color);
   text-decoration: none;
 }
 
 // del
 del {
-  color: var(--invalid);
+  color: var(--del-color);
 }
 
 // selection
