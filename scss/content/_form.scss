@@ -89,9 +89,9 @@ textarea {
   border-style: none;
 }
 
-//  Restore the focus outline styles unset by the previous rule in Firefox
+//  Remove the focus outline in Firefox
 :-moz-focusring {
-  outline: 1px dotted ButtonText;
+  outline: none;
 }
 
 // Remove the additional :invalid styles in Firefox
@@ -120,14 +120,14 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
   height: calc(
     (1rem * var(--line-height)) +
     (var(--form-element-spacing-vertical) * 2) +
-    (var(--form-element-border-width) * 2)
+    (var(--border-width) * 2)
   );
 }
 
 // Fieldset
 fieldset {
   margin: 0;
-  margin-bottom: var(--spacing-typography);
+  margin-bottom: var(--spacing);
   padding: 0;
   border: 0;
 }
@@ -136,15 +136,14 @@ fieldset {
 label,
 fieldset legend {
   display: block;
-  margin-bottom: var(--spacing-form-element);
+  margin-bottom: calc(var(--spacing) / 4);
   vertical-align: middle;
 }
 
-// Global layout
+// Blocks, 100%
 input:not([type="checkbox"]):not([type="radio"]),
 select,
-textarea,
-form small {
+textarea {
   display: block;
   width: 100%;
 }
@@ -164,13 +163,17 @@ textarea {
 input,
 select,
 textarea {
-  border: var(--form-element-border-width) solid var(--input-border);
-  border-radius: var(--block-round);
+  --background-color: var(--form-element-background-color);
+  --border-color: var(--form-element-border-color);
+  --color: var(--form-element-color);
+  --box-shadow: none;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
   outline: none;
-  background-color: var(--input-background);
-  color: var(--text);
-  font-weight: var(--form-element-weight);
-
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow);
+  color: var(--color);
+  font-weight: var(--font-weight);
 
   @if $enable-transitions {
     transition:
@@ -179,102 +182,106 @@ textarea {
       color var(--transition),
       box-shadow var(--transition);
   }
+}
 
-  &::placeholder,
-  &::-webkit-input-placeholder {
-    color: var(--muted-text);
-    opacity: 1;
-  }
-
+// Active & Focus
+input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([readonly]),
+select,
+textarea {
   &:active,
   &:focus {
-    border-color: var(--input-hover-border);
-    background-color: var(--input-hover-background);
+    --background-color: var(--form-element-active-background-color);
+  }
+}
+
+// Active & Focus
+input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([role="switch"]):not([readonly]),
+select,
+textarea {
+  &:active,
+  &:focus {
+    --border-color: var(--form-element-active-border-color);
+  }
+}
+
+// Focus
+input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="range"]):not([type="file"]):not([readonly]),
+select,
+textarea {
+  &:focus {
+    --box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
+  }
+}
+
+// Disabled
+input:not([type="submit"]):not([type="button"]):not([type="reset"]),
+select,
+textarea {
+  &[disabled] {
+    --background-color: var(--form-element-disabled-background-color);
+    --border-color: var(--form-element-disabled-border-color);
+    opacity: .375;
+  }
+}
+
+// Aria-valid
+input,
+select,
+textarea {
+
+  &[aria-invalid] {
+    padding-right: 2rem;
+    background-position: center right .75rem;
+    background-repeat: no-repeat;
+    background-size: 1rem auto;
   }
 
-  &[readonly],
-  &[disabled] {
-    border-color: var(--muted-border);
-    box-shadow: none;
-
-    & ~ label {
-      color: var(--muted-text);
-    }
+  &[aria-invalid="false"] {
+    --border-color: var(--form-element-valid-border-color);
+    background-image: var(--icon-valid);
 
     &:active,
     &:focus {
       @if $enable-important {
-        box-shadow: none !important;
+        --border-color: var(--form-element-valid-active-border-color) !important;
       }
       @else {
-        box-shadow: none;
+        --border-color: var(--form-element-valid-active-border-color);
       }
     }
   }
 
-  &[disabled]:not([type="reset"]):not([type="submit"]):not([type="button"]) {
-    background-color: var(--muted-background);
-  }
+  &[aria-invalid="true"] {
+    --border-color: var(--form-element-invalid-border-color);
+    background-image: var(--icon-invalid);
 
-  &[disabled] {
-    opacity: .66;
-  }
-
-  // Validation states: with aria-invalid only
-  @if $enable-classes {
-    .valid,
-    .invalid,
-    &[aria-invalid] {
-      padding-right: 2rem;
-      background-position: center right .75rem;
-      background-repeat: no-repeat;
-      background-size: 1rem auto;
-    }
-
-    .valid,
-    &[aria-invalid="false"] {
-      background-image: var(--icon-valid);
-    }
-
-    .invalid,
-    &[aria-invalid="true"]{
-      background-image: var(--icon-invalid);
-    }
-  }
-
-  // Validation states: with aria-invalid and classes (.valid & .invalid)
-  @else {
-    &[aria-invalid] {
-      padding-right: 2rem;
-      background-position: center right .75rem;
-      background-repeat: no-repeat;
-      background-size: 1rem auto;
-    }
-
-    &[aria-invalid="false"] {
-      background-image: var(--icon-valid);
-    }
-
-    &[aria-invalid="true"]{
-      background-image: var(--icon-invalid);
+    &:active,
+    &:focus {
+      @if $enable-important {
+        --border-color: var(--form-element-invalid-active-border-color) !important;
+      }
+      @else {
+        --border-color: var(--form-element-invalid-active-border-color);
+      }
     }
   }
 }
 
-// Margin bottom (Not Checkboxes andRadios)
+// Placeholder
+input::placeholder,
+input::-webkit-input-placeholder,
+textarea::placeholder,
+textarea::-webkit-input-placeholder,
+select:invalid {
+  color: var(--form-element-placeholder-color);
+  opacity: 1;
+}
+
+// Margin bottom (Not Checkboxes and Radios)
 input:not([type="checkbox"]):not([type="radio"]),
 select,
 textarea {
-  margin-bottom: var(--spacing-typography);
-}
-
-// Focus styles (Not Range and File)
-input:not([type="range"]):not([type="file"]),
-select,
-textarea {
-  &:focus  {
-    box-shadow: 0 0 0 var(--form-element-outline-width) var(--input-focus);
- }
+  margin-bottom: var(--spacing);
 }
 
 // Select
@@ -296,16 +303,15 @@ select {
 }
 
 // Helper
-form small {
-  color: var(--muted-text);
-}
-
 input,
 select,
 textarea {
   + small {
-    margin-top: calc(var(--spacing-typography) * -0.75);
-    margin-bottom: var(--spacing-typography);
+    display: block;
+    width: 100%;
+    margin-top: calc(var(--spacing) * -0.75);
+    margin-bottom: var(--spacing);
+    color: var(--muted-color);
   }
 }
 
@@ -314,6 +320,6 @@ label {
   & > input,
   & > select,
   & > textarea {
-    margin-top: var(--spacing-form-element);
+    margin-top: calc(var(--spacing) / 4);
   }
 }

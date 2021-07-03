@@ -2,8 +2,11 @@
 // Automatically enabled if user has Dark mode enabled
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --nav-background: #{rgba(darken($grey-900, 6%), .8)};
-    --nav-border:     #{rgba($grey-500, .2)};
+    --invalid-color: #{rgba($red-900, .5)};
+    --valid-color: #{rgba($green-800, .5)};
+    --nav-background-color: #{rgba(darken($grey-900, 6%), .8)};
+    --nav-border-color: #{rgba($grey-500, .2)};
+    --nav-logo-color: #{mix($black, $grey-900)};
   }
 }
 
@@ -12,6 +15,9 @@
 // Dark theme (Forced) [Additions for docs]
 // Enabled if forced with data-theme="dark"
 [data-theme="dark"] {
+  --invalid-color: #{rgba($red-900, .5)};
+  --valid-color: #{rgba($green-800, .5)};
   --nav-background: #{rgba(darken($grey-900, 6%), .8)};
-  --nav-border:     #{rgba($grey-500, .2)};
+  --nav-border-color: #{rgba($grey-500, .2)};
+  --nav-logo-color: #{mix($black, $grey-900)};
 }

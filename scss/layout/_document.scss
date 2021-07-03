@@ -36,44 +36,12 @@ html {
   -moz-tab-size: 4; // 5
   -ms-text-size-adjust: 100%; // 6
   -webkit-text-size-adjust: 100%; // 6
-  background: var(--background);
-  color: var(--text);
-  font-family: var(--text-font);
-  font-size: var(--base-font-xs);
-  font-weight: var(--text-weight);
+  background-color: var(--background-color);
+  color: var(--color);
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
   line-height: var(--line-height); // 1
   text-rendering: optimizeLegibility;
   cursor: default; // 4
-
-  @if map-get($breakpoints, "sm") and
-    $enable-responsive-typography {
-
-    @media (min-width: map-get($breakpoints, "sm")) {
-      font-size: var(--base-font-sm);
-    }
-  }
-
-  @if map-get($breakpoints, "md") and
-    $enable-responsive-typography {
-
-    @media (min-width: map-get($breakpoints, "md")) {
-      font-size: var(--base-font-md);
-    }
-  }
-
-  @if map-get($breakpoints, "lg") and
-    $enable-responsive-typography {
-
-    @media (min-width: map-get($breakpoints, "lg")) {
-      font-size: var(--base-font-lg);
-    }
-  }
-
-  @if map-get($breakpoints, "xl") and
-    $enable-responsive-typography {
-
-    @media (min-width: map-get($breakpoints, "xl")) {
-      font-size: var(--base-font-xl);
-    }
-  }
 }

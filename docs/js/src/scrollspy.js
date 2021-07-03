@@ -5,7 +5,7 @@
  * Require `most-visible.js` from https://github.com/andyexeter/most-visible
  *
  * Pico.css - https://picocss.com
- * Copyright 2019 - Licensed under MIT
+ * Copyright 2019-2021 - Licensed under MIT
  */
 
 (function() {

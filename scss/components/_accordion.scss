@@ -5,22 +5,30 @@
 
 details {
   display: block;
-  margin-bottom: var(--spacing-typography);
-  padding-bottom: calc(var(--spacing-typography) / 2);
-  border-bottom: 1px solid var(--muted-border);
+  margin-bottom: var(--spacing);
+  padding-bottom: calc(var(--spacing) / 2);
+  border-bottom: var(--border-width) solid var(--accordion-border-color);
 
   summary {
+    color: var(--accordion-close-summary-color);
     line-height: 1rem;
     list-style-type: none;
+    list-style-type: none;
     cursor: pointer;
+
+    @if $enable-transitions {
+      transition: color var(--transition);
+    }
 
     // Reset marker
     &::-webkit-details-marker {
       display: none;
     }
+
     &::marker {
       display: none;
     }
+
     &::-moz-list-bullet {
       list-style-type: none;
     }
@@ -45,10 +53,11 @@ details {
 
     &:focus {
       outline: none;
+      color: var(--accordion-active-summary-color);
     }
 
     ~ * {
-      margin-top: calc(var(--spacing-typography) / 2);
+      margin-top: calc(var(--spacing) / 2);
 
       ~ * {
         margin-top: 0;
@@ -59,9 +68,12 @@ details {
   // Open
   &[open] {
 
-    summary {
-      margin-bottom: calc(var(--spacing-typography) / 4);
-      color: var(--muted-text);
+    > summary {
+      margin-bottom: calc(var(--spacing) / 4);
+
+      &:not(:focus) {
+        color: var(--accordion-open-summary-color);
+      }
 
       &::after {
         transform: rotate(0);

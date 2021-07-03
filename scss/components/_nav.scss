@@ -2,7 +2,7 @@
  * Nav
  */
 
-// Inline
+// Horizontal Nav
 nav,
 nav ul {
   display: flex;
@@ -19,17 +19,17 @@ nav {
     list-style: none;
 
     &:first-of-type {
-      margin-left: calc(var(--spacing-gutter) * -0.5);
+      margin-left: calc(var(--spacing) * -0.5);
     }
     &:last-of-type {
-      margin-right: calc(var(--spacing-gutter) * -0.5);
+      margin-right: calc(var(--spacing) * -0.5);
     }
   }
 
   li {
     display: inline-block;
     margin: 0;
-    padding: var(--spacing-gutter) calc(var(--spacing-gutter) / 2);
+    padding: var(--spacing) calc(var(--spacing) / 2);
 
     // HACK: Input & Button inside Nav
     > *,
@@ -40,26 +40,15 @@ nav {
 
   a {
     display: block;
-    margin: calc(var(--spacing-gutter) * -1) calc(var(--spacing-gutter) * -0.5);
-    padding: var(--spacing-gutter) calc(var(--spacing-gutter) / 2);
-    border-radius: var(--block-round);
-
-    @if $enable-important {
-      text-decoration: none !important;
-    }
-    @else {
-      text-decoration: none;
-    }
+    margin: calc(var(--spacing) * -1) calc(var(--spacing) * -0.5);
+    padding: var(--spacing) calc(var(--spacing) / 2);
+    border-radius: var(--border-radius);
+    text-decoration: none;
 
     &:hover,
     &:active,
     &:focus {
-      @if $enable-important {
-        text-decoration: none !important;
-      }
-      @else {
-        text-decoration: none;
-      }
+      text-decoration: none;
     }
   }
 }
@@ -75,11 +64,11 @@ aside {
   }
 
   li {
-    padding: calc(var(--spacing-gutter) / 2);
+    padding: calc(var(--spacing) / 2);
 
     a {
-      margin: calc(var(--spacing-gutter) * -0.5);
-      padding: calc(var(--spacing-gutter) / 2);
+      margin: calc(var(--spacing) * -0.5);
+      padding: calc(var(--spacing) / 2);
     }
   }
 }

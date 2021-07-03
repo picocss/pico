@@ -2,40 +2,12 @@
  * Docs: Code
  */
 
-// Custom spacings for <pre> (vertically aligned with <article> content)
-pre {
-
-  @if map-get($breakpoints, "sm") and
-    $enable-responsive-spacings {
-
-    @media (min-width: map-get($breakpoints, "sm")) {
-      padding: var(--spacing-block) calc(var(--spacing-block) * var(--spacing-factor-sm));
-    }
-  }
-
-  @if map-get($breakpoints, "md") and
-    $enable-responsive-spacings {
-
-    @media (min-width: map-get($breakpoints, "md")) {
-      padding: var(--spacing-block) calc(var(--spacing-block) * var(--spacing-factor-md));
-    }
-  }
-
-  @if map-get($breakpoints, "lg") and
-    $enable-responsive-spacings {
-
-    @media (min-width: map-get($breakpoints, "lg")) {
-      padding: var(--spacing-block) calc(var(--spacing-block) * var(--spacing-factor-lg));
-    }
-  }
-
-  @if map-get($breakpoints, "xl") and
-    $enable-responsive-spacings {
-
-    @media (min-width: map-get($breakpoints, "xl")) {
-      padding: var(--spacing-block) calc(var(--spacing-block) * var(--spacing-factor-xl));
-    }
-  }
+// Custom spacings for <pre> (Horizontally aligned with <article> content)
+section > pre {
+  margin: var(--block-spacing-vertical) 0;
+  padding: calc(var(--block-spacing-vertical) / 1.5) var(--block-spacing-horizontal);
+  background-color: var(--card-sectionning-background-color);
+  box-shadow: var(--card-box-shadow);
 }
 
 // Badge for Valid & Invalid code
@@ -57,8 +29,8 @@ pre {
     line-height: 1;
 
     @media (min-width: map-get($breakpoints, "lg")) {
-      top: var(--spacing-gutter);
-      right: var(--spacing-gutter);
+      top: var(--spacing);
+      right: var(--spacing);
     }
   }
 
@@ -71,14 +43,14 @@ pre {
 // Color for Valid & Invalid code
 [data-theme="invalid"] {
   &:before {
-    background: var(--invalid);
+    background: var(--invalid-color);
     content: 'Not so great';
   }
 }
 
 [data-theme="valid"] {
   &:before {
-    background: var(--valid);
+    background: var(--valid-color);
     content: 'Great';
   }
 }

@@ -12,7 +12,7 @@ $grey-800: hsl($grey-hue, 25%, 23%) !default;
 $grey-900: hsl($grey-hue, 30%, 15%) !default;
 
 // Light Blue
-$primary-hue: 195;
+$primary-hue: 195 !default;
 $primary-50:  hsl($primary-hue, 90%,  94%) !default;
 $primary-100: hsl($primary-hue, 88%,  86%) !default;
 $primary-200: hsl($primary-hue, 86%,  77%) !default;
@@ -28,10 +28,38 @@ $primary-900: hsl($primary-hue, 100%, 15%) !default;
 $black: #000 !default;
 $white: #FFF !default;
 
-// Miscs
-$amber-200: hsl(45,  100%, 75%) !default;
-$green-500: hsl(160, 50%,  40%) !default;
-$green-600: hsl(160, 55%,  35%) !default;
-$green-700: hsl(160, 60%,  30%) !default;
-$red-700:   hsl(0,   45%,  50%) !default;
-$red-900:   hsl(0,   45%,  40%) !default;
+// Amber
+$amber-50:  #FFF8E1 !default;
+$amber-100: #FFECB3 !default;
+$amber-200: #FFE082 !default;
+$amber-300: #FFD54F !default;
+$amber-400: #FFCA28 !default;
+$amber-500: #FFC107 !default;
+$amber-600: #FFB300 !default;
+$amber-700: #FFA000 !default;
+$amber-800: #FF8F00 !default;
+$amber-900: #FF6F00 !default;
+
+// Green
+$green-50:  #E8F5E9 !default;
+$green-100: #C8E6C9 !default;
+$green-200: #A5D6A7 !default;
+$green-300: #81C784 !default;
+$green-400: #66BB6A !default;
+$green-500: #4CAF50 !default;
+$green-600: #43A047 !default;
+$green-700: #388E3C !default;
+$green-800: #2E7D32 !default;
+$green-900: #1B5E20 !default;
+
+// Red
+$red-50:  #FFEBEE !default;
+$red-100: #FFCDD2 !default;
+$red-200: #EF9A9A !default;
+$red-300: #E57373 !default;
+$red-400: #EF5350 !default;
+$red-500: #F44336 !default;
+$red-600: #E53935 !default;
+$red-700: #D32F2F !default;
+$red-800: #C62828 !default;
+$red-900: #B71C1C !default;

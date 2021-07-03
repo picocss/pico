@@ -4,37 +4,5 @@
  */
 
 section {
-  margin-bottom: calc(var(--spacing-block) * var(--spacing-factor-xs) * 2);
-
-  @if map-get($breakpoints, "sm") and
-    $enable-responsive-spacings {
-
-    @media (min-width: map-get($breakpoints, "sm")) {
-      margin-bottom: calc(var(--spacing-block) * var(--spacing-factor-sm) * 2);
-    }
-  }
-
-  @if map-get($breakpoints, "md") and
-    $enable-responsive-spacings {
-
-    @media (min-width: map-get($breakpoints, "md")) {
-      margin-bottom: calc(var(--spacing-block) * var(--spacing-factor-md) * 2);
-    }
-  }
-
-  @if map-get($breakpoints, "lg") and
-    $enable-responsive-spacings {
-
-    @media (min-width: map-get($breakpoints, "lg")) {
-      margin-bottom: calc(var(--spacing-block) * var(--spacing-factor-lg) * 2);
-    }
-  }
-
-  @if map-get($breakpoints, "xl") and
-    $enable-responsive-spacings {
-
-    @media (min-width: map-get($breakpoints, "xl")) {
-      margin-bottom: calc(var(--spacing-block) * var(--spacing-factor-xl) * 2);
-    }
-  }
+  margin-bottom: var(--block-spacing-vertical);
 }

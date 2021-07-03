@@ -2,7 +2,7 @@
  * Grid Interaction
  *
  * Pico.css - https://picocss.com
- * Copyright 2019 - Licensed under MIT
+ * Copyright 2019-2021 - Licensed under MIT
  */
 
 (function() {

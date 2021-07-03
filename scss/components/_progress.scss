@@ -18,6 +18,7 @@ progress {
 
 // Pico
 // ––––––––––––––––––––
+
 progress {
 
   // Reset the default appearance
@@ -29,31 +30,31 @@ progress {
   display: inline-block;
   width: 100%;
   height: .5rem;
-  margin-bottom: calc(var(--spacing-typography) / 2);
+  margin-bottom: calc(var(--spacing) / 2);
   overflow: hidden;
 
   // Remove Firefox and Opera border
   border: 0;
-  border-radius: var(--block-round);
-  background-color: var(--muted-background);
+  border-radius: var(--border-radius);
+  background-color: var(--progress-background-color);
 
   // IE10 uses `color` to set the bar background-color
-  color: var(--primary);
+  color: var(--progress-color);
 
   &::-webkit-progress-bar {
-    border-radius: var(--block-round);
+    border-radius: var(--border-radius);
     background: transparent;
   }
   &[value]::-webkit-progress-value {
-    background-color: var(--primary);
+    background-color: var(--progress-color);
   }
   &::-moz-progress-bar {
-    background-color: var(--primary);
+    background-color: var(--progress-color);
   }
 
   &:indeterminate {
-    background: var(--muted-background) linear-gradient(to right, var(--primary) 30%, var(--muted-background) 30%) top left / 150% 150% no-repeat;
-    animation: progress-indeterminate 1s linear infinite;
+    background: var(--progress-background-color) linear-gradient(to right, var(--progress-color) 30%, var(--progress-background-color) 30%) top left / 150% 150% no-repeat;
+    animation: progressIndeterminate 1s linear infinite;
 
     &[value]::-webkit-progress-value {
       background-color: transparent;
@@ -64,7 +65,7 @@ progress {
   }
 }
 
-@keyframes progress-indeterminate {
+@keyframes progressIndeterminate {
   0% {
     background-position: 200% 0;
   }

@@ -13,7 +13,7 @@
   height: 1.25rem;
   margin-top: -.125rem;
   margin-right: .375rem;
-  border-width: var(--checkbox-radio-border-width);
+  border-width: var(--border-width);
   vertical-align: middle;
   cursor: pointer;
 
@@ -22,17 +22,14 @@
   }
 
   &:checked,
-  &:indeterminate {
-    border-color: var(--input-hover-border);
-    background-color: var(--input-hover-border);
+  &:checked:active,
+  &:checked:focus {
+    --background-color: var(--primary);
+    --border-color: var(--primary);
     background-image: var(--icon-checkbox);
     background-position: center;
     background-repeat: no-repeat;
     background-size: .75rem auto;
-  }
-
-  &:indeterminate {
-    background-image: var(--icon-minus);
   }
 
   & ~ label {
@@ -43,20 +40,36 @@
   }
 }
 
+// Checkboxes
+[type="checkbox"] {
+  &:indeterminate {
+    --background-color: var(--primary);
+    --border-color: var(--primary);
+    background-image: var(--icon-minus);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: .75rem auto;
+  }
+}
+
 // Radios
 [type="radio"] {
   border-radius: 50%;
 
-  &:checked {
-    border-width: .33rem;
-    border-color: var(--input-hover-border);
-    background-color: var(--input-inverse);
+  &:checked,
+  &:checked:active,
+  &:checked:focus{
+    --background-color: var(--primary-inverse);
+    border-width: .35rem;
     background-image: none;
   }
 }
 
 // Switchs
 [type="checkbox"][role="switch"] {
+  --background-color: var(--switch-background-color);
+  --border-color: var(--switch-background-color);
+  --color: var(--switch-color);
 
   // Config
   $switch-height:      1.25rem;
@@ -66,17 +79,27 @@
   // Styles
   width: $switch-width;
   height: $switch-height;
-  border: var(--switch-border-width) solid var(--input-border);
+  border: var(--border-width) solid var(--border-color);
   border-radius: $switch-height;
-  background-color: var(--input-border);
+  background-color: var(--background-color);
   line-height: $switch-height;
+
+  &:focus {
+    --background-color: var(--switch-background-color);
+    --border-color: var(--switch-background-color);
+  }
+
+  &:checked {
+    --background-color: var(--switch-checked-background-color);
+    --border-color: var(--switch-checked-background-color);
+  }
 
   &:before {
     display: block;
-    width: calc(#{$switch-height} - (var(--switch-border-width)*2));
+    width: calc(#{$switch-height} - (var(--border-width) * 2));
     height: 100%;
     border-radius: 50%;
-    background-color: var(--input-inverse);
+    background-color: var(--color);
     content: '';
 
     @if $enable-transitions {
@@ -85,13 +108,11 @@
   }
 
   &:checked {
-    border-color: var(--input-hover-border);
-    background-color: var(--input-hover-border);
     background-image: none;
 
     &::before {
       margin-right: 0;
-      margin-left: calc(#{$switch-width/2} - var(--switch-border-width));
+      margin-left: calc(#{$switch-width / 2} - var(--border-width));
     }
   }
 }

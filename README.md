@@ -13,42 +13,95 @@
   <a href="https://picocss.com/docs/">Documentation</a>
 </p>
 
-# Pico.css
+## Pico.css
 [![CSS Gzipped](https://img.badgesize.io/picocss/pico/master/css/pico.min.css?compression=gzip&color=1095c1&label=CSS%20gzipped)](https://unpkg.com/@picocss/pico@latest/css/pico.min.css)
 [![Github release](https://img.shields.io/github/v/release/picocss/pico?color=1095c1&logo=github&logoColor=white)](https://github.com/picocss/pico/releases/latest)
 [![npm version](https://img.shields.io/npm/v/@picocss/pico?color=1095c1)](https://www.npmjs.com/package/@picocss/pico)
 [![License](https://img.shields.io/badge/license-MIT-%231095c1)](https://github.com/picocss/pico/blob/master/LICENSE.md)
 
+**Class-light and semantic**  
+We use simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
 
-- **Class-light and semantic**: we use simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
+**Great styles with just one CSS file**  
+No dependencies, package manager, external files or JavaScript.
 
-- **Great styles with just one CSS file**: No dependencies, package manager, external files or JavaScript.
+**Responsive everything**  
+Elegant and consistent adaptatives spacings and typography on all devices.
 
-- **Responsive everything**: Elegant and consistent adaptatives spacings and typography on all devices.
+**Light or Dark mode**  
+Shipped with two beautiful color themes, automatically enabled according to the user preference.
 
-- **Light or Dark mode**: Shipped with two beautiful color themes, automatically enabled according to the user preference.
+## Table of contents
+
+- [Usage](#usage)
+- [Class-less version](#class-less-version)
+- [Examples](#examples)
+- [Documentation](#documentation)
+- [Variations](#variations)
+- [Contributing](#contributing)
+- [Copyright and license](#copyright-and-license)
 
 ## Usage
 
 There are 3 ways to get started with pico.css:
 
-### Install manually
+**Install manually**
+
 [Download Pico](https://github.com/picocss/pico/releases/latest) and link `/css/pico.min.css` in the `<head>` of your website.
 
 ```html
 <link rel="stylesheet" href="css/pico.min.css">
 ```
 
-### Install from CDN
+**Install from CDN**
+
 Alternatively, you can use the [unpkg CDN](https://unpkg.com/@picocss/pico@latest/) to link pico.css.
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 ```
 
-### Install with NPM
+**Install with NPM**
+
 ```shell
 npm install @picocss/pico
+```
+
+## Class-less version
+
+Pico provide a `.classless` version ([example](https://picocss.com/examples/classless)).
+
+In this version, `header`, `main` and `footer` act as container.
+
+Use the default `.classless `version if you need centered viewports:
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css">
+```
+
+Or use the `.fluid.classless` version if you need a fluid container:
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.fluid.classless.min.css">
+```
+
+Then just write pure HTML, and it should look great:
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css">
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <main>
+      <h1>Hello, world!</h1>
+    </main>
+  </body>
+</html>
 ```
 
 ## Examples
@@ -97,11 +150,14 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 - [Typography](https://picocss.com/docs/#typography)
 - [Buttons](https://picocss.com/docs/#buttons)
 - [Forms](https://picocss.com/docs/#forms)
+- [Tables](https://picocss.com/docs/#tables)
+
 
 **Components**
 - [Accordions](https://picocss.com/docs/#accordions)
 - [Cards](https://picocss.com/docs/#cards)
 - [Navs](https://picocss.com/docs/#navs)
+- [Progress](https://picocss.com/docs/#progress)
 - [Tooltips](https://picocss.com/docs/#tooltips)
 
 ## Variations

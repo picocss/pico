@@ -7,7 +7,7 @@ $enable-semantic-container: false !default;
 // Enable .container and .container-fluid
 $enable-class-container: true !default;
 
-// Enable a centered viewport
+// Enable a centered viewport for <header>, <main>, <footer> inside <body>
 // Fluid layout if disabled
 $enable-viewport: true !default;
 
@@ -16,20 +16,17 @@ $enable-viewport: true !default;
 $enable-responsive-spacings: true !default;
 
 // Enable responsive typography
-// Fixed base font if disabled
+// Fixed root element size if disabled
 $enable-responsive-typography: true !default;
 
 // Enable .classes
 // .classless version if disabled
 $enable-classes: true !default;
 
-// Enable validation states for <input>
-$enable-input-states: true !default;
-
-// Enable transitions for <a>, <button>, <input>
+// Enable transitions
 $enable-transitions: true !default;
 
-// Enable overriding with !important (used for <article>, `reduce-motion`, [type="search"])
+// Enable overriding with !important
 $enable-important: true !default;
 
 
