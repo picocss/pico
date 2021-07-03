@@ -289,10 +289,11 @@
             <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet</u>" <i>href</i>=<u>"css/pico.fluid.classless.min.css"</u>&gt;</code></pre>
             <p>These <code>.classless</code> versions are also available on <a href="https://unpkg.com/@picocss/pico@latest/">unpkg CDN</a>:</p>
 
-<pre><code><em>// Centered viewports</em>
+<pre><code><em>// Centered viewport</em>
 &lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css"</u>&gt;
+</code></pre>
 
-<em>// Fluid viewports</em>
+<pre><code><em>// Fluid viewport</em>
 &lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@picocss/pico@latest/css/pico.fluid.classless.min.css"</u>&gt;
 </code></pre>
 
@@ -312,7 +313,7 @@
   &lt;<b>main</b> <i>class</i>=<u>"container"</u>&gt;&lt;/<b>main</b>&gt;
 &lt;/<b>body</b>&gt;</code></pre>
 
-            <p>Pico use the same breakpoints and viewports sizes as <a href="https://getbootstrap.com/docs/4.3/layout/grid/#grid-options">Bootstrap</a>.</p>
+            <p>Pico use the same breakpoints and viewports sizes as <a href="https://getbootstrap.com/docs/5.0/layout/breakpoints/#available-breakpoints">Bootstrap</a>.</p>
             <figure>
               <table role="grid">
                 <thead>
@@ -328,19 +329,19 @@
                 <tbody>
                   <tr>
                     <th>Breakpoint</th>
-                    <td>&lt;576px</td>
-                    <td>≥576px</td>
-                    <td>≥768px</td>
-                    <td>≥992px</td>
-                    <td>≥1200px</td>
+                    <td>&lt;576<small>px</small></td>
+                    <td>≥576<small>px</small></td>
+                    <td>≥768<small>px</small></td>
+                    <td>≥992<small>px</small></td>
+                    <td>≥1200<small>px</small></td>
                   </tr>
                   <tr>
                     <th>Viewport</th>
-                    <td>None&nbsp;<small>(auto)</small></td>
-                    <td>540px</td>
-                    <td>720px</td>
-                    <td>960px</td>
-                    <td>1140px</td>
+                    <td>100<small>%</small></td>
+                    <td>540<small>px</small></td>
+                    <td>720<small>px</small></td>
+                    <td>960<small>px</small></td>
+                    <td>1140<small>px</small></td>
                   </tr>
                 </tbody>
               </table>
@@ -467,7 +468,7 @@
           <section id="typography">
             <hgroup>
               <h2>Typography</h2>
-              <h3>All typographic elements are responsives, allowing text to scale gracefully across devices and viewport sizes.</h3>
+              <h3>All typographic elements are responsives, allowing text to scale gracefully across devices and viewports.</h3>
             </hgroup>
             <figure>
               <table role="grid">
@@ -484,59 +485,67 @@
                 <tbody>
                   <tr>
                     <th>Base&nbsp;font</th>
-                    <td>16px</td>
-                    <td>17px</td>
-                    <td>18px</td>
-                    <td>19px</td>
-                    <td>20px</td>
+                    <td>16<small>px</small></td>
+                    <td>17<small>px</small></td>
+                    <td>18<small>px</small></td>
+                    <td>19<small>px</small></td>
+                    <td>20<small>px</small></td>
                   </tr>
                   <tr>
-                    <th>h1</th>
-                    <td>32px</td>
-                    <td>34px</td>
-                    <td>36px</td>
-                    <td>38px</td>
-                    <td>40px</td>
+                    <th><code>&lt;<b>h1</b>&gt;</code></th>
+                    <td>32<small>px</small></td>
+                    <td>34<small>px</small></td>
+                    <td>36<small>px</small></td>
+                    <td>38<small>px</small></td>
+                    <td>40<small>px</small></td>
                   </tr>
                   <tr>
-                    <th>h2</th>
-                    <td>28px</td>
-                    <td>29px</td>
-                    <td>31.5px</td>
-                    <td>33.25px</td>
-                    <td>35px</td>
+                    <th><code>&lt;<b>h2</b>&gt;</code></th>
+                    <td>28<small>px</small></td>
+                    <td>29<small>px</small></td>
+                    <td>31<small><small>.5px</small></td>
+                    <td>33<small>.25px</small></td>
+                    <td>35<small>px</small></td>
                   </tr>
                   <tr>
-                    <th>h3</th>
-                    <td>24px</td>
-                    <td>25.5px</td>
-                    <td>27px</td>
-                    <td>28.5px</td>
-                    <td>30px</td>
+                    <th><code>&lt;<b>h3</b>&gt;</code></th>
+                    <td>24<small>px</small></td>
+                    <td>25<small>.5px</small></td>
+                    <td>27<small>px</small></td>
+                    <td>28<small>.5px</small></td>
+                    <td>30<small>px</small></td>
                   </tr>
                   <tr>
-                    <th>h4</th>
-                    <td>20px</td>
-                    <td>21.25px</td>
-                    <td>22.5px</td>
-                    <td>23.75px</td>
-                    <td>25px</td>
+                    <th><code>&lt;<b>h4</b>&gt;</code></th>
+                    <td>20<small>px</small></td>
+                    <td>21<small>.25px</small></td>
+                    <td>22<small>.5px</small></td>
+                    <td>23<small>.75px</small></td>
+                    <td>25<small>px</small></td>
                   </tr>
                   <tr>
-                    <th>h5</th>
-                    <td>18px</td>
-                    <td>19.125px</td>
-                    <td>20.25px</td>
-                    <td>21.375px</td>
-                    <td>22.5px</td>
+                    <th><code>&lt;<b>h5</b>&gt;</code></th>
+                    <td>18<small>px</small></td>
+                    <td>19<small>.125px</small></td>
+                    <td>20<small>.25px</small></td>
+                    <td>21<small>.375px</small></td>
+                    <td>22<small>.5px</small></td>
                   </tr>
                   <tr>
-                    <th>h6</th>
-                    <td>16px</td>
-                    <td>17px</td>
-                    <td>18px</td>
-                    <td>19px</td>
-                    <td>20px</td>
+                    <th><code>&lt;<b>h6</b>&gt;</code></th>
+                    <td>16<small>px</small></td>
+                    <td>17<small>px</small></td>
+                    <td>18<small>px</small></td>
+                    <td>19<small>px</small></td>
+                    <td>20<small>px</small></td>
+                  </tr>
+                  <tr>
+                    <th><code>&lt;<b>small</b>&gt;</code></th>
+                    <td>14<small>px</small></td>
+                    <td>14<small>.875px</small></td>
+                    <td>15<small>.75px</small></td>
+                    <td>16<small>.625px</small></td>
+                    <td>27<small>.5px</small></td>
                   </tr>
                 </tbody>
               </table>
@@ -671,7 +680,7 @@
           <section id="forms">
             <hgroup>
               <h2>Forms</h2>
-              <h3>All form elements in pure semantic HTML and fully responsives, allowing forms to scale gracefully across devices and viewport sizes.</h3>
+              <h3>All form elements are in pure semantic HTML and fully responsives, allowing forms to scale gracefully across devices and viewports.</h3>
             </hgroup>
             <p>Input are <code><i>width</i>: <u>100%</u>;</code> by default. You can use <code>.grid</code> inside a form.</p>
             <p>All natives form elements are fully customized and themables with CSS variables.</p>
@@ -740,24 +749,28 @@
             <p><code>&lt;<b>fieldset</b>&gt;</code> are unstyled and act as a container for radios and checkboxes providing a consistent <code><i>margin-bottom</i></code> for the set.</p>
             <p><code><i>role</i>=<u>"switch"</u></code> on a <code><i>type</i>=<u>"checkbox"</u></code> enable a custom switch.</p>
             <article aria-label="Select, radios, checkboxes, switch examples">
-              <label for="country">Country</label>
-              <select id="country">
-                <option selected>Choose...</option>
-                <option>...</option>
+              <label for="fruit">Fruit</label>
+              <select id="fruit" required>
+                <option value="" selected>Select a fruit...</option>
+                <option>Banana</option>
+                <option>Watermelon</option>
+                <option>Apple</option>
+                <option>Orange</option>
+                <option>Mangoe</option>
               </select>
               <fieldset>
-                <legend>Gender</legend>
-                <label for="male">
-                  <input type="radio" id="male" name="gender" value="male" checked>
-                  Male
+                <legend>Size</legend>
+                <label for="small">
+                  <input type="radio" id="small" name="size" value="small" checked>
+                  Small
                 </label>
-                <label for="female">
-                  <input type="radio" id="female" name="gender" value="female">
-                  Female
+                <label for="medium">
+                  <input type="radio" id="medium" name="size" value="medium">
+                  Medium
                 </label>
-                <label for="other">
-                  <input type="radio" id="other" name="gender" value="other">
-                  Other
+                <label for="large">
+                  <input type="radio" id="large" name="size" value="large">
+                  Large
                 </label>
               </fieldset>
               <fieldset>
@@ -774,26 +787,26 @@
               </fieldset>
 
 <pre><code><em>&lt;!-- Select --&gt;</em>
-&lt;<b>label</b> <i>for</i>=<u>"country"</u>&gt;Country&lt;/<b>label</b>&gt;
-&lt;<b>select</b> <i>id</i>=<u>"country</u>"&gt;
-  &lt;<b>option</b> <i>selected</i>&gt;Choose...&lt;/<b>option</b>&gt;
+&lt;<b>label</b> <i>for</i>=<u>"fruit"</u>&gt;Fruit&lt;/<b>label</b>&gt;
+&lt;<b>select</b> <i>id</i>=<u>"fruit"</u> <i>required</i>&gt;
+  &lt;<b>option</b> <i>value</i>=<u>""</u> <i>selected</i>&gt;Select a fruit...&lt;/<b>option</b>&gt;
   &lt;<b>option</b>&gt;...&lt;/<b>option</b>&gt;
 &lt;/<b>select</b>&gt;
 
 <em>&lt;!-- Radios --&gt;</em>
 &lt;<b>fieldset</b>&gt;
-  &lt;<b>legend</b>&gt;Gender&lt;/<b>legend</b>&gt;
-  &lt;<b>label</b> <i>for</i>=<u>"male"</u>&gt;
-    &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"male"</u> <i>name</i>=<u>"gender"</u> <i>value</i>=<u>"male"</u> <i>checked</i>&gt;
-    Male
+  &lt;<b>legend</b>&gt;Size&lt;/<b>legend</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"small"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"small"</u> <i>name</i>=<u>"size"</u> <i>value</i>=<u>"small"</u> <i>checked</i>&gt;
+    Small
   &lt;/<b>label</b>&gt;
-  &lt;<b>label</b> <i>for</i>=<u>"female"</u>&gt;
-    &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"female"</u> <i>name</i>=<u>"gender"</u> <i>value</i>=<u>"female"</u>&gt;
-    Female
+  &lt;<b>label</b> <i>for</i>=<u>"medium"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"medium"</u> <i>name</i>=<u>"size"</u> <i>value</i>=<u>"medium"</u>&gt;
+    Medium
   &lt;/<b>label</b>&gt;
-  &lt;<b>label</b> <i>for</i>=<u>"other"</u>&gt;
-    &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"other"</u> <i>name</i>=<u>"gender"</u> <i>value</i>=<u>"other"</u>&gt;
-    Other
+  &lt;<b>label</b> <i>for</i>=<u>"large"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"large"</u> <i>name</i>=<u>"size"</u> <i>value</i>=<u>"large"</u>&gt;
+    Large
   &lt;/<b>label</b>&gt;
 &lt;/<b>fieldset</b>&gt;
 
@@ -1030,7 +1043,7 @@
           <section id="cards">
             <hgroup>
               <h2>Cards</h2>
-              <h3>A flexible container with graceful spacings across devices and viewport sizes.</h3>
+              <h3>A flexible container with graceful spacings across devices and viewports.</h3>
             </hgroup>
             <article aria-label="Card example">
               I'm a card!

@@ -98,10 +98,10 @@
   .grid {
     > * {
       padding: calc(var(--spacing) / 2) 0;
-      background: var(--secondary);
-      color: var(--secondary-inverse);
+      border-radius: var(--border-radius);
+      background: var(--code-background-color);
+      font-size: 87.5%;
       text-align: center;
-      opacity: .5;
     }
   }
 
