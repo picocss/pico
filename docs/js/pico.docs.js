@@ -6,12 +6,12 @@
  */
 
 // Imports
-import { aside } from './components/aside.js';
-import { themeSwitcher } from './components/theme-switcher.js';
-import { materialDesignColors } from './components/material-design-colors.js';
-import { colorPicker } from './components/color-picker.js';
-import { grid } from './components/grid.js';
-import { scrollspy } from './components/scrollspy.js';
+import { aside } from './src/aside.js';
+import { themeSwitcher } from './src/theme-switcher.js';
+import { materialDesignColors } from './src/material-design-colors.js';
+import { colorPicker } from './src/color-picker.js';
+import { grid } from './src/grid.js';
+import { scrollspy } from './src/scrollspy.js';
 
 // Aside initial state
 aside.init();
