@@ -8,14 +8,14 @@
 export const grid = {
 
   // Config
-  _buttons: {
+  buttons: {
     text: {
       add: 'Add column',
       remove: 'Remove column'
     },
     target:  '#grids article'
   },
-  _grid: {
+  grid: {
     current: 4,
     min: 1,
     max: 12,
@@ -42,16 +42,16 @@ export const grid = {
           <line x1="12" y1="5" x2="12" y2="19"></line>
           <line x1="5" y1="12" x2="19" y2="12">'</line>
         </svg>
-        ${this._buttons.text.add}
+        ${this.buttons.text.add}
       </button>
 
       <button class="secondary remove">
         <svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"></line>
         </svg>
-        ${this._buttons.text.remove}
+        ${this.buttons.text.remove}
       </button>`;
-    document.querySelector(this._buttons.target).before(buttons);
+    document.querySelector(this.buttons.target).before(buttons);
 
     // Add button listener
     document.querySelector('#grids button.add').addEventListener('click', function() {
@@ -73,22 +73,22 @@ export const grid = {
     let codeInner = '&lt;<b>div</b> <i>class</i>=<u>"grid"</u>&gt;\n';
 
     // Build
-    for (let col = 0; col < this._grid.current; col++) {
+    for (let col = 0; col < this.grid.current; col++) {
      htmlInner += '<div>' + (col + 1) + '</div>';
      codeInner += '  &lt;<b>div</b>&gt;' + (col+1) + '&lt;/<b>div</b>&gt;\n';
     }
 
     // Display
     codeInner += '&lt;/<b>div</b>&gt;';
-    document.querySelector(this._grid.gridTarget).innerHTML = htmlInner;
-    document.querySelector(this._grid.codeTarget).innerHTML = codeInner;
+    document.querySelector(this.grid.gridTarget).innerHTML = htmlInner;
+    document.querySelector(this.grid.codeTarget).innerHTML = codeInner;
   },
 
 
   // Add column
   addColumn() {
-    if (this._grid.current < this._grid.max) {
-      this._grid.current++;
+    if (this.grid.current < this.grid.max) {
+      this.grid.current++;
       this.generateGrid();
     }
   },
@@ -96,8 +96,8 @@ export const grid = {
 
   // Remove column
   removeColumn() {
-    if (this._grid.current > this._grid.min) {
-      this._grid.current--;
+    if (this.grid.current > this.grid.min) {
+      this.grid.current--;
       this.generateGrid();
     }
   }

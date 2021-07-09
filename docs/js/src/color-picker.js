@@ -8,17 +8,12 @@
 export const colorPicker = {
 
   // Config
-  _colors: null,
-  _buttonsTarget: '#customization article[data-theme="generated"]',
-  _selectorButton: '#customization button[data-color]',
-  _selectorSection: '#customization',
-  _buttons: null,
-  _generatedStyles: null,
-
-   // Set colors
-   set colors(colors) {
-     this._colors = colors;
-   },
+  colors: null,
+  buttonsTarget: '#customization article[data-theme="generated"]',
+  selectorButton: '#customization button[data-color]',
+  selectorSection: '#customization',
+  buttons: null,
+  generatedStyles: null,
 
   // Init
   init() {
@@ -36,24 +31,24 @@ export const colorPicker = {
 
 
     // Loop colors
-    for (const color in this._colors) {
+    for (const color in this.colors) {
       // Buttons
       innerButtons += '<button data-color="'+ color +'" aria-label="Activate '+ color +' theme"></button>';
 
       // Styles
       innerStyles += `
         button[data-color="${color}"] {
-          background-color: ${this._colors[color]['600']};
+          background-color: ${this.colors[color]['600']};
         }
         [data-theme="light"] button[data-color="${color}"]:hover,
         [data-theme="light"] button[data-color="${color}"]:active,
         [data-theme="light"] button[data-color="${color}"]:focus {
-          background-color: ${this._colors[color]['700']}; '
+          background-color: ${this.colors[color]['700']}; '
         }
         [data-theme="dark"] button[data-color="${color}"]:hover,
         [data-theme="dark"] button[data-color="${color}"]:active,
         [data-theme="dark"] button[data-color="${color}"]:focus {
-          background-color: ${this._colors[color]['500']};
+          background-color: ${this.colors[color]['500']};
         }`;
     }
 
@@ -61,11 +56,11 @@ export const colorPicker = {
     // Insert buttons
     let containerButtons = document.createElement('FIGURE');
     containerButtons.innerHTML = innerButtons;
-    document.querySelector(this._buttonsTarget).before(containerButtons);
+    document.querySelector(this.buttonsTarget).before(containerButtons);
 
     // Buttons listeners
-    this._buttons = document.querySelectorAll(this._selectorButton);
-    this._buttons.forEach(function(button) {
+    this.buttons = document.querySelectorAll(this.selectorButton);
+    this.buttons.forEach(function(button) {
       button.addEventListener('click', function(event) {
         let color = event.target.getAttribute('data-color');
         this.setActiveButton(color);
@@ -76,8 +71,8 @@ export const colorPicker = {
     // Insert CSS Styles
     let containerStyles = document.createElement('STYLE');
     containerStyles.setAttribute('title', 'color-picker');
-    this._generatedStyles = this.minifyCSS(innerStyles);
-    containerStyles.innerHTML = this._generatedStyles;
+    this.generatedStyles = this.minifyCSS(innerStyles);
+    containerStyles.innerHTML = this.generatedStyles;
     document.querySelector('head').appendChild(containerStyles);
   },
 
@@ -86,12 +81,12 @@ export const colorPicker = {
   setActiveButton(color) {
 
     // Remove all active states
-    this._buttons.forEach(function(button) {
+    this.buttons.forEach(function(button) {
       button.removeAttribute('class');
     }.bind(this));
 
     // Set active state
-    let buttonPicked = document.querySelector(this._selectorButton + '[data-color="' + color + '"]');
+    let buttonPicked = document.querySelector(this.selectorButton + '[data-color="' + color + '"]');
     buttonPicked.setAttribute('class', 'picked');
   },
 
@@ -99,7 +94,7 @@ export const colorPicker = {
   // Set active button
   generateTheme(color) {
     let name = color;
-    let data = this._colors[color];
+    let data = this.colors[color];
 
     // 1. Update name and colors in demo code
     let swaps = {
@@ -113,7 +108,7 @@ export const colorPicker = {
     }
 
     Object.keys(swaps).forEach(function(swap) {
-      let targets = document.querySelectorAll(this._selectorSection + ' ' + swap);
+      let targets = document.querySelectorAll(this.selectorSection + ' ' + swap);
       targets.forEach(function(target) {
         target.innerHTML = swaps[swap];
       }.bind(this));
@@ -151,7 +146,7 @@ export const colorPicker = {
       --switch-checked-background-color: var(--primary);
     }`;
 
-    document.querySelector('style[title="color-picker"]').innerHTML = this._generatedStyles + this.minifyCSS(innerStyles);
+    document.querySelector('style[title="color-picker"]').innerHTML = this.generatedStyles + this.minifyCSS(innerStyles);
   },
 
 
@@ -163,13 +158,13 @@ export const colorPicker = {
 
   // Hexadecimal to Rgba
   hexToRgbA(hex, alpha) {
-    var c;
-    if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
-      c= hex.substring(1).split('');
-      if(c.length== 3) {
-        c= [c[0], c[0], c[1], c[1], c[2], c[2]];
+    let c;
+    if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
+      c = hex.substring(1).split('');
+      if (c.length == 3) {
+        c = [c[0], c[0], c[1], c[1], c[2], c[2]];
       }
-      c= '0x' + c.join('');
+      c = '0x' + c.join('');
       return 'rgba(' + [(c>>16)&255, (c>>8)&255, c&255].join(', ') + ', ' + alpha + ')';
     }
     throw new Error('Bad Hex');

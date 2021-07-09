@@ -11,9 +11,9 @@
 export const scrollspy = {
 
   // Config
-  _minWidth: '992px',
-  _interval: 75,
-  _targets: {
+  minWidth: '992px',
+  interval: 75,
+  targets: {
     sections: '[role="document"] > section',
     nav: 'main aside nav',
     active: 'active',
@@ -22,7 +22,7 @@ export const scrollspy = {
 
   // Init
   init() {
-    if (window.matchMedia('(min-width: ' + this._minWidth + ')').matches) {
+    if (window.matchMedia('(min-width: ' + this.minWidth + ')').matches) {
       this.setActiveNav();
       this.scrollStop();
     }
@@ -33,17 +33,17 @@ export const scrollspy = {
   setActiveNav() {
 
     // Get active section
-    let currentSection = mostVisible(this._targets.sections).getAttribute('id');
+    let currentSection = mostVisible(this.targets.sections).getAttribute('id');
 
     // Remove all active states
-    let links = document.querySelectorAll(this._targets.nav + ' a.' + this._targets.active);
+    let links = document.querySelectorAll(this.targets.nav + ' a.' + this.targets.active);
     links.forEach(function(link) {
-      link.classList.remove(this._targets.active);
+      link.classList.remove(this.targets.active);
     }.bind(this));
 
     // Set active state
-    let activeLink = document.querySelector(this._targets.nav + ' a[href="#' + currentSection + '"]');
-    activeLink.classList.add(this._targets.active);
+    let activeLink = document.querySelector(this.targets.nav + ' a[href="#' + currentSection + '"]');
+    activeLink.classList.add(this.targets.active);
 
     // Open details parent
     activeLink.closest('details').setAttribute('open', '');
@@ -57,7 +57,7 @@ export const scrollspy = {
       window.clearTimeout(isScrolling);
       isScrolling = setTimeout(function() {
         this.setActiveNav();
-      }.bind(this), this._interval);
+      }.bind(this), this.interval);
     }.bind(this), false);
   }
 }

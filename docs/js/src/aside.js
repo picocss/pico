@@ -8,8 +8,8 @@
 export const aside = {
 
   // Config
-  _minWidth: '992px',
-  _targets: {
+  minWidth: '992px',
+  targets: {
     nav: 'aside nav',
     details: 'aside details',
   },
@@ -17,9 +17,9 @@ export const aside = {
 
   // Init
   init() {
-    if (window.matchMedia('(min-width: ' + this._minWidth + ')').matches) {
-      let nav = document.querySelector(this._targets.nav);
-      let details = document.querySelectorAll(this._targets.details);
+    if (window.matchMedia('(min-width: ' + this.minWidth + ')').matches) {
+      let nav = document.querySelector(this.targets.nav);
+      let details = document.querySelectorAll(this.targets.details);
       if (nav.clientHeight < nav.scrollHeight) {
         details.forEach(function(detail) {
           detail.removeAttribute("open");

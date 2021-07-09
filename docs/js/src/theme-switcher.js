@@ -8,12 +8,13 @@
 export const themeSwitcher = {
 
   // Config
-  _change: {
+  _scheme: 'auto',
+  change: {
     light: '<i>Turn on dark mode</i>',
     dark: '<i>Turn off dark mode</i>'
   },
-  _buttonsTarget: '.theme-switcher',
-  _scheme: 'auto',
+  buttonsTarget: '.theme-switcher',
+
 
 
   // Init
@@ -36,10 +37,10 @@ export const themeSwitcher = {
 
   // Init switchers
   initSwitchers() {
-    const buttons = document.querySelectorAll(this._buttonsTarget);
+    const buttons = document.querySelectorAll(this.buttonsTarget);
     buttons.forEach(function(button) {
       button.addEventListener('click', function(event) {
-        if (this._scheme == 'dark') {
+        if (this.scheme == 'dark') {
           this.scheme = 'light';
         }
         else {
@@ -82,21 +83,27 @@ export const themeSwitcher = {
   },
 
 
+  // Get scheme
+  get scheme() {
+    return this._scheme;
+  },
+
+
   // Apply scheme
   applyScheme() {
 
     // Root attribute
-    document.querySelector('html').setAttribute('data-theme', this._scheme);
+    document.querySelector('html').setAttribute('data-theme', this.scheme);
 
     // Buttons text
-    const buttons = document.querySelectorAll(this._buttonsTarget);
+    const buttons = document.querySelectorAll(this.buttonsTarget);
     let text;
     buttons.forEach(function(button) {
-      if (this._scheme == 'dark') {
-        text = this._change.dark;
+      if (this.scheme == 'dark') {
+        text = this.change.dark;
       }
       else {
-        text = this._change.light;
+        text = this.change.light;
       }
       button.innerHTML = text;
       button.setAttribute('aria-label', text.replace(/<[^>]*>?/gm, ''));
