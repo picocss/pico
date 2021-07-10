@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>Pico.css • Graceful & Minimal CSS design system</title>
-    <link rel="shortcut icon" href="img/favicon.ico">
+    <link rel="shortcut icon" href="https://picocss.com/favicon.ico">
     <link rel="stylesheet" href="../css/pico.min.css">
     <link rel="stylesheet" href="css/pico.docs.min.css">
   </head>
@@ -133,9 +133,9 @@
           <section id="themes">
             <hgroup>
               <h2>Themes</h2>
-              <h3>Pico is shipped with 2 consistents themes: Light & Dark.</h3>
+              <h3>Pico is shipped with 2 consistent themes: Light & Dark.</h3>
             </hgroup>
-            <p>The Light theme is used by default. The Dark theme is automatically enabled if user has dark mode enabled <code><i>prefers-color-scheme</i>: <u>dark</u></code></p>
+            <p>The Light theme is used by default. The Dark theme is automatically enabled if the user has dark mode enabled <code><i>prefers-color-scheme</i>: <u>dark</u></code></p>
             <article aria-label="Theme switcher">
               <button class="contrast theme-switcher">...</button>
             </article>
@@ -186,7 +186,7 @@
                 </div>
                 <fieldset>
                   <label for="remember">
-                    <input type="checkbox" role="switch" id="remember" name="remember" checked aria-checked="true">
+                    <input type="checkbox" role="switch" id="remember" name="remember" checked>
                     Remember me
                   </label>
                 </fieldset>
@@ -245,7 +245,7 @@
 
             <p>You can find all the CSS variables used in the default theme here: <a href="https://github.com/picocss/pico/blob/master/css/themes/default.css">css/themes/default.css</a></p>
             <h4>Importing Pico SASS library</h4>
-            <p>It is recommended to customize Pico by importing SASS source files in your project. This way you can keep Pico up to date without conflicts since Pico code and your custom code are separated.</p>
+            <p>It is recommended to customize Pico by importing SASS source files into your project. This way you can keep Pico up to date without conflicts since Pico code and your custom code are separated.</p>
             <p>Compile the SASS file to CSS to get a custom version of Pico.</p>
 
 <pre><code><em>/* Custom <span class="name"> </span>version */</em>
@@ -258,7 +258,7 @@
 <em>// Import full Pico source code</em>
 <b>@import</b> <u>"path/pico"</u>;</code></pre>
 
-            <p>Alternatively, you can create a custom theme and import it in your project with the components you need.</p>
+            <p>Alternatively, you can create a custom theme and import it into your project with the components you need.</p>
 
 <pre><code><em>/* Custom <span class="name"> </span>version */</em>
 
@@ -271,7 +271,7 @@
 <em>...</em>
 </code></pre>
 
-            <p>This allows to create a lighter version with only the components that are useful to you. Example here: <a href="https://github.com/picocss/pico/blob/master/scss/pico.slim.scss">scss/pico.slim.scss</a>.</p>
+            <p>This allows you to create a lighter version with only the components that are useful to you. Example here: <a href="https://github.com/picocss/pico/blob/master/scss/pico.slim.scss">scss/pico.slim.scss</a>.</p>
           </section><!-- ./ Docs: Customization -->
 
           <!-- Docs: Classless -->
@@ -280,8 +280,8 @@
               <h2>Class-less version</h2>
               <h3>For wild HTML purists!</h3>
             </hgroup>
-            <p>Pico provide a <code>.classless</code> version (<a href="https://picocss.com/examples/classless/">example</a>).</p>
-            <p>In this version, <code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code> and <code>&lt;<b>footer</b>&gt;</code> act as <a href="#containers">containers</a> to define a centered or a fluid viewport.</p>
+            <p>Pico provides a <code>.classless</code> version (<a href="https://picocss.com/examples/classless/">example</a>).</p>
+            <p>In this version, <code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code>, and <code>&lt;<b>footer</b>&gt;</code> act as <a href="#containers">containers</a> to define a centered or a fluid viewport.</p>
             <p><strong>Usage:</strong></p>
             <p>Use the default <code>.classless</code> version if you need centered viewports:</p>
             <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet</u>" <i>href</i>=<u>"css/pico.classless.min.css"</u>&gt;</code></pre>
@@ -396,9 +396,9 @@
           <section id="scroller">
             <hgroup>
               <h2>Horizontal scroller</h2>
-              <h3><code>&lt;<b>figure</b>&gt;</code> act as a container to make any content scrollable horizontally.</h3>
+              <h3><code>&lt;<b>figure</b>&gt;</code> acts as a container to make any content scrollable horizontally.</h3>
             </hgroup>
-            <p>Useful to have responsives <code>&lt;<b>table</b>&gt;</code></p>
+            <p>Useful to have responsive <code>&lt;<b>table</b>&gt;</code></p>
             <figure>
               <table role="grid">
                 <thead>
@@ -503,7 +503,7 @@
                     <th><code>&lt;<b>h2</b>&gt;</code></th>
                     <td>28<small>px</small></td>
                     <td>29<small>px</small></td>
-                    <td>31<small><small>.5px</small></td>
+                    <td>31<small>.5px</small></td>
                     <td>33<small>.25px</small></td>
                     <td>35<small>px</small></td>
                   </tr>
@@ -680,10 +680,10 @@
           <section id="forms">
             <hgroup>
               <h2>Forms</h2>
-              <h3>All form elements are in pure semantic HTML and fully responsives, allowing forms to scale gracefully across devices and viewports.</h3>
+              <h3>All form elements are in pure semantic HTML and fully responsive, allowing forms to scale gracefully across devices and viewports.</h3>
             </hgroup>
-            <p>Input are <code><i>width</i>: <u>100%</u>;</code> by default. You can use <code>.grid</code> inside a form.</p>
-            <p>All natives form elements are fully customized and themables with CSS variables.</p>
+            <p>Inputs are <code><i>width</i>: <u>100%</u>;</code> by default. You can use <code>.grid</code> inside a form.</p>
+            <p>All natives form elements are fully customizable and themable with CSS variables.</p>
             <article aria-label="Form example">
               <form>
                 <div class="grid">
@@ -781,7 +781,7 @@
               </fieldset>
               <fieldset>
                 <label for="switch">
-                  <input type="checkbox" id="switch" name="switch" role="switch" aria-checked="false">
+                  <input type="checkbox" id="switch" name="switch" role="switch">
                   Publish on my profile
                 </label>
               </fieldset>
@@ -1211,7 +1211,7 @@
           <section id="love">
             <h2>We love <code>.classes</code></h2>
             <p>As a starting point, Pico chose to be as neutral and semantic as possible using very few <code>.classes</code></p>
-            <p>But off course, <code>.classes</code> are not a bad practice at all.</p>
+            <p>But of course, <code>.classes</code> are not a bad practice at all.</p>
             <p>Feel free to use <em>modifiers</em>.</p>
             <div data-theme="valid">
               <pre><code>&lt;<b>button</b> <i>class</i>=<u>"warning"</u>&gt;Action&lt;/<b>button</b>&gt;<br></code></pre>
@@ -1239,7 +1239,7 @@
 
     <!-- JavaScript -->
     <script src="https://unpkg.com/most-visible@1.5.0/dist/most-visible.min.js"></script>
-    <script type="module" src="js/pico.docs.min.js"></script>
+    <script src="js/pico.docs.min.js"></script>
 
   </body>
 

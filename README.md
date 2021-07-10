@@ -23,10 +23,10 @@
 We use simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
 
 **Great styles with just one CSS file**  
-No dependencies, package manager, external files or JavaScript.
+No dependencies, package manager, external files, or JavaScript.
 
 **Responsive everything**  
-Elegant and consistent adaptatives spacings and typography on all devices.
+Elegant and consistent adaptative spacings and typography on all devices.
 
 **Light or Dark mode**  
 Shipped with two beautiful color themes, automatically enabled according to the user preference.

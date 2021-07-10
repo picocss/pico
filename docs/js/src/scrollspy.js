@@ -53,7 +53,7 @@ export const scrollspy = {
   // Scroll stop
   scrollStop() {
     let isScrolling;
-    window.addEventListener('scroll', function (event) {
+    window.addEventListener('scroll', function(event) {
       window.clearTimeout(isScrolling);
       isScrolling = setTimeout(function() {
         this.setActiveNav();

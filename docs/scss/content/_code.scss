@@ -36,7 +36,7 @@ section > pre {
 
   // Spacing for Valid & Invalid badge
   code {
-    padding: 1rem 0;
+    padding: calc(var(--spacing) * 1.625) 0;
   }
 }
 

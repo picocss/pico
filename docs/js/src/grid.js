@@ -13,7 +13,7 @@ export const grid = {
       add: 'Add column',
       remove: 'Remove column'
     },
-    target:  '#grids article'
+    target: '#grids article'
   },
   grid: {
     current: 4,
@@ -74,8 +74,8 @@ export const grid = {
 
     // Build
     for (let col = 0; col < this.grid.current; col++) {
-     htmlInner += '<div>' + (col + 1) + '</div>';
-     codeInner += '  &lt;<b>div</b>&gt;' + (col+1) + '&lt;/<b>div</b>&gt;\n';
+      htmlInner += '<div>' + (col + 1) + '</div>';
+      codeInner += '  &lt;<b>div</b>&gt;' + (col + 1) + '&lt;/<b>div</b>&gt;\n';
     }
 
     // Display
