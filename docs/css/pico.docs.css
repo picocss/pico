@@ -356,7 +356,7 @@ section > pre {
 
 [data-theme="invalid"] code,
 [data-theme="valid"] code {
-  padding: 1rem 0;
+  padding: calc(var(--spacing) * 1.625) 0;
 }
 
 [data-theme="invalid"]:before {

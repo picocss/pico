@@ -1,125 +1,112 @@
-/*!
- * Theme Switcher
+/*
+ * Theme switcher
  *
  * Pico.css - https://picocss.com
  * Copyright 2019-2021 - Licensed under MIT
  */
 
-(function() {
+export const themeSwitcher = {
 
-  /**
-   * Config
-   */
-
-  var switcher = {
-    button: {
-      element:    'BUTTON',
-      class:      'contrast switcher theme-switcher',
-      on:         '<i>Turn on dark mode</i>',
-      off:        '<i>Turn off dark mode</i>'
-    },
-    target:       'body', // Button append in target
-    selector:     'button.theme-switcher',  // Button selector in Dom
-    currentTheme: systemColorScheme()
-  };
+  // Config
+  _scheme: 'auto',
+  change: {
+    light: '<i>Turn on dark mode</i>',
+    dark: '<i>Turn off dark mode</i>'
+  },
+  buttonsTarget: '.theme-switcher',
 
 
 
-  /**
-   * Init
-   */
+  // Init
+  init() {
+    this.scheme = this._scheme;
+    this.initSwitchers();
+  },
 
-  themeSwitcher();
 
-
-
-  /**
-   * Get System Color Scheme
-   *
-   * @return {string}
-   */
-
-  function systemColorScheme() {
+  // Prefered color scheme
+  get preferedColorScheme() {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark';
     }
     else {
       return 'light';
     }
-  }
+  },
 
 
-
-  /**
-   * Display Theme Switcher
-   */
-
-  function themeSwitcher() {
-
-    // Insert Switcher
-    var button = document.createElement(switcher.button.element);
-    button.className = switcher.button.class;
-    document.querySelector(switcher.target).appendChild(button);
-
-    // Set Current Theme
-    setTheme(switcher.currentTheme);
-
-    // Click Listener on Switcher
-    var switchers = document.querySelectorAll(switcher.selector);
-    for (var i = 0; i < switchers.length; i++) {
-      switchers[i].addEventListener('click', function(event) {
-
-        // Switch Theme
-        if (switcher.currentTheme == 'light') {
-          setTheme('dark');
+  // Init switchers
+  initSwitchers() {
+    const buttons = document.querySelectorAll(this.buttonsTarget);
+    buttons.forEach(function(button) {
+      button.addEventListener('click', function(event) {
+        if (this.scheme == 'dark') {
+          this.scheme = 'light';
         }
         else {
-          setTheme('light');
+          this.scheme = 'dark';
         }
+      }.bind(this), false);
+    }.bind(this));
+  },
 
-      }, false);
+
+  // Add new button
+  addButton(config) {
+
+    // Insert Switcher
+    let button = document.createElement(config.tag);
+    button.className = config.class;
+    document.querySelector(config.target).appendChild(button);
+  },
+
+
+  // Set scheme
+  set scheme(scheme) {
+
+    if (scheme == 'auto') {
+      if (this.preferedColorScheme == 'dark') {
+        this._scheme = 'dark';
+      }
+      else {
+        this._scheme = 'light';
+      }
     }
+
+    // Set to Dark
+    else if (scheme == 'dark' || scheme == 'light') {
+      this._scheme = scheme;
+    }
+
+    // Set to Apply theme
+    this.applyScheme();
+  },
+
+
+  // Get scheme
+  get scheme() {
+    return this._scheme;
+  },
+
+
+  // Apply scheme
+  applyScheme() {
+
+    // Root attribute
+    document.querySelector('html').setAttribute('data-theme', this.scheme);
+
+    // Buttons text
+    const buttons = document.querySelectorAll(this.buttonsTarget);
+    let text;
+    buttons.forEach(function(button) {
+      if (this.scheme == 'dark') {
+        text = this.change.dark;
+      }
+      else {
+        text = this.change.light;
+      }
+      button.innerHTML = text;
+      button.setAttribute('aria-label', text.replace(/<[^>]*>?/gm, ''));
+    }.bind(this));
   }
-
-
-
-  /**
-   * Set Theme
-   *
-   * @param {string} set
-   */
-
-  function setTheme(set) {
-
-    // Text toggle
-    if (set == 'light') {
-      var label = switcher.button.on;
-    }
-    else {
-      var label = switcher.button.off;
-    }
-
-    // Apply theme
-    document.querySelector('html').setAttribute('data-theme', set);
-    var switchers = document.querySelectorAll(switcher.selector);
-    for (var i = 0; i < switchers.length; i++) {
-      switchers[i].innerHTML = label;
-      switchers[i].setAttribute('aria-label', stripTags(label));
-    }
-    switcher.currentTheme = set;
-  }
-
-
-
-  /**
-   * Strip tags
-   *
-   * @param {string} html
-   * @return {string}
-   */
-
-  function stripTags(html) {
-    return html.replace(/<[^>]*>?/gm, '');
-  }
-
-})();
+}

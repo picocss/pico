@@ -23,10 +23,10 @@
 We use simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
 
 **Great styles with just one CSS file**  
-No dependencies, package manager, external files or JavaScript.
+No dependencies, package manager, external files, or JavaScript.
 
 **Responsive everything**  
-Elegant and consistent adaptatives spacings and typography on all devices.
+Elegant and consistent adaptative spacings and typography on all devices.
 
 **Light or Dark mode**  
 Shipped with two beautiful color themes, automatically enabled according to the user preference.
@@ -73,7 +73,7 @@ Pico provide a `.classless` version ([example](https://picocss.com/examples/clas
 
 In this version, `header`, `main` and `footer` act as container.
 
-Use the default `.classless `version if you need centered viewports:
+Use the default `.classless` version if you need centered viewports:
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css">
@@ -173,8 +173,8 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 
 ## Contributing
 
-- [dev/](https://github.com/picocss/pico/tree/dev) branch is open to pull requests.
-- Do not edit [/css](https://github.com/picocss/pico/tree/master/css) files directly. Those files are automatically generated. You should edit the source files in [scss/](https://github.com/picocss/pico/tree/master/scss).
+- [`dev`](https://github.com/picocss/pico/tree/dev) branch is open to pull requests.
+- Do not edit [`/css`](https://github.com/picocss/pico/tree/master/css) files directly. Those files are automatically generated. You should edit the source files in [`/scss`](https://github.com/picocss/pico/tree/master/scss).
 
 ## Copyright and license
 

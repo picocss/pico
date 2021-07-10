@@ -1,85 +1,63 @@
-/*!
+/*
  * Scrollspy
  * Automatically update nav targets based on scroll position
  *
- * Require `most-visible.js` from https://github.com/andyexeter/most-visible
+ * Require `most-visible.js` (https://github.com/andyexeter/most-visible)
  *
  * Pico.css - https://picocss.com
  * Copyright 2019-2021 - Licensed under MIT
  */
 
-(function() {
+export const scrollspy = {
 
-  /**
-   * Config
-   */
-  var scrollspy = {
-    interval: 75,                            // Delay for detect scroll stop
-    sections: '[role="document"] > section', // Target for sections
-    nav:      'main aside nav',              // Target for nav
-    active:   'active',                      // .class for active element
-  };
-
+  // Config
+  minWidth: '992px',
+  interval: 75,
+  targets: {
+    sections: '[role="document"] > section',
+    nav: 'main aside nav',
+    active: 'active',
+  },
 
 
-  /**
-   * Init
-   */
-
-  if (window.matchMedia("(min-width: 992px)").matches) {
-    activeNav();
-
-    scrollStop(
-      function () {
-        activeNav()
-      }
-    );
-  }
+  // Init
+  init() {
+    if (window.matchMedia('(min-width: ' + this.minWidth + ')').matches) {
+      this.setActiveNav();
+      this.scrollStop();
+    }
+  },
 
 
-
-  /**
-   * Set active section in nav
-   */
-
-  function activeNav() {
+  // Set active section in nav
+  setActiveNav() {
 
     // Get active section
-    var section = mostVisible(scrollspy.sections).getAttribute('id');
+    let currentSection = mostVisible(this.targets.sections).getAttribute('id');
 
     // Remove all active states
-    var allActive = document.querySelectorAll(scrollspy.nav + ' a.' + scrollspy.active);
-    for (var i = 0; i < allActive.length; i++) {
-      allActive[i].classList.remove(scrollspy.active);
-    }
+    let links = document.querySelectorAll(this.targets.nav + ' a.' + this.targets.active);
+    links.forEach(function(link) {
+      link.classList.remove(this.targets.active);
+    }.bind(this));
 
     // Set active state
-    var active = document.querySelector(scrollspy.nav + ' a[href="#' + section + '"]');
-    active.classList.add(scrollspy.active);
+    let activeLink = document.querySelector(this.targets.nav + ' a[href="#' + currentSection + '"]');
+    activeLink.classList.add(this.targets.active);
 
     // Open details parent
-    active.parentNode.parentNode.parentNode.setAttribute('open', '');
-  }
+    activeLink.closest('details').setAttribute('open', '');
+  },
 
 
-
-  /**
-   * Scroll stop
-   * Detect when the user stop scrolling
-   * Source: https://vanillajstoolkit.com/helpers/scrollstop/
-   *
-   * @param  {Function} callback The function to run after scrolling
-   *
-   */
-
-  function scrollStop(callback) {
-    var isScrolling;
-    window.addEventListener('scroll', function (event) {
+  // Scroll stop
+  scrollStop() {
+    let isScrolling;
+    window.addEventListener('scroll', function(event) {
       window.clearTimeout(isScrolling);
       isScrolling = setTimeout(function() {
-        callback();
-      }, scrollspy.interval);
-    }, false);
+        this.setActiveNav();
+      }.bind(this), this.interval);
+    }.bind(this), false);
   }
-
-})();
+}
