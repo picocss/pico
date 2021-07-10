@@ -73,7 +73,7 @@ Pico provide a `.classless` version ([example](https://picocss.com/examples/clas
 
 In this version, `header`, `main` and `footer` act as container.
 
-Use the default `.classless `version if you need centered viewports:
+Use the default `.classless` version if you need centered viewports:
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css">
@@ -173,8 +173,8 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 
 ## Contributing
 
-- [dev/](https://github.com/picocss/pico/tree/dev) branch is open to pull requests.
-- Do not edit [/css](https://github.com/picocss/pico/tree/master/css) files directly. Those files are automatically generated. You should edit the source files in [scss/](https://github.com/picocss/pico/tree/master/scss).
+- [`dev`](https://github.com/picocss/pico/tree/dev) branch is open to pull requests.
+- Do not edit [`/css`](https://github.com/picocss/pico/tree/master/css) files directly. Those files are automatically generated. You should edit the source files in [`/scss`](https://github.com/picocss/pico/tree/master/scss).
 
 ## Copyright and license
 
