@@ -37,7 +37,6 @@ Shipped with two beautiful color themes, automatically enabled according to the 
 - [Class-less version](#class-less-version)
 - [Examples](#examples)
 - [Documentation](#documentation)
-- [Variations](#variations)
 - [Contributing](#contributing)
 - [Copyright and license](#copyright-and-license)
 
@@ -47,7 +46,7 @@ There are 3 ways to get started with pico.css:
 
 **Install manually**
 
-[Download Pico](https://github.com/picocss/pico/releases/latest) and link `/css/pico.min.css` in the `<head>` of your website.
+[Download Pico](https://github.com/picocss/pico/archive/refs/heads/master.zip) and link `/css/pico.min.css` in the `<head>` of your website.
 
 ```html
 <link rel="stylesheet" href="css/pico.min.css">
@@ -152,24 +151,15 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 - [Forms](https://picocss.com/docs/#forms)
 - [Tables](https://picocss.com/docs/#tables)
 
-
 **Components**
 - [Accordions](https://picocss.com/docs/#accordions)
 - [Cards](https://picocss.com/docs/#cards)
 - [Navs](https://picocss.com/docs/#navs)
 - [Progress](https://picocss.com/docs/#progress)
+
+**Utilities**
+- [Loading](https://picocss.com/docs/#loading)
 - [Tooltips](https://picocss.com/docs/#tooltips)
-
-## Variations
-
-| Variation | Minified CSS | Source | Example |
-|:-----|:-----|:-----|:-----|
-| Default | [![CSS Gzipped](https://img.badgesize.io/picocss/pico/master/css/pico.min.css?compression=gzip&color=1095c1&label=Gzipped)](https://unpkg.com/@picocss/pico@latest/css/pico.min.css) | [pico.scss](https://github.com/picocss/pico/blob/master/scss/pico.scss) | [Preview](https://picocss.com/examples/preview/) |
-| Classless<br>(Centered viewports) | [![CSS Gzipped](https://img.badgesize.io/picocss/pico/master/css/pico.classless.min.css?compression=gzip&color=1095c1&label=Gzipped)](https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css) | [pico.classless.scss](https://github.com/picocss/pico/blob/master/scss/pico.classless.scss)  | [Classless](https://picocss.com/examples/classless/) |
-| Classless<br>(Fluid container) | [![CSS Gzipped](https://img.badgesize.io/picocss/pico/master/css/pico.fluid.classless.min.css?compression=gzip&color=1095c1&label=Gzipped)](https://unpkg.com/@picocss/pico@latest/css/pico.fluid.classless.min.css) | [pico.fluid.classless.scss](https://github.com/picocss/pico/blob/master/scss/pico.fluid.classless.scss) | - |
-| Slim | [![CSS Gzipped](https://img.badgesize.io/picocss/pico/master/css/pico.slim.min.css?compression=gzip&color=1095c1&label=Gzipped)](https://unpkg.com/@picocss/pico@latest/css/pico.slim.min.css) | [pico.slim.scss](https://github.com/picocss/pico/blob/master/scss/pico.slim.scss) | - |
-| Google Amp | [![CSS Gzipped](https://img.badgesize.io/picocss/examples/master/google-amp/css/pico.google-amp.min.css?compression=gzip&color=1095c1&label=Gzipped)](https://github.com/picocss/examples/blob/master/google-amp/css/pico.google-amp.min.css) | [pico.google-amp.scss](https://github.com/picocss/examples/blob/master/google-amp/scss/pico.google-amp.scss) | [Google Amp](https://picocss.com/examples/google-amp/) |
-| Pico + Bootstrap grid system | [![CSS Gzipped](https://img.badgesize.io/picocss/examples/master/bootstrap-grid/css/pico-bootstrap-grid.min.css?compression=gzip&color=1095c1&label=Gzipped)](https://github.com/picocss/examples/blob/master/bootstrap-grid/css/pico-bootstrap-grid.min.css) | [pico-bootstrap-grid.scss](https://github.com/picocss/examples/blob/master/bootstrap-grid/scss/pico-bootstrap-grid.scss) | [Bootstrap grid system](https://picocss.com/examples/bootstrap-grid/) |
 
 ## Contributing
 

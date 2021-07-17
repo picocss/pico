@@ -220,7 +220,7 @@ textarea {
   &[disabled] {
     --background-color: var(--form-element-disabled-background-color);
     --border-color: var(--form-element-disabled-border-color);
-    opacity: .375;
+    opacity: var(--form-element-disabled-opacity);
   }
 }
 

@@ -78,6 +78,12 @@
                 <li><a href="#cards" class="secondary">Cards</a></li>
                 <li><a href="#navs" class="secondary">Navs</a></li>
                 <li><a href="#progress" class="secondary">Progress</a></li>
+              </ul>
+            </details>
+            <details open>
+              <summary>Utilities</summary>
+              <ul>
+                <li><a href="#loading" class="secondary">Loading</a></li>
                 <li><a href="#tooltips" class="secondary">Tooltips</a></li>
               </ul>
             </details>
@@ -103,7 +109,7 @@
             </hgroup>
             <p>There are 3 ways to get started with pico.css:</p>
             <h4>Install manually</h4>
-            <p><a href="https://github.com/picocss/pico/releases/latest">Download Pico</a> and link <code>/css/pico.min.css</code> in the <code>&lt;<b>head</b>&gt;</code> of your website.</p>
+            <p><a href="https://github.com/picocss/pico/archive/refs/heads/master.zip">Download Pico</a> and link <code>/css/pico.min.css</code> in the <code>&lt;<b>head</b>&gt;</code> of your website.</p>
             <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"css/pico.min.css"</u>&gt;</code></pre>
             <h4>Install from CDN</h4>
             <p>Alternatively, you can use the <a href="https://unpkg.com/@picocss/pico@latest/">unpkg CDN</a> to link pico.css</p>
@@ -199,7 +205,6 @@
 </code></pre>
 
             </article>
-
             <p>There are 2 ways to customize your version of Pico.css:</p>
             <h4>Overriding CSS variables</h4>
             <p>All Pico's styles and colors are set with <em>CSS custom properties</em> (variables). Just override the CSS variables to customize your version of Pico.</p>
@@ -389,7 +394,6 @@
               <p>If you need a light and custom grid, you can look about <strong>CSS Grid Generators</strong>. For example: <a href="https://cssgrid-generator.netlify.com/">CSS Grid Generator</a>, <a href="http://grid.layoutit.com/">Layoutit!</a> or <a href="https://griddy.io/">Griddy</a>.</p>
               <p>Alternatively you can <a href="https://learncssgrid.com/">Learn about CSS Grid</a>.</p>
             </details>
-
           </section><!-- ./ Docs: Grid -->
 
           <!-- Docs: Horizontal scroller -->
@@ -840,7 +844,6 @@
 &lt;/<b>script</b>&gt;</code></pre>
 
             </article>
-
             <p>Others input types:</p>
             <article aria-label="File browser, range slider, date, time, color examples">
               <label for="file">File browser
@@ -1036,7 +1039,6 @@
 &lt;/<b>details</b>&gt;</code></pre>
 
             </article>
-
           </section><!-- ./ Docs: Accordions -->
 
           <!-- Docs: Cards -->
@@ -1174,9 +1176,7 @@
 <pre><code>&lt;<b>progress</b> <i>value</i>=<u>"25</u>" <i>max</i>=<u>"100"</u>&gt;&lt;/<b>progress</b>&gt;</code></pre>
 
             </article>
-
             <p>You can change a progress bar to indeterminate state by setting the <code><i>indeterminate</i></code> property to <code><u>true</u></code></p>
-
             <article aria-label="Indeterminate progress bar example">
               <progress id="indeterminate-progress"></progress>
               <script>document.getElementById('indeterminate-progress').indeterminate = true;</script>
@@ -1186,8 +1186,32 @@
 &lt;/<b>script</b>&gt;</code></pre>
 
             </article>
-
           </section><!-- ./ Docs: Progress -->
+
+          <!-- Docs: Loading -->
+          <section id="loading">
+            <hgroup>
+              <h2>Loading</h2>
+              <h3><code><i>aria-busy</i>=<u>"true"</u></code> enable a loading indicator.</h3>
+            </hgroup>
+            <article aria-label="Loading buttons example">
+              <button aria-busy="true">Please wait...</button>
+              <button aria-busy="true" class="secondary"></button>
+
+<pre><code>&lt;<b>button</b> <i>aria-busy</i>=<u>"true"</u>&gt;Please wait...&lt;/<b>button</b>&gt;
+&lt;<b>button</b> <i>aria-busy</i>=<u>"true"</u> <i>class</i>=<u>"secondary"</u>&gt;&lt;/<b>button</b>&gt;</code></pre>
+
+            </article>
+            <p>It can be applied to any block:</p>
+            <article aria-busy="true"></article>
+            <pre><code>&lt;<b>article</b> <i>aria-busy</i>=<u>"true"</u>&gt;&lt;/<b>article</b>&gt;</code></pre>
+            <p>Or any text element:</p>
+            <article aria-label="Loading paragraph example">
+              <a href="#" aria-busy="true" onclick="event.preventDefault()">Generating link, please wait...</a>
+              <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>aria-busy</i>=<u>"true"</u>&gt;Generating link, please wait...&lt;/<b>a</b>&gt;</code></pre>
+
+            </article>
+          </section><!-- ./ Docs: Loading -->
 
           <!-- Docs: Tooltips -->
           <section id="tooltips">

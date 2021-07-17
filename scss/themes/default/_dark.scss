@@ -64,6 +64,7 @@
   --form-element-focus-color: var(--primary-focus);
   --form-element-disabled-background-color: #{$grey-800};
   --form-element-disabled-border-color: #{$grey-700};
+  --form-element-disabled-opacity: .5;
   --form-element-invalid-border-color: #{$red-900};
   --form-element-invalid-active-border-color: #{$red-800};
   --form-element-valid-border-color: #{$green-800};
@@ -111,6 +112,9 @@
   // Progress
   --progress-background-color: #{mix($grey-900, $grey-800)};
   --progress-color: var(--primary);
+
+  // Loading ([aria-busy=true])
+  --loading-spinner-opacity: .5;
 
   // Tooltip ([data-tooltip])
   --tooltip-background-color: var(--contrast);
