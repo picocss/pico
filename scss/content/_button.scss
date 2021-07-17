@@ -108,7 +108,6 @@ input[type="reset"] {
   }
 
   &:focus {
-    // --box-shadow: 0 0 0 var(--outline-width) var(--secondary-focus);
     --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--secondary-focus);
   }
 }
@@ -136,7 +135,6 @@ input[type="reset"] {
       }
 
       &:focus {
-        // --box-shadow: 0 0 0 var(--outline-width) var(--secondary-focus);
         --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--secondary-focus);
       }
     }
@@ -155,7 +153,6 @@ input[type="reset"] {
       }
 
       &:focus {
-        // --box-shadow: 0 0 0 var(--outline-width) var(--contrast-focus);
         --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--contrast-focus);
       }
     }
