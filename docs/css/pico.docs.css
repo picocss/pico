@@ -154,7 +154,7 @@ main > aside li, main > aside summary {
 }
 
 main > aside li a {
-  padding: 0.375rem 0.5rem;
+  padding: 0.25rem 0.5rem;
 }
 
 main > aside li a svg {
@@ -177,7 +177,7 @@ main > aside details {
 }
 
 main > aside details summary {
-  color: var(--h3-color);
+  color: var(--h1-color);
   font-size: 14px;
   font-weight: 300;
   text-transform: uppercase;
@@ -187,8 +187,8 @@ main > aside details summary::after {
   display: none;
 }
 
-main > aside details[open] summary {
-  color: var(--h3-color);
+main > aside details[open] > summary:not(:focus) {
+  color: var(--h1-color);
 }
 
 /**

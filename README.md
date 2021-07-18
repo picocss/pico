@@ -54,7 +54,7 @@ There are 3 ways to get started with pico.css:
 
 **Install from CDN**
 
-Alternatively, you can use the [unpkg CDN](https://unpkg.com/@picocss/pico@latest/) to link pico.css.
+Alternatively, you can use [unpkg CDN](https://unpkg.com/@picocss/pico@latest/) to link pico.css.
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
