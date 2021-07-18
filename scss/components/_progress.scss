@@ -52,15 +52,18 @@ progress {
     background-color: var(--progress-color);
   }
 
-  &:indeterminate {
-    background: var(--progress-background-color) linear-gradient(to right, var(--progress-color) 30%, var(--progress-background-color) 30%) top left / 150% 150% no-repeat;
-    animation: progressIndeterminate 1s linear infinite;
+  // Indeterminate state
+  @media (prefers-reduced-motion: no-preference) {
+    &:indeterminate {
+      background: var(--progress-background-color) linear-gradient(to right, var(--progress-color) 30%, var(--progress-background-color) 30%) top left / 150% 150% no-repeat;
+      animation: progressIndeterminate 1s linear infinite;
 
-    &[value]::-webkit-progress-value {
-      background-color: transparent;
-    }
-    &::-moz-progress-bar {
-      background-color: transparent;
+      &[value]::-webkit-progress-value {
+        background-color: transparent;
+      }
+      &::-moz-progress-bar {
+        background-color: transparent;
+      }
     }
   }
 }

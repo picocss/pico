@@ -1,0 +1,55 @@
+/**
+ * Loading ([aria-busy=true])
+ */
+
+
+// Cursor
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+// Everyting except form elements
+[aria-busy="true"]:not(input):not(select):not(textarea) {
+
+  &::before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 0.1875em solid currentColor;
+    border-radius: 1em;
+    border-right-color: transparent;
+    vertical-align: text-bottom;
+    vertical-align: -.125em; // Visual alignment
+    animation: spinner 0.75s linear infinite;
+    content: '';
+    opacity: var(--loading-spinner-opacity);
+  }
+
+  &:not(:empty) {
+    &::before {
+      margin-right: calc(var(--spacing) / 2);
+    }
+  }
+
+  &:empty {
+    text-align: center;
+  }
+}
+
+// Buttons and links
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+a {
+  &[aria-busy="true"] {
+    pointer-events: none;
+  }
+}
+
+// Animation: rotate
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

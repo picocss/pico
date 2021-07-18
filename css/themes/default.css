@@ -113,7 +113,7 @@ a.secondary, a.contrast {
 }
 
 small {
-  --font-size: 87.5%;
+  --font-size: 0.875em;
 }
 
 h1,
@@ -165,7 +165,7 @@ table thead td {
 }
 
 table :not(thead) td {
-  --font-size: 0.875rem;
+  --font-size: 0.875em;
 }
 
 pre,
@@ -221,6 +221,7 @@ kbd {
   --form-element-focus-color: var(--primary-focus);
   --form-element-disabled-background-color: #d5dce2;
   --form-element-disabled-border-color: #a2afb9;
+  --form-element-disabled-opacity: .5;
   --form-element-invalid-border-color: #C62828;
   --form-element-invalid-active-border-color: #B71C1C;
   --form-element-valid-border-color: #388E3C;
@@ -253,6 +254,7 @@ kbd {
   --card-sectionning-background-color: #fafbfc;
   --progress-background-color: #d5dce2;
   --progress-color: var(--primary);
+  --loading-spinner-opacity: .5;
   --tooltip-background-color: var(--contrast);
   --tooltip-color: var(--contrast-inverse);
   --icon-chevron:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(65, 84, 98, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -307,6 +309,7 @@ kbd {
     --form-element-focus-color: var(--primary-focus);
     --form-element-disabled-background-color: #2c3d49;
     --form-element-disabled-border-color: #415462;
+    --form-element-disabled-opacity: .5;
     --form-element-invalid-border-color: #B71C1C;
     --form-element-invalid-active-border-color: #C62828;
     --form-element-valid-border-color: #2E7D32;
@@ -340,6 +343,7 @@ kbd {
     --card-sectionning-background-color: #17232c;
     --progress-background-color: #23333e;
     --progress-color: var(--primary);
+    --loading-spinner-opacity: .5;
     --tooltip-background-color: var(--contrast);
     --tooltip-color: var(--contrast-inverse);
     --icon-chevron:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -394,6 +398,7 @@ kbd {
   --form-element-focus-color: var(--primary-focus);
   --form-element-disabled-background-color: #2c3d49;
   --form-element-disabled-border-color: #415462;
+  --form-element-disabled-opacity: .5;
   --form-element-invalid-border-color: #B71C1C;
   --form-element-invalid-active-border-color: #C62828;
   --form-element-valid-border-color: #2E7D32;
@@ -427,6 +432,7 @@ kbd {
   --card-sectionning-background-color: #17232c;
   --progress-background-color: #23333e;
   --progress-color: var(--primary);
+  --loading-spinner-opacity: .5;
   --tooltip-background-color: var(--contrast);
   --tooltip-color: var(--contrast-inverse);
   --icon-chevron:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");

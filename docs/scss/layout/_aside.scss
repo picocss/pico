@@ -33,7 +33,7 @@ main > aside {
   }
 
   li a {
-    padding: 0.375rem 0.5rem;
+    padding: 0.25rem 0.5rem;
 
     svg {
       vertical-align: middle;
@@ -55,7 +55,7 @@ main > aside {
     border-bottom: none;
 
     summary {
-      color: var(--h3-color);
+      color: var(--h1-color);
       font-size: 14px;
       font-weight: 300;
       text-transform: uppercase;
@@ -65,8 +65,10 @@ main > aside {
       }
     }
 
-    &[open] summary {
-      color: var(--h3-color);
+    &[open] {
+      >summary:not(:focus) {
+        color: var(--h1-color);
+      }
     }
   }
 }

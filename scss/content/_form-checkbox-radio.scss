@@ -9,10 +9,10 @@
      -moz-appearance: none;
           appearance: none;
   display: inline-block;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin-top: -.125rem;
-  margin-right: .375rem;
+  width: 1.25em;
+  height: 1.25em;
+  margin-top: -.125em;
+  margin-right: .375em;
   border-width: var(--border-width);
   vertical-align: middle;
   cursor: pointer;
@@ -29,12 +29,12 @@
     background-image: var(--icon-checkbox);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: .75rem auto;
+    background-size: .75em auto;
   }
 
   & ~ label {
     display: inline-block;
-    margin-right: .375rem;
+    margin-right: .375em;
     margin-bottom: 0;
     cursor: pointer;
   }
@@ -48,7 +48,7 @@
     background-image: var(--icon-minus);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: .75rem auto;
+    background-size: .75em auto;
   }
 }
 
@@ -60,7 +60,7 @@
   &:checked:active,
   &:checked:focus{
     --background-color: var(--primary-inverse);
-    border-width: .35rem;
+    border-width: .35em;
     background-image: none;
   }
 }
@@ -72,8 +72,8 @@
   --color: var(--switch-color);
 
   // Config
-  $switch-height:      1.25rem;
-  $switch-width:       2.25rem;
+  $switch-height:      1.25em;
+  $switch-width:       2.25em;
   $switch-transition:  .1s ease-in-out;
 
   // Styles

@@ -138,7 +138,7 @@ a {
 
 // Small
 small {
-  --font-size: 87.5%;
+  --font-size: 0.875em;
 }
 
 // Headings
@@ -197,7 +197,7 @@ table {
   }
 
   :not(thead) td {
-    --font-size: 0.875rem;
+    --font-size: 0.875em;
   }
 }
 

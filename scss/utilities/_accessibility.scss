@@ -10,11 +10,6 @@
 
 // Accessibility
 
-// Change the cursor on busy elements in all browsers (opinionated)
-[aria-busy="true"] {
-  cursor: progress;
-}
-
 // Change the cursor on control elements in all browsers (opinionated)
 [aria-controls] {
   cursor: pointer;
