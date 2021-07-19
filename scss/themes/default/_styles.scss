@@ -196,7 +196,7 @@ table {
     }
   }
 
-  :not(thead) td {
+  :not(thead) > * > td {
     --font-size: 0.875em;
   }
 }
