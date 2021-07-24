@@ -6,6 +6,7 @@
  */
 
 // Imports
+import * as mostVisible from './src/most-visible.min.js';
 import { aside } from './src/aside.js';
 import { themeSwitcher } from './src/theme-switcher.js';
 import { materialDesignColors } from './src/material-design-colors.js';
@@ -32,4 +33,4 @@ colorPicker.init();
 grid.init();
 
 // Scrollspy
-scrollspy.init();
+scrollspy.init(mostVisible);

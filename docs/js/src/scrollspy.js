@@ -11,6 +11,7 @@
 export const scrollspy = {
 
   // Config
+  mostVisible: null,
   minWidth: '992px',
   interval: 75,
   targets: {
@@ -21,7 +22,10 @@ export const scrollspy = {
 
 
   // Init
-  init() {
+  init(mostVisible) {
+    if (this.mostVisible == null) {
+      this.mostVisible = mostVisible;
+    }
     if (window.matchMedia('(min-width: ' + this.minWidth + ')').matches) {
       this.setActiveNav();
       this.scrollStop();
@@ -33,7 +37,7 @@ export const scrollspy = {
   setActiveNav() {
 
     // Get active section
-    let currentSection = mostVisible(this.targets.sections).getAttribute('id');
+    let currentSection = this.mostVisible(this.targets.sections).getAttribute('id');
 
     // Remove all active states
     let links = document.querySelectorAll(this.targets.nav + ' a.' + this.targets.active);
