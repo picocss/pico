@@ -170,4 +170,14 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 
 Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LICENSE.md).
 
-Openly inspired by: [Bootstrap](https://github.com/twbs/bootstrap), [CSS Bed](https://github.com/ubershmekel/cssbed), [Normalize](https://github.com/necolas/normalize.css/), [Sanitize](https://csstools.github.io/sanitize.css/), [Spectre](https://github.com/picturepan2/spectre), [Wing](https://github.com/kbrsh/wing/).
+**Relevant third party tools and resources we depend on:**
+
+Website and docs:
+- [TypeIt](https://typeitjs.com/): JavaScript Animated Typing Utility (Licensed [GPL-2.0](https://github.com/alexmacarthur/typeit/blob/master/LICENSE))
+- [Most Visible](https://github.com/andyexeter/most-visible): JavaScript module which returns the most visible element (Licensed [MIT](https://github.com/andyexeter/most-visible/blob/master/LICENSE))
+- [Font Awesome](https://fontawesome.com/): Icons (Licensed [CC BY 4.0](https://fontawesome.com/license/free))
+
+Pico Library:
+- [Feather](https://feathericons.com/) Icons (Licensed [MIT](https://github.com/feathericons/feather/blob/master/LICENSE))
+- [Normalize.css](https://necolas.github.io/normalize.css/): CSS reset (Licensed [MIT](https://github.com/necolas/normalize.css/blob/master/LICENSE.md))
+- [Sanitize.css](https://csstools.github.io/sanitize.css/): Cross-browser default styling (Licensed [CC0 1.0 Universal](https://github.com/csstools/sanitize.css/blob/main/LICENSE.md))
