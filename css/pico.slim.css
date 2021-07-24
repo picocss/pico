@@ -106,12 +106,12 @@ h5 {
   --border-width: 3px;
 }
 
-table thead th,
-table thead td {
+thead th,
+thead td {
   --border-width: 3px;
 }
 
-table :not(thead) td {
+:not(thead) > * > td {
   --font-size: 0.875em;
 }
 
