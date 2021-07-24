@@ -19,9 +19,7 @@
 [![npm version](https://img.shields.io/npm/v/@picocss/pico?color=1095c1)](https://www.npmjs.com/package/@picocss/pico)
 [![License](https://img.shields.io/badge/license-MIT-%231095c1)](https://github.com/picocss/pico/blob/master/LICENSE.md)
 
-
-https://user-images.githubusercontent.com/23470684/126861580-2f4976e4-6904-433c-9f54-b0c5a978c881.mp4
-
+https://user-images.githubusercontent.com/23470684/126863110-94061cf1-36ea-4697-94bd-2e1071a95a2f.mp4
 
 **Class-light and semantic**  
 We use simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
