@@ -1,6 +1,6 @@
 {
   "name": "@picocss/pico",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Graceful & Minimal CSS design system in pure semantic HTML",
   "author": "Lucas Larroche",
   "main": "css/pico.min.css",
@@ -13,13 +13,15 @@
   "keywords": [
     "css",
     "css-framework",
-    "dark-theme",
     "dark-mode",
-    "semantic",
-    "minimal",
+    "dark-theme",
     "lightweight",
+    "minimal",
+    "minimalist",
+    "minimalistic",
+    "native-html",
     "scss-framework",
-    "native-html"
+    "semantic"
   ],
   "bugs": {
     "url": "https://github.com/picocss/pico/issues"

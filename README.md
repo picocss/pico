@@ -7,7 +7,7 @@
 <h3 align="center">Pico.css</h3>
 
 <p align="center">
-  <strong>Graceful & Minimal CSS design system in pure semantic HTML.</strong><br>
+  <strong>Minimal CSS Framework for semantic HTML</strong><br>
   Elegant styles for all natives HTML elements without <code>.classes</code> and dark mode automatically enabled.<br><br>
   <a href="https://picocss.com/#examples">Examples</a> ·
   <a href="https://picocss.com/docs/">Documentation</a>
