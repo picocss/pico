@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.3.2 (https://picocss.com)
+ * Pico.css v1.3.3 (https://picocss.com)
  * Copyright 2019-2021 - Licensed under MIT
  */
 /**
@@ -163,12 +163,12 @@ h5 {
   --border-width: 3px;
 }
 
-table thead th,
-table thead td {
+thead th,
+thead td {
   --border-width: 3px;
 }
 
-table :not(thead) td {
+:not(thead) > * > td {
   --font-size: 0.875em;
 }
 
@@ -1186,10 +1186,7 @@ legend {
 }
 
 textarea {
-  margin: 0;
   overflow: auto;
-  resize: vertical;
-  resize: block;
 }
 
 [type="checkbox"],

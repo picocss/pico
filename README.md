@@ -7,7 +7,7 @@
 <h3 align="center">Pico.css</h3>
 
 <p align="center">
-  <strong>Graceful & Minimal CSS design system in pure semantic HTML.</strong><br>
+  <strong>Minimal CSS Framework for semantic HTML</strong><br>
   Elegant styles for all natives HTML elements without <code>.classes</code> and dark mode automatically enabled.<br><br>
   <a href="https://picocss.com/#examples">Examples</a> ·
   <a href="https://picocss.com/docs/">Documentation</a>
@@ -18,6 +18,8 @@
 [![Github release](https://img.shields.io/github/v/release/picocss/pico?color=1095c1&logo=github&logoColor=white)](https://github.com/picocss/pico/releases/latest)
 [![npm version](https://img.shields.io/npm/v/@picocss/pico?color=1095c1)](https://www.npmjs.com/package/@picocss/pico)
 [![License](https://img.shields.io/badge/license-MIT-%231095c1)](https://github.com/picocss/pico/blob/master/LICENSE.md)
+
+https://user-images.githubusercontent.com/23470684/126863110-94061cf1-36ea-4697-94bd-2e1071a95a2f.mp4
 
 **Class-light and semantic**  
 We use simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
@@ -107,7 +109,7 @@ Then just write pure HTML, and it should look great:
 
 Minimalist templates to discover Pico in action:
 
-[![Examples](https://picocss.com/img/examples.jpg)](https://picocss.com/#examples)
+[![Examples](https://picocss.com/img/examples.jpg?v1.3.3)](https://picocss.com/#examples)
 
 - **[Preview](https://picocss.com/examples/preview/)**  
   A starter example with all elements and components used in Pico
@@ -170,4 +172,14 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 
 Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LICENSE.md).
 
-Openly inspired by: [Bootstrap](https://github.com/twbs/bootstrap), [CSS Bed](https://github.com/ubershmekel/cssbed), [Normalize](https://github.com/necolas/normalize.css/), [Sanitize](https://csstools.github.io/sanitize.css/), [Spectre](https://github.com/picturepan2/spectre), [Wing](https://github.com/kbrsh/wing/).
+**Relevant third party tools and resources we depend on:**
+
+Website and docs:
+- [TypeIt](https://typeitjs.com/): JavaScript animated typing utility (Licensed [GPL 2.0](https://github.com/alexmacarthur/typeit/blob/master/LICENSE))
+- [Most Visible](https://github.com/andyexeter/most-visible): JavaScript module which returns the most visible element (Licensed [MIT](https://github.com/andyexeter/most-visible/blob/master/LICENSE))
+- [Font Awesome](https://fontawesome.com/): Icons (Licensed [CC BY 4.0](https://fontawesome.com/license/free))
+
+Pico Library:
+- [Feather](https://feathericons.com/) Icons (Licensed [MIT](https://github.com/feathericons/feather/blob/master/LICENSE))
+- [Normalize.css](https://necolas.github.io/normalize.css/): CSS reset (Licensed [MIT](https://github.com/necolas/normalize.css/blob/master/LICENSE.md))
+- [Sanitize.css](https://csstools.github.io/sanitize.css/): Cross-browser default styling (Licensed [CC0 1.0 Universal](https://github.com/csstools/sanitize.css/blob/main/LICENSE.md))

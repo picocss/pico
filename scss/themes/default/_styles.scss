@@ -187,18 +187,15 @@ h5 {
 }
 
 // Table
-table {
-
-  thead {
-    th,
-    td {
-      --border-width: 3px;
-    }
+thead {
+  th,
+  td {
+    --border-width: 3px;
   }
+}
 
-  :not(thead) td {
-    --font-size: 0.875em;
-  }
+:not(thead) > * > td {
+  --font-size: 0.875em;
 }
 
 // Code
