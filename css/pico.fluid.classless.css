@@ -957,10 +957,7 @@ legend {
 }
 
 textarea {
-  margin: 0;
   overflow: auto;
-  resize: vertical;
-  resize: block;
 }
 
 [type="checkbox"],

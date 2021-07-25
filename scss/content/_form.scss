@@ -42,14 +42,9 @@ legend {
   white-space: normal; // 1
 }
 
-// 1. Remove the margin in Firefox and Safari
-// 2. Remove the default vertical scrollbar in IE
-// 3. Change the resize direction in all browsers (opinionated)
+// 1. Remove the default vertical scrollbar in IE
 textarea {
-  margin: 0; // 1
-  overflow: auto; // 2
-  resize: vertical; // 3
-  resize: block; // 3
+  overflow: auto; // 1
 }
 
 // Remove the padding in IE 10
