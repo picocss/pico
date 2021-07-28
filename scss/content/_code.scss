@@ -9,13 +9,13 @@
 // ––––––––––––––––––––
 
 // 1. Correct the inheritance and scaling of font size in all browsers
-// 2. Correct the odd `em` font sizing in all browsers
+// 2. Correct the font sizing in all browsers
 pre,
 code,
 kbd,
 samp {
   font-family: var(--font-family); // 1
-  font-size: .875rem; // 2
+  font-size: .875em; // 2
 }
 
 // Prevent overflow of the container in all browsers (opinionated)
