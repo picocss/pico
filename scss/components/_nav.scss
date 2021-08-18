@@ -1,5 +1,3 @@
-@use "sass:math";
-
 /**
  * Nav
  */
@@ -21,10 +19,10 @@ nav {
     list-style: none;
 
     &:first-of-type {
-      margin-left: calc(math.div(var(--spacing), -0.5));
+      margin-left: calc(var(--spacing) * -0.5);
     }
     &:last-of-type {
-      margin-right: calc(math.div(var(--spacing), -0.5));
+      margin-right: calc(var(--spacing) * -0.5);
     }
   }
 
@@ -42,7 +40,7 @@ nav {
 
   a {
     display: block;
-    margin: calc(var(--spacing) * -1) calc(math.div(var(--spacing), -0.5));
+    margin: calc(var(--spacing) * -1) calc(var(--spacing) * -0.5);
     padding: var(--spacing) calc(var(--spacing) * 0.5);
     border-radius: var(--border-radius);
     text-decoration: none;
