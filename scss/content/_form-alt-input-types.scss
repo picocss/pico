@@ -18,12 +18,12 @@
   // Swatch
   &::-webkit-color-swatch {
     border: none;
-    border-radius: calc(var(--border-radius) / 2);
+    border-radius: calc(var(--border-radius) * 0.5);
   }
 
   &::-moz-color-swatch {
     border: none;
-    border-radius: calc(var(--border-radius) / 2);
+    border-radius: calc(var(--border-radius) * 0.5);
   }
 }
 
@@ -51,7 +51,7 @@
 // File
 [type="file"] {
   --color: var(--muted-color);
-  padding: calc(var(--form-element-spacing-vertical)/2) 0;
+  padding: calc(var(--form-element-spacing-vertical) * 0.5) 0;
   border: none;
   border-radius: 0;
   background: none;
@@ -61,7 +61,7 @@
     --border-color: var(--secondary);
     --color: var(--secondary-inverse);
     margin-right: calc(var(--spacing) / 2);
-    padding: calc(var(--form-element-spacing-vertical) / 2) calc(var(--form-element-spacing-horizontal) / 2);
+    padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
     border: var(--border-width) solid var(--border-color);
     border-radius: var(--border-radius);
     outline: none;
@@ -162,7 +162,7 @@
     -webkit-appearance: none;
     width: $height-thumb;
     height: $height-thumb;
-    margin-top: #{(-($height-thumb/2) + ($height-track/2))};
+    margin-top: #{(-($height-thumb * 0.5) + ($height-track * 0.5))};
     border: $border-thumb solid var(--range-thumb-border-color);
     border-radius: 50%;
     background-color: var(--range-thumb-color);
@@ -179,7 +179,7 @@
     -webkit-appearance: none;
     width: $height-thumb;
     height: $height-thumb;
-    margin-top: #{(-($height-thumb/2) + ($height-track/2))};
+    margin-top: #{(-($height-thumb * 0.5) + ($height-track * 0.5))};
     border: $border-thumb solid var(--range-thumb-border-color);
     border-radius: 50%;
     background-color: var(--range-thumb-color);
@@ -196,7 +196,7 @@
     -webkit-appearance: none;
     width: $height-thumb;
     height: $height-thumb;
-    margin-top: #{(-($height-thumb/2) + ($height-track/2))};
+    margin-top: #{(-($height-thumb * 0.5) + ($height-track * 0.5))};
     border: $border-thumb solid var(--range-thumb-border-color);
     border-radius: 50%;
     background-color: var(--range-thumb-color);

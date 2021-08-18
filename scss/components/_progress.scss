@@ -30,7 +30,7 @@ progress {
   display: inline-block;
   width: 100%;
   height: .5rem;
-  margin-bottom: calc(var(--spacing) / 2);
+  margin-bottom: calc(var(--spacing) * 0.5);
   overflow: hidden;
 
   // Remove Firefox and Opera border
