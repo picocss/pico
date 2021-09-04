@@ -637,7 +637,8 @@ ul {
   margin-top: 0;
   margin-bottom: var(--typography-spacing-vertical);
   color: var(--color);
-  font-size: 1rem;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
   font-style: normal;
 }
 
@@ -1735,7 +1736,7 @@ code,
 kbd,
 samp {
   font-family: var(--font-family);
-  font-size: .875rem;
+  font-size: .875em;
 }
 
 pre {
