@@ -218,7 +218,7 @@ ol {
   padding-left: var(--spacing);
 
   li {
-    margin-bottom: calc(var(--typography-spacing-vertical) / 4);
+    margin-bottom: calc(var(--typography-spacing-vertical) * 0.25);
   }
 }
 
@@ -242,7 +242,7 @@ blockquote {
   border-left: .25rem solid var(--blockquote-border-color);
 
   footer {
-    margin-top: calc(var(--typography-spacing-vertical) / 2);
+    margin-top: calc(var(--typography-spacing-vertical) * 0.5);
     color: var(--blockquote-footer-color);
   }
 }

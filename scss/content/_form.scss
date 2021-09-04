@@ -131,7 +131,7 @@ fieldset {
 label,
 fieldset legend {
   display: block;
-  margin-bottom: calc(var(--spacing) / 4);
+  margin-bottom: calc(var(--spacing) * 0.25);
   vertical-align: middle;
 }
 
@@ -315,6 +315,6 @@ label {
   & > input,
   & > select,
   & > textarea {
-    margin-top: calc(var(--spacing) / 4);
+    margin-top: calc(var(--spacing) * 0.25);
   }
 }

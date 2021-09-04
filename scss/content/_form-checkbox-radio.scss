@@ -112,7 +112,7 @@
 
     &::before {
       margin-right: 0;
-      margin-left: calc(#{$switch-width / 2} - var(--border-width));
+      margin-left: calc(#{$switch-width * 0.5} - var(--border-width));
     }
   }
 }
