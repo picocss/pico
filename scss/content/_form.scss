@@ -136,7 +136,7 @@ fieldset legend {
 }
 
 // Blocks, 100%
-input:not([type="checkbox"]):not([type="radio"]),
+input:not([type="checkbox"]):not([type="radio"]):not([hidden]),
 select,
 textarea {
   display: block;
