@@ -1739,20 +1739,17 @@ pre {
 pre,
 code,
 kbd {
+  background: var(--code-background-color);
   color: var(--code-color);
   font-weight: var(--font-weight);
   line-height: initial;
-}
-
-code {
-  background: var(--code-background-color);
+  border-radius: var(--border-radius);
 }
 
 code,
 kbd {
   display: inline-block;
   padding: 0.375rem 0.5rem;
-  border-radius: var(--border-radius);
 }
 
 pre {
@@ -1761,6 +1758,7 @@ pre {
   overflow-x: auto;
 }
 pre > code {
+  background: transparent;
   display: block;
   padding: var(--spacing);
   font-size: 14px;
