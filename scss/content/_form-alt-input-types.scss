@@ -10,7 +10,7 @@
   @mixin color-wrapper {
     padding: 0;
   }
-  
+
   &::-webkit-color-swatch-wrapper {
     @include color-wrapper;
   }
@@ -133,7 +133,7 @@
   background: transparent;
 
   // Slider Track
-  &::-webkit-slider-runnable-track {
+  @mixin slider-track {
     width: 100%;
     height: $height-track;
     border-radius: var(--border-radius);
@@ -144,40 +144,22 @@
         background-color var(--transition),
         box-shadow var(--transition);
     }
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include slider-track;
   }
 
   &::-moz-range-track {
-    width: 100%;
-    height:$height-track;
-    border-radius: var(--border-radius);
-    background-color: var(--range-border-color);
-
-    @if $enable-transitions {
-      transition:
-        background-color var(--transition),
-        box-shadow var(--transition);
-    }
+    @include slider-track;
   }
 
   &::-ms-track {
-    width: 100%;
-    height: $height-track;
-    border-radius: var(--border-radius);
-    background-color: var(--range-border-color);
-
-    @if $enable-transitions {
-      transition:
-        background-color var(--transition),
-        box-shadow var(--transition);
-    }
-  }
-
-  &::-ms-fill-lower {
-    background-color: var(--border-radius);
+    @include slider-track;
   }
 
   // Slider Thumb
-  &::-webkit-slider-thumb {
+  @mixin slider-thumb {
     -webkit-appearance: none;
     width: $height-thumb;
     height: $height-thumb;
@@ -192,40 +174,17 @@
         background-color var(--transition),
         transform var(--transition);
     }
+  }
+  &::-webkit-slider-thumb {
+    @include slider-thumb;
   }
 
   &::-moz-range-thumb {
-    -webkit-appearance: none;
-    width: $height-thumb;
-    height: $height-thumb;
-    margin-top: #{(-($height-thumb * 0.5) + ($height-track * 0.5))};
-    border: $border-thumb solid var(--range-thumb-border-color);
-    border-radius: 50%;
-    background-color: var(--range-thumb-color);
-    cursor: pointer;
-
-    @if $enable-transitions {
-      transition:
-        background-color var(--transition),
-        transform var(--transition);
-    }
+    @include slider-thumb;
   }
 
   &::-ms-thumb {
-    -webkit-appearance: none;
-    width: $height-thumb;
-    height: $height-thumb;
-    margin-top: #{(-($height-thumb * 0.5) + ($height-track * 0.5))};
-    border: $border-thumb solid var(--range-thumb-border-color);
-    border-radius: 50%;
-    background-color: var(--range-thumb-color);
-    cursor: pointer;
-
-    @if $enable-transitions {
-      transition:
-        background-color var(--transition),
-        transform var(--transition);
-    }
+    @include slider-thumb;
   }
 
   &:hover,

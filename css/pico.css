@@ -1624,9 +1624,6 @@ label > input, label > select, label > textarea {
   -ms-transition: background-color var(--transition), box-shadow var(--transition);
   transition: background-color var(--transition), box-shadow var(--transition);
 }
-[type=range]::-ms-fill-lower {
-  background-color: var(--border-radius);
-}
 [type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 1.25rem;
