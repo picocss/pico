@@ -1652,7 +1652,7 @@ details summary::-moz-list-bullet {
   list-style-type: none;
 }
 details summary::after {
-  display: inline-block;
+  display: block;
   width: 1rem;
   height: 1rem;
   float: right;
