@@ -7,4 +7,5 @@
   --nav-background-color: #{rgba($white, .7)};
   --nav-border-color: #{rgba($grey-500, .2)};
   --nav-logo-color: #{$white};
+  --article-code-background-color: #{mix($grey-50, $white, 33%)};
 }

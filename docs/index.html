@@ -153,11 +153,13 @@
                 <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
                 <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login</button>
               </form>
+              <footer class="code">
 
 <pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"light"</u>&gt;
   …
 &lt;/<b>article</b>&gt;</code></pre>
 
+              </footer>
             </article>
             <article data-theme="dark" aria-label="Forced dark theme example">
               <h4>Dark theme</h4>
@@ -166,11 +168,13 @@
                 <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
                 <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login</button>
               </form>
+              <footer class="code">
 
 <pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;
   …
 &lt;/<b>article</b>&gt;</code></pre>
 
+              </footer>
             </article>
           </section><!-- ./ Themes -->
 
@@ -197,6 +201,7 @@
                   </label>
                 </fieldset>
               </form>
+              <footer class="code">
 
 <pre><code><em>// Simplified example</em>
 <b>:root</b> {
@@ -204,6 +209,7 @@
 }
 </code></pre>
 
+              </footer>
             </article>
             <p>There are 2 ways to customize your version of Pico.css:</p>
             <h4>Overriding CSS variables</h4>
@@ -368,6 +374,7 @@
                 <div>3</div>
                 <div>4</div>
               </div>
+              <footer class="code">
 
 <pre><code>&lt;<b>div</b> <i>class</i>=<u>"grid"</u>&gt;
   &lt;<b>div</b>&gt;1&lt;/<b>div</b>&gt;
@@ -376,6 +383,7 @@
   &lt;<b>div</b>&gt;4&lt;/<b>div</b>&gt;
 &lt;/<b>div</b>&gt;</code></pre>
 
+              </footer>
             </article>
             <p>Columns intentionally collapses below large devices <code>(<u>992px</u>)</code></p>
             <p>To go further, discover how to <a href="https://picocss.com/examples/bootstrap-grid/">merge Pico with the Bootstrap grid system</a>.</p>
@@ -562,6 +570,7 @@
               <h4>Heading 4</h4>
               <h5>Heading 5</h5>
               <h6>Heading 6</h6>
+              <footer class="code">
 
 <pre><code>&lt;<b>h1</b>&gt;Heading 1&lt;/<b>h1</b>&gt;
 &lt;<b>h2</b>&gt;Heading 2&lt;/<b>h2</b>&gt;
@@ -570,6 +579,7 @@
 &lt;<b>h5</b>&gt;Heading 5&lt;/<b>h5</b>&gt;
 &lt;<b>h6</b>&gt;Heading 6&lt;/<b>h6</b>&gt;</code></pre>
 
+              </footer>
             </article>
             <p>Inside a <code>&lt;<b>hgroup</b>&gt;</code> all <code><i>margin-bottom</i></code> are collapsed and the <code>:last-child</code> is muted.</p>
             <article aria-label="Hgroup example">
@@ -577,12 +587,14 @@
                 <h2>Heading 2</h2>
                 <h3>Subtitle for heading 2</h3>
               </hgroup>
+              <footer class="code">
 
 <pre><code>&lt;<b>hgroup</b>&gt;
   &lt;<b>h2</b>&gt;Heading 2&lt;/<b>h2</b>&gt;
   &lt;<b>h3</b>&gt;Subtitle for heading 2&lt;/<b>h3</b>&gt;
 &lt;<b>hgroup</b>&gt;</code></pre>
 
+              </footer>
             </article>
             <p>Inline text elements:</p>
             <article aria-label="Inline text examples">
@@ -610,11 +622,13 @@
               <a href="#" onclick="event.preventDefault()">Primary</a><br>
               <a href="#" onclick="event.preventDefault()" class="secondary">Secondary</a><br>
               <a href="#" onclick="event.preventDefault()" class="contrast">Contrast</a><br>
+              <footer class="code">
 
 <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Primary&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"secondary"</u>&gt;Secondary&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"contrast"</u>&gt;Contrast&lt;/<b>a</b>&gt;</code></pre>
 
+              </footer>
             </article>
             <p>Blockquote:</p>
             <article aria-label="Blockquote example">
@@ -624,6 +638,7 @@
                   <cite>- Phasellus eget lacinia</cite>
                 </footer>
               </blockquote>
+              <footer class="code">
 
 <pre><code>&lt;<b>blockquote</b>&gt;
   "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui sit amet ipsum cursus ornare."
@@ -632,6 +647,7 @@
   &lt;/<b>footer</b>&gt;
 &lt;/<b>blockquote</b>&gt;</code></pre>
 
+              </footer>
             </article>
           </section><!-- ./ Docs: Typography -->
 
@@ -644,39 +660,47 @@
             <article aria-label="Button example">
               <button aria-label="Button">Button</button>
               <input type="submit">
+              <footer class="code">
 
 <pre><code>&lt;<b>button</b>&gt;Button&lt;/<b>button</b>&gt;
 &lt;<b>input</b> <i>type</i>=<u>"submit"</u>&gt;</code></pre>
 
+              </footer>
             </article>
             <p>Buttons are <code><i>width</i>: <u>100%</u>;</code> by default. Use <code>&lt;<b>a</b> <i>role</i>=<u>"button"&gt;</u></code> if you need an inline element.</p>
             <article aria-label="Inline buttons examples">
               <a href="#" onclick="event.preventDefault()" role="button">Link</a>
               <a href="#" onclick="event.preventDefault()" role="button">Link</a>
+              <footer class="code">
 
 <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u>&gt;Link&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u>&gt;Link&lt;/<b>a</b>&gt;</code></pre>
 
+              </footer>
             </article>
             <p>Buttons come with <code>.secondary</code> and <code>.contrast</code> styles.</p>
             <article aria-label="Buttons styles examples">
               <a href="#" onclick="event.preventDefault()" role="button" class="secondary">Secondary</a>
               <a href="#" onclick="event.preventDefault()" role="button" class="contrast">Contrast</a>
+              <footer class="code">
 
 <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"secondary"</u>&gt;Secondary&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"contrast"</u>&gt;Contrast&lt;/<b>a</b>&gt;</code></pre>
 
+              </footer>
             </article>
             <p>And a classic <code>.outline</code> variant.</p>
             <article aria-label="Outline style examples">
               <a href="#" onclick="event.preventDefault()" role="button" class="outline">Primary</a>
               <a href="#" onclick="event.preventDefault()" role="button" class="secondary outline">Secondary</a>
               <a href="#" onclick="event.preventDefault()" role="button" class="contrast outline">Contrast</a>
+              <footer class="code">
 
 <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"outline"</u>&gt;Primary&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"secondary outline"</u>&gt;Secondary&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"contrast outline"</u>&gt;Contrast&lt;/<b>a</b>&gt;</code></pre>
 
+              </footer>
             </article>
           </section><!-- ./ Docs: Button -->
 
@@ -705,6 +729,7 @@
                 <small>We'll never share your email with anyone else.</small>
                 <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Submit</button>
               </form>
+              <footer class="code">
 
 <pre><code>&lt;<b>form</b>&gt;
 
@@ -734,6 +759,7 @@
 
 &lt;/<b>form</b>&gt;</code></pre>
 
+              </footer>
             </article>
             <p>Disabled and validation states:</p>
             <article aria-label="Validation states examples">
@@ -743,12 +769,14 @@
                 <input type="text" placeholder="Disabled" aria-label="Disabled" disabled>
                 <input type="text" value="Readonly" aria-label="Readonly" readonly>
               </form>
+              <footer class="code">
 
 <pre><code>&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Valid"</u> <i>aria-invalid</i>=<u>"false"</u>&gt;
 &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Invalid"</u> <i>aria-invalid</i>=<u>"true"</u>&gt;
 &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Disabled"</u> <i>disabled</i>&gt;
 &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>value</i>=<u>"Readonly"</u> <i>readonly</i>&gt;</code></pre>
 
+              </footer>
             </article>
             <p><code>&lt;<b>fieldset</b>&gt;</code> are unstyled and act as a container for radios and checkboxes providing a consistent <code><i>margin-bottom</i></code> for the set.</p>
             <p><code><i>role</i>=<u>"switch"</u></code> on a <code><i>type</i>=<u>"checkbox"</u></code> enable a custom switch.</p>
@@ -789,6 +817,7 @@
                   Publish on my profile
                 </label>
               </fieldset>
+              <footer class="code">
 
 <pre><code><em>&lt;!-- Select --&gt;</em>
 &lt;<b>label</b> <i>for</i>=<u>"fruit"</u>&gt;Fruit&lt;/<b>label</b>&gt;
@@ -830,6 +859,7 @@
   &lt;/<b>label</b>&gt;
 &lt;/<b>fieldset</b>&gt;</code></pre>
 
+              </footer>
             </article>
             <p>You can change a checkbox to indeterminate state by setting the <code><i>indeterminate</i></code> property to <code><u>true</u></code></p>
             <article aria-label="Indeterminate checkbox example">
@@ -838,11 +868,13 @@
                 Select all
               </label>
               <script>document.getElementById('indeterminate-checkbox').indeterminate = true;</script>
+              <footer class="code">
 
 <pre><code>&lt;<b>script</b>&gt;
   <i>document</i>.<b>getElementById</b>(<u>'indeterminate-checkbox'</u>).<i>indeterminate</i> = <u>true</u>;
 &lt;/<b>script</b>&gt;</code></pre>
 
+              </footer>
             </article>
             <p>Others input types:</p>
             <article aria-label="File browser, range slider, date, time, color examples">
@@ -861,6 +893,7 @@
               <label for="color">Color
                 <input type="color" id="color" name="color" value="#0eaaaa">
               </label>
+              <footer class="code">
 
 <pre><code><em>&lt;!-- File browser --&gt;</em>
 &lt;<b>label</b> <i>for</i>=<u>"file"</u>&gt;File browser
@@ -887,6 +920,7 @@
   &lt;<b>input</b> <i>type</i>=<u>"color"</u> <i>id</i>=<u>"color"</u> <i>name</i>=<u>"color"</u> <i>value</i>=<u>"#0eaaaa"</u>>
 &lt;/<b>label</b>&gt;</code></pre>
 
+              </footer>
             </article>
           </section><!-- ./ Docs: Form -->
 
@@ -1024,6 +1058,7 @@
                   <li>Cras sed libero aliquet, porta dolor quis, dapibus ipsum.</li>
                 </ul>
               </details>
+              <footer class="code">
 
 <pre><code>&lt;<b>details</b>&gt;
   &lt;<b>summary</b>&gt;Collapsible elements 1&lt;/<b>summary</b>&gt;
@@ -1038,6 +1073,7 @@
   &lt;/<b>ul</b>&gt;
 &lt;/<b>details</b>&gt;</code></pre>
 
+              </footer>
             </article>
           </section><!-- ./ Docs: Accordions -->
 
@@ -1083,6 +1119,7 @@
                   <li><a href="#" onclick="event.preventDefault()">Link</a></li>
                 </ul>
               </nav>
+              <footer class="code">
 
 <pre><code>&lt;<b>nav</b>&gt;
   &lt;<b>ul</b>&gt;
@@ -1095,6 +1132,7 @@
   &lt;/<b>ul</b>&gt;
 &lt;/<b>nav</b>&gt;</code></pre>
 
+              </footer>
             </article>
             <p><code>&lt;<b>ul</b>&gt;</code> are automatically distributed horizontally.</p>
             <p><code>&lt;<b>li</b>&gt;</code> are unstyled and inlined.</p>
@@ -1125,6 +1163,7 @@
                   </li>
                 </ul>
               </nav>
+              <footer class="code">
 
 <pre><code>&lt;<b>nav</b>&gt;
   &lt;<b>ul</b>&gt;
@@ -1138,6 +1177,7 @@
   &lt;/<b>ul</b>&gt;
 &lt;/<b>nav</b>&gt;</code></pre>
 
+              </footer>
             </article>
             <p>Inside <code>&lt;<b>aside</b>&gt;</code>, navs are stacked vertically.</p>
             <article aria-label="Vertical nav example">
@@ -1150,6 +1190,7 @@
                   </ul>
                 </nav>
               </aside>
+              <footer class="code">
 
 <pre><code>&lt;<b>aside</b>&gt;
   &lt;<b>nav</b>&gt;
@@ -1161,6 +1202,7 @@
   &lt;/<b>nav</b>&gt;
 &lt;/<b>aside</b>&gt;</code></pre>
 
+              </footer>
             </article>
           </section><!-- ./ Docs: Nav -->
 
@@ -1172,19 +1214,23 @@
             </hgroup>
             <article aria-label="Progress bar example">
               <progress value="25" max="100"></progress>
+              <footer class="code">
 
 <pre><code>&lt;<b>progress</b> <i>value</i>=<u>"25</u>" <i>max</i>=<u>"100"</u>&gt;&lt;/<b>progress</b>&gt;</code></pre>
 
+              </footer>
             </article>
             <p>You can change a progress bar to indeterminate state by setting the <code><i>indeterminate</i></code> property to <code><u>true</u></code></p>
             <article aria-label="Indeterminate progress bar example">
               <progress id="indeterminate-progress"></progress>
               <script>document.getElementById('indeterminate-progress').indeterminate = true;</script>
+              <footer class="code">
 
 <pre><code>&lt;<b>script</b>&gt;
   <i>document</i>.<b>getElementById</b>(<u>'indeterminate-progress'</u>).<i>indeterminate</i> = <u>true</u>;
 &lt;/<b>script</b>&gt;</code></pre>
 
+              </footer>
             </article>
           </section><!-- ./ Docs: Progress -->
 
@@ -1197,10 +1243,12 @@
             <article aria-label="Loading buttons example">
               <button aria-busy="true">Please wait…</button>
               <button aria-busy="true" class="secondary"></button>
+              <footer class="code">
 
 <pre><code>&lt;<b>button</b> <i>aria-busy</i>=<u>"true"</u>&gt;Please wait…&lt;/<b>button</b>&gt;
 &lt;<b>button</b> <i>aria-busy</i>=<u>"true"</u> <i>class</i>=<u>"secondary"</u>&gt;&lt;/<b>button</b>&gt;</code></pre>
 
+              </footer>
             </article>
             <p>It can be applied to any block:</p>
             <article aria-busy="true"></article>
@@ -1208,8 +1256,9 @@
             <p>Or any text element:</p>
             <article aria-label="Loading paragraph example">
               <a href="#" aria-busy="true" onclick="event.preventDefault()">Generating link, please wait…</a>
-              <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>aria-busy</i>=<u>"true"</u>&gt;Generating link, please wait…&lt;/<b>a</b>&gt;</code></pre>
-
+              <footer class="code">
+                <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>aria-busy</i>=<u>"true"</u>&gt;Generating link, please wait…&lt;/<b>a</b>&gt;</code></pre>
+              </footer>
             </article>
           </section><!-- ./ Docs: Loading -->
 
@@ -1223,11 +1272,13 @@
               <p>Tooltip on a <a href="#" onclick="event.preventDefault()" data-tooltip="Tooltip">link</a></p>
               <p>Tooltip on <em data-tooltip="Tooltip">inline element</em></p>
               <p><button data-tooltip="Tooltip" aria-label="Example button">Tooltip on a button</button></p>
+              <footer class="code">
 
 <pre><code>&lt;<b>p</b>&gt;Tooltip on a &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>data-tooltip</i>=<u>"Tooltip"</u>&gt;link&lt;/<b>a</b>&gt;&lt;/<b>p</b>&gt;
 &lt;<b>p</b>&gt;Tooltip on &lt;<b>em</b> <i>data-tooltip</i>=<u>"Tooltip"</u>&gt;inline element&lt;/<b>em</b>&gt;&lt;/<b>p</b>&gt;
 &lt;<b>p</b>&gt;&lt;<b>button</b> <i>data-tooltip</i>=<u>"Tooltip"</u>&gt;Tooltip on a button&lt;/<b>button</b>&gt;&lt;/<b>p</b>&gt;</code></pre>
 
+              </footer>
             </article>
           </section><!-- ./ Docs: Tooltips -->
 

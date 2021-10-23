@@ -2,11 +2,22 @@
  * Docs: Code
  */
 
-// Custom spacings for <pre> (Horizontally aligned with <article> content)
+// Code block inside article
+article > footer.code {
+  background: var(--article-code-background-color);
+}
+article pre,
+article pre code {
+  background: transparent;
+  margin-bottom: 0;
+}
+
+// Code block outside article
+// Horizontally aligned with <article> content
 section > pre {
+  background: var(--article-code-background-color);
   margin: var(--block-spacing-vertical) 0;
   padding: calc(var(--block-spacing-vertical) / 1.5) var(--block-spacing-horizontal);
-  background-color: var(--card-sectionning-background-color);
   box-shadow: var(--card-box-shadow);
 }
 
@@ -36,7 +47,7 @@ section > pre {
 
   // Spacing for Valid & Invalid badge
   code {
-    padding: calc(var(--spacing) * 1.625) 0;
+    padding: calc(var(--block-spacing-vertical) / 1.5 + 14px + 0.75rem) var(--block-spacing-horizontal);
   }
 }
 

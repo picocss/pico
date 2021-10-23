@@ -17,6 +17,7 @@
   --nav-background-color: rgba(255, 255, 255, 0.7);
   --nav-border-color: rgba(115, 130, 140, 0.2);
   --nav-logo-color: #FFF;
+  --article-code-background-color: #f9fafb;
 }
 
 @media only screen and (prefers-color-scheme: dark) {
@@ -26,14 +27,16 @@
     --nav-background-color: rgba(16, 24, 30, 0.8);
     --nav-border-color: rgba(115, 130, 140, 0.2);
     --nav-logo-color: #0e1419;
+    --article-code-background-color: var(--code-background-color);
   }
 }
 [data-theme=dark] {
   --invalid-color: rgba(183, 28, 28, 0.5);
   --valid-color: rgba(46, 125, 50, 0.5);
-  --nav-background: rgba(16, 24, 30, 0.8);
+  --nav-background-color: rgba(16, 24, 30, 0.8);
   --nav-border-color: rgba(115, 130, 140, 0.2);
   --nav-logo-color: #0e1419;
+  --article-code-background-color: var(--code-background-color);
 }
 
 /**
@@ -287,10 +290,20 @@ a[role=button] {
 /**
  * Docs: Code
  */
+article > footer.code {
+  background: var(--article-code-background-color);
+}
+
+article pre,
+article pre code {
+  background: transparent;
+  margin-bottom: 0;
+}
+
 section > pre {
+  background: var(--article-code-background-color);
   margin: var(--block-spacing-vertical) 0;
   padding: calc(var(--block-spacing-vertical) / 1.5) var(--block-spacing-horizontal);
-  background-color: var(--card-sectionning-background-color);
   box-shadow: var(--card-box-shadow);
 }
 
@@ -320,7 +333,7 @@ section > pre {
 }
 [data-theme=invalid] code,
 [data-theme=valid] code {
-  padding: calc(var(--spacing) * 1.625) 0;
+  padding: calc(var(--block-spacing-vertical) / 1.5 + 14px + 0.75rem) var(--block-spacing-horizontal);
 }
 
 [data-theme=invalid]:before {
