@@ -1278,7 +1278,7 @@ textarea[disabled] {
 input[aria-invalid],
 select[aria-invalid],
 textarea[aria-invalid] {
-  padding-right: 2rem;
+  padding-right: 2rem !important;
   background-position: center right 0.75rem;
   background-repeat: no-repeat;
   background-size: 1rem auto;

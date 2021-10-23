@@ -223,7 +223,12 @@ select,
 textarea {
 
   &[aria-invalid] {
-    padding-right: 2rem;
+    @if $enable-important {
+      padding-right: 2rem !important;
+    }
+    @else {
+      padding-right: 2rem;
+    }
     background-position: center right .75rem;
     background-repeat: no-repeat;
     background-size: 1rem auto;
