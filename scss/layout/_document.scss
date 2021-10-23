@@ -33,7 +33,7 @@
 html {
   -webkit-text-size-adjust: 100%; // 2
   -webkit-tap-highlight-color: rgba(0,0,0,0); // 3
-  -moz-tab-size: 4; // 5
+  tab-size: 4; // 5
   -ms-text-size-adjust: 100%; // 6
   background-color: var(--background-color);
   color: var(--color);

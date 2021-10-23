@@ -406,6 +406,8 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
   -ms-text-size-adjust: 100%;
   background-color: var(--background-color);
   color: var(--color);
