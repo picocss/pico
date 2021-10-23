@@ -31,10 +31,13 @@ pre {
 pre,
 code,
 kbd {
-  background: var(--code-background-color);
   color: var(--code-color);
   font-weight: var(--font-weight);
   line-height: initial;
+}
+
+code {
+  background: var(--code-background-color);
 }
 
 code,
@@ -47,14 +50,11 @@ kbd {
 pre {
   display: block;
   margin-bottom: var(--spacing);
-  padding: var(--spacing);
   overflow-x: auto;
-  background: var(--code-background-color);
 
   > code {
     display: block;
-    padding: 0;
-    background: transparent;
+    padding: var(--spacing);
     font-size: 14px;
     line-height: var(--line-height);
   }

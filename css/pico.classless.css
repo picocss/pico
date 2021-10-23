@@ -1561,10 +1561,13 @@ pre {
 pre,
 code,
 kbd {
-  background: var(--code-background-color);
   color: var(--code-color);
   font-weight: var(--font-weight);
   line-height: initial;
+}
+
+code {
+  background: var(--code-background-color);
 }
 
 code,
@@ -1577,14 +1580,11 @@ kbd {
 pre {
   display: block;
   margin-bottom: var(--spacing);
-  padding: var(--spacing);
   overflow-x: auto;
-  background: var(--code-background-color);
 }
 pre > code {
   display: block;
-  padding: 0;
-  background: transparent;
+  padding: var(--spacing);
   font-size: 14px;
   line-height: var(--line-height);
 }
@@ -1726,8 +1726,7 @@ article {
   box-shadow: var(--card-box-shadow);
 }
 article > header,
-article > footer,
-article > pre {
+article > footer {
   margin-right: calc(var(--block-spacing-horizontal) * -1);
   margin-left: calc(var(--block-spacing-horizontal) * -1);
   padding: calc(var(--block-spacing-vertical) * 0.66) var(--block-spacing-horizontal);
@@ -1738,8 +1737,7 @@ article > header {
   margin-bottom: var(--block-spacing-vertical);
   border-bottom: var(--border-width) solid var(--card-border-color);
 }
-article > footer,
-article > pre {
+article > footer {
   margin-top: var(--block-spacing-vertical);
   margin-bottom: calc(var(--block-spacing-vertical) * -1);
   border-top: var(--border-width) solid var(--card-border-color);

@@ -13,8 +13,7 @@ article {
   box-shadow: var(--card-box-shadow);
 
   > header,
-  > footer,
-  > pre {
+  > footer {
     margin-right: calc(var(--block-spacing-horizontal) * -1);
     margin-left: calc(var(--block-spacing-horizontal) * -1);
     padding: calc(var(--block-spacing-vertical) * 0.66) var(--block-spacing-horizontal);
@@ -27,8 +26,7 @@ article {
     border-bottom: var(--border-width) solid var(--card-border-color);
   }
 
-  > footer,
-  > pre {
+  > footer {
     margin-top: var(--block-spacing-vertical);
     margin-bottom: calc(var(--block-spacing-vertical) * -1);
     border-top: var(--border-width) solid var(--card-border-color);
