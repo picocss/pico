@@ -1153,7 +1153,6 @@ label,
 fieldset legend {
   display: block;
   margin-bottom: calc(var(--spacing) * 0.25);
-  vertical-align: middle;
 }
 
 input:not([type=checkbox]):not([type=radio]),
