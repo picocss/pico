@@ -8,7 +8,13 @@
  * Copyright 2019-2021 - Licensed under MIT
  */
 
+import * as MostVisible from './most-visible.js';
+
 export const scrollspy = {
+
+  mostVisible() {
+    new MostVisible()
+  },
 
   // Config
   minWidth: '992px',
@@ -61,3 +67,5 @@ export const scrollspy = {
     }.bind(this), false);
   }
 }
+
+export default scrollspy;

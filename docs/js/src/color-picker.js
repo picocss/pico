@@ -170,3 +170,5 @@ export const colorPicker = {
     throw new Error('Bad Hex');
   }
 }
+
+export default colorPicker;

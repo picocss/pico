@@ -28,3 +28,5 @@ export const aside = {
     }
   }
 }
+
+export default aside;

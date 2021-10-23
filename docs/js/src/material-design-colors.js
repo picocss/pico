@@ -299,3 +299,5 @@ export const materialDesignColors = {
     inverse: "#FFF"
   }
 };
+
+export default materialDesignColors;

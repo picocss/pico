@@ -102,3 +102,5 @@ export const grid = {
     }
   }
 };
+
+export default grid;

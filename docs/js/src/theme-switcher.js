@@ -110,3 +110,5 @@ export const themeSwitcher = {
     }.bind(this));
   }
 }
+
+export default themeSwitcher;
