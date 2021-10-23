@@ -55,8 +55,15 @@
   border: none;
   border-radius: 0;
   background: none;
+  
+  &:hover,
+  &:active,
+  &:focus {
+    border: none;
+    background: none;
+  }
 
-  &::-webkit-file-upload-button {
+  @mixin file-selector-button {
     --background-color: var(--secondary);
     --border-color: var(--secondary);
     --color: var(--secondary-inverse);
@@ -73,7 +80,7 @@
     line-height: var(--line-height);
     text-align: center;
     cursor: pointer;
-
+    
     @if $enable-transitions {
       transition:
         background-color var(--transition),
@@ -81,19 +88,25 @@
         color var(--transition),
         box-shadow var(--transition);
     }
+  
+    &:hover,
+    &:active,
+    &:focus {
+    --background-color: var(--secondary-hover);
+    --border-color: var(--secondary-hover);
+    }
   }
 
-  &:hover,
-  &:active,
-  &:focus {
-    --color: var(--color);
-    border: none;
-    background: none;
-
-    &::-webkit-file-upload-button {
-      --background-color: var(--secondary-hover);
-      --border-color: var(--secondary-hover);
-    }
+  &::file-selector-button {
+    @include file-selector-button;
+  }
+  
+  &::-webkit-file-upload-button {
+    @include file-selector-button;
+  }
+  
+  &::-ms-browse {
+    @include file-selector-button;
   }
 }
 

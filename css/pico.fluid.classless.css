@@ -1285,6 +1285,10 @@ label > input, label > select, label > textarea {
   border-radius: 0;
   background: none;
 }
+[type=file]:hover, [type=file]:active, [type=file]:focus {
+  border: none;
+  background: none;
+}
 [type=file]::-webkit-file-upload-button {
   --background-color: var(--secondary);
   --border-color: var(--secondary);
@@ -1305,12 +1309,78 @@ label > input, label > select, label > textarea {
   -webkit-transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
-[type=file]:hover, [type=file]:active, [type=file]:focus {
-  --color: var(--color);
-  border: none;
-  background: none;
+[type=file]::file-selector-button {
+  --background-color: var(--secondary);
+  --border-color: var(--secondary);
+  --color: var(--secondary-inverse);
+  margin-right: calc(var(--spacing) / 2);
+  padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+  outline: none;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow);
+  color: var(--color);
+  font-size: 1rem;
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
-[type=file]:hover::-webkit-file-upload-button, [type=file]:active::-webkit-file-upload-button, [type=file]:focus::-webkit-file-upload-button {
+[type=file]::-webkit-file-upload-button:hover, [type=file]::-webkit-file-upload-button:active, [type=file]::-webkit-file-upload-button:focus {
+  --background-color: var(--secondary-hover);
+  --border-color: var(--secondary-hover);
+}
+[type=file]::file-selector-button:hover, [type=file]::file-selector-button:active, [type=file]::file-selector-button:focus {
+  --background-color: var(--secondary-hover);
+  --border-color: var(--secondary-hover);
+}
+[type=file]::-webkit-file-upload-button {
+  --background-color: var(--secondary);
+  --border-color: var(--secondary);
+  --color: var(--secondary-inverse);
+  margin-right: calc(var(--spacing) / 2);
+  padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+  outline: none;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow);
+  color: var(--color);
+  font-size: 1rem;
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
+}
+[type=file]::-webkit-file-upload-button:hover, [type=file]::-webkit-file-upload-button:active, [type=file]::-webkit-file-upload-button:focus {
+  --background-color: var(--secondary-hover);
+  --border-color: var(--secondary-hover);
+}
+[type=file]::-ms-browse {
+  --background-color: var(--secondary);
+  --border-color: var(--secondary);
+  --color: var(--secondary-inverse);
+  margin-right: calc(var(--spacing) / 2);
+  padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--border-radius);
+  outline: none;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow);
+  color: var(--color);
+  font-size: 1rem;
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  text-align: center;
+  cursor: pointer;
+  -ms-transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
+}
+[type=file]::-ms-browse:hover, [type=file]::-ms-browse:active, [type=file]::-ms-browse:focus {
   --background-color: var(--secondary-hover);
   --border-color: var(--secondary-hover);
 }
