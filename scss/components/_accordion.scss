@@ -81,3 +81,13 @@ details {
     }
   }
 }
+
+[dir="rtl"] {
+  details{ 
+    summary {
+      &::after {
+        float: left;
+      }
+    }
+  }
+}

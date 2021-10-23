@@ -739,7 +739,12 @@ small {
 
 ul,
 ol {
+  padding-right: 0;
   padding-left: var(--spacing);
+  -webkit-padding-end: 0;
+          padding-inline-end: 0;
+  -webkit-padding-start: var(--spacing);
+          padding-inline-start: var(--spacing);
 }
 ul li,
 ol li {
@@ -761,7 +766,12 @@ blockquote {
   display: block;
   margin: var(--typography-spacing-vertical) 0;
   padding: var(--spacing);
+  border-right: none;
   border-left: 0.25rem solid var(--blockquote-border-color);
+  -webkit-border-end: none;
+          border-inline-end: none;
+  -webkit-border-start: 0.25rem solid var(--blockquote-border-color);
+          border-inline-start: 0.25rem solid var(--blockquote-border-color);
 }
 blockquote footer {
   margin-top: calc(var(--typography-spacing-vertical) * 0.5);
@@ -1101,7 +1111,12 @@ textarea[disabled] {
 input[aria-invalid],
 select[aria-invalid],
 textarea[aria-invalid] {
-  padding-right: 2rem !important;
+  padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
+  padding-left: var(--form-element-spacing-horizontal);
+  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
+          padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
+  -webkit-padding-start: var(--form-element-spacing-horizontal) !important;
+          padding-inline-start: var(--form-element-spacing-horizontal) !important;
   background-position: center right 0.75rem;
   background-repeat: no-repeat;
   background-size: 1rem auto;
@@ -1133,6 +1148,12 @@ textarea[aria-invalid=true]:focus {
   --border-color: var(--form-element-invalid-active-border-color) !important;
 }
 
+[dir=rtl] input[aria-invalid],
+[dir=rtl] select[aria-invalid],
+[dir=rtl] textarea[aria-invalid] {
+  background-position: center left 0.75rem;
+}
+
 input::placeholder,
 input::-webkit-input-placeholder,
 textarea::placeholder,
@@ -1154,10 +1175,19 @@ select::-ms-expand {
 }
 select:not([multiple]):not([size]) {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  padding-left: var(--form-element-spacing-horizontal);
+  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+          padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  -webkit-padding-start: var(--form-element-spacing-horizontal);
+          padding-inline-start: var(--form-element-spacing-horizontal);
   background-image: var(--icon-chevron);
   background-position: center right 0.75rem;
   background-repeat: no-repeat;
   background-size: 1rem auto;
+}
+
+[dir=rtl] select:not([multiple]):not([size]) {
+  background-position: center left 0.75rem;
 }
 
 input + small,
@@ -1187,6 +1217,11 @@ label > input, label > select, label > textarea {
   height: 1.25em;
   margin-top: -0.125em;
   margin-right: 0.375em;
+  margin-left: 0;
+  -webkit-margin-end: 0.375em;
+          margin-inline-end: 0.375em;
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
   border-width: var(--border-width);
   vertical-align: middle;
   cursor: pointer;
@@ -1266,6 +1301,10 @@ label > input, label > select, label > textarea {
 [type=checkbox][role=switch]:checked::before {
   margin-right: 0;
   margin-left: calc(1.125em - var(--border-width));
+  -webkit-margin-end: 0;
+          margin-inline-end: 0;
+  -webkit-margin-start: calc(1.125em - var(--border-width));
+          margin-inline-start: calc(1.125em - var(--border-width));
 }
 
 /**
@@ -1287,25 +1326,24 @@ label > input, label > select, label > textarea {
   border-radius: calc(var(--border-radius) * 0.5);
 }
 
-[type=date],
-[type=datetime-local],
-[type=month],
-[type=time],
-[type=week] {
+:not(:dir(rtl)) [type=date],
+:not(:dir(rtl)) [type=datetime-local],
+:not(:dir(rtl)) [type=month],
+:not(:dir(rtl)) [type=time],
+:not(:dir(rtl)) [type=week] {
   background-image: var(--icon-date);
   background-position: center right 0.75rem;
   background-repeat: no-repeat;
   background-size: 1rem auto;
 }
-[type=date]::-webkit-calendar-picker-indicator,
-[type=datetime-local]::-webkit-calendar-picker-indicator,
-[type=month]::-webkit-calendar-picker-indicator,
-[type=time]::-webkit-calendar-picker-indicator,
-[type=week]::-webkit-calendar-picker-indicator {
+:not(:dir(rtl)) [type=date]::-webkit-calendar-picker-indicator,
+:not(:dir(rtl)) [type=datetime-local]::-webkit-calendar-picker-indicator,
+:not(:dir(rtl)) [type=month]::-webkit-calendar-picker-indicator,
+:not(:dir(rtl)) [type=time]::-webkit-calendar-picker-indicator,
+:not(:dir(rtl)) [type=week]::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
-
-[type=time] {
+:not(:dir(rtl)) [type=time] {
   background-image: var(--icon-time);
 }
 
@@ -1325,6 +1363,11 @@ label > input, label > select, label > textarea {
   --border-color: var(--secondary);
   --color: var(--secondary-inverse);
   margin-right: calc(var(--spacing) / 2);
+  margin-left: 0;
+  -webkit-margin-end: calc(var(--spacing) / 2);
+          margin-inline-end: calc(var(--spacing) / 2);
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
@@ -1345,6 +1388,11 @@ label > input, label > select, label > textarea {
   --border-color: var(--secondary);
   --color: var(--secondary-inverse);
   margin-right: calc(var(--spacing) / 2);
+  margin-left: 0;
+  -webkit-margin-end: calc(var(--spacing) / 2);
+          margin-inline-end: calc(var(--spacing) / 2);
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
@@ -1372,6 +1420,11 @@ label > input, label > select, label > textarea {
   --border-color: var(--secondary);
   --color: var(--secondary-inverse);
   margin-right: calc(var(--spacing) / 2);
+  margin-left: 0;
+  -webkit-margin-end: calc(var(--spacing) / 2);
+          margin-inline-end: calc(var(--spacing) / 2);
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
@@ -1396,6 +1449,9 @@ label > input, label > select, label > textarea {
   --border-color: var(--secondary);
   --color: var(--secondary-inverse);
   margin-right: calc(var(--spacing) / 2);
+  margin-left: 0;
+  margin-inline-end: calc(var(--spacing) / 2);
+  margin-inline-start: 0;
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
@@ -1533,6 +1589,7 @@ td {
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   text-align: left;
+  text-align: start;
 }
 
 tr {
@@ -1713,6 +1770,10 @@ details[open] > summary::after {
   transform: rotate(0);
 }
 
+[dir=rtl] details summary::after {
+  float: left;
+}
+
 /**
  * Card (<article>)
  */
@@ -1888,6 +1949,11 @@ progress::-moz-progress-bar {
 }
 [aria-busy=true]:not(input):not(select):not(textarea):not(:empty)::before {
   margin-right: calc(var(--spacing) * 0.5);
+  margin-left: 0;
+  -webkit-margin-end: calc(var(--spacing) * 0.5);
+          margin-inline-end: calc(var(--spacing) * 0.5);
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
 }
 [aria-busy=true]:not(input):not(select):not(textarea):empty {
   text-align: center;
@@ -2046,6 +2112,10 @@ summary,
 textarea,
 [tabindex] {
   -ms-touch-action: manipulation;
+}
+
+[dir=rtl] {
+  direction: rtl;
 }
 
 /**

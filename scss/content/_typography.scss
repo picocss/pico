@@ -215,7 +215,10 @@ small {
 // Lists
 ul,
 ol {
+  padding-right: 0;
   padding-left: var(--spacing);
+  padding-inline-end: 0;
+  padding-inline-start: var(--spacing);
 
   li {
     margin-bottom: calc(var(--typography-spacing-vertical) * 0.25);
@@ -239,7 +242,10 @@ blockquote {
   display: block;
   margin: var(--typography-spacing-vertical) 0;
   padding: var(--spacing);
+  border-right: none;
   border-left: .25rem solid var(--blockquote-border-color);
+  border-inline-end: none;
+  border-inline-start: .25rem solid var(--blockquote-border-color);
 
   footer {
     margin-top: calc(var(--typography-spacing-vertical) * 0.5);

@@ -12,6 +12,9 @@
   height: 1.25em;
   margin-top: -.125em;
   margin-right: .375em;
+  margin-left: 0;
+  margin-inline-end: .375em;
+  margin-inline-start: 0;
   border-width: var(--border-width);
   vertical-align: middle;
   cursor: pointer;
@@ -112,6 +115,8 @@
     &::before {
       margin-right: 0;
       margin-left: calc(#{$switch-width * 0.5} - var(--border-width));
+      margin-inline-end: 0;
+      margin-inline-start: calc(#{$switch-width * 0.5} - var(--border-width));
     }
   }
 }

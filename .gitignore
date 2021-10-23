@@ -1,4 +1,4 @@
 node_modules/
 *.DS_Store
 TODO.md
-test.html
+tests/

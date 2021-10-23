@@ -728,7 +728,12 @@ small {
 
 ul,
 ol {
+  padding-right: 0;
   padding-left: var(--spacing);
+  -webkit-padding-end: 0;
+          padding-inline-end: 0;
+  -webkit-padding-start: var(--spacing);
+          padding-inline-start: var(--spacing);
 }
 ul li,
 ol li {
@@ -750,7 +755,12 @@ blockquote {
   display: block;
   margin: var(--typography-spacing-vertical) 0;
   padding: var(--spacing);
+  border-right: none;
   border-left: 0.25rem solid var(--blockquote-border-color);
+  -webkit-border-end: none;
+          border-inline-end: none;
+  -webkit-border-start: 0.25rem solid var(--blockquote-border-color);
+          border-inline-start: 0.25rem solid var(--blockquote-border-color);
 }
 blockquote footer {
   margin-top: calc(var(--typography-spacing-vertical) * 0.5);
@@ -1222,7 +1232,12 @@ textarea[disabled] {
 input[aria-invalid],
 select[aria-invalid],
 textarea[aria-invalid] {
-  padding-right: 2rem;
+  padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  padding-left: var(--form-element-spacing-horizontal);
+  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+          padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  -webkit-padding-start: var(--form-element-spacing-horizontal);
+          padding-inline-start: var(--form-element-spacing-horizontal);
   background-position: center right 0.75rem;
   background-repeat: no-repeat;
   background-size: 1rem auto;
@@ -1254,6 +1269,12 @@ textarea[aria-invalid=true]:focus {
   --border-color: var(--form-element-invalid-active-border-color);
 }
 
+[dir=rtl] input[aria-invalid],
+[dir=rtl] select[aria-invalid],
+[dir=rtl] textarea[aria-invalid] {
+  background-position: center left 0.75rem;
+}
+
 input::placeholder,
 input::-webkit-input-placeholder,
 textarea::placeholder,
@@ -1275,10 +1296,19 @@ select::-ms-expand {
 }
 select:not([multiple]):not([size]) {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  padding-left: var(--form-element-spacing-horizontal);
+  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+          padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  -webkit-padding-start: var(--form-element-spacing-horizontal);
+          padding-inline-start: var(--form-element-spacing-horizontal);
   background-image: var(--icon-chevron);
   background-position: center right 0.75rem;
   background-repeat: no-repeat;
   background-size: 1rem auto;
+}
+
+[dir=rtl] select:not([multiple]):not([size]) {
+  background-position: center left 0.75rem;
 }
 
 input + small,
@@ -1314,6 +1344,7 @@ td {
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   text-align: left;
+  text-align: start;
 }
 
 tr {
@@ -1355,4 +1386,8 @@ summary,
 textarea,
 [tabindex] {
   -ms-touch-action: manipulation;
+}
+
+[dir=rtl] {
+  direction: rtl;
 }
