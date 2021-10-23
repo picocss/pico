@@ -21,7 +21,12 @@ hr {
 // Add the correct display in IE 10+
 [hidden],
 template {
-  display: none;
+  @if $enable-important {
+    display: none !important;
+  }
+  @else {
+    display: none;
+  }
 }
 
 // Add the correct styles in Edge 18-, IE, and Safari

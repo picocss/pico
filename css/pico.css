@@ -1214,7 +1214,6 @@ fieldset legend {
 input:not([type=checkbox]):not([type=radio]),
 select,
 textarea {
-  display: block;
   width: 100%;
 }
 
@@ -1360,7 +1359,6 @@ label > input, label > select, label > textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  display: inline-block;
   width: 1.25em;
   height: 1.25em;
   margin-top: -0.125em;
@@ -1528,7 +1526,6 @@ label > input, label > select, label > textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  display: block;
   width: 100%;
   height: 1.25rem;
   background: transparent;
@@ -1738,7 +1735,7 @@ hr {
 
 [hidden],
 template {
-  display: none;
+  display: none !important;
 }
 
 dialog {
