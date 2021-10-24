@@ -141,6 +141,7 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 - [Themes](https://picocss.com/docs/#themes)
 - [Customization](https://picocss.com/docs/#customization)
 - [Class-less version](https://picocss.com/docs/#classless)
+- [RTL](https://picocss.com/docs/#rtl)
 
 **Layout**
 - [Containers](https://picocss.com/docs/#containers)
