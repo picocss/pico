@@ -8,7 +8,7 @@
 
 <p align="center">
   <strong>Minimal CSS Framework for semantic HTML</strong><br>
-  Elegant styles for all natives HTML elements without <code>.classes</code> and dark mode automatically enabled.<br><br>
+  Elegant styles for all native HTML elements without <code>.classes</code> and dark mode automatically enabled.<br><br>
   <a href="https://picocss.com/#examples">Examples</a> ·
   <a href="https://picocss.com/docs/">Documentation</a>
 </p>
@@ -22,7 +22,7 @@
 https://user-images.githubusercontent.com/23470684/126863110-94061cf1-36ea-4697-94bd-2e1071a95a2f.mp4
 
 **Class-light and semantic**  
-We use simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
+Pico uses simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
 
 **Great styles with just one CSS file**  
 No dependencies, package manager, external files, or JavaScript.
@@ -172,7 +172,7 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 
 Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LICENSE.md).
 
-**Relevant third party tools and resources we depend on:**
+**Relevant third-party tools and resources we depend on:**
 
 Website and docs:
 - [TypeIt](https://typeitjs.com/): JavaScript animated typing utility (Licensed [GPL 2.0](https://github.com/alexmacarthur/typeit/blob/master/LICENSE))
