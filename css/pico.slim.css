@@ -200,6 +200,7 @@ kbd {
     0 0.125rem 2rem rgba(27, 40, 50, 0.08),
     0 0 0 0.0625rem rgba(27, 40, 50, 0.024);
   --card-sectionning-background-color: #fbfbfc;
+  --modal-overlay-background-color: rgba(27, 40, 50, 0.9);
   --progress-background-color: #d5dce2;
   --progress-color: var(--primary);
   --loading-spinner-opacity: 0.5;
@@ -291,6 +292,7 @@ kbd {
       0 0.125rem 2rem rgba(0, 0, 0, 0.12),
       0 0 0 0.0625rem rgba(0, 0, 0, 0.036);
     --card-sectionning-background-color: #18232c;
+    --modal-overlay-background-color: rgba(36, 51, 62, 0.9);
     --progress-background-color: #24333e;
     --progress-color: var(--primary);
     --loading-spinner-opacity: 0.5;
@@ -381,6 +383,7 @@ kbd {
     0 0.125rem 2rem rgba(0, 0, 0, 0.12),
     0 0 0 0.0625rem rgba(0, 0, 0, 0.036);
   --card-sectionning-background-color: #18232c;
+  --modal-overlay-background-color: rgba(36, 51, 62, 0.9);
   --progress-background-color: #24333e;
   --progress-color: var(--primary);
   --loading-spinner-opacity: 0.5;

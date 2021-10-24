@@ -110,6 +110,9 @@
     0 0 0 0.0625rem #{rgba($grey-900, 0.024)};
   --card-sectionning-background-color: #{mix($grey-50, $white, 25%)};
 
+  // Modal (<dialog>)
+  --modal-overlay-background-color: #{rgba($grey-900, 0.9)};
+
   // Progress
   --progress-background-color: #{$grey-100};
   --progress-color: var(--primary);

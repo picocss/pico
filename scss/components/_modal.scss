@@ -1,0 +1,60 @@
+/**
+ * Modal (<dialog>)
+ */
+
+dialog {
+  position: fixed;
+  width: inherit;
+  min-width: 100%;
+  height: inherit;
+  min-height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--modal-overlay-background-color);
+  padding: var(--spacing);
+  border: none;
+
+  article {
+    @if map-get($breakpoints, "sm") {
+      @media (min-width: map-get($breakpoints, "sm")) {
+        max-width: map-get($viewports, "sm");
+      }
+    }
+
+    @if map-get($breakpoints, "md") {
+      @media (min-width: map-get($breakpoints, "md")) {
+        max-width: map-get($viewports, "md");
+      }
+    }
+
+    > footer {
+      text-align: right;
+
+      [role="button"]:not(:first-of-type) {
+        margin-left: calc(var(--spacing) * 0.5);
+      }
+    }
+  }
+
+  &:not([open]) {
+    display: none;
+  }
+}
+
+.dialog-is-open {
+  pointer-events: none;
+  overflow: hidden;
+  
+  .container {
+    filter: blur(0.125rem);
+  }
+
+  dialog {
+    pointer-events: auto;
+  }
+}
