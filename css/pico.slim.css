@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.3.3 (https://picocss.com)
+ * Pico.css v1.4.0 (https://picocss.com)
  * Copyright 2019-2021 - Licensed under MIT
  *
  * Slim version example
@@ -9,11 +9,13 @@
  * Theme: default
  */
 :root {
-  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   --line-height: 1.5;
   --font-weight: 400;
   --font-size: 16px;
-  --border-radius: .25rem;
+  --border-radius: 0.25rem;
   --border-width: 1px;
   --outline-width: 3px;
   --spacing: 1rem;
@@ -22,29 +24,25 @@
   --block-spacing-horizontal: var(--spacing);
   --grid-spacing-vertical: 0;
   --grid-spacing-horizontal: var(--spacing);
-  --form-element-spacing-vertical: .75rem;
+  --form-element-spacing-vertical: 0.75rem;
   --form-element-spacing-horizontal: 1rem;
-  --transition: .2s ease-in-out;
+  --transition: 0.2s ease-in-out;
 }
-
 @media (min-width: 576px) {
   :root {
     --font-size: 17px;
   }
 }
-
 @media (min-width: 768px) {
   :root {
     --font-size: 18px;
   }
 }
-
 @media (min-width: 992px) {
   :root {
     --font-size: 19px;
   }
 }
-
 @media (min-width: 1200px) {
   :root {
     --font-size: 20px;
@@ -54,7 +52,6 @@
 a {
   --text-decoration: none;
 }
-
 a.secondary, a.contrast {
   --text-decoration: underline;
 }
@@ -97,12 +94,12 @@ h5 {
   --typography-spacing-vertical: 1.6875rem;
 }
 
-[type="checkbox"],
-[type="radio"] {
+[type=checkbox],
+[type=radio] {
   --border-width: 2px;
 }
 
-[type="checkbox"][role="switch"] {
+[type=checkbox][role=switch] {
   --border-width: 3px;
 }
 
@@ -119,20 +116,22 @@ pre,
 code,
 kbd,
 samp {
-  --font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace",
+    "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 kbd {
   --font-weight: bolder;
 }
 
-[data-theme="light"],
-:root:not([data-theme="dark"]) {
+[data-theme=light],
+:root:not([data-theme=dark]) {
   color-scheme: light;
-  --background-color: #FFF;
+  --background-color: #fff;
   --color: #415462;
   --h1-color: #1b2832;
-  --h2-color: #23333e;
+  --h2-color: #24333e;
   --h3-color: #2c3d49;
   --h4-color: #374956;
   --h5-color: #415462;
@@ -142,19 +141,19 @@ kbd {
   --primary: #1095c1;
   --primary-hover: #08769b;
   --primary-focus: rgba(16, 149, 193, 0.125);
-  --primary-inverse: #FFF;
+  --primary-inverse: #fff;
   --secondary: #596b78;
   --secondary-hover: #415462;
   --secondary-focus: rgba(89, 107, 120, 0.125);
-  --secondary-inverse: #FFF;
+  --secondary-inverse: #fff;
   --contrast: #1b2832;
   --contrast-hover: #000;
   --contrast-focus: rgba(89, 107, 120, 0.125);
-  --contrast-inverse: #FFF;
+  --contrast-inverse: #fff;
   --mark-background-color: #fff2ca;
-  --mark-color: #543a25;
-  --ins-color: #388E3C;
-  --del-color: #C62828;
+  --mark-color: #543a26;
+  --ins-color: #388e3c;
+  --del-color: #c62828;
   --blockquote-border-color: var(--muted-border-color);
   --blockquote-footer-color: var(--muted-color);
   --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
@@ -168,11 +167,11 @@ kbd {
   --form-element-focus-color: var(--primary-focus);
   --form-element-disabled-background-color: #d5dce2;
   --form-element-disabled-border-color: #a2afb9;
-  --form-element-disabled-opacity: .5;
-  --form-element-invalid-border-color: #C62828;
-  --form-element-invalid-active-border-color: #B71C1C;
-  --form-element-valid-border-color: #388E3C;
-  --form-element-valid-active-border-color: #2E7D32;
+  --form-element-disabled-opacity: 0.5;
+  --form-element-invalid-border-color: #c62828;
+  --form-element-invalid-active-border-color: #b71c1c;
+  --form-element-valid-border-color: #388e3c;
+  --form-element-valid-active-border-color: #2e7d32;
   --switch-background-color: #bbc6ce;
   --switch-color: var(--primary-inverse);
   --switch-checked-background-color: var(--primary);
@@ -183,7 +182,7 @@ kbd {
   --range-thumb-hover-color: var(--secondary-hover);
   --range-thumb-active-color: var(--primary);
   --table-border-color: var(--muted-border-color);
-  --table-row-stripped-background-color:#f6f8f9;
+  --table-row-stripped-background-color: #f6f8f9;
   --code-background-color: #edf0f3;
   --code-color: var(--muted-color);
   --code-kbd-background-color: var(--contrast);
@@ -197,52 +196,54 @@ kbd {
   --accordion-open-summary-color: var(--muted-color);
   --card-background-color: var(--background-color);
   --card-border-color: var(--muted-border-color);
-  --card-box-shadow: 0 0.125rem 1rem rgba(27, 40, 50, 0.04), 0 0.125rem 2rem rgba(27, 40, 50, 0.08), 0 0 0 0.0625rem rgba(27, 40, 50, 0.024);
-  --card-sectionning-background-color: #fafbfc;
+  --card-box-shadow: 0 0.125rem 1rem rgba(27, 40, 50, 0.04),
+    0 0.125rem 2rem rgba(27, 40, 50, 0.08),
+    0 0 0 0.0625rem rgba(27, 40, 50, 0.024);
+  --card-sectionning-background-color: #fbfbfc;
   --progress-background-color: #d5dce2;
   --progress-color: var(--primary);
-  --loading-spinner-opacity: .5;
+  --loading-spinner-opacity: 0.5;
   --tooltip-background-color: var(--contrast);
   --tooltip-color: var(--contrast-inverse);
-  --icon-chevron:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(65, 84, 98, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  --icon-date:     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(65, 84, 98, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
-  --icon-time:     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(65, 84, 98, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
-  --icon-search:   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(65, 84, 98, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+  --icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(65, 84, 98, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --icon-date: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(65, 84, 98, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+  --icon-time: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(65, 84, 98, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
+  --icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(65, 84, 98, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
   --icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFF' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-  --icon-minus:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFF' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
-  --icon-valid:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(56, 142, 60, 0.999)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-  --icon-invalid:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(198, 40, 40, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+  --icon-minus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFF' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
+  --icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(56, 142, 60, 0.999)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  --icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(198, 40, 40, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
 }
 
 @media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
+  :root:not([data-theme=light]) {
     color-scheme: dark;
     --background-color: #11191f;
     --color: #bbc6ce;
     --h1-color: #edf0f3;
-    --h2-color: #e1e6ea;
+    --h2-color: #e1e6eb;
     --h3-color: #d5dce2;
     --h4-color: #c8d1d8;
     --h5-color: #bbc6ce;
-    --h6-color: #aebbc3;
+    --h6-color: #afbbc4;
     --muted-color: #73828c;
     --muted-border-color: #1f2d38;
     --primary: #1095c1;
     --primary-hover: #1ab3e6;
     --primary-focus: rgba(16, 149, 193, 0.25);
-    --primary-inverse: #FFF;
+    --primary-inverse: #fff;
     --secondary: #596b78;
     --secondary-hover: #73828c;
     --secondary-focus: rgba(115, 130, 140, 0.25);
-    --secondary-inverse: #FFF;
+    --secondary-inverse: #fff;
     --contrast: #edf0f3;
-    --contrast-hover: #FFF;
+    --contrast-hover: #fff;
     --contrast-focus: rgba(115, 130, 140, 0.25);
     --contrast-inverse: #000;
-    --mark-background-color: #d0c284;
+    --mark-background-color: #d1c284;
     --mark-color: #11191f;
-    --ins-color: #388E3C;
-    --del-color: #C62828;
+    --ins-color: #388e3c;
+    --del-color: #c62828;
     --blockquote-border-color: var(--muted-border-color);
     --blockquote-footer-color: var(--muted-color);
     --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
@@ -256,15 +257,15 @@ kbd {
     --form-element-focus-color: var(--primary-focus);
     --form-element-disabled-background-color: #2c3d49;
     --form-element-disabled-border-color: #415462;
-    --form-element-disabled-opacity: .5;
-    --form-element-invalid-border-color: #B71C1C;
-    --form-element-invalid-active-border-color: #C62828;
-    --form-element-valid-border-color: #2E7D32;
-    --form-element-valid-active-border-color: #388E3C;
+    --form-element-disabled-opacity: 0.5;
+    --form-element-invalid-border-color: #b71c1c;
+    --form-element-invalid-active-border-color: #c62828;
+    --form-element-valid-border-color: #2e7d32;
+    --form-element-valid-active-border-color: #388e3c;
     --switch-background-color: #374956;
     --switch-color: var(--primary-inverse);
     --switch-checked-background-color: var(--primary);
-    --range-border-color: #23333e;
+    --range-border-color: #24333e;
     --range-active-border-color: #2c3d49;
     --range-thumb-border-color: var(--background-color);
     --range-thumb-color: var(--secondary);
@@ -272,7 +273,7 @@ kbd {
     --range-thumb-active-color: var(--primary);
     --table-border-color: var(--muted-border-color);
     --table-row-stripped-background-color: rgba(115, 130, 140, 0.05);
-    --code-background-color: #17232c;
+    --code-background-color: #18232c;
     --code-color: var(--muted-color);
     --code-kbd-background-color: var(--contrast);
     --code-kbd-color: var(--contrast-inverse);
@@ -284,54 +285,55 @@ kbd {
     --accordion-active-summary-color: var(--primary);
     --accordion-close-summary-color: var(--color);
     --accordion-open-summary-color: var(--muted-color);
-    --card-background-color: #141e25;
+    --card-background-color: #141e26;
     --card-border-color: #11191f;
-    --card-box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.06), 0 0.125rem 2rem rgba(0, 0, 0, 0.12), 0 0 0 0.0625rem rgba(0, 0, 0, 0.036);
-    --card-sectionning-background-color: #17232c;
-    --progress-background-color: #23333e;
+    --card-box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.06),
+      0 0.125rem 2rem rgba(0, 0, 0, 0.12),
+      0 0 0 0.0625rem rgba(0, 0, 0, 0.036);
+    --card-sectionning-background-color: #18232c;
+    --progress-background-color: #24333e;
     --progress-color: var(--primary);
-    --loading-spinner-opacity: .5;
+    --loading-spinner-opacity: 0.5;
     --tooltip-background-color: var(--contrast);
     --tooltip-color: var(--contrast-inverse);
-    --icon-chevron:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    --icon-date:     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
-    --icon-time:     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
-    --icon-search:   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+    --icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    --icon-date: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+    --icon-time: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
+    --icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
     --icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFF' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-    --icon-minus:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFF' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
-    --icon-valid:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(46, 125, 50, 0.999)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-    --icon-invalid:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(183, 28, 28, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+    --icon-minus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFF' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
+    --icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(46, 125, 50, 0.999)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    --icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(183, 28, 28, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
   }
 }
-
-[data-theme="dark"] {
+[data-theme=dark] {
   color-scheme: dark;
   --background-color: #11191f;
   --color: #bbc6ce;
   --h1-color: #edf0f3;
-  --h2-color: #e1e6ea;
+  --h2-color: #e1e6eb;
   --h3-color: #d5dce2;
   --h4-color: #c8d1d8;
   --h5-color: #bbc6ce;
-  --h6-color: #aebbc3;
+  --h6-color: #afbbc4;
   --muted-color: #73828c;
   --muted-border-color: #1f2d38;
   --primary: #1095c1;
   --primary-hover: #1ab3e6;
   --primary-focus: rgba(16, 149, 193, 0.25);
-  --primary-inverse: #FFF;
+  --primary-inverse: #fff;
   --secondary: #596b78;
   --secondary-hover: #73828c;
   --secondary-focus: rgba(115, 130, 140, 0.25);
-  --secondary-inverse: #FFF;
+  --secondary-inverse: #fff;
   --contrast: #edf0f3;
-  --contrast-hover: #FFF;
+  --contrast-hover: #fff;
   --contrast-focus: rgba(115, 130, 140, 0.25);
   --contrast-inverse: #000;
-  --mark-background-color: #d0c284;
+  --mark-background-color: #d1c284;
   --mark-color: #11191f;
-  --ins-color: #388E3C;
-  --del-color: #C62828;
+  --ins-color: #388e3c;
+  --del-color: #c62828;
   --blockquote-border-color: var(--muted-border-color);
   --blockquote-footer-color: var(--muted-color);
   --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
@@ -345,15 +347,15 @@ kbd {
   --form-element-focus-color: var(--primary-focus);
   --form-element-disabled-background-color: #2c3d49;
   --form-element-disabled-border-color: #415462;
-  --form-element-disabled-opacity: .5;
-  --form-element-invalid-border-color: #B71C1C;
-  --form-element-invalid-active-border-color: #C62828;
-  --form-element-valid-border-color: #2E7D32;
-  --form-element-valid-active-border-color: #388E3C;
+  --form-element-disabled-opacity: 0.5;
+  --form-element-invalid-border-color: #b71c1c;
+  --form-element-invalid-active-border-color: #c62828;
+  --form-element-valid-border-color: #2e7d32;
+  --form-element-valid-active-border-color: #388e3c;
   --switch-background-color: #374956;
   --switch-color: var(--primary-inverse);
   --switch-checked-background-color: var(--primary);
-  --range-border-color: #23333e;
+  --range-border-color: #24333e;
   --range-active-border-color: #2c3d49;
   --range-thumb-border-color: var(--background-color);
   --range-thumb-color: var(--secondary);
@@ -361,7 +363,7 @@ kbd {
   --range-thumb-active-color: var(--primary);
   --table-border-color: var(--muted-border-color);
   --table-row-stripped-background-color: rgba(115, 130, 140, 0.05);
-  --code-background-color: #17232c;
+  --code-background-color: #18232c;
   --code-color: var(--muted-color);
   --code-kbd-background-color: var(--contrast);
   --code-kbd-color: var(--contrast-inverse);
@@ -373,23 +375,25 @@ kbd {
   --accordion-active-summary-color: var(--primary);
   --accordion-close-summary-color: var(--color);
   --accordion-open-summary-color: var(--muted-color);
-  --card-background-color: #141e25;
+  --card-background-color: #141e26;
   --card-border-color: #11191f;
-  --card-box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.06), 0 0.125rem 2rem rgba(0, 0, 0, 0.12), 0 0 0 0.0625rem rgba(0, 0, 0, 0.036);
-  --card-sectionning-background-color: #17232c;
-  --progress-background-color: #23333e;
+  --card-box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.06),
+    0 0.125rem 2rem rgba(0, 0, 0, 0.12),
+    0 0 0 0.0625rem rgba(0, 0, 0, 0.036);
+  --card-sectionning-background-color: #18232c;
+  --progress-background-color: #24333e;
   --progress-color: var(--primary);
-  --loading-spinner-opacity: .5;
+  --loading-spinner-opacity: 0.5;
   --tooltip-background-color: var(--contrast);
   --tooltip-color: var(--contrast-inverse);
-  --icon-chevron:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  --icon-date:     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
-  --icon-time:     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
-  --icon-search:   url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+  --icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --icon-date: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+  --icon-time: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
+  --icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
   --icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFF' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-  --icon-minus:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFF' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
-  --icon-valid:    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(46, 125, 50, 0.999)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-  --icon-invalid:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(183, 28, 28, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+  --icon-minus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23FFF' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
+  --icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(46, 125, 50, 0.999)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  --icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(183, 28, 28, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
 }
 
 /**
@@ -412,6 +416,8 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4;
   -ms-text-size-adjust: 100%;
   background-color: var(--background-color);
   color: var(--color);
@@ -435,7 +441,6 @@ body {
   width: 100%;
   margin: 0;
 }
-
 body > header,
 body > main,
 body > footer {
@@ -446,8 +451,8 @@ body > footer {
 }
 
 /**
- * Container
- */
+* Container
+*/
 .container,
 .container-fluid {
   width: 100%;
@@ -464,19 +469,16 @@ body > footer {
     padding-left: 0;
   }
 }
-
 @media (min-width: 768px) {
   .container {
     max-width: 700px;
   }
 }
-
 @media (min-width: 992px) {
   .container {
     max-width: 920px;
   }
 }
-
 @media (min-width: 1200px) {
   .container {
     max-width: 1130px;
@@ -492,9 +494,9 @@ section {
 }
 
 /**
- * Grid
- * Minimal grid system with auto-layout columns
- */
+* Grid
+* Minimal grid system with auto-layout columns
+*/
 .grid {
   grid-column-gap: var(--grid-spacing-horizontal);
   grid-row-gap: var(--grid-spacing-vertical);
@@ -502,13 +504,11 @@ section {
   grid-template-columns: 1fr;
   margin: 0;
 }
-
 @media (min-width: 992px) {
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
   }
 }
-
 .grid > * {
   min-width: 0;
 }
@@ -522,9 +522,8 @@ figure {
   padding: 0;
   overflow-x: auto;
 }
-
 figure figcaption {
-  padding: calc(var(--spacing) / 2) 0;
+  padding: calc(var(--spacing) * 0.5) 0;
   color: var(--muted-color);
 }
 
@@ -539,7 +538,7 @@ strong {
 sub,
 sup {
   position: relative;
-  font-size: .75em;
+  font-size: 0.75em;
   line-height: 0;
   vertical-align: baseline;
 }
@@ -580,7 +579,8 @@ ul {
   margin-top: 0;
   margin-bottom: var(--typography-spacing-vertical);
   color: var(--color);
-  font-size: 1rem;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
   font-style: normal;
 }
 
@@ -590,38 +590,31 @@ a {
   outline: none;
   background-color: var(--background-color);
   color: var(--color);
-  text-decoration: var(--text-decoration);
+  -webkit-text-decoration: var(--text-decoration);
+          text-decoration: var(--text-decoration);
 }
-
 a:hover, a:active, a:focus {
   --color: var(--primary-hover);
   --text-decoration: underline;
 }
-
 a:focus {
   --background-color: var(--primary-focus);
 }
-
 a.secondary {
   --color: var(--secondary);
 }
-
 a.secondary:hover, a.secondary:active, a.secondary:focus {
   --color: var(--secondary-hover);
 }
-
 a.secondary:focus {
   --background-color: var(--secondary-focus);
 }
-
 a.contrast {
   --color: var(--contrast);
 }
-
 a.contrast:hover, a.contrast:active, a.contrast:focus {
   --color: var(--contrast-hover);
 }
-
 a.contrast:focus {
   --background-color: var(--contrast-focus);
 }
@@ -664,12 +657,7 @@ h6 {
   --color: var(--h6-color);
 }
 
-address ~ h1,
-address ~ h2,
-address ~ h3,
-address ~ h4,
-address ~ h5,
-address ~ h6,
+address ~ h1, address ~ h2, address ~ h3, address ~ h4, address ~ h5, address ~ h6,
 blockquote ~ h1,
 blockquote ~ h2,
 blockquote ~ h3,
@@ -730,11 +718,9 @@ ul ~ h6 {
 hgroup {
   margin-bottom: var(--typography-spacing-vertical);
 }
-
 hgroup > * {
   margin-bottom: 0;
 }
-
 hgroup > *:last-child {
   --color: var(--muted-color);
   --font-weight: unset;
@@ -752,12 +738,16 @@ small {
 
 ul,
 ol {
+  padding-right: 0;
   padding-left: var(--spacing);
+  -webkit-padding-end: 0;
+          padding-inline-end: 0;
+  -webkit-padding-start: var(--spacing);
+          padding-inline-start: var(--spacing);
 }
-
 ul li,
 ol li {
-  margin-bottom: calc(var(--typography-spacing-vertical) / 4);
+  margin-bottom: calc(var(--typography-spacing-vertical) * 0.25);
 }
 
 ul li {
@@ -765,7 +755,7 @@ ul li {
 }
 
 mark {
-  padding: .125rem .25rem;
+  padding: 0.125rem 0.25rem;
   background-color: var(--mark-background-color);
   color: var(--mark-color);
   vertical-align: middle;
@@ -775,11 +765,15 @@ blockquote {
   display: block;
   margin: var(--typography-spacing-vertical) 0;
   padding: var(--spacing);
+  border-right: none;
   border-left: 0.25rem solid var(--blockquote-border-color);
+  -webkit-border-end: none;
+          border-inline-end: none;
+  -webkit-border-start: 0.25rem solid var(--blockquote-border-color);
+          border-inline-start: 0.25rem solid var(--blockquote-border-color);
 }
-
 blockquote footer {
-  margin-top: calc(var(--typography-spacing-vertical) / 2);
+  margin-top: calc(var(--typography-spacing-vertical) * 0.5);
   color: var(--blockquote-footer-color);
 }
 
@@ -796,6 +790,10 @@ ins {
 
 del {
   color: var(--del-color);
+}
+
+::-moz-selection {
+  background-color: var(--primary-focus);
 }
 
 ::selection {
@@ -853,16 +851,16 @@ button {
 }
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   padding: 0;
   border-style: none;
 }
@@ -873,16 +871,16 @@ button {
   margin-bottom: var(--spacing);
 }
 
-a[role="button"] {
+a[role=button] {
   display: inline-block;
   text-decoration: none;
 }
 
 button,
-input[type="submit"],
-input[type="button"],
-input[type="reset"],
-a[role="button"] {
+input[type=submit],
+input[type=button],
+input[type=reset],
+a[role=button] {
   --background-color: var(--primary);
   --border-color: var(--primary);
   --color: var(--primary-inverse);
@@ -900,200 +898,189 @@ a[role="button"] {
   text-align: center;
   cursor: pointer;
 }
-
 button:hover, button:active, button:focus,
-input[type="submit"]:hover,
-input[type="submit"]:active,
-input[type="submit"]:focus,
-input[type="button"]:hover,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:hover,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-a[role="button"]:hover,
-a[role="button"]:active,
-a[role="button"]:focus {
+input[type=submit]:hover,
+input[type=submit]:active,
+input[type=submit]:focus,
+input[type=button]:hover,
+input[type=button]:active,
+input[type=button]:focus,
+input[type=reset]:hover,
+input[type=reset]:active,
+input[type=reset]:focus,
+a[role=button]:hover,
+a[role=button]:active,
+a[role=button]:focus {
   --background-color: var(--primary-hover);
   --border-color: var(--primary-hover);
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
 }
-
 button:focus,
-input[type="submit"]:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-a[role="button"]:focus {
-  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--primary-focus);
+input[type=submit]:focus,
+input[type=button]:focus,
+input[type=reset]:focus,
+a[role=button]:focus {
+  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+    0 0 0 var(--outline-width) var(--primary-focus);
 }
 
-input[type="reset"] {
+input[type=reset] {
   --background-color: var(--secondary);
   --border-color: var(--secondary);
   --color: var(--secondary-inverse);
   cursor: pointer;
 }
-
-input[type="reset"]:hover, input[type="reset"]:active, input[type="reset"]:focus {
+input[type=reset]:hover, input[type=reset]:active, input[type=reset]:focus {
   --background-color: var(--secondary-hover);
   --border-color: var(--secondary-hover);
 }
-
-input[type="reset"]:focus {
-  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--secondary-focus);
+input[type=reset]:focus {
+  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+    0 0 0 var(--outline-width) var(--secondary-focus);
 }
 
 button.secondary,
-input[type="submit"].secondary,
-input[type="button"].secondary,
-input[type="reset"].secondary,
-a[role="button"].secondary {
+input[type=submit].secondary,
+input[type=button].secondary,
+input[type=reset].secondary,
+a[role=button].secondary {
   --background-color: var(--secondary);
   --border-color: var(--secondary);
   --color: var(--secondary-inverse);
   cursor: pointer;
 }
-
 button.secondary:hover, button.secondary:active, button.secondary:focus,
-input[type="submit"].secondary:hover,
-input[type="submit"].secondary:active,
-input[type="submit"].secondary:focus,
-input[type="button"].secondary:hover,
-input[type="button"].secondary:active,
-input[type="button"].secondary:focus,
-input[type="reset"].secondary:hover,
-input[type="reset"].secondary:active,
-input[type="reset"].secondary:focus,
-a[role="button"].secondary:hover,
-a[role="button"].secondary:active,
-a[role="button"].secondary:focus {
+input[type=submit].secondary:hover,
+input[type=submit].secondary:active,
+input[type=submit].secondary:focus,
+input[type=button].secondary:hover,
+input[type=button].secondary:active,
+input[type=button].secondary:focus,
+input[type=reset].secondary:hover,
+input[type=reset].secondary:active,
+input[type=reset].secondary:focus,
+a[role=button].secondary:hover,
+a[role=button].secondary:active,
+a[role=button].secondary:focus {
   --background-color: var(--secondary-hover);
   --border-color: var(--secondary-hover);
 }
-
 button.secondary:focus,
-input[type="submit"].secondary:focus,
-input[type="button"].secondary:focus,
-input[type="reset"].secondary:focus,
-a[role="button"].secondary:focus {
-  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--secondary-focus);
+input[type=submit].secondary:focus,
+input[type=button].secondary:focus,
+input[type=reset].secondary:focus,
+a[role=button].secondary:focus {
+  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+    0 0 0 var(--outline-width) var(--secondary-focus);
 }
-
 button.contrast,
-input[type="submit"].contrast,
-input[type="button"].contrast,
-input[type="reset"].contrast,
-a[role="button"].contrast {
+input[type=submit].contrast,
+input[type=button].contrast,
+input[type=reset].contrast,
+a[role=button].contrast {
   --background-color: var(--contrast);
   --border-color: var(--contrast);
   --color: var(--contrast-inverse);
 }
-
 button.contrast:hover, button.contrast:active, button.contrast:focus,
-input[type="submit"].contrast:hover,
-input[type="submit"].contrast:active,
-input[type="submit"].contrast:focus,
-input[type="button"].contrast:hover,
-input[type="button"].contrast:active,
-input[type="button"].contrast:focus,
-input[type="reset"].contrast:hover,
-input[type="reset"].contrast:active,
-input[type="reset"].contrast:focus,
-a[role="button"].contrast:hover,
-a[role="button"].contrast:active,
-a[role="button"].contrast:focus {
+input[type=submit].contrast:hover,
+input[type=submit].contrast:active,
+input[type=submit].contrast:focus,
+input[type=button].contrast:hover,
+input[type=button].contrast:active,
+input[type=button].contrast:focus,
+input[type=reset].contrast:hover,
+input[type=reset].contrast:active,
+input[type=reset].contrast:focus,
+a[role=button].contrast:hover,
+a[role=button].contrast:active,
+a[role=button].contrast:focus {
   --background-color: var(--contrast-hover);
   --border-color: var(--contrast-hover);
 }
-
 button.contrast:focus,
-input[type="submit"].contrast:focus,
-input[type="button"].contrast:focus,
-input[type="reset"].contrast:focus,
-a[role="button"].contrast:focus {
-  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--contrast-focus);
+input[type=submit].contrast:focus,
+input[type=button].contrast:focus,
+input[type=reset].contrast:focus,
+a[role=button].contrast:focus {
+  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+    0 0 0 var(--outline-width) var(--contrast-focus);
 }
-
 button.outline,
-input[type="submit"].outline,
-input[type="button"].outline,
-input[type="reset"].outline,
-a[role="button"].outline {
+input[type=submit].outline,
+input[type=button].outline,
+input[type=reset].outline,
+a[role=button].outline {
   --background-color: transparent;
   --color: var(--primary);
 }
-
 button.outline:hover, button.outline:active, button.outline:focus,
-input[type="submit"].outline:hover,
-input[type="submit"].outline:active,
-input[type="submit"].outline:focus,
-input[type="button"].outline:hover,
-input[type="button"].outline:active,
-input[type="button"].outline:focus,
-input[type="reset"].outline:hover,
-input[type="reset"].outline:active,
-input[type="reset"].outline:focus,
-a[role="button"].outline:hover,
-a[role="button"].outline:active,
-a[role="button"].outline:focus {
+input[type=submit].outline:hover,
+input[type=submit].outline:active,
+input[type=submit].outline:focus,
+input[type=button].outline:hover,
+input[type=button].outline:active,
+input[type=button].outline:focus,
+input[type=reset].outline:hover,
+input[type=reset].outline:active,
+input[type=reset].outline:focus,
+a[role=button].outline:hover,
+a[role=button].outline:active,
+a[role=button].outline:focus {
   --background-color: transparent;
   --color: var(--primary-hover);
 }
-
 button.outline.secondary,
-input[type="submit"].outline.secondary,
-input[type="button"].outline.secondary,
-input[type="reset"].outline.secondary,
-a[role="button"].outline.secondary {
+input[type=submit].outline.secondary,
+input[type=button].outline.secondary,
+input[type=reset].outline.secondary,
+a[role=button].outline.secondary {
   --color: var(--secondary);
 }
-
 button.outline.secondary:hover, button.outline.secondary:active, button.outline.secondary:focus,
-input[type="submit"].outline.secondary:hover,
-input[type="submit"].outline.secondary:active,
-input[type="submit"].outline.secondary:focus,
-input[type="button"].outline.secondary:hover,
-input[type="button"].outline.secondary:active,
-input[type="button"].outline.secondary:focus,
-input[type="reset"].outline.secondary:hover,
-input[type="reset"].outline.secondary:active,
-input[type="reset"].outline.secondary:focus,
-a[role="button"].outline.secondary:hover,
-a[role="button"].outline.secondary:active,
-a[role="button"].outline.secondary:focus {
+input[type=submit].outline.secondary:hover,
+input[type=submit].outline.secondary:active,
+input[type=submit].outline.secondary:focus,
+input[type=button].outline.secondary:hover,
+input[type=button].outline.secondary:active,
+input[type=button].outline.secondary:focus,
+input[type=reset].outline.secondary:hover,
+input[type=reset].outline.secondary:active,
+input[type=reset].outline.secondary:focus,
+a[role=button].outline.secondary:hover,
+a[role=button].outline.secondary:active,
+a[role=button].outline.secondary:focus {
   --color: var(--secondary-hover);
 }
-
 button.outline.contrast,
-input[type="submit"].outline.contrast,
-input[type="button"].outline.contrast,
-input[type="reset"].outline.contrast,
-a[role="button"].outline.contrast {
+input[type=submit].outline.contrast,
+input[type=button].outline.contrast,
+input[type=reset].outline.contrast,
+a[role=button].outline.contrast {
   --color: var(--contrast);
 }
-
 button.outline.contrast:hover, button.outline.contrast:active, button.outline.contrast:focus,
-input[type="submit"].outline.contrast:hover,
-input[type="submit"].outline.contrast:active,
-input[type="submit"].outline.contrast:focus,
-input[type="button"].outline.contrast:hover,
-input[type="button"].outline.contrast:active,
-input[type="button"].outline.contrast:focus,
-input[type="reset"].outline.contrast:hover,
-input[type="reset"].outline.contrast:active,
-input[type="reset"].outline.contrast:focus,
-a[role="button"].outline.contrast:hover,
-a[role="button"].outline.contrast:active,
-a[role="button"].outline.contrast:focus {
+input[type=submit].outline.contrast:hover,
+input[type=submit].outline.contrast:active,
+input[type=submit].outline.contrast:focus,
+input[type=button].outline.contrast:hover,
+input[type=button].outline.contrast:active,
+input[type=button].outline.contrast:focus,
+input[type=reset].outline.contrast:hover,
+input[type=reset].outline.contrast:active,
+input[type=reset].outline.contrast:focus,
+a[role=button].outline.contrast:hover,
+a[role=button].outline.contrast:active,
+a[role=button].outline.contrast:focus {
   --color: var(--contrast-hover);
 }
 
 button[disabled],
-input[type="submit"][disabled],
-input[type="button"][disabled],
-input[type="reset"][disabled],
-a[role="button"][disabled] {
-  opacity: .5;
+input[type=submit][disabled],
+input[type=button][disabled],
+input[type=reset][disabled],
+a[role=button][disabled] {
+  opacity: 0.5;
   pointer-events: none;
 }
 
@@ -1130,8 +1117,8 @@ textarea {
   overflow: auto;
 }
 
-[type="checkbox"],
-[type="radio"] {
+[type=checkbox],
+[type=radio] {
   padding: 0;
 }
 
@@ -1140,12 +1127,12 @@ textarea {
   height: auto;
 }
 
-[type="search"] {
+[type=search] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1171,14 +1158,14 @@ textarea {
   display: none;
 }
 
-[type="file"],
-[type="range"] {
+[type=file],
+[type=range] {
   padding: 0;
   border-width: 0;
 }
 
-input:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
-  height: calc( (1rem * var(--line-height)) + (var(--form-element-spacing-vertical) * 2) + (var(--border-width) * 2));
+input:not([type=checkbox]):not([type=radio]):not([type=range]) {
+  height: calc( (1rem * var(--line-height)) + (var(--form-element-spacing-vertical) * 2) + (var(--border-width) * 2) );
 }
 
 fieldset {
@@ -1191,23 +1178,21 @@ fieldset {
 label,
 fieldset legend {
   display: block;
-  margin-bottom: calc(var(--spacing) / 4);
-  vertical-align: middle;
+  margin-bottom: calc(var(--spacing) * 0.25);
 }
 
-input:not([type="checkbox"]):not([type="radio"]),
+input:not([type=checkbox]):not([type=radio]),
 select,
 textarea {
-  display: block;
   width: 100%;
 }
 
-input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]),
+input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]),
 select,
 textarea {
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
   vertical-align: middle;
 }
@@ -1228,7 +1213,7 @@ textarea {
   font-weight: var(--font-weight);
 }
 
-input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([readonly]):active, input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([readonly]):focus,
+input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([readonly]):active, input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([readonly]):focus,
 select:active,
 select:focus,
 textarea:active,
@@ -1236,7 +1221,7 @@ textarea:focus {
   --background-color: var(--form-element-active-background-color);
 }
 
-input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([role="switch"]):not([readonly]):active, input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([role="switch"]):not([readonly]):focus,
+input:not([type=submit]):not([type=button]):not([type=reset]):not([role=switch]):not([readonly]):active, input:not([type=submit]):not([type=button]):not([type=reset]):not([role=switch]):not([readonly]):focus,
 select:active,
 select:focus,
 textarea:active,
@@ -1244,13 +1229,13 @@ textarea:focus {
   --border-color: var(--form-element-active-border-color);
 }
 
-input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="range"]):not([type="file"]):not([readonly]):focus,
+input:not([type=submit]):not([type=button]):not([type=reset]):not([type=range]):not([type=file]):not([readonly]):focus,
 select:focus,
 textarea:focus {
   --box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
 }
 
-input:not([type="submit"]):not([type="button"]):not([type="reset"])[disabled],
+input:not([type=submit]):not([type=button]):not([type=reset])[disabled],
 select[disabled],
 textarea[disabled] {
   --background-color: var(--form-element-disabled-background-color);
@@ -1261,40 +1246,47 @@ textarea[disabled] {
 input[aria-invalid],
 select[aria-invalid],
 textarea[aria-invalid] {
-  padding-right: 2rem;
-  background-position: center right .75rem;
+  padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  padding-left: var(--form-element-spacing-horizontal);
+  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+          padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  -webkit-padding-start: var(--form-element-spacing-horizontal);
+          padding-inline-start: var(--form-element-spacing-horizontal);
+  background-position: center right 0.75rem;
   background-repeat: no-repeat;
   background-size: 1rem auto;
 }
-
-input[aria-invalid="false"],
-select[aria-invalid="false"],
-textarea[aria-invalid="false"] {
+input[aria-invalid=false],
+select[aria-invalid=false],
+textarea[aria-invalid=false] {
   --border-color: var(--form-element-valid-border-color);
   background-image: var(--icon-valid);
 }
-
-input[aria-invalid="false"]:active, input[aria-invalid="false"]:focus,
-select[aria-invalid="false"]:active,
-select[aria-invalid="false"]:focus,
-textarea[aria-invalid="false"]:active,
-textarea[aria-invalid="false"]:focus {
+input[aria-invalid=false]:active, input[aria-invalid=false]:focus,
+select[aria-invalid=false]:active,
+select[aria-invalid=false]:focus,
+textarea[aria-invalid=false]:active,
+textarea[aria-invalid=false]:focus {
   --border-color: var(--form-element-valid-active-border-color);
 }
-
-input[aria-invalid="true"],
-select[aria-invalid="true"],
-textarea[aria-invalid="true"] {
+input[aria-invalid=true],
+select[aria-invalid=true],
+textarea[aria-invalid=true] {
   --border-color: var(--form-element-invalid-border-color);
   background-image: var(--icon-invalid);
 }
-
-input[aria-invalid="true"]:active, input[aria-invalid="true"]:focus,
-select[aria-invalid="true"]:active,
-select[aria-invalid="true"]:focus,
-textarea[aria-invalid="true"]:active,
-textarea[aria-invalid="true"]:focus {
+input[aria-invalid=true]:active, input[aria-invalid=true]:focus,
+select[aria-invalid=true]:active,
+select[aria-invalid=true]:focus,
+textarea[aria-invalid=true]:active,
+textarea[aria-invalid=true]:focus {
   --border-color: var(--form-element-invalid-active-border-color);
+}
+
+[dir=rtl] input[aria-invalid],
+[dir=rtl] select[aria-invalid],
+[dir=rtl] textarea[aria-invalid] {
+  background-position: center left 0.75rem;
 }
 
 input::placeholder,
@@ -1306,7 +1298,7 @@ select:invalid {
   opacity: 1;
 }
 
-input:not([type="checkbox"]):not([type="radio"]),
+input:not([type=checkbox]):not([type=radio]),
 select,
 textarea {
   margin-bottom: var(--spacing);
@@ -1316,13 +1308,21 @@ select::-ms-expand {
   border: 0;
   background-color: transparent;
 }
-
 select:not([multiple]):not([size]) {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  padding-left: var(--form-element-spacing-horizontal);
+  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+          padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  -webkit-padding-start: var(--form-element-spacing-horizontal);
+          padding-inline-start: var(--form-element-spacing-horizontal);
   background-image: var(--icon-chevron);
-  background-position: center right .75rem;
+  background-position: center right 0.75rem;
   background-repeat: no-repeat;
   background-size: 1rem auto;
+}
+
+[dir=rtl] select:not([multiple]):not([size]) {
+  background-position: center left 0.75rem;
 }
 
 input + small,
@@ -1335,10 +1335,8 @@ textarea + small {
   color: var(--muted-color);
 }
 
-label > input,
-label > select,
-label > textarea {
-  margin-top: calc(var(--spacing) / 4);
+label > input, label > select, label > textarea {
+  margin-top: calc(var(--spacing) * 0.25);
 }
 
 /**
@@ -1360,13 +1358,14 @@ td {
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   text-align: left;
+  text-align: start;
 }
 
 tr {
   background-color: var(--background-color);
 }
 
-table[role="grid"] tbody tr:nth-child(odd) {
+table[role=grid] tbody tr:nth-child(odd) {
   --background-color: var(--table-row-stripped-background-color);
 }
 
@@ -1377,16 +1376,16 @@ table[role="grid"] tbody tr:nth-child(odd) {
   cursor: pointer;
 }
 
-[aria-disabled="true"],
+[aria-disabled=true],
 [disabled] {
   cursor: not-allowed;
 }
 
-[aria-hidden="false"][hidden] {
+[aria-hidden=false][hidden] {
   display: initial;
 }
 
-[aria-hidden="false"][hidden]:not(:focus) {
+[aria-hidden=false][hidden]:not(:focus) {
   clip: rect(0, 0, 0, 0);
   position: absolute;
 }
@@ -1401,4 +1400,8 @@ summary,
 textarea,
 [tabindex] {
   -ms-touch-action: manipulation;
+}
+
+[dir=rtl] {
+  direction: rtl;
 }

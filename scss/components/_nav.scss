@@ -29,7 +29,7 @@ nav {
   li {
     display: inline-block;
     margin: 0;
-    padding: var(--spacing) calc(var(--spacing) / 2);
+    padding: var(--spacing) calc(var(--spacing) * 0.5);
 
     // HACK: Input & Button inside Nav
     > *,
@@ -41,7 +41,7 @@ nav {
   a {
     display: block;
     margin: calc(var(--spacing) * -1) calc(var(--spacing) * -0.5);
-    padding: var(--spacing) calc(var(--spacing) / 2);
+    padding: var(--spacing) calc(var(--spacing) * 0.5);
     border-radius: var(--border-radius);
     text-decoration: none;
 
@@ -55,7 +55,6 @@ nav {
 
 // Vertical Nav
 aside {
-
   nav,
   ol,
   ul,
@@ -64,11 +63,11 @@ aside {
   }
 
   li {
-    padding: calc(var(--spacing) / 2);
+    padding: calc(var(--spacing) * 0.5);
 
     a {
       margin: calc(var(--spacing) * -0.5);
-      padding: calc(var(--spacing) / 2);
+      padding: calc(var(--spacing) * 0.5);
     }
   }
 }

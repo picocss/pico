@@ -1,6 +1,5 @@
 @if ($enable-class-container and $enable-classes) {
-
-/**
+  /**
  * Container
  */
 
@@ -14,7 +13,6 @@
   }
 
   .container {
-
     @if map-get($breakpoints, "sm") {
       @media (min-width: map-get($breakpoints, "sm")) {
         max-width: map-get($viewports, "sm");

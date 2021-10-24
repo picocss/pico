@@ -2,7 +2,6 @@
  * Button
  */
 
-
 // Reboot based on :
 // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
 // - sanitize.css v12.0.1 | CC0 1.0 Universal | github.com/csstools/sanitize.css
@@ -35,7 +34,6 @@ button::-moz-focus-inner,
   border-style: none;
 }
 
-
 // Pico
 // ––––––––––––––––––––
 
@@ -59,7 +57,8 @@ a[role="button"] {
   --border-color: var(--primary);
   --color: var(--primary-inverse);
   --box-shadow: var(--button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
-  padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
+  padding: var(--form-element-spacing-vertical)
+    var(--form-element-spacing-horizontal);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   outline: none;
@@ -73,10 +72,8 @@ a[role="button"] {
   cursor: pointer;
 
   @if $enable-transitions {
-    transition:
-      background-color var(--transition),
-      border-color var(--transition),
-      color var(--transition),
+    transition: background-color var(--transition),
+      border-color var(--transition), color var(--transition),
       box-shadow var(--transition);
   }
 
@@ -89,7 +86,8 @@ a[role="button"] {
   }
 
   &:focus {
-    --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--primary-focus);
+    --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+      0 0 0 var(--outline-width) var(--primary-focus);
   }
 }
 
@@ -108,7 +106,8 @@ input[type="reset"] {
   }
 
   &:focus {
-    --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--secondary-focus);
+    --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+      0 0 0 var(--outline-width) var(--secondary-focus);
   }
 }
 
@@ -119,7 +118,6 @@ input[type="reset"] {
   input[type="button"],
   input[type="reset"],
   a[role="button"] {
-
     // Secondary
     &.secondary {
       --background-color: var(--secondary);
@@ -135,7 +133,8 @@ input[type="reset"] {
       }
 
       &:focus {
-        --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--secondary-focus);
+        --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+          0 0 0 var(--outline-width) var(--secondary-focus);
       }
     }
 
@@ -153,7 +152,8 @@ input[type="reset"] {
       }
 
       &:focus {
-        --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--contrast-focus);
+        --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+          0 0 0 var(--outline-width) var(--contrast-focus);
       }
     }
 
@@ -200,9 +200,8 @@ input[type="submit"],
 input[type="button"],
 input[type="reset"],
 a[role="button"] {
-
   &[disabled] {
-    opacity: .5;
+    opacity: 0.5;
     pointer-events: none;
   }
 }

@@ -6,7 +6,6 @@
  */
 
 export const colorPicker = {
-
   // Config
   colors: null,
   buttonsTarget: '#customization article[data-theme="generated"]',
@@ -24,16 +23,19 @@ export const colorPicker = {
 
   // Generate Buttons
   generateButtons() {
-
     // Init
     let innerButtons = '';
     let innerStyles = '';
 
-
     // Loop colors
     for (const color in this.colors) {
       // Buttons
-      innerButtons += '<button data-color="' + color + '" aria-label="Activate ' + color + ' theme"></button>';
+      innerButtons +=
+        '<button data-color="' +
+        color +
+        '" aria-label="Activate ' +
+        color +
+        ' theme"></button>';
 
       // Styles
       innerStyles += `
@@ -52,7 +54,6 @@ export const colorPicker = {
         }`;
     }
 
-
     // Insert buttons
     let containerButtons = document.createElement('FIGURE');
     containerButtons.innerHTML = innerButtons;
@@ -60,13 +61,19 @@ export const colorPicker = {
 
     // Buttons listeners
     this.buttons = document.querySelectorAll(this.selectorButton);
-    this.buttons.forEach(function(button) {
-      button.addEventListener('click', function(event) {
-        let color = event.target.getAttribute('data-color');
-        this.setActiveButton(color);
-        this.generateTheme(color);
-      }.bind(this), false);
-    }.bind(this));
+    this.buttons.forEach(
+      function (button) {
+        button.addEventListener(
+          'click',
+          function (event) {
+            let color = event.target.getAttribute('data-color');
+            this.setActiveButton(color);
+            this.generateTheme(color);
+          }.bind(this),
+          false
+        );
+      }.bind(this)
+    );
 
     // Insert CSS Styles
     let containerStyles = document.createElement('STYLE');
@@ -76,20 +83,21 @@ export const colorPicker = {
     document.querySelector('head').appendChild(containerStyles);
   },
 
-
   // Set active button
   setActiveButton(color) {
-
     // Remove all active states
-    this.buttons.forEach(function(button) {
-      button.removeAttribute('class');
-    }.bind(this));
+    this.buttons.forEach(
+      function (button) {
+        button.removeAttribute('class');
+      }.bind(this)
+    );
 
     // Set active state
-    let buttonPicked = document.querySelector(this.selectorButton + '[data-color="' + color + '"]');
+    let buttonPicked = document.querySelector(
+      this.selectorButton + '[data-color="' + color + '"]'
+    );
     buttonPicked.setAttribute('class', 'picked');
   },
-
 
   // Set active button
   generateTheme(color) {
@@ -102,17 +110,23 @@ export const colorPicker = {
       '.c500': data[500],
       '.c600': data[600],
       '.c700': data[700],
-      '.c600-outline-light': this.hexToRgbA(data[600], .125),
-      '.c600-outline-dark': this.hexToRgbA(data[600], .25),
+      '.c600-outline-light': this.hexToRgbA(data[600], 0.125),
+      '.c600-outline-dark': this.hexToRgbA(data[600], 0.25),
       '.inverse': data['inverse'],
-    }
+    };
 
-    Object.keys(swaps).forEach(function(swap) {
-      let targets = document.querySelectorAll(this.selectorSection + ' ' + swap);
-      targets.forEach(function(target) {
-        target.innerHTML = swaps[swap];
-      }.bind(this));
-    }.bind(this));
+    Object.keys(swaps).forEach(
+      function (swap) {
+        let targets = document.querySelectorAll(
+          this.selectorSection + ' ' + swap
+        );
+        targets.forEach(
+          function (target) {
+            target.innerHTML = swaps[swap];
+          }.bind(this)
+        );
+      }.bind(this)
+    );
 
     // 2. Update CSS Styles
     const innerStyles = `
@@ -120,7 +134,7 @@ export const colorPicker = {
       --h4-color: ${data[700]};
       --primary: ${data[600]};
       --primary-hover: ${data[700]};
-      --primary-focus: ${this.hexToRgbA(data[600], .125)};
+      --primary-focus: ${this.hexToRgbA(data[600], 0.125)};
       --primary-inverse: ${data['inverse']};
     }
     @media only screen and (prefers-color-scheme: dark) {
@@ -128,7 +142,7 @@ export const colorPicker = {
         --h4-color: ${data[400]};
         --primary: ${data[600]};
         --primary-hover: ${data[500]};
-        --primary-focus: ${this.hexToRgbA(data[600], .25)};
+        --primary-focus: ${this.hexToRgbA(data[600], 0.25)};
         --primary-inverse: ${data['inverse']};
       }
     }
@@ -136,7 +150,7 @@ export const colorPicker = {
       --h4-color: ${data[500]};
       --primary: ${data[600]};
       --primary-hover: ${data[500]};
-      --primary-focus: ${this.hexToRgbA(data[600], .25)};
+      --primary-focus: ${this.hexToRgbA(data[600], 0.25)};
       --primary-inverse: ${data['inverse']};
     }
     [data-theme="generated"] {
@@ -146,15 +160,14 @@ export const colorPicker = {
       --switch-checked-background-color: var(--primary);
     }`;
 
-    document.querySelector('style[title="color-picker"]').innerHTML = this.generatedStyles + this.minifyCSS(innerStyles);
+    document.querySelector('style[title="color-picker"]').innerHTML =
+      this.generatedStyles + this.minifyCSS(innerStyles);
   },
-
 
   // Minify CSS
   minifyCSS(css) {
-    return css.replace(/^ +/gm, '')
+    return css.replace(/^ +/gm, '');
   },
-
 
   // Hexadecimal to Rgba
   hexToRgbA(hex, alpha) {
@@ -165,8 +178,16 @@ export const colorPicker = {
         c = [c[0], c[0], c[1], c[1], c[2], c[2]];
       }
       c = '0x' + c.join('');
-      return 'rgba(' + [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(', ') + ', ' + alpha + ')';
+      return (
+        'rgba(' +
+        [(c >> 16) & 255, (c >> 8) & 255, c & 255].join(', ') +
+        ', ' +
+        alpha +
+        ')'
+      );
     }
     throw new Error('Bad Hex');
-  }
-}
+  },
+};
+
+export default colorPicker;

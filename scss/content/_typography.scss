@@ -2,7 +2,6 @@
  * Typography
  */
 
-
 // Reboot based on :
 // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
 // - sanitize.css v12.0.1 | CC0 1.0 Universal | github.com/csstools/sanitize.css
@@ -18,7 +17,7 @@ strong {
 sub,
 sup {
   position: relative;
-  font-size: .75em;
+  font-size: 0.75em;
   line-height: 0;
   vertical-align: baseline;
 }
@@ -46,7 +45,6 @@ ul ul {
   margin: 0;
 }
 
-
 // Pico
 // ––––––––––––––––––––
 
@@ -63,7 +61,8 @@ ul {
   margin-top: 0;
   margin-bottom: var(--typography-spacing-vertical);
   color: var(--color);
-  font-size: 1rem;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
   font-style: normal;
 }
 
@@ -78,11 +77,8 @@ a {
   text-decoration: var(--text-decoration);
 
   @if $enable-transitions {
-    transition:
-      background-color var(--transition),
-      color var(--transition),
-      text-decoration var(--transition),
-      box-shadow var(--transition);
+    transition: background-color var(--transition), color var(--transition),
+      text-decoration var(--transition), box-shadow var(--transition);
   }
 
   &:hover,
@@ -97,7 +93,6 @@ a {
   }
 
   @if $enable-classes {
-
     // Secondary
     &.secondary {
       --color: var(--secondary);
@@ -214,10 +209,13 @@ small {
 // Lists
 ul,
 ol {
+  padding-right: 0;
   padding-left: var(--spacing);
+  padding-inline-end: 0;
+  padding-inline-start: var(--spacing);
 
   li {
-    margin-bottom: calc(var(--typography-spacing-vertical) / 4);
+    margin-bottom: calc(var(--typography-spacing-vertical) * 0.25);
   }
 }
 
@@ -227,7 +225,7 @@ ul li {
 
 // Highlighted text
 mark {
-  padding: .125rem .25rem;
+  padding: 0.125rem 0.25rem;
   background-color: var(--mark-background-color);
   color: var(--mark-color);
   vertical-align: middle;
@@ -238,10 +236,13 @@ blockquote {
   display: block;
   margin: var(--typography-spacing-vertical) 0;
   padding: var(--spacing);
-  border-left: .25rem solid var(--blockquote-border-color);
+  border-right: none;
+  border-left: 0.25rem solid var(--blockquote-border-color);
+  border-inline-end: none;
+  border-inline-start: 0.25rem solid var(--blockquote-border-color);
 
   footer {
-    margin-top: calc(var(--typography-spacing-vertical) / 2);
+    margin-top: calc(var(--typography-spacing-vertical) * 0.5);
     color: var(--blockquote-footer-color);
   }
 }

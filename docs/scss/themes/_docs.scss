@@ -1,0 +1,25 @@
+/**
+ * Theme: Additions for docs
+ */
+
+@import "../../../scss/themes/default/colors";
+@import "docs/icons";
+
+// Light theme (Default)
+// Can be forced with data-theme="light"
+@import "docs/light";
+
+// Dark theme (Auto)
+// Automatically enabled if user has Dark mode enabled
+@import "docs/dark";
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    @include dark;
+  }
+}
+
+// Dark theme (Forced)
+// Enabled if forced with data-theme="dark"
+[data-theme="dark"] {
+  @include dark;
+}

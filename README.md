@@ -8,7 +8,7 @@
 
 <p align="center">
   <strong>Minimal CSS Framework for semantic HTML</strong><br>
-  Elegant styles for all natives HTML elements without <code>.classes</code> and dark mode automatically enabled.<br><br>
+  Elegant styles for all native HTML elements without <code>.classes</code> and dark mode automatically enabled.<br><br>
   <a href="https://picocss.com/#examples">Examples</a> ·
   <a href="https://picocss.com/docs/">Documentation</a>
 </p>
@@ -22,7 +22,7 @@
 https://user-images.githubusercontent.com/23470684/126863110-94061cf1-36ea-4697-94bd-2e1071a95a2f.mp4
 
 **Class-light and semantic**  
-We use simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
+Pico uses simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
 
 **Great styles with just one CSS file**  
 No dependencies, package manager, external files, or JavaScript.
@@ -141,6 +141,7 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 - [Themes](https://picocss.com/docs/#themes)
 - [Customization](https://picocss.com/docs/#customization)
 - [Class-less version](https://picocss.com/docs/#classless)
+- [RTL](https://picocss.com/docs/#rtl)
 
 **Layout**
 - [Containers](https://picocss.com/docs/#containers)
@@ -166,16 +167,17 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 ## Contributing
 
 - [`dev`](https://github.com/picocss/pico/tree/dev) branch is open to pull requests.
-- Do not edit [`/css`](https://github.com/picocss/pico/tree/master/css) files directly. Those files are automatically generated. You should edit the source files in [`/scss`](https://github.com/picocss/pico/tree/master/scss).
+- Do not edit [`/css`](https://github.com/picocss/pico/tree/master/css) files directly.
+- Edit the source files in [`/scss`](https://github.com/picocss/pico/tree/master/scss), then recompile the [`/css`](https://github.com/picocss/pico/tree/master/css) files with `npm run build:css`.
 
 ## Copyright and license
 
 Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LICENSE.md).
 
-**Relevant third party tools and resources we depend on:**
+**Relevant third-party tools and resources we depend on:**
 
 Website and docs:
-- [TypeIt](https://typeitjs.com/): JavaScript animated typing utility (Licensed [GPL 2.0](https://github.com/alexmacarthur/typeit/blob/master/LICENSE))
+- [TypeIt](https://typeitjs.com/): JavaScript animated typing utility (Licensed [GPL-3.0](https://github.com/alexmacarthur/typeit/blob/master/LICENSE))
 - [Most Visible](https://github.com/andyexeter/most-visible): JavaScript module which returns the most visible element (Licensed [MIT](https://github.com/andyexeter/most-visible/blob/master/LICENSE))
 - [Font Awesome](https://fontawesome.com/): Icons (Licensed [CC BY 4.0](https://fontawesome.com/license/free))
 

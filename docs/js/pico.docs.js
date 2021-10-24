@@ -6,13 +6,12 @@
  */
 
 // Imports
-import * as mostVisible from './src/most-visible.min.js';
-import { aside } from './src/aside.js';
-import { themeSwitcher } from './src/theme-switcher.js';
-import { materialDesignColors } from './src/material-design-colors.js';
-import { colorPicker } from './src/color-picker.js';
-import { grid } from './src/grid.js';
-import { scrollspy } from './src/scrollspy.js';
+import aside from './src/aside.js';
+import themeSwitcher from './src/theme-switcher.js';
+import materialDesignColors from './src/material-design-colors.js';
+import colorPicker from './src/color-picker.js';
+import grid from './src/grid.js';
+import scrollspy from './src/scrollspy.js';
 
 // Aside initial state
 aside.init();
@@ -33,4 +32,4 @@ colorPicker.init();
 grid.init();
 
 // Scrollspy
-scrollspy.init(mostVisible);
+scrollspy.init();

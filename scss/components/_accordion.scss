@@ -6,7 +6,7 @@
 details {
   display: block;
   margin-bottom: var(--spacing);
-  padding-bottom: calc(var(--spacing) / 2);
+  padding-bottom: calc(var(--spacing) * 0.5);
   border-bottom: var(--border-width) solid var(--accordion-border-color);
 
   summary {
@@ -35,7 +35,7 @@ details {
 
     // Marker
     &::after {
-      display: inline-block;
+      display: block;
       width: 1rem;
       height: 1rem;
       float: right;
@@ -44,7 +44,7 @@ details {
       background-position: center;
       background-repeat: no-repeat;
       background-size: 1rem auto;
-      content: '';
+      content: "";
 
       @if $enable-transitions {
         transition: transform var(--transition);
@@ -57,7 +57,7 @@ details {
     }
 
     ~ * {
-      margin-top: calc(var(--spacing) / 2);
+      margin-top: calc(var(--spacing) * 0.5);
 
       ~ * {
         margin-top: 0;
@@ -67,9 +67,8 @@ details {
 
   // Open
   &[open] {
-
     > summary {
-      margin-bottom: calc(var(--spacing) / 4);
+      margin-bottom: calc(var(--spacing) * 0.25);
 
       &:not(:focus) {
         color: var(--accordion-open-summary-color);
@@ -77,6 +76,16 @@ details {
 
       &::after {
         transform: rotate(0);
+      } 
+    }
+  }
+}
+
+[dir="rtl"] {
+  details {
+    summary {
+      &::after {
+        float: left;
       }
     }
   }

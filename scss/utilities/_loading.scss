@@ -27,7 +27,10 @@
 
   &:not(:empty) {
     &::before {
-      margin-right: calc(var(--spacing) / 2);
+      margin-right: calc(var(--spacing) * 0.5);
+      margin-left: 0;
+      margin-inline-end: calc(var(--spacing) * 0.5);
+      margin-inline-start: 0;
     }
   }
 

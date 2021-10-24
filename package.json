@@ -25,5 +25,35 @@
   ],
   "bugs": {
     "url": "https://github.com/picocss/pico/issues"
+  },
+  "scripts": {
+    "css:compile": "sass --style expanded --no-source-map --no-error-css scss/:css/",
+    "css:compile:docs": "sass --style expanded --no-source-map --no-error-css docs/scss/:docs/css/",
+    "css:prefix": "postcss css/*.css css/*/*.css docs/css/*.css !css/*.min.css !docs/css/*.min.css --use autoprefixer --no-map --replace",
+    "css:minify": "cleancss -O1 --batch --batch-suffix '.min' css/*.css css/*/*.css docs/css/*.css !css/*.min.css !css/*/*.min.css !docs/css/*.min.css",
+    "js:bundle": "rollup docs/js/pico.docs.js --file docs/js/pico.docs.min.js --format iife",
+    "js:babel": "babel docs/js/pico.docs.min.js --out-file docs/js/pico.docs.min.js --presets=@babel/preset-env",
+    "js:minify": "uglifyjs docs/js/pico.docs.min.js --compress --mangle --output docs/js/pico.docs.min.js",
+    "build:css": "npm-run-all css:compile css:compile:docs css:prefix css:minify",
+    "build:js": "npm-run-all js:bundle js:babel js:minify",
+    "build": "npm-run-all build:css build:js",
+    "watch:scss": "nodemon --watch scss/ --ext scss --exec 'npm run build:css'",
+    "watch:scss:docs": "nodemon --watch docs/scss/ --ext scss --exec 'npm run build:css'",
+    "watch:js:docs": "nodemon --watch docs/js/ --ext js --ignore 'docs/js/pico.docs.min.js' --exec 'npm run build:js'",
+    "watch": "npm-run-all --parallel watch:scss watch:scss:docs watch:js:docs"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.4",
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "autoprefixer": "^10.3.4",
+    "clean-css-cli": "^5.3.3",
+    "nodemon": "^2.0.12",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "rollup": "^2.56.3",
+    "sass": "^1.39.0",
+    "uglify-js": "^3.14.1"
   }
 }

@@ -2,20 +2,19 @@
  * Code
  */
 
-
 // Reboot based on :
 // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
 // - sanitize.css v12.0.1 | CC0 1.0 Universal | github.com/csstools/sanitize.css
 // ––––––––––––––––––––
 
 // 1. Correct the inheritance and scaling of font size in all browsers
-// 2. Correct the odd `em` font sizing in all browsers
+// 2. Correct the font sizing in all browsers
 pre,
 code,
 kbd,
 samp {
   font-family: var(--font-family); // 1
-  font-size: .875rem; // 2
+  font-size: 0.875em; // 2
 }
 
 // Prevent overflow of the container in all browsers (opinionated)
@@ -23,7 +22,6 @@ pre {
   -ms-overflow-style: scrollbar;
   overflow: auto;
 }
-
 
 // Pico
 // ––––––––––––––––––––
@@ -35,26 +33,24 @@ kbd {
   color: var(--code-color);
   font-weight: var(--font-weight);
   line-height: initial;
+  border-radius: var(--border-radius);
 }
 
 code,
 kbd {
   display: inline-block;
-  padding: .375rem .5rem;
-  border-radius: var(--border-radius);
+  padding: 0.375rem 0.5rem;
 }
 
 pre {
   display: block;
   margin-bottom: var(--spacing);
-  padding: var(--spacing);
   overflow-x: auto;
-  background: var(--code-background-color);
 
   > code {
-    display: block;
-    padding: 0;
     background: transparent;
+    display: block;
+    padding: var(--spacing);
     font-size: 14px;
     line-height: var(--line-height);
   }
@@ -62,7 +58,6 @@ pre {
 
 // Code Syntax
 code {
-
   // Tags
   b {
     color: var(--code-tag-color);

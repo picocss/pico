@@ -1,15 +1,15 @@
 // Commons Styles
 :root {
-
   // Typography
-  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   --line-height: 1.5;
   --font-weight: 400;
   --font-size: 16px;
 
   // Responsive typography
   @if $enable-responsive-typography {
-
     @if map-get($breakpoints, "sm") {
       @media (min-width: map-get($breakpoints, "sm")) {
         --font-size: 17px;
@@ -36,7 +36,7 @@
   }
 
   // Borders
-  --border-radius: .25rem;
+  --border-radius: 0.25rem;
   --border-width: 1px;
   --outline-width: 3px;
 
@@ -55,22 +55,20 @@
   --grid-spacing-horizontal: var(--spacing);
 
   // Spacings for form elements and button
-  --form-element-spacing-vertical: .75rem;
+  --form-element-spacing-vertical: 0.75rem;
   --form-element-spacing-horizontal: 1rem;
 
   // Transitions
-  --transition: .2s ease-in-out;
+  --transition: 0.2s ease-in-out;
 }
 
 // Responsives spacings
 @if $enable-responsive-spacings {
-
   // Sectionning
   body > header,
   body > main,
   body > footer,
   section {
-
     @if map-get($breakpoints, "sm") {
       @media (min-width: map-get($breakpoints, "sm")) {
         --block-spacing-vertical: calc(var(--spacing) * 2.5);
@@ -98,7 +96,6 @@
 
   // Card (<article>)
   article {
-
     @if map-get($breakpoints, "sm") {
       @media (min-width: map-get($breakpoints, "sm")) {
         --block-spacing-horizontal: calc(var(--spacing) * 1.25);
@@ -203,7 +200,9 @@ pre,
 code,
 kbd,
 samp {
-  --font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace",
+    "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 kbd {
