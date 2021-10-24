@@ -12,11 +12,11 @@
 
 [data-theme=light],
 :root:not([data-theme=dark]) {
-  --invalid-color: #C62828;
-  --valid-color: #388E3C;
+  --invalid-color: #c62828;
+  --valid-color: #388e3c;
   --nav-background-color: rgba(255, 255, 255, 0.7);
   --nav-border-color: rgba(115, 130, 140, 0.2);
-  --nav-logo-color: #FFF;
+  --nav-logo-color: #fff;
   --article-code-background-color: #f9fafb;
 }
 
@@ -72,32 +72,32 @@ body > main div[role=document] {
 
 div[role=document] > section::before {
   display: block;
-  height: calc(2rem + 3.5rem - .5rem);
-  margin-top: calc(-2rem - 3.5rem + .5rem);
+  height: calc(2rem + 3.5rem - 0.5rem);
+  margin-top: calc(-2rem - 3.5rem + 0.5rem);
   content: "";
 }
 @media (min-width: 576px) {
   div[role=document] > section::before {
-    height: calc(2.5rem + 3.5rem - .5rem);
-    height: calc(-2.5rem - 3.5rem + .5rem);
+    height: calc(2.5rem + 3.5rem - 0.5rem);
+    height: calc(-2.5rem - 3.5rem + 0.5rem);
   }
 }
 @media (min-width: 768px) {
   div[role=document] > section::before {
-    height: calc(3rem + 3.5rem - .5rem);
-    margin-top: calc(-3rem - 3.5rem + .5rem);
+    height: calc(3rem + 3.5rem - 0.5rem);
+    margin-top: calc(-3rem - 3.5rem + 0.5rem);
   }
 }
 @media (min-width: 992px) {
   div[role=document] > section::before {
-    height: calc(3.5rem + 3.5rem - .5rem);
-    margin-top: calc(-3.5rem - 3.5rem + .5rem);
+    height: calc(3.5rem + 3.5rem - 0.5rem);
+    margin-top: calc(-3.5rem - 3.5rem + 0.5rem);
   }
 }
 @media (min-width: 1200px) {
   div[role=document] > section::before {
-    height: calc(4rem + 3.5rem - .5rem);
-    margin-top: calc(-4rem - 3.5rem + .5rem);
+    height: calc(4rem + 3.5rem - 0.5rem);
+    margin-top: calc(-4rem - 3.5rem + 0.5rem);
   }
 }
 
@@ -139,7 +139,8 @@ main > aside nav h1 {
     display: none;
   }
 }
-main > aside li, main > aside summary {
+main > aside li,
+main > aside summary {
   padding-top: 0;
   padding-bottom: 0;
   font-size: 16px;

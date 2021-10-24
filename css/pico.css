@@ -6,11 +6,13 @@
  * Theme: default
  */
 :root {
-  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   --line-height: 1.5;
   --font-weight: 400;
   --font-size: 16px;
-  --border-radius: .25rem;
+  --border-radius: 0.25rem;
   --border-width: 1px;
   --outline-width: 3px;
   --spacing: 1rem;
@@ -19,9 +21,9 @@
   --block-spacing-horizontal: var(--spacing);
   --grid-spacing-vertical: 0;
   --grid-spacing-horizontal: var(--spacing);
-  --form-element-spacing-vertical: .75rem;
+  --form-element-spacing-vertical: 0.75rem;
   --form-element-spacing-horizontal: 1rem;
-  --transition: .2s ease-in-out;
+  --transition: 0.2s ease-in-out;
 }
 @media (min-width: 576px) {
   :root {
@@ -165,7 +167,9 @@ pre,
 code,
 kbd,
 samp {
-  --font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace",
+    "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 kbd {
@@ -175,7 +179,7 @@ kbd {
 [data-theme=light],
 :root:not([data-theme=dark]) {
   color-scheme: light;
-  --background-color: #FFF;
+  --background-color: #fff;
   --color: #415462;
   --h1-color: #1b2832;
   --h2-color: #24333e;
@@ -188,19 +192,19 @@ kbd {
   --primary: #1095c1;
   --primary-hover: #08769b;
   --primary-focus: rgba(16, 149, 193, 0.125);
-  --primary-inverse: #FFF;
+  --primary-inverse: #fff;
   --secondary: #596b78;
   --secondary-hover: #415462;
   --secondary-focus: rgba(89, 107, 120, 0.125);
-  --secondary-inverse: #FFF;
+  --secondary-inverse: #fff;
   --contrast: #1b2832;
   --contrast-hover: #000;
   --contrast-focus: rgba(89, 107, 120, 0.125);
-  --contrast-inverse: #FFF;
+  --contrast-inverse: #fff;
   --mark-background-color: #fff2ca;
   --mark-color: #543a26;
-  --ins-color: #388E3C;
-  --del-color: #C62828;
+  --ins-color: #388e3c;
+  --del-color: #c62828;
   --blockquote-border-color: var(--muted-border-color);
   --blockquote-footer-color: var(--muted-color);
   --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
@@ -214,11 +218,11 @@ kbd {
   --form-element-focus-color: var(--primary-focus);
   --form-element-disabled-background-color: #d5dce2;
   --form-element-disabled-border-color: #a2afb9;
-  --form-element-disabled-opacity: .5;
-  --form-element-invalid-border-color: #C62828;
-  --form-element-invalid-active-border-color: #B71C1C;
-  --form-element-valid-border-color: #388E3C;
-  --form-element-valid-active-border-color: #2E7D32;
+  --form-element-disabled-opacity: 0.5;
+  --form-element-invalid-border-color: #c62828;
+  --form-element-invalid-active-border-color: #b71c1c;
+  --form-element-valid-border-color: #388e3c;
+  --form-element-valid-active-border-color: #2e7d32;
   --switch-background-color: #bbc6ce;
   --switch-color: var(--primary-inverse);
   --switch-checked-background-color: var(--primary);
@@ -229,7 +233,7 @@ kbd {
   --range-thumb-hover-color: var(--secondary-hover);
   --range-thumb-active-color: var(--primary);
   --table-border-color: var(--muted-border-color);
-  --table-row-stripped-background-color:#f6f8f9;
+  --table-row-stripped-background-color: #f6f8f9;
   --code-background-color: #edf0f3;
   --code-color: var(--muted-color);
   --code-kbd-background-color: var(--contrast);
@@ -243,11 +247,13 @@ kbd {
   --accordion-open-summary-color: var(--muted-color);
   --card-background-color: var(--background-color);
   --card-border-color: var(--muted-border-color);
-  --card-box-shadow: 0 0.125rem 1rem rgba(27, 40, 50, 0.04), 0 0.125rem 2rem rgba(27, 40, 50, 0.08), 0 0 0 0.0625rem rgba(27, 40, 50, 0.024);
+  --card-box-shadow: 0 0.125rem 1rem rgba(27, 40, 50, 0.04),
+    0 0.125rem 2rem rgba(27, 40, 50, 0.08),
+    0 0 0 0.0625rem rgba(27, 40, 50, 0.024);
   --card-sectionning-background-color: #fbfbfc;
   --progress-background-color: #d5dce2;
   --progress-color: var(--primary);
-  --loading-spinner-opacity: .5;
+  --loading-spinner-opacity: 0.5;
   --tooltip-background-color: var(--contrast);
   --tooltip-color: var(--contrast-inverse);
   --icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(65, 84, 98, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -276,19 +282,19 @@ kbd {
     --primary: #1095c1;
     --primary-hover: #1ab3e6;
     --primary-focus: rgba(16, 149, 193, 0.25);
-    --primary-inverse: #FFF;
+    --primary-inverse: #fff;
     --secondary: #596b78;
     --secondary-hover: #73828c;
     --secondary-focus: rgba(115, 130, 140, 0.25);
-    --secondary-inverse: #FFF;
+    --secondary-inverse: #fff;
     --contrast: #edf0f3;
-    --contrast-hover: #FFF;
+    --contrast-hover: #fff;
     --contrast-focus: rgba(115, 130, 140, 0.25);
     --contrast-inverse: #000;
     --mark-background-color: #d1c284;
     --mark-color: #11191f;
-    --ins-color: #388E3C;
-    --del-color: #C62828;
+    --ins-color: #388e3c;
+    --del-color: #c62828;
     --blockquote-border-color: var(--muted-border-color);
     --blockquote-footer-color: var(--muted-color);
     --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
@@ -302,11 +308,11 @@ kbd {
     --form-element-focus-color: var(--primary-focus);
     --form-element-disabled-background-color: #2c3d49;
     --form-element-disabled-border-color: #415462;
-    --form-element-disabled-opacity: .5;
-    --form-element-invalid-border-color: #B71C1C;
-    --form-element-invalid-active-border-color: #C62828;
-    --form-element-valid-border-color: #2E7D32;
-    --form-element-valid-active-border-color: #388E3C;
+    --form-element-disabled-opacity: 0.5;
+    --form-element-invalid-border-color: #b71c1c;
+    --form-element-invalid-active-border-color: #c62828;
+    --form-element-valid-border-color: #2e7d32;
+    --form-element-valid-active-border-color: #388e3c;
     --switch-background-color: #374956;
     --switch-color: var(--primary-inverse);
     --switch-checked-background-color: var(--primary);
@@ -332,11 +338,13 @@ kbd {
     --accordion-open-summary-color: var(--muted-color);
     --card-background-color: #141e26;
     --card-border-color: #11191f;
-    --card-box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.06), 0 0.125rem 2rem rgba(0, 0, 0, 0.12), 0 0 0 0.0625rem rgba(0, 0, 0, 0.036);
+    --card-box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.06),
+      0 0.125rem 2rem rgba(0, 0, 0, 0.12),
+      0 0 0 0.0625rem rgba(0, 0, 0, 0.036);
     --card-sectionning-background-color: #18232c;
     --progress-background-color: #24333e;
     --progress-color: var(--primary);
-    --loading-spinner-opacity: .5;
+    --loading-spinner-opacity: 0.5;
     --tooltip-background-color: var(--contrast);
     --tooltip-color: var(--contrast-inverse);
     --icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -364,19 +372,19 @@ kbd {
   --primary: #1095c1;
   --primary-hover: #1ab3e6;
   --primary-focus: rgba(16, 149, 193, 0.25);
-  --primary-inverse: #FFF;
+  --primary-inverse: #fff;
   --secondary: #596b78;
   --secondary-hover: #73828c;
   --secondary-focus: rgba(115, 130, 140, 0.25);
-  --secondary-inverse: #FFF;
+  --secondary-inverse: #fff;
   --contrast: #edf0f3;
-  --contrast-hover: #FFF;
+  --contrast-hover: #fff;
   --contrast-focus: rgba(115, 130, 140, 0.25);
   --contrast-inverse: #000;
   --mark-background-color: #d1c284;
   --mark-color: #11191f;
-  --ins-color: #388E3C;
-  --del-color: #C62828;
+  --ins-color: #388e3c;
+  --del-color: #c62828;
   --blockquote-border-color: var(--muted-border-color);
   --blockquote-footer-color: var(--muted-color);
   --button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
@@ -390,11 +398,11 @@ kbd {
   --form-element-focus-color: var(--primary-focus);
   --form-element-disabled-background-color: #2c3d49;
   --form-element-disabled-border-color: #415462;
-  --form-element-disabled-opacity: .5;
-  --form-element-invalid-border-color: #B71C1C;
-  --form-element-invalid-active-border-color: #C62828;
-  --form-element-valid-border-color: #2E7D32;
-  --form-element-valid-active-border-color: #388E3C;
+  --form-element-disabled-opacity: 0.5;
+  --form-element-invalid-border-color: #b71c1c;
+  --form-element-invalid-active-border-color: #c62828;
+  --form-element-valid-border-color: #2e7d32;
+  --form-element-valid-active-border-color: #388e3c;
   --switch-background-color: #374956;
   --switch-color: var(--primary-inverse);
   --switch-checked-background-color: var(--primary);
@@ -420,11 +428,13 @@ kbd {
   --accordion-open-summary-color: var(--muted-color);
   --card-background-color: #141e26;
   --card-border-color: #11191f;
-  --card-box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.06), 0 0.125rem 2rem rgba(0, 0, 0, 0.12), 0 0 0 0.0625rem rgba(0, 0, 0, 0.036);
+  --card-box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.06),
+    0 0.125rem 2rem rgba(0, 0, 0, 0.12),
+    0 0 0 0.0625rem rgba(0, 0, 0, 0.036);
   --card-sectionning-background-color: #18232c;
   --progress-background-color: #24333e;
   --progress-color: var(--primary);
-  --loading-spinner-opacity: .5;
+  --loading-spinner-opacity: 0.5;
   --tooltip-background-color: var(--contrast);
   --tooltip-color: var(--contrast-inverse);
   --icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgba(162, 175, 185, 0.999)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
@@ -492,8 +502,8 @@ body > footer {
 }
 
 /**
- * Container
- */
+* Container
+*/
 .container,
 .container-fluid {
   width: 100%;
@@ -535,9 +545,9 @@ section {
 }
 
 /**
- * Grid
- * Minimal grid system with auto-layout columns
- */
+* Grid
+* Minimal grid system with auto-layout columns
+*/
 .grid {
   grid-column-gap: var(--grid-spacing-horizontal);
   grid-row-gap: var(--grid-spacing-vertical);
@@ -965,7 +975,8 @@ input[type=submit]:focus,
 input[type=button]:focus,
 input[type=reset]:focus,
 a[role=button]:focus {
-  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--primary-focus);
+  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+    0 0 0 var(--outline-width) var(--primary-focus);
 }
 
 input[type=reset] {
@@ -979,7 +990,8 @@ input[type=reset]:hover, input[type=reset]:active, input[type=reset]:focus {
   --border-color: var(--secondary-hover);
 }
 input[type=reset]:focus {
-  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--secondary-focus);
+  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+    0 0 0 var(--outline-width) var(--secondary-focus);
 }
 
 button.secondary,
@@ -1013,7 +1025,8 @@ input[type=submit].secondary:focus,
 input[type=button].secondary:focus,
 input[type=reset].secondary:focus,
 a[role=button].secondary:focus {
-  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--secondary-focus);
+  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+    0 0 0 var(--outline-width) var(--secondary-focus);
 }
 button.contrast,
 input[type=submit].contrast,
@@ -1045,7 +1058,8 @@ input[type=submit].contrast:focus,
 input[type=button].contrast:focus,
 input[type=reset].contrast:focus,
 a[role=button].contrast:focus {
-  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--outline-width) var(--contrast-focus);
+  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+    0 0 0 var(--outline-width) var(--contrast-focus);
 }
 button.outline,
 input[type=submit].outline,
@@ -1232,8 +1246,8 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]),
 select,
 textarea {
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
   vertical-align: middle;
 }
@@ -1288,10 +1302,10 @@ textarea[disabled] {
 input[aria-invalid],
 select[aria-invalid],
 textarea[aria-invalid] {
-  padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
+  padding-right: calc( var(--form-element-spacing-horizontal) + 1.5rem ) !important;
   padding-left: var(--form-element-spacing-horizontal);
-  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
-          padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
+  -webkit-padding-end: calc( var(--form-element-spacing-horizontal) + 1.5rem ) !important;
+          padding-inline-end: calc( var(--form-element-spacing-horizontal) + 1.5rem ) !important;
   -webkit-padding-start: var(--form-element-spacing-horizontal) !important;
           padding-inline-start: var(--form-element-spacing-horizontal) !important;
   background-position: center right 0.75rem;
@@ -1309,7 +1323,9 @@ select[aria-invalid=false]:active,
 select[aria-invalid=false]:focus,
 textarea[aria-invalid=false]:active,
 textarea[aria-invalid=false]:focus {
-  --border-color: var(--form-element-valid-active-border-color) !important;
+  --border-color: var(
+    --form-element-valid-active-border-color
+  ) !important;
 }
 input[aria-invalid=true],
 select[aria-invalid=true],
@@ -1322,7 +1338,9 @@ select[aria-invalid=true]:active,
 select[aria-invalid=true]:focus,
 textarea[aria-invalid=true]:active,
 textarea[aria-invalid=true]:focus {
-  --border-color: var(--form-element-invalid-active-border-color) !important;
+  --border-color: var(
+    --form-element-invalid-active-border-color
+  ) !important;
 }
 
 [dir=rtl] input[aria-invalid],
@@ -1736,7 +1754,7 @@ label > input, label > select, label > textarea {
 
 [type=search] {
   border-radius: 5rem;
-  padding-left: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
+  padding-left: calc( var(--form-element-spacing-horizontal) + 1.75rem ) !important;
   background-image: var(--icon-search);
   background-position: center left 1.125rem;
   background-repeat: no-repeat;

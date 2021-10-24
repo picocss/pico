@@ -51,10 +51,9 @@
    * @property {number}  defaults.offset      An offset to take into account when calculating visibility.
    */
 
-
   MostVisible.defaults = {
     percentage: false,
-    offset: 0
+    offset: 0,
   };
   MostVisible.prototype = {
     /**
@@ -66,11 +65,15 @@
       var _this = this;
 
       var viewportHeight = document.documentElement.clientHeight;
-      return Array.prototype.reduce.call(this.elements, function (carry, element) {
-        var value = _this.getVisibleHeight(element, viewportHeight);
+      return Array.prototype.reduce.call(
+        this.elements,
+        function (carry, element) {
+          var value = _this.getVisibleHeight(element, viewportHeight);
 
-        return value > carry[0] ? [value, element] : carry;
-      }, [0, null])[1];
+          return value > carry[0] ? [value, element] : carry;
+        },
+        [0, null]
+      )[1];
     },
 
     /**
@@ -82,13 +85,13 @@
      */
     getVisibleHeight: function (element, viewportHeight) {
       var rect = element.getBoundingClientRect(),
-          rectTopOffset = rect.top - this.options.offset,
-          rectBottomOffset = rect.bottom - this.options.offset,
-          height = rect.bottom - rect.top,
-          visible = {
-        top: rectTopOffset >= 0 && rectTopOffset < viewportHeight,
-        bottom: rectBottomOffset > 0 && rectBottomOffset < viewportHeight
-      };
+        rectTopOffset = rect.top - this.options.offset,
+        rectBottomOffset = rect.bottom - this.options.offset,
+        height = rect.bottom - rect.top,
+        visible = {
+          top: rectTopOffset >= 0 && rectTopOffset < viewportHeight,
+          bottom: rectBottomOffset > 0 && rectBottomOffset < viewportHeight,
+        };
       var visiblePx = 0;
 
       if (visible.top && visible.bottom) {
@@ -108,11 +111,11 @@
       }
 
       if (this.options.percentage) {
-        return visiblePx / height * 100;
+        return (visiblePx / height) * 100;
       }
 
       return visiblePx;
-    }
+    },
   };
 
   MostVisible.makeJQueryPlugin = function ($) {
@@ -125,7 +128,6 @@
       return this.filter(instance.getMostVisible());
     };
   }; // Try adding the jQuery plugin to window.jQuery
-
 
   MostVisible.makeJQueryPlugin(window.jQuery);
   /**

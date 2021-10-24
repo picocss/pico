@@ -44,7 +44,7 @@ details {
       background-position: center;
       background-repeat: no-repeat;
       background-size: 1rem auto;
-      content: '';
+      content: "";
 
       @if $enable-transitions {
         transition: transform var(--transition);
@@ -67,7 +67,6 @@ details {
 
   // Open
   &[open] {
-
     > summary {
       margin-bottom: calc(var(--spacing) * 0.25);
 
@@ -77,13 +76,13 @@ details {
 
       &::after {
         transform: rotate(0);
-      }
+      } 
     }
   }
 }
 
 [dir="rtl"] {
-  details{ 
+  details {
     summary {
       &::after {
         float: left;

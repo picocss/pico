@@ -11,9 +11,8 @@
 import * as MostVisible from './most-visible.js';
 
 export const scrollspy = {
-
   mostVisible() {
-    new MostVisible()
+    new MostVisible();
   },
 
   // Config
@@ -25,7 +24,6 @@ export const scrollspy = {
     active: 'active',
   },
 
-
   // Init
   init() {
     if (window.matchMedia('(min-width: ' + this.minWidth + ')').matches) {
@@ -34,38 +32,48 @@ export const scrollspy = {
     }
   },
 
-
   // Set active section in nav
   setActiveNav() {
-
     // Get active section
     let currentSection = mostVisible(this.targets.sections).getAttribute('id');
 
     // Remove all active states
-    let links = document.querySelectorAll(this.targets.nav + ' a.' + this.targets.active);
-    links.forEach(function(link) {
-      link.classList.remove(this.targets.active);
-    }.bind(this));
+    let links = document.querySelectorAll(
+      this.targets.nav + ' a.' + this.targets.active
+    );
+    links.forEach(
+      function (link) {
+        link.classList.remove(this.targets.active);
+      }.bind(this)
+    );
 
     // Set active state
-    let activeLink = document.querySelector(this.targets.nav + ' a[href="#' + currentSection + '"]');
+    let activeLink = document.querySelector(
+      this.targets.nav + ' a[href="#' + currentSection + '"]'
+    );
     activeLink.classList.add(this.targets.active);
 
     // Open details parent
     activeLink.closest('details').setAttribute('open', '');
   },
 
-
   // Scroll stop
   scrollStop() {
     let isScrolling;
-    window.addEventListener('scroll', function(event) {
-      window.clearTimeout(isScrolling);
-      isScrolling = setTimeout(function() {
-        this.setActiveNav();
-      }.bind(this), this.interval);
-    }.bind(this), false);
-  }
-}
+    window.addEventListener(
+      'scroll',
+      function (event) {
+        window.clearTimeout(isScrolling);
+        isScrolling = setTimeout(
+          function () {
+            this.setActiveNav();
+          }.bind(this),
+          this.interval
+        );
+      }.bind(this),
+      false
+    );
+  },
+};
 
 export default scrollspy;

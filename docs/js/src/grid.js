@@ -6,34 +6,30 @@
  */
 
 export const grid = {
-
   // Config
   buttons: {
     text: {
       add: 'Add column',
-      remove: 'Remove column'
+      remove: 'Remove column',
     },
-    target: '#grids article'
+    target: '#grids article',
   },
   grid: {
     current: 4,
     min: 1,
     max: 12,
     gridTarget: '#grids .grid',
-    codeTarget: '#grids pre code'
+    codeTarget: '#grids pre code',
   },
-
 
   // Init
   init() {
     this.addButtons();
-    this.generateGrid()
+    this.generateGrid();
   },
-
 
   // Add buttons
   addButtons() {
-
     // Insert buttons
     let buttons = document.createElement('P');
     buttons.innerHTML = `
@@ -54,20 +50,26 @@ export const grid = {
     document.querySelector(this.buttons.target).before(buttons);
 
     // Add button listener
-    document.querySelector('#grids button.add').addEventListener('click', function() {
-      this.addColumn();
-    }.bind(this), false);
+    document.querySelector('#grids button.add').addEventListener(
+      'click',
+      function () {
+        this.addColumn();
+      }.bind(this),
+      false
+    );
 
     // Remove button listener
-    document.querySelector('#grids button.remove').addEventListener('click', function() {
-      this.removeColumn();
-    }.bind(this), false);
+    document.querySelector('#grids button.remove').addEventListener(
+      'click',
+      function () {
+        this.removeColumn();
+      }.bind(this),
+      false
+    );
   },
-
 
   // Generate grid
   generateGrid() {
-
     // Config
     let htmlInner = '';
     let codeInner = '&lt;<b>div</b> <i>class</i>=<u>"grid"</u>&gt;\n';
@@ -84,7 +86,6 @@ export const grid = {
     document.querySelector(this.grid.codeTarget).innerHTML = codeInner;
   },
 
-
   // Add column
   addColumn() {
     if (this.grid.current < this.grid.max) {
@@ -93,14 +94,13 @@ export const grid = {
     }
   },
 
-
   // Remove column
   removeColumn() {
     if (this.grid.current > this.grid.min) {
       this.grid.current--;
       this.generateGrid();
     }
-  }
+  },
 };
 
 export default grid;

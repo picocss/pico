@@ -2,7 +2,6 @@
  * Miscs
  */
 
-
 // Reboot based on :
 // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
 // - sanitize.css v12.0.1 | CC0 1.0 Universal | github.com/csstools/sanitize.css
@@ -23,8 +22,7 @@ hr {
 template {
   @if $enable-important {
     display: none !important;
-  }
-  @else {
+  } @else {
     display: none;
   }
 }

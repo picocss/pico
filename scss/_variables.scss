@@ -29,7 +29,6 @@ $enable-transitions: true !default;
 // Enable overriding with !important
 $enable-important: true !default;
 
-
 // Responsive
 // ––––––––––––––––––––
 
@@ -51,12 +50,12 @@ $breakpoints: (
   sm: 576px,
   md: 768px,
   lg: 992px,
-  xl: 1200px
+  xl: 1200px,
 ) !default;
 
 // Viewports
 $viewports: (
-// 'null' disable the viewport on a breakpoint
+  // 'null' disable the viewport on a breakpoint
   sm: 510px,
   md: 700px,
   lg: 920px,

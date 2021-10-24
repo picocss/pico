@@ -3,7 +3,6 @@
  */
 
 main > aside {
-
   nav {
     width: 100%;
     margin-bottom: var(--block-spacing-vertical);
@@ -26,7 +25,8 @@ main > aside {
     }
   }
 
-  li, summary {
+  li,
+  summary {
     padding-top: 0;
     padding-bottom: 0;
     font-size: 16px;
@@ -51,7 +51,7 @@ main > aside {
   }
 
   details {
-    padding-bottom: .25rem;
+    padding-bottom: 0.25rem;
     border-bottom: none;
 
     summary {
@@ -66,7 +66,7 @@ main > aside {
     }
 
     &[open] {
-      >summary:not(:focus) {
+      > summary:not(:focus) {
         color: var(--h1-color);
       }
     }
