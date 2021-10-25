@@ -1165,7 +1165,7 @@ textarea {
 }
 
 input:not([type=checkbox]):not([type=radio]):not([type=range]) {
-  height: calc( (1rem * var(--line-height)) + (var(--form-element-spacing-vertical) * 2) + (var(--border-width) * 2) );
+  height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
 }
 
 fieldset {

@@ -1041,7 +1041,7 @@ textarea {
 }
 
 input:not([type=checkbox]):not([type=radio]):not([type=range]) {
-  height: calc( (1rem * var(--line-height)) + (var(--form-element-spacing-vertical) * 2) + (var(--border-width) * 2) );
+  height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
 }
 
 fieldset {
@@ -1123,10 +1123,10 @@ textarea[disabled] {
 input:not([type=checkbox]):not([type=radio])[aria-invalid],
 select:not([type=checkbox]):not([type=radio])[aria-invalid],
 textarea:not([type=checkbox]):not([type=radio])[aria-invalid] {
-  padding-right: calc( var(--form-element-spacing-horizontal) + 1.5rem ) !important;
+  padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   padding-left: var(--form-element-spacing-horizontal);
-  -webkit-padding-end: calc( var(--form-element-spacing-horizontal) + 1.5rem ) !important;
-          padding-inline-end: calc( var(--form-element-spacing-horizontal) + 1.5rem ) !important;
+  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
+          padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   -webkit-padding-start: var(--form-element-spacing-horizontal) !important;
           padding-inline-start: var(--form-element-spacing-horizontal) !important;
   background-position: center right 0.75rem;
@@ -1599,7 +1599,7 @@ label > input, label > select, label > textarea {
 
 [type=search] {
   border-radius: 5rem;
-  padding-left: calc( var(--form-element-spacing-horizontal) + 1.75rem ) !important;
+  padding-left: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
   background-image: var(--icon-search);
   background-position: center left 1.125rem;
   background-repeat: no-repeat;

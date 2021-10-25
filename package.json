@@ -43,17 +43,17 @@
     "watch": "npm-run-all --parallel watch:scss watch:scss:docs watch:js:docs"
   },
   "devDependencies": {
-    "@babel/cli": "^7.15.4",
-    "@babel/core": "^7.15.5",
-    "@babel/preset-env": "^7.15.6",
-    "autoprefixer": "^10.3.4",
-    "clean-css-cli": "^5.3.3",
-    "nodemon": "^2.0.12",
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "autoprefixer": "^10.3.7",
+    "clean-css-cli": "^5.4.2",
+    "nodemon": "^2.0.14",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.3.6",
-    "postcss-cli": "^8.3.1",
-    "rollup": "^2.56.3",
-    "sass": "^1.39.0",
-    "uglify-js": "^3.14.1"
+    "postcss-cli": "^9.0.1",
+    "rollup": "^2.58.0",
+    "sass": "^1.43.3",
+    "uglify-js": "^3.14.2"
   }
 }
