@@ -211,34 +211,44 @@ textarea {
   }
 }
 
-// Aria-valid
+// Aria-invalid
 input,
 select,
 textarea {
-  &[aria-invalid] {
-    @if $enable-important {
-      padding-right: calc(
-        var(--form-element-spacing-horizontal) + 1.5rem
-      ) !important;
-      padding-left: var(--form-element-spacing-horizontal);
-      padding-inline-end: calc(
-        var(--form-element-spacing-horizontal) + 1.5rem
-      ) !important;
-      padding-inline-start: var(--form-element-spacing-horizontal) !important;
-    } @else {
-      padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
-      padding-left: var(--form-element-spacing-horizontal);
-      padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
-      padding-inline-start: var(--form-element-spacing-horizontal);
+
+  &:not([type="checkbox"]):not([type="radio"]) {
+    &[aria-invalid] {
+      @if $enable-important {
+        padding-right: calc(
+          var(--form-element-spacing-horizontal) + 1.5rem
+        ) !important;
+        padding-left: var(--form-element-spacing-horizontal);
+        padding-inline-end: calc(
+          var(--form-element-spacing-horizontal) + 1.5rem
+        ) !important;
+        padding-inline-start: var(--form-element-spacing-horizontal) !important;
+      } @else {
+        padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+        padding-left: var(--form-element-spacing-horizontal);
+        padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+        padding-inline-start: var(--form-element-spacing-horizontal);
+      }
+      background-position: center right 0.75rem;
+      background-repeat: no-repeat;
+      background-size: 1rem auto;
     }
-    background-position: center right 0.75rem;
-    background-repeat: no-repeat;
-    background-size: 1rem auto;
+
+    &[aria-invalid="false"] {
+      background-image: var(--icon-valid);
+    }
+  
+    &[aria-invalid="true"] {
+      background-image: var(--icon-invalid);
+    }
   }
 
   &[aria-invalid="false"] {
     --border-color: var(--form-element-valid-border-color);
-    background-image: var(--icon-valid);
 
     &:active,
     &:focus {
@@ -254,7 +264,6 @@ textarea {
 
   &[aria-invalid="true"] {
     --border-color: var(--form-element-invalid-border-color);
-    background-image: var(--icon-invalid);
 
     &:active,
     &:focus {
