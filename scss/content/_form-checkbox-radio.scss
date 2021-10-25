@@ -119,4 +119,35 @@
       margin-inline-start: calc(#{$switch-width * 0.5} - var(--border-width));
     }
   }
+
+  // Aria-invalid
+  &[aria-invalid="false"] {
+    --border-color: var(--form-element-valid-border-color);
+
+    &:active,
+    &:focus {
+      @if $enable-important {
+        --border-color: var(
+          --form-element-valid-active-border-color
+        ) !important;
+      } @else {
+        --border-color: var(--form-element-valid-active-border-color);
+      }
+    }
+  }
+
+  &[aria-invalid="true"] {
+    --border-color: var(--form-element-invalid-border-color);
+
+    &:active,
+    &:focus {
+      @if $enable-important {
+        --border-color: var(
+          --form-element-invalid-active-border-color
+        ) !important;
+      } @else {
+        --border-color: var(--form-element-invalid-active-border-color);
+      }
+    }
+  }
 }

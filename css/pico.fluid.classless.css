@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.4.0 (https://picocss.com)
+ * Pico.css v1.4.1 (https://picocss.com)
  * Copyright 2019-2021 - Licensed under MIT
  */
 /**
@@ -1011,7 +1011,7 @@ textarea {
 }
 
 input:not([type=checkbox]):not([type=radio]):not([type=range]) {
-  height: calc( (1rem * var(--line-height)) + (var(--form-element-spacing-vertical) * 2) + (var(--border-width) * 2) );
+  height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
 }
 
 fieldset {
@@ -1090,24 +1090,33 @@ textarea[disabled] {
   opacity: var(--form-element-disabled-opacity);
 }
 
-input[aria-invalid],
-select[aria-invalid],
-textarea[aria-invalid] {
-  padding-right: calc( var(--form-element-spacing-horizontal) + 1.5rem ) !important;
+input:not([type=checkbox]):not([type=radio])[aria-invalid],
+select:not([type=checkbox]):not([type=radio])[aria-invalid],
+textarea:not([type=checkbox]):not([type=radio])[aria-invalid] {
+  padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   padding-left: var(--form-element-spacing-horizontal);
-  -webkit-padding-end: calc( var(--form-element-spacing-horizontal) + 1.5rem ) !important;
-          padding-inline-end: calc( var(--form-element-spacing-horizontal) + 1.5rem ) !important;
+  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
+          padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   -webkit-padding-start: var(--form-element-spacing-horizontal) !important;
           padding-inline-start: var(--form-element-spacing-horizontal) !important;
   background-position: center right 0.75rem;
   background-repeat: no-repeat;
   background-size: 1rem auto;
 }
+input:not([type=checkbox]):not([type=radio])[aria-invalid=false],
+select:not([type=checkbox]):not([type=radio])[aria-invalid=false],
+textarea:not([type=checkbox]):not([type=radio])[aria-invalid=false] {
+  background-image: var(--icon-valid);
+}
+input:not([type=checkbox]):not([type=radio])[aria-invalid=true],
+select:not([type=checkbox]):not([type=radio])[aria-invalid=true],
+textarea:not([type=checkbox]):not([type=radio])[aria-invalid=true] {
+  background-image: var(--icon-invalid);
+}
 input[aria-invalid=false],
 select[aria-invalid=false],
 textarea[aria-invalid=false] {
   --border-color: var(--form-element-valid-border-color);
-  background-image: var(--icon-valid);
 }
 input[aria-invalid=false]:active, input[aria-invalid=false]:focus,
 select[aria-invalid=false]:active,
@@ -1122,7 +1131,6 @@ input[aria-invalid=true],
 select[aria-invalid=true],
 textarea[aria-invalid=true] {
   --border-color: var(--form-element-invalid-border-color);
-  background-image: var(--icon-invalid);
 }
 input[aria-invalid=true]:active, input[aria-invalid=true]:focus,
 select[aria-invalid=true]:active,
@@ -1291,6 +1299,22 @@ label > input, label > select, label > textarea {
           margin-inline-end: 0;
   -webkit-margin-start: calc(1.125em - var(--border-width));
           margin-inline-start: calc(1.125em - var(--border-width));
+}
+[type=checkbox][role=switch][aria-invalid=false] {
+  --border-color: var(--form-element-valid-border-color);
+}
+[type=checkbox][role=switch][aria-invalid=false]:active, [type=checkbox][role=switch][aria-invalid=false]:focus {
+  --border-color: var(
+    --form-element-valid-active-border-color
+  ) !important;
+}
+[type=checkbox][role=switch][aria-invalid=true] {
+  --border-color: var(--form-element-invalid-border-color);
+}
+[type=checkbox][role=switch][aria-invalid=true]:active, [type=checkbox][role=switch][aria-invalid=true]:focus {
+  --border-color: var(
+    --form-element-invalid-active-border-color
+  ) !important;
 }
 
 /**
@@ -1545,7 +1569,7 @@ label > input, label > select, label > textarea {
 
 [type=search] {
   border-radius: 5rem;
-  padding-left: calc( var(--form-element-spacing-horizontal) + 1.75rem ) !important;
+  padding-left: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
   background-image: var(--icon-search);
   background-position: center left 1.125rem;
   background-repeat: no-repeat;

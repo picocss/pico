@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.4.0 (https://picocss.com)
+ * Pico.css v1.4.1 (https://picocss.com)
  * Copyright 2019-2021 - Licensed under MIT
  *
  * Slim version example
@@ -1165,7 +1165,7 @@ textarea {
 }
 
 input:not([type=checkbox]):not([type=radio]):not([type=range]) {
-  height: calc( (1rem * var(--line-height)) + (var(--form-element-spacing-vertical) * 2) + (var(--border-width) * 2) );
+  height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
 }
 
 fieldset {
@@ -1243,9 +1243,9 @@ textarea[disabled] {
   opacity: var(--form-element-disabled-opacity);
 }
 
-input[aria-invalid],
-select[aria-invalid],
-textarea[aria-invalid] {
+input:not([type=checkbox]):not([type=radio])[aria-invalid],
+select:not([type=checkbox]):not([type=radio])[aria-invalid],
+textarea:not([type=checkbox]):not([type=radio])[aria-invalid] {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   padding-left: var(--form-element-spacing-horizontal);
   -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
@@ -1256,11 +1256,20 @@ textarea[aria-invalid] {
   background-repeat: no-repeat;
   background-size: 1rem auto;
 }
+input:not([type=checkbox]):not([type=radio])[aria-invalid=false],
+select:not([type=checkbox]):not([type=radio])[aria-invalid=false],
+textarea:not([type=checkbox]):not([type=radio])[aria-invalid=false] {
+  background-image: var(--icon-valid);
+}
+input:not([type=checkbox]):not([type=radio])[aria-invalid=true],
+select:not([type=checkbox]):not([type=radio])[aria-invalid=true],
+textarea:not([type=checkbox]):not([type=radio])[aria-invalid=true] {
+  background-image: var(--icon-invalid);
+}
 input[aria-invalid=false],
 select[aria-invalid=false],
 textarea[aria-invalid=false] {
   --border-color: var(--form-element-valid-border-color);
-  background-image: var(--icon-valid);
 }
 input[aria-invalid=false]:active, input[aria-invalid=false]:focus,
 select[aria-invalid=false]:active,
@@ -1273,7 +1282,6 @@ input[aria-invalid=true],
 select[aria-invalid=true],
 textarea[aria-invalid=true] {
   --border-color: var(--form-element-invalid-border-color);
-  background-image: var(--icon-invalid);
 }
 input[aria-invalid=true]:active, input[aria-invalid=true]:focus,
 select[aria-invalid=true]:active,
