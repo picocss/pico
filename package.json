@@ -1,7 +1,7 @@
 {
   "name": "@picocss/pico",
   "version": "1.4.0",
-  "description": "Graceful & Minimal CSS design system in pure semantic HTML",
+  "description": "Minimal CSS Framework for semantic HTML",
   "author": "Lucas Larroche",
   "main": "css/pico.min.css",
   "homepage": "https://picocss.com",
