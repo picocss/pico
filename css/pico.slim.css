@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.4.0 (https://picocss.com)
+ * Pico.css v1.4.1 (https://picocss.com)
  * Copyright 2019-2021 - Licensed under MIT
  *
  * Slim version example
@@ -419,8 +419,8 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -moz-tab-size: 4;
-    -o-tab-size: 4;
-       tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
   -ms-text-size-adjust: 100%;
   background-color: var(--background-color);
   color: var(--color);
@@ -594,7 +594,7 @@ a {
   background-color: var(--background-color);
   color: var(--color);
   -webkit-text-decoration: var(--text-decoration);
-          text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
 }
 a:hover, a:active, a:focus {
   --color: var(--primary-hover);
@@ -744,9 +744,9 @@ ol {
   padding-right: 0;
   padding-left: var(--spacing);
   -webkit-padding-end: 0;
-          padding-inline-end: 0;
+  padding-inline-end: 0;
   -webkit-padding-start: var(--spacing);
-          padding-inline-start: var(--spacing);
+  padding-inline-start: var(--spacing);
 }
 ul li,
 ol li {
@@ -771,9 +771,9 @@ blockquote {
   border-right: none;
   border-left: 0.25rem solid var(--blockquote-border-color);
   -webkit-border-end: none;
-          border-inline-end: none;
+  border-inline-end: none;
   -webkit-border-start: 0.25rem solid var(--blockquote-border-color);
-          border-inline-start: 0.25rem solid var(--blockquote-border-color);
+  border-inline-start: 0.25rem solid var(--blockquote-border-color);
 }
 blockquote footer {
   margin-top: calc(var(--typography-spacing-vertical) * 0.5);
@@ -1168,7 +1168,7 @@ textarea {
 }
 
 input:not([type=checkbox]):not([type=radio]):not([type=range]) {
-  height: calc( (1rem * var(--line-height)) + (var(--form-element-spacing-vertical) * 2) + (var(--border-width) * 2) );
+  height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
 }
 
 fieldset {
@@ -1194,8 +1194,8 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]),
 select,
 textarea {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
   vertical-align: middle;
 }
@@ -1246,24 +1246,33 @@ textarea[disabled] {
   opacity: var(--form-element-disabled-opacity);
 }
 
-input[aria-invalid],
-select[aria-invalid],
-textarea[aria-invalid] {
+input:not([type=checkbox]):not([type=radio])[aria-invalid],
+select:not([type=checkbox]):not([type=radio])[aria-invalid],
+textarea:not([type=checkbox]):not([type=radio])[aria-invalid] {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   padding-left: var(--form-element-spacing-horizontal);
   -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
-          padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   -webkit-padding-start: var(--form-element-spacing-horizontal);
-          padding-inline-start: var(--form-element-spacing-horizontal);
+  padding-inline-start: var(--form-element-spacing-horizontal);
   background-position: center right 0.75rem;
   background-repeat: no-repeat;
   background-size: 1rem auto;
+}
+input:not([type=checkbox]):not([type=radio])[aria-invalid=false],
+select:not([type=checkbox]):not([type=radio])[aria-invalid=false],
+textarea:not([type=checkbox]):not([type=radio])[aria-invalid=false] {
+  background-image: var(--icon-valid);
+}
+input:not([type=checkbox]):not([type=radio])[aria-invalid=true],
+select:not([type=checkbox]):not([type=radio])[aria-invalid=true],
+textarea:not([type=checkbox]):not([type=radio])[aria-invalid=true] {
+  background-image: var(--icon-invalid);
 }
 input[aria-invalid=false],
 select[aria-invalid=false],
 textarea[aria-invalid=false] {
   --border-color: var(--form-element-valid-border-color);
-  background-image: var(--icon-valid);
 }
 input[aria-invalid=false]:active, input[aria-invalid=false]:focus,
 select[aria-invalid=false]:active,
@@ -1276,7 +1285,6 @@ input[aria-invalid=true],
 select[aria-invalid=true],
 textarea[aria-invalid=true] {
   --border-color: var(--form-element-invalid-border-color);
-  background-image: var(--icon-invalid);
 }
 input[aria-invalid=true]:active, input[aria-invalid=true]:focus,
 select[aria-invalid=true]:active,
@@ -1315,9 +1323,9 @@ select:not([multiple]):not([size]) {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   padding-left: var(--form-element-spacing-horizontal);
   -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
-          padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   -webkit-padding-start: var(--form-element-spacing-horizontal);
-          padding-inline-start: var(--form-element-spacing-horizontal);
+  padding-inline-start: var(--form-element-spacing-horizontal);
   background-image: var(--icon-chevron);
   background-position: center right 0.75rem;
   background-repeat: no-repeat;
@@ -1408,3 +1416,5 @@ textarea,
 [dir=rtl] {
   direction: rtl;
 }
+
+/*# sourceMappingURL=pico.slim.css.map */

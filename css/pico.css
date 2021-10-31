@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.4.0 (https://picocss.com)
+ * Pico.css v1.4.1 (https://picocss.com)
  * Copyright 2019-2021 - Licensed under MIT
  */
 /**
@@ -495,8 +495,8 @@ html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -moz-tab-size: 4;
-    -o-tab-size: 4;
-       tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
   -ms-text-size-adjust: 100%;
   background-color: var(--background-color);
   color: var(--color);
@@ -670,7 +670,7 @@ a {
   background-color: var(--background-color);
   color: var(--color);
   -webkit-text-decoration: var(--text-decoration);
-          text-decoration: var(--text-decoration);
+  text-decoration: var(--text-decoration);
   transition: background-color var(--transition), color var(--transition), box-shadow var(--transition), -webkit-text-decoration var(--transition);
   transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition);
   transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition), -webkit-text-decoration var(--transition);
@@ -823,9 +823,9 @@ ol {
   padding-right: 0;
   padding-left: var(--spacing);
   -webkit-padding-end: 0;
-          padding-inline-end: 0;
+  padding-inline-end: 0;
   -webkit-padding-start: var(--spacing);
-          padding-inline-start: var(--spacing);
+  padding-inline-start: var(--spacing);
 }
 ul li,
 ol li {
@@ -850,9 +850,9 @@ blockquote {
   border-right: none;
   border-left: 0.25rem solid var(--blockquote-border-color);
   -webkit-border-end: none;
-          border-inline-end: none;
+  border-inline-end: none;
   -webkit-border-start: 0.25rem solid var(--blockquote-border-color);
-          border-inline-start: 0.25rem solid var(--blockquote-border-color);
+  border-inline-start: 0.25rem solid var(--blockquote-border-color);
 }
 blockquote footer {
   margin-top: calc(var(--typography-spacing-vertical) * 0.5);
@@ -1248,7 +1248,7 @@ textarea {
 }
 
 input:not([type=checkbox]):not([type=radio]):not([type=range]) {
-  height: calc( (1rem * var(--line-height)) + (var(--form-element-spacing-vertical) * 2) + (var(--border-width) * 2) );
+  height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
 }
 
 fieldset {
@@ -1274,8 +1274,8 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]),
 select,
 textarea {
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
   vertical-align: middle;
 }
@@ -1327,24 +1327,33 @@ textarea[disabled] {
   opacity: var(--form-element-disabled-opacity);
 }
 
-input[aria-invalid],
-select[aria-invalid],
-textarea[aria-invalid] {
-  padding-right: calc( var(--form-element-spacing-horizontal) + 1.5rem ) !important;
+input:not([type=checkbox]):not([type=radio])[aria-invalid],
+select:not([type=checkbox]):not([type=radio])[aria-invalid],
+textarea:not([type=checkbox]):not([type=radio])[aria-invalid] {
+  padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   padding-left: var(--form-element-spacing-horizontal);
-  -webkit-padding-end: calc( var(--form-element-spacing-horizontal) + 1.5rem ) !important;
-          padding-inline-end: calc( var(--form-element-spacing-horizontal) + 1.5rem ) !important;
+  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
+  padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   -webkit-padding-start: var(--form-element-spacing-horizontal) !important;
-          padding-inline-start: var(--form-element-spacing-horizontal) !important;
+  padding-inline-start: var(--form-element-spacing-horizontal) !important;
   background-position: center right 0.75rem;
   background-repeat: no-repeat;
   background-size: 1rem auto;
+}
+input:not([type=checkbox]):not([type=radio])[aria-invalid=false],
+select:not([type=checkbox]):not([type=radio])[aria-invalid=false],
+textarea:not([type=checkbox]):not([type=radio])[aria-invalid=false] {
+  background-image: var(--icon-valid);
+}
+input:not([type=checkbox]):not([type=radio])[aria-invalid=true],
+select:not([type=checkbox]):not([type=radio])[aria-invalid=true],
+textarea:not([type=checkbox]):not([type=radio])[aria-invalid=true] {
+  background-image: var(--icon-invalid);
 }
 input[aria-invalid=false],
 select[aria-invalid=false],
 textarea[aria-invalid=false] {
   --border-color: var(--form-element-valid-border-color);
-  background-image: var(--icon-valid);
 }
 input[aria-invalid=false]:active, input[aria-invalid=false]:focus,
 select[aria-invalid=false]:active,
@@ -1359,7 +1368,6 @@ input[aria-invalid=true],
 select[aria-invalid=true],
 textarea[aria-invalid=true] {
   --border-color: var(--form-element-invalid-border-color);
-  background-image: var(--icon-invalid);
 }
 input[aria-invalid=true]:active, input[aria-invalid=true]:focus,
 select[aria-invalid=true]:active,
@@ -1400,9 +1408,9 @@ select:not([multiple]):not([size]) {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   padding-left: var(--form-element-spacing-horizontal);
   -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
-          padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   -webkit-padding-start: var(--form-element-spacing-horizontal);
-          padding-inline-start: var(--form-element-spacing-horizontal);
+  padding-inline-start: var(--form-element-spacing-horizontal);
   background-image: var(--icon-chevron);
   background-position: center right 0.75rem;
   background-repeat: no-repeat;
@@ -1442,9 +1450,9 @@ label > input, label > select, label > textarea {
   margin-right: 0.375em;
   margin-left: 0;
   -webkit-margin-end: 0.375em;
-          margin-inline-end: 0.375em;
+  margin-inline-end: 0.375em;
   -webkit-margin-start: 0;
-          margin-inline-start: 0;
+  margin-inline-start: 0;
   border-width: var(--border-width);
   vertical-align: middle;
   cursor: pointer;
@@ -1525,9 +1533,25 @@ label > input, label > select, label > textarea {
   margin-right: 0;
   margin-left: calc(1.125em - var(--border-width));
   -webkit-margin-end: 0;
-          margin-inline-end: 0;
+  margin-inline-end: 0;
   -webkit-margin-start: calc(1.125em - var(--border-width));
-          margin-inline-start: calc(1.125em - var(--border-width));
+  margin-inline-start: calc(1.125em - var(--border-width));
+}
+[type=checkbox][role=switch][aria-invalid=false] {
+  --border-color: var(--form-element-valid-border-color);
+}
+[type=checkbox][role=switch][aria-invalid=false]:active, [type=checkbox][role=switch][aria-invalid=false]:focus {
+  --border-color: var(
+    --form-element-valid-active-border-color
+  ) !important;
+}
+[type=checkbox][role=switch][aria-invalid=true] {
+  --border-color: var(--form-element-invalid-border-color);
+}
+[type=checkbox][role=switch][aria-invalid=true]:active, [type=checkbox][role=switch][aria-invalid=true]:focus {
+  --border-color: var(
+    --form-element-invalid-active-border-color
+  ) !important;
 }
 
 /**
@@ -1588,9 +1612,9 @@ label > input, label > select, label > textarea {
   margin-right: calc(var(--spacing) / 2);
   margin-left: 0;
   -webkit-margin-end: calc(var(--spacing) / 2);
-          margin-inline-end: calc(var(--spacing) / 2);
+  margin-inline-end: calc(var(--spacing) / 2);
   -webkit-margin-start: 0;
-          margin-inline-start: 0;
+  margin-inline-start: 0;
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
@@ -1613,9 +1637,9 @@ label > input, label > select, label > textarea {
   margin-right: calc(var(--spacing) / 2);
   margin-left: 0;
   -webkit-margin-end: calc(var(--spacing) / 2);
-          margin-inline-end: calc(var(--spacing) / 2);
+  margin-inline-end: calc(var(--spacing) / 2);
   -webkit-margin-start: 0;
-          margin-inline-start: 0;
+  margin-inline-start: 0;
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
@@ -1645,9 +1669,9 @@ label > input, label > select, label > textarea {
   margin-right: calc(var(--spacing) / 2);
   margin-left: 0;
   -webkit-margin-end: calc(var(--spacing) / 2);
-          margin-inline-end: calc(var(--spacing) / 2);
+  margin-inline-end: calc(var(--spacing) / 2);
   -webkit-margin-start: 0;
-          margin-inline-start: 0;
+  margin-inline-start: 0;
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
@@ -1782,7 +1806,7 @@ label > input, label > select, label > textarea {
 
 [type=search] {
   border-radius: 5rem;
-  padding-left: calc( var(--form-element-spacing-horizontal) + 1.75rem ) !important;
+  padding-left: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
   background-image: var(--icon-search);
   background-position: center left 1.125rem;
   background-repeat: no-repeat;
@@ -2151,7 +2175,7 @@ progress::-moz-progress-bar {
   progress:indeterminate {
     background: var(--progress-background-color) linear-gradient(to right, var(--progress-color) 30%, var(--progress-background-color) 30%) top left/150% 150% no-repeat;
     -webkit-animation: progressIndeterminate 1s linear infinite;
-            animation: progressIndeterminate 1s linear infinite;
+    animation: progressIndeterminate 1s linear infinite;
   }
   progress:indeterminate[value]::-webkit-progress-value {
     background-color: transparent;
@@ -2195,7 +2219,7 @@ progress::-moz-progress-bar {
   vertical-align: text-bottom;
   vertical-align: -0.125em;
   -webkit-animation: spinner 0.75s linear infinite;
-          animation: spinner 0.75s linear infinite;
+  animation: spinner 0.75s linear infinite;
   content: "";
   opacity: var(--loading-spinner-opacity);
 }
@@ -2203,9 +2227,9 @@ progress::-moz-progress-bar {
   margin-right: calc(var(--spacing) * 0.5);
   margin-left: 0;
   -webkit-margin-end: calc(var(--spacing) * 0.5);
-          margin-inline-end: calc(var(--spacing) * 0.5);
+  margin-inline-end: calc(var(--spacing) * 0.5);
   -webkit-margin-start: 0;
-          margin-inline-start: 0;
+  margin-inline-start: 0;
 }
 [aria-busy=true]:not(input):not(select):not(textarea):empty {
   text-align: center;
@@ -2277,13 +2301,13 @@ a[aria-busy=true] {
 [data-tooltip]:focus::before, [data-tooltip]:focus::after, [data-tooltip]:hover::before, [data-tooltip]:hover::after {
   opacity: 1;
   -webkit-animation-name: slide;
-          animation-name: slide;
+  animation-name: slide;
   -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
+  animation-duration: 0.2s;
 }
 [data-tooltip]:focus::after, [data-tooltip]:hover::after {
   -webkit-animation-name: slideCaret;
-          animation-name: slideCaret;
+  animation-name: slideCaret;
 }
 
 @-webkit-keyframes slide {
@@ -2379,13 +2403,15 @@ textarea,
 :not([aria-busy=true])::after {
     background-attachment: initial !important;
     -webkit-animation-duration: 1ms !important;
-            animation-duration: 1ms !important;
+    animation-duration: 1ms !important;
     -webkit-animation-delay: -1ms !important;
-            animation-delay: -1ms !important;
+    animation-delay: -1ms !important;
     -webkit-animation-iteration-count: 1 !important;
-            animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-delay: 0s !important;
     transition-duration: 0s !important;
   }
 }
+
+/*# sourceMappingURL=pico.css.map */
