@@ -44,6 +44,31 @@ dialog {
   &:not([open]) {
     display: none;
   }
+
+  .close {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    margin-left: auto;
+    background-image: var(--icon-close);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1rem auto;
+    opacity: .5;
+    margin-bottom: var(--typography-spacing-vertical);
+    margin-right: -0.5rem;
+    margin-top: -0.5rem;
+
+    @if $enable-transitions {
+      transition: opacity var(--transition);
+    }
+    
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 1;
+    }
+  }
 }
 
 .dialog-is-open {
