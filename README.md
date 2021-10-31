@@ -178,7 +178,6 @@ Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LIC
 
 Website and docs:
 - [TypeIt](https://typeitjs.com/): JavaScript animated typing utility (Licensed [GPL-3.0](https://github.com/alexmacarthur/typeit/blob/master/LICENSE))
-- [Most Visible](https://github.com/andyexeter/most-visible): JavaScript module which returns the most visible element (Licensed [MIT](https://github.com/andyexeter/most-visible/blob/master/LICENSE))
 - [Font Awesome](https://fontawesome.com/): Icons (Licensed [CC BY 4.0](https://fontawesome.com/license/free))
 
 Pico Library:

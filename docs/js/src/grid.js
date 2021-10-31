@@ -12,14 +12,14 @@ export const grid = {
       add: 'Add column',
       remove: 'Remove column',
     },
-    target: '#grids article',
+    target: '#grid article',
   },
   grid: {
     current: 4,
     min: 1,
     max: 12,
-    gridTarget: '#grids .grid',
-    codeTarget: '#grids pre code',
+    gridTarget: '#grid .grid',
+    codeTarget: '#grid pre code',
   },
 
   // Init
@@ -50,7 +50,7 @@ export const grid = {
     document.querySelector(this.buttons.target).before(buttons);
 
     // Add button listener
-    document.querySelector('#grids button.add').addEventListener(
+    document.querySelector('#grid button.add').addEventListener(
       'click',
       function () {
         this.addColumn();
@@ -59,7 +59,7 @@ export const grid = {
     );
 
     // Remove button listener
-    document.querySelector('#grids button.remove').addEventListener(
+    document.querySelector('#grid button.remove').addEventListener(
       'click',
       function () {
         this.removeColumn();

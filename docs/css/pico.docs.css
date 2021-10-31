@@ -230,39 +230,39 @@ main > aside details[open] > summary:not(:focus) {
   border-color: var(--primary);
 }
 
-#grids {
+#grid {
   --grid-spacing-vertical: 1rem;
 }
-#grids button {
+#grid button {
   display: block;
   width: 100%;
   margin-bottom: var(--spacing);
 }
 @media (min-width: 576px) {
-  #grids button {
+  #grid button {
     display: inline-block;
     width: auto;
     margin-right: 0.5rem;
   }
 }
-#grids button svg {
+#grid button svg {
   stroke: var(--secondary);
   margin-right: 0.5rem;
   border: 2px solid currentColor;
   border-radius: 1rem;
   background: currentColor;
 }
-#grids .grid > * {
+#grid .grid > * {
   padding: calc(var(--spacing) / 2) 0;
   border-radius: var(--border-radius);
   background: var(--code-background-color);
   font-size: 87.5%;
   text-align: center;
 }
-#grids details {
+#grid details {
   margin-top: calc(var(--typography-spacing-vertical) * 2);
 }
-#grids details svg {
+#grid details svg {
   vertical-align: bottom;
 }
 
