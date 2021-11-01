@@ -168,7 +168,7 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 
 - [`dev`](https://github.com/picocss/pico/tree/dev) branch is open to pull requests.
 - Do not edit [`/css`](https://github.com/picocss/pico/tree/master/css) files directly.
-- Edit the source files in [`/scss`](https://github.com/picocss/pico/tree/master/scss), then recompile the [`/css`](https://github.com/picocss/pico/tree/master/css) files with `npm run build:css`.
+- Edit the source files in [`/scss`](https://github.com/picocss/pico/tree/master/scss), then recompile the [`/css`](https://github.com/picocss/pico/tree/master/css) files with `npm run build`.
 
 ## Copyright and license
 
