@@ -21,10 +21,10 @@ progress {
   // Reset the default appearance
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
 
   // Styles
   display: inline-block;
+  appearance: none;
   width: 100%;
   height: 0.5rem;
   margin-bottom: calc(var(--spacing) * 0.5);

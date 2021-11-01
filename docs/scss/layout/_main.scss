@@ -38,8 +38,8 @@ div[role="document"] section a[href*="//"]:not([href*="https://picocss.com"]):no
   height: 1rem;
   background-image: var(--icon-external);
   background-position: top center;
-  background-repeat: no-repeat;
   background-size: 0.66rem auto;
+  background-repeat: no-repeat;
   content: "";
 }
 

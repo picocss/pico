@@ -76,8 +76,8 @@ div[role=document] section a[href*="//"]:not([href*="https://picocss.com"]):not(
   height: 1rem;
   background-image: var(--icon-external);
   background-position: top center;
-  background-repeat: no-repeat;
   background-size: 0.66rem auto;
+  background-repeat: no-repeat;
   content: "";
 }
 
@@ -110,8 +110,8 @@ main > aside nav a#toggle-docs-navigation {
   border-bottom: var(--border-width) solid var(--accordion-border-color);
 }
 main > aside nav a#toggle-docs-navigation svg {
-  vertical-align: -3px;
   margin-right: calc(var(--spacing) * 0.5);
+  vertical-align: -3px;
 }
 @media (min-width: 992px) {
   main > aside nav a#toggle-docs-navigation {
@@ -163,8 +163,8 @@ main > aside details {
 }
 main > aside details summary {
   color: var(--h1-color);
-  font-size: 14px;
   font-weight: 300;
+  font-size: 14px;
   text-transform: uppercase;
 }
 main > aside details summary::after {
@@ -186,15 +186,15 @@ main > aside details[open] > summary:not(:focus) {
 
 #customization figure {
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(9, 1fr);
   margin-bottom: 0;
   overflow: hidden;
 }
 @media (min-width: 576px) {
   #customization figure {
-    grid-template-columns: repeat(18, 1fr);
     grid-template-rows: 1fr;
+    grid-template-columns: repeat(18, 1fr);
     border-top-right-radius: var(--border-radius);
     border-top-left-radius: var(--border-radius);
   }
@@ -217,8 +217,8 @@ main > aside details[open] > summary:not(:focus) {
 #customization figure button.picked {
   background-image: var(--icon-check);
   background-position: center;
-  background-repeat: no-repeat;
   background-size: 0.66rem auto;
+  background-repeat: no-repeat;
   box-shadow: inset 0 0 1rem 0 rgba(0, 0, 0, 0.25);
 }
 #customization figure button[data-color=lime].picked, #customization figure button[data-color=yellow].picked, #customization figure button[data-color=amber].picked {
@@ -302,14 +302,14 @@ article > footer.code {
 
 article pre,
 article pre code {
-  background: transparent;
   margin-bottom: 0;
+  background: transparent;
 }
 
 section > pre {
-  background: var(--article-code-background-color);
   margin: var(--block-spacing-vertical) 0;
   padding: calc(var(--block-spacing-vertical) / 1.5) var(--block-spacing-horizontal);
+  background: var(--article-code-background-color);
   box-shadow: var(--card-box-shadow);
 }
 
@@ -416,8 +416,8 @@ body > nav ul:first-of-type li:nth-of-type(2) {
   border: 0.15rem solid currentColor;
   border-radius: 50%;
   background: linear-gradient(to right, currentColor 0%, currentColor 50%, transparent 50%);
-  vertical-align: bottom;
   content: "";
+  vertical-align: bottom;
   transition: transform var(--transition);
 }
 .switcher i {
@@ -425,8 +425,8 @@ body > nav ul:first-of-type li:nth-of-type(2) {
   max-width: 0;
   padding: 0;
   overflow: hidden;
-  font-size: 0.875rem;
   font-style: normal;
+  font-size: 0.875rem;
   white-space: nowrap;
 }
 .switcher:hover, .switcher:focus {

@@ -42,8 +42,8 @@ details {
       transform: rotate(-90deg);
       background-image: var(--icon-chevron);
       background-position: center;
-      background-repeat: no-repeat;
       background-size: 1rem auto;
+      background-repeat: no-repeat;
       content: "";
 
       @if $enable-transitions {

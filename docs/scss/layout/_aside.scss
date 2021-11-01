@@ -25,8 +25,8 @@ main > aside {
       border-bottom: var(--border-width) solid var(--accordion-border-color);
 
       svg {
-        vertical-align: -3px;
         margin-right: calc(var(--spacing) * 0.5);
+        vertical-align: -3px;
       }
 
       @media (min-width: map-get($breakpoints, "lg")) {
@@ -98,8 +98,8 @@ main > aside {
 
     summary {
       color: var(--h1-color);
-      font-size: 14px;
       font-weight: 300;
+      font-size: 14px;
       text-transform: uppercase;
 
       &::after {
