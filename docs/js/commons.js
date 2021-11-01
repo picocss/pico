@@ -7,6 +7,7 @@
 
 // Imports
 import themeSwitcher from './src/theme-switcher.js';
+import toggleNavigation from './src/toggle-navigation';
 
 // Theme switcher
 themeSwitcher.addButton({
@@ -15,3 +16,6 @@ themeSwitcher.addButton({
   target: 'body',
 });
 themeSwitcher.init();
+
+// Toggle navigation
+toggleNavigation.init();

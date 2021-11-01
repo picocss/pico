@@ -6,6 +6,7 @@
  */
 
 export const grid = {
+  
   // Config
   buttons: {
     text: {

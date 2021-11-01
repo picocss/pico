@@ -55,7 +55,7 @@ body > main {
 @media (min-width: 992px) {
   body > main {
     --block-spacing-horizontal: calc(var(--spacing) * 1.75);
-    grid-column-gap: calc(var(--block-spacing-horizontal) * 4);
+    grid-column-gap: calc(var(--block-spacing-horizontal) * 3);
     display: grid;
     grid-template-columns: 200px auto;
   }
@@ -68,37 +68,6 @@ body > main {
 body > main > aside,
 body > main div[role=document] {
   min-width: 0;
-}
-
-div[role=document] > section::before {
-  display: block;
-  height: calc(2rem + 3.5rem - 0.5rem);
-  margin-top: calc(-2rem - 3.5rem + 0.5rem);
-  content: "";
-}
-@media (min-width: 576px) {
-  div[role=document] > section::before {
-    height: calc(2.5rem + 3.5rem - 0.5rem);
-    height: calc(-2.5rem - 3.5rem + 0.5rem);
-  }
-}
-@media (min-width: 768px) {
-  div[role=document] > section::before {
-    height: calc(3rem + 3.5rem - 0.5rem);
-    margin-top: calc(-3rem - 3.5rem + 0.5rem);
-  }
-}
-@media (min-width: 992px) {
-  div[role=document] > section::before {
-    height: calc(3.5rem + 3.5rem - 0.5rem);
-    margin-top: calc(-3.5rem - 3.5rem + 0.5rem);
-  }
-}
-@media (min-width: 1200px) {
-  div[role=document] > section::before {
-    height: calc(4rem + 3.5rem - 0.5rem);
-    margin-top: calc(-4rem - 3.5rem + 0.5rem);
-  }
 }
 
 div[role=document] section a[href*="//"]:not([href*="https://picocss.com"]):not([role])::after {
@@ -121,10 +90,7 @@ svg {
  */
 main > aside nav {
   width: 100%;
-  margin-bottom: var(--block-spacing-vertical);
-}
-main > aside nav h1 {
-  margin-bottom: calc(var(--typography-spacing-vertical) / 2);
+  margin-bottom: calc(var(--block-spacing-vertical) * 2);
 }
 @media (min-width: 992px) {
   main > aside nav {
@@ -135,9 +101,42 @@ main > aside nav h1 {
     overflow-x: hidden;
     overflow-y: auto;
   }
-  main > aside nav h1 {
+}
+main > aside nav a#toggle-docs-navigation {
+  margin: 0;
+  margin-bottom: var(--spacing);
+  padding: 0;
+  padding-bottom: var(--spacing);
+  border-bottom: var(--border-width) solid var(--accordion-border-color);
+}
+main > aside nav a#toggle-docs-navigation svg {
+  vertical-align: -3px;
+  margin-right: calc(var(--spacing) * 0.5);
+}
+@media (min-width: 992px) {
+  main > aside nav a#toggle-docs-navigation {
     display: none;
   }
+}
+main > aside nav.closed-on-mobile {
+  margin-bottom: var(--block-spacing-vertical);
+}
+main > aside nav.closed-on-mobile a#toggle-docs-navigation svg.collapse {
+  display: none;
+}
+main > aside nav.closed-on-mobile details {
+  display: none;
+}
+@media (min-width: 992px) {
+  main > aside nav.closed-on-mobile details {
+    display: block;
+  }
+  main > aside nav.closed-on-mobile > a#toggle-docs-navigation {
+    display: none;
+  }
+}
+main > aside nav.open a#toggle-docs-navigation svg.expand {
+  display: none;
 }
 main > aside li,
 main > aside summary {
@@ -146,7 +145,7 @@ main > aside summary {
   font-size: 16px;
 }
 main > aside li a {
-  padding: 0.25rem 0.5rem;
+  padding: 0.375rem 0.5rem;
 }
 main > aside li a svg {
   vertical-align: middle;
@@ -160,7 +159,6 @@ main > aside a.active:hover {
   color: var(--primary);
 }
 main > aside details {
-  padding-bottom: 0.25rem;
   border-bottom: none;
 }
 main > aside details summary {
@@ -171,6 +169,9 @@ main > aside details summary {
 }
 main > aside details summary::after {
   display: none;
+}
+main > aside details[open] > summary {
+  margin-bottom: calc(var(--spacing) * 0.75);
 }
 main > aside details[open] > summary:not(:focus) {
   color: var(--h1-color);
@@ -273,6 +274,10 @@ main > aside details[open] > summary:not(:focus) {
 /**
  * Docs: Typography
  */
+h1 {
+  margin-top: -0.25em;
+}
+
 section > hgroup {
   margin-bottom: calc(var(--typography-spacing-vertical) * 2);
 }
