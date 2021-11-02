@@ -6,6 +6,7 @@
  */
 
 export const colorPicker = {
+  
   // Config
   colors: null,
   buttonsTarget: '#customization article[data-theme="generated"]',

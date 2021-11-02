@@ -497,18 +497,18 @@ kbd {
 html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  background-color: var(--background-color);
+  color: var(--color);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  cursor: default;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-  -ms-text-size-adjust: 100%;
-  background-color: var(--background-color);
-  color: var(--color);
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  font-weight: var(--font-weight);
-  line-height: var(--line-height);
-  text-rendering: optimizeLegibility;
-  cursor: default;
 }
 
 /**
@@ -661,9 +661,9 @@ ul {
   margin-top: 0;
   margin-bottom: var(--typography-spacing-vertical);
   color: var(--color);
-  font-size: var(--font-size);
-  font-weight: var(--font-weight);
   font-style: normal;
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
 }
 
 a {
@@ -713,9 +713,9 @@ h6 {
   margin-top: 0;
   margin-bottom: var(--typography-spacing-vertical);
   color: var(--color);
-  font-family: var(--font-family);
-  font-size: var(--font-size);
   font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  font-family: var(--font-family);
 }
 
 h1 {
@@ -809,8 +809,8 @@ hgroup > * {
 hgroup > *:last-child {
   --color: var(--muted-color);
   --font-weight: unset;
-  font-family: unset;
   font-size: 1rem;
+  font-family: unset;
 }
 
 p {
@@ -825,10 +825,10 @@ ul,
 ol {
   padding-right: 0;
   padding-left: var(--spacing);
-  -webkit-padding-end: 0;
-  padding-inline-end: 0;
   -webkit-padding-start: var(--spacing);
   padding-inline-start: var(--spacing);
+  -webkit-padding-end: 0;
+  padding-inline-end: 0;
 }
 ul li,
 ol li {
@@ -852,10 +852,10 @@ blockquote {
   padding: var(--spacing);
   border-right: none;
   border-left: 0.25rem solid var(--blockquote-border-color);
-  -webkit-border-end: none;
-  border-inline-end: none;
   -webkit-border-start: 0.25rem solid var(--blockquote-border-color);
   border-inline-start: 0.25rem solid var(--blockquote-border-color);
+  -webkit-border-end: none;
+  border-inline-end: none;
 }
 blockquote footer {
   margin-top: calc(var(--typography-spacing-vertical) * 0.5);
@@ -977,8 +977,8 @@ a[role=button] {
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
   color: var(--color);
-  font-size: 1rem;
   font-weight: var(--font-weight);
+  font-size: 1rem;
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
@@ -1178,10 +1178,10 @@ optgroup,
 select,
 textarea {
   margin: 0;
-  font-family: inherit;
   font-size: 1rem;
-  letter-spacing: inherit;
   line-height: var(--line-height);
+  font-family: inherit;
+  letter-spacing: inherit;
 }
 
 input {
@@ -1335,13 +1335,13 @@ select:not([type=checkbox]):not([type=radio])[aria-invalid],
 textarea:not([type=checkbox]):not([type=radio])[aria-invalid] {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   padding-left: var(--form-element-spacing-horizontal);
-  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
-  padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   -webkit-padding-start: var(--form-element-spacing-horizontal) !important;
   padding-inline-start: var(--form-element-spacing-horizontal) !important;
+  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
+  padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   background-position: center right 0.75rem;
-  background-repeat: no-repeat;
   background-size: 1rem auto;
+  background-repeat: no-repeat;
 }
 input:not([type=checkbox]):not([type=radio])[aria-invalid=false],
 select:not([type=checkbox]):not([type=radio])[aria-invalid=false],
@@ -1410,14 +1410,14 @@ select::-ms-expand {
 select:not([multiple]):not([size]) {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   padding-left: var(--form-element-spacing-horizontal);
-  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
-  padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   -webkit-padding-start: var(--form-element-spacing-horizontal);
   padding-inline-start: var(--form-element-spacing-horizontal);
+  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   background-image: var(--icon-chevron);
   background-position: center right 0.75rem;
-  background-repeat: no-repeat;
   background-size: 1rem auto;
+  background-repeat: no-repeat;
 }
 
 [dir=rtl] select:not([multiple]):not([size]) {
@@ -1452,10 +1452,10 @@ label > input, label > select, label > textarea {
   margin-top: -0.125em;
   margin-right: 0.375em;
   margin-left: 0;
-  -webkit-margin-end: 0.375em;
-  margin-inline-end: 0.375em;
   -webkit-margin-start: 0;
   margin-inline-start: 0;
+  -webkit-margin-end: 0.375em;
+  margin-inline-end: 0.375em;
   border-width: var(--border-width);
   vertical-align: middle;
   cursor: pointer;
@@ -1472,8 +1472,8 @@ label > input, label > select, label > textarea {
   --border-color: var(--primary);
   background-image: var(--icon-checkbox);
   background-position: center;
-  background-repeat: no-repeat;
   background-size: 0.75em auto;
+  background-repeat: no-repeat;
 }
 [type=checkbox] ~ label,
 [type=radio] ~ label {
@@ -1488,8 +1488,8 @@ label > input, label > select, label > textarea {
   --border-color: var(--primary);
   background-image: var(--icon-minus);
   background-position: center;
-  background-repeat: no-repeat;
   background-size: 0.75em auto;
+  background-repeat: no-repeat;
 }
 
 [type=radio] {
@@ -1535,10 +1535,10 @@ label > input, label > select, label > textarea {
 [type=checkbox][role=switch]:checked::before {
   margin-right: 0;
   margin-left: calc(1.125em - var(--border-width));
-  -webkit-margin-end: 0;
-  margin-inline-end: 0;
   -webkit-margin-start: calc(1.125em - var(--border-width));
   margin-inline-start: calc(1.125em - var(--border-width));
+  -webkit-margin-end: 0;
+  margin-inline-end: 0;
 }
 [type=checkbox][role=switch][aria-invalid=false] {
   --border-color: var(--form-element-valid-border-color);
@@ -1583,8 +1583,8 @@ label > input, label > select, label > textarea {
 :not(:dir(rtl)) [type=week] {
   background-image: var(--icon-date);
   background-position: center right 0.75rem;
-  background-repeat: no-repeat;
   background-size: 1rem auto;
+  background-repeat: no-repeat;
 }
 :not(:dir(rtl)) [type=date]::-webkit-calendar-picker-indicator,
 :not(:dir(rtl)) [type=datetime-local]::-webkit-calendar-picker-indicator,
@@ -1614,10 +1614,10 @@ label > input, label > select, label > textarea {
   --color: var(--secondary-inverse);
   margin-right: calc(var(--spacing) / 2);
   margin-left: 0;
-  -webkit-margin-end: calc(var(--spacing) / 2);
-  margin-inline-end: calc(var(--spacing) / 2);
   -webkit-margin-start: 0;
   margin-inline-start: 0;
+  -webkit-margin-end: calc(var(--spacing) / 2);
+  margin-inline-end: calc(var(--spacing) / 2);
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
@@ -1625,8 +1625,8 @@ label > input, label > select, label > textarea {
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
   color: var(--color);
-  font-size: 1rem;
   font-weight: var(--font-weight);
+  font-size: 1rem;
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
@@ -1639,10 +1639,10 @@ label > input, label > select, label > textarea {
   --color: var(--secondary-inverse);
   margin-right: calc(var(--spacing) / 2);
   margin-left: 0;
-  -webkit-margin-end: calc(var(--spacing) / 2);
-  margin-inline-end: calc(var(--spacing) / 2);
   -webkit-margin-start: 0;
   margin-inline-start: 0;
+  -webkit-margin-end: calc(var(--spacing) / 2);
+  margin-inline-end: calc(var(--spacing) / 2);
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
@@ -1650,8 +1650,8 @@ label > input, label > select, label > textarea {
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
   color: var(--color);
-  font-size: 1rem;
   font-weight: var(--font-weight);
+  font-size: 1rem;
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
@@ -1671,10 +1671,10 @@ label > input, label > select, label > textarea {
   --color: var(--secondary-inverse);
   margin-right: calc(var(--spacing) / 2);
   margin-left: 0;
-  -webkit-margin-end: calc(var(--spacing) / 2);
-  margin-inline-end: calc(var(--spacing) / 2);
   -webkit-margin-start: 0;
   margin-inline-start: 0;
+  -webkit-margin-end: calc(var(--spacing) / 2);
+  margin-inline-end: calc(var(--spacing) / 2);
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
@@ -1682,8 +1682,8 @@ label > input, label > select, label > textarea {
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
   color: var(--color);
-  font-size: 1rem;
   font-weight: var(--font-weight);
+  font-size: 1rem;
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
@@ -1700,8 +1700,8 @@ label > input, label > select, label > textarea {
   --color: var(--secondary-inverse);
   margin-right: calc(var(--spacing) / 2);
   margin-left: 0;
-  margin-inline-end: calc(var(--spacing) / 2);
   margin-inline-start: 0;
+  margin-inline-end: calc(var(--spacing) / 2);
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
@@ -1709,8 +1709,8 @@ label > input, label > select, label > textarea {
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
   color: var(--color);
-  font-size: 1rem;
   font-weight: var(--font-weight);
+  font-size: 1rem;
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
@@ -1812,8 +1812,8 @@ label > input, label > select, label > textarea {
   padding-left: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
   background-image: var(--icon-search);
   background-position: center left 1.125rem;
-  background-repeat: no-repeat;
   background-size: 1rem auto;
+  background-repeat: no-repeat;
 }
 [type=search]::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -1836,8 +1836,8 @@ td {
   padding: calc(var(--spacing) / 2) var(--spacing);
   border-bottom: var(--border-width) solid var(--table-border-color);
   color: var(--color);
-  font-size: var(--font-size);
   font-weight: var(--font-weight);
+  font-size: var(--font-size);
   text-align: left;
   text-align: start;
 }
@@ -1857,8 +1857,8 @@ pre,
 code,
 kbd,
 samp {
-  font-family: var(--font-family);
   font-size: 0.875em;
+  font-family: var(--font-family);
 }
 
 pre {
@@ -1869,11 +1869,11 @@ pre {
 pre,
 code,
 kbd {
+  border-radius: var(--border-radius);
   background: var(--code-background-color);
   color: var(--code-color);
   font-weight: var(--font-weight);
   line-height: initial;
-  border-radius: var(--border-radius);
 }
 
 code,
@@ -1888,9 +1888,9 @@ pre {
   overflow-x: auto;
 }
 pre > code {
-  background: transparent;
   display: block;
   padding: var(--spacing);
+  background: transparent;
   font-size: 14px;
   line-height: var(--line-height);
 }
@@ -1973,8 +1973,8 @@ details summary::after {
   transform: rotate(-90deg);
   background-image: var(--icon-chevron);
   background-position: center;
-  background-repeat: no-repeat;
   background-size: 1rem auto;
+  background-repeat: no-repeat;
   content: "";
   transition: transform var(--transition);
 }
@@ -2171,8 +2171,8 @@ progress {
 progress {
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
   display: inline-block;
+  appearance: none;
   width: 100%;
   height: 0.5rem;
   margin-bottom: calc(var(--spacing) * 0.5);
@@ -2237,20 +2237,20 @@ progress::-moz-progress-bar {
   border: 0.1875em solid currentColor;
   border-radius: 1em;
   border-right-color: transparent;
+  content: "";
   vertical-align: text-bottom;
   vertical-align: -0.125em;
   -webkit-animation: spinner 0.75s linear infinite;
   animation: spinner 0.75s linear infinite;
-  content: "";
   opacity: var(--loading-spinner-opacity);
 }
 [aria-busy=true]:not(input):not(select):not(textarea):not(:empty)::before {
   margin-right: calc(var(--spacing) * 0.5);
   margin-left: 0;
-  -webkit-margin-end: calc(var(--spacing) * 0.5);
-  margin-inline-end: calc(var(--spacing) * 0.5);
   -webkit-margin-start: 0;
   margin-inline-start: 0;
+  -webkit-margin-end: calc(var(--spacing) * 0.5);
+  margin-inline-end: calc(var(--spacing) * 0.5);
 }
 [aria-busy=true]:not(input):not(select):not(textarea):empty {
   text-align: center;
@@ -2297,14 +2297,14 @@ a[aria-busy=true] {
   transform: translate(-50%, -0.25rem);
   border-radius: var(--border-radius);
   background: var(--tooltip-background-color);
+  content: attr(data-tooltip);
   color: var(--tooltip-color);
-  font-size: 0.875rem;
   font-style: normal;
   font-weight: var(--font-weight);
+  font-size: 0.875rem;
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
-  content: attr(data-tooltip);
   opacity: 0;
   pointer-events: none;
 }
@@ -2316,15 +2316,15 @@ a[aria-busy=true] {
   border-left: 0.3rem solid transparent;
   border-radius: 0;
   background-color: transparent;
-  color: var(--tooltip-background-color);
   content: "";
+  color: var(--tooltip-background-color);
 }
 [data-tooltip]:focus::before, [data-tooltip]:focus::after, [data-tooltip]:hover::before, [data-tooltip]:hover::after {
   opacity: 1;
-  -webkit-animation-name: slide;
-  animation-name: slide;
   -webkit-animation-duration: 0.2s;
   animation-duration: 0.2s;
+  -webkit-animation-name: slide;
+  animation-name: slide;
 }
 [data-tooltip]:focus::after, [data-tooltip]:hover::after {
   -webkit-animation-name: slideCaret;

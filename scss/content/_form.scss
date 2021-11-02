@@ -14,10 +14,10 @@ optgroup,
 select,
 textarea {
   margin: 0; // 2
-  font-family: inherit; // 1
   font-size: 1rem; // 1
-  letter-spacing: inherit; // 2
   line-height: var(--line-height); // 1
+  font-family: inherit; // 1
+  letter-spacing: inherit; // 2
 }
 
 // Show the overflow in IE.
@@ -223,19 +223,19 @@ textarea {
           var(--form-element-spacing-horizontal) + 1.5rem
         ) !important;
         padding-left: var(--form-element-spacing-horizontal);
+        padding-inline-start: var(--form-element-spacing-horizontal) !important;
         padding-inline-end: calc(
           var(--form-element-spacing-horizontal) + 1.5rem
         ) !important;
-        padding-inline-start: var(--form-element-spacing-horizontal) !important;
       } @else {
         padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
         padding-left: var(--form-element-spacing-horizontal);
-        padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
         padding-inline-start: var(--form-element-spacing-horizontal);
+        padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
       }
       background-position: center right 0.75rem;
-      background-repeat: no-repeat;
       background-size: 1rem auto;
+      background-repeat: no-repeat;
     }
 
     &[aria-invalid="false"] {
@@ -316,12 +316,12 @@ select {
   &:not([multiple]):not([size]) {
     padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
     padding-left: var(--form-element-spacing-horizontal);
-    padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
     padding-inline-start: var(--form-element-spacing-horizontal);
+    padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
     background-image: var(--icon-chevron);
     background-position: center right 0.75rem;
-    background-repeat: no-repeat;
     background-size: 1rem auto;
+    background-repeat: no-repeat;
   }
 }
 

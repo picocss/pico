@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    ${require('./_head.html') 
+      title="Class-less version" 
+      description="For wild HTML purists, Pico provides a .classless version."
+      canonical="classless.html"
+    }
+  </head>
+
+  <body>
+    ${require('./_nav.html')}
+    
+    <main class="container" id="docs">
+      ${require('./_sidebar.html') active="classless-link"}
+      
+      <div role="document">
+        <section id="classless">
+          <hgroup>
+            <h1>Class-less version</h1>
+            <h2>For wild HTML purists!</h2>
+          </hgroup>
+          <p>Pico provides a <code>.classless</code> version (<a href="https://picocss.com/examples/classless/">example</a>).</p>
+          <p>In this version, <code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code>, and <code>&lt;<b>footer</b>&gt;</code> act as <a href="./containers.html">containers</a> to define a centered or a fluid viewport.</p>
+          <p><strong>Usage:</strong></p>
+          <p>Use the default <code>.classless</code> version if you need centered viewports:</p>
+          <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet</u>" <i>href</i>=<u>"css/pico.classless.min.css"</u>&gt;</code></pre>
+          <p>Or use the <code>.fluid.classless</code> version if you need a fluid container:</p>
+          <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet</u>" <i>href</i>=<u>"css/pico.fluid.classless.min.css"</u>&gt;</code></pre>
+          <p>These <code>.classless</code> versions are also available on <a href="https://unpkg.com/@picocss/pico@latest/">unpkg CDN</a>:</p>
+
+<pre><code><em>// Centered viewport</em>
+&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css"</u>&gt;
+</code></pre>
+
+<pre><code><em>// Fluid viewport</em>
+&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@picocss/pico@latest/css/pico.fluid.classless.min.css"</u>&gt;
+</code></pre>
+
+        </section>
+
+        ${require('./_footer.html')}
+        
+      </div>
+    </main>
+    <script src="js/commons.min.js"></script>
+  </body>
+</html>

@@ -421,18 +421,18 @@ kbd {
 html {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  background-color: var(--background-color);
+  color: var(--color);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  font-family: var(--font-family);
+  cursor: default;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-  -ms-text-size-adjust: 100%;
-  background-color: var(--background-color);
-  color: var(--color);
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  font-weight: var(--font-weight);
-  line-height: var(--line-height);
-  text-rendering: optimizeLegibility;
-  cursor: default;
 }
 
 /**
@@ -585,9 +585,9 @@ ul {
   margin-top: 0;
   margin-bottom: var(--typography-spacing-vertical);
   color: var(--color);
-  font-size: var(--font-size);
-  font-weight: var(--font-weight);
   font-style: normal;
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
 }
 
 a {
@@ -634,9 +634,9 @@ h6 {
   margin-top: 0;
   margin-bottom: var(--typography-spacing-vertical);
   color: var(--color);
-  font-family: var(--font-family);
-  font-size: var(--font-size);
   font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  font-family: var(--font-family);
 }
 
 h1 {
@@ -730,8 +730,8 @@ hgroup > * {
 hgroup > *:last-child {
   --color: var(--muted-color);
   --font-weight: unset;
-  font-family: unset;
   font-size: 1rem;
+  font-family: unset;
 }
 
 p {
@@ -746,10 +746,10 @@ ul,
 ol {
   padding-right: 0;
   padding-left: var(--spacing);
-  -webkit-padding-end: 0;
-  padding-inline-end: 0;
   -webkit-padding-start: var(--spacing);
   padding-inline-start: var(--spacing);
+  -webkit-padding-end: 0;
+  padding-inline-end: 0;
 }
 ul li,
 ol li {
@@ -773,10 +773,10 @@ blockquote {
   padding: var(--spacing);
   border-right: none;
   border-left: 0.25rem solid var(--blockquote-border-color);
-  -webkit-border-end: none;
-  border-inline-end: none;
   -webkit-border-start: 0.25rem solid var(--blockquote-border-color);
   border-inline-start: 0.25rem solid var(--blockquote-border-color);
+  -webkit-border-end: none;
+  border-inline-end: none;
 }
 blockquote footer {
   margin-top: calc(var(--typography-spacing-vertical) * 0.5);
@@ -898,8 +898,8 @@ a[role=button] {
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
   color: var(--color);
-  font-size: 1rem;
   font-weight: var(--font-weight);
+  font-size: 1rem;
   line-height: var(--line-height);
   text-align: center;
   cursor: pointer;
@@ -1098,10 +1098,10 @@ optgroup,
 select,
 textarea {
   margin: 0;
-  font-family: inherit;
   font-size: 1rem;
-  letter-spacing: inherit;
   line-height: var(--line-height);
+  font-family: inherit;
+  letter-spacing: inherit;
 }
 
 input {
@@ -1254,13 +1254,13 @@ select:not([type=checkbox]):not([type=radio])[aria-invalid],
 textarea:not([type=checkbox]):not([type=radio])[aria-invalid] {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   padding-left: var(--form-element-spacing-horizontal);
-  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
-  padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   -webkit-padding-start: var(--form-element-spacing-horizontal);
   padding-inline-start: var(--form-element-spacing-horizontal);
+  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   background-position: center right 0.75rem;
-  background-repeat: no-repeat;
   background-size: 1rem auto;
+  background-repeat: no-repeat;
 }
 input:not([type=checkbox]):not([type=radio])[aria-invalid=false],
 select:not([type=checkbox]):not([type=radio])[aria-invalid=false],
@@ -1325,14 +1325,14 @@ select::-ms-expand {
 select:not([multiple]):not([size]) {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   padding-left: var(--form-element-spacing-horizontal);
-  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
-  padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   -webkit-padding-start: var(--form-element-spacing-horizontal);
   padding-inline-start: var(--form-element-spacing-horizontal);
+  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+  padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   background-image: var(--icon-chevron);
   background-position: center right 0.75rem;
-  background-repeat: no-repeat;
   background-size: 1rem auto;
+  background-repeat: no-repeat;
 }
 
 [dir=rtl] select:not([multiple]):not([size]) {
@@ -1369,8 +1369,8 @@ td {
   padding: calc(var(--spacing) / 2) var(--spacing);
   border-bottom: var(--border-width) solid var(--table-border-color);
   color: var(--color);
-  font-size: var(--font-size);
   font-weight: var(--font-weight);
+  font-size: var(--font-size);
   text-align: left;
   text-align: start;
 }

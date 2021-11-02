@@ -6,6 +6,7 @@
  */
 
 export const themeSwitcher = {
+  
   // Config
   _scheme: 'auto',
   change: {
