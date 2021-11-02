@@ -86,5 +86,10 @@
     "rollup": "^2.59.0",
     "sass": "^1.43.4",
     "uglify-js": "^3.14.2"
-  }
+  },
+  "browserslist": [
+    ">= 0.5%",
+    "last 2 major versions",
+    "not dead"
+  ]
 }
