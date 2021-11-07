@@ -27,29 +27,6 @@ template {
   }
 }
 
-// Add the correct styles in Edge 18-, IE, and Safari
-dialog {
-  display: block;
-  position: absolute;
-  right: 0;
-  left: 0;
-  width: -moz-fit-content;
-  width: -webkit-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: -webkit-fit-content;
-  height: fit-content;
-  margin: auto;
-  padding: 1em;
-  border: solid;
-  background-color: white;
-  color: black;
-}
-
-dialog:not([open]) {
-  display: none;
-}
-
 // Add the correct display in IE 9-
 canvas {
   display: inline-block;

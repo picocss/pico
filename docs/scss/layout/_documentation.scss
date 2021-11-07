@@ -4,8 +4,14 @@
 
 // Docs: Themes
 #themes {
-  button i {
-    font-style: normal;
+  button.theme-switcher {
+    &:first-of-type {
+      --font-weight: bold;
+    }
+    
+    i {
+      font-style: normal;
+    }
   }
 }
 
@@ -114,4 +120,11 @@
 // Docs: Forms
 #forms div.grid {
   grid-row-gap: 0;
+}
+
+// Docs: Modal
+#modal {
+  button {
+    --font-weight: bold;
+  }
 }

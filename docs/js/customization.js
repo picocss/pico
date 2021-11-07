@@ -1,5 +1,5 @@
 /*
- * Add some magic to Pico docs
+ * Customization
  *
  * Pico.css - https://picocss.com
  * Copyright 2019-2021 - Licensed under MIT

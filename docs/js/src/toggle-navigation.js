@@ -18,25 +18,14 @@ export const toggleNavigation = {
   },
 
   onToggleClick() {
-    this.toggleLink.addEventListener(
-      'click',
-      function (event) {
-        event.preventDefault();
-        if (this.state == 'closed-on-mobile') {
-          this.state = 'open';
-        } else {
-          this.state = 'closed-on-mobile';
-        }
-        this.nav.removeAttribute('class');
-        this.nav.classList.add(this.state);
-      }.bind(this),
-      false
-    );
-  },
-
-  // Apply navigation state
-  applyState() {
-    
+    this.toggleLink.addEventListener('click', event => {
+      event.preventDefault();
+      this.state == 'closed-on-mobile' 
+        ? this.state = 'open' 
+        : this.state = 'closed-on-mobile';
+      this.nav.removeAttribute('class');
+      this.nav.classList.add(this.state);
+    }, false);
   },
 
   // Get state

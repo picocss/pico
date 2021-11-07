@@ -34,7 +34,7 @@
 }
 
 // Date & Time
-:not(:dir(rtl)) {
+:not([dir="rtl"]) {
   [type="date"],
   [type="datetime-local"],
   [type="month"],

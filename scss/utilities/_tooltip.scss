@@ -48,21 +48,29 @@
     color: var(--tooltip-background-color);
   }
 
+  // Display
   &:focus,
   &:hover {
     &::before,
     &::after {
       opacity: 1;
-
-      @if $enable-transitions {
-        animation-duration: .2s;
-        animation-name: slide;
-      }
     }
+  }
 
-    &::after {
-      @if $enable-transitions {
-        animation-name: slideCaret;
+  // Animations, excluding touch devices
+  @if $enable-transitions {
+    @media (hover: hover) and (pointer: fine) {
+      &:focus,
+      &:hover {
+        &::before,
+        &::after {
+          animation-duration: .2s;
+          animation-name: slide;
+        }
+
+        &::after {
+          animation-name: slideCaret; 
+        }
       }
     }
   }

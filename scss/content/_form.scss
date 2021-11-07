@@ -282,8 +282,12 @@ textarea {
   input,
   select,
   textarea {
-    &[aria-invalid] {
-      background-position: center left 0.75rem;
+    &:not([type="checkbox"]):not([type="radio"]) {
+      &[aria-invalid],
+      &[aria-invalid="true"],
+      &[aria-invalid="false"] {
+        background-position: center left 0.75rem;
+      }
     }
   }
 }
