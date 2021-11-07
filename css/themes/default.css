@@ -96,28 +96,20 @@ section {
   }
 }
 
+dialog > article {
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+}
 @media (min-width: 576px) {
   dialog > article {
-    --block-spacing-vertical: calc(var(--spacing) * 1.5);
-    --block-spacing-horizontal: calc(var(--spacing) * 1.5);
+    --block-spacing-vertical: calc(var(--spacing) * 2.5);
+    --block-spacing-horizontal: calc(var(--spacing) * 1.25);
   }
 }
 @media (min-width: 768px) {
   dialog > article {
-    --block-spacing-vertical: calc(var(--spacing) * 2);
-    --block-spacing-horizontal: calc(var(--spacing) * 2);
-  }
-}
-@media (min-width: 992px) {
-  dialog > article {
-    --block-spacing-vertical: calc(var(--spacing) * 2.5);
-    --block-spacing-horizontal: calc(var(--spacing) * 2.5);
-  }
-}
-@media (min-width: 1200px) {
-  dialog > article {
     --block-spacing-vertical: calc(var(--spacing) * 3);
-    --block-spacing-horizontal: calc(var(--spacing) * 3);
+    --block-spacing-horizontal: calc(var(--spacing) * 1.5);
   }
 }
 
@@ -272,7 +264,7 @@ kbd {
     0 0.125rem 2rem rgba(27, 40, 50, 0.08),
     0 0 0 0.0625rem rgba(27, 40, 50, 0.024);
   --card-sectionning-background-color: #fbfbfc;
-  --modal-overlay-background-color: rgba(27, 40, 50, 0.9);
+  --modal-overlay-background-color: rgba(213, 220, 226, 0.8);
   --progress-background-color: #d5dce2;
   --progress-color: var(--primary);
   --loading-spinner-opacity: 0.5;

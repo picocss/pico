@@ -100,28 +100,20 @@ section {
   }
 }
 
+dialog > article {
+  --block-spacing-vertical: calc(var(--spacing) * 2);
+  --block-spacing-horizontal: var(--spacing);
+}
 @media (min-width: 576px) {
   dialog > article {
-    --block-spacing-vertical: calc(var(--spacing) * 1.5);
-    --block-spacing-horizontal: calc(var(--spacing) * 1.5);
+    --block-spacing-vertical: calc(var(--spacing) * 2.5);
+    --block-spacing-horizontal: calc(var(--spacing) * 1.25);
   }
 }
 @media (min-width: 768px) {
   dialog > article {
-    --block-spacing-vertical: calc(var(--spacing) * 2);
-    --block-spacing-horizontal: calc(var(--spacing) * 2);
-  }
-}
-@media (min-width: 992px) {
-  dialog > article {
-    --block-spacing-vertical: calc(var(--spacing) * 2.5);
-    --block-spacing-horizontal: calc(var(--spacing) * 2.5);
-  }
-}
-@media (min-width: 1200px) {
-  dialog > article {
     --block-spacing-vertical: calc(var(--spacing) * 3);
-    --block-spacing-horizontal: calc(var(--spacing) * 3);
+    --block-spacing-horizontal: calc(var(--spacing) * 1.5);
   }
 }
 
@@ -276,7 +268,7 @@ kbd {
     0 0.125rem 2rem rgba(27, 40, 50, 0.08),
     0 0 0 0.0625rem rgba(27, 40, 50, 0.024);
   --card-sectionning-background-color: #fbfbfc;
-  --modal-overlay-background-color: rgba(27, 40, 50, 0.9);
+  --modal-overlay-background-color: rgba(213, 220, 226, 0.8);
   --progress-background-color: #d5dce2;
   --progress-color: var(--primary);
   --loading-spinner-opacity: 0.5;
@@ -1382,9 +1374,13 @@ textarea[aria-invalid=true]:focus {
   ) !important;
 }
 
-[dir=rtl] input[aria-invalid],
-[dir=rtl] select[aria-invalid],
-[dir=rtl] textarea[aria-invalid] {
+[dir=rtl] input:not([type=checkbox]):not([type=radio])[aria-invalid], [dir=rtl] input:not([type=checkbox]):not([type=radio])[aria-invalid=true], [dir=rtl] input:not([type=checkbox]):not([type=radio])[aria-invalid=false],
+[dir=rtl] select:not([type=checkbox]):not([type=radio])[aria-invalid],
+[dir=rtl] select:not([type=checkbox]):not([type=radio])[aria-invalid=true],
+[dir=rtl] select:not([type=checkbox]):not([type=radio])[aria-invalid=false],
+[dir=rtl] textarea:not([type=checkbox]):not([type=radio])[aria-invalid],
+[dir=rtl] textarea:not([type=checkbox]):not([type=radio])[aria-invalid=true],
+[dir=rtl] textarea:not([type=checkbox]):not([type=radio])[aria-invalid=false] {
   background-position: center left 0.75rem;
 }
 
@@ -1576,24 +1572,24 @@ label > input, label > select, label > textarea {
   border-radius: calc(var(--border-radius) * 0.5);
 }
 
-:not(:dir(rtl)) [type=date],
-:not(:dir(rtl)) [type=datetime-local],
-:not(:dir(rtl)) [type=month],
-:not(:dir(rtl)) [type=time],
-:not(:dir(rtl)) [type=week] {
+:not([dir=rtl]) [type=date],
+:not([dir=rtl]) [type=datetime-local],
+:not([dir=rtl]) [type=month],
+:not([dir=rtl]) [type=time],
+:not([dir=rtl]) [type=week] {
   background-image: var(--icon-date);
   background-position: center right 0.75rem;
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
-:not(:dir(rtl)) [type=date]::-webkit-calendar-picker-indicator,
-:not(:dir(rtl)) [type=datetime-local]::-webkit-calendar-picker-indicator,
-:not(:dir(rtl)) [type=month]::-webkit-calendar-picker-indicator,
-:not(:dir(rtl)) [type=time]::-webkit-calendar-picker-indicator,
-:not(:dir(rtl)) [type=week]::-webkit-calendar-picker-indicator {
+:not([dir=rtl]) [type=date]::-webkit-calendar-picker-indicator,
+:not([dir=rtl]) [type=datetime-local]::-webkit-calendar-picker-indicator,
+:not([dir=rtl]) [type=month]::-webkit-calendar-picker-indicator,
+:not([dir=rtl]) [type=time]::-webkit-calendar-picker-indicator,
+:not([dir=rtl]) [type=week]::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
-:not(:dir(rtl)) [type=time] {
+:not([dir=rtl]) [type=time] {
   background-image: var(--icon-time);
 }
 
@@ -1940,7 +1936,6 @@ canvas {
 
 /**
  * Accordion (<details>)
- * Inspiration: https://codepen.io/koca/pen/RyeLLV
  */
 details {
   display: block;
@@ -2036,6 +2031,7 @@ article > footer {
  */
 dialog {
   display: flex;
+  z-index: 999;
   position: fixed;
   top: 0;
   right: 0;
@@ -2061,45 +2057,145 @@ dialog {
     max-width: 700px;
   }
 }
+dialog article > header,
+dialog article > footer {
+  padding: calc(var(--block-spacing-vertical) * 0.5) var(--block-spacing-horizontal);
+}
+dialog article > header .close {
+  margin: 0;
+  margin-left: var(--spacing);
+  float: right;
+}
 dialog article > footer {
   text-align: right;
+}
+dialog article > footer [role=button] {
+  margin-bottom: 0;
 }
 dialog article > footer [role=button]:not(:first-of-type) {
   margin-left: calc(var(--spacing) * 0.5);
 }
-dialog:not([open]) {
-  display: none;
+dialog article p:last-of-type {
+  margin: 0;
 }
-dialog .close {
+dialog article .close {
   display: block;
   width: 1rem;
   height: 1rem;
-  margin-top: -0.5rem;
-  margin-right: -0.5rem;
+  margin-top: calc(var(--block-spacing-vertical) * -0.5);
   margin-bottom: var(--typography-spacing-vertical);
   margin-left: auto;
   background-image: var(--icon-close);
   background-position: center;
-  background-size: 1rem auto;
+  background-size: auto 1rem;
   background-repeat: no-repeat;
   opacity: 0.5;
   transition: opacity var(--transition);
 }
-dialog .close:hover, dialog .close:active, dialog .close:focus {
+dialog article .close:hover, dialog article .close:active, dialog article .close:focus {
   opacity: 1;
 }
+dialog:not([open]), dialog[open=false] {
+  display: none;
+}
 
-.dialog-is-open {
+.modal-is-open {
   overflow: hidden;
   pointer-events: none;
 }
-.dialog-is-open .container {
-  filter: blur(0.125rem);
+.modal-is-open body > *:not(dialog) {
+  filter: blur(0.1875rem);
 }
-.dialog-is-open dialog {
+.modal-is-open dialog {
   pointer-events: auto;
 }
 
+.modal-is-opening body > *:not(dialog),
+.modal-is-opening dialog,
+.modal-is-opening dialog > article,
+.modal-is-closing body > *:not(dialog),
+.modal-is-closing dialog,
+.modal-is-closing dialog > article {
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.modal-is-opening body > *:not(dialog),
+.modal-is-closing body > *:not(dialog) {
+  -webkit-animation-name: blurIn;
+  animation-name: blurIn;
+}
+.modal-is-opening dialog,
+.modal-is-closing dialog {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+.modal-is-opening dialog > article,
+.modal-is-closing dialog > article {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+
+.modal-is-closing body > *:not(dialog),
+.modal-is-closing dialog,
+.modal-is-closing dialog > article {
+  animation-direction: reverse;
+}
+
+@-webkit-keyframes blurIn {
+  from {
+    filter: blur(0);
+  }
+  to {
+    filter: blur(0.1875rem);
+  }
+}
+
+@keyframes blurIn {
+  from {
+    filter: blur(0);
+  }
+  to {
+    filter: blur(0.1875rem);
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: var(--modal-overlay-background-color);
+  }
+}
+@keyframes fadeIn {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: var(--modal-overlay-background-color);
+  }
+}
+@-webkit-keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 /**
  * Nav
  */
@@ -2321,14 +2417,18 @@ a[aria-busy=true] {
 }
 [data-tooltip]:focus::before, [data-tooltip]:focus::after, [data-tooltip]:hover::before, [data-tooltip]:hover::after {
   opacity: 1;
-  -webkit-animation-duration: 0.2s;
-  animation-duration: 0.2s;
-  -webkit-animation-name: slide;
-  animation-name: slide;
 }
-[data-tooltip]:focus::after, [data-tooltip]:hover::after {
-  -webkit-animation-name: slideCaret;
-  animation-name: slideCaret;
+@media (hover: hover) and (pointer: fine) {
+  [data-tooltip]:focus::before, [data-tooltip]:focus::after, [data-tooltip]:hover::before, [data-tooltip]:hover::after {
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+    -webkit-animation-name: slide;
+    animation-name: slide;
+  }
+  [data-tooltip]:focus::after, [data-tooltip]:hover::after {
+    -webkit-animation-name: slideCaret;
+    animation-name: slideCaret;
+  }
 }
 
 @-webkit-keyframes slide {

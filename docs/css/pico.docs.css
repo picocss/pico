@@ -180,7 +180,10 @@ main > aside details[open] > summary:not(:focus) {
 /**
  * Docs: Documentation
  */
-#themes button i {
+#themes button.theme-switcher:first-of-type {
+  --font-weight: bold;
+}
+#themes button.theme-switcher i {
   font-style: normal;
 }
 
@@ -271,6 +274,10 @@ main > aside details[open] > summary:not(:focus) {
   grid-row-gap: 0;
 }
 
+#modal button {
+  --font-weight: bold;
+}
+
 /**
  * Docs: Typography
  */
@@ -350,6 +357,37 @@ section > pre {
 [data-theme=valid]:before {
   background: var(--valid-color);
   content: "Great";
+}
+
+/**
+ * Docs: Modal
+ */
+dialog.example {
+  display: block;
+  z-index: inherit;
+  position: relative;
+  top: inherit;
+  right: inherit;
+  bottom: inherit;
+  left: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  width: inherit;
+  min-width: inherit;
+  height: inherit;
+  min-height: inherit;
+  padding: 0;
+  background-color: inherit;
+}
+dialog.example article {
+  max-width: inherit;
+}
+dialog.example:not([open]), dialog.example[open=false] {
+  display: none;
+}
+
+.dialog-is-open body > button {
+  filter: blur(0.125rem);
 }
 
 /**

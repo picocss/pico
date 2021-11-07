@@ -200,7 +200,7 @@ kbd {
     0 0.125rem 2rem rgba(27, 40, 50, 0.08),
     0 0 0 0.0625rem rgba(27, 40, 50, 0.024);
   --card-sectionning-background-color: #fbfbfc;
-  --modal-overlay-background-color: rgba(27, 40, 50, 0.9);
+  --modal-overlay-background-color: rgba(213, 220, 226, 0.8);
   --progress-background-color: #d5dce2;
   --progress-color: var(--primary);
   --loading-spinner-opacity: 0.5;
@@ -1297,9 +1297,13 @@ textarea[aria-invalid=true]:focus {
   --border-color: var(--form-element-invalid-active-border-color);
 }
 
-[dir=rtl] input[aria-invalid],
-[dir=rtl] select[aria-invalid],
-[dir=rtl] textarea[aria-invalid] {
+[dir=rtl] input:not([type=checkbox]):not([type=radio])[aria-invalid], [dir=rtl] input:not([type=checkbox]):not([type=radio])[aria-invalid=true], [dir=rtl] input:not([type=checkbox]):not([type=radio])[aria-invalid=false],
+[dir=rtl] select:not([type=checkbox]):not([type=radio])[aria-invalid],
+[dir=rtl] select:not([type=checkbox]):not([type=radio])[aria-invalid=true],
+[dir=rtl] select:not([type=checkbox]):not([type=radio])[aria-invalid=false],
+[dir=rtl] textarea:not([type=checkbox]):not([type=radio])[aria-invalid],
+[dir=rtl] textarea:not([type=checkbox]):not([type=radio])[aria-invalid=true],
+[dir=rtl] textarea:not([type=checkbox]):not([type=radio])[aria-invalid=false] {
   background-position: center left 0.75rem;
 }
 
