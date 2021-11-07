@@ -13,8 +13,8 @@ pre,
 code,
 kbd,
 samp {
-  font-size: 0.875em; // 2
   font-family: var(--font-family); // 1
+  font-size: 0.875em; // 2
 }
 
 // Prevent overflow of the container in all browsers (opinionated)
@@ -29,11 +29,11 @@ pre {
 pre,
 code,
 kbd {
-  border-radius: var(--border-radius);
   background: var(--code-background-color);
   color: var(--code-color);
   font-weight: var(--font-weight);
   line-height: initial;
+  border-radius: var(--border-radius);
 }
 
 code,
@@ -48,9 +48,9 @@ pre {
   overflow-x: auto;
 
   > code {
+    background: transparent;
     display: block;
     padding: var(--spacing);
-    background: transparent;
     font-size: 14px;
     line-height: var(--line-height);
   }

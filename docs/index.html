@@ -1,4 +1,125 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Documentation • Pico.css</title><meta name="description" content="Pico works without package manager or dependencies! There are 3 ways to get started with pico.css: manually, from a CDN, with NPM."><link rel="shortcut icon" href="https://picocss.com/favicon.ico"><link rel="stylesheet" href="../css/pico.min.css"><link rel="stylesheet" href="css/pico.docs.min.css"><link rel="canonical" href="https://www.picocss.com/docs/"></head><body><nav class="container-fluid"><ul><li><a href="https://picocss.com" aria-label="Back home"><svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" height="56px"><path fill="currentColor" d="M633.43 429.23c0 118.38-49.76 184.72-138.87 184.72-53 0-92.04-25.37-108.62-67.32h-2.6v203.12H250V249.7h133.67v64.72h2.28c17.24-43.9 55.3-69.92 107-69.92 90.4 0 140.48 66.02 140.48 184.73zm-136.6 0c0-49.76-22.1-81.96-56.9-81.96s-56.9 32.2-57.24 82.28c.33 50.4 22.1 81.63 57.24 81.63 35.12 0 56.9-31.87 56.9-81.95zM682.5 547.5c0-37.32 30.18-67.5 67.5-67.5s67.5 30.18 67.5 67.5S787.32 615 750 615s-67.5-30.18-67.5-67.5z"/></svg></a></li><li>Documentation</li></ul><ul><li><a href="https://picocss.com#examples" class="secondary">Examples</a></li><li><a href="./" class="secondary">Docs</a></li><li><a href="https://github.com/picocss/pico" class="contrast" aria-label="Pico GitHub repository"><svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="16px"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a></li></ul></nav><main class="container" id="docs"><aside><nav class="closed-on-mobile"><a href="./" class="secondary" id="toggle-docs-navigation"><svg xmlns="http://www.w3.org/2000/svg" class="expand" fill="currentColor" viewBox="0 0 16 16" height="16px"><title>Expand</title><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8zM7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10z"></path></svg> <svg xmlns="http://www.w3.org/2000/svg" class="collapse" fill="currentColor" viewBox="0 0 16 16" height="16px"><title>Collapse</title><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 8zm7-8a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 4.293V.5A.5.5 0 0 1 8 0zm-.5 11.707l-1.146 1.147a.5.5 0 0 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 11.707V15.5a.5.5 0 0 1-1 0v-3.793z"></path></svg> Table of content</a><details><summary>Getting started</summary><ul><li><a href="./" id="start-link" class="secondary">Usage</a></li><li><a href="./themes.html" id="themes-link" class="secondary">Themes</a></li><li><a href="./customization.html" id="customization-link" class="secondary">Customization</a></li><li><a href="./classless.html" id="classless-link" class="secondary">Class-less version</a></li><li><a href="./rtl.html" id="rtl-link" class="secondary">RTL</a></li></ul></details><details><summary>Layout</summary><ul><li><a href="./containers.html" id="containers-link" class="secondary">Containers</a></li><li><a href="./grid.html" id="grid-link" class="secondary">Grid</a></li><li><a href="./scroller.html" id="scroller-link" class="secondary">Horizontal scroller</a></li></ul></details><details><summary>Elements</summary><ul><li><a href="./typography.html" id="typography-link" class="secondary">Typography</a></li><li><a href="./buttons.html" id="buttons-link" class="secondary">Buttons</a></li><li><a href="./forms.html" id="forms-link" class="secondary">Forms</a></li><li><a href="./tables.html" id="tables-link" class="secondary">Tables</a></li></ul></details><details><summary>Components</summary><ul><li><a href="./accordions.html" id="accordions-link" class="secondary">Accordions</a></li><li><a href="./cards.html" id="cards-link" class="secondary">Cards</a></li><li><a href="./modal.html" id="modal-link" class="secondary">Modal</a></li><li><a href="./navs.html" id="navs-link" class="secondary">Navs</a></li><li><a href="./progress.html" id="progress-link" class="secondary">Progress</a></li></ul></details><details><summary>Utilities</summary><ul><li><a href="./loading.html" id="loading-link" class="secondary">Loading</a></li><li><a href="./tooltips.html" id="tooltips-link" class="secondary">Tooltips</a></li></ul></details><details><summary>Extend</summary><ul><li><a href="./we-love-classes.html" id="we-love-classes-link" class="secondary">We love .classes</a></li></ul></details></nav><script>const activeLink=document.querySelector("aside a#start-link"),parentAccordion=activeLink.closest("details");activeLink.classList.add("active"),parentAccordion.setAttribute("open","true")</script></aside><div role="document"><section id="start"><hgroup><h1>Usage</h1><h2>Works without package manager or dependencies 🙂!</h2></hgroup><p>There are 3 ways to get started with pico.css:</p><h3>Install manually</h3><p><a href="https://github.com/picocss/pico/archive/refs/heads/master.zip">Download Pico</a> and link <code>/css/pico.min.css</code> in the <code>&lt;<b>head</b>&gt;</code> of your website.</p><pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"css/pico.min.css"</u>&gt;</code></pre><h3>Install from CDN</h3><p>Alternatively, you can use <a href="https://unpkg.com/@picocss/pico@latest/">unpkg CDN</a> to link pico.css</p><pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@picocss/pico@latest/css/pico.min.css"</u>&gt;</code></pre><h3>Install with NPM</h3><pre><code><b>npm</b> <i>install</i> <u>@picocss/pico</u></code></pre><p>Starter HTML template:</p><pre><code><em>&lt;!doctype html&gt;</em>
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Pico.css • Minimal CSS Framework for semantic HTML</title>
+    <link rel="shortcut icon" href="https://picocss.com/favicon.ico">
+    <link rel="stylesheet" href="../css/pico.min.css">
+    <link rel="stylesheet" href="css/pico.docs.min.css">
+  </head>
+
+  <body>
+
+    <!-- Nav -->
+    <nav class="container-fluid">
+      <ul>
+        <li>
+          <a href="https://picocss.com" aria-label="Back home">
+            <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" height="56px">
+              <path fill="currentColor" d="M633.43 429.23c0 118.38-49.76 184.72-138.87 184.72-53 0-92.04-25.37-108.62-67.32h-2.6v203.12H250V249.7h133.67v64.72h2.28c17.24-43.9 55.3-69.92 107-69.92 90.4 0 140.48 66.02 140.48 184.73zm-136.6 0c0-49.76-22.1-81.96-56.9-81.96s-56.9 32.2-57.24 82.28c.33 50.4 22.1 81.63 57.24 81.63 35.12 0 56.9-31.87 56.9-81.95zM682.5 547.5c0-37.32 30.18-67.5 67.5-67.5s67.5 30.18 67.5 67.5S787.32 615 750 615s-67.5-30.18-67.5-67.5z"/>
+            </svg>
+          </a>
+        </li>
+        <li>Documentation</li>
+      </ul>
+      <ul>
+        <li><a href="https://picocss.com#examples" class="secondary">Examples</a></li>
+        <li><a href="#docs" class="secondary">Docs</a></li>
+        <li>
+          <a href="https://github.com/picocss/pico" class="contrast" aria-label="Pico GitHub repository">
+            <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="16px">
+              <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav><!-- ./ Nav -->
+
+    <!-- Main -->
+    <main class="container" id="docs">
+
+        <!-- Aside -->
+        <aside>
+          <nav>
+            <h1>Documentation</h1>
+            <details open>
+              <summary>Getting started</summary>
+              <ul>
+                <li><a href="#start" class="secondary">Usage</a></li>
+                <li><a href="#themes" class="secondary">Themes</a></li>
+                <li><a href="#customization" class="secondary">Customization</a></li>
+                <li><a href="#classless" class="secondary">Class-less version</a></li>
+                <li><a href="#rtl" class="secondary">RTL</a></li>
+              </ul>
+            </details>
+            <details open>
+              <summary>Layout</summary>
+              <ul>
+                <li><a href="#containers" class="secondary">Containers</a></li>
+                <li><a href="#grids" class="secondary">Grids</a></li>
+                <li><a href="#scroller" class="secondary">Horizontal scroller</a></li>
+              </ul>
+            </details>
+            <details open>
+              <summary>Elements</summary>
+              <ul>
+                <li><a href="#typography" class="secondary">Typography</a></li>
+                <li><a href="#buttons" class="secondary">Buttons</a></li>
+                <li><a href="#forms" class="secondary">Forms</a></li>
+                <li><a href="#tables" class="secondary">Tables</a></li>
+              </ul>
+            </details>
+            <details open>
+              <summary>Components</summary>
+              <ul>
+                <li><a href="#accordions" class="secondary">Accordions</a></li>
+                <li><a href="#cards" class="secondary">Cards</a></li>
+                <li><a href="#navs" class="secondary">Navs</a></li>
+                <li><a href="#progress" class="secondary">Progress</a></li>
+              </ul>
+            </details>
+            <details open>
+              <summary>Utilities</summary>
+              <ul>
+                <li><a href="#loading" class="secondary">Loading</a></li>
+                <li><a href="#tooltips" class="secondary">Tooltips</a></li>
+              </ul>
+            </details>
+            <details open>
+              <summary>Extend</summary>
+              <ul>
+                <li>
+                  <a href="#love" class="secondary">We love .classes</a>
+                </li>
+              </ul>
+            </details>
+          </nav>
+        </aside><!-- ./ Aside -->
+
+        <!-- Document -->
+        <div role="document">
+
+          <!-- Docs: Start -->
+          <section id="start">
+            <hgroup>
+              <h2>Usage</h2>
+              <h3>Work without package manager or dependencies 🙂!</h3>
+            </hgroup>
+            <p>There are 3 ways to get started with pico.css:</p>
+            <h4>Install manually</h4>
+            <p><a href="https://github.com/picocss/pico/archive/refs/heads/master.zip">Download Pico</a> and link <code>/css/pico.min.css</code> in the <code>&lt;<b>head</b>&gt;</code> of your website.</p>
+            <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"css/pico.min.css"</u>&gt;</code></pre>
+            <h4>Install from CDN</h4>
+            <p>Alternatively, you can use <a href="https://unpkg.com/@picocss/pico@latest/">unpkg CDN</a> to link pico.css</p>
+            <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@picocss/pico@latest/css/pico.min.css"</u>&gt;</code></pre>
+            <h4>Install with NPM</h4>
+            <pre><code><b>npm</b> <i>install</i> <u>@picocss/pico</u></code></pre>
+            <p>Starter HTML template:</p>
+
+<pre><code><em>&lt;!doctype html&gt;</em>
 &lt;<b>html</b> <i>lang</i>=<u>"en"</u>&gt;
   &lt;<b>head</b>&gt;
     &lt;<b>meta</b> <i>charset</i>=<u>"utf-8"</u>&gt;
@@ -11,4 +132,1202 @@
       &lt;<b>h1</b>&gt;Hello, world!&lt;/<b>h1</b>&gt;
     &lt;/<b>main</b>&gt;
   &lt;/<b>body</b>&gt;
-&lt;/<b>html</b>&gt;</code></pre></section><footer><hr><p><small>Code licensed <a href="https://github.com/picocss/pico/blob/master/LICENSE.md" class="secondary">MIT</a></small></p></footer></div></main><script src="js/commons.min.js"></script></body></html>
+&lt;/<b>html</b>&gt;</code></pre>
+
+          </section><!-- ./ Docs: Start -->
+
+          <!-- Docs: Themes -->
+          <section id="themes">
+            <hgroup>
+              <h2>Themes</h2>
+              <h3>Pico is shipped with 2 consistent themes: Light & Dark.</h3>
+            </hgroup>
+            <p>The Light theme is used by default. The Dark theme is automatically enabled if the user has dark mode enabled <code><i>prefers-color-scheme</i>: <u>dark</u></code></p>
+            <article aria-label="Theme switcher">
+              <button class="contrast theme-switcher">…</button>
+            </article>
+            <p>Themes can be forced on document level <code>&lt;<b>html</b> <i>data-theme</i>=<u>"light"</u>&gt;</code> or on any HTML element <code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;</code></p>
+            <article data-theme="light" aria-label="Forced light theme example">
+              <h4>Light theme</h4>
+              <form class="grid">
+                <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required>
+                <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
+                <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login</button>
+              </form>
+              <footer class="code">
+
+<pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"light"</u>&gt;
+  …
+&lt;/<b>article</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <article data-theme="dark" aria-label="Forced dark theme example">
+              <h4>Dark theme</h4>
+              <form class="grid">
+                <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required>
+                <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
+                <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login</button>
+              </form>
+              <footer class="code">
+
+<pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;
+  …
+&lt;/<b>article</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+          </section><!-- ./ Themes -->
+
+          <!-- Docs: Customization-->
+          <section id="customization">
+            <hgroup>
+              <h2>Customization</h2>
+              <h3>You can customize themes with SCSS or, you can edit the CSS variables.</h3>
+            </hgroup>
+            <p>Example: <strong>pick a color!</strong></p>
+
+            <article data-theme="generated" aria-label="Generated theme example">
+              <h4><span class="name">Custom theme</span></h4>
+              <form>
+                <div class="grid">
+                  <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required>
+                  <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
+                  <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login</button>
+                </div>
+                <fieldset>
+                  <label for="remember">
+                    <input type="checkbox" role="switch" id="remember" name="remember" checked>
+                    Remember me
+                  </label>
+                </fieldset>
+              </form>
+              <footer class="code">
+
+<pre><code><em>// Simplified example</em>
+<b>:root</b> {
+  <i>--primary</i>: <u class="c600">…</u>;
+}
+</code></pre>
+
+              </footer>
+            </article>
+            <p>There are 2 ways to customize your version of Pico.css:</p>
+            <h4>Overriding CSS variables</h4>
+            <p>All Pico's styles and colors are set with <em>CSS custom properties</em> (variables). Just override the CSS variables to customize your version of Pico.</p>
+
+<pre><code><em>/* <span class="name"></span>Light scheme (Default) */
+/* Can be forced with data-theme="light" */</em>
+<b>[data-theme=<u>"light"</u>]</b>,
+<b>:root:not([data-theme=<u>"dark"</u>])</b> {
+  <i>--primary</i>: <u class="c600">…</u>;
+  <i>--primary-hover</i>: <u class="c700">…</u>;
+  <i>--primary-focus</i>: <u class="c600-outline-light">…</u>;
+  <i>--primary-inverse</i>: <u class="inverse">…</u>;
+}
+
+<em>/* <span class="name"></span>Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */</em>
+<i>@media</i> only <b>screen</b> and <b>(prefers-color-scheme: <u>dark</u>)</b> {
+  <b>:root:not([data-theme=<u>"light"</u>])</b> {
+    <i>--primary</i>: <u class="c600">…</u>;
+    <i>--primary-hover</i>: <u class="c500">…</u>;
+    <i>--primary-focus</i>: <u class="c600-outline-dark">…</u>;
+    <i>--primary-inverse</i>: <u class="inverse">…</u>;
+  }
+}
+
+<em>/* <span class="name"></span>Dark scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */</em>
+<b>[data-theme=<u>"dark"</u>]</b> {
+  <i>--primary</i>: <u class="c600">…</u>;
+  <i>--primary-hover</i>: <u class="c500">…</u>;
+  <i>--primary-focus</i>: <u class="c600-outline-dark">…</u>;
+  <i>--primary-inverse</i>: <u class="inverse">…</u>;
+}
+
+<em>/* <span class="name"></span>(Common styles) */</em>
+<b>:root</b> {
+  <i>--form-element-active-border-color</i>: <u>var</u>(<i>--primary</i>);
+  <i>--form-element-focus-color</i>: <u>var</u>(<i>--primary-focus</i>);
+  <i>--switch-color</i>: <u>var</u>(<i>--primary-inverse</i>);
+  <i>--switch-checked-background-color</i>: <u>var</u>(<i>--primary</i>);
+}
+</code></pre>
+
+            <p>You can find all the CSS variables used in the default theme here: <a href="https://github.com/picocss/pico/blob/master/css/themes/default.css">css/themes/default.css</a></p>
+            <h4>Importing Pico SASS library</h4>
+            <p>We recommend customizing Pico by importing SASS source files into your project. This way, you can keep Pico up to date without conflicts since Pico code and your custom code are separated.</p>
+            <p>Compile the SASS file to CSS to get a custom version of Pico.</p>
+
+<pre><code><em>/* Custom <span class="name"> </span>version */</em>
+
+<em>// Override default variables</em>
+<i>$primary-500</i>: <u class="c500">…</u>;
+<i>$primary-600</i>: <u class="c600">…</u>;
+<i>$primary-700</i>: <u class="c700">…</u>;
+
+<em>// Import full Pico source code</em>
+<b>@import</b> <u>"path/pico"</u>;</code></pre>
+
+            <p>Alternatively, you can create a custom theme and import it into your project with the components you need.</p>
+
+<pre><code><em>/* Custom <span class="name"> </span>version */</em>
+
+<em>// Custom theme</em>
+<b>@import</b> <u>"path/themes/custom"</u>;
+
+<em>// Import needed components</em>
+<b>@import</b> <u>"path/layout/document"</u>;
+<b>@import</b> <u>"path/layout/sectioning"</u>;
+<em>…</em>
+</code></pre>
+
+            <p>Compiling a custom SASS version allows you to create a lighter version with only the components that are useful to you. Example here: <a href="https://github.com/picocss/pico/blob/master/scss/pico.slim.scss">scss/pico.slim.scss</a>.</p>
+          </section><!-- ./ Docs: Customization -->
+
+          <!-- Docs: Classless -->
+          <section id="classless">
+            <hgroup>
+              <h2>Class-less version</h2>
+              <h3>For wild HTML purists!</h3>
+            </hgroup>
+            <p>Pico provides a <code>.classless</code> version (<a href="https://picocss.com/examples/classless/">example</a>).</p>
+            <p>In this version, <code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code>, and <code>&lt;<b>footer</b>&gt;</code> act as <a href="#containers">containers</a> to define a centered or a fluid viewport.</p>
+            <p><strong>Usage:</strong></p>
+            <p>Use the default <code>.classless</code> version if you need centered viewports:</p>
+            <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet</u>" <i>href</i>=<u>"css/pico.classless.min.css"</u>&gt;</code></pre>
+            <p>Or use the <code>.fluid.classless</code> version if you need a fluid container:</p>
+            <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet</u>" <i>href</i>=<u>"css/pico.fluid.classless.min.css"</u>&gt;</code></pre>
+            <p>These <code>.classless</code> versions are also available on <a href="https://unpkg.com/@picocss/pico@latest/">unpkg CDN</a>:</p>
+
+<pre><code><em>// Centered viewport</em>
+&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css"</u>&gt;
+</code></pre>
+
+<pre><code><em>// Fluid viewport</em>
+&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@picocss/pico@latest/css/pico.fluid.classless.min.css"</u>&gt;
+</code></pre>
+
+          </section><!-- ./ Docs: Classless -->
+
+          <!-- Docs: RTL -->
+          <section id="rtl">
+            <hgroup>
+              <h2>RTL</h2>
+              <h3>Support for right-to-left text in Pico.</h3>
+            </hgroup>
+            <p>To enable RTL in Pico you need to set <code><i>dir</i>=<u>"rtl"</u></code>on the <code>&lt;<b>html</b>&lt;</html></code> element.</p>
+
+<pre><code><em>&lt;!doctype html&gt;</em>
+&lt;<b>html</b> <i>dir</i>=<u>"rtl"</u> <i>lang</i>=<u>"ar"</u>&gt;
+  <em>...</em>
+&lt;/<b>html</b>&gt;</code></pre>
+
+            <p>The RTL feature is still experimental and will probably evolve.</p>
+          </section><!-- ./ Docs: RTL -->
+
+          <!-- Docs: Container -->
+          <section id="containers">
+            <hgroup>
+              <h2>Containers</h2>
+              <h3>
+                <code>.container</code> enable a centered viewport.<br>
+                <code>.container-fluid</code> enable a <code><u>100%</u></code> layout.
+              </h3>
+            </hgroup>
+
+<pre><code>&lt;<b>body</b>&gt;
+  &lt;<b>main</b> <i>class</i>=<u>"container"</u>&gt;&lt;/<b>main</b>&gt;
+&lt;/<b>body</b>&gt;</code></pre>
+
+            <p>Pico uses the same breakpoints and viewports sizes as <a href="https://getbootstrap.com/docs/5.0/layout/breakpoints/#available-breakpoints">Bootstrap</a>.</p>
+            <figure>
+              <table role="grid">
+                <thead>
+                  <tr>
+                    <th>Device</th>
+                    <th>Extra&nbsp;small</th>
+                    <th>Small</th>
+                    <th>Medium</th>
+                    <th>Large</th>
+                    <th>Extra&nbsp;large</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Breakpoint</th>
+                    <td>&lt;576<small>px</small></td>
+                    <td>≥576<small>px</small></td>
+                    <td>≥768<small>px</small></td>
+                    <td>≥992<small>px</small></td>
+                    <td>≥1200<small>px</small></td>
+                  </tr>
+                  <tr>
+                    <th>Viewport</th>
+                    <td>100<small>%</small></td>
+                    <td>540<small>px</small></td>
+                    <td>720<small>px</small></td>
+                    <td>960<small>px</small></td>
+                    <td>1140<small>px</small></td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+            <p><code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code> and <code>&lt;<b>footer</b>&gt;</code> as direct childs of <code>&lt;<b>body</b>&gt;</code> provide a responsive vertical <code><i>padding</i></code></p>
+            <p><code>&lt;<b>section</b>&gt;</code> provide a responsive <code><i>margin-bottom</i></code> to separate your sections.</p>
+          </section><!-- ./ Docs: Container -->
+
+          <!-- Docs: Grid -->
+          <section id="grids">
+            <hgroup>
+              <h2>Grids</h2>
+              <h3><code>.grid</code> enable a minimal grid system with auto-layout columns.</h3>
+            </hgroup>
+            <article aria-label="Grid example">
+              <div class="grid">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+              </div>
+              <footer class="code">
+
+<pre><code>&lt;<b>div</b> <i>class</i>=<u>"grid"</u>&gt;
+  &lt;<b>div</b>&gt;1&lt;/<b>div</b>&gt;
+  &lt;<b>div</b>&gt;2&lt;/<b>div</b>&gt;
+  &lt;<b>div</b>&gt;3&lt;/<b>div</b>&gt;
+  &lt;<b>div</b>&gt;4&lt;/<b>div</b>&gt;
+&lt;/<b>div</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <p>Columns intentionally collapses below large devices <code>(<u>992px</u>)</code></p>
+            <p>To go further, discover how to <a href="https://picocss.com/examples/bootstrap-grid/">merge Pico with the Bootstrap grid system</a>.</p>
+            <details>
+              <summary>
+                <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                &nbsp;More about grids
+              </summary>
+              <p>As Pico focuses on native HTML elements, we kept this grid system very minimalist.</p>
+              <p>A complete grid system in flexbox, with all the ordering, offsetting and, breakpoints utilities, can be heavier than the total size of the Pico library. Not really in the Pico spirit.</p>
+              <p>If you need a quick way to prototyping or build a complex layout, you can look at <strong>Flexbox grid layouts</strong>. For example, <a href="https://getbootstrap.com/docs/4.2/getting-started/contents/">Bootstrap Grid System only</a> or <a href="http://flexboxgrid.com/">Flexbox Grid</a>.</p>
+              <p>If you need a light and custom grid, you can look at <strong>CSS Grid Generators</strong>. For example, <a href="https://cssgrid-generator.netlify.com/">CSS Grid Generator</a>, <a href="http://grid.layoutit.com/">Layoutit!</a> or <a href="https://griddy.io/">Griddy</a>.</p>
+              <p>Alternatively, you can <a href="https://learncssgrid.com/">learn about CSS Grid</a>.</p>
+            </details>
+          </section><!-- ./ Docs: Grid -->
+
+          <!-- Docs: Horizontal scroller -->
+          <section id="scroller">
+            <hgroup>
+              <h2>Horizontal scroller</h2>
+              <h3><code>&lt;<b>figure</b>&gt;</code> acts as a container to make any content scrollable horizontally.</h3>
+            </hgroup>
+            <p>Useful to have responsive <code>&lt;<b>table</b>&gt;</code></p>
+            <figure>
+              <table role="grid">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+
+<pre><code>&lt;<b>figure</b>&gt;
+  &lt;<b>table</b>&gt;
+    …
+  &lt;/<b>table</b>&gt;
+&lt;/<b>figure</b>&gt;</code></pre>
+
+          </section><!-- ./ Docs: Horizontal scroller -->
+
+          <!-- Docs: Typography -->
+          <section id="typography">
+            <hgroup>
+              <h2>Typography</h2>
+              <h3>All typographic elements are responsive, allowing text to scale gracefully across devices and viewports.</h3>
+            </hgroup>
+            <figure>
+              <table role="grid">
+                <thead>
+                  <tr>
+                    <th>Device</th>
+                    <th>Extra&nbsp;small</th>
+                    <th>Small</th>
+                    <th>Medium</th>
+                    <th>Large</th>
+                    <th>Extra&nbsp;large</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Base&nbsp;font</th>
+                    <td>16<small>px</small></td>
+                    <td>17<small>px</small></td>
+                    <td>18<small>px</small></td>
+                    <td>19<small>px</small></td>
+                    <td>20<small>px</small></td>
+                  </tr>
+                  <tr>
+                    <th><code>&lt;<b>h1</b>&gt;</code></th>
+                    <td>32<small>px</small></td>
+                    <td>34<small>px</small></td>
+                    <td>36<small>px</small></td>
+                    <td>38<small>px</small></td>
+                    <td>40<small>px</small></td>
+                  </tr>
+                  <tr>
+                    <th><code>&lt;<b>h2</b>&gt;</code></th>
+                    <td>28<small>px</small></td>
+                    <td>29<small>px</small></td>
+                    <td>31<small>.5px</small></td>
+                    <td>33<small>.25px</small></td>
+                    <td>35<small>px</small></td>
+                  </tr>
+                  <tr>
+                    <th><code>&lt;<b>h3</b>&gt;</code></th>
+                    <td>24<small>px</small></td>
+                    <td>25<small>.5px</small></td>
+                    <td>27<small>px</small></td>
+                    <td>28<small>.5px</small></td>
+                    <td>30<small>px</small></td>
+                  </tr>
+                  <tr>
+                    <th><code>&lt;<b>h4</b>&gt;</code></th>
+                    <td>20<small>px</small></td>
+                    <td>21<small>.25px</small></td>
+                    <td>22<small>.5px</small></td>
+                    <td>23<small>.75px</small></td>
+                    <td>25<small>px</small></td>
+                  </tr>
+                  <tr>
+                    <th><code>&lt;<b>h5</b>&gt;</code></th>
+                    <td>18<small>px</small></td>
+                    <td>19<small>.125px</small></td>
+                    <td>20<small>.25px</small></td>
+                    <td>21<small>.375px</small></td>
+                    <td>22<small>.5px</small></td>
+                  </tr>
+                  <tr>
+                    <th><code>&lt;<b>h6</b>&gt;</code></th>
+                    <td>16<small>px</small></td>
+                    <td>17<small>px</small></td>
+                    <td>18<small>px</small></td>
+                    <td>19<small>px</small></td>
+                    <td>20<small>px</small></td>
+                  </tr>
+                  <tr>
+                    <th><code>&lt;<b>small</b>&gt;</code></th>
+                    <td>14<small>px</small></td>
+                    <td>14<small>.875px</small></td>
+                    <td>15<small>.75px</small></td>
+                    <td>16<small>.625px</small></td>
+                    <td>27<small>.5px</small></td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+            <p>Headings:</p>
+            <article aria-label="Headings examples">
+              <h1>Heading 1</h1>
+              <h2>Heading 2</h2>
+              <h3>Heading 3</h3>
+              <h4>Heading 4</h4>
+              <h5>Heading 5</h5>
+              <h6>Heading 6</h6>
+              <footer class="code">
+
+<pre><code>&lt;<b>h1</b>&gt;Heading 1&lt;/<b>h1</b>&gt;
+&lt;<b>h2</b>&gt;Heading 2&lt;/<b>h2</b>&gt;
+&lt;<b>h3</b>&gt;Heading 3&lt;/<b>h3</b>&gt;
+&lt;<b>h4</b>&gt;Heading 4&lt;/<b>h4</b>&gt;
+&lt;<b>h5</b>&gt;Heading 5&lt;/<b>h5</b>&gt;
+&lt;<b>h6</b>&gt;Heading 6&lt;/<b>h6</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <p>Inside a <code>&lt;<b>hgroup</b>&gt;</code> all <code><i>margin-bottom</i></code> are collapsed and the <code>:last-child</code> is muted.</p>
+            <article aria-label="Hgroup example">
+              <hgroup>
+                <h2>Heading 2</h2>
+                <h3>Subtitle for heading 2</h3>
+              </hgroup>
+              <footer class="code">
+
+<pre><code>&lt;<b>hgroup</b>&gt;
+  &lt;<b>h2</b>&gt;Heading 2&lt;/<b>h2</b>&gt;
+  &lt;<b>h3</b>&gt;Subtitle for heading 2&lt;/<b>h3</b>&gt;
+&lt;<b>hgroup</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <p>Inline text elements:</p>
+            <article aria-label="Inline text examples">
+              <div class="grid">
+                <div>
+                  <p><abbr title="Abbreviation">Abbr.</abbr> <code>abbr</code></p>
+                  <p><strong>Bold</strong> <code>strong</code> <code>b</code></p>
+                  <p><em>Italic</em> <code>i</code> <code>em</code> <code>cite</code></p>
+                  <p><del>Deleted</del> <code>del</code></p>
+                  <p><ins>Inserted</ins> <code>ins</code></p>
+                  <p><kbd>Ctrl + S</kbd> <code>kbd</code></p>
+                </div>
+                <div>
+                  <p><mark>Highlighted</mark> <code>mark</code></p>
+                  <p><s>Strikethrough</s> <code>s</code></p>
+                  <p><small>Small </small> <code>small</code></p>
+                  <p>Text <sub>Sub</sub> <code>sub</code></p>
+                  <p>Text <sup>Sup</sup> <code>sup</code></p>
+                  <p><u>Underline</u> <code>u</code></p>
+                </div>
+              </div>
+            </article>
+            <p>Links come with <code>.secondary</code> and <code>.contrast</code> styles.</p>
+            <article aria-label="Links examples">
+              <a href="#" onclick="event.preventDefault()">Primary</a><br>
+              <a href="#" onclick="event.preventDefault()" class="secondary">Secondary</a><br>
+              <a href="#" onclick="event.preventDefault()" class="contrast">Contrast</a><br>
+              <footer class="code">
+
+<pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Primary&lt;/<b>a</b>&gt;
+&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"secondary"</u>&gt;Secondary&lt;/<b>a</b>&gt;
+&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"contrast"</u>&gt;Contrast&lt;/<b>a</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <p>Blockquote:</p>
+            <article aria-label="Blockquote example">
+              <blockquote>
+                "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui sit amet ipsum cursus ornare."
+                <footer>
+                  <cite>- Phasellus eget lacinia</cite>
+                </footer>
+              </blockquote>
+              <footer class="code">
+
+<pre><code>&lt;<b>blockquote</b>&gt;
+  "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. Nam at dui sit amet ipsum cursus ornare."
+  &lt;<b>footer</b>&gt;
+    &lt;<b>cite</b>&gt;- Phasellus eget lacinia&lt;/<b>cite</b>&gt;
+  &lt;/<b>footer</b>&gt;
+&lt;/<b>blockquote</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+          </section><!-- ./ Docs: Typography -->
+
+          <!-- Docs: Button -->
+          <section id="buttons">
+            <hgroup>
+              <h2>Buttons</h2>
+              <h3>The essential button in pure HTML, without <code>.classes</code> for the default style.</h3>
+            </hgroup>
+            <article aria-label="Button example">
+              <button aria-label="Button">Button</button>
+              <input type="submit">
+              <footer class="code">
+
+<pre><code>&lt;<b>button</b>&gt;Button&lt;/<b>button</b>&gt;
+&lt;<b>input</b> <i>type</i>=<u>"submit"</u>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <p>Buttons are <code><i>width</i>: <u>100%</u>;</code> by default. Use <code>&lt;<b>a</b> <i>role</i>=<u>"button"&gt;</u></code> if you need an inline element.</p>
+            <article aria-label="Inline buttons examples">
+              <a href="#" onclick="event.preventDefault()" role="button">Link</a>
+              <a href="#" onclick="event.preventDefault()" role="button">Link</a>
+              <footer class="code">
+
+<pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u>&gt;Link&lt;/<b>a</b>&gt;
+&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u>&gt;Link&lt;/<b>a</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <p>Buttons come with <code>.secondary</code> and <code>.contrast</code> styles.</p>
+            <article aria-label="Buttons styles examples">
+              <a href="#" onclick="event.preventDefault()" role="button" class="secondary">Secondary</a>
+              <a href="#" onclick="event.preventDefault()" role="button" class="contrast">Contrast</a>
+              <footer class="code">
+
+<pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"secondary"</u>&gt;Secondary&lt;/<b>a</b>&gt;
+&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"contrast"</u>&gt;Contrast&lt;/<b>a</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <p>And a classic <code>.outline</code> variant.</p>
+            <article aria-label="Outline style examples">
+              <a href="#" onclick="event.preventDefault()" role="button" class="outline">Primary</a>
+              <a href="#" onclick="event.preventDefault()" role="button" class="secondary outline">Secondary</a>
+              <a href="#" onclick="event.preventDefault()" role="button" class="contrast outline">Contrast</a>
+              <footer class="code">
+
+<pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"outline"</u>&gt;Primary&lt;/<b>a</b>&gt;
+&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"secondary outline"</u>&gt;Secondary&lt;/<b>a</b>&gt;
+&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"contrast outline"</u>&gt;Contrast&lt;/<b>a</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+          </section><!-- ./ Docs: Button -->
+
+          <!-- Docs: Form -->
+          <section id="forms">
+            <hgroup>
+              <h2>Forms</h2>
+              <h3>All form elements are fully responsive in pure semantic HTML, allowing forms to scale gracefully across devices and viewports.</h3>
+            </hgroup>
+            <p>Inputs are <code><i>width</i>: <u>100%</u>;</code> by default. You can use <code>.grid</code> inside a form.</p>
+            <p>All natives form elements are fully customizable and themeable with CSS variables.</p>
+            <article aria-label="Form example">
+              <form>
+                <div class="grid">
+                  <label for="firstname">
+                    First name
+                    <input type="text" id="firstname" name="firstname" placeholder="First name" required>
+                  </label>
+                  <label for="lastname">
+                    Last name
+                    <input type="text" id="lastname" name="lastname" placeholder="Last name" required>
+                  </label>
+                </div>
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="Email address" required>
+                <small>We'll never share your email with anyone else.</small>
+                <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Submit</button>
+              </form>
+              <footer class="code">
+
+<pre><code>&lt;<b>form</b>&gt;
+
+  <em>&lt;!-- Grid --&gt;</em>
+  &lt;<b>div</b> <i>class</i>=<u>"grid"</u>&gt;
+
+    <em>&lt;!-- Markup example 1: input is inside label --&gt;</em>
+    &lt;<b>label</b> <i>for</i>=<u>"firstname"</u>&gt;
+      First name
+      &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>id</i>=<u>"firstname"</u> <i>name</i>=<u>"firstname"</u> <i>placeholder</i>=<u>"First name"</u> <i>required</i>&gt;
+    &lt;/<b>label</b>&gt;
+
+    &lt;<b>label</b> <i>for</i>=<u>"lastname"</u>&gt;
+      Last name
+      &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>id</i>=<u>"lastname"</u> <i>name</i>=<u>"lastname"</u> <i>placeholder</i>=<u>"Last name"</u> <i>required</i>&gt;
+    &lt;/<b>label</b>&gt;
+
+  &lt;/<b>div</b>&gt;
+
+  <em>&lt;!-- Markup example 2: input is after label --&gt;</em>
+  &lt;<b>label</b> <i>for</i>=<u>"email"</u>&gt;Email address&lt;/<b>label</b>&gt;
+  &lt;<b>input</b> <i>type</i>=<u>"email"</u> <i>id</i>=<u>"email"</u> <i>name</i>=<u>"email"</u> <i>placeholder</i>=<u>"Email address"</u> <i>required</i>&gt;
+  &lt;<b>small</b>&gt;We'll never share your email with anyone else.&lt;/<b>small</b>&gt;
+
+  <em>&lt;!-- Button --&gt;</em>
+  &lt;<b>button</b> <i>type</i>=<u>"submit"</u>&gt;Submit&lt;/<b>button</b>&gt;
+
+&lt;/<b>form</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <p>Disabled and validation states:</p>
+            <article aria-label="Validation states examples">
+              <form class="grid">
+                <input type="text" placeholder="Valid" aria-label="Valid" aria-invalid="false">
+                <input type="text" placeholder="Invalid" aria-label="Invalid"  aria-invalid="true">
+                <input type="text" placeholder="Disabled" aria-label="Disabled" disabled>
+                <input type="text" value="Readonly" aria-label="Readonly" readonly>
+              </form>
+              <footer class="code">
+
+<pre><code>&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Valid"</u> <i>aria-invalid</i>=<u>"false"</u>&gt;
+&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Invalid"</u> <i>aria-invalid</i>=<u>"true"</u>&gt;
+&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Disabled"</u> <i>disabled</i>&gt;
+&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>value</i>=<u>"Readonly"</u> <i>readonly</i>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <p><code>&lt;<b>fieldset</b>&gt;</code> is unstyled and acts as a container for radios and checkboxes, providing a consistent <code><i>margin-bottom</i></code> for the set.</p>
+            <p><code><i>role</i>=<u>"switch"</u></code> on a <code><i>type</i>=<u>"checkbox"</u></code> enable a custom switch.</p>
+            <article aria-label="Select, radios, checkboxes, switch examples">
+              <label for="fruit">Fruit</label>
+              <select id="fruit" required>
+                <option value="" selected>Select a fruit…</option>
+                <option>Banana</option>
+                <option>Watermelon</option>
+                <option>Apple</option>
+                <option>Orange</option>
+                <option>Mango</option>
+              </select>
+              <fieldset>
+                <legend>Size</legend>
+                <label for="small">
+                  <input type="radio" id="small" name="size" value="small" checked>
+                  Small
+                </label>
+                <label for="medium">
+                  <input type="radio" id="medium" name="size" value="medium">
+                  Medium
+                </label>
+                <label for="large">
+                  <input type="radio" id="large" name="size" value="large">
+                  Large
+                </label>
+              </fieldset>
+              <fieldset>
+                <label for="terms">
+                  <input type="checkbox" id="terms" name="terms">
+                  I agree to the Terms and Conditions
+                </label>
+              </fieldset>
+              <fieldset>
+                <label for="switch">
+                  <input type="checkbox" id="switch" name="switch" role="switch">
+                  Publish on my profile
+                </label>
+              </fieldset>
+              <footer class="code">
+
+<pre><code><em>&lt;!-- Select --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"fruit"</u>&gt;Fruit&lt;/<b>label</b>&gt;
+&lt;<b>select</b> <i>id</i>=<u>"fruit"</u> <i>required</i>&gt;
+  &lt;<b>option</b> <i>value</i>=<u>""</u> <i>selected</i>&gt;Select a fruit…&lt;/<b>option</b>&gt;
+  &lt;<b>option</b>&gt;…&lt;/<b>option</b>&gt;
+&lt;/<b>select</b>&gt;
+
+<em>&lt;!-- Radios --&gt;</em>
+&lt;<b>fieldset</b>&gt;
+  &lt;<b>legend</b>&gt;Size&lt;/<b>legend</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"small"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"small"</u> <i>name</i>=<u>"size"</u> <i>value</i>=<u>"small"</u> <i>checked</i>&gt;
+    Small
+  &lt;/<b>label</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"medium"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"medium"</u> <i>name</i>=<u>"size"</u> <i>value</i>=<u>"medium"</u>&gt;
+    Medium
+  &lt;/<b>label</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"large"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"large"</u> <i>name</i>=<u>"size"</u> <i>value</i>=<u>"large"</u>&gt;
+    Large
+  &lt;/<b>label</b>&gt;
+&lt;/<b>fieldset</b>&gt;
+
+<em>&lt;!-- Checkbox --&gt;</em>
+&lt;<b>fieldset</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"terms"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u> <i>id</i>=<u>"terms"</u> <i>name</i>=<u>"terms"</u>&gt;
+    I agree to the Terms and Conditions
+  &lt;/<b>label</b>&gt;
+&lt;/<b>fieldset</b>&gt;
+
+<em>&lt;!-- Switch --&gt;</em>
+&lt;<b>fieldset</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"switch"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u> <i>id</i>=<u>"switch"</u> <i>name</i>=<u>"switch"</u> <i>role</i>=<u>"switch"</u>&gt;
+    Publish on my profile
+  &lt;/<b>label</b>&gt;
+&lt;/<b>fieldset</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <p>You can change a checkbox to an indeterminate state by setting the <code><i>indeterminate</i></code> property to <code><u>true</u></code></p>
+            <article aria-label="Indeterminate checkbox example">
+              <label for="indeterminate-checkbox">
+                <input type="checkbox" id="indeterminate-checkbox" name="indeterminate-checkbox">
+                Select all
+              </label>
+              <script>document.getElementById('indeterminate-checkbox').indeterminate = true;</script>
+              <footer class="code">
+
+<pre><code>&lt;<b>script</b>&gt;
+  <i>document</i>.<b>getElementById</b>(<u>'indeterminate-checkbox'</u>).<i>indeterminate</i> = <u>true</u>;
+&lt;/<b>script</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <p>Others input types:</p>
+            <article aria-label="File browser, range slider, date, time, color examples">
+              <label for="file">File browser
+                <input type="file" id="file" name="file">
+              </label>
+              <label for="range">Range slider
+                <input type="range" min="0" max="100" value="50" id="range" name="range">
+              </label>
+              <label for="date">Date
+                <input type="date" id="date" name="date">
+              </label>
+              <label for="time">Time
+                <input type="time" id="time" name="time">
+              </label>
+              <label for="color">Color
+                <input type="color" id="color" name="color" value="#0eaaaa">
+              </label>
+              <footer class="code">
+
+<pre><code><em>&lt;!-- File browser --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"file"</u>&gt;File browser
+  &lt;<b>input</b> <i>type</i>=<u>"file"</u> <i>id</i>=<u>"file"</u> <i>name</i>=<u>"file"</u>&gt;
+&lt;/<b>label</b>&gt;
+
+<em>&lt;!-- Range slider --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"range"</u>&gt;Range slider
+  &lt;<b>input</b> <i>type</i>=<u>"range"</u> <i>min</i>=<u>"0"</u> <i>max</i>=<u>"100"</u> <i>value</i>=<u>"50"</u> <i>id</i>=<u>"range"</u> <i>name</i>=<u>"range"</u>&gt;
+&lt;/<b>label</b>&gt;
+
+<em>&lt;!-- Date --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"date"</u>&gt;Date
+  &lt;<b>input</b> <i>type</i>=<u>"date"</u> <i>id</i>=<u>"date"</u> <i>name</i>=<u>"date"</u>&gt;
+&lt;/<b>label</b>&gt;
+
+<em>&lt;!-- Time --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"time"</u>&gt;Time
+  &lt;<b>input</b> <i>type</i>=<u>"time"</u> <i>id</i>=<u>"time"</u> <i>name</i>=<u>"time"</u>&gt;
+&lt;/<b>label</b>&gt;
+
+<em>&lt;!-- Color --&gt;</em>
+&lt;<b>label</b> <i>for</i>=<u>"color"</u>&gt;Color
+  &lt;<b>input</b> <i>type</i>=<u>"color"</u> <i>id</i>=<u>"color"</u> <i>name</i>=<u>"color"</u> <i>value</i>=<u>"#0eaaaa"</u>>
+&lt;/<b>label</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+          </section><!-- ./ Docs: Form -->
+
+          <!-- Docs: Tables -->
+          <section id="tables">
+            <hgroup>
+              <h2>Tables</h2>
+              <h3>Default styles for tables without <code>.classes</code></h3>
+            </hgroup>
+            <figure>
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+
+<pre><code>&lt;<b>table</b>&gt;
+  &lt;<b>thead</b>&gt;
+    &lt;<b>tr</b>&gt;
+      &lt;<b>th</b> <i>scope</i>=<u>"col"</u>&gt;#&lt;/<b>th</b>&gt;
+      &lt;<b>th</b> <i>scope</i>=<u>"col"</u>&gt;Heading&lt;/<b>th</b>&gt;
+      &lt;<b>th</b> <i>scope</i>=<u>"col"</u>&gt;Heading&lt;/<b>th</b>&gt;
+      &lt;<b>th</b> <i>scope</i>=<u>"col"</u>&gt;Heading&lt;/<b>th</b>&gt;
+    &lt;/<b>tr</b>&gt;
+  &lt;/<b>thead</b>&gt;
+  &lt;<b>tbody</b>&gt;
+    &lt;<b>tr</b>&gt;
+      &lt;<b>th</b> <i>scope</i>=<u>"row"</u>>1&lt;/<b>th</b>&gt;
+      &lt;<b>td</b>>Cell&lt;/<b>td</b>&gt;
+      &lt;<b>td</b>>Cell&lt;/<b>td</b>&gt;
+      &lt;<b>td</b>>Cell&lt;/<b>td</b>&gt;
+    &lt;/<b>tr</b>&gt;
+  &lt;/<b>tbody</b>&gt;
+&lt;/<b>table</b>&gt;</code></pre>
+
+            <p><code><i>role</i>=<u>"grid"</u></code> enable striped rows.</p>
+            <figure>
+              <table role="grid">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                    <th scope="col">Heading</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                  </tr>
+                </tbody>
+              </table>
+            </figure>
+
+<pre><code>&lt;<b>table</b> <i>role</i>=<u>"grid"</u>&gt;
+  <em>…</em>
+&lt;/<b>table</b>&gt;</code></pre>
+
+          </section><!-- ./ Docs: Tables -->
+
+          <!-- Docs: Accordions -->
+          <section id="accordions">
+            <hgroup>
+              <h2>Accordions</h2>
+              <h3>Toggle sections of content in pure HTML, without JavaScript.</h3>
+            </hgroup>
+            <article aria-label="Accordions examples">
+              <details>
+                <summary>Collapsible elements 1</summary>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque urna diam, tincidunt nec porta sed, auctor id velit. Etiam venenatis nisl ut orci consequat, vitae tempus quam commodo. Nulla non mauris ipsum. Aliquam eu posuere orci. Nulla convallis lectus rutrum quam hendrerit, in facilisis elit sollicitudin. Mauris pulvinar pulvinar mi, dictum tristique elit auctor quis. Maecenas ac ipsum ultrices, porta turpis sit amet, congue turpis.</p>
+              </details>
+              <details open>
+                <summary>Collapsible elements 2</summary>
+                <ul>
+                  <li>Vestibulum id elit quis massa interdum sodales.</li>
+                  <li>Nunc quis eros vel odio pretium tincidunt nec quis neque.</li>
+                  <li>Quisque sed eros non eros ornare elementum.</li>
+                  <li>Cras sed libero aliquet, porta dolor quis, dapibus ipsum.</li>
+                </ul>
+              </details>
+              <footer class="code">
+
+<pre><code>&lt;<b>details</b>&gt;
+  &lt;<b>summary</b>&gt;Collapsible elements 1&lt;/<b>summary</b>&gt;
+  &lt;<b>p</b>&gt;…&lt;/<b>p</b>&gt;
+&lt;/<b>details</b>&gt;
+
+&lt;<b>details</b> <i>open</i>&gt;
+  &lt;<b>summary</b>&gt;Collapsible elements 2&lt;/<b>summary</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;…&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;…&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>details</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+          </section><!-- ./ Docs: Accordions -->
+
+          <!-- Docs: Cards -->
+          <section id="cards">
+            <hgroup>
+              <h2>Cards</h2>
+              <h3>A flexible container with graceful spacings across devices and viewports.</h3>
+            </hgroup>
+            <article aria-label="Card example">
+              I'm a card!
+            </article>
+            <pre><code>&lt;<b>article</b>&gt;I'm a card!&lt;/<b>article</b>&gt;</code></pre>
+            <p>You can use <code>&lt;<b>header</b>&gt;</code> and footer <code>&lt;<b>footer</b>&gt;</code> inside <code>&lt;<b>article</b>&gt;</code></p>
+            <article aria-label="Card sectioning example">
+              <header>Header</header>
+              Body
+              <footer>Footer</footer>
+            </article>
+
+<pre><code>&lt;<b>article</b>&gt;
+  &lt;<b>header</b>&gt;Header&lt;/<b>header</b>&gt;
+  Body
+  &lt;<b>footer</b>&gt;Footer&lt;/<b>footer</b>&gt;
+&lt;/<b>article</b>&gt;</code></pre>
+
+          </section><!-- ./ Docs: Card -->
+
+          <!-- Docs: Navs -->
+          <section id="navs">
+            <hgroup>
+              <h2>Navs</h2>
+              <h3>The essential navbar component in pure semantic HTML.</h3>
+            </hgroup>
+            <article aria-label="Nav example">
+              <nav>
+                <ul>
+                  <li><strong>Brand</strong></li>
+                </ul>
+                <ul>
+                  <li><a href="#" onclick="event.preventDefault()">Link</a></li>
+                  <li><a href="#" onclick="event.preventDefault()">Link</a></li>
+                  <li><a href="#" onclick="event.preventDefault()">Link</a></li>
+                </ul>
+              </nav>
+              <footer class="code">
+
+<pre><code>&lt;<b>nav</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>strong</b>&gt;Brand&lt;/<b>strong</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>nav</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <p><code>&lt;<b>ul</b>&gt;</code> are automatically distributed horizontally.</p>
+            <p><code>&lt;<b>li</b>&gt;</code> are unstyled and inlined.</p>
+            <article aria-label="Nav example">
+              <nav>
+                <ul>
+                  <li>
+                    <a href="#" onclick="event.preventDefault()" class="secondary" aria-label="Menu">
+                      <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="16px" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12">
+                        </line><line x1="3" y1="6" x2="21" y2="6">
+                        </line><line x1="3" y1="18" x2="21" y2="18">
+                        </line>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+                <ul>
+                  <li><strong>Brand</strong></li>
+                </ul>
+                <ul>
+                  <li>
+                    <a href="#" onclick="event.preventDefault()" class="secondary" aria-label="Twitter">
+                      <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="16px" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <footer class="code">
+
+<pre><code>&lt;<b>nav</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"secondary"</u>&gt;…&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>strong</b>&gt;Brand&lt;/<b>strong</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"secondary"</u>&gt;…&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>nav</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <p>Inside <code>&lt;<b>aside</b>&gt;</code>, navs are stacked vertically.</p>
+            <article aria-label="Vertical nav example">
+              <aside>
+                <nav>
+                  <ul>
+                    <li><a href="#" onclick="event.preventDefault()">Link</a></li>
+                    <li><a href="#" onclick="event.preventDefault()">Link</a></li>
+                    <li><a href="#" onclick="event.preventDefault()">Link</a></li>
+                  </ul>
+                </nav>
+              </aside>
+              <footer class="code">
+
+<pre><code>&lt;<b>aside</b>&gt;
+  &lt;<b>nav</b>&gt;
+    &lt;<b>ul</b>&gt;
+      &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+      &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+      &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;/<b>ul</b>&gt;
+  &lt;/<b>nav</b>&gt;
+&lt;/<b>aside</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+          </section><!-- ./ Docs: Nav -->
+
+          <!-- Docs: Progress -->
+          <section id="progress">
+            <hgroup>
+              <h2>Progress</h2>
+              <h3>Progress bar element in pure HTML, without JavaScript.</h3>
+            </hgroup>
+            <article aria-label="Progress bar example">
+              <progress value="25" max="100"></progress>
+              <footer class="code">
+
+<pre><code>&lt;<b>progress</b> <i>value</i>=<u>"25</u>" <i>max</i>=<u>"100"</u>&gt;&lt;/<b>progress</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <p>You can change a progress bar to an indeterminate state by setting the <code><i>indeterminate</i></code> property to <code><u>true</u></code></p>
+            <article aria-label="Indeterminate progress bar example">
+              <progress id="indeterminate-progress"></progress>
+              <script>document.getElementById('indeterminate-progress').indeterminate = true;</script>
+              <footer class="code">
+
+<pre><code>&lt;<b>script</b>&gt;
+  <i>document</i>.<b>getElementById</b>(<u>'indeterminate-progress'</u>).<i>indeterminate</i> = <u>true</u>;
+&lt;/<b>script</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+          </section><!-- ./ Docs: Progress -->
+
+          <!-- Docs: Loading -->
+          <section id="loading">
+            <hgroup>
+              <h2>Loading</h2>
+              <h3><code><i>aria-busy</i>=<u>"true"</u></code> enable a loading indicator.</h3>
+            </hgroup>
+            <article aria-label="Loading buttons example">
+              <button aria-busy="true">Please wait…</button>
+              <button aria-busy="true" class="secondary"></button>
+              <footer class="code">
+
+<pre><code>&lt;<b>button</b> <i>aria-busy</i>=<u>"true"</u>&gt;Please wait…&lt;/<b>button</b>&gt;
+&lt;<b>button</b> <i>aria-busy</i>=<u>"true"</u> <i>class</i>=<u>"secondary"</u>&gt;&lt;/<b>button</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+            <p>It can be applied to any block:</p>
+            <article aria-busy="true"></article>
+            <pre><code>&lt;<b>article</b> <i>aria-busy</i>=<u>"true"</u>&gt;&lt;/<b>article</b>&gt;</code></pre>
+            <p>Or any text element:</p>
+            <article aria-label="Loading paragraph example">
+              <a href="#" aria-busy="true" onclick="event.preventDefault()">Generating link, please wait…</a>
+              <footer class="code">
+                <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>aria-busy</i>=<u>"true"</u>&gt;Generating link, please wait…&lt;/<b>a</b>&gt;</code></pre>
+              </footer>
+            </article>
+          </section><!-- ./ Docs: Loading -->
+
+          <!-- Docs: Tooltips -->
+          <section id="tooltips">
+            <hgroup>
+              <h2>Tooltips</h2>
+              <h3>Enable tooltips everywhere in pure HTML, without JavaScript.</h3>
+            </hgroup>
+            <article aria-label="Tooltips examples">
+              <p>Tooltip on a <a href="#" onclick="event.preventDefault()" data-tooltip="Tooltip">link</a></p>
+              <p>Tooltip on <em data-tooltip="Tooltip">inline element</em></p>
+              <p><button data-tooltip="Tooltip" aria-label="Example button">Tooltip on a button</button></p>
+              <footer class="code">
+
+<pre><code>&lt;<b>p</b>&gt;Tooltip on a &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>data-tooltip</i>=<u>"Tooltip"</u>&gt;link&lt;/<b>a</b>&gt;&lt;/<b>p</b>&gt;
+&lt;<b>p</b>&gt;Tooltip on &lt;<b>em</b> <i>data-tooltip</i>=<u>"Tooltip"</u>&gt;inline element&lt;/<b>em</b>&gt;&lt;/<b>p</b>&gt;
+&lt;<b>p</b>&gt;&lt;<b>button</b> <i>data-tooltip</i>=<u>"Tooltip"</u>&gt;Tooltip on a button&lt;/<b>button</b>&gt;&lt;/<b>p</b>&gt;</code></pre>
+
+              </footer>
+            </article>
+          </section><!-- ./ Docs: Tooltips -->
+
+          <!-- Love -->
+          <section id="love">
+            <h2>We love <code>.classes</code></h2>
+            <p>As a starting point, Pico chose to be as neutral and semantic as possible using very few <code>.classes</code></p>
+            <p>But of course, <code>.classes</code> are not a bad practice at all.</p>
+            <p>Feel free to use <em>modifiers</em>.</p>
+            <div data-theme="valid">
+              <pre><code>&lt;<b>button</b> <i>class</i>=<u>"warning"</u>&gt;Action&lt;/<b>button</b>&gt;<br></code></pre>
+            </div>
+            <p>Just try to keep your HTML clean and semantic to keep the Pico spirit.</p>
+            <div data-theme="invalid">
+              <pre><code>&lt;<b>button</b> <i>class</i>=<u>"button-red margin-large padding-medium"</u>&gt;Action&lt;/<b>button</b>&gt;<br></code></pre>
+            </div>
+          </section><!-- ./ Love -->
+
+          <!-- Footer -->
+          <footer>
+            <hr>
+            <p><small>Code licensed <a href="https://github.com/picocss/pico/blob/master/LICENSE.md" class="secondary">MIT</a></small></p>
+          </footer><!-- ./ Footer -->
+
+        </div><!-- ./ Document -->
+
+    </main><!-- ./ Main -->
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/most-visible@1.5.0/dist/most-visible.min.js"></script>
+    <script src="js/pico.docs.min.js"></script>
+
+  </body>
+
+</html>

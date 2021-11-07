@@ -1,26 +1,25 @@
 /*
- * Grid
+ * Grid Interaction
  *
  * Pico.css - https://picocss.com
  * Copyright 2019-2021 - Licensed under MIT
  */
 
-const grid = {
-  
+export const grid = {
   // Config
   buttons: {
     text: {
       add: 'Add column',
       remove: 'Remove column',
     },
-    target: '#grid article',
+    target: '#grids article',
   },
   grid: {
     current: 4,
     min: 1,
     max: 12,
-    gridTarget: '#grid .grid',
-    codeTarget: '#grid pre code',
+    gridTarget: '#grids .grid',
+    codeTarget: '#grids pre code',
   },
 
   // Init
@@ -51,14 +50,22 @@ const grid = {
     document.querySelector(this.buttons.target).before(buttons);
 
     // Add button listener
-    document.querySelector('#grid button.add').addEventListener('click', () => {
-      this.addColumn();
-    }, false);
+    document.querySelector('#grids button.add').addEventListener(
+      'click',
+      function () {
+        this.addColumn();
+      }.bind(this),
+      false
+    );
 
     // Remove button listener
-    document.querySelector('#grid button.remove').addEventListener('click', () => {
-      this.removeColumn();
-    }, false);
+    document.querySelector('#grids button.remove').addEventListener(
+      'click',
+      function () {
+        this.removeColumn();
+      }.bind(this),
+      false
+    );
   },
 
   // Generate grid
@@ -96,5 +103,4 @@ const grid = {
   },
 };
 
-// Init
-grid.init();
+export default grid;
