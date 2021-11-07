@@ -61,9 +61,9 @@ ul {
   margin-top: 0;
   margin-bottom: var(--typography-spacing-vertical);
   color: var(--color);
-  font-size: var(--font-size);
-  font-weight: var(--font-weight);
   font-style: normal;
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
 }
 
 // Links
@@ -135,9 +135,9 @@ h6 {
   margin-top: 0;
   margin-bottom: var(--typography-spacing-vertical);
   color: var(--color);
-  font-family: var(--font-family);
-  font-size: var(--font-size);
   font-weight: var(--font-weight);
+  font-size: var(--font-size);
+  font-family: var(--font-family);
 }
 
 h1 {
@@ -191,8 +191,8 @@ hgroup {
   > *:last-child {
     --color: var(--muted-color);
     --font-weight: unset;
-    font-family: unset;
     font-size: 1rem;
+    font-family: unset;
   }
 }
 
@@ -211,8 +211,8 @@ ul,
 ol {
   padding-right: 0;
   padding-left: var(--spacing);
-  padding-inline-end: 0;
   padding-inline-start: var(--spacing);
+  padding-inline-end: 0;
 
   li {
     margin-bottom: calc(var(--typography-spacing-vertical) * 0.25);
@@ -238,8 +238,8 @@ blockquote {
   padding: var(--spacing);
   border-right: none;
   border-left: 0.25rem solid var(--blockquote-border-color);
-  border-inline-end: none;
   border-inline-start: 0.25rem solid var(--blockquote-border-color);
+  border-inline-end: none;
 
   footer {
     margin-top: calc(var(--typography-spacing-vertical) * 0.5);
