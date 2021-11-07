@@ -1,5 +1,6 @@
 /**
  * Accordion (<details>)
+ * Inspiration: https://codepen.io/koca/pen/RyeLLV
  */
 
 details {
@@ -41,8 +42,8 @@ details {
       transform: rotate(-90deg);
       background-image: var(--icon-chevron);
       background-position: center;
-      background-size: 1rem auto;
       background-repeat: no-repeat;
+      background-size: 1rem auto;
       content: "";
 
       @if $enable-transitions {

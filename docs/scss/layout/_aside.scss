@@ -3,11 +3,14 @@
  */
 
 main > aside {
-
   nav {
     width: 100%;
-    margin-bottom: calc(var(--block-spacing-vertical) * 2);
-  
+    margin-bottom: var(--block-spacing-vertical);
+
+    h1 {
+      margin-bottom: calc(var(--typography-spacing-vertical) / 2);
+    }
+
     @media (min-width: map-get($breakpoints, "lg")) {
       position: fixed;
       width: 200px;
@@ -15,58 +18,12 @@ main > aside {
       margin-bottom: 0;
       overflow-x: hidden;
       overflow-y: auto;
-    }
 
-    a#toggle-docs-navigation {
-      margin: 0;
-      margin-bottom: var(--spacing);
-      padding: 0;
-      padding-bottom: var(--spacing);
-      border-bottom: var(--border-width) solid var(--accordion-border-color);
-
-      svg {
-        margin-right: calc(var(--spacing) * 0.5);
-        vertical-align: -3px;
-      }
-
-      @media (min-width: map-get($breakpoints, "lg")) {
+      h1 {
         display: none;
-      }
-    }
-
-    &.closed-on-mobile {
-      margin-bottom: var(--block-spacing-vertical);
-
-      a#toggle-docs-navigation {
-        svg.collapse {
-          display: none;
-        }
-      }
-
-      details {
-        display: none;
-      } 
-
-      @media (min-width: map-get($breakpoints, "lg")) {
-        details {
-          display: block;
-        }
-
-        > a#toggle-docs-navigation {
-          display: none;
-        }
-      }
-    }
-
-    &.open {
-      a#toggle-docs-navigation {
-        svg.expand {
-          display: none;
-        }
       }
     }
   }
-  
 
   li,
   summary {
@@ -76,7 +33,7 @@ main > aside {
   }
 
   li a {
-    padding: 0.375rem 0.5rem;
+    padding: 0.25rem 0.5rem;
 
     svg {
       vertical-align: middle;
@@ -94,12 +51,13 @@ main > aside {
   }
 
   details {
+    padding-bottom: 0.25rem;
     border-bottom: none;
 
     summary {
       color: var(--h1-color);
-      font-weight: 300;
       font-size: 14px;
+      font-weight: 300;
       text-transform: uppercase;
 
       &::after {
@@ -108,12 +66,8 @@ main > aside {
     }
 
     &[open] {
-      > summary {
-        margin-bottom: calc(var(--spacing) * 0.75);
-
-        &:not(:focus) {
-          color: var(--h1-color);
-        }
+      > summary:not(:focus) {
+        color: var(--h1-color);
       }
     }
   }
