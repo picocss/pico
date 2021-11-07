@@ -123,32 +123,21 @@
 
   // Modal
   dialog > article {
-    
+
+    --block-spacing-vertical: calc(var(--spacing) * 2);
+    --block-spacing-horizontal: var(--spacing);
+
     @if map-get($breakpoints, "sm") {
       @media (min-width: map-get($breakpoints, "sm")) {
-        --block-spacing-vertical: calc(var(--spacing) * 1.5);
-        --block-spacing-horizontal: calc(var(--spacing) * 1.5);
+        --block-spacing-vertical: calc(var(--spacing) * 2.5);
+        --block-spacing-horizontal: calc(var(--spacing) * 1.25);
       }
     }
 
     @if map-get($breakpoints, "md") {
       @media (min-width: map-get($breakpoints, "md")) {
-        --block-spacing-vertical: calc(var(--spacing) * 2);
-        --block-spacing-horizontal: calc(var(--spacing) * 2);
-      }
-    }
-
-    @if map-get($breakpoints, "lg") {
-      @media (min-width: map-get($breakpoints, "lg")) {
-        --block-spacing-vertical: calc(var(--spacing) * 2.5);
-        --block-spacing-horizontal: calc(var(--spacing) * 2.5);
-      }
-    }
-
-    @if map-get($breakpoints, "xl") {
-      @media (min-width: map-get($breakpoints, "xl")) {
         --block-spacing-vertical: calc(var(--spacing) * 3);
-        --block-spacing-horizontal: calc(var(--spacing) * 3);
+        --block-spacing-horizontal: calc(var(--spacing) * 1.5);
       }
     }
   }
