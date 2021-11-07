@@ -253,26 +253,26 @@ textarea {
     &:active,
     &:focus {
       @if $enable-important {
-        --border-color: var(
-          --form-element-valid-active-border-color
-        ) !important;
+        --border-color: var(--form-element-valid-active-border-color) !important;
+        --box-shadow: 0 0 0 var(--outline-width) var(--form-element-valid-focus-color) !important;
       } @else {
         --border-color: var(--form-element-valid-active-border-color);
+        --box-shadow: 0 0 0 var(--outline-width) var(--form-element-valid-focus-color);
       }
     }
   }
 
   &[aria-invalid="true"] {
     --border-color: var(--form-element-invalid-border-color);
-
+    
     &:active,
     &:focus {
       @if $enable-important {
-        --border-color: var(
-          --form-element-invalid-active-border-color
-        ) !important;
+        --border-color: var(--form-element-invalid-active-border-color) !important;
+        --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color) !important;
       } @else {
         --border-color: var(--form-element-invalid-active-border-color);
+        --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color);
       }
     }
   }

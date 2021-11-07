@@ -66,9 +66,11 @@
   --form-element-disabled-border-color: #{$grey-300};
   --form-element-disabled-opacity: 0.5;
   --form-element-invalid-border-color: #{$red-800};
-  --form-element-invalid-active-border-color: #{$red-900};
+  --form-element-invalid-active-border-color: #{$red-700};
+  --form-element-invalid-focus-color: #{rgba($red-700, 0.125)};
   --form-element-valid-border-color: #{$green-700};
-  --form-element-valid-active-border-color: #{$green-800};
+  --form-element-valid-active-border-color: #{$green-600};
+  --form-element-valid-focus-color: #{rgba($green-600, 0.125)};
 
   // Switch (input[type="checkbox"][role="switch"])
   --switch-background-color: #{$grey-200};

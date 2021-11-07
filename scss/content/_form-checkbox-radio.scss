@@ -119,35 +119,21 @@
       margin-inline-end: 0;
     }
   }
+}
 
-  // Aria-invalid
+// Aria-invalid
+[type="checkbox"],
+[type="checkbox"]:checked,
+[type="radio"],
+[type="radio"]:checked,
+[type="checkbox"][role="switch"],
+[type="checkbox"][role="switch"]:checked {
+  
   &[aria-invalid="false"] {
     --border-color: var(--form-element-valid-border-color);
-
-    &:active,
-    &:focus {
-      @if $enable-important {
-        --border-color: var(
-          --form-element-valid-active-border-color
-        ) !important;
-      } @else {
-        --border-color: var(--form-element-valid-active-border-color);
-      }
-    }
   }
 
   &[aria-invalid="true"] {
     --border-color: var(--form-element-invalid-border-color);
-
-    &:active,
-    &:focus {
-      @if $enable-important {
-        --border-color: var(
-          --form-element-invalid-active-border-color
-        ) !important;
-      } @else {
-        --border-color: var(--form-element-invalid-active-border-color);
-      }
-    }
   }
 }

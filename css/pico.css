@@ -237,9 +237,11 @@ kbd {
   --form-element-disabled-border-color: #a2afb9;
   --form-element-disabled-opacity: 0.5;
   --form-element-invalid-border-color: #c62828;
-  --form-element-invalid-active-border-color: #b71c1c;
+  --form-element-invalid-active-border-color: #d32f2f;
+  --form-element-invalid-focus-color: rgba(211, 47, 47, 0.125);
   --form-element-valid-border-color: #388e3c;
-  --form-element-valid-active-border-color: #2e7d32;
+  --form-element-valid-active-border-color: #43a047;
+  --form-element-valid-focus-color: rgba(67, 160, 71, 0.125);
   --switch-background-color: #bbc6ce;
   --switch-color: var(--primary-inverse);
   --switch-checked-background-color: var(--primary);
@@ -330,8 +332,10 @@ kbd {
     --form-element-disabled-opacity: 0.5;
     --form-element-invalid-border-color: #b71c1c;
     --form-element-invalid-active-border-color: #c62828;
+    --form-element-invalid-focus-color: rgba(198, 40, 40, 0.25);
     --form-element-valid-border-color: #2e7d32;
     --form-element-valid-active-border-color: #388e3c;
+    --form-element-valid-focus-color: rgba(56, 142, 60, 0.25);
     --switch-background-color: #374956;
     --switch-color: var(--primary-inverse);
     --switch-checked-background-color: var(--primary);
@@ -422,8 +426,10 @@ kbd {
   --form-element-disabled-opacity: 0.5;
   --form-element-invalid-border-color: #b71c1c;
   --form-element-invalid-active-border-color: #c62828;
+  --form-element-invalid-focus-color: rgba(198, 40, 40, 0.25);
   --form-element-valid-border-color: #2e7d32;
   --form-element-valid-active-border-color: #388e3c;
+  --form-element-valid-focus-color: rgba(56, 142, 60, 0.25);
   --switch-background-color: #374956;
   --switch-color: var(--primary-inverse);
   --switch-checked-background-color: var(--primary);
@@ -1355,9 +1361,8 @@ select[aria-invalid=false]:active,
 select[aria-invalid=false]:focus,
 textarea[aria-invalid=false]:active,
 textarea[aria-invalid=false]:focus {
-  --border-color: var(
-    --form-element-valid-active-border-color
-  ) !important;
+  --border-color: var(--form-element-valid-active-border-color) !important;
+  --box-shadow: 0 0 0 var(--outline-width) var(--form-element-valid-focus-color) !important;
 }
 input[aria-invalid=true],
 select[aria-invalid=true],
@@ -1369,9 +1374,8 @@ select[aria-invalid=true]:active,
 select[aria-invalid=true]:focus,
 textarea[aria-invalid=true]:active,
 textarea[aria-invalid=true]:focus {
-  --border-color: var(
-    --form-element-invalid-active-border-color
-  ) !important;
+  --border-color: var(--form-element-invalid-active-border-color) !important;
+  --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color) !important;
 }
 
 [dir=rtl] input:not([type=checkbox]):not([type=radio])[aria-invalid], [dir=rtl] input:not([type=checkbox]):not([type=radio])[aria-invalid=true], [dir=rtl] input:not([type=checkbox]):not([type=radio])[aria-invalid=false],
@@ -1536,21 +1540,22 @@ label > input, label > select, label > textarea {
   -webkit-margin-end: 0;
   margin-inline-end: 0;
 }
-[type=checkbox][role=switch][aria-invalid=false] {
+
+[type=checkbox][aria-invalid=false],
+[type=checkbox]:checked[aria-invalid=false],
+[type=radio][aria-invalid=false],
+[type=radio]:checked[aria-invalid=false],
+[type=checkbox][role=switch][aria-invalid=false],
+[type=checkbox][role=switch]:checked[aria-invalid=false] {
   --border-color: var(--form-element-valid-border-color);
 }
-[type=checkbox][role=switch][aria-invalid=false]:active, [type=checkbox][role=switch][aria-invalid=false]:focus {
-  --border-color: var(
-    --form-element-valid-active-border-color
-  ) !important;
-}
-[type=checkbox][role=switch][aria-invalid=true] {
+[type=checkbox][aria-invalid=true],
+[type=checkbox]:checked[aria-invalid=true],
+[type=radio][aria-invalid=true],
+[type=radio]:checked[aria-invalid=true],
+[type=checkbox][role=switch][aria-invalid=true],
+[type=checkbox][role=switch]:checked[aria-invalid=true] {
   --border-color: var(--form-element-invalid-border-color);
-}
-[type=checkbox][role=switch][aria-invalid=true]:active, [type=checkbox][role=switch][aria-invalid=true]:focus {
-  --border-color: var(
-    --form-element-invalid-active-border-color
-  ) !important;
 }
 
 /**

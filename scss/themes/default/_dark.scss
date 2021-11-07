@@ -66,8 +66,10 @@
   --form-element-disabled-opacity: 0.5;
   --form-element-invalid-border-color: #{$red-900};
   --form-element-invalid-active-border-color: #{$red-800};
+  --form-element-invalid-focus-color: #{rgba($red-800, 0.25)};
   --form-element-valid-border-color: #{$green-800};
   --form-element-valid-active-border-color: #{$green-700};
+  --form-element-valid-focus-color: #{rgba($green-700, 0.25)};
 
   // Switch (input[type="checkbox"][role="switch"])
   --switch-background-color: #{mix($grey-800, $grey-700)};
