@@ -64,9 +64,24 @@
   &lt;/<b>article</b>&gt;
 &lt;/<b>dialog</b>&gt;</code></pre></footer></article><p>Pico does not include JavaScript code. You will need to implement your JS to interact with modals.</p><p>As a starting point, you can look at the JavaScript used in this documentation: <a href="https://github.com/picocss/pico/blob/dev/docs/js/modal.js">js/modal.js</a>.</p><p>To make a modal appear, add the <code><i>open</i></code> attribute to the <code>&lt;<b>dialog</b>&gt;</code> container.</p><pre><code><em>&lt;!-- Open modal--&gt;</em>
 &lt;<b>dialog</b> <i>open</i>&gt;
+  &lt;<b>article</b>&gt;
+  <em>…</em>
+  &lt;/<b>article</b>&gt;
 &lt;/<b>dialog</b>&gt;
 
 <em>&lt;!-- Modal closed --&gt;</em>
 &lt;<b>dialog</b>&gt;
+  &lt;<b>article</b>&gt;
+    <em>…</em>
+  &lt;/<b>article</b>&gt;
 &lt;/<b>dialog</b>&gt;
-</code></pre><h2>Utilities</h2><p>Modals come with 3 utility classes.</p><p><code>&lt;<b>html</b> <i>class</i>=<u>"modal-is-open"</u>&gt;</code> blurs the background and blocks any scrolling and interactions below the modal.</p><p><code>&lt;<b>html</b> <i>class</i>=<u>"modal-is-opening"</u>&gt;</code> brings an opening animation.</p><p><code>&lt;<b>html</b> <i>class</i>=<u>"modal-is-closing"</u>&gt;</code> brings a closing animation.</p></section><footer><hr><p><small>Code licensed <a href="https://github.com/picocss/pico/blob/master/LICENSE.md" class="secondary">MIT</a></small></p></footer></div></main><dialog id="modal-example"><article><a href="#close" aria-label="Close" class="close" data-target="modal-example" onclick="toggleModal(event)"></a><h3>Confirm your action!</h3><p>Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue finibus pellentesque. Nullam finibus risus non semper euismod.</p><footer><a href="#cancel" role="button" class="secondary" data-target="modal-example" onclick="toggleModal(event)">Cancel</a><a href="#confirm" role="button" data-target="modal-example" onclick="toggleModal(event)">Confirm</a></footer></article></dialog><script src="js/commons.min.js"></script><script src="js/modal.min.js"></script></body></html>
+</code></pre><h2>Utilities</h2><p>Modals come with 3 utility classes.</p><p><code>.modal-is-open</code> blurs the background and blocks any scrolling and interactions below the modal.</p><pre><code><em>&lt;!doctype html&gt;</em>
+&lt;<b>html</b> <i>class</i>=<u>"modal-is-open"</u>&gt;
+  <em>…</em>
+&lt;/<b>html</b>&gt;</code></pre><p><code>.modal-is-opening</code> brings an opening animation.</p><pre><code><em>&lt;!doctype html&gt;</em>
+&lt;<b>html</b> <i>class</i>=<u>"modal-is-open modal-is-opening"</u>&gt;
+  <em>…</em>
+&lt;/<b>html</b>&gt;</code></pre><p><code>.modal-is-closing</code> brings a closing animation.</p><pre><code><em>&lt;!doctype html&gt;</em>
+&lt;<b>html</b> <i>class</i>=<u>"modal-is-open modal-is-closing"</u>&gt;
+  <em>…</em>
+&lt;/<b>html</b>&gt;</code></pre></section><footer><hr><p><small>Code licensed <a href="https://github.com/picocss/pico/blob/master/LICENSE.md" class="secondary">MIT</a></small></p></footer></div></main><dialog id="modal-example"><article><a href="#close" aria-label="Close" class="close" data-target="modal-example" onclick="toggleModal(event)"></a><h3>Confirm your action!</h3><p>Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue finibus pellentesque. Nullam finibus risus non semper euismod.</p><footer><a href="#cancel" role="button" class="secondary" data-target="modal-example" onclick="toggleModal(event)">Cancel</a><a href="#confirm" role="button" data-target="modal-example" onclick="toggleModal(event)">Confirm</a></footer></article></dialog><script src="js/commons.min.js"></script><script src="js/modal.min.js"></script></body></html>

@@ -146,10 +146,16 @@
 
 <pre><code><em>&lt;!-- Open modal--&gt;</em>
 &lt;<b>dialog</b> <i>open</i>&gt;
+  &lt;<b>article</b>&gt;
+  <em>…</em>
+  &lt;/<b>article</b>&gt;
 &lt;/<b>dialog</b>&gt;
 
 <em>&lt;!-- Modal closed --&gt;</em>
 &lt;<b>dialog</b>&gt;
+  &lt;<b>article</b>&gt;
+    <em>…</em>
+  &lt;/<b>article</b>&gt;
 &lt;/<b>dialog</b>&gt;
 </code></pre>
 
@@ -157,11 +163,26 @@
 
           <p>Modals come with 3 utility classes.</p>
 
-          <p><code>&lt;<b>html</b> <i>class</i>=<u>"modal-is-open"</u>&gt;</code> blurs the background and blocks any scrolling and interactions below the modal.</p>
+          <p><code>.modal-is-open</code> blurs the background and blocks any scrolling and interactions below the modal.</p>
 
-          <p><code>&lt;<b>html</b> <i>class</i>=<u>"modal-is-opening"</u>&gt;</code> brings an opening animation.</p>
+<pre><code><em>&lt;!doctype html&gt;</em>
+&lt;<b>html</b> <i>class</i>=<u>"modal-is-open"</u>&gt;
+  <em>…</em>
+&lt;/<b>html</b>&gt;</code></pre>
 
-          <p><code>&lt;<b>html</b> <i>class</i>=<u>"modal-is-closing"</u>&gt;</code> brings a closing animation.</p>
+          <p><code>.modal-is-opening</code> brings an opening animation.</p>
+
+<pre><code><em>&lt;!doctype html&gt;</em>
+&lt;<b>html</b> <i>class</i>=<u>"modal-is-open modal-is-opening"</u>&gt;
+  <em>…</em>
+&lt;/<b>html</b>&gt;</code></pre>
+        
+          <p><code>.modal-is-closing</code> brings a closing animation.</p>
+
+<pre><code><em>&lt;!doctype html&gt;</em>
+&lt;<b>html</b> <i>class</i>=<u>"modal-is-open modal-is-closing"</u>&gt;
+  <em>…</em>
+&lt;/<b>html</b>&gt;</code></pre>
 
         </section>
 
