@@ -26,11 +26,9 @@ const isModalOpen = modal => {
 
 // Open modal
 const openModal = modal => {
-  setTimeout(() => {
-    visibleModal = modal;
-  }, 100);
   document.documentElement.classList.add(isOpenClass, openingClass);
   setTimeout(() => {
+    visibleModal = modal;
     document.documentElement.classList.remove(openingClass);
   }, 200);
   modal.setAttribute('open', true);
