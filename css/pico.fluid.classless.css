@@ -11,7 +11,7 @@
     "Segoe UI Symbol", "Noto Color Emoji";
   --line-height: 1.5;
   --font-weight: 400;
-  --font-size: 16px;
+  --font-size: 100%;
   --border-radius: 0.25rem;
   --border-width: 1px;
   --outline-width: 3px;
@@ -27,22 +27,22 @@
 }
 @media (min-width: 576px) {
   :root {
-    --font-size: 17px;
+    --font-size: 106.25%;
   }
 }
 @media (min-width: 768px) {
   :root {
-    --font-size: 18px;
+    --font-size: 112.5%;
   }
 }
 @media (min-width: 992px) {
   :root {
-    --font-size: 19px;
+    --font-size: 118.75%;
   }
 }
 @media (min-width: 1200px) {
   :root {
-    --font-size: 20px;
+    --font-size: 125%;
   }
 }
 
@@ -115,6 +115,10 @@ dialog > article {
     --block-spacing-vertical: calc(var(--spacing) * 3);
     --block-spacing-horizontal: calc(var(--spacing) * 1.5);
   }
+}
+
+body {
+  --font-size: 1rem;
 }
 
 a {

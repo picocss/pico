@@ -6,31 +6,31 @@
     "Segoe UI Symbol", "Noto Color Emoji";
   --line-height: 1.5;
   --font-weight: 400;
-  --font-size: 16px;
+  --font-size: 100%; // 16px in most cases
 
   // Responsive typography
   @if $enable-responsive-typography {
     @if map-get($breakpoints, "sm") {
       @media (min-width: map-get($breakpoints, "sm")) {
-        --font-size: 17px;
+        --font-size: 106.25%; // 17px in most cases
       }
     }
 
     @if map-get($breakpoints, "md") {
       @media (min-width: map-get($breakpoints, "md")) {
-        --font-size: 18px;
+        --font-size: 112.5%; // 18px in most cases
       }
     }
 
     @if map-get($breakpoints, "lg") {
       @media (min-width: map-get($breakpoints, "lg")) {
-        --font-size: 19px;
+        --font-size: 118.75%; // 19px in most cases
       }
     }
 
     @if map-get($breakpoints, "xl") {
       @media (min-width: map-get($breakpoints, "xl")) {
-        --font-size: 20px;
+        --font-size: 125%; // 20px in most cases
       }
     }
   }
@@ -141,6 +141,11 @@
       }
     }
   }
+}
+
+// Body
+body {
+  --font-size: 1rem;
 }
 
 // Link
