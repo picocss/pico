@@ -4,7 +4,7 @@
 
 .switcher {
   position: fixed;
-  right: calc(var(--spacing) / 2);
+  right: calc(var(--spacing) / 2 + var(--scrollbar-width, 0px));
   bottom: var(--spacing);
   width: auto;
   margin-bottom: 0;
@@ -66,6 +66,6 @@
   }
 
   @media (min-width: map-get($breakpoints, "sm")) {
-    right: var(--spacing);
+    right: calc(var(--spacing) + var(--scrollbar-width, 0px));
   }
 }

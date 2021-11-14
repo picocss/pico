@@ -2,6 +2,10 @@
  * Modal (<dialog>)
  */
 
+:root {
+  --scrollbar-width: 0px;
+}
+
 dialog {
   display: flex;
   z-index: 999;
@@ -22,21 +26,22 @@ dialog {
 
   // Content
   article {
-    @if map-get($breakpoints, "sm") {
-      @media (min-width: map-get($breakpoints, "sm")) {
-        max-width: map-get($viewports, "sm");
+    @if map-get($breakpoints, 'sm') {
+      @media (min-width: map-get($breakpoints, 'sm')) {
+        max-width: map-get($viewports, 'sm');
       }
     }
 
-    @if map-get($breakpoints, "md") {
-      @media (min-width: map-get($breakpoints, "md")) {
-        max-width: map-get($viewports, "md");
+    @if map-get($breakpoints, 'md') {
+      @media (min-width: map-get($breakpoints, 'md')) {
+        max-width: map-get($viewports, 'md');
       }
     }
 
     > header,
     > footer {
-      padding: calc(var(--block-spacing-vertical) * 0.5) var(--block-spacing-horizontal);
+      padding: calc(var(--block-spacing-vertical) * 0.5)
+        var(--block-spacing-horizontal);
     }
 
     > header {
@@ -50,9 +55,9 @@ dialog {
     > footer {
       text-align: right;
 
-      [role="button"] {
+      [role='button'] {
         margin-bottom: 0;
-        
+
         &:not(:first-of-type) {
           margin-left: calc(var(--spacing) * 0.5);
         }
@@ -77,12 +82,12 @@ dialog {
       background-position: center;
       background-size: auto 1rem;
       background-repeat: no-repeat;
-      opacity: .5;
-  
+      opacity: 0.5;
+
       @if $enable-transitions {
         transition: opacity var(--transition);
       }
-      
+
       &:hover,
       &:active,
       &:focus {
@@ -93,19 +98,16 @@ dialog {
 
   // Closed state
   &:not([open]),
-  &[open="false"]  {
+  &[open='false'] {
     display: none;
   }
 }
 
 // Utilities
 .modal-is-open {
+  padding-right: var(--scrollbar-width, 0px);
   overflow: hidden;
   pointer-events: none;
-
-  body > *:not(dialog) {
-    filter: blur(0.1875rem);
-  }
 
   dialog {
     pointer-events: auto;
@@ -114,45 +116,33 @@ dialog {
 
 // Animations
 @if $enable-transitions {
-  $animation-duration: .2s;
-  
+  $animation-duration: 0.2s;
+
   .modal-is-opening,
   .modal-is-closing {
-    
-    body > *:not(dialog),
     dialog,
     dialog > article {
       animation-duration: $animation-duration;
-      animation-fill-mode: both;  
-    }
-
-    body > *:not(dialog) {
-      animation-name: blurIn;
+      animation-timing-function: ease-in-out;
+      animation-fill-mode: both;
     }
 
     dialog {
+      animation-duration: ($animation-duration * 4);
       animation-name: fadeIn;
-  
+
       > article {
+        animation-delay: $animation-duration;
         animation-name: slideInDown;
       }
     }
   }
 
   .modal-is-closing {
-    body > *:not(dialog),
     dialog,
     dialog > article {
+      animation-delay: 0s;
       animation-direction: reverse;
-    }
-  }
-
-  @keyframes blurIn {
-    from {
-      filter: blur(0);
-    }
-    to {
-      filter: blur(0.1875rem);
     }
   }
 
@@ -164,7 +154,7 @@ dialog {
       background-color: var(--modal-overlay-background-color);
     }
   }
-  
+
   @keyframes slideInDown {
     from {
       transform: translateY(-100%);

@@ -1855,6 +1855,10 @@ article > footer {
 /**
  * Modal (<dialog>)
  */
+:root {
+  --scrollbar-width: 0px;
+}
+
 dialog {
   display: flex;
   z-index: 999;
@@ -1926,66 +1930,47 @@ dialog:not([open]), dialog[open=false] {
 }
 
 .modal-is-open {
+  padding-right: var(--scrollbar-width, 0px);
   overflow: hidden;
   pointer-events: none;
-}
-.modal-is-open body > *:not(dialog) {
-  filter: blur(0.1875rem);
 }
 .modal-is-open dialog {
   pointer-events: auto;
 }
 
-.modal-is-opening body > *:not(dialog),
 .modal-is-opening dialog,
 .modal-is-opening dialog > article,
-.modal-is-closing body > *:not(dialog),
 .modal-is-closing dialog,
 .modal-is-closing dialog > article {
   -webkit-animation-duration: 0.2s;
   animation-duration: 0.2s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-.modal-is-opening body > *:not(dialog),
-.modal-is-closing body > *:not(dialog) {
-  -webkit-animation-name: blurIn;
-  animation-name: blurIn;
-}
 .modal-is-opening dialog,
 .modal-is-closing dialog {
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
 .modal-is-opening dialog > article,
 .modal-is-closing dialog > article {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
   -webkit-animation-name: slideInDown;
   animation-name: slideInDown;
 }
 
-.modal-is-closing body > *:not(dialog),
 .modal-is-closing dialog,
 .modal-is-closing dialog > article {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
   animation-direction: reverse;
 }
 
-@-webkit-keyframes blurIn {
-  from {
-    filter: blur(0);
-  }
-  to {
-    filter: blur(0.1875rem);
-  }
-}
-
-@keyframes blurIn {
-  from {
-    filter: blur(0);
-  }
-  to {
-    filter: blur(0.1875rem);
-  }
-}
 @-webkit-keyframes fadeIn {
   from {
     background-color: transparent;
@@ -1994,6 +1979,7 @@ dialog:not([open]), dialog[open=false] {
     background-color: var(--modal-overlay-background-color);
   }
 }
+
 @keyframes fadeIn {
   from {
     background-color: transparent;
