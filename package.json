@@ -27,7 +27,7 @@
     "url": "https://github.com/picocss/pico/issues"
   },
   "scripts": {
-    "watch": "npm-run-all --parallel watch:pico watch:docs:scss watch:docs:html watch:docs:js --silent ",
+    "watch": "npm-run-all --parallel watch:pico watch:docs:scss watch:docs:html watch:docs:js --silent",
     "build": "npm-run-all scss:sorter:pico build:pico scss:sorter:docs build:docs:css build:docs:js build:docs:html --silent",
     
     "build:docs": "npm-run-all --parallel build:docs:css build:docs:js build:docs:html --silent",
@@ -38,10 +38,8 @@
     
     "css:compile:docs": "sass --style expanded --source-map --embed-sources --no-error-css docs/scss/:docs/css/",
     "css:compile:pico": "sass --style expanded --source-map --embed-sources --no-error-css scss/:css/",
-    
     "css:minify:docs": "cleancss -O1 --with-rebase --source-map --source-map-inline-sources --batch --batch-suffix .min docs/css/*.css !docs/css/*.min.css",
     "css:minify:pico": "cleancss -O1 --with-rebase --source-map --source-map-inline-sources --batch --batch-suffix .min css/*.css css/*/*.css !css/*.min.css !css/*/*.min.css",
-    
     "css:prefix:docs": "postcss --config css --replace docs/css/*.css !docs/css/*.min.css",
     "css:prefix:pico": "postcss --config css --replace css/*.css css/*/*.css !css/*.min.css",
     
@@ -51,19 +49,15 @@
     "js:babel:docs:customization": "babel docs/js/customization.min.js --out-dir docs/js/ --presets=@babel/preset-env --quiet",
     "js:babel:docs:grid": "babel docs/js/grid.js --out-file docs/js/grid.min.js --presets=@babel/preset-env --quiet",
     "js:babel:docs:modal": "babel docs/js/modal.js --out-file docs/js/modal.min.js --presets=@babel/preset-env --quiet",
-    
     "js:bundle:docs:commons": "rollup docs/js/commons.js --file docs/js/commons.min.js --format iife --silent",
     "js:bundle:docs:customization": "rollup docs/js/customization.js --file docs/js/customization.min.js --format iife --silent",
-    
     "js:minify:docs:commons": "uglifyjs docs/js/commons.min.js --compress --mangle --output docs/js/commons.min.js",
     "js:minify:docs:customization": "uglifyjs docs/js/customization.min.js --compress --mangle --output docs/js/customization.min.js",
     "js:minify:docs:grid": "uglifyjs docs/js/grid.min.js --compress --mangle --output docs/js/grid.min.js",
     "js:minify:docs:modal": "uglifyjs docs/js/modal.min.js --compress --mangle --output docs/js/modal.min.js",
     
-    "postbuild:docs:css": "echo '\\033[32m[@picocss/pico] Documentation .css build done\\033[0m'",
-    "postbuild:docs:html": "echo '\\033[32m[@picocss/pico] Documentation pages done\\033[0m'",
-    "postbuild:docs:js": "echo '\\033[32m[@picocss/pico] Documentation .js build done\\033[0m'",
-    "postbuild:pico": "echo '\\033[32m[@picocss/pico] Pico library build done\\033[0m'",
+    "scss:sorter:docs": "postcss --config scss ./docs/scss/**/*.scss --replace",
+    "scss:sorter:pico": "postcss --config scss ./scss/**/*.scss --replace",
     
     "prebuild:docs:html": "echo '[@picocss/pico] Create documentation pages'",
     "prebuild:docs:js": "echo '[@picocss/pico] Bundle and minify documentation .js files'",
@@ -74,8 +68,10 @@
     "prescss:sorter:docs": "echo '[@picocss/pico] Order documentation .scss properties'",
     "prescss:sorter:pico": "echo '[@picocss/pico] Order Pico .scss properties'",
     
-    "scss:sorter:docs": "postcss --config scss ./docs/scss/**/*.scss --replace",
-    "scss:sorter:pico": "postcss --config scss ./scss/**/*.scss --replace",
+    "postbuild:docs:css": "echo '\\033[32m[@picocss/pico] Documentation .css build done\\033[0m'",
+    "postbuild:docs:html": "echo '\\033[32m[@picocss/pico] Documentation pages done\\033[0m'",
+    "postbuild:docs:js": "echo '\\033[32m[@picocss/pico] Documentation .js build done\\033[0m'",
+    "postbuild:pico": "echo '\\033[32m[@picocss/pico] Pico library build done\\033[0m'",
     
     "watch:docs:html": "nodemon --watch docs/src/ --ext html --exec 'npm run build:docs:html'",
     "watch:docs:js": "nodemon --watch docs/js/ --ext js --ignore *.min.js --exec 'npm run build:docs:js'",
@@ -84,20 +80,20 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
-    "@babel/core": "^7.16.0",
-    "@babel/preset-env": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
     "autoprefixer": "^10.4.0",
-    "clean-css-cli": "^5.4.2",
+    "clean-css-cli": "^5.5.0",
     "css-declaration-sorter": "^6.1.3",
     "html-includes": "^4.4.1",
-    "nodemon": "^2.0.14",
+    "nodemon": "^2.0.15",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.3.11",
-    "postcss-cli": "^9.0.1",
+    "postcss": "^8.4.5",
+    "postcss-cli": "^9.1.0",
     "postcss-scss": "^4.0.2",
-    "rollup": "^2.59.0",
-    "sass": "^1.43.4",
-    "uglify-js": "^3.14.2"
+    "rollup": "^2.61.1",
+    "sass": "^1.45.0",
+    "uglify-js": "^3.14.5"
   },
   "browserslist": [
     ">= 0.5%",
