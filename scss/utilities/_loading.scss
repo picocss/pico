@@ -18,10 +18,10 @@
     border: 0.1875em solid currentColor;
     border-radius: 1em;
     border-right-color: transparent;
-    content: '';
     vertical-align: text-bottom;
     vertical-align: -.125em; // Visual alignment
     animation: spinner 0.75s linear infinite;
+    content: '';
     opacity: var(--loading-spinner-opacity);
   }
 
@@ -29,8 +29,8 @@
     &::before {
       margin-right: calc(var(--spacing) * 0.5);
       margin-left: 0;
-      margin-inline-start: 0;
       margin-inline-end: calc(var(--spacing) * 0.5);
+      margin-inline-start: 0;
     }
   }
 

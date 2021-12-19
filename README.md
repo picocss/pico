@@ -168,7 +168,7 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 
 - [`dev`](https://github.com/picocss/pico/tree/dev) branch is open to pull requests.
 - Do not edit [`/css`](https://github.com/picocss/pico/tree/master/css) files directly.
-- Edit the source files in [`/scss`](https://github.com/picocss/pico/tree/master/scss), then recompile the [`/css`](https://github.com/picocss/pico/tree/master/css) files with `npm run build`.
+- Edit the source files in [`/scss`](https://github.com/picocss/pico/tree/master/scss), then recompile the [`/css`](https://github.com/picocss/pico/tree/master/css) files with `npm run build:css`.
 
 ## Copyright and license
 
@@ -178,6 +178,7 @@ Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LIC
 
 Website and docs:
 - [TypeIt](https://typeitjs.com/): JavaScript animated typing utility (Licensed [GPL-3.0](https://github.com/alexmacarthur/typeit/blob/master/LICENSE))
+- [Most Visible](https://github.com/andyexeter/most-visible): JavaScript module which returns the most visible element (Licensed [MIT](https://github.com/andyexeter/most-visible/blob/master/LICENSE))
 - [Font Awesome](https://fontawesome.com/): Icons (Licensed [CC BY 4.0](https://fontawesome.com/license/free))
 
 Pico Library:

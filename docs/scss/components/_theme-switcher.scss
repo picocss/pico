@@ -26,8 +26,8 @@
       currentColor 50%,
       transparent 50%
     );
-    content: "";
     vertical-align: bottom;
+    content: "";
     transition: transform var(--transition);
   }
 
@@ -36,8 +36,8 @@
     max-width: 0;
     padding: 0;
     overflow: hidden;
-    font-style: normal;
     font-size: 0.875rem;
+    font-style: normal;
     white-space: nowrap;
   }
 
