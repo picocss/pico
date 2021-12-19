@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    ${require('./_head.html') 
+      title="Documentation" 
+      description="Pico works without package manager or dependencies! There are 3 ways to get started with pico.css: manually, from a CDN, with NPM."
+      canonical=""
+    }
+  </head>
+
+  <body>
+    ${require('./_nav.html')}
+    
+    <main class="container" id="docs">
+      ${require('./_sidebar.html') active="start-link"}
+      
+      <div role="document">
+        <section id="start">
+          <hgroup>
+            <h1>Usage</h1>
+            <h2>Works without package manager or dependencies 🙂!</h2>
+          </hgroup>
+          <p>There are 3 ways to get started with pico.css:</p>
+          <h3>Install manually</h3>
+          <p><a href="https://github.com/picocss/pico/archive/refs/heads/master.zip">Download Pico</a> and link <code>/css/pico.min.css</code> in the <code>&lt;<b>head</b>&gt;</code> of your website.</p>
+          <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"css/pico.min.css"</u>&gt;</code></pre>
+          <h3>Install from CDN</h3>
+          <p>Alternatively, you can use <a href="https://unpkg.com/@picocss/pico@latest/">unpkg CDN</a> to link pico.css</p>
+          <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@picocss/pico@latest/css/pico.min.css"</u>&gt;</code></pre>
+          <h3>Install with NPM</h3>
+          <pre><code><b>npm</b> <i>install</i> <u>@picocss/pico</u></code></pre>
+          <p>Starter HTML template:</p>
+
+<pre><code><em>&lt;!doctype html&gt;</em>
+&lt;<b>html</b> <i>lang</i>=<u>"en"</u>&gt;
+  &lt;<b>head</b>&gt;
+    &lt;<b>meta</b> <i>charset</i>=<u>"utf-8"</u>&gt;
+    &lt;<b>meta</b> <i>name</i>=<u>"viewport"</u> <i>content</i>=<u>"width=device-width, initial-scale=1"</u>&gt;
+    &lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"css/pico.min.css"</u>&gt;
+    &lt;<b>title</b>>Hello, world!&lt;/<b>title</b>&gt;
+  &lt;/<b>head</b>&gt;
+  &lt;<b>body</b>&gt;
+    &lt;<b>main</b> <i>class</i>=<u>"container"</u>&gt;
+      &lt;<b>h1</b>&gt;Hello, world!&lt;/<b>h1</b>&gt;
+    &lt;/<b>main</b>&gt;
+  &lt;/<b>body</b>&gt;
+&lt;/<b>html</b>&gt;</code></pre>
+
+        </section>
+
+        ${require('./_footer.html')}
+
+      </div>
+    </main>
+    <script src="js/commons.min.js"></script>
+  </body>
+</html>

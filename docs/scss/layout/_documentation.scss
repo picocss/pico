@@ -4,8 +4,14 @@
 
 // Docs: Themes
 #themes {
-  button i {
-    font-style: normal;
+  button.theme-switcher {
+    &:first-of-type {
+      --font-weight: bold;
+    }
+    
+    i {
+      font-style: normal;
+    }
   }
 }
 
@@ -13,14 +19,14 @@
 #customization {
   figure {
     display: grid;
-    grid-template-columns: repeat(9, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(9, 1fr);
     margin-bottom: 0;
     overflow: hidden;
 
     @media (min-width: map-get($breakpoints, "sm")) {
-      grid-template-columns: repeat(18, 1fr);
       grid-template-rows: 1fr;
+      grid-template-columns: repeat(18, 1fr);
       border-top-right-radius: var(--border-radius);
       border-top-left-radius: var(--border-radius);
     }
@@ -45,8 +51,8 @@
       &.picked {
         background-image: var(--icon-check);
         background-position: center;
-        background-repeat: no-repeat;
         background-size: 0.66rem auto;
+        background-repeat: no-repeat;
         box-shadow: inset 0 0 1rem 0 rgba(0, 0, 0, 0.25);
       }
       &[data-color="lime"],
@@ -68,8 +74,8 @@
   }
 }
 
-// Docs: Grids
-#grids {
+// Docs: Grid
+#grid {
   --grid-spacing-vertical: 1rem;
 
   button {
@@ -114,4 +120,11 @@
 // Docs: Forms
 #forms div.grid {
   grid-row-gap: 0;
+}
+
+// Docs: Modal
+#modal {
+  button {
+    --font-weight: bold;
+  }
 }

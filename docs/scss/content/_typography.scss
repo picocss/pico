@@ -2,6 +2,10 @@
  * Docs: Typography
  */
 
+h1 {
+  margin-top: -0.25em;
+}
+
 section > hgroup {
   margin-bottom: calc(var(--typography-spacing-vertical) * 2);
 }
