@@ -12,7 +12,7 @@ body > main {
   @if map-get($breakpoints, "lg") {
     @media (min-width: map-get($breakpoints, "lg")) {
       --block-spacing-horizontal: calc(var(--spacing) * 1.75);
-      grid-column-gap: calc(var(--block-spacing-horizontal) * 4);
+      grid-column-gap: calc(var(--block-spacing-horizontal) * 3);
       display: grid;
       grid-template-columns: 200px auto;
     }
@@ -30,42 +30,6 @@ body > main {
   }
 }
 
-// Anchors hacks for internal links
-div[role="document"] > section::before {
-  display: block;
-  height: calc(2rem + #{$navHeight} - 0.5rem);
-  margin-top: calc(-2rem - #{$navHeight} + 0.5rem);
-  content: "";
-
-  @if map-get($breakpoints, "sm") {
-    @media (min-width: map-get($breakpoints, "sm")) {
-      height: calc(2.5rem + #{$navHeight} - 0.5rem);
-      height: calc(-2.5rem - #{$navHeight} + 0.5rem);
-    }
-  }
-
-  @if map-get($breakpoints, "md") {
-    @media (min-width: map-get($breakpoints, "md")) {
-      height: calc(3rem + #{$navHeight} - 0.5rem);
-      margin-top: calc(-3rem - #{$navHeight} + 0.5rem);
-    }
-  }
-
-  @if map-get($breakpoints, "lg") {
-    @media (min-width: map-get($breakpoints, "lg")) {
-      height: calc(3.5rem + #{$navHeight} - 0.5rem);
-      margin-top: calc(-3.5rem - #{$navHeight} + 0.5rem);
-    }
-  }
-
-  @if map-get($breakpoints, "xl") {
-    @media (min-width: map-get($breakpoints, "xl")) {
-      height: calc(4rem + #{$navHeight} - 0.5rem);
-      margin-top: calc(-4rem - #{$navHeight} + 0.5rem);
-    }
-  }
-}
-
 // External links
 div[role="document"] section a[href*="//"]:not([href*="https://picocss.com"]):not([role])::after
 {
@@ -74,8 +38,8 @@ div[role="document"] section a[href*="//"]:not([href*="https://picocss.com"]):no
   height: 1rem;
   background-image: var(--icon-external);
   background-position: top center;
-  background-repeat: no-repeat;
   background-size: 0.66rem auto;
+  background-repeat: no-repeat;
   content: "";
 }
 

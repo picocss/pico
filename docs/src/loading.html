@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    ${require('./_head.html') 
+      title="Loading" 
+      description="aria-busy='true' enable a loading indicator."
+      canonical="loading.html"
+    }
+  </head>
+
+  <body>
+    ${require('./_nav.html')}
+    
+    <main class="container" id="docs">
+      ${require('./_sidebar.html') active="loading-link"}
+      
+      <div role="document">
+        <section id="loading">
+          <hgroup>
+            <h1>Loading</h1>
+            <h2><code><i>aria-busy</i>=<u>"true"</u></code> enable a loading indicator.</h2>
+          </hgroup>
+          <article aria-label="Loading buttons example">
+            <button aria-busy="true">Please wait…</button>
+            <button aria-busy="true" class="secondary"></button>
+            <footer class="code">
+
+<pre><code>&lt;<b>button</b> <i>aria-busy</i>=<u>"true"</u>&gt;Please wait…&lt;/<b>button</b>&gt;
+&lt;<b>button</b> <i>aria-busy</i>=<u>"true"</u> <i>class</i>=<u>"secondary"</u>&gt;&lt;/<b>button</b>&gt;</code></pre>
+
+            </footer>
+          </article>
+          <p>It can be applied to any block:</p>
+          <article aria-busy="true"></article>
+          <pre><code>&lt;<b>article</b> <i>aria-busy</i>=<u>"true"</u>&gt;&lt;/<b>article</b>&gt;</code></pre>
+          <p>Or any text element:</p>
+          <article aria-label="Loading paragraph example">
+            <a href="#" aria-busy="true" onclick="event.preventDefault()">Generating link, please wait…</a>
+            <footer class="code">
+              <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>aria-busy</i>=<u>"true"</u>&gt;Generating link, please wait…&lt;/<b>a</b>&gt;</code></pre>
+            </footer>
+          </article>
+        </section>
+
+        ${require('./_footer.html')}
+        
+      </div>
+    </main>
+    <script src="js/commons.min.js"></script>
+  </body>
+</html>

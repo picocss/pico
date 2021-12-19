@@ -13,8 +13,8 @@
   margin-top: -0.125em;
   margin-right: 0.375em;
   margin-left: 0;
-  margin-inline-end: 0.375em;
   margin-inline-start: 0;
+  margin-inline-end: 0.375em;
   border-width: var(--border-width);
   vertical-align: middle;
   cursor: pointer;
@@ -30,8 +30,8 @@
     --border-color: var(--primary);
     background-image: var(--icon-checkbox);
     background-position: center;
-    background-repeat: no-repeat;
     background-size: 0.75em auto;
+    background-repeat: no-repeat;
   }
 
   & ~ label {
@@ -49,8 +49,8 @@
     --border-color: var(--primary);
     background-image: var(--icon-minus);
     background-position: center;
-    background-repeat: no-repeat;
     background-size: 0.75em auto;
+    background-repeat: no-repeat;
   }
 }
 
@@ -115,8 +115,8 @@
     &::before {
       margin-right: 0;
       margin-left: calc(#{$switch-width * 0.5} - var(--border-width));
-      margin-inline-end: 0;
       margin-inline-start: calc(#{$switch-width * 0.5} - var(--border-width));
+      margin-inline-end: 0;
     }
   }
 }
