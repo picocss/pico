@@ -126,10 +126,12 @@
 a {
   --text-decoration: none;
 
-  // Secondary & Contrast
-  &.secondary,
-  &.contrast {
-    --text-decoration: underline;
+  @if $enable-classes {
+    // Secondary & Contrast
+    &.secondary,
+    &.contrast {
+      --text-decoration: underline;
+    }
   }
 }
 

@@ -103,9 +103,6 @@ section {
 a {
   --text-decoration: none;
 }
-a.secondary, a.contrast {
-  --text-decoration: underline;
-}
 
 small {
   --font-size: 0.875em;
