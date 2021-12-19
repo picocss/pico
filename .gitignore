@@ -1,5 +1,5 @@
 node_modules/
-*.DS_Store
-.prettierrc.js
-TODO.md
 tests/
+.nvmrc
+.prettierrc.js
+*.DS_Store

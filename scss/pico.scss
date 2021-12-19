@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.4.1 (https://picocss.com)
+ * Pico.css v1.4.2 (https://picocss.com)
  * Copyright 2019-2021 - Licensed under MIT
  */
 
@@ -31,6 +31,7 @@
 // Components
 @import "components/accordion"; // details, summary
 @import "components/card"; // article
+@import "components/modal"; // dialog
 @import "components/nav"; // nav
 @import "components/progress"; // progress
 

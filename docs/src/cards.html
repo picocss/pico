@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    ${require('./_head.html') 
+      title="Cards" 
+      description="A flexible container with graceful spacings across devices and viewports."
+      canonical="cards.html"
+    }
+  </head>
+
+  <body>
+    ${require('./_nav.html')}
+    
+    <main class="container" id="docs">
+      ${require('./_sidebar.html') active="cards-link"}
+      
+      <div role="document">
+        <section id="cards">
+          <hgroup>
+            <h1>Cards</h1>
+            <h2>A flexible container with graceful spacings across devices and viewports.</h2>
+          </hgroup>
+          <article aria-label="Card example">
+            I'm a card!
+          </article>
+          <pre><code>&lt;<b>article</b>&gt;I'm a card!&lt;/<b>article</b>&gt;</code></pre>
+          <p>You can use <code>&lt;<b>header</b>&gt;</code> and footer <code>&lt;<b>footer</b>&gt;</code> inside <code>&lt;<b>article</b>&gt;</code></p>
+          <article aria-label="Card sectioning example">
+            <header>Header</header>
+            Body
+            <footer>Footer</footer>
+          </article>
+
+<pre><code>&lt;<b>article</b>&gt;
+  &lt;<b>header</b>&gt;Header&lt;/<b>header</b>&gt;
+  Body
+  &lt;<b>footer</b>&gt;Footer&lt;/<b>footer</b>&gt;
+&lt;/<b>article</b>&gt;</code></pre>
+
+        </section>
+
+        ${require('./_footer.html')}
+        
+      </div>
+    </main>
+    <script src="js/commons.min.js"></script>
+  </body>
+</html>

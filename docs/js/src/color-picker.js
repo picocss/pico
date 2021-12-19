@@ -6,6 +6,7 @@
  */
 
 export const colorPicker = {
+  
   // Config
   colors: null,
   buttonsTarget: '#customization article[data-theme="generated"]',
@@ -30,12 +31,7 @@ export const colorPicker = {
     // Loop colors
     for (const color in this.colors) {
       // Buttons
-      innerButtons +=
-        '<button data-color="' +
-        color +
-        '" aria-label="Activate ' +
-        color +
-        ' theme"></button>';
+      innerButtons += `<button data-color="${color}" aria-label="Activate ${color} theme"></button>`;
 
       // Styles
       innerStyles += `
@@ -61,19 +57,13 @@ export const colorPicker = {
 
     // Buttons listeners
     this.buttons = document.querySelectorAll(this.selectorButton);
-    this.buttons.forEach(
-      function (button) {
-        button.addEventListener(
-          'click',
-          function (event) {
-            let color = event.target.getAttribute('data-color');
-            this.setActiveButton(color);
-            this.generateTheme(color);
-          }.bind(this),
-          false
-        );
-      }.bind(this)
-    );
+    this.buttons.forEach( button => { 
+      button.addEventListener('click', event => {
+        let color = event.target.getAttribute('data-color');
+        this.setActiveButton(color);
+        this.generateTheme(color);
+      }, false);
+    });
 
     // Insert CSS Styles
     let containerStyles = document.createElement('STYLE');
@@ -86,16 +76,12 @@ export const colorPicker = {
   // Set active button
   setActiveButton(color) {
     // Remove all active states
-    this.buttons.forEach(
-      function (button) {
-        button.removeAttribute('class');
-      }.bind(this)
-    );
+    this.buttons.forEach( button => {
+      button.removeAttribute('class');
+    });
 
     // Set active state
-    let buttonPicked = document.querySelector(
-      this.selectorButton + '[data-color="' + color + '"]'
-    );
+    let buttonPicked = document.querySelector(this.selectorButton + '[data-color="' + color + '"]');
     buttonPicked.setAttribute('class', 'picked');
   },
 
@@ -115,18 +101,12 @@ export const colorPicker = {
       '.inverse': data['inverse'],
     };
 
-    Object.keys(swaps).forEach(
-      function (swap) {
-        let targets = document.querySelectorAll(
-          this.selectorSection + ' ' + swap
-        );
-        targets.forEach(
-          function (target) {
-            target.innerHTML = swaps[swap];
-          }.bind(this)
-        );
-      }.bind(this)
-    );
+    Object.keys(swaps).forEach( swap => {
+      let targets = document.querySelectorAll(this.selectorSection + ' ' + swap);
+      targets.forEach( target => {
+        target.innerHTML = swaps[swap];
+      });
+    });
 
     // 2. Update CSS Styles
     const innerStyles = `

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    ${require('./_head.html') 
+      title="Progress" 
+      description="Progress bar element in pure HTML, without JavaScript."
+      canonical="progress.html"
+    }
+  </head>
+
+  <body>
+    ${require('./_nav.html')}
+    
+    <main class="container" id="docs">
+      ${require('./_sidebar.html') active="progress-link"}
+      
+      <div role="document">
+        <section id="progress">
+          <hgroup>
+            <h1>Progress</h1>
+            <h2>Progress bar element in pure HTML, without JavaScript.</h2>
+          </hgroup>
+          <article aria-label="Progress bar example">
+            <progress value="25" max="100"></progress>
+            <footer class="code">
+
+<pre><code>&lt;<b>progress</b> <i>value</i>=<u>"25</u>" <i>max</i>=<u>"100"</u>&gt;&lt;/<b>progress</b>&gt;</code></pre>
+
+            </footer>
+          </article>
+          <p>You can change a progress bar to an indeterminate state by setting the <code><i>indeterminate</i></code> property to <code><u>true</u></code></p>
+          <article aria-label="Indeterminate progress bar example">
+            <progress id="indeterminate-progress"></progress>
+            <script>document.getElementById('indeterminate-progress').indeterminate = true;</script>
+            <footer class="code">
+
+<pre><code>&lt;<b>script</b>&gt;
+  <i>document</i>.<b>getElementById</b>(<u>'indeterminate-progress'</u>).<i>indeterminate</i> = <u>true</u>;
+&lt;/<b>script</b>&gt;</code></pre>
+
+            </footer>
+          </article>
+        </section>
+
+        ${require('./_footer.html')}
+        
+      </div>
+    </main>
+    <script src="js/commons.min.js"></script>
+  </body>
+</html>
