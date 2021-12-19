@@ -114,17 +114,29 @@
                 <input type="radio" id="large" name="size" value="large">
                 Large
               </label>
+              <label for="extralarge">
+                <input type="radio" id="extralarge" name="size" value="extralarge" disabled>
+                Extra Large
+              </label>
             </fieldset>
             <fieldset>
               <label for="terms">
                 <input type="checkbox" id="terms" name="terms">
                 I agree to the Terms and Conditions
               </label>
+              <label for="terms_sharing">
+                <input type="checkbox" id="terms_sharing" name="terms_sharing" disabled checked>
+                I agree to share my information with partners
+              </label>
             </fieldset>
             <fieldset>
               <label for="switch">
                 <input type="checkbox" id="switch" name="switch" role="switch">
                 Publish on my profile
+              </label>
+              <label for="switch_disabled">
+                <input type="checkbox" id="switch_disabled" name="switch_disabled" role="switch" disabled checked>
+                Publish on my profile my accomplishments
               </label>
             </fieldset>
             <footer class="code">
@@ -151,21 +163,34 @@
     &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"large"</u> <i>name</i>=<u>"size"</u> <i>value</i>=<u>"large"</u>&gt;
     Large
   &lt;/<b>label</b>&gt;
+  &lt;/<b>label</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"extralarge"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"extralarge"</u> <i>name</i>=<u>"size"</u> <i>value</i>=<u>"extralarge"</u> <i>disabled</i>&gt;
+    Extra Large
+  &lt;/<b>label</b>&gt;
 &lt;/<b>fieldset</b>&gt;
 
-<em>&lt;!-- Checkbox --&gt;</em>
+<em>&lt;!-- Checkbox(es) --&gt;</em>
 &lt;<b>fieldset</b>&gt;
   &lt;<b>label</b> <i>for</i>=<u>"terms"</u>&gt;
     &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u> <i>id</i>=<u>"terms"</u> <i>name</i>=<u>"terms"</u>&gt;
     I agree to the Terms and Conditions
   &lt;/<b>label</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"terms_sharing"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u> <i>id</i>=<u>"terms_sharing"</u> <i>name</i>=<u>"terms_sharing"</u> <i>disabled checked</i>&gt;
+    I agree to share my information with partners
+  &lt;/<b>label</b>&gt;
 &lt;/<b>fieldset</b>&gt;
 
-<em>&lt;!-- Switch --&gt;</em>
+<em>&lt;!-- Switch(es) --&gt;</em>
 &lt;<b>fieldset</b>&gt;
   &lt;<b>label</b> <i>for</i>=<u>"switch"</u>&gt;
     &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u> <i>id</i>=<u>"switch"</u> <i>name</i>=<u>"switch"</u> <i>role</i>=<u>"switch"</u>&gt;
     Publish on my profile
+  &lt;/<b>label</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"switch_disabled"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u> <i>id</i>=<u>"switch_disabled"</u> <i>name</i>=<u>"switch_disabled"</u> <i>role</i>=<u>"switch_disabled"</u> <i>disabled checked</i>&gt;
+    Publish on my profile my accomplishments
   &lt;/<b>label</b>&gt;
 &lt;/<b>fieldset</b>&gt;</code></pre>
 
