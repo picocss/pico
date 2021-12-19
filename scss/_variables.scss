@@ -23,6 +23,9 @@ $enable-responsive-typography: true !default;
 // .classless version if disabled
 $enable-classes: true !default;
 
+// Removes .grid class if disabled
+$enable-grid: true !default;
+
 // Enable transitions
 $enable-transitions: true !default;
 
