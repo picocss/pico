@@ -1,8 +1,8 @@
-@if $enable-classes {
+@if $enable-classes and $enable-grid {
   /**
- * Grid
- * Minimal grid system with auto-layout columns
- */
+   * Grid
+   * Minimal grid system with auto-layout columns
+   */
 
   .grid {
     grid-column-gap: var(--grid-spacing-horizontal);

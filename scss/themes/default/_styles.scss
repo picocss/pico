@@ -51,8 +51,10 @@
   --block-spacing-horizontal: var(--spacing);
 
   // Spacings .grid
-  --grid-spacing-vertical: 0;
-  --grid-spacing-horizontal: var(--spacing);
+  @if $enable-classes and $enable-grid {
+    --grid-spacing-vertical: 0;
+    --grid-spacing-horizontal: var(--spacing);
+  }
 
   // Spacings for form elements and button
   --form-element-spacing-vertical: 0.75rem;

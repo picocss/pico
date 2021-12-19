@@ -19,8 +19,6 @@
   --typography-spacing-vertical: 1.5rem;
   --block-spacing-vertical: calc(var(--spacing) * 2);
   --block-spacing-horizontal: var(--spacing);
-  --grid-spacing-vertical: 0;
-  --grid-spacing-horizontal: var(--spacing);
   --form-element-spacing-vertical: 0.75rem;
   --form-element-spacing-horizontal: 1rem;
   --transition: 0.2s ease-in-out;

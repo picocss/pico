@@ -1,0 +1,16 @@
+// Config
+// --------------------
+
+// Enable <header>, <main>, <footer> inside <body> as a container
+$enable-semantic-container: true;
+
+// Enable .classes
+$enable-classes: true;
+
+// Disable .grid
+$enable-grid: false;
+
+// Pico Lib
+// --------------------
+
+@import "pico";

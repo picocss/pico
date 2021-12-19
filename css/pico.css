@@ -545,9 +545,9 @@ section {
 }
 
 /**
-* Grid
-* Minimal grid system with auto-layout columns
-*/
+ * Grid
+ * Minimal grid system with auto-layout columns
+ */
 .grid {
   grid-column-gap: var(--grid-spacing-horizontal);
   grid-row-gap: var(--grid-spacing-vertical);
