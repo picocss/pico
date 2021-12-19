@@ -530,41 +530,6 @@ body > footer {
 }
 
 /**
-* Container
-*/
-.container,
-.container-fluid {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: var(--spacing);
-  padding-left: var(--spacing);
-}
-
-@media (min-width: 576px) {
-  .container {
-    max-width: 510px;
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-@media (min-width: 768px) {
-  .container {
-    max-width: 700px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    max-width: 920px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1130px;
-  }
-}
-
-/**
  * Section
  * Responsive spacings for section
  */
