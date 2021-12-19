@@ -22,7 +22,7 @@
 https://user-images.githubusercontent.com/23470684/126863110-94061cf1-36ea-4697-94bd-2e1071a95a2f.mp4
 
 **Class-light and semantic**  
-Pico uses simple native HTML tags as much as possible. Only 6 .classes are used in Pico.
+Pico uses simple native HTML tags as much as possible. Less than 10 .classes are used in Pico.
 
 **Great styles with just one CSS file**  
 No dependencies, package manager, external files, or JavaScript.
