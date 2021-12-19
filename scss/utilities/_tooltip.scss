@@ -23,14 +23,14 @@
     transform: translate(-50%, -.25rem);
     border-radius: var(--border-radius);
     background: var(--tooltip-background-color);
+    content: attr(data-tooltip);
     color: var(--tooltip-color);
-    font-size: .875rem;
     font-style: normal;
     font-weight: var(--font-weight);
+    font-size: .875rem;
     text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
-    content: attr(data-tooltip);
     opacity: 0;
     pointer-events: none;
   }
@@ -44,25 +44,33 @@
     border-left: .3rem solid transparent;
     border-radius: 0;
     background-color: transparent;
-    color: var(--tooltip-background-color);
     content: '';
+    color: var(--tooltip-background-color);
   }
 
+  // Display
   &:focus,
   &:hover {
     &::before,
     &::after {
       opacity: 1;
-
-      @if $enable-transitions {
-        animation-name: slide;
-        animation-duration: .2s;
-      }
     }
+  }
 
-    &::after {
-      @if $enable-transitions {
-        animation-name: slideCaret;
+  // Animations, excluding touch devices
+  @if $enable-transitions {
+    @media (hover: hover) and (pointer: fine) {
+      &:focus,
+      &:hover {
+        &::before,
+        &::after {
+          animation-duration: .2s;
+          animation-name: slide;
+        }
+
+        &::after {
+          animation-name: slideCaret; 
+        }
       }
     }
   }

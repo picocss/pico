@@ -137,38 +137,39 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 ## Documentation
 
 **Getting started**
-- [Usage](https://picocss.com/docs/#start)
-- [Themes](https://picocss.com/docs/#themes)
-- [Customization](https://picocss.com/docs/#customization)
-- [Class-less version](https://picocss.com/docs/#classless)
-- [RTL](https://picocss.com/docs/#rtl)
+- [Usage](https://picocss.com/docs/)
+- [Themes](https://picocss.com/docs/themes.html)
+- [Customization](https://picocss.com/docs/customization.html)
+- [Class-less version](https://picocss.com/docs/classless.html)
+- [RTL](https://picocss.com/docs/rtl.html)
 
 **Layout**
-- [Containers](https://picocss.com/docs/#containers)
-- [Grids](https://picocss.com/docs/#grids)
-- [Horizontal scroller](https://picocss.com/docs/#scroller)
+- [Containers](https://picocss.com/docs/containers.html)
+- [Grids](https://picocss.com/docs/grid.html)
+- [Horizontal scroller](https://picocss.com/docs/scroller.html)
 
 **Elements**
-- [Typography](https://picocss.com/docs/#typography)
-- [Buttons](https://picocss.com/docs/#buttons)
-- [Forms](https://picocss.com/docs/#forms)
-- [Tables](https://picocss.com/docs/#tables)
+- [Typography](https://picocss.com/docs/typography.html)
+- [Buttons](https://picocss.com/docs/buttons.html)
+- [Forms](https://picocss.com/docs/forms.html)
+- [Tables](https://picocss.com/docs/tables.html)
 
 **Components**
-- [Accordions](https://picocss.com/docs/#accordions)
-- [Cards](https://picocss.com/docs/#cards)
-- [Navs](https://picocss.com/docs/#navs)
-- [Progress](https://picocss.com/docs/#progress)
+- [Accordions](https://picocss.com/docs/accordions.html)
+- [Cards](https://picocss.com/docs/cards.html)
+- [Modal](https://picocss.com/docs/modal.html)
+- [Navs](https://picocss.com/docs/navs.html)
+- [Progress](https://picocss.com/docs/progress.html)
 
 **Utilities**
-- [Loading](https://picocss.com/docs/#loading)
-- [Tooltips](https://picocss.com/docs/#tooltips)
+- [Loading](https://picocss.com/docs/loading.html)
+- [Tooltips](https://picocss.com/docs/tooltips.html)
 
 ## Contributing
 
 - [`dev`](https://github.com/picocss/pico/tree/dev) branch is open to pull requests.
-- Do not edit [`/css`](https://github.com/picocss/pico/tree/master/css) files directly.
-- Edit the source files in [`/scss`](https://github.com/picocss/pico/tree/master/scss), then recompile the [`/css`](https://github.com/picocss/pico/tree/master/css) files with `npm run build:css`.
+- Do not edit [`/css`](https://github.com/picocss/pico/tree/master/css) files directly. Edit the source files in [`/scss`](https://github.com/picocss/pico/tree/master/scss), then recompile the [`/css`](https://github.com/picocss/pico/tree/master/css) files with `npm run build`.
+- Do not edit [`/docs/*.html`](https://github.com/picocss/pico/tree/master/docs) files directly. Edit the source files in [`/docs/src`](https://github.com/picocss/pico/tree/master/docs/src), then recompile the docs files with `npm run build`.
 
 ## Copyright and license
 
@@ -178,7 +179,6 @@ Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LIC
 
 Website and docs:
 - [TypeIt](https://typeitjs.com/): JavaScript animated typing utility (Licensed [GPL-3.0](https://github.com/alexmacarthur/typeit/blob/master/LICENSE))
-- [Most Visible](https://github.com/andyexeter/most-visible): JavaScript module which returns the most visible element (Licensed [MIT](https://github.com/andyexeter/most-visible/blob/master/LICENSE))
 - [Font Awesome](https://fontawesome.com/): Icons (Licensed [CC BY 4.0](https://fontawesome.com/license/free))
 
 Pico Library:

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    ${require('./_head.html') 
+      title="Customization" 
+      description="You can customize themes with SCSS or, you can edit the CSS variables. All Pico's styles and colors are set with CSS custom properties (variables)."
+      canonical="customization.html"
+    }
+  </head>
+
+  <body>
+    ${require('./_nav.html')}
+    
+    <main class="container" id="docs">
+      ${require('./_sidebar.html') active="customization-link"}
+      
+      <div role="document">
+        <section id="customization">
+          <hgroup>
+            <h1>Customization</h1>
+            <h2>You can customize themes with SCSS or, you can edit the CSS variables.</h2>
+          </hgroup>
+          <p>Example: <strong>pick a color!</strong></p>
+
+          <article data-theme="generated" aria-label="Generated theme example">
+            <h3><span class="name">Custom theme</span></h3>
+            <form>
+              <div class="grid">
+                <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required>
+                <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
+                <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login</button>
+              </div>
+              <fieldset>
+                <label for="remember">
+                  <input type="checkbox" role="switch" id="remember" name="remember" checked>
+                  Remember me
+                </label>
+              </fieldset>
+            </form>
+            <footer class="code">
+
+<pre><code><em>// Simplified example</em>
+<b>:root</b> {
+  <i>--primary</i>: <u class="c600">…</u>;
+}
+</code></pre>
+
+            </footer>
+          </article>
+          <p>There are 2 ways to customize your version of Pico.css:</p>
+          <h3>Overriding CSS variables</h3>
+          <p>All Pico's styles and colors are set with <em>CSS custom properties</em> (variables). Just override the CSS variables to customize your version of Pico.</p>
+
+<pre><code><em>/* <span class="name"></span>Light scheme (Default) */
+/* Can be forced with data-theme="light" */</em>
+<b>[data-theme=<u>"light"</u>]</b>,
+<b>:root:not([data-theme=<u>"dark"</u>])</b> {
+  <i>--primary</i>: <u class="c600">…</u>;
+  <i>--primary-hover</i>: <u class="c700">…</u>;
+  <i>--primary-focus</i>: <u class="c600-outline-light">…</u>;
+  <i>--primary-inverse</i>: <u class="inverse">…</u>;
+}
+
+<em>/* <span class="name"></span>Dark scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */</em>
+<i>@media</i> only <b>screen</b> and <b>(prefers-color-scheme: <u>dark</u>)</b> {
+  <b>:root:not([data-theme=<u>"light"</u>])</b> {
+    <i>--primary</i>: <u class="c600">…</u>;
+    <i>--primary-hover</i>: <u class="c500">…</u>;
+    <i>--primary-focus</i>: <u class="c600-outline-dark">…</u>;
+    <i>--primary-inverse</i>: <u class="inverse">…</u>;
+  }
+}
+
+<em>/* <span class="name"></span>Dark scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */</em>
+<b>[data-theme=<u>"dark"</u>]</b> {
+  <i>--primary</i>: <u class="c600">…</u>;
+  <i>--primary-hover</i>: <u class="c500">…</u>;
+  <i>--primary-focus</i>: <u class="c600-outline-dark">…</u>;
+  <i>--primary-inverse</i>: <u class="inverse">…</u>;
+}
+
+<em>/* <span class="name"></span>(Common styles) */</em>
+<b>:root</b> {
+  <i>--form-element-active-border-color</i>: <u>var</u>(<i>--primary</i>);
+  <i>--form-element-focus-color</i>: <u>var</u>(<i>--primary-focus</i>);
+  <i>--switch-color</i>: <u>var</u>(<i>--primary-inverse</i>);
+  <i>--switch-checked-background-color</i>: <u>var</u>(<i>--primary</i>);
+}
+</code></pre>
+
+          <p>You can find all the CSS variables used in the default theme here: <a href="https://github.com/picocss/pico/blob/master/css/themes/default.css">css/themes/default.css</a></p>
+          <h3>Importing Pico SASS library</h3>
+          <p>We recommend customizing Pico by importing SASS source files into your project. This way, you can keep Pico up to date without conflicts since Pico code and your custom code are separated.</p>
+          <p>Compile the SASS file to CSS to get a custom version of Pico.</p>
+
+<pre><code><em>/* Custom <span class="name"> </span>version */</em>
+
+<em>// Override default variables</em>
+<i>$primary-500</i>: <u class="c500">…</u>;
+<i>$primary-600</i>: <u class="c600">…</u>;
+<i>$primary-700</i>: <u class="c700">…</u>;
+
+<em>// Import full Pico source code</em>
+<b>@import</b> <u>"path/pico"</u>;</code></pre>
+
+          <p>Alternatively, you can create a custom theme and import it into your project with the components you need.</p>
+
+<pre><code><em>/* Custom <span class="name"> </span>version */</em>
+
+<em>// Custom theme</em>
+<b>@import</b> <u>"path/themes/custom"</u>;
+
+<em>// Import needed components</em>
+<b>@import</b> <u>"path/layout/document"</u>;
+<b>@import</b> <u>"path/layout/sectioning"</u>;
+<em>…</em>
+</code></pre>
+
+          <p>Compiling a custom SASS version allows you to create a lighter version with only the components that are useful to you. Example here: <a href="https://github.com/picocss/pico/blob/master/scss/pico.slim.scss">scss/pico.slim.scss</a>.</p>
+        </section>
+
+        ${require('./_footer.html')}
+        
+      </div>
+    </main>
+    <script src="js/commons.min.js"></script>
+    <script src="js/customization.min.js"></script>
+  </body>
+</html>

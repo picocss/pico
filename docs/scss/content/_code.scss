@@ -8,17 +8,17 @@ article > footer.code {
 }
 article pre,
 article pre code {
-  background: transparent;
   margin-bottom: 0;
+  background: transparent;
 }
 
 // Code block outside article
 // Horizontally aligned with <article> content
 section > pre {
-  background: var(--article-code-background-color);
   margin: var(--block-spacing-vertical) 0;
   padding: calc(var(--block-spacing-vertical) / 1.5)
     var(--block-spacing-horizontal);
+  background: var(--article-code-background-color);
   box-shadow: var(--card-box-shadow);
 }
 
