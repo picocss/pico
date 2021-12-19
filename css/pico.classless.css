@@ -798,7 +798,7 @@ mark {
   padding: 0.125rem 0.25rem;
   background-color: var(--mark-background-color);
   color: var(--mark-color);
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 
 blockquote {
