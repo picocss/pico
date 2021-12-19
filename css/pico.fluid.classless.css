@@ -1878,106 +1878,10 @@ dialog article > footer [role=button]:not(:first-of-type) {
 dialog article p:last-of-type {
   margin: 0;
 }
-dialog article .close {
-  display: block;
-  width: 1rem;
-  height: 1rem;
-  margin-top: calc(var(--block-spacing-vertical) * -0.5);
-  margin-bottom: var(--typography-spacing-vertical);
-  margin-left: auto;
-  background-image: var(--icon-close);
-  background-position: center;
-  background-size: auto 1rem;
-  background-repeat: no-repeat;
-  opacity: 0.5;
-  transition: opacity var(--transition);
-}
-dialog article .close:hover, dialog article .close:active, dialog article .close:focus {
-  opacity: 1;
-}
 dialog:not([open]), dialog[open=false] {
   display: none;
 }
 
-.modal-is-open {
-  padding-right: var(--scrollbar-width, 0px);
-  overflow: hidden;
-  pointer-events: none;
-}
-.modal-is-open dialog {
-  pointer-events: auto;
-}
-
-.modal-is-opening dialog,
-.modal-is-opening dialog > article,
-.modal-is-closing dialog,
-.modal-is-closing dialog > article {
-  -webkit-animation-duration: 0.2s;
-  animation-duration: 0.2s;
-  -webkit-animation-timing-function: ease-in-out;
-  animation-timing-function: ease-in-out;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.modal-is-opening dialog,
-.modal-is-closing dialog {
-  -webkit-animation-duration: 0.8s;
-  animation-duration: 0.8s;
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-}
-.modal-is-opening dialog > article,
-.modal-is-closing dialog > article {
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-  -webkit-animation-name: slideInDown;
-  animation-name: slideInDown;
-}
-
-.modal-is-closing dialog,
-.modal-is-closing dialog > article {
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-  animation-direction: reverse;
-}
-
-@-webkit-keyframes fadeIn {
-  from {
-    background-color: transparent;
-  }
-  to {
-    background-color: var(--modal-overlay-background-color);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    background-color: transparent;
-  }
-  to {
-    background-color: var(--modal-overlay-background-color);
-  }
-}
-@-webkit-keyframes slideInDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes slideInDown {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 /**
  * Nav
  */
