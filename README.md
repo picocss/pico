@@ -28,7 +28,7 @@ Pico uses simple native HTML tags as much as possible. Less than 10 .classes are
 No dependencies, package manager, external files, or JavaScript.
 
 **Responsive everything**  
-Elegant and consistent adaptative spacings and typography on all devices.
+Elegant and consistent adaptive spacings and typography on all devices.
 
 **Light or Dark mode**  
 Shipped with two beautiful color themes, automatically enabled according to the user preference.
