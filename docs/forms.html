@@ -27,7 +27,7 @@
 &lt;/<b>form</b>&gt;</code></pre></footer></article><p>Disabled and validation states:</p><article aria-label="Validation states examples"><form class="grid"><input type="text" placeholder="Valid" aria-label="Valid" aria-invalid="false"> <input type="text" placeholder="Invalid" aria-label="Invalid" aria-invalid="true"> <input type="text" placeholder="Disabled" aria-label="Disabled" disabled="disabled"> <input type="text" value="Readonly" aria-label="Readonly" readonly="readonly"></form><footer class="code"><pre><code>&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Valid"</u> <i>aria-invalid</i>=<u>"false"</u>&gt;
 &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Invalid"</u> <i>aria-invalid</i>=<u>"true"</u>&gt;
 &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Disabled"</u> <i>disabled</i>&gt;
-&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>value</i>=<u>"Readonly"</u> <i>readonly</i>&gt;</code></pre></footer></article><p><code>&lt;<b>fieldset</b>&gt;</code> is unstyled and acts as a container for radios and checkboxes, providing a consistent <code><i>margin-bottom</i></code> for the set.</p><p><code><i>role</i>=<u>"switch"</u></code> on a <code><i>type</i>=<u>"checkbox"</u></code> enable a custom switch.</p><article aria-label="Select, radios, checkboxes, switch examples"><label for="fruit">Fruit</label> <select id="fruit" required><option value="" selected="selected">Select a fruit…</option><option>Banana</option><option>Watermelon</option><option>Apple</option><option>Orange</option><option>Mango</option></select><fieldset><legend>Size</legend><label for="small"><input type="radio" id="small" name="size" value="small" checked="checked"> Small</label> <label for="medium"><input type="radio" id="medium" name="size" value="medium"> Medium</label> <label for="large"><input type="radio" id="large" name="size" value="large"> Large</label></fieldset><fieldset><label for="terms"><input type="checkbox" id="terms" name="terms"> I agree to the Terms and Conditions</label></fieldset><fieldset><label for="switch"><input type="checkbox" id="switch" name="switch" role="switch"> Publish on my profile</label></fieldset><footer class="code"><pre><code><em>&lt;!-- Select --&gt;</em>
+&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>value</i>=<u>"Readonly"</u> <i>readonly</i>&gt;</code></pre></footer></article><p><code>&lt;<b>fieldset</b>&gt;</code> is unstyled and acts as a container for radios and checkboxes, providing a consistent <code><i>margin-bottom</i></code> for the set.</p><p><code><i>role</i>=<u>"switch"</u></code> on a <code><i>type</i>=<u>"checkbox"</u></code> enable a custom switch.</p><article aria-label="Select, radios, checkboxes, switch examples"><label for="fruit">Fruit</label> <select id="fruit" required><option value="" selected="selected">Select a fruit…</option><option>Banana</option><option>Watermelon</option><option>Apple</option><option>Orange</option><option>Mango</option></select><fieldset><legend>Size</legend><label for="small"><input type="radio" id="small" name="size" value="small" checked="checked"> Small</label> <label for="medium"><input type="radio" id="medium" name="size" value="medium"> Medium</label> <label for="large"><input type="radio" id="large" name="size" value="large"> Large</label> <label for="extralarge"><input type="radio" id="extralarge" name="size" value="extralarge" disabled="disabled"> Extra Large</label></fieldset><fieldset><label for="terms"><input type="checkbox" id="terms" name="terms"> I agree to the Terms and Conditions</label> <label for="terms_sharing"><input type="checkbox" id="terms_sharing" name="terms_sharing" disabled="disabled" checked="checked"> I agree to share my information with partners</label></fieldset><fieldset><label for="switch"><input type="checkbox" id="switch" name="switch" role="switch"> Publish on my profile</label> <label for="switch_disabled"><input type="checkbox" id="switch_disabled" name="switch_disabled" role="switch" disabled="disabled" checked="checked"> Publish on my profile my accomplishments</label></fieldset><footer class="code"><pre><code><em>&lt;!-- Select --&gt;</em>
 &lt;<b>label</b> <i>for</i>=<u>"fruit"</u>&gt;Fruit&lt;/<b>label</b>&gt;
 &lt;<b>select</b> <i>id</i>=<u>"fruit"</u> <i>required</i>&gt;
   &lt;<b>option</b> <i>value</i>=<u>""</u> <i>selected</i>&gt;Select a fruit…&lt;/<b>option</b>&gt;
@@ -49,21 +49,34 @@
     &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"large"</u> <i>name</i>=<u>"size"</u> <i>value</i>=<u>"large"</u>&gt;
     Large
   &lt;/<b>label</b>&gt;
+  &lt;/<b>label</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"extralarge"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"extralarge"</u> <i>name</i>=<u>"size"</u> <i>value</i>=<u>"extralarge"</u> <i>disabled</i>&gt;
+    Extra Large
+  &lt;/<b>label</b>&gt;
 &lt;/<b>fieldset</b>&gt;
 
-<em>&lt;!-- Checkbox --&gt;</em>
+<em>&lt;!-- Checkboxes --&gt;</em>
 &lt;<b>fieldset</b>&gt;
   &lt;<b>label</b> <i>for</i>=<u>"terms"</u>&gt;
     &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u> <i>id</i>=<u>"terms"</u> <i>name</i>=<u>"terms"</u>&gt;
     I agree to the Terms and Conditions
   &lt;/<b>label</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"terms_sharing"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u> <i>id</i>=<u>"terms_sharing"</u> <i>name</i>=<u>"terms_sharing"</u> <i>disabled checked</i>&gt;
+    I agree to share my information with partners
+  &lt;/<b>label</b>&gt;
 &lt;/<b>fieldset</b>&gt;
 
-<em>&lt;!-- Switch --&gt;</em>
+<em>&lt;!-- Switches --&gt;</em>
 &lt;<b>fieldset</b>&gt;
   &lt;<b>label</b> <i>for</i>=<u>"switch"</u>&gt;
     &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u> <i>id</i>=<u>"switch"</u> <i>name</i>=<u>"switch"</u> <i>role</i>=<u>"switch"</u>&gt;
     Publish on my profile
+  &lt;/<b>label</b>&gt;
+  &lt;<b>label</b> <i>for</i>=<u>"switch_disabled"</u>&gt;
+    &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u> <i>id</i>=<u>"switch_disabled"</u> <i>name</i>=<u>"switch_disabled"</u> <i>role</i>=<u>"switch_disabled"</u> <i>disabled checked</i>&gt;
+    Publish on my profile my accomplishments
   &lt;/<b>label</b>&gt;
 &lt;/<b>fieldset</b>&gt;</code></pre></footer></article><p>You can change a checkbox to an indeterminate state by setting the <code><i>indeterminate</i></code> property to <code><u>true</u></code></p><article aria-label="Indeterminate checkbox example"><label for="indeterminate-checkbox"><input type="checkbox" id="indeterminate-checkbox" name="indeterminate-checkbox"> Select all</label><script>document.getElementById("indeterminate-checkbox").indeterminate=!0</script><footer class="code"><pre><code>&lt;<b>script</b>&gt;
   <i>document</i>.<b>getElementById</b>(<u>'indeterminate-checkbox'</u>).<i>indeterminate</i> = <u>true</u>;
