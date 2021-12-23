@@ -148,9 +148,11 @@ a {
   --text-decoration: none;
 
   // Secondary & Contrast
-  &.secondary,
-  &.contrast {
-    --text-decoration: underline;
+  @if $enable-classes {
+    &.secondary,
+    &.contrast {
+      --text-decoration: underline;
+    }
   }
 }
 
