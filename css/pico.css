@@ -841,7 +841,7 @@ mark {
   padding: 0.125rem 0.25rem;
   background-color: var(--mark-background-color);
   color: var(--mark-color);
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 
 blockquote {
@@ -1916,7 +1916,7 @@ code em {
 kbd {
   background-color: var(--code-kbd-background-color);
   color: var(--code-kbd-color);
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 
 /**
