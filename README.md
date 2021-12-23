@@ -28,7 +28,7 @@ Pico uses simple native HTML tags as much as possible. Less than 10 .classes are
 No dependencies, package manager, external files, or JavaScript.
 
 **Responsive everything**  
-Elegant and consistent adaptative spacings and typography on all devices.
+Elegant and consistent adaptive spacings and typography on all devices.
 
 **Light or Dark mode**  
 Shipped with two beautiful color themes, automatically enabled according to the user preference.
@@ -70,9 +70,9 @@ npm install @picocss/pico
 
 ## Class-less version
 
-Pico provide a `.classless` version ([example](https://picocss.com/examples/classless)).
+Pico provides a `.classless` version ([example](https://picocss.com/examples/classless)).
 
-In this version, `header`, `main` and `footer` act as container.
+In this version, `header`, `main` and `footer` act as containers.
 
 Use the default `.classless` version if you need centered viewports:
 
