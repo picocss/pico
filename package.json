@@ -29,18 +29,22 @@
   "scripts": {
     "watch": "npm-run-all --parallel watch:pico watch:docs:scss watch:docs:html watch:docs:js --silent",
     "build": "npm-run-all scss:sorter:pico build:pico scss:sorter:docs build:docs:css build:docs:js build:docs:html --silent",
+    
     "build:docs": "npm-run-all --parallel build:docs:css build:docs:js build:docs:html --silent",
     "build:docs:css": "npm-run-all css:compile:docs css:prefix:docs css:minify:docs --silent",
     "build:docs:html": "npm-run-all htmlincludes:docs --silent",
     "build:docs:js": "npm-run-all js:bundle:docs:commons js:bundle:docs:customization js:babel:docs:commons js:babel:docs:customization js:babel:docs:grid js:babel:docs:modal js:minify:docs:commons js:minify:docs:customization js:minify:docs:grid js:minify:docs:modal --silent",
     "build:pico": "npm-run-all css:compile:pico css:prefix:pico css:minify:pico --silent",
+    
     "css:compile:docs": "sass --style expanded --source-map --embed-sources --no-error-css docs/scss/:docs/css/",
     "css:compile:pico": "sass --style expanded --source-map --embed-sources --no-error-css scss/:css/",
     "css:minify:docs": "cleancss -O1 --with-rebase --source-map --source-map-inline-sources --batch --batch-suffix .min docs/css/*.css !docs/css/*.min.css",
     "css:minify:pico": "cleancss -O1 --with-rebase --source-map --source-map-inline-sources --batch --batch-suffix .min css/*.css css/*/*.css !css/*.min.css !css/*/*.min.css",
     "css:prefix:docs": "postcss --config css --replace docs/css/*.css !docs/css/*.min.css",
     "css:prefix:pico": "postcss --config css --replace css/*.css css/*/*.css !css/*.min.css",
+    
     "htmlincludes:docs": "html-includes --src docs/src --dest docs --minify minifyJS=true --quiet",
+    
     "js:babel:docs:commons": "babel docs/js/commons.min.js --out-dir docs/js/ --presets=@babel/preset-env --quiet",
     "js:babel:docs:customization": "babel docs/js/customization.min.js --out-dir docs/js/ --presets=@babel/preset-env --quiet",
     "js:babel:docs:grid": "babel docs/js/grid.js --out-file docs/js/grid.min.js --presets=@babel/preset-env --quiet",
@@ -51,8 +55,10 @@
     "js:minify:docs:customization": "uglifyjs docs/js/customization.min.js --compress --mangle --output docs/js/customization.min.js",
     "js:minify:docs:grid": "uglifyjs docs/js/grid.min.js --compress --mangle --output docs/js/grid.min.js",
     "js:minify:docs:modal": "uglifyjs docs/js/modal.min.js --compress --mangle --output docs/js/modal.min.js",
+    
     "scss:sorter:docs": "postcss --config scss ./docs/scss/**/*.scss --replace",
     "scss:sorter:pico": "postcss --config scss ./scss/**/*.scss --replace",
+    
     "prebuild:docs:html": "echo '[@picocss/pico] Create documentation pages'",
     "prebuild:docs:js": "echo '[@picocss/pico] Bundle and minify documentation .js files'",
     "precss:compile:docs": "echo '[@picocss/pico] Compile documentation .css file'",
@@ -61,10 +67,12 @@
     "precss:minify:pico": "echo '[@picocss/pico] Minify Pico .css files'",
     "prescss:sorter:docs": "echo '[@picocss/pico] Order documentation .scss properties'",
     "prescss:sorter:pico": "echo '[@picocss/pico] Order Pico .scss properties'",
+    
     "postbuild:docs:css": "echo '\\033[32m[@picocss/pico] Documentation .css build done\\033[0m'",
     "postbuild:docs:html": "echo '\\033[32m[@picocss/pico] Documentation pages done\\033[0m'",
     "postbuild:docs:js": "echo '\\033[32m[@picocss/pico] Documentation .js build done\\033[0m'",
     "postbuild:pico": "echo '\\033[32m[@picocss/pico] Pico library build done\\033[0m'",
+    
     "watch:docs:html": "nodemon --watch docs/src/ --ext html --exec 'npm run build:docs:html'",
     "watch:docs:js": "nodemon --watch docs/js/ --ext js --ignore *.min.js --exec 'npm run build:docs:js'",
     "watch:docs:scss": "nodemon --watch docs/scss/ --ext scss --exec 'npm run build:docs:css'",
