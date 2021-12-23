@@ -90,14 +90,13 @@ svg {
  */
 main > aside nav {
   width: 100%;
-  margin-bottom: calc(var(--block-spacing-vertical) * 2);
+  padding-bottom: var(--block-spacing-vertical);
 }
 @media (min-width: 992px) {
   main > aside nav {
     position: fixed;
     width: 200px;
     max-height: calc(100vh - 5.5rem);
-    margin-bottom: 0;
     overflow-x: hidden;
     overflow-y: auto;
   }
@@ -117,9 +116,6 @@ main > aside nav a#toggle-docs-navigation svg {
   main > aside nav a#toggle-docs-navigation {
     display: none;
   }
-}
-main > aside nav.closed-on-mobile {
-  margin-bottom: var(--block-spacing-vertical);
 }
 main > aside nav.closed-on-mobile a#toggle-docs-navigation svg.collapse {
   display: none;
