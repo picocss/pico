@@ -6,13 +6,12 @@ main > aside {
 
   nav {
     width: 100%;
-    margin-bottom: calc(var(--block-spacing-vertical) * 2);
+    padding-bottom: var(--block-spacing-vertical);
   
     @media (min-width: map-get($breakpoints, "lg")) {
       position: fixed;
       width: 200px;
       max-height: calc(100vh - 5.5rem);
-      margin-bottom: 0;
       overflow-x: hidden;
       overflow-y: auto;
     }
@@ -35,7 +34,6 @@ main > aside {
     }
 
     &.closed-on-mobile {
-      margin-bottom: var(--block-spacing-vertical);
 
       a#toggle-docs-navigation {
         svg.collapse {
