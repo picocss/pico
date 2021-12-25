@@ -1162,8 +1162,12 @@ a[role=button].outline.contrast:focus {
 button[disabled],
 input[type=submit][disabled],
 input[type=button][disabled],
-input[type=reset][disabled],
-a[role=button][disabled] {
+input[type=reset][disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+a[role=button][href=""] {
   opacity: 0.5;
   pointer-events: none;
 }
