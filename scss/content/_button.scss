@@ -198,10 +198,14 @@ input[type="reset"] {
 button,
 input[type="submit"],
 input[type="button"],
-input[type="reset"],
-a[role="button"] {
+input[type="reset"] {
   &[disabled] {
     opacity: 0.5;
     pointer-events: none;
   }
+}
+// The <a> tag does not have a `disabled` attribute.
+a[role="button"][href=""] {
+  opacity: 0.5;
+  pointer-events: none;
 }
