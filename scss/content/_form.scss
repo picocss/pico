@@ -131,6 +131,10 @@ fieldset legend {
   margin-bottom: calc(var(--spacing) * 0.25);
 }
 
+label {
+  font-weight: var(--form-label-font-weight, var(--font-weight));
+}
+
 // Blocks, 100%
 input:not([type="checkbox"]):not([type="radio"]),
 select,

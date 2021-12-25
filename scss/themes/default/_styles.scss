@@ -58,6 +58,9 @@
   --form-element-spacing-vertical: 0.75rem;
   --form-element-spacing-horizontal: 1rem;
 
+  // Font weight for form labels
+  --form-label-font-weight: var(--font-weight);
+
   // Transitions
   --transition: 0.2s ease-in-out;
 }
