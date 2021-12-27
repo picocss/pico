@@ -159,8 +159,8 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 - [Cards](https://picocss.com/docs/cards.html)
 - [Modal](https://picocss.com/docs/modal.html)
 - [Navs](https://picocss.com/docs/navs.html)
+- [Dropdown](https://picocss.com/docs/dropdown.html)
 - [Progress](https://picocss.com/docs/progress.html)
-- [Dropdowns](https://picocss.com/docs/dropdowns.html)
 
 **Utilities**
 - [Loading](https://picocss.com/docs/loading.html)
