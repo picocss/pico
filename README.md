@@ -160,6 +160,7 @@ All examples are open-sourced in [picocss/examples](https://github.com/picocss/e
 - [Modal](https://picocss.com/docs/modal.html)
 - [Navs](https://picocss.com/docs/navs.html)
 - [Progress](https://picocss.com/docs/progress.html)
+- [Dropdowns](https://picocss.com/docs/dropdowns.html)
 
 **Utilities**
 - [Loading](https://picocss.com/docs/loading.html)
