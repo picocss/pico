@@ -70,7 +70,7 @@ npm install @picocss/pico
 
 ## Class-less version
 
-Pico provide a `.classless` version ([example](https://picocss.com/examples/classless)).
+Pico provides a `.classless` version ([example](https://picocss.com/examples/classless)).
 
 In this version, `header`, `main` and `footer` act as container.
 
