@@ -1,0 +1,63 @@
+<html data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Dropdown for picocss</h1>
+      <h3>Single select</h3>
+      <p>in order to use dropdown component, use <code>role='dropdown'</code> on details tag.</p>
+      <details role="dropdown">
+        <summary>Single select</summary>
+        <div>
+          <ul>
+            <li>
+              <input type="radio" id="01" name="option1" />
+              <label for="01">Option 1</label>
+            </li>
+            <li>
+              <input type="radio" id="02" name="option1" />
+              <label for="02">Option 2</label>
+            </li>
+          </ul>
+        </div>
+      </details>
+      <h3>Multi-select select</h3>
+      <details role="dropdown">
+        <summary>Multi-select</summary>
+        <div>
+          <ul>
+            <li>
+              <input type="checkbox" id="11" name="option2" />
+              <label for="11">Option 1</label>
+            </li>
+            <li>
+              <input type="checkbox" id="12" name="option2" />
+              <label for="12">Option 2</label>
+            </li>
+          </ul>
+        </d>
+      </details>
+      <h6>Usage notes</h6>
+      <ul>
+        <li>
+          no need to use javascript to close the dropdown when clicked outside.
+        </li>
+        <li>
+          for both single / multi-select case, need javascript to update summary
+          tag text when any option selected.
+        </li>
+        <li>
+          in case of single select, remove open attribute on details tag using
+          javascript when an option is selected.
+        </li>
+      </ul>
+    </main>
+  </body>
+</html>

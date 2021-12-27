@@ -2002,6 +2002,109 @@ progress::-moz-progress-bar {
     background-position: -200% 0;
   }
 }
+details[role=dropdown] {
+  padding: 0;
+  border-bottom: none;
+}
+details[role=dropdown] summary {
+  position: relative;
+  margin-bottom: 0;
+  padding: calc(var(--spacing) * 0.5);
+  border: var(--border-width) solid var(--form-element-border-color);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+details[role=dropdown] summary::after {
+  transform: rotate(0deg);
+}
+details[role=dropdown] summary + div {
+  position: relative;
+  margin: 0;
+}
+details[role=dropdown] summary + div ul {
+  z-index: 100;
+  position: absolute;
+  top: auto;
+  right: 0px;
+  left: 0px;
+  margin: 0;
+  padding: 0;
+  border: var(--border-width) solid var(--form-element-border-color);
+  border-top: none;
+  border-bottom-right-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  background-color: var(--background-color);
+  list-style: none;
+}
+details[role=dropdown] summary + div ul li {
+  margin-bottom: 0;
+}
+details[role=dropdown] summary + div ul li::marker {
+  content: "";
+}
+details[role=dropdown] summary + div ul li input[type=radio],
+details[role=dropdown] summary + div ul li input[type=checkbox] {
+  display: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+details[role=dropdown] summary + div ul li label {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: calc(var(--spacing) * 0.5);
+  line-height: 1;
+}
+details[role=dropdown] summary + div ul li label:hover {
+  background-color: var(--secondary-focus);
+}
+details[role=dropdown] summary + div ul li input:checked + label {
+  background-color: var(--secondary-focus);
+}
+details[role=dropdown] summary + div ul li input[type=checkbox] + label:before {
+  display: inline-block;
+  width: calc(var(--spacing) * 1.2);
+  height: calc(var(--spacing) * 1.2);
+  margin-right: calc(var(--spacing) * 0.5);
+  border: var(--border-width) solid var(--primary);
+  border-radius: var(--border-radius);
+  content: "";
+  vertical-align: text-bottom;
+}
+details[role=dropdown] summary + div ul li input[type=checkbox]:checked + label:before {
+  background-image: var(--icon-checkbox);
+  background-position: center;
+  background-size: calc(var(--spacing) * 0.8) auto;
+  background-repeat: no-repeat;
+  background-color: var(--primary);
+}
+details[role=dropdown][disabled] summary, details[role=dropdown].disabled summary {
+  color: var(--muted-color);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+details[role=dropdown][open] summary {
+  margin-bottom: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+details[role=dropdown][open] summary::before {
+  display: block;
+  z-index: 80;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: transparent;
+  content: " ";
+  cursor: default;
+}
+details[role=dropdown][open] summary::after {
+  transform: rotate(180deg);
+}
+
 /**
  * Loading ([aria-busy=true])
  */

@@ -1,0 +1,116 @@
+details[role='dropdown'] {
+  padding: 0;
+  border-bottom: none;
+
+  summary {
+    position: relative;
+    margin-bottom: 0;
+    padding: calc(var(--spacing) * 0.5);
+    border: var(--border-width) solid var(--form-element-border-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+
+    &::after {
+      transform: rotate(0deg);
+    }
+
+    & + div {
+      position: relative;
+      margin: 0;
+
+      ul {
+        z-index: 100;
+        position: absolute;
+        top: auto;
+        right: 0px;
+        left: 0px;
+        margin: 0;
+        padding: 0;
+        border: var(--border-width) solid var(--form-element-border-color);
+        border-top: none;
+        border-bottom-right-radius: var(--border-radius);
+        border-bottom-left-radius: var(--border-radius);
+        background-color: var(--background-color);
+        list-style: none;
+
+        li {
+          margin-bottom: 0;
+          &::marker {
+            content: '';
+          }
+
+          input[type='radio'],
+          input[type='checkbox'] {
+            display: none;
+            appearance: none;
+          }
+
+          label {
+            position: relative;
+            width: 100%;
+            margin: 0;
+            padding: calc(var(--spacing) * 0.5);
+            line-height: 1;
+            &:hover {
+              background-color: var(--secondary-focus);
+            }
+          }
+
+          input:checked + label {
+            background-color: var(--secondary-focus);
+          }
+
+          input[type='checkbox'] {
+            & + label:before {
+              display: inline-block;
+              width: calc(var(--spacing) * 1.2);
+              height: calc(var(--spacing) * 1.2);
+              margin-right: calc(var(--spacing) * 0.5);
+              border: var(--border-width) solid var(--primary);
+              border-radius: var(--border-radius);
+              content: '';
+              vertical-align: text-bottom;
+            }
+
+            &:checked + label:before {
+              background-image: var(--icon-checkbox);
+              background-position: center;
+              background-size: calc(var(--spacing) * 0.8) auto;
+              background-repeat: no-repeat;
+              background-color: var(--primary);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &[disabled] summary,
+  &.disabled summary {
+    color: var(--muted-color);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  &[open] summary {
+    margin-bottom: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    &::before {
+      display: block;
+      z-index: 80;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: transparent;
+      content: ' ';
+      cursor: default;
+    }
+
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+}
