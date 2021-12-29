@@ -181,7 +181,8 @@ ul {
 }
 
 // Heading group
-hgroup {
+hgroup,
+.headings {
   margin-bottom: var(--typography-spacing-vertical);
 
   > * {

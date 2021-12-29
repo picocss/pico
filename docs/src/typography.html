@@ -1,24 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    ${require('./_head.html') 
-      title="Typography" 
-      description="All typographic elements are responsive, allowing text to scale gracefully across devices and viewports."
-      canonical="typography.html"
-    }
+    ${require('./_head.html') title="Typography" description="All typographic
+    elements are responsive, allowing text to scale gracefully across devices
+    and viewports." canonical="typography.html" }
   </head>
 
   <body>
     ${require('./_nav.html')}
-    
+
     <main class="container" id="docs">
       ${require('./_sidebar.html') active="typography-link"}
-      
+
       <div role="document">
         <section id="typography">
           <hgroup>
             <h1>Typography</h1>
-            <h2>All typographic elements are responsive, allowing text to scale gracefully across devices and viewports.</h2>
+            <h2>
+              All typographic elements are responsive, allowing text to scale
+              gracefully across devices and viewports.
+            </h2>
           </hgroup>
           <figure>
             <table role="grid">
@@ -109,38 +110,48 @@
             <h5>Heading 5</h5>
             <h6>Heading 6</h6>
             <footer class="code">
-
-<pre><code>&lt;<b>h1</b>&gt;Heading 1&lt;/<b>h1</b>&gt;
+              <pre><code>&lt;<b>h1</b>&gt;Heading 1&lt;/<b>h1</b>&gt;
 &lt;<b>h2</b>&gt;Heading 2&lt;/<b>h2</b>&gt;
 &lt;<b>h3</b>&gt;Heading 3&lt;/<b>h3</b>&gt;
 &lt;<b>h4</b>&gt;Heading 4&lt;/<b>h4</b>&gt;
 &lt;<b>h5</b>&gt;Heading 5&lt;/<b>h5</b>&gt;
 &lt;<b>h6</b>&gt;Heading 6&lt;/<b>h6</b>&gt;</code></pre>
-
             </footer>
           </article>
-          <p>Inside a <code>&lt;<b>hgroup</b>&gt;</code> all <code><i>margin-bottom</i></code> are collapsed and the <code>:last-child</code> is muted.</p>
+          <p>
+            Inside a <code>&lt;<b>hgroup</b>&gt;</code> or a
+            <code>&lt;<b>div class="headings"</b>&gt;</code> all
+            <code><i>margin-bottom</i></code> are collapsed and the
+            <code>:last-child</code> is muted.
+          </p>
           <article aria-label="Hgroup example">
-            <hgroup>
+            <div class="headings">
               <h2>Heading 2</h2>
               <h3>Subtitle for heading 2</h3>
-            </hgroup>
+            </div>
             <footer class="code">
-
-<pre><code>&lt;<b>hgroup</b>&gt;
+              <pre><code>&lt;<b>hgroup</b>&gt;
   &lt;<b>h2</b>&gt;Heading 2&lt;/<b>h2</b>&gt;
   &lt;<b>h3</b>&gt;Subtitle for heading 2&lt;/<b>h3</b>&gt;
 &lt;/<b>hgroup</b>&gt;</code></pre>
 
+              <pre><code>&lt;<b>div class="headings"</b>&gt;
+  &lt;<b>h2</b>&gt;Heading 2&lt;/<b>h2</b>&gt;
+  &lt;<b>h3</b>&gt;Subtitle for heading 2&lt;/<b>h3</b>&gt;
+&lt;/<b>div</b>&gt;</code></pre>
             </footer>
           </article>
+
           <p>Inline text elements:</p>
           <article aria-label="Inline text examples">
             <div class="grid">
               <div>
                 <p><abbr title="Abbreviation">Abbr.</abbr> <code>abbr</code></p>
                 <p><strong>Bold</strong> <code>strong</code> <code>b</code></p>
-                <p><em>Italic</em> <code>i</code> <code>em</code> <code>cite</code></p>
+                <p>
+                  <em>Italic</em> <code>i</code> <code>em</code>
+                  <code>cite</code>
+                </p>
                 <p><del>Deleted</del> <code>del</code></p>
                 <p><ins>Inserted</ins> <code>ins</code></p>
                 <p><kbd>Ctrl + S</kbd> <code>kbd</code></p>
@@ -155,44 +166,46 @@
               </div>
             </div>
           </article>
-          <p>Links come with <code>.secondary</code> and <code>.contrast</code> styles.</p>
+          <p>
+            Links come with <code>.secondary</code> and
+            <code>.contrast</code> styles.
+          </p>
           <article aria-label="Links examples">
-            <a href="#" onclick="event.preventDefault()">Primary</a><br>
-            <a href="#" onclick="event.preventDefault()" class="secondary">Secondary</a><br>
-            <a href="#" onclick="event.preventDefault()" class="contrast">Contrast</a><br>
+            <a href="#" onclick="event.preventDefault()">Primary</a><br />
+            <a href="#" onclick="event.preventDefault()" class="secondary"
+              >Secondary</a
+            ><br />
+            <a href="#" onclick="event.preventDefault()" class="contrast"
+              >Contrast</a
+            ><br />
             <footer class="code">
-
-<pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Primary&lt;/<b>a</b>&gt;
+              <pre><code>&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Primary&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"secondary"</u>&gt;Secondary&lt;/<b>a</b>&gt;
 &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>class</i>=<u>"contrast"</u>&gt;Contrast&lt;/<b>a</b>&gt;</code></pre>
-
             </footer>
           </article>
           <p>Blockquote:</p>
           <article aria-label="Blockquote example">
             <blockquote>
-              "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. 
-              Nam at dui sit amet ipsum cursus ornare."
+              "Maecenas vehicula metus tellus, vitae congue turpis hendrerit
+              non. Nam at dui sit amet ipsum cursus ornare."
               <footer>
                 <cite>- Phasellus eget lacinia</cite>
               </footer>
             </blockquote>
             <footer class="code">
-
-<pre><code>&lt;<b>blockquote</b>&gt;
+              <pre><code>&lt;<b>blockquote</b>&gt;
   "Maecenas vehicula metus tellus, vitae congue turpis hendrerit non. 
   Nam at dui sit amet ipsum cursus ornare."
   &lt;<b>footer</b>&gt;
     &lt;<b>cite</b>&gt;- Phasellus eget lacinia&lt;/<b>cite</b>&gt;
   &lt;/<b>footer</b>&gt;
 &lt;/<b>blockquote</b>&gt;</code></pre>
-
             </footer>
           </article>
         </section>
 
         ${require('./_footer.html')}
-        
       </div>
     </main>
     <script src="js/commons.min.js"></script>
