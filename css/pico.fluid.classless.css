@@ -722,16 +722,13 @@ ul ~ h6 {
   margin-top: var(--typography-spacing-vertical);
 }
 
-hgroup,
-.headings {
+hgroup {
   margin-bottom: var(--typography-spacing-vertical);
 }
-hgroup > *,
-.headings > * {
+hgroup > * {
   margin-bottom: 0;
 }
-hgroup > *:last-child,
-.headings > *:last-child {
+hgroup > *:last-child {
   --color: var(--muted-color);
   --font-weight: unset;
   font-size: 1rem;

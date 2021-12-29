@@ -181,8 +181,7 @@ ul {
 }
 
 // Heading group
-hgroup,
-.headings {
+hgroup {
   margin-bottom: var(--typography-spacing-vertical);
 
   > * {
@@ -194,6 +193,23 @@ hgroup,
     --font-weight: unset;
     font-size: 1rem;
     font-family: unset;
+  }
+}
+
+@if $enable-classes {
+  .headings {
+    margin-bottom: var(--typography-spacing-vertical);
+
+    > * {
+      margin-bottom: 0;
+    }
+
+    > *:last-child {
+      --color: var(--muted-color);
+      --font-weight: unset;
+      font-size: 1rem;
+      font-family: unset;
+    }
   }
 }
 
