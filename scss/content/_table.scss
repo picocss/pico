@@ -33,6 +33,15 @@ td {
   text-align: start;
 }
 
+// Footer
+tfoot {
+  th,
+  td {
+    border-top: var(--border-width) solid var(--table-border-color);
+    border-bottom: 0;
+  }
+}
+
 // Striped
 table {
   &[role="grid"] {

@@ -169,11 +169,13 @@ h5 {
 }
 
 thead th,
-thead td {
+thead td,
+tfoot th,
+tfoot td {
   --border-width: 3px;
 }
 
-:not(thead) > * > td {
+:not(thead):not(tfoot) > * > td {
   --font-size: 0.875em;
 }
 
