@@ -59,6 +59,9 @@
   --form-element-spacing-vertical: 0.75rem;
   --form-element-spacing-horizontal: 1rem;
 
+  // Font weight for form labels & fieldsets legend
+  --form-label-font-weight: var(--font-weight);
+
   // Transitions
   --transition: 0.2s ease-in-out;
 }
@@ -149,9 +152,11 @@ a {
   --text-decoration: none;
 
   // Secondary & Contrast
-  &.secondary,
-  &.contrast {
-    --text-decoration: underline;
+  @if $enable-classes {
+    &.secondary,
+    &.contrast {
+      --text-decoration: underline;
+    }
   }
 }
 

@@ -21,6 +21,7 @@
   --block-spacing-horizontal: var(--spacing);
   --form-element-spacing-vertical: 0.75rem;
   --form-element-spacing-horizontal: 1rem;
+  --form-label-font-weight: var(--font-weight);
   --transition: 0.2s ease-in-out;
 }
 @media (min-width: 576px) {
@@ -117,9 +118,6 @@ dialog > article {
 
 a {
   --text-decoration: none;
-}
-a.secondary, a.contrast {
-  --text-decoration: underline;
 }
 
 small {
@@ -766,7 +764,7 @@ mark {
   padding: 0.125rem 0.25rem;
   background-color: var(--mark-background-color);
   color: var(--mark-color);
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 
 blockquote {
@@ -952,6 +950,7 @@ button[disabled],
 input[type=submit][disabled],
 input[type=button][disabled],
 input[type=reset][disabled],
+a[role=button]:not([href]),
 a[role=button][disabled] {
   opacity: 0.5;
   pointer-events: none;
@@ -1052,6 +1051,7 @@ label,
 fieldset legend {
   display: block;
   margin-bottom: calc(var(--spacing) * 0.25);
+  font-weight: var(--form-label-font-weight, var(--font-weight));
 }
 
 input:not([type=checkbox]):not([type=radio]),
@@ -1705,7 +1705,7 @@ code em {
 kbd {
   background-color: var(--code-kbd-background-color);
   color: var(--code-kbd-color);
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 
 /**
