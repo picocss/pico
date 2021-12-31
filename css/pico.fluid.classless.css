@@ -1633,12 +1633,8 @@ td {
   text-align: start;
 }
 
-tr {
-  background-color: var(--background-color);
-}
-
 table[role=grid] tbody tr:nth-child(odd) {
-  --background-color: var(--table-row-stripped-background-color);
+  background-color: var(--table-row-stripped-background-color);
 }
 
 /**
