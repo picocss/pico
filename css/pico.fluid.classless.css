@@ -950,12 +950,9 @@ input[type=reset]:focus {
 button[disabled],
 input[type=submit][disabled],
 input[type=button][disabled],
-input[type=reset][disabled] {
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-a[role=button][href=""] {
+input[type=reset][disabled],
+a[role=button]:not([href]),
+a[role=button][disabled] {
   opacity: 0.5;
   pointer-events: none;
 }
