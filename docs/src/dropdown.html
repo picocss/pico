@@ -18,9 +18,9 @@
             <h2>single / multi select dropdown, without JavaScript.</h2>
           </hgroup>
           <article aria-label="Dropdown examples">
-            <details role="dropdown">
-              <summary>Single select</summary>
-                <ul>
+            <details role="list">
+              <summary aria-haspopup="listbox">Single select</summary>
+                <ul role="listbox">
                   <li>
                     <input type="radio" id="01" name="option1" />
                     <label for="01">Option 1</label>
@@ -31,9 +31,9 @@
                   </li>
                 </ul>
             </details>
-            <details role="dropdown">
-              <summary>Multi-select</summary>
-                <ul>
+            <details role="list">
+              <summary aria-haspopup="listbox">Multi-select</summary>
+                <ul role="listbox">
                   <li>
                     <input type="checkbox" id="11" name="option2" />
                     <label for="11">Option 1</label>
@@ -50,7 +50,7 @@
           <ul>
             <li>
               in order to use dropdown component, use
-              <code>role='dropdown'</code> on details tag.
+              <code>role='list'</code> on details tag.
             </li>
             <li>
               no need to use javascript to close the dropdown when clicked
@@ -70,9 +70,9 @@
               <code>
                 <em>For Single-select</em>
                 <em>===============================</em>
-                &lt;<b>details role="dropdown"</b>&gt;
-                  &lt;<b>summary</b>&gt;Single select&lt;<b>/summary</b>&gt;
-                  &lt;<b>ul</b>&gt;
+                &lt;<b>details role="list"</b>&gt;
+                  &lt;<b>summary aria-haspopup="listbox"</b>&gt;Single select&lt;<b>/summary</b>&gt;
+                  &lt;<b>ul role="listbox"</b>&gt;
                     &lt;<b>li</b>&gt;
                       &lt;<b>input type="radio" id="01" name="option1" /</b>&gt;
                       &lt;<b>label for="01"</b>&gt;Option 1&lt;<b>/label</b>&gt;
@@ -87,9 +87,9 @@
   
                 <em>For Multi-select</em>
                 <em>===============================</em>
-                &lt;<b>details role="dropdown"</b>&gt;
-                  &lt;<b>summary</b>&gt;Multi select&lt;<b>/summary</b>&gt;
-                  &lt;<b>ul</b>&gt;
+                &lt;<b>details role="list"</b>&gt;
+                  &lt;<b>summary aria-haspopup="listbox"</b>&gt;Multi select&lt;<b>/summary</b>&gt;
+                  &lt;<b>ul role="listbox"</b>&gt;
                     &lt;<b>li</b>&gt;
                       &lt;<b>input type="checkbox" id="01" name="option1" /</b>&gt;
                       &lt;<b>label for="01"</b>&gt;Option 1&lt;<b>/label</b>&gt;
