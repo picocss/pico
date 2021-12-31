@@ -1,4 +1,4 @@
-@if $enable-classes {
+@if ($enable-classes and $enable-grid) {
   /**
  * Grid
  * Minimal grid system with auto-layout columns

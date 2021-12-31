@@ -50,13 +50,17 @@
   --block-spacing-vertical: calc(var(--spacing) * 2);
   --block-spacing-horizontal: var(--spacing);
 
-  // Spacings .grid
-  --grid-spacing-vertical: 0;
-  --grid-spacing-horizontal: var(--spacing);
+  @if ($enable-classes and $enable-grid) {
+    --grid-spacing-vertical: 0;
+    --grid-spacing-horizontal: var(--spacing);
+  }
 
   // Spacings for form elements and button
   --form-element-spacing-vertical: 0.75rem;
   --form-element-spacing-horizontal: 1rem;
+
+  // Font weight for form labels & fieldsets legend
+  --form-label-font-weight: var(--font-weight);
 
   // Transitions
   --transition: 0.2s ease-in-out;
