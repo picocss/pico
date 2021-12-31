@@ -1264,9 +1264,6 @@ label,
 fieldset legend {
   display: block;
   margin-bottom: calc(var(--spacing) * 0.25);
-}
-
-label {
   font-weight: var(--form-label-font-weight, var(--font-weight));
 }
 
