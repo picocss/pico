@@ -2034,11 +2034,11 @@ progress::-moz-progress-bar {
   }
 }
 details[role=dropdown] {
+  position: relative;
   padding: 0;
   border-bottom: none;
 }
 details[role=dropdown] summary {
-  position: relative;
   margin-bottom: 0;
   padding: calc(var(--spacing) * 0.5);
   border: var(--border-width) solid var(--form-element-border-color);
@@ -2048,11 +2048,7 @@ details[role=dropdown] summary {
 details[role=dropdown] summary::after {
   transform: rotate(0deg);
 }
-details[role=dropdown] summary + div {
-  position: relative;
-  margin: 0;
-}
-details[role=dropdown] summary + div ul {
+details[role=dropdown] summary + ul {
   z-index: 100;
   position: absolute;
   top: auto;
@@ -2067,33 +2063,33 @@ details[role=dropdown] summary + div ul {
   background-color: var(--background-color);
   list-style: none;
 }
-details[role=dropdown] summary + div ul li {
+details[role=dropdown] summary + ul li {
   margin-bottom: 0;
 }
-details[role=dropdown] summary + div ul li::marker {
+details[role=dropdown] summary + ul li::marker {
   content: "";
 }
-details[role=dropdown] summary + div ul li input[type=radio],
-details[role=dropdown] summary + div ul li input[type=checkbox] {
+details[role=dropdown] summary + ul li input[type=radio],
+details[role=dropdown] summary + ul li input[type=checkbox] {
   display: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
-details[role=dropdown] summary + div ul li label {
+details[role=dropdown] summary + ul li label {
   position: relative;
   width: 100%;
   margin: 0;
   padding: calc(var(--spacing) * 0.5);
   line-height: 1;
 }
-details[role=dropdown] summary + div ul li label:hover {
+details[role=dropdown] summary + ul li label:hover {
   background-color: var(--secondary-focus);
 }
-details[role=dropdown] summary + div ul li input:checked + label {
+details[role=dropdown] summary + ul li input:checked + label {
   background-color: var(--secondary-focus);
 }
-details[role=dropdown] summary + div ul li input[type=checkbox] + label:before {
+details[role=dropdown] summary + ul li input[type=checkbox] + label:before {
   display: inline-block;
   width: calc(var(--spacing) * 1.2);
   height: calc(var(--spacing) * 1.2);
@@ -2103,7 +2099,7 @@ details[role=dropdown] summary + div ul li input[type=checkbox] + label:before {
   content: "";
   vertical-align: text-bottom;
 }
-details[role=dropdown] summary + div ul li input[type=checkbox]:checked + label:before {
+details[role=dropdown] summary + ul li input[type=checkbox]:checked + label:before {
   background-image: var(--icon-checkbox);
   background-position: center;
   background-size: calc(var(--spacing) * 0.8) auto;
