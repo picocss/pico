@@ -195,13 +195,12 @@ input[type="reset"] {
 }
 
 // Button [disabled]
-button,
-input[type="submit"],
-input[type="button"],
-input[type="reset"],
-a[role="button"] {
-  &[disabled] {
-    opacity: 0.5;
-    pointer-events: none;
-  }
+button[disabled],
+input[type="submit"][disabled],
+input[type="button"][disabled],
+input[type="reset"][disabled],
+a[role="button"]:not([href]),
+a[role="button"][disabled] {
+  opacity: 0.5;
+  pointer-events: none;
 }
