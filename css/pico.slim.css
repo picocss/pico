@@ -727,25 +727,15 @@ ul ~ h6 {
   margin-top: var(--typography-spacing-vertical);
 }
 
-hgroup {
-  margin-bottom: var(--typography-spacing-vertical);
-}
-hgroup > * {
-  margin-bottom: 0;
-}
-hgroup > *:last-child {
-  --color: var(--muted-color);
-  --font-weight: unset;
-  font-size: 1rem;
-  font-family: unset;
-}
-
+hgroup,
 .headings {
   margin-bottom: var(--typography-spacing-vertical);
 }
+hgroup > *,
 .headings > * {
   margin-bottom: 0;
 }
+hgroup > *:last-child,
 .headings > *:last-child {
   --color: var(--muted-color);
   --font-weight: unset;

@@ -181,22 +181,25 @@ ul {
 }
 
 // Heading group
-hgroup {
-  margin-bottom: var(--typography-spacing-vertical);
+@if $enable-classes == false {
+  hgroup {
+    margin-bottom: var(--typography-spacing-vertical);
 
-  > * {
-    margin-bottom: 0;
-  }
+    > * {
+      margin-bottom: 0;
+    }
 
-  > *:last-child {
-    --color: var(--muted-color);
-    --font-weight: unset;
-    font-size: 1rem;
-    font-family: unset;
+    > *:last-child {
+      --color: var(--muted-color);
+      --font-weight: unset;
+      font-size: 1rem;
+      font-family: unset;
+    }
   }
 }
 
 @if $enable-classes {
+  hgroup,
   .headings {
     margin-bottom: var(--typography-spacing-vertical);
 
