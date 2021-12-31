@@ -168,11 +168,13 @@ h5 {
 }
 
 thead th,
-thead td {
+thead td,
+tfoot th,
+tfoot td {
   --border-width: 3px;
 }
 
-:not(thead) > * > td {
+:not(thead):not(tfoot) > * > td {
   --font-size: 0.875em;
 }
 
@@ -1663,12 +1665,14 @@ td {
   text-align: start;
 }
 
-tr {
-  background-color: var(--background-color);
+tfoot th,
+tfoot td {
+  border-top: var(--border-width) solid var(--table-border-color);
+  border-bottom: 0;
 }
 
 table[role=grid] tbody tr:nth-child(odd) {
-  --background-color: var(--table-row-stripped-background-color);
+  background-color: var(--table-row-stripped-background-color);
 }
 
 /**

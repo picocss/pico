@@ -211,14 +211,15 @@ h5 {
 }
 
 // Table
-thead {
+thead,
+tfoot {
   th,
   td {
     --border-width: 3px;
   }
 }
 
-:not(thead) > * > td {
+:not(thead):not(tfoot) > * > td {
   --font-size: 0.875em;
 }
 
