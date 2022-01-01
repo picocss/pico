@@ -34,25 +34,48 @@
 }
 
 // Date & Time
-:not([dir="rtl"]) {
+// :not() are needed to add Specificity and avoid !important on padding
+input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) {
+  &[type="date"],
+  &[type="datetime-local"],
+  &[type="month"],
+  &[type="time"],
+  &[type="week"] {
+    padding-right: calc(1.75rem + var(--spacing) * 0.5);
+    background-image: var(--icon-date);
+    background-position: center right 0.75rem;
+    background-size: 1rem auto;
+    background-repeat: no-repeat;
+  }
+
+  // Time
+  &[type="time"] {
+    background-image: var(--icon-time);
+  }
+}
+
+// Calendar picker
+[type="date"],
+[type="datetime-local"],
+[type="month"],
+[type="time"],
+[type="week"] {
+  &::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+}
+
+[dir="rtl"] {
   [type="date"],
   [type="datetime-local"],
   [type="month"],
   [type="time"],
   [type="week"] {
-    background-image: var(--icon-date);
-    background-position: center right 0.75rem;
-    background-size: 1rem auto;
-    background-repeat: no-repeat;
+    text-align: right;
 
     &::-webkit-calendar-picker-indicator {
-      opacity: 0;
+      display: none;
     }
-  }
-
-  // Time
-  [type="time"] {
-    background-image: var(--icon-time);
   }
 }
 
@@ -213,20 +236,20 @@
 }
 
 // Search
-[type="search"] {
-  border-radius: 5rem;
-
-  @if $enable-important {
-    padding-left: calc(
-      var(--form-element-spacing-horizontal) + 1.75rem
-    ) !important;
+// :not() are needed to add Specificity and avoid !important on padding
+input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) {
+  &[type="search"] {
+    padding-left: calc(var(--form-element-spacing-horizontal) + 1.75rem);
+    border-radius: 5rem;
     background-image: var(--icon-search);
     background-position: center left 1.125rem;
     background-size: 1rem auto;
     background-repeat: no-repeat;
   }
+}
 
-  // Cancel button
+// Cancel button
+[type="search"] {
   &::-webkit-search-cancel-button {
     -webkit-appearance: none;
     display: none;
