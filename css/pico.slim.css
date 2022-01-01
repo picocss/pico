@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.4.2 (https://picocss.com)
+ * Pico.css v1.4.3 (https://picocss.com)
  * Copyright 2019-2021 - Licensed under MIT
  *
  * Slim version example
@@ -26,6 +26,7 @@
   --grid-spacing-horizontal: var(--spacing);
   --form-element-spacing-vertical: 0.75rem;
   --form-element-spacing-horizontal: 1rem;
+  --form-label-font-weight: var(--font-weight);
   --transition: 0.2s ease-in-out;
 }
 @media (min-width: 576px) {
@@ -104,11 +105,13 @@ h5 {
 }
 
 thead th,
-thead td {
+thead td,
+tfoot th,
+tfoot td {
   --border-width: 3px;
 }
 
-:not(thead) > * > td {
+:not(thead):not(tfoot) > * > td {
   --font-size: 0.875em;
 }
 
@@ -727,13 +730,16 @@ ul ~ h6 {
   margin-top: var(--typography-spacing-vertical);
 }
 
-hgroup {
+hgroup,
+.headings {
   margin-bottom: var(--typography-spacing-vertical);
 }
-hgroup > * {
+hgroup > *,
+.headings > * {
   margin-bottom: 0;
 }
-hgroup > *:last-child {
+hgroup > *:last-child,
+.headings > *:last-child {
   --color: var(--muted-color);
   --font-weight: unset;
   font-size: 1rem;
@@ -770,7 +776,7 @@ mark {
   padding: 0.125rem 0.25rem;
   background-color: var(--mark-background-color);
   color: var(--mark-color);
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 
 blockquote {
@@ -1091,6 +1097,7 @@ button[disabled],
 input[type=submit][disabled],
 input[type=button][disabled],
 input[type=reset][disabled],
+a[role=button]:not([href]),
 a[role=button][disabled] {
   opacity: 0.5;
   pointer-events: none;
@@ -1191,6 +1198,7 @@ label,
 fieldset legend {
   display: block;
   margin-bottom: calc(var(--spacing) * 0.25);
+  font-weight: var(--form-label-font-weight, var(--font-weight));
 }
 
 input:not([type=checkbox]):not([type=radio]),
@@ -1387,12 +1395,14 @@ td {
   text-align: start;
 }
 
-tr {
-  background-color: var(--background-color);
+tfoot th,
+tfoot td {
+  border-top: var(--border-width) solid var(--table-border-color);
+  border-bottom: 0;
 }
 
 table[role=grid] tbody tr:nth-child(odd) {
-  --background-color: var(--table-row-stripped-background-color);
+  background-color: var(--table-row-stripped-background-color);
 }
 
 /**

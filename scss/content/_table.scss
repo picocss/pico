@@ -33,16 +33,20 @@ td {
   text-align: start;
 }
 
-// Rows
-tr {
-  background-color: var(--background-color);
+// Footer
+tfoot {
+  th,
+  td {
+    border-top: var(--border-width) solid var(--table-border-color);
+    border-bottom: 0;
+  }
 }
 
 // Striped
 table {
   &[role="grid"] {
     tbody tr:nth-child(odd) {
-      --background-color: var(--table-row-stripped-background-color);
+      background-color: var(--table-row-stripped-background-color);
     }
   }
 }

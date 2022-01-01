@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.4.2 (https://picocss.com)
+ * Pico.css v1.4.3 (https://picocss.com)
  * Copyright 2019-2021 - Licensed under MIT
  */
 /**
@@ -19,10 +19,9 @@
   --typography-spacing-vertical: 1.5rem;
   --block-spacing-vertical: calc(var(--spacing) * 2);
   --block-spacing-horizontal: var(--spacing);
-  --grid-spacing-vertical: 0;
-  --grid-spacing-horizontal: var(--spacing);
   --form-element-spacing-vertical: 0.75rem;
   --form-element-spacing-horizontal: 1rem;
+  --form-label-font-weight: var(--font-weight);
   --transition: 0.2s ease-in-out;
 }
 @media (min-width: 576px) {
@@ -120,9 +119,6 @@ dialog > article {
 a {
   --text-decoration: none;
 }
-a.secondary, a.contrast {
-  --text-decoration: underline;
-}
 
 small {
   --font-size: 0.875em;
@@ -172,11 +168,13 @@ h5 {
 }
 
 thead th,
-thead td {
+thead td,
+tfoot th,
+tfoot td {
   --border-width: 3px;
 }
 
-:not(thead) > * > td {
+:not(thead):not(tfoot) > * > td {
   --font-size: 0.875em;
 }
 
@@ -768,7 +766,7 @@ mark {
   padding: 0.125rem 0.25rem;
   background-color: var(--mark-background-color);
   color: var(--mark-color);
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 
 blockquote {
@@ -954,6 +952,7 @@ button[disabled],
 input[type=submit][disabled],
 input[type=button][disabled],
 input[type=reset][disabled],
+a[role=button]:not([href]),
 a[role=button][disabled] {
   opacity: 0.5;
   pointer-events: none;
@@ -1054,6 +1053,7 @@ label,
 fieldset legend {
   display: block;
   margin-bottom: calc(var(--spacing) * 0.25);
+  font-weight: var(--form-label-font-weight, var(--font-weight));
 }
 
 input:not([type=checkbox]):not([type=radio]),
@@ -1248,6 +1248,7 @@ label > input, label > select, label > textarea {
   -webkit-margin-end: 0.375em;
   margin-inline-end: 0.375em;
   border-width: var(--border-width);
+  font-size: inherit;
   vertical-align: middle;
   cursor: pointer;
 }
@@ -1368,25 +1369,38 @@ label > input, label > select, label > textarea {
   border-radius: calc(var(--border-radius) * 0.5);
 }
 
-:not([dir=rtl]) [type=date],
-:not([dir=rtl]) [type=datetime-local],
-:not([dir=rtl]) [type=month],
-:not([dir=rtl]) [type=time],
-:not([dir=rtl]) [type=week] {
+input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=date], input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=datetime-local], input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=month], input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=time], input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=week] {
+  padding-right: calc(1.75rem + var(--spacing) * 0.5);
   background-image: var(--icon-date);
   background-position: center right 0.75rem;
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
-:not([dir=rtl]) [type=date]::-webkit-calendar-picker-indicator,
-:not([dir=rtl]) [type=datetime-local]::-webkit-calendar-picker-indicator,
-:not([dir=rtl]) [type=month]::-webkit-calendar-picker-indicator,
-:not([dir=rtl]) [type=time]::-webkit-calendar-picker-indicator,
-:not([dir=rtl]) [type=week]::-webkit-calendar-picker-indicator {
+input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=time] {
+  background-image: var(--icon-time);
+}
+
+[type=date]::-webkit-calendar-picker-indicator,
+[type=datetime-local]::-webkit-calendar-picker-indicator,
+[type=month]::-webkit-calendar-picker-indicator,
+[type=time]::-webkit-calendar-picker-indicator,
+[type=week]::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
-:not([dir=rtl]) [type=time] {
-  background-image: var(--icon-time);
+
+[dir=rtl] [type=date],
+[dir=rtl] [type=datetime-local],
+[dir=rtl] [type=month],
+[dir=rtl] [type=time],
+[dir=rtl] [type=week] {
+  text-align: right;
+}
+[dir=rtl] [type=date]::-webkit-calendar-picker-indicator,
+[dir=rtl] [type=datetime-local]::-webkit-calendar-picker-indicator,
+[dir=rtl] [type=month]::-webkit-calendar-picker-indicator,
+[dir=rtl] [type=time]::-webkit-calendar-picker-indicator,
+[dir=rtl] [type=week]::-webkit-calendar-picker-indicator {
+  display: none;
 }
 
 [type=file] {
@@ -1599,14 +1613,15 @@ label > input, label > select, label > textarea {
   transform: scale(1.25);
 }
 
-[type=search] {
+input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=search] {
+  padding-left: calc(var(--form-element-spacing-horizontal) + 1.75rem);
   border-radius: 5rem;
-  padding-left: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
   background-image: var(--icon-search);
   background-position: center left 1.125rem;
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
+
 [type=search]::-webkit-search-cancel-button {
   -webkit-appearance: none;
   display: none;
@@ -1634,12 +1649,14 @@ td {
   text-align: start;
 }
 
-tr {
-  background-color: var(--background-color);
+tfoot th,
+tfoot td {
+  border-top: var(--border-width) solid var(--table-border-color);
+  border-bottom: 0;
 }
 
 table[role=grid] tbody tr:nth-child(odd) {
-  --background-color: var(--table-row-stripped-background-color);
+  background-color: var(--table-row-stripped-background-color);
 }
 
 /**
@@ -1707,7 +1724,7 @@ code em {
 kbd {
   background-color: var(--code-kbd-background-color);
   color: var(--code-kbd-color);
-  vertical-align: middle;
+  vertical-align: baseline;
 }
 
 /**

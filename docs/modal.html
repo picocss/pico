@@ -27,7 +27,7 @@
 &lt;/<b>dialog</b>&gt;</code></pre><hgroup><h2>Live demo</h2><h3>Toggle a modal by clicking the button below.</h3></hgroup><article><button class="contrast" data-target="modal-example" onclick="toggleModal(event)">Launch demo modal</button><footer class="code"><pre><code><em>&lt;!-- Button to trigger the modal --&gt;</em>
 &lt;<b>button</b> <i>class</i>=<u>"contrast"</u>
   <i>data-target</i>=<u>"modal-example"</u>
-  <i>onClick</i>=<u>"toggleModal()"</u>&gt;
+  <i>onClick</i>=<u>"toggleModal(event)"</u>&gt;
   Launch demo modal
 &lt;/<b>button</b>&gt;
 
@@ -38,7 +38,7 @@
       <i>aria-label</i>=<u>"Close"</u>&gt;
       <i>class</i>=<u>"close"</u>
       <i>data-target</i>=<u>"modal-example"</u>
-      <i>onClick</i>=<u>"toggleModal()"</u>&gt;
+      <i>onClick</i>=<u>"toggleModal(event)"</u>&gt;
     &lt;/<b>a</b>&gt;
     &lt;<b>h3</b>&gt;Confirm your action!&lt;/<b>h3</b>&gt;
     &lt;<b>p</b>&gt;
@@ -51,13 +51,13 @@
         <i>role</i>=<u>"button"</u>&gt;
         <i>class</i>=<u>"secondary"</u>
         <i>data-target</i>=<u>"modal-example"</u>
-        <i>onClick</i>=<u>"toggleModal()"</u>&gt;
+        <i>onClick</i>=<u>"toggleModal(event)"</u>&gt;
         Cancel
       &lt;/<b>a</b>&gt;
       &lt;<b>a</b> <i>href</i>=<u>"#confirm"</u>
         <i>role</i>=<u>"button"</u>
         <i>data-target</i>=<u>"modal-example"</u>
-        <i>onClick</i>=<u>"toggleModal()"</u>&gt;
+        <i>onClick</i>=<u>"toggleModal(event)"</u>&gt;
         Confirm
       &lt;/<b>a</b>&gt;
     &lt;/<b>footer</b>&gt;
