@@ -30,7 +30,33 @@ nav {
     display: inline-block;
     margin: 0;
     padding: var(--spacing) calc(var(--spacing) * 0.5);
+    
+    // Nested dropdown navigation
+    &:hover {
+      ul {
+        display: block;
+      }
+    }
+    ul {
+      display: none;
+      z-index: 500;
+      position: absolute;
+      padding: .5em 1.15em;
 
+      li {
+        display: block;
+        padding: .3em .2em;
+        float: none;
+        text-align: left;
+      }
+
+      a {
+        display: inline;
+        padding: 0;
+        font-size: .9em;
+      }
+    }
+    
     // HACK: Input & Button inside Nav
     > *,
     > input:not([type="checkbox"]):not([type="radio"]) {
