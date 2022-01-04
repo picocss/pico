@@ -41,10 +41,12 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) 
   &[type="month"],
   &[type="time"],
   &[type="week"] {
-    padding-right: calc(1.75rem + var(--spacing) * 0.5);
+    --icon-position: 0.75rem;
+    --icon-width: 1rem;
+    padding-right: calc(var(--icon-width) + var(--icon-position));
     background-image: var(--icon-date);
-    background-position: center right 0.75rem;
-    background-size: 1rem auto;
+    background-position: center right var(--icon-position);
+    background-size: var(--icon-width) auto;
     background-repeat: no-repeat;
   }
 
@@ -61,6 +63,9 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) 
 [type="time"],
 [type="week"] {
   &::-webkit-calendar-picker-indicator {
+    width: var(--icon-width);
+    margin-right: calc(var(--icon-width) * -1);
+    margin-left: var(--icon-position);
     opacity: 0;
   }
 }
@@ -72,10 +77,6 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) 
   [type="time"],
   [type="week"] {
     text-align: right;
-
-    &::-webkit-calendar-picker-indicator {
-      display: none;
-    }
   }
 }
 
