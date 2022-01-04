@@ -1400,10 +1400,12 @@ label > input, label > select, label > textarea {
 }
 
 input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=date], input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=datetime-local], input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=month], input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=time], input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=week] {
-  padding-right: calc(1.75rem + var(--spacing) * 0.5);
+  --icon-position: 0.75rem;
+  --icon-width: 1rem;
+  padding-right: calc(var(--icon-width) + var(--icon-position));
   background-image: var(--icon-date);
-  background-position: center right 0.75rem;
-  background-size: 1rem auto;
+  background-position: center right var(--icon-position);
+  background-size: var(--icon-width) auto;
   background-repeat: no-repeat;
 }
 input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=time] {
@@ -1415,6 +1417,9 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[
 [type=month]::-webkit-calendar-picker-indicator,
 [type=time]::-webkit-calendar-picker-indicator,
 [type=week]::-webkit-calendar-picker-indicator {
+  width: var(--icon-width);
+  margin-right: calc(var(--icon-width) * -1);
+  margin-left: var(--icon-position);
   opacity: 0;
 }
 
@@ -1424,13 +1429,6 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[
 [dir=rtl] [type=time],
 [dir=rtl] [type=week] {
   text-align: right;
-}
-[dir=rtl] [type=date]::-webkit-calendar-picker-indicator,
-[dir=rtl] [type=datetime-local]::-webkit-calendar-picker-indicator,
-[dir=rtl] [type=month]::-webkit-calendar-picker-indicator,
-[dir=rtl] [type=time]::-webkit-calendar-picker-indicator,
-[dir=rtl] [type=week]::-webkit-calendar-picker-indicator {
-  display: none;
 }
 
 [type=file] {
