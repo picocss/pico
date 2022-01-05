@@ -1,0 +1,66 @@
+/*!
+ * Pico.css v1.4.3 (https://picocss.com)
+ * Copyright 2019-2021 - Licensed under MIT
+ *
+ * Slim version example
+ * You can export only the modules you need
+ */
+
+// Config
+// --------------------
+
+// Enable <header>, <main>, <footer> inside <body> as a container
+$enable-semantic-container: true;
+
+// Enable .classes
+$enable-classes: false;
+
+// Enable responsive spacings for <header>, <main>, <footer>, <section>, <article>
+$enable-responsive-spacings: false;
+
+// Enable transitions
+$enable-transitions: false;
+
+// Enable overriding with !important
+$enable-important: false;
+
+// Pico Lib
+// --------------------
+
+// Config
+@import "variables";
+
+// Theming
+@import "themes/default";
+
+// Layout
+@import "layout/document"; // html
+@import "layout/sectioning"; // body, header, main, footer
+@import "layout/container"; // .container, .container-fluid
+@import "layout/section"; // section
+@import "layout/flexgrid"; // .grid responsive flexbox
+@import "layout/scroller"; // figure
+
+// Content
+@import "content/typography"; // a, headings, p, ul, blockquote, ...
+@import "content/embedded"; // audio, canvas, iframe, img, svg, video
+@import "content/button"; // button, a[role=button], type=button, type=submit ...
+@import "content/table"; // table, tr, td, ...
+@import "content/form"; // input, select, textarea, label, fieldset, legend
+//@import "content/form-checkbox-radio"; // type=checkbox, type=radio, role=switch
+//@import "content/form-alt-input-types"; // type=color, type=date, type=file, type=search, ...
+//@import "content/code"; // pre, code, ...
+//@import "content/miscs"; // hr, template, [hidden], dialog, canvas
+
+// Utilities
+@import "utilities/accessibility"; // -ms-touch-action, aria-*
+@import "utilities/reduce-motion"; // prefers-reduced-motion
+//@import "utilities/loading"; // aria-busy=true
+//@import "utilities/tooltip"; // data-tooltip
+
+// Components
+@import "components/nav";
+@import "components/card";
+//@import "components/accordion"; // details, summary
+//@import "components/modal"; // dialog
+//@import "components/progress"; // progress
