@@ -16,7 +16,7 @@
 // up the height of the tallest .col in the same .row
 .row {
   display: flex;
-  flex-direction: col;
+  flex-direction: column;
   width: 100%;
   padding: 0;
 
@@ -30,7 +30,7 @@
   &.row-wrap {
     flex-wrap: wrap;
   }
-  // Vertically Align cols
+  // Vertically Align columns
   // .row-* vertically aligns every .col in the .row
   &.row-top {
     align-items: flex-start;
@@ -55,44 +55,44 @@
     max-width: 100%;
     margin-left: 0;
 
-    // col Offsets
-    &.col-offset-10 {
+    // column Offsets
+    &.col-os-10 {
       margin-left: 10%;
     }
-    &.col-offset-20 {
+    &.col-os-20 {
       margin-left: 20%;
     }
-    &.col-offset-25 {
+    &.col-os-25 {
       margin-left: 25%;
     }
-    &.col-offset-33 {
+    &.col-os-33 {
       margin-left: 33.3333%;
     }
-    &.col-offset-40 {
+    &.col-os-40 {
       margin-left: 40%;
     }
-    &.col-offset-50 {
+    &.col-os-50 {
       margin-left: 50%;
     }
-    &.col-offset-60 {
+    &.col-os-60 {
       margin-left: 60%;
     }
-    &.col-offset-66 {
+    &.col-os-66 {
       margin-left: 66.6666%;
     }
-    &.col-offset-75 {
+    &.col-os-75 {
       margin-left: 75%;
     }
-    &.col-offset-80 {
+    &.col-os-80 {
       margin-left: 80%;
     }
-    &.col-offset-90 {
+    &.col-os-90 {
       margin-left: 90%;
     }
-    // Explicit col Percent Sizes
-    // By default each grid col will evenly distribute
+    // Explicit column Percent Sizes
+    // By default each grid column will evenly distribute
     // across the grid. However, you can specify individual
-    // cols to take up a certain size of the available area
+    // columns to take up a certain size of the available area
     &.col-10 {
       flex: 0 0 10%;
       max-width: 10%;
@@ -137,14 +137,14 @@
       flex: 0 0 90%;
       max-width: 90%;
     }
-    // .col-* vertically aligns an individual .col
+    // .col-* vertically aligns an individual .col column
     .col-top {
       align-self: flex-start;
     }
-    .col-bottom {
+    .col-bot {
       align-self: flex-end;
     }
-    .col-center {
+    .col-cen {
       align-self: center;
     }
   }

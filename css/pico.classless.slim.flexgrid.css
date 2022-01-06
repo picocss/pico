@@ -508,7 +508,7 @@ section {
 
 .row {
   display: flex;
-  flex-direction: col;
+  flex-direction: column;
   width: 100%;
   padding: 0;
 }
@@ -543,37 +543,37 @@ section {
   max-width: 100%;
   margin-left: 0;
 }
-.row .col.col-offset-10 {
+.row .col.col-os-10 {
   margin-left: 10%;
 }
-.row .col.col-offset-20 {
+.row .col.col-os-20 {
   margin-left: 20%;
 }
-.row .col.col-offset-25 {
+.row .col.col-os-25 {
   margin-left: 25%;
 }
-.row .col.col-offset-33 {
+.row .col.col-os-33 {
   margin-left: 33.3333%;
 }
-.row .col.col-offset-40 {
+.row .col.col-os-40 {
   margin-left: 40%;
 }
-.row .col.col-offset-50 {
+.row .col.col-os-50 {
   margin-left: 50%;
 }
-.row .col.col-offset-60 {
+.row .col.col-os-60 {
   margin-left: 60%;
 }
-.row .col.col-offset-66 {
+.row .col.col-os-66 {
   margin-left: 66.6666%;
 }
-.row .col.col-offset-75 {
+.row .col.col-os-75 {
   margin-left: 75%;
 }
-.row .col.col-offset-80 {
+.row .col.col-os-80 {
   margin-left: 80%;
 }
-.row .col.col-offset-90 {
+.row .col.col-os-90 {
   margin-left: 90%;
 }
 .row .col.col-10 {
@@ -623,10 +623,10 @@ section {
 .row .col .col-top {
   align-self: flex-start;
 }
-.row .col .col-bottom {
+.row .col .col-bot {
   align-self: flex-end;
 }
-.row .col .col-center {
+.row .col .col-cen {
   align-self: center;
 }
 
