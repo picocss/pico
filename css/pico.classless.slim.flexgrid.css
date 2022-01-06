@@ -498,7 +498,7 @@ section {
   margin-bottom: var(--block-spacing-vertical);
 }
 
-.container {
+.flexgrid {
   position: relative;
   width: 100%;
   max-width: 112rem;
