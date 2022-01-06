@@ -1,0 +1,165 @@
+// Grid | milligram.io | MIT License
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// .flexgrid is main centered wrapper with a max width of 112.0rem (1120px)
+.flexgrid {
+  position: relative;
+  width: 100%;
+  max-width: 112.0rem;
+  margin: 0 auto;
+  padding: 0 2.0rem;
+}
+// Using flexbox for the grid, inspired by Philip Walton:
+// http://philipwalton.github.io/solved-by-flexbox/demos/grids/
+// By default each .col within a .row will evenly take up
+// available width, and the height of each .col with take
+// up the height of the tallest .col in the same .row
+.row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+
+  &.row-no-padding {
+    padding: 0;
+
+    & > .col {
+      padding: 0;
+    }
+  }
+  &.row-wrap {
+    flex-wrap: wrap;
+  }
+  // Vertically Align columns
+  // .row-* vertically aligns every .col in the .row
+  &.row-top {
+    align-items: flex-start;
+  }
+  &.row-bottom {
+    align-items: flex-end;
+  }
+  &.row-center {
+    align-items: center;
+  }
+  &.row-stretch {
+    align-items: stretch;
+  }
+  &.row-baseline {
+    align-items: baseline;
+  }
+  .col {
+    display: block;
+    // IE 11 required specifying the flex-basis otherwise it breaks mobile
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+
+    // column Offsets
+    &.col-os-10 {
+      margin-left: 10%;
+    }
+    &.col-os-20 {
+      margin-left: 20%;
+    }
+    &.col-os-25 {
+      margin-left: 25%;
+    }
+    &.col-os-33 {
+      margin-left: 33.3333%;
+    }
+    &.col-os-40 {
+      margin-left: 40%;
+    }
+    &.col-os-50 {
+      margin-left: 50%;
+    }
+    &.col-os-60 {
+      margin-left: 60%;
+    }
+    &.col-os-66 {
+      margin-left: 66.6666%;
+    }
+    &.col-os-75 {
+      margin-left: 75%;
+    }
+    &.col-os-80 {
+      margin-left: 80%;
+    }
+    &.col-os-90 {
+      margin-left: 90%;
+    }
+    // Explicit column Percent Sizes
+    // By default each grid column will evenly distribute
+    // across the grid. However, you can specify individual
+    // columns to take up a certain size of the available area
+    &.col-10 {
+      flex: 0 0 10%;
+      max-width: 10%;
+    }
+    &.col-20 {
+      flex: 0 0 20%;
+      max-width: 20%;
+    }
+    &.col-25 {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+    &.col-33 {
+      flex: 0 0 33.3333%;
+      max-width: 33.3333%;
+    }
+    &.col-40 {
+      flex: 0 0 40%;
+      max-width: 40%;
+    }
+    &.col-50 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    &.col-60 {
+      flex: 0 0 60%;
+      max-width: 60%;
+    }
+    &.col-66 {
+      flex: 0 0 66.6666%;
+      max-width: 66.6666%;
+    }
+    &.col-75 {
+      flex: 0 0 75%;
+      max-width: 75%;
+    }
+    &.col-80 {
+      flex: 0 0 80%;
+      max-width: 80%;
+    }
+    &.col-90 {
+      flex: 0 0 90%;
+      max-width: 90%;
+    }
+    // .col-* vertically aligns an individual .col column
+    .col-top {
+      align-self: flex-start;
+    }
+    .col-bot {
+      align-self: flex-end;
+    }
+    .col-cen {
+      align-self: center;
+    }
+  }
+}
+// Larger than mobile screen
+// Safari desktop has a bug using `rem`, but Safari mobile works
+@media (min-width: 40.0rem) {
+  .row {
+    flex-direction: row;
+    width: calc(100% + 2.0rem);
+    margin-left: -1.0rem;
+
+    .col {
+      margin-bottom: inherit;
+      padding: 0 1.0rem;
+    }
+  }
+};
