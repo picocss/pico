@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    ${require('./_head.html')
+      title="FlexGrid"
+      description=".flexgrid enables a responsive flexbox based minimal grid system with auto-layout columns that stack vertically as the page width is reduced."
+      canonical="flexgrid.html"
+    }
+  </head>
+
+  <body>
+    ${require('./_nav.html')}
+
+    <main class="container" id="docs">
+      ${require('./_sidebar.html') active="flexgrid-link"}
+
+      <div role="document">
+        <section id="flexgrid">
+          <hgroup>
+            <h1>FlexGrid</h1>
+            <h2><code>.flexgrid</code> enables a responsive flexbox based minimal grid system with auto-layout columns that stack vertically as the page width is reduced.</h2>
+          </hgroup>
+          <article aria-label="FlexGrid example">
+            <div class="flexgrid">
+              <div class="row">
+
+                <div class="col">
+                  <h3>First Column</h3>
+                  <p>The grid columns will stack vertically as the page width is reduced.</p>
+                  <a href="#confirm" role="button">INFO</a>
+                </div>
+
+                <div class="col">
+                  <h3>Second Column</h3>
+                  <p>Each column gets equal space unless specified: class="col col-33"</p>
+                  <a href="#confirm" role="button">INFO</a>
+                </div>
+
+              </div>
+            </div>
+            <footer class="code">
+
+<pre><code>&lt;<b>div</b> <i>class</i>=<u>"flexgrid"</u>&gt;
+  &lt;<b>div</b> <i>class</i>=<u>"row"</u>&gt;
+    &lt;<b>div</b> <i>class</i>=<u>"col"</u>&gt;1&lt;/<b>div</b>&gt;
+    &lt;<b>div</b> <i>class</i>=<u>"col"</u>&gt;2&lt;/<b>div</b>&gt;
+  &lt;/<b>div</b>&gt;
+&lt;/<b>div</b>&gt;</code></pre>
+
+            </footer>
+          </article>
+          <details>
+            <summary>
+              <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              &nbsp;More about grids
+            </summary>
+            <p>As Pico focuses on native HTML elements, we kept this flexbox based grid system very minimalist.</p>
+            <p>A more robust grid system in flexbox, with all the ordering, offsetting and, breakpoints utilities, can be heavier than the total size of the Pico library. Not really in the Pico spirit.</p>
+            <p>If you need a quick way to prototyping or build a complex layout, you can look at <strong>Flexbox grid layouts</strong>. For example, <a href="https://getbootstrap.com/docs/4.2/getting-started/contents/">Bootstrap Grid System only</a> or <a href="http://flexboxgrid.com/">Flexbox Grid</a>.</p>
+            <p>If you need a light and custom grid, you can look at <strong>CSS Grid Generators</strong>. For example, <a href="https://cssgrid-generator.netlify.com/">CSS Grid Generator</a>, <a href="http://grid.layoutit.com/">Layoutit!</a> or <a href="https://griddy.io/">Griddy</a>.</p>
+            <p>Alternatively, you can <a href="https://learncssgrid.com/">learn about CSS Grid</a>.</p>
+          </details>
+        </section>
+
+        ${require('./_footer.html')}
+
+      </div>
+    </main>
+    <script src="js/commons.min.js"></script>
+    <script src="js/grid.min.js"></script>
+  </body>
+</html>
