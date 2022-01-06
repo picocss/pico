@@ -38,7 +38,7 @@ $enable-important: false;
 @import "layout/sectioning"; // body, header, main, footer
 @import "layout/container"; // .container, .container-fluid
 @import "layout/section"; // section
-@import "layout/flexgrid"; // .grid responsive flexbox
+@import "layout/flexgrid"; // .flexgrid, .col, .row, responsive flexbox grid
 @import "layout/scroller"; // figure
 
 // Content
