@@ -30,7 +30,7 @@ nav {
     display: inline-block;
     margin: 0;
     padding: var(--spacing) calc(var(--spacing) * 0.5);
-    
+
     // Nested dropdown navigation
     &:hover {
       ul {
@@ -41,22 +41,27 @@ nav {
       display: none;
       z-index: 500;
       position: absolute;
-      padding: .5em 1.15em;
+      padding: calc(var(--spacing)*0.5) calc(var(--spacing)*1.15);;
+      background-color: var(--nav-dropdown-background-color);
+      box-shadow: var(--nav-dropdown-box-shadow);
 
       li {
         display: block;
-        padding: .3em .2em;
+        padding: calc(var(--spacing)*0.2);
         float: none;
         text-align: left;
+        
+        [dir="rtl"] {
+          text-align: right;
+        }
       }
 
       a {
         display: inline;
         padding: 0;
-        font-size: .9em;
       }
     }
-    
+
     // HACK: Input & Button inside Nav
     > *,
     > input:not([type="checkbox"]):not([type="radio"]) {
@@ -94,6 +99,18 @@ aside {
     a {
       margin: calc(var(--spacing) * -0.5);
       padding: calc(var(--spacing) * 0.5);
+    }
+
+    ul {
+      display:block;
+      position: inherit;
+      background-color: inherit;
+      box-shadow: none;
+      padding-bottom: 0;
+
+      li:last-of-type {
+        padding-bottom: 0;
+      }
     }
   }
 }

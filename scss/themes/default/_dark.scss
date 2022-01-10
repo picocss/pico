@@ -84,6 +84,12 @@
   --range-thumb-hover-color: var(--secondary-hover);
   --range-thumb-active-color: var(--primary);
 
+  // Nav
+  --nav-dropdown-background-color: #{rgba($grey-500, 0.05)};
+  --nav-dropdown-box-shadow: 0 0.125rem 1rem #{rgba($black, 0.06)},
+    0 0.125rem 2rem #{rgba($black, 0.12)},
+    0 0 0 0.0625rem #{rgba($black, 0.036)};
+
   // Table
   --table-border-color: var(--muted-border-color);
   --table-row-stripped-background-color: #{rgba($grey-500, 0.05)};
