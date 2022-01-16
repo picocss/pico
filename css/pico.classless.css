@@ -1892,6 +1892,10 @@ dialog {
   border: none;
   background-color: var(--modal-overlay-background-color);
 }
+dialog article {
+  max-height: calc(100vh - var(--spacing) * 2);
+  overflow: auto;
+}
 @media (min-width: 576px) {
   dialog article {
     max-width: 510px;
