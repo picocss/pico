@@ -1326,12 +1326,9 @@ label > input, label > select, label > textarea {
   background-image: none;
 }
 [type=checkbox][role=switch]:checked::before {
-  margin-right: 0;
   margin-left: calc(1.125em - var(--border-width));
   -webkit-margin-start: calc(1.125em - var(--border-width));
   margin-inline-start: calc(1.125em - var(--border-width));
-  -webkit-margin-end: 0;
-  margin-inline-end: 0;
 }
 
 [type=checkbox][aria-invalid=false],
