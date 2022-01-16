@@ -114,10 +114,8 @@
     background-image: none;
 
     &::before {
-      margin-right: 0;
       margin-left: calc(#{$switch-width * 0.5} - var(--border-width));
       margin-inline-start: calc(#{$switch-width * 0.5} - var(--border-width));
-      margin-inline-end: 0;
     }
   }
 }
