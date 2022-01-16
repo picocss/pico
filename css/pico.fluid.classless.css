@@ -920,10 +920,10 @@ input[type=reset]:focus,
 [role=button]:hover,
 [role=button]:active,
 [role=button]:focus {
-  --color: var(--primary-inverse);
   --background-color: var(--primary-hover);
   --border-color: var(--primary-hover);
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+  --color: var(--primary-inverse);
 }
 button:focus,
 input[type=submit]:focus,

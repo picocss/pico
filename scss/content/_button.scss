@@ -80,10 +80,10 @@ input[type="reset"],
   &:hover,
   &:active,
   &:focus {
-    --color: var(--primary-inverse);
     --background-color: var(--primary-hover);
     --border-color: var(--primary-hover);
     --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+    --color: var(--primary-inverse);
   }
 
   &:focus {
@@ -131,6 +131,7 @@ input[type="reset"] {
       &:focus {
         --background-color: var(--secondary-hover);
         --border-color: var(--secondary-hover);
+        --color: var(--secondary-inverse);
       }
 
       &:focus {
@@ -150,6 +151,7 @@ input[type="reset"] {
       &:focus {
         --background-color: var(--contrast-hover);
         --border-color: var(--contrast-hover);
+        --color: var(--contrast-inverse);
       }
 
       &:focus {

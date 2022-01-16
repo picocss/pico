@@ -1001,10 +1001,10 @@ input[type=reset]:focus,
 [role=button]:hover,
 [role=button]:active,
 [role=button]:focus {
-  --color: var(--primary-inverse);
   --background-color: var(--primary-hover);
   --border-color: var(--primary-hover);
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+  --color: var(--primary-inverse);
 }
 button:focus,
 input[type=submit]:focus,
@@ -1055,6 +1055,7 @@ input[type=reset].secondary:focus,
 [role=button].secondary:focus {
   --background-color: var(--secondary-hover);
   --border-color: var(--secondary-hover);
+  --color: var(--secondary-inverse);
 }
 button.secondary:focus,
 input[type=submit].secondary:focus,
@@ -1088,6 +1089,7 @@ input[type=reset].contrast:focus,
 [role=button].contrast:focus {
   --background-color: var(--contrast-hover);
   --border-color: var(--contrast-hover);
+  --color: var(--contrast-inverse);
 }
 button.contrast:focus,
 input[type=submit].contrast:focus,
