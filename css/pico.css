@@ -1015,25 +1015,10 @@ input[type=reset]:focus,
     0 0 0 var(--outline-width) var(--primary-focus);
 }
 
-input[type=reset] {
-  --background-color: var(--secondary);
-  --border-color: var(--secondary);
-  --color: var(--secondary-inverse);
-  cursor: pointer;
-}
-input[type=reset]:hover, input[type=reset]:active, input[type=reset]:focus {
-  --background-color: var(--secondary-hover);
-  --border-color: var(--secondary-hover);
-}
-input[type=reset]:focus {
-  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-    0 0 0 var(--outline-width) var(--secondary-focus);
-}
-
 button.secondary,
 input[type=submit].secondary,
 input[type=button].secondary,
-input[type=reset].secondary,
+input[type=reset],
 [role=button].secondary {
   --background-color: var(--secondary);
   --border-color: var(--secondary);
@@ -1047,9 +1032,9 @@ input[type=submit].secondary:focus,
 input[type=button].secondary:hover,
 input[type=button].secondary:active,
 input[type=button].secondary:focus,
-input[type=reset].secondary:hover,
-input[type=reset].secondary:active,
-input[type=reset].secondary:focus,
+input[type=reset]:hover,
+input[type=reset]:active,
+input[type=reset]:focus,
 [role=button].secondary:hover,
 [role=button].secondary:active,
 [role=button].secondary:focus {
@@ -1060,11 +1045,12 @@ input[type=reset].secondary:focus,
 button.secondary:focus,
 input[type=submit].secondary:focus,
 input[type=button].secondary:focus,
-input[type=reset].secondary:focus,
+input[type=reset]:focus,
 [role=button].secondary:focus {
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
     0 0 0 var(--outline-width) var(--secondary-focus);
 }
+
 button.contrast,
 input[type=submit].contrast,
 input[type=button].contrast,
@@ -1099,6 +1085,7 @@ input[type=reset].contrast:focus,
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
     0 0 0 var(--outline-width) var(--contrast-focus);
 }
+
 button.outline,
 input[type=submit].outline,
 input[type=button].outline,
@@ -1123,6 +1110,7 @@ input[type=reset].outline:focus,
   --background-color: transparent;
   --color: var(--primary-hover);
 }
+
 button.outline.secondary,
 input[type=submit].outline.secondary,
 input[type=button].outline.secondary,
@@ -1145,6 +1133,7 @@ input[type=reset].outline.secondary:focus,
 [role=button].outline.secondary:focus {
   --color: var(--secondary-hover);
 }
+
 button.outline.contrast,
 input[type=submit].outline.contrast,
 input[type=button].outline.contrast,
