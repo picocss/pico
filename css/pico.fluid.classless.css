@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.4.3 (https://picocss.com)
+ * Pico.css v1.4.4 (https://picocss.com)
  * Copyright 2019-2021 - Licensed under MIT
  */
 /**
@@ -879,7 +879,7 @@ button {
   margin-bottom: var(--spacing);
 }
 
-a[role=button] {
+[role=button] {
   display: inline-block;
   text-decoration: none;
 }
@@ -888,7 +888,7 @@ button,
 input[type=submit],
 input[type=button],
 input[type=reset],
-a[role=button] {
+[role=button] {
   --background-color: var(--primary);
   --border-color: var(--primary);
   --color: var(--primary-inverse);
@@ -917,18 +917,19 @@ input[type=button]:focus,
 input[type=reset]:hover,
 input[type=reset]:active,
 input[type=reset]:focus,
-a[role=button]:hover,
-a[role=button]:active,
-a[role=button]:focus {
+[role=button]:hover,
+[role=button]:active,
+[role=button]:focus {
   --background-color: var(--primary-hover);
   --border-color: var(--primary-hover);
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+  --color: var(--primary-inverse);
 }
 button:focus,
 input[type=submit]:focus,
 input[type=button]:focus,
 input[type=reset]:focus,
-a[role=button]:focus {
+[role=button]:focus {
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
     0 0 0 var(--outline-width) var(--primary-focus);
 }
@@ -953,7 +954,7 @@ input[type=submit][disabled],
 input[type=button][disabled],
 input[type=reset][disabled],
 a[role=button]:not([href]),
-a[role=button][disabled] {
+[role=button][disabled] {
   opacity: 0.5;
   pointer-events: none;
 }
@@ -1325,12 +1326,9 @@ label > input, label > select, label > textarea {
   background-image: none;
 }
 [type=checkbox][role=switch]:checked::before {
-  margin-right: 0;
   margin-left: calc(1.125em - var(--border-width));
   -webkit-margin-start: calc(1.125em - var(--border-width));
   margin-inline-start: calc(1.125em - var(--border-width));
-  -webkit-margin-end: 0;
-  margin-inline-end: 0;
 }
 
 [type=checkbox][aria-invalid=false],
@@ -1370,10 +1368,12 @@ label > input, label > select, label > textarea {
 }
 
 input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=date], input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=datetime-local], input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=month], input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=time], input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=week] {
-  padding-right: calc(1.75rem + var(--spacing) * 0.5);
+  --icon-position: 0.75rem;
+  --icon-width: 1rem;
+  padding-right: calc(var(--icon-width) + var(--icon-position));
   background-image: var(--icon-date);
-  background-position: center right 0.75rem;
-  background-size: 1rem auto;
+  background-position: center right var(--icon-position);
+  background-size: var(--icon-width) auto;
   background-repeat: no-repeat;
 }
 input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=time] {
@@ -1385,6 +1385,9 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[
 [type=month]::-webkit-calendar-picker-indicator,
 [type=time]::-webkit-calendar-picker-indicator,
 [type=week]::-webkit-calendar-picker-indicator {
+  width: var(--icon-width);
+  margin-right: calc(var(--icon-width) * -1);
+  margin-left: var(--icon-position);
   opacity: 0;
 }
 
@@ -1394,13 +1397,6 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[
 [dir=rtl] [type=time],
 [dir=rtl] [type=week] {
   text-align: right;
-}
-[dir=rtl] [type=date]::-webkit-calendar-picker-indicator,
-[dir=rtl] [type=datetime-local]::-webkit-calendar-picker-indicator,
-[dir=rtl] [type=month]::-webkit-calendar-picker-indicator,
-[dir=rtl] [type=time]::-webkit-calendar-picker-indicator,
-[dir=rtl] [type=week]::-webkit-calendar-picker-indicator {
-  display: none;
 }
 
 [type=file] {
@@ -1760,7 +1756,6 @@ details summary {
   color: var(--accordion-close-summary-color);
   line-height: 1rem;
   list-style-type: none;
-  list-style-type: none;
   cursor: pointer;
   transition: color var(--transition);
 }
@@ -1863,6 +1858,10 @@ dialog {
   padding: var(--spacing);
   border: none;
   background-color: var(--modal-overlay-background-color);
+}
+dialog article {
+  max-height: calc(100vh - var(--spacing) * 2);
+  overflow: auto;
 }
 @media (min-width: 576px) {
   dialog article {
