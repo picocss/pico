@@ -909,7 +909,7 @@ button {
   margin-bottom: var(--spacing);
 }
 
-a[role=button] {
+[role=button] {
   display: inline-block;
   text-decoration: none;
 }
@@ -918,7 +918,7 @@ button,
 input[type=submit],
 input[type=button],
 input[type=reset],
-a[role=button] {
+[role=button] {
   --background-color: var(--primary);
   --border-color: var(--primary);
   --color: var(--primary-inverse);
@@ -947,9 +947,10 @@ input[type=button]:focus,
 input[type=reset]:hover,
 input[type=reset]:active,
 input[type=reset]:focus,
-a[role=button]:hover,
-a[role=button]:active,
-a[role=button]:focus {
+[role=button]:hover,
+[role=button]:active,
+[role=button]:focus {
+  --color: var(--primary-inverse);
   --background-color: var(--primary-hover);
   --border-color: var(--primary-hover);
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
@@ -958,7 +959,7 @@ button:focus,
 input[type=submit]:focus,
 input[type=button]:focus,
 input[type=reset]:focus,
-a[role=button]:focus {
+[role=button]:focus {
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
     0 0 0 var(--outline-width) var(--primary-focus);
 }
@@ -983,7 +984,7 @@ input[type=submit][disabled],
 input[type=button][disabled],
 input[type=reset][disabled],
 a[role=button]:not([href]),
-a[role=button][disabled] {
+[role=button][disabled] {
   opacity: 0.5;
   pointer-events: none;
 }
