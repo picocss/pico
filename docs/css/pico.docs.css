@@ -39,6 +39,17 @@
   --article-code-background-color: var(--code-background-color);
 }
 
+.flex.demo > * > * {
+  display: block;
+  padding: 0.3em 0;
+  background: #008000;
+  text-align: center;
+}
+
+.flex.demo > *:nth-child(2n) > * {
+  background: #00FFFF;
+}
+
 /**
  * Docs: Document
  */

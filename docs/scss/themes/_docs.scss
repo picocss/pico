@@ -23,3 +23,15 @@
 [data-theme="dark"] {
   @include dark;
 }
+
+// Display the grid with colors
+.flex.demo > * > * {
+  display: block;
+  padding: .3em 0;
+  background: #008000;
+  text-align: center;
+}
+
+.flex.demo > *:nth-child(2n) > * {
+  background: #00FFFF;
+}

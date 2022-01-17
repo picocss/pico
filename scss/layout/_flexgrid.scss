@@ -1,165 +1,164 @@
-// Grid | milligram.io | MIT License
-// ––––––––––––––––––––––––––––––––––––––––––––––––––
+// picnic css grid | picnicss.com | MIT License
+$flexgrid-separation: .6em !default;
+$flexgrid-gutter: 10px !default;
 
-// .flexgrid is main centered wrapper with a max width of 112.0rem (1120px)
-.flexgrid {
-  position: relative;
-  width: 100%;
-  max-width: 112.0rem;
-  margin: 0 auto;
-  padding: 0 2.0rem;
+$flexgrid-gutter: $flexgrid-separation !default;
+$flexgrid-gutter-vertical: $flexgrid-gutter !default;
+$flexgrid-gutter-horizontal: $flexgrid-gutter !default;
+
+$flexgrid-sizes: 200 300 400 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000 !default;
+$flexgrid-children: $flexgrid-sizes !default;
+$flexgrid-off: $flexgrid-sizes !default;
+
+$flexgrid-count: one two three four five six seven eight nine ten eleven twelve !default;
+$flexgrid-count-sizes: (
+  one: 100%,
+  two: 50%,
+  three: 33.33333%,
+  four: 25%,
+  five: 20%,
+  six: 16.66666%,
+  seven: 14.28571%,
+  eight: 12.5%,
+  nine: 11.11111%,
+  ten: 10%,
+  eleven: 9.09091%,
+  twelve: 8.33333%
+);
+$flexgrid-part: full half third two-third fourth three-fourth fifth two-fifth three-fifth four-fifth sixth !default;
+$flexgrid-part-sizes: (
+  full: 100%,
+  half: 50%,
+  third: 33.33333%,
+  two-third: 66.66666%,
+  fourth: 25%,
+  three-fourth: 75%,
+  fifth: 20%,
+  two-fifth: 40%,
+  three-fifth: 60%,
+  four-fifth: 80%,
+  sixth: 16.66666%
+);
+$flexgrid-offpart: none half third two-third fourth three-fourth fifth two-fifth three-fifth four-fifth sixth !default;
+$flexgrid-offpart-sizes: (
+  half: 50%,
+  third: 33.33333%,
+  two-third: 66.66666%,
+  fourth: 25%,
+  three-fourth: 75%,
+  fifth: 20%,
+  two-fifth: 40%,
+  three-fifth: 60%,
+  four-fifth: 80%,
+  sixth: 16.66666%,
+  none: 0
+);
+
+
+@function in($list, $var) {
+  @return (false != index($list, $var));
 }
-// Using flexbox for the grid, inspired by Philip Walton:
-// http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-// By default each .col within a .row will evenly take up
-// available width, and the height of each .col with take
-// up the height of the tallest .col in the same .row
-.row {
+
+.flex {
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 0;
+  flex-wrap: wrap;
+  width: calc(100% + #{$flexgrid-gutter-horizontal});
+  margin-left: -$flexgrid-gutter-horizontal;
+  transition: all .3s ease;
+}
 
-  &.row-no-padding {
-    padding: 0;
+.flex > * {
+  box-sizing: border-box;
+  flex: 1 1 auto; /* Default for IE10 bug */
+  padding-bottom: $flexgrid-gutter-vertical;
+  padding-left: $flexgrid-gutter-horizontal;
+}
 
-    & > .col {
-      padding: 0;
-    }
-  }
-  &.row-wrap {
-    flex-wrap: wrap;
-  }
-  // Vertically Align columns
-  // .row-* vertically aligns every .col in the .row
-  &.row-top {
-    align-items: flex-start;
-  }
-  &.row-bottom {
-    align-items: flex-end;
-  }
-  &.row-center {
-    align-items: center;
-  }
-  &.row-stretch {
-    align-items: stretch;
-  }
-  &.row-baseline {
-    align-items: baseline;
-  }
-  .col {
-    display: block;
-    // IE 11 required specifying the flex-basis otherwise it breaks mobile
-    flex: 1 1 auto;
-    width: 100%;
-    max-width: 100%;
-    margin-left: 0;
-
-    // column Offsets
-    &.col-os-10 {
-      margin-left: 10%;
-    }
-    &.col-os-20 {
-      margin-left: 20%;
-    }
-    &.col-os-25 {
-      margin-left: 25%;
-    }
-    &.col-os-33 {
-      margin-left: 33.3333%;
-    }
-    &.col-os-40 {
-      margin-left: 40%;
-    }
-    &.col-os-50 {
-      margin-left: 50%;
-    }
-    &.col-os-60 {
-      margin-left: 60%;
-    }
-    &.col-os-66 {
-      margin-left: 66.6666%;
-    }
-    &.col-os-75 {
-      margin-left: 75%;
-    }
-    &.col-os-80 {
-      margin-left: 80%;
-    }
-    &.col-os-90 {
-      margin-left: 90%;
-    }
-    // Explicit column Percent Sizes
-    // By default each grid column will evenly distribute
-    // across the grid. However, you can specify individual
-    // columns to take up a certain size of the available area
-    &.col-10 {
-      flex: 0 0 10%;
-      max-width: 10%;
-    }
-    &.col-20 {
-      flex: 0 0 20%;
-      max-width: 20%;
-    }
-    &.col-25 {
-      flex: 0 0 25%;
-      max-width: 25%;
-    }
-    &.col-33 {
-      flex: 0 0 33.3333%;
-      max-width: 33.3333%;
-    }
-    &.col-40 {
-      flex: 0 0 40%;
-      max-width: 40%;
-    }
-    &.col-50 {
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
-    &.col-60 {
-      flex: 0 0 60%;
-      max-width: 60%;
-    }
-    &.col-66 {
-      flex: 0 0 66.6666%;
-      max-width: 66.6666%;
-    }
-    &.col-75 {
-      flex: 0 0 75%;
-      max-width: 75%;
-    }
-    &.col-80 {
-      flex: 0 0 80%;
-      max-width: 80%;
-    }
-    &.col-90 {
-      flex: 0 0 90%;
-      max-width: 90%;
-    }
-    // .col-* vertically aligns an individual .col column
-    .col-top {
-      align-self: flex-start;
-    }
-    .col-bot {
-      align-self: flex-end;
-    }
-    .col-cen {
-      align-self: center;
+.flex {
+  &[class*="one"],
+  &[class*="two"],
+  &[class*="three"],
+  &[class*="four"],
+  &[class*="five"],
+  &[class*="six"],
+  &[class*="seven"],
+  &[class*="eight"],
+  &[class*="nine"],
+  &[class*="ten"],
+  &[class*="eleven"],
+  &[class*="twelve"] {
+    > * {
+      flex-grow: 0;
     }
   }
 }
-// Larger than mobile screen
-// Safari desktop has a bug using `rem`, but Safari mobile works
-@media (min-width: 40.0rem) {
-  .row {
-    flex-direction: row;
-    width: calc(100% + 2.0rem);
-    margin-left: -1.0rem;
 
-    .col {
-      margin-bottom: inherit;
-      padding: 0 1.0rem;
+.flex.grow > * {
+  flex-grow: 1;
+}
+
+.center {
+  justify-content: center;
+}
+
+@each $count in $flexgrid-count {
+  .#{$count} > * {
+    width: map-get($flexgrid-count-sizes, $count);
+  }
+}
+
+@each $i in $flexgrid-sizes {
+  @media all and (min-width: unquote($i + 'px')) {
+    @each $count in $flexgrid-count {
+      .#{$count}-#{$i} > * {
+        width: map-get($flexgrid-count-sizes, $count);
+      }
     }
   }
-};
+}
+
+
+// Children sizing
+@each $part in $flexgrid-part {
+  .#{$part} {
+    width: map-get($flexgrid-part-sizes, $part);
+  }
+}
+.none { display: none; }
+
+
+@each $i in $flexgrid-sizes {
+  @media all and (min-width: unquote($i + 'px')) {
+    @each $part in $flexgrid-part {
+      .#{$part}-#{$i} {
+        display: block;
+        width: map-get($flexgrid-part-sizes, $part);
+      }
+    }
+  }
+}
+@each $i in $flexgrid-children {
+  @media all and (min-width: unquote($i + 'px')) {
+    .none-#{$i} { display: none; }
+  }
+}
+
+
+
+@each $part in $flexgrid-offpart {
+  .off-#{$part} {
+    margin-left: map-get($flexgrid-offpart-sizes, $part);
+  }
+}
+
+
+@each $i in $flexgrid-sizes {
+  @media all and (min-width: unquote($i + 'px')) {
+    @each $part in $flexgrid-offpart {
+      .off-#{$part}-#{$i} {
+        margin-left: map-get($flexgrid-offpart-sizes, $part);
+      }
+    }
+  }
+}

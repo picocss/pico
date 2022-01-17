@@ -3,7 +3,7 @@
   <head>
     ${require('./_head.html')
       title="FlexGrid"
-      description=".flexgrid enables a responsive flexbox based minimal grid system with auto-layout columns that stack vertically as the page width is reduced."
+      description=".flex enables a responsive flexbox based minimal grid system with auto-layout columns that stack vertically as the page width is reduced."
       canonical="flexgrid.html"
     }
   </head>
@@ -18,33 +18,19 @@
         <section id="flexgrid">
           <hgroup>
             <h1>FlexGrid</h1>
-            <h2><code>.flexgrid</code> enables a responsive flexbox based minimal grid system with auto-layout columns that stack vertically as the page width is reduced.</h2>
+            <h2><code>.flex</code> enables a responsive flexbox based minimal grid system with auto-layout columns that stack vertically as the page width is reduced.
+            The following example should be one column until the page is atleast 500 px wide then it will become two columns.</h2>
           </hgroup>
           <article aria-label="FlexGrid example">
-            <div class="flexgrid">
-              <div class="row">
-
-                <div class="col">
-                  <h3>First Column</h3>
-                  <p>The grid columns will stack vertically as the page width is reduced.</p>
-                  <a href="#confirm" role="button">INFO</a>
-                </div>
-
-                <div class="col">
-                  <h3>Second Column</h3>
-                  <p>Each column gets equal space unless specified: class="col col-33"</p>
-                  <a href="#confirm" role="button">INFO</a>
-                </div>
-
-              </div>
+            <div class="flex one two-500 demo">
+              <div><span>1</span></div>
+              <div><span>2</span></div>
             </div>
             <footer class="code">
 
-<pre><code>&lt;<b>div</b> <i>class</i>=<u>"flexgrid"</u>&gt;
-  &lt;<b>div</b> <i>class</i>=<u>"row"</u>&gt;
-    &lt;<b>div</b> <i>class</i>=<u>"col"</u>&gt;1&lt;/<b>div</b>&gt;
-    &lt;<b>div</b> <i>class</i>=<u>"col"</u>&gt;2&lt;/<b>div</b>&gt;
-  &lt;/<b>div</b>&gt;
+<pre><code>&lt;<b>div</b> <i>class</i>=<u>"flex one two-500"</u>&gt;
+  &lt;<b>div</b>&gt;1&lt;/<b>div</b>&gt;
+  &lt;<b>div</b>&gt;2&lt;/<b>div</b>&gt;
 &lt;/<b>div</b>&gt;</code></pre>
 
             </footer>
