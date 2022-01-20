@@ -20,29 +20,37 @@
           <article aria-label="Dropdown examples">
             <details role="list">
               <summary aria-haspopup="listbox">Single select</summary>
-                <ul role="listbox">
-                  <li>
+              <ul role="listbox">
+                <li>
+                  <label for="01">
                     <input type="radio" id="01" name="option1" />
-                    <label for="01">Option 1</label>
-                  </li>
-                  <li>
+                    Option 1
+                  </label>
+                </li>
+                <li>
+                  <label for="02">
                     <input type="radio" id="02" name="option1" />
-                    <label for="02">Option 2</label>
-                  </li>
-                </ul>
+                    Option 2
+                  </label>
+                </li>
+              </ul>
             </details>
             <details role="list">
               <summary aria-haspopup="listbox">Multi-select</summary>
-                <ul role="listbox">
-                  <li>
+              <ul role="listbox">
+                <li>
+                  <label for="11">
                     <input type="checkbox" id="11" name="option2" />
-                    <label for="11">Option 1</label>
-                  </li>
-                  <li>
+                    Option 1
+                  </label>
+                </li>
+                <li>
+                  <label for="12">
                     <input type="checkbox" id="12" name="option2" />
-                    <label for="12">Option 2</label>
-                  </li>
-                </ul>
+                    Option 2
+                  </label>
+                </li>
+              </ul>
             </details>
           </article>
 
@@ -61,8 +69,9 @@
               <code>summary</code> tag text when any option selected.
             </li>
             <li>
-              in case of single select, remove <code>open</code> attribute on <code>details</code> tag
-              using javascript when an option is selected.
+              in case of single select, remove <code>open</code> attribute on
+              <code>details</code> tag using javascript when an option is
+              selected.
             </li>
           </ul>
           <footer class="code">
@@ -73,12 +82,16 @@
                   &lt;<b>summary aria-haspopup="listbox"</b>&gt;Single select&lt;<b>/summary</b>&gt;
                   &lt;<b>ul role="listbox"</b>&gt;
                     &lt;<b>li</b>&gt;
-                      &lt;<b>input type="radio" id="01" name="option1" /</b>&gt;
-                      &lt;<b>label for="01"</b>&gt;Option 1&lt;<b>/label</b>&gt;
+                      &lt;<b>label for="01"</b>&gt;
+                        &lt;<b>input type="radio" id="01" name="option1" /</b>&gt;
+                        Option 1
+                      &lt;<b>/label</b>&gt;
                     &lt;<b>/li</b>&gt;
                     &lt;<b>li</b>&gt;
-                      &lt;<b>input type="radio" id="02" name="option1" /</b>&gt;
-                      &lt;<b>label for="02"</b>&gt;Option 2&lt;<b>/label</b>&gt;
+                      &lt;<b>label for="02"</b>&gt;
+                        &lt;<b>input type="radio" id="02" name="option1" /</b>&gt;
+                        Option 2
+                      &lt;<b>/label</b>&gt;
                     &lt;<b>/li</b>&gt;
                   &lt;<b>/ul</b>&gt;
                 &lt;<b>/details</b>&gt;
@@ -89,12 +102,16 @@
                   &lt;<b>summary aria-haspopup="listbox"</b>&gt;Multi select&lt;<b>/summary</b>&gt;
                   &lt;<b>ul role="listbox"</b>&gt;
                     &lt;<b>li</b>&gt;
-                      &lt;<b>input type="checkbox" id="01" name="option1" /</b>&gt;
-                      &lt;<b>label for="01"</b>&gt;Option 1&lt;<b>/label</b>&gt;
+                      &lt;<b>label for="01"</b>&gt;
+                        &lt;<b>input type="checkbox" id="01" name="option1" /</b>&gt;
+                        Option 1
+                      &lt;<b>/label</b>&gt;
                     &lt;<b>/li</b>&gt;
                     &lt;<b>li</b>&gt;
-                      &lt;<b>input type="checkbox" id="02" name="option1" /</b>&gt;
-                      &lt;<b>label for="02"</b>&gt;Option 2&lt;<b>/label</b>&gt;
+                      &lt;<b>label for="01"</b>&gt;
+                        &lt;<b>input type="checkbox" id="02" name="option1" /</b>&gt;
+                        Option 2
+                      &lt;<b>/label</b>&gt;
                     &lt;<b>/li</b>&gt;
                   &lt;<b>/ul</b>&gt;
                 &lt;<b>/details</b>&gt;

@@ -5,13 +5,20 @@ details[role='list'] {
 
   summary {
     margin-bottom: 0;
-    padding: calc(var(--spacing) * 0.5);
+    padding: var(--form-element-spacing-vertical)
+      var(--form-element-spacing-horizontal);
     border: var(--border-width) solid var(--form-element-border-color);
     border-radius: var(--border-radius);
+    height: calc(
+      1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 +
+        var(--border-width) * 2
+    );
+    line-height: inherit;
     cursor: pointer;
 
     &::after {
       transform: rotate(0deg);
+      height: 100%;
     }
 
     & + ul {
@@ -35,45 +42,20 @@ details[role='list'] {
           content: '';
         }
 
-        input[type='radio'],
-        input[type='checkbox'] {
-          display: none;
-          appearance: none;
-        }
-
         label {
+          cursor: pointer;
           position: relative;
           width: 100%;
           margin: 0;
-          padding: calc(var(--spacing) * 0.5);
-          line-height: 1;
+          padding: var(--form-element-spacing-vertical)
+            var(--form-element-spacing-horizontal);
           &:hover {
             background-color: var(--secondary-focus);
           }
-        }
 
-        input:checked + label {
-          background-color: var(--secondary-focus);
-        }
-
-        input[type='checkbox'] {
-          & + label:before {
-            display: inline-block;
-            width: calc(var(--spacing) * 1.2);
-            height: calc(var(--spacing) * 1.2);
-            margin-right: calc(var(--spacing) * 0.5);
-            border: var(--border-width) solid var(--primary);
-            border-radius: var(--border-radius);
-            content: '';
-            vertical-align: text-bottom;
-          }
-
-          &:checked + label:before {
-            background-image: var(--icon-checkbox);
-            background-position: center;
-            background-size: calc(var(--spacing) * 0.8) auto;
-            background-repeat: no-repeat;
-            background-color: var(--primary);
+          input[type='radio'],
+          input[type='checkbox'] {
+            appearance: none;
           }
         }
       }

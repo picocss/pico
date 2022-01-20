@@ -1811,7 +1811,6 @@ details[open] > summary::after {
 article {
   margin: var(--block-spacing-vertical) 0;
   padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
-  overflow: hidden;
   border-radius: var(--border-radius);
   background: var(--card-background-color);
   box-shadow: var(--card-box-shadow);
@@ -2028,13 +2027,16 @@ details[role=list] {
 }
 details[role=list] summary {
   margin-bottom: 0;
-  padding: calc(var(--spacing) * 0.5);
+  padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
   border: var(--border-width) solid var(--form-element-border-color);
   border-radius: var(--border-radius);
+  height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
+  line-height: inherit;
   cursor: pointer;
 }
 details[role=list] summary::after {
   transform: rotate(0deg);
+  height: 100%;
 }
 details[role=list] summary + ul {
   z-index: 100;
@@ -2057,42 +2059,21 @@ details[role=list] summary + ul li {
 details[role=list] summary + ul li::marker {
   content: "";
 }
-details[role=list] summary + ul li input[type=radio],
-details[role=list] summary + ul li input[type=checkbox] {
-  display: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
 details[role=list] summary + ul li label {
+  cursor: pointer;
   position: relative;
   width: 100%;
   margin: 0;
-  padding: calc(var(--spacing) * 0.5);
-  line-height: 1;
+  padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
 }
 details[role=list] summary + ul li label:hover {
   background-color: var(--secondary-focus);
 }
-details[role=list] summary + ul li input:checked + label {
-  background-color: var(--secondary-focus);
-}
-details[role=list] summary + ul li input[type=checkbox] + label:before {
-  display: inline-block;
-  width: calc(var(--spacing) * 1.2);
-  height: calc(var(--spacing) * 1.2);
-  margin-right: calc(var(--spacing) * 0.5);
-  border: var(--border-width) solid var(--primary);
-  border-radius: var(--border-radius);
-  content: "";
-  vertical-align: text-bottom;
-}
-details[role=list] summary + ul li input[type=checkbox]:checked + label:before {
-  background-image: var(--icon-checkbox);
-  background-position: center;
-  background-size: calc(var(--spacing) * 0.8) auto;
-  background-repeat: no-repeat;
-  background-color: var(--primary);
+details[role=list] summary + ul li label input[type=radio],
+details[role=list] summary + ul li label input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 details[role=list][disabled] summary, details[role=list].disabled summary {
   color: var(--muted-color);
