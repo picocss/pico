@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.4.2 (https://picocss.com)
+ * Pico.css v1.4.4 (https://picocss.com)
  * Copyright 2019-2021 - Licensed under MIT
  *
  * Slim version example
@@ -105,11 +105,13 @@ h5 {
 }
 
 thead th,
-thead td {
+thead td,
+tfoot th,
+tfoot td {
   --border-width: 3px;
 }
 
-:not(thead) > * > td {
+:not(thead):not(tfoot) > * > td {
   --font-size: 0.875em;
 }
 
@@ -887,7 +889,7 @@ button {
   margin-bottom: var(--spacing);
 }
 
-a[role=button] {
+[role=button] {
   display: inline-block;
   text-decoration: none;
 }
@@ -896,7 +898,7 @@ button,
 input[type=submit],
 input[type=button],
 input[type=reset],
-a[role=button] {
+[role=button] {
   --background-color: var(--primary);
   --border-color: var(--primary);
   --color: var(--primary-inverse);
@@ -924,42 +926,28 @@ input[type=button]:focus,
 input[type=reset]:hover,
 input[type=reset]:active,
 input[type=reset]:focus,
-a[role=button]:hover,
-a[role=button]:active,
-a[role=button]:focus {
+[role=button]:hover,
+[role=button]:active,
+[role=button]:focus {
   --background-color: var(--primary-hover);
   --border-color: var(--primary-hover);
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+  --color: var(--primary-inverse);
 }
 button:focus,
 input[type=submit]:focus,
 input[type=button]:focus,
 input[type=reset]:focus,
-a[role=button]:focus {
+[role=button]:focus {
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
     0 0 0 var(--outline-width) var(--primary-focus);
-}
-
-input[type=reset] {
-  --background-color: var(--secondary);
-  --border-color: var(--secondary);
-  --color: var(--secondary-inverse);
-  cursor: pointer;
-}
-input[type=reset]:hover, input[type=reset]:active, input[type=reset]:focus {
-  --background-color: var(--secondary-hover);
-  --border-color: var(--secondary-hover);
-}
-input[type=reset]:focus {
-  --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-    0 0 0 var(--outline-width) var(--secondary-focus);
 }
 
 button.secondary,
 input[type=submit].secondary,
 input[type=button].secondary,
-input[type=reset].secondary,
-a[role=button].secondary {
+input[type=reset],
+[role=button].secondary {
   --background-color: var(--secondary);
   --border-color: var(--secondary);
   --color: var(--secondary-inverse);
@@ -972,28 +960,30 @@ input[type=submit].secondary:focus,
 input[type=button].secondary:hover,
 input[type=button].secondary:active,
 input[type=button].secondary:focus,
-input[type=reset].secondary:hover,
-input[type=reset].secondary:active,
-input[type=reset].secondary:focus,
-a[role=button].secondary:hover,
-a[role=button].secondary:active,
-a[role=button].secondary:focus {
+input[type=reset]:hover,
+input[type=reset]:active,
+input[type=reset]:focus,
+[role=button].secondary:hover,
+[role=button].secondary:active,
+[role=button].secondary:focus {
   --background-color: var(--secondary-hover);
   --border-color: var(--secondary-hover);
+  --color: var(--secondary-inverse);
 }
 button.secondary:focus,
 input[type=submit].secondary:focus,
 input[type=button].secondary:focus,
-input[type=reset].secondary:focus,
-a[role=button].secondary:focus {
+input[type=reset]:focus,
+[role=button].secondary:focus {
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
     0 0 0 var(--outline-width) var(--secondary-focus);
 }
+
 button.contrast,
 input[type=submit].contrast,
 input[type=button].contrast,
 input[type=reset].contrast,
-a[role=button].contrast {
+[role=button].contrast {
   --background-color: var(--contrast);
   --border-color: var(--contrast);
   --color: var(--contrast-inverse);
@@ -1008,25 +998,27 @@ input[type=button].contrast:focus,
 input[type=reset].contrast:hover,
 input[type=reset].contrast:active,
 input[type=reset].contrast:focus,
-a[role=button].contrast:hover,
-a[role=button].contrast:active,
-a[role=button].contrast:focus {
+[role=button].contrast:hover,
+[role=button].contrast:active,
+[role=button].contrast:focus {
   --background-color: var(--contrast-hover);
   --border-color: var(--contrast-hover);
+  --color: var(--contrast-inverse);
 }
 button.contrast:focus,
 input[type=submit].contrast:focus,
 input[type=button].contrast:focus,
 input[type=reset].contrast:focus,
-a[role=button].contrast:focus {
+[role=button].contrast:focus {
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
     0 0 0 var(--outline-width) var(--contrast-focus);
 }
+
 button.outline,
 input[type=submit].outline,
 input[type=button].outline,
 input[type=reset].outline,
-a[role=button].outline {
+[role=button].outline {
   --background-color: transparent;
   --color: var(--primary);
 }
@@ -1040,17 +1032,18 @@ input[type=button].outline:focus,
 input[type=reset].outline:hover,
 input[type=reset].outline:active,
 input[type=reset].outline:focus,
-a[role=button].outline:hover,
-a[role=button].outline:active,
-a[role=button].outline:focus {
+[role=button].outline:hover,
+[role=button].outline:active,
+[role=button].outline:focus {
   --background-color: transparent;
   --color: var(--primary-hover);
 }
+
 button.outline.secondary,
 input[type=submit].outline.secondary,
 input[type=button].outline.secondary,
 input[type=reset].outline.secondary,
-a[role=button].outline.secondary {
+[role=button].outline.secondary {
   --color: var(--secondary);
 }
 button.outline.secondary:hover, button.outline.secondary:active, button.outline.secondary:focus,
@@ -1063,16 +1056,17 @@ input[type=button].outline.secondary:focus,
 input[type=reset].outline.secondary:hover,
 input[type=reset].outline.secondary:active,
 input[type=reset].outline.secondary:focus,
-a[role=button].outline.secondary:hover,
-a[role=button].outline.secondary:active,
-a[role=button].outline.secondary:focus {
+[role=button].outline.secondary:hover,
+[role=button].outline.secondary:active,
+[role=button].outline.secondary:focus {
   --color: var(--secondary-hover);
 }
+
 button.outline.contrast,
 input[type=submit].outline.contrast,
 input[type=button].outline.contrast,
 input[type=reset].outline.contrast,
-a[role=button].outline.contrast {
+[role=button].outline.contrast {
   --color: var(--contrast);
 }
 button.outline.contrast:hover, button.outline.contrast:active, button.outline.contrast:focus,
@@ -1085,9 +1079,9 @@ input[type=button].outline.contrast:focus,
 input[type=reset].outline.contrast:hover,
 input[type=reset].outline.contrast:active,
 input[type=reset].outline.contrast:focus,
-a[role=button].outline.contrast:hover,
-a[role=button].outline.contrast:active,
-a[role=button].outline.contrast:focus {
+[role=button].outline.contrast:hover,
+[role=button].outline.contrast:active,
+[role=button].outline.contrast:focus {
   --color: var(--contrast-hover);
 }
 
@@ -1096,7 +1090,7 @@ input[type=submit][disabled],
 input[type=button][disabled],
 input[type=reset][disabled],
 a[role=button]:not([href]),
-a[role=button][disabled] {
+[role=button][disabled] {
   opacity: 0.5;
   pointer-events: none;
 }
@@ -1393,12 +1387,14 @@ td {
   text-align: start;
 }
 
-tr {
-  background-color: var(--background-color);
+tfoot th,
+tfoot td {
+  border-top: var(--border-width) solid var(--table-border-color);
+  border-bottom: 0;
 }
 
 table[role=grid] tbody tr:nth-child(odd) {
-  --background-color: var(--table-row-stripped-background-color);
+  background-color: var(--table-row-stripped-background-color);
 }
 
 /**
