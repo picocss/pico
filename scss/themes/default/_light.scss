@@ -113,9 +113,11 @@
   --card-sectionning-background-color: #{mix($grey-50, $white, 25%)};
 
   // Dropdown (<details role="list">)
-  --dropdown-background-color: var(--card-background-color);
-  --dropdown-focus-background-color: #{mix($grey-50, $white)};
-  --dropdown-color: var(--form-element-color);
+  --dropdown-background-color: #{mix($grey-50, $white, 25%)};
+  --dropdown-border-color: #{mix($grey-100, $grey-50)};
+  --dropdown-box-shadow: var(--card-box-shadow);
+  --dropdown-color: var(--color);
+  --dropdown-focus-background-color: #{$grey-50};
 
   // Modal (<dialog>)
   --modal-overlay-background-color: #{rgba($grey-100, 0.8)};

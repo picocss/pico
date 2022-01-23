@@ -51,12 +51,13 @@ details[role="list"] {
       left: 0;
       margin: 0;
       padding: 0;
-      border: var(--border-width) solid var(--form-element-border-color);
+      border: var(--border-width) solid var(--dropdown-border-color);
       border-top: none;
       border-radius: var(--border-radius);
       border-top-right-radius: 0;
       border-top-left-radius: 0;
       background-color: var(--dropdown-background-color);
+      box-shadow: var(--card-box-shadow);
       color: var(--dropdown-color);
 
       li {

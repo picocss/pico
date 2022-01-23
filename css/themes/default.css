@@ -273,9 +273,11 @@ kbd {
     0 0.125rem 2rem rgba(27, 40, 50, 0.08),
     0 0 0 0.0625rem rgba(27, 40, 50, 0.024);
   --card-sectionning-background-color: #fbfbfc;
-  --dropdown-background-color: var(--card-background-color);
-  --dropdown-focus-background-color: #f6f8f9;
-  --dropdown-color: var(--form-element-color);
+  --dropdown-background-color: #fbfbfc;
+  --dropdown-border-color: #e1e6eb;
+  --dropdown-box-shadow: var(--card-box-shadow);
+  --dropdown-color: var(--color);
+  --dropdown-focus-background-color: #edf0f3;
   --modal-overlay-background-color: rgba(213, 220, 226, 0.8);
   --progress-background-color: #d5dce2;
   --progress-color: var(--primary);
@@ -373,9 +375,11 @@ kbd {
       0 0.125rem 2rem rgba(0, 0, 0, 0.12),
       0 0 0 0.0625rem rgba(0, 0, 0, 0.036);
     --card-sectionning-background-color: #18232c;
-    --dropdown-background-color: var(--card-background-color);
-    --dropdown-focus-background-color: rgba(115, 130, 140, 0.05);
-    --dropdown-color: var(--form-element-color);
+    --dropdown-background-color: #1b2832;
+    --dropdown-border-color: #24333e;
+    --dropdown-box-shadow: var(--card-box-shadow);
+    --dropdown-color: var(--color);
+    --dropdown-focus-background-color: rgba(36, 51, 62, 0.75);
     --modal-overlay-background-color: rgba(36, 51, 62, 0.9);
     --progress-background-color: #24333e;
     --progress-color: var(--primary);
@@ -472,9 +476,11 @@ kbd {
     0 0.125rem 2rem rgba(0, 0, 0, 0.12),
     0 0 0 0.0625rem rgba(0, 0, 0, 0.036);
   --card-sectionning-background-color: #18232c;
-  --dropdown-background-color: var(--card-background-color);
-  --dropdown-focus-background-color: rgba(115, 130, 140, 0.05);
-  --dropdown-color: var(--form-element-color);
+  --dropdown-background-color: #1b2832;
+  --dropdown-border-color: #24333e;
+  --dropdown-box-shadow: var(--card-box-shadow);
+  --dropdown-color: var(--color);
+  --dropdown-focus-background-color: rgba(36, 51, 62, 0.75);
   --modal-overlay-background-color: rgba(36, 51, 62, 0.9);
   --progress-background-color: #24333e;
   --progress-color: var(--primary);
