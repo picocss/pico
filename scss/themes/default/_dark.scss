@@ -112,6 +112,11 @@
     0 0 0 0.0625rem #{rgba($black, 0.036)};
   --card-sectionning-background-color: #{mix($black, $grey-900, 12.5%)};
 
+  // Dropdown (<details role="list">)
+  --dropdown-background-color: var(--card-background-color);
+  --dropdown-focus-background-color: #{rgba($grey-500, 0.05)};
+  --dropdown-color: var(--form-element-color);
+
   // Modal (<dialog>)
   --modal-overlay-background-color: #{rgba(mix($grey-900, $grey-800), 0.9)};
 

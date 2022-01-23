@@ -1,93 +1,118 @@
-details[role='list'] {
+details[role="list"] {
   position: relative;
   padding: 0;
   border-bottom: none;
 
   summary {
-    height: calc(
-      1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 +
-        var(--border-width) * 2
-    );
-    margin-bottom: 0;
-    padding: var(--form-element-spacing-vertical)
-      var(--form-element-spacing-horizontal);
-    border: var(--border-width) solid var(--form-element-border-color);
-    border-radius: var(--border-radius);
-    line-height: inherit;
-    cursor: pointer;
+    margin: 0;
 
-    &::after {
-      height: 100%;
-      transform: rotate(0deg);
+    &:not([role="button"]) {
+      height: calc(
+        1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 +
+          var(--border-width) * 2
+      );
+      padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
+      border: var(--border-width) solid var(--form-element-border-color);
+      border-radius: var(--border-radius);
+      background-color: var(--form-element-background-color);
+      color: var(--form-element-placeholder-color);
+      line-height: inherit;
+      cursor: pointer;
+
+      @if $enable-transitions {
+        transition: background-color var(--transition),
+          border-color var(--transition), color var(--transition),
+          box-shadow var(--transition);
+      }
+
+      // Active & Focus
+      &:active,
+      &:focus {
+        border-color: var(--form-element-active-border-color);
+        background-color: var(--form-element-active-background-color);
+      }
+
+      // Focus
+      &:focus {
+        box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
+      }
+
+      // Marker
+      &::after {
+        height: 100%;
+      }
     }
 
     & + ul {
-      z-index: 100;
+      z-index: 99;
       position: absolute;
       top: auto;
-      right: 0px;
-      left: 0px;
+      right: 0;
+      left: 0;
       margin: 0;
       padding: 0;
       border: var(--border-width) solid var(--form-element-border-color);
       border-top: none;
-      border-bottom-right-radius: var(--border-radius);
-      border-bottom-left-radius: var(--border-radius);
-      background-color: var(--background-color);
-      list-style: none;
+      border-radius: var(--border-radius);
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+      background-color: var(--dropdown-background-color);
+      color: var(--dropdown-color);
 
       li {
         margin-bottom: 0;
-        &::marker {
-          content: '';
+        padding: calc(var(--form-element-spacing-vertical) * 0.5) var(--form-element-spacing-horizontal);
+        list-style: none;
+
+        &:first-of-type {
+          margin-top: calc(var(--form-element-spacing-vertical) * 0.5);
         }
 
-        label {
-          position: relative;
-          width: 100%;
-          margin: 0;
-          padding: var(--form-element-spacing-vertical)
-            var(--form-element-spacing-horizontal);
-          cursor: pointer;
-          &:hover {
-            background-color: var(--secondary-focus);
-          }
+        &:last-of-type {
+          margin-bottom: calc(var(--form-element-spacing-vertical) * 0.5);
+        }
 
-          input[type='radio'],
-          input[type='checkbox'] {
-            appearance: none;
-          }
+        &:hover {
+          background-color: var(--dropdown-focus-background-color);
+        }
+
+        a {
+          display: block;
+          width: 100%;
+          color: var(--dropdown-color);
+          text-decoration: none;
         }
       }
+      
+    }
+
+    &::after {
+      transform: rotate(0deg);
     }
   }
 
   &[disabled] summary,
   &.disabled summary {
-    color: var(--muted-color);
-    cursor: not-allowed;
+    border-color: var(--form-element-disabled-border-color);
+    background-color: var(--form-element-disabled-background-color);
+    opacity: var(--form-element-disabled-opacity);
     pointer-events: none;
   }
 
   &[open] summary {
-    margin-bottom: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
     &::before {
       display: block;
-      z-index: 80;
+      z-index: 1;
       position: fixed;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
       background: transparent;
-      content: ' ';
+      content: '';
       cursor: default;
-    }
-
-    &::after {
-      transform: rotate(180deg);
     }
   }
 }
