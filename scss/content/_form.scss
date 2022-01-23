@@ -174,20 +174,16 @@ textarea {
 
 // Active & Focus
 input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([readonly]),
-select,
-textarea {
-  &:active,
-  &:focus {
+:where(select, textarea) {
+  &:is(:active, :focus) {
     --background-color: var(--form-element-active-background-color);
   }
 }
 
 // Active & Focus
 input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([role="switch"]):not([readonly]),
-select,
-textarea {
-  &:active,
-  &:focus {
+:where(select, textarea) {
+  &:is(:active, :focus) {
     --border-color: var(--form-element-active-border-color);
   }
 }
@@ -213,10 +209,7 @@ textarea {
 }
 
 // Aria-invalid
-input,
-select,
-textarea {
-
+:where(input, select, textarea) {
   &:not([type="checkbox"]):not([type="radio"]) {
     &[aria-invalid] {
       @if $enable-important {
@@ -280,9 +273,7 @@ textarea {
 }
 
 [dir="rtl"] {
-  input,
-  select,
-  textarea {
+  :where(input, select, textarea) {
     &:not([type="checkbox"]):not([type="radio"]) {
       &[aria-invalid],
       &[aria-invalid="true"],
@@ -339,9 +330,7 @@ select {
 }
 
 // Helper
-input,
-select,
-textarea {
+:where(input, select, textarea) {
   + small {
     display: block;
     width: 100%;
@@ -353,9 +342,7 @@ textarea {
 
 // Styles for Input inside a label
 label {
-  & > input,
-  & > select,
-  & > textarea {
+  > :where(input, select, textarea) {
     margin-top: calc(var(--spacing) * 0.25);
   }
 }
