@@ -164,7 +164,7 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 - [Cards](https://picocss.com/docs/cards.html)
 - [Modal](https://picocss.com/docs/modal.html)
 - [Navs](https://picocss.com/docs/navs.html)
-- [Dropdown](https://picocss.com/docs/dropdown.html)
+- [Dropdowns](https://picocss.com/docs/dropdowns.html)
 - [Progress](https://picocss.com/docs/progress.html)
 
 **Utilities**
