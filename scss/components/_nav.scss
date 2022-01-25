@@ -56,7 +56,7 @@ nav {
     align-items: center;
     justify-content: left;
 
-    font-size: 1.2rem;
+    font-size: calc(var(--font-size) * 1.1);
 
     & a {
       padding-right: 1rem;
@@ -65,7 +65,7 @@ nav {
       &::after {
         content: " / ";
         color: var(--color);
-        font-size: 1.5rem;
+        font-size: calc(var(--font-size) * 1.4);
       }
     }
   }
