@@ -51,6 +51,24 @@ nav {
       text-decoration: none;
     }
   }
+
+  &[role="breadcrumb"] {
+    align-items: center;
+    justify-content: left;
+
+    font-size: 1.2rem;
+
+    & a {
+      padding-right: 1rem;
+      text-decoration: none;
+
+      &::after {
+        content: " / ";
+        color: var(--color);
+        font-size: 1.5rem;
+      }
+    }
+  }
 }
 
 // Vertical Nav

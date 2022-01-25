@@ -114,14 +114,35 @@
   &lt;/<b>nav</b>&gt;
 &lt;/<b>aside</b>&gt;</code></pre>
 
-            </footer>
-          </article>
-        </section>
+          </footer>
+        </article>
 
-        ${require('./_footer.html')}
-        
-      </div>
-    </main>
-    <script src="js/commons.min.js"></script>
-  </body>
+        <p>With <code><b>role="breadcrumb"</b></code>, you can turn a nav into a breadcrumb.</p>
+
+        <article aria-label="Breadcrumb nav example">
+          <nav role="breadcrumb">
+            <a href="#">First link</a>
+            <a href="#">Second link</a>
+            Last link
+          </nav>
+
+          <footer class="code">
+
+            <pre><code>&lt;<b>nav</b> <i>role</i>=<u>"breadcrumb"</u>&gt;
+  &lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;First link&lt;<b>/a</b>&gt;
+  &lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Second link&lt;<b>/a</b>&gt;
+  Last link
+&lt;/<b>nav</b>&gt;</code></pre>
+          </footer>
+        </article>
+
+      </section>
+
+      ${require('./_footer.html')}
+
+    </div>
+  </main>
+  <script src="js/commons.min.js"></script>
+</body>
+
 </html>
