@@ -45,7 +45,7 @@ Shipped with two beautiful color themes, automatically enabled according to the 
 
 ## Usage
 
-There are 3 ways to get started with pico.css:
+There are 4 ways to get started with pico.css:
 
 **Install manually**
 
@@ -67,6 +67,12 @@ Alternatively, you can use [unpkg CDN](https://unpkg.com/@picocss/pico@latest/) 
 
 ```shell
 npm install @picocss/pico
+```
+
+**Install with Composer**
+
+```shell
+composer require picocss/pico
 ```
 
 ## Class-less version
