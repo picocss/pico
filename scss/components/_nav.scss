@@ -52,21 +52,24 @@ nav {
     }
   }
 
-  &[role="breadcrumb"] {
+  &[aria-label="Breadcrumb"] {
     align-items: center;
     justify-content: left;
-
-    font-size: calc(var(--font-size) * 1.1);
-
-    & a {
-      padding-right: 1rem;
-      text-decoration: none;
-
-      &::after {
-        content: " / ";
-        color: var(--color);
-        font-size: calc(var(--font-size) * 1.4);
+    
+    & ul li {
+      padding-left:0;
+  
+      &:not(:last-child) {
+        a::after {
+          padding-left: 0.5rem;
+          content: "/";
+          color: var(--muted-color) !important;
+        }
       }
+    }
+
+    & a[aria-current="page"] {
+      color: inherit !important;
     }
   }
 }

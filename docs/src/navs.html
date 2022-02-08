@@ -117,21 +117,33 @@
           </footer>
         </article>
 
-        <p>With <code><b>role="breadcrumb"</b></code>, you can turn a nav into a breadcrumb.</p>
+        <p>With <code><b>aria-label="Breadcrumb"</b></code>, you can turn a nav into a breadcrumb, specifying the current page with: <code><b>aria-current="page"</b></code>.</p>
 
         <article aria-label="Breadcrumb nav example">
-          <nav role="breadcrumb">
-            <a href="#">First link</a>
-            <a href="#">Second link</a>
-            Last link
+          <nav aria-label="Breadcrumb">
+            <ul>
+              <li>
+                <a href="#">First link</a>
+              </li>
+              <li>
+                <a href="#">Second link</a>
+              </li>
+              <li>
+                <a aria-current="page">
+                  Last link
+                </a>
+              </li>
+            </ul>
           </nav>
 
           <footer class="code">
 
-            <pre><code>&lt;<b>nav</b> <i>role</i>=<u>"breadcrumb"</u>&gt;
-  &lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;First link&lt;<b>/a</b>&gt;
-  &lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Second link&lt;<b>/a</b>&gt;
-  Last link
+            <pre><code>&lt;<b>nav</b> <i>aria-label</i>=<u>"Breadcrumb"</u>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;First link&lt;<b>/a</b>&gt;&lt;<b>/li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Second link&lt;<b>/a</b>&gt;&lt;<b>/li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>aria-current</i>=<u>"page"</u>&gt;Last link&lt;<b>/a</b>&gt;&lt;<b>/li</b>&gt;
+  &lt;<b>/ul</b>&gt;
 &lt;/<b>nav</b>&gt;</code></pre>
           </footer>
         </article>
