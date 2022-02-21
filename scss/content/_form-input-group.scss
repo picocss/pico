@@ -1,0 +1,44 @@
+/**
+ * Input group and button group
+ */
+ 
+ .button-group, .input-group {
+  // Stick buttons together
+  display: flex;
+  
+  // Buttons have no margin-bottom set
+  & > button, & > label, & > select, & > input:not([type="checkbox"]):not([type="radio"]) {
+    margin-bottom: 0;
+  }
+
+  // No round corners in button groups
+  & > button:not(:last-child), 
+  & > [role=button]:not(:last-child), 
+  & > input:not(:last-child), 
+  & > select:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    /* border-right: 0;*/
+  }
+  
+  & > [role=button]:not(:first-child), 
+  & > input:not(:first-child), 
+  & > button:not(:first-child), 
+  & > select:not(:first-child){
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+  }
+}
+
+// Radio groups need a text label
+.input-group > [type=radio]~label {
+  margin-right:0;
+}
+
+// The selected radio button will be outlined when outline class is choose and in reverse
+.input-group:not(.outline) > input[type="radio"]:not(:checked)+label[role=button],
+.input-group.outline > input[type="radio"]:checked+label[role=button] {
+  --background-color: transparent;
+  --color: var(--primary);
+}
