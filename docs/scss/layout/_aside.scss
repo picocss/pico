@@ -66,6 +66,14 @@ main > aside {
     }
   }
 
+  details {
+    padding-bottom: 0;
+
+    summary {
+      padding-bottom: 0.5rem;
+    }
+  }
+
   li,
   summary {
     padding-top: 0;
@@ -114,7 +122,7 @@ main > aside {
       > summary {
         margin-bottom: 0;
 
-        &:not(:focus) {
+        &:not([role=button]):not(:focus) {
           color: var(--h1-color);
         }
       }

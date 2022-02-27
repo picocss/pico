@@ -135,6 +135,12 @@ main > aside nav.closed-on-mobile details {
 main > aside nav.open a#toggle-docs-navigation svg.expand {
   display: none;
 }
+main > aside details {
+  padding-bottom: 0;
+}
+main > aside details summary {
+  padding-bottom: 0.5rem;
+}
 main > aside li,
 main > aside summary {
   padding-top: 0;
@@ -174,7 +180,7 @@ main > aside details summary::after {
 main > aside details[open] > summary {
   margin-bottom: 0;
 }
-main > aside details[open] > summary:not(:focus) {
+main > aside details[open] > summary:not([role=button]):not(:focus) {
   color: var(--h1-color);
 }
 
