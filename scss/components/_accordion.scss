@@ -5,7 +5,7 @@
 details {
   display: block;
   margin-bottom: var(--spacing);
-  padding-bottom: calc(var(--spacing));
+  padding-bottom: var(--spacing);
   border-bottom: var(--border-width) solid var(--accordion-border-color);
 
   summary {
@@ -38,12 +38,12 @@ details {
     // Marker
     &::after {
       display: block;
-      width: 1rem;
+      width: 1.5rem;
       height: 1rem;
       float: right;
       transform: rotate(-90deg);
       background-image: var(--icon-chevron);
-      background-position: center;
+      background-position: right;
       background-size: 1rem auto;
       background-repeat: no-repeat;
       content: "";
@@ -111,6 +111,7 @@ details {
 
       &::after {
         float: left;
+        background-position: left;
       }
     }
   }

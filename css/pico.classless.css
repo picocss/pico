@@ -272,6 +272,11 @@ kbd {
     0 0.125rem 2rem rgba(27, 40, 50, 0.08),
     0 0 0 0.0625rem rgba(27, 40, 50, 0.024);
   --card-sectionning-background-color: #fbfbfc;
+  --dropdown-background-color: #fbfbfc;
+  --dropdown-border-color: #e1e6eb;
+  --dropdown-box-shadow: var(--card-box-shadow);
+  --dropdown-color: var(--color);
+  --dropdown-hover-background-color: #edf0f3;
   --modal-overlay-background-color: rgba(213, 220, 226, 0.8);
   --progress-background-color: #d5dce2;
   --progress-color: var(--primary);
@@ -369,6 +374,11 @@ kbd {
       0 0.125rem 2rem rgba(0, 0, 0, 0.12),
       0 0 0 0.0625rem rgba(0, 0, 0, 0.036);
     --card-sectionning-background-color: #18232c;
+    --dropdown-background-color: #1b2832;
+    --dropdown-border-color: #24333e;
+    --dropdown-box-shadow: var(--card-box-shadow);
+    --dropdown-color: var(--color);
+    --dropdown-hover-background-color: rgba(36, 51, 62, 0.75);
     --modal-overlay-background-color: rgba(36, 51, 62, 0.9);
     --progress-background-color: #24333e;
     --progress-color: var(--primary);
@@ -465,6 +475,11 @@ kbd {
     0 0.125rem 2rem rgba(0, 0, 0, 0.12),
     0 0 0 0.0625rem rgba(0, 0, 0, 0.036);
   --card-sectionning-background-color: #18232c;
+  --dropdown-background-color: #1b2832;
+  --dropdown-border-color: #24333e;
+  --dropdown-box-shadow: var(--card-box-shadow);
+  --dropdown-color: var(--color);
+  --dropdown-hover-background-color: rgba(36, 51, 62, 0.75);
   --modal-overlay-background-color: rgba(36, 51, 62, 0.9);
   --progress-background-color: #24333e;
   --progress-color: var(--primary);
@@ -1793,7 +1808,7 @@ canvas {
 details {
   display: block;
   margin-bottom: var(--spacing);
-  padding-bottom: calc(var(--spacing));
+  padding-bottom: var(--spacing);
   border-bottom: var(--border-width) solid var(--accordion-border-color);
 }
 details summary {
@@ -1816,12 +1831,12 @@ details summary::-moz-list-bullet {
 }
 details summary::after {
   display: block;
-  width: 1rem;
+  width: 1.5rem;
   height: 1rem;
   float: right;
   transform: rotate(-90deg);
   background-image: var(--icon-chevron);
-  background-position: center;
+  background-position: right;
   background-size: 1rem auto;
   background-repeat: no-repeat;
   content: "";
@@ -1856,6 +1871,7 @@ details[open] > summary::after {
 }
 [dir=rtl] details summary::after {
   float: left;
+  background-position: left;
 }
 
 /**
@@ -2080,85 +2096,162 @@ progress::-moz-progress-bar {
     background-position: -200% 0;
   }
 }
-details[role=list] {
+/**
+ * Dropdown ([role="list"])
+ */
+details[role=list],
+li[role=list] {
   position: relative;
+}
+details[role=list] summary + ul,
+details[role=list] > ul,
+li[role=list] summary + ul,
+li[role=list] > ul {
+  display: flex;
+  z-index: 99;
+  position: absolute;
+  top: auto;
+  right: 0;
+  left: 0;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border: var(--border-width) solid var(--dropdown-border-color);
+  border-radius: var(--border-radius);
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  background-color: var(--dropdown-background-color);
+  box-shadow: var(--card-box-shadow);
+  color: var(--dropdown-color);
+  white-space: nowrap;
+}
+details[role=list] summary + ul li,
+details[role=list] > ul li,
+li[role=list] summary + ul li,
+li[role=list] > ul li {
+  width: 100%;
+  margin-bottom: 0;
+  padding: calc(var(--form-element-spacing-vertical) * 0.5) var(--form-element-spacing-horizontal);
+  list-style: none;
+}
+details[role=list] summary + ul li:first-of-type,
+details[role=list] > ul li:first-of-type,
+li[role=list] summary + ul li:first-of-type,
+li[role=list] > ul li:first-of-type {
+  margin-top: calc(var(--form-element-spacing-vertical) * 0.5);
+}
+details[role=list] summary + ul li:last-of-type,
+details[role=list] > ul li:last-of-type,
+li[role=list] summary + ul li:last-of-type,
+li[role=list] > ul li:last-of-type {
+  margin-bottom: calc(var(--form-element-spacing-vertical) * 0.5);
+}
+details[role=list] summary + ul li a,
+details[role=list] > ul li a,
+li[role=list] summary + ul li a,
+li[role=list] > ul li a {
+  display: block;
+  margin: calc(var(--form-element-spacing-vertical) * -0.5) calc(var(--form-element-spacing-horizontal) * -1);
+  padding: calc(var(--form-element-spacing-vertical) * 0.5) var(--form-element-spacing-horizontal);
+  overflow: hidden;
+  color: var(--dropdown-color);
+  text-decoration: none;
+  text-overflow: ellipsis;
+}
+details[role=list] summary + ul li a:hover,
+details[role=list] > ul li a:hover,
+li[role=list] summary + ul li a:hover,
+li[role=list] > ul li a:hover {
+  background-color: var(--dropdown-hover-background-color);
+}
+
+details[role=list] summary::after,
+li[role=list] > a::after {
+  display: block;
+  width: 1.5rem;
+  height: calc(1rem * var(--line-height));
+  float: right;
+  transform: rotate(0deg);
+  background-position: right;
+  background-size: 1rem auto;
+  background-repeat: no-repeat;
+  content: "";
+}
+
+details[role=list] {
   padding: 0;
   border-bottom: none;
 }
 details[role=list] summary {
-  height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
   margin-bottom: 0;
+}
+details[role=list] summary:not([role=button]) {
+  height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
   border: var(--border-width) solid var(--form-element-border-color);
   border-radius: var(--border-radius);
+  background-color: var(--form-element-background-color);
+  color: var(--form-element-placeholder-color);
   line-height: inherit;
   cursor: pointer;
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
-details[role=list] summary::after {
-  height: 100%;
-  transform: rotate(0deg);
+details[role=list] summary:not([role=button]):active, details[role=list] summary:not([role=button]):focus {
+  border-color: var(--form-element-active-border-color);
+  background-color: var(--form-element-active-background-color);
 }
-details[role=list] summary + ul {
-  z-index: 100;
-  position: absolute;
-  top: auto;
-  right: 0px;
-  left: 0px;
-  margin: 0;
-  padding: 0;
-  border: var(--border-width) solid var(--form-element-border-color);
-  border-top: none;
-  border-bottom-right-radius: var(--border-radius);
-  border-bottom-left-radius: var(--border-radius);
-  background-color: var(--background-color);
-  list-style: none;
-}
-details[role=list] summary + ul li {
-  margin-bottom: 0;
-}
-details[role=list] summary + ul li::marker {
-  content: "";
-}
-details[role=list] summary + ul li label {
-  position: relative;
-  width: 100%;
-  margin: 0;
-  padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
-  cursor: pointer;
-}
-details[role=list] summary + ul li label:hover {
-  background-color: var(--secondary-focus);
-}
-details[role=list] summary + ul li label input[type=radio],
-details[role=list] summary + ul li label input[type=checkbox] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-details[role=list][disabled] summary, details[role=list].disabled summary {
-  color: var(--muted-color);
-  cursor: not-allowed;
-  pointer-events: none;
+details[role=list] summary:not([role=button]):focus {
+  box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
 }
 details[role=list][open] summary {
-  margin-bottom: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 details[role=list][open] summary::before {
   display: block;
-  z-index: 80;
+  z-index: 1;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background: transparent;
-  content: " ";
+  content: "";
   cursor: default;
 }
-details[role=list][open] summary::after {
-  transform: rotate(180deg);
+
+nav [role=list] summary + ul,
+nav [role=list] > ul {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  border-radius: var(--border-radius);
+}
+nav [role=list] summary + ul li a,
+nav [role=list] > ul li a {
+  border-radius: 0;
+}
+
+nav [role=list][open] summary {
+  border-radius: var(--border-radius);
+}
+nav [role=list] summary + ul {
+  margin-top: 2px;
+}
+
+li[role=list]:hover > ul,
+li[role=list] a:active ~ ul,
+li[role=list] a:focus ~ ul {
+  display: flex;
+}
+li[role=list] > ul {
+  display: none;
+  margin-top: calc(var(--nav-link-spacing-vertical) + 2px);
+  -webkit-margin-start: calc(var(--nav-element-spacing-horizontal) - var(--nav-link-spacing-horizontal));
+  margin-inline-start: calc(var(--nav-element-spacing-horizontal) - var(--nav-link-spacing-horizontal));
+}
+li[role=list] > a::after {
+  background-image: var(--icon-chevron);
 }
 
 /**

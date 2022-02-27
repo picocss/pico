@@ -58,7 +58,7 @@ dialog {
     > footer {
       text-align: right;
 
-      [role='button'] {
+      [role="button"] {
         margin-bottom: 0;
 
         &:not(:first-of-type) {
@@ -104,7 +104,7 @@ dialog {
 
   // Closed state
   &:not([open]),
-  &[open='false'] {
+  &[open="false"] {
     display: none;
   }
 }

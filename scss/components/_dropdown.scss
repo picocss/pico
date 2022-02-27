@@ -1,93 +1,182 @@
-details[role='list'] {
+/**
+ * Dropdown ([role="list"])
+ */
+
+ // Menu
+details[role="list"],
+li[role="list"] {
   position: relative;
-  padding: 0;
-  border-bottom: none;
 
-  summary {
-    height: calc(
-      1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 +
-        var(--border-width) * 2
-    );
-    margin-bottom: 0;
-    padding: var(--form-element-spacing-vertical)
-      var(--form-element-spacing-horizontal);
-    border: var(--border-width) solid var(--form-element-border-color);
+  summary + ul,
+  > ul {
+    display: flex;
+    z-index: 99;
+    position: absolute;
+    top: auto;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: var(--border-width) solid var(--dropdown-border-color);
     border-radius: var(--border-radius);
-    line-height: inherit;
-    cursor: pointer;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    background-color: var(--dropdown-background-color);
+    box-shadow: var(--card-box-shadow);
+    color: var(--dropdown-color);
+    white-space: nowrap;
 
-    &::after {
-      height: 100%;
-      transform: rotate(0deg);
-    }
-
-    & + ul {
-      z-index: 100;
-      position: absolute;
-      top: auto;
-      right: 0px;
-      left: 0px;
-      margin: 0;
-      padding: 0;
-      border: var(--border-width) solid var(--form-element-border-color);
-      border-top: none;
-      border-bottom-right-radius: var(--border-radius);
-      border-bottom-left-radius: var(--border-radius);
-      background-color: var(--background-color);
+    li {
+      width: 100%;
+      margin-bottom: 0;
+      padding: calc(var(--form-element-spacing-vertical) * 0.5)
+        var(--form-element-spacing-horizontal);
       list-style: none;
 
-      li {
-        margin-bottom: 0;
-        &::marker {
-          content: '';
-        }
+      &:first-of-type {
+        margin-top: calc(var(--form-element-spacing-vertical) * 0.5);
+      }
 
-        label {
-          position: relative;
-          width: 100%;
-          margin: 0;
-          padding: var(--form-element-spacing-vertical)
-            var(--form-element-spacing-horizontal);
-          cursor: pointer;
-          &:hover {
-            background-color: var(--secondary-focus);
-          }
+      &:last-of-type {
+        margin-bottom: calc(var(--form-element-spacing-vertical) * 0.5);
+      }
 
-          input[type='radio'],
-          input[type='checkbox'] {
-            appearance: none;
-          }
+      a {
+        display: block;
+        margin: calc(var(--form-element-spacing-vertical) * -0.5)
+          calc(var(--form-element-spacing-horizontal) * -1);
+        padding: calc(var(--form-element-spacing-vertical) * 0.5)
+          var(--form-element-spacing-horizontal);
+        overflow: hidden;
+        color: var(--dropdown-color);
+        text-decoration: none;
+        text-overflow: ellipsis;
+
+        &:hover {
+          background-color: var(--dropdown-hover-background-color);
         }
       }
     }
   }
+}
 
-  &[disabled] summary,
-  &.disabled summary {
-    color: var(--muted-color);
-    cursor: not-allowed;
-    pointer-events: none;
+// Marker
+details[role="list"] summary,
+li[role="list"] > a {
+  &::after {
+    display: block;
+    width: 1.5rem;
+    height: calc(1rem * var(--line-height));
+    float: right;
+    transform: rotate(0deg);
+    background-position: right;
+    background-size: 1rem auto;
+    background-repeat: no-repeat;
+    content: "";
+  }
+}
+
+// Global dropdown only
+details[role="list"] {
+  padding: 0;
+  border-bottom: none;
+
+  // Style <summary> as <select>
+  summary {
+    margin-bottom: 0;
+
+    &:not([role="button"]) {
+      height: calc(
+        1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 +
+          var(--border-width) * 2
+      );
+      padding: var(--form-element-spacing-vertical)
+        var(--form-element-spacing-horizontal);
+      border: var(--border-width) solid var(--form-element-border-color);
+      border-radius: var(--border-radius);
+      background-color: var(--form-element-background-color);
+      color: var(--form-element-placeholder-color);
+      line-height: inherit;
+      cursor: pointer;
+
+      @if $enable-transitions {
+        transition: background-color var(--transition),
+          border-color var(--transition), color var(--transition),
+          box-shadow var(--transition);
+      }
+
+      &:active,
+      &:focus {
+        border-color: var(--form-element-active-border-color);
+        background-color: var(--form-element-active-background-color);
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
+      }
+    }
   }
 
+  // Close for details[role="list"]
   &[open] summary {
-    margin-bottom: 0;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
+    
     &::before {
       display: block;
-      z-index: 80;
+      z-index: 1;
       position: fixed;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
       background: transparent;
-      content: ' ';
+      content: "";
       cursor: default;
     }
+  }
+}
 
-    &::after {
-      transform: rotate(180deg);
-    }
+// All Dropdowns inside <nav>
+nav [role="list"] summary + ul,
+nav [role="list"] > ul {
+  min-width: fit-content;
+  border-radius: var(--border-radius);
+
+  li a {
+    border-radius: 0;
+  }
+}
+
+// Dropdowns inside <nav> as nested <details>
+nav [role="list"] {
+  &[open] summary {
+    border-radius: var(--border-radius);
+  }
+  summary + ul {
+    margin-top: 2px;
+  }
+}
+
+// Dropdowns inside a <nav> without using <details>
+li[role="list"] {
+
+  // Open on hover (for mobile) 
+  // or on active/focus (for keyboard navigation)
+  &:hover > ul,
+  a:active ~ ul,
+  a:focus ~ ul {
+    display: flex;
+  }
+
+  > ul {
+    display: none;
+    margin-top: calc(var(--nav-link-spacing-vertical) + 2px);
+    margin-inline-start: calc(var(--nav-element-spacing-horizontal) - var(--nav-link-spacing-horizontal));
+  }
+
+  > a::after {
+    background-image: var(--icon-chevron);
   }
 }
