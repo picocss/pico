@@ -81,6 +81,7 @@ a {
       text-decoration var(--transition), box-shadow var(--transition);
   }
 
+  &[aria-current],
   &:hover,
   &:active,
   &:focus {
@@ -97,6 +98,7 @@ a {
     &.secondary {
       --color: var(--secondary);
 
+      &[aria-current],
       &:hover,
       &:active,
       &:focus {
@@ -112,6 +114,7 @@ a {
     &.contrast {
       --color: var(--contrast);
 
+      &[aria-current],
       &:hover,
       &:active,
       &:focus {

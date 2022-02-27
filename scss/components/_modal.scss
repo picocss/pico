@@ -92,6 +92,7 @@ dialog {
           transition: opacity var(--transition);
         }
 
+        &[aria-current],
         &:hover,
         &:active,
         &:focus {

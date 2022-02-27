@@ -91,8 +91,8 @@ main > aside {
     color: var(--primary-hover);
   }
 
-  a.active,
-  a.active:hover {
+  a[aria-current],
+  a[aria-current]:hover {
     color: var(--primary);
   }
 

@@ -77,6 +77,7 @@ input[type="reset"],
       box-shadow var(--transition);
   }
 
+  &[aria-current],
   &:hover,
   &:active,
   &:focus {
@@ -106,6 +107,7 @@ input[type="reset"],
     --color: var(--secondary-inverse);
     cursor: pointer;
 
+    &[aria-current],
     &:hover,
     &:active,
     &:focus {
@@ -130,6 +132,7 @@ input[type="reset"],
     --border-color: var(--contrast);
     --color: var(--contrast-inverse);
 
+    &[aria-current],
     &:hover,
     &:active,
     &:focus {
@@ -153,6 +156,7 @@ input[type="reset"],
     --background-color: transparent;
     --color: var(--primary);
 
+    &[aria-current],
     &:hover,
     &:active,
     &:focus {
@@ -169,6 +173,7 @@ input[type="reset"],
   [role="button"].outline.secondary {
     --color: var(--secondary);
 
+    &[aria-current],
     &:hover,
     &:active,
     &:focus {
@@ -184,6 +189,7 @@ input[type="reset"],
   [role="button"].outline.contrast {
     --color: var(--contrast);
 
+    &[aria-current],
     &:hover,
     &:active,
     &:focus {
@@ -200,6 +206,7 @@ input[type="reset"],
     --color: var(--secondary-inverse);
     cursor: pointer;
 
+    &[aria-current],
     &:hover,
     &:active,
     &:focus {

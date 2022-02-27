@@ -689,7 +689,7 @@ a {
   transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition);
   transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition), -webkit-text-decoration var(--transition);
 }
-a:hover, a:active, a:focus {
+a[aria-current], a:hover, a:active, a:focus {
   --color: var(--primary-hover);
   --text-decoration: underline;
 }
@@ -699,7 +699,7 @@ a:focus {
 a.secondary {
   --color: var(--secondary);
 }
-a.secondary:hover, a.secondary:active, a.secondary:focus {
+a.secondary[aria-current], a.secondary:hover, a.secondary:active, a.secondary:focus {
   --color: var(--secondary-hover);
 }
 a.secondary:focus {
@@ -708,7 +708,7 @@ a.secondary:focus {
 a.contrast {
   --color: var(--contrast);
 }
-a.contrast:hover, a.contrast:active, a.contrast:focus {
+a.contrast[aria-current], a.contrast:hover, a.contrast:active, a.contrast:focus {
   --color: var(--contrast-hover);
 }
 a.contrast:focus {
@@ -998,16 +998,20 @@ input[type=reset],
   cursor: pointer;
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
-button:hover, button:active, button:focus,
+button[aria-current], button:hover, button:active, button:focus,
+input[type=submit][aria-current],
 input[type=submit]:hover,
 input[type=submit]:active,
 input[type=submit]:focus,
+input[type=button][aria-current],
 input[type=button]:hover,
 input[type=button]:active,
 input[type=button]:focus,
+input[type=reset][aria-current],
 input[type=reset]:hover,
 input[type=reset]:active,
 input[type=reset]:focus,
+[role=button][aria-current],
 [role=button]:hover,
 [role=button]:active,
 [role=button]:focus {
@@ -1035,16 +1039,20 @@ input[type=reset],
   --color: var(--secondary-inverse);
   cursor: pointer;
 }
-button.secondary:hover, button.secondary:active, button.secondary:focus,
+button.secondary[aria-current], button.secondary:hover, button.secondary:active, button.secondary:focus,
+input[type=submit].secondary[aria-current],
 input[type=submit].secondary:hover,
 input[type=submit].secondary:active,
 input[type=submit].secondary:focus,
+input[type=button].secondary[aria-current],
 input[type=button].secondary:hover,
 input[type=button].secondary:active,
 input[type=button].secondary:focus,
+input[type=reset][aria-current],
 input[type=reset]:hover,
 input[type=reset]:active,
 input[type=reset]:focus,
+[role=button].secondary[aria-current],
 [role=button].secondary:hover,
 [role=button].secondary:active,
 [role=button].secondary:focus {
@@ -1070,16 +1078,20 @@ input[type=reset].contrast,
   --border-color: var(--contrast);
   --color: var(--contrast-inverse);
 }
-button.contrast:hover, button.contrast:active, button.contrast:focus,
+button.contrast[aria-current], button.contrast:hover, button.contrast:active, button.contrast:focus,
+input[type=submit].contrast[aria-current],
 input[type=submit].contrast:hover,
 input[type=submit].contrast:active,
 input[type=submit].contrast:focus,
+input[type=button].contrast[aria-current],
 input[type=button].contrast:hover,
 input[type=button].contrast:active,
 input[type=button].contrast:focus,
+input[type=reset].contrast[aria-current],
 input[type=reset].contrast:hover,
 input[type=reset].contrast:active,
 input[type=reset].contrast:focus,
+[role=button].contrast[aria-current],
 [role=button].contrast:hover,
 [role=button].contrast:active,
 [role=button].contrast:focus {
@@ -1104,16 +1116,20 @@ input[type=reset].outline,
   --background-color: transparent;
   --color: var(--primary);
 }
-button.outline:hover, button.outline:active, button.outline:focus,
+button.outline[aria-current], button.outline:hover, button.outline:active, button.outline:focus,
+input[type=submit].outline[aria-current],
 input[type=submit].outline:hover,
 input[type=submit].outline:active,
 input[type=submit].outline:focus,
+input[type=button].outline[aria-current],
 input[type=button].outline:hover,
 input[type=button].outline:active,
 input[type=button].outline:focus,
+input[type=reset].outline[aria-current],
 input[type=reset].outline:hover,
 input[type=reset].outline:active,
 input[type=reset].outline:focus,
+[role=button].outline[aria-current],
 [role=button].outline:hover,
 [role=button].outline:active,
 [role=button].outline:focus {
@@ -1128,16 +1144,20 @@ input[type=reset].outline.secondary,
 [role=button].outline.secondary {
   --color: var(--secondary);
 }
-button.outline.secondary:hover, button.outline.secondary:active, button.outline.secondary:focus,
+button.outline.secondary[aria-current], button.outline.secondary:hover, button.outline.secondary:active, button.outline.secondary:focus,
+input[type=submit].outline.secondary[aria-current],
 input[type=submit].outline.secondary:hover,
 input[type=submit].outline.secondary:active,
 input[type=submit].outline.secondary:focus,
+input[type=button].outline.secondary[aria-current],
 input[type=button].outline.secondary:hover,
 input[type=button].outline.secondary:active,
 input[type=button].outline.secondary:focus,
+input[type=reset].outline.secondary[aria-current],
 input[type=reset].outline.secondary:hover,
 input[type=reset].outline.secondary:active,
 input[type=reset].outline.secondary:focus,
+[role=button].outline.secondary[aria-current],
 [role=button].outline.secondary:hover,
 [role=button].outline.secondary:active,
 [role=button].outline.secondary:focus {
@@ -1151,16 +1171,20 @@ input[type=reset].outline.contrast,
 [role=button].outline.contrast {
   --color: var(--contrast);
 }
-button.outline.contrast:hover, button.outline.contrast:active, button.outline.contrast:focus,
+button.outline.contrast[aria-current], button.outline.contrast:hover, button.outline.contrast:active, button.outline.contrast:focus,
+input[type=submit].outline.contrast[aria-current],
 input[type=submit].outline.contrast:hover,
 input[type=submit].outline.contrast:active,
 input[type=submit].outline.contrast:focus,
+input[type=button].outline.contrast[aria-current],
 input[type=button].outline.contrast:hover,
 input[type=button].outline.contrast:active,
 input[type=button].outline.contrast:focus,
+input[type=reset].outline.contrast[aria-current],
 input[type=reset].outline.contrast:hover,
 input[type=reset].outline.contrast:active,
 input[type=reset].outline.contrast:focus,
+[role=button].outline.contrast[aria-current],
 [role=button].outline.contrast:hover,
 [role=button].outline.contrast:active,
 [role=button].outline.contrast:focus {
@@ -2137,7 +2161,7 @@ dialog article .close {
   opacity: 0.5;
   transition: opacity var(--transition);
 }
-dialog article .close:hover, dialog article .close:active, dialog article .close:focus {
+dialog article .close[aria-current], dialog article .close:hover, dialog article .close:active, dialog article .close:focus {
   opacity: 1;
 }
 dialog:not([open]), dialog[open=false] {
@@ -2264,7 +2288,7 @@ nav a {
   border-radius: var(--border-radius);
   text-decoration: none;
 }
-nav a:hover, nav a:active, nav a:focus {
+nav a[aria-current], nav a:hover, nav a:active, nav a:focus {
   text-decoration: none;
 }
 
