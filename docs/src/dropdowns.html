@@ -21,18 +21,21 @@
             <h2>Dropdown menus and custom selects without JavaScript.</h2>
           </hgroup>
           <p>Dropdowns are built with <code>&lt;<b>details</b> <i>role</i>=<u>"list"</u>&gt;</code> as a wrapper and <code>&lt;<b>summary</b>&gt;</code> and <code>&lt;<b>ul</b>&gt;</code> as direct childs.</p>
-          <p>For style consistency with the form elements, dropdowns are styled like a <a href="forms.html"><code>&lt;<b>select</b>&gt;</code></a> by default.</p>
-          <article aria-label="Dropdown style">
-            <details role="list">
+          <p>For style consistency with the form elements, dropdowns are styled like a <a href="forms.html">&lt;select&gt;</a> by default.</p>
+          <article aria-label="Dropdowns as Selects">
+            <details role="list">x
               <summary aria-haspopup="listbox">Dropdown</summary>
               <ul role="listbox">
-                <li><a href="#">Mauris vehicula velit</a></li>
-                <li><a href="#">Nunc dignissim sapien</a></li>
-                <li><a href="#">Aenean egestas quam</a></li>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
               </ul>
             </details>
             <select required>
               <option value="" disabled selected>Select</option>
+              <option>Option</option>
+              <option>Another option</option>
+              <option>Something else here</option>
             </select>
             <footer class="code">
 
@@ -40,9 +43,9 @@
 &lt;<b>details</b> <i>role</i>=<u>"list"</u>&gt;
   &lt;<b>summary</b> <i>aria-haspopup</i>=<u>"listbox"</u>&gt;Dropdown&lt;/<b>summary</b>&gt;
   &lt;<b>ul</b> <i>role</i>=<u>"listbox"</u>&gt;
-    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Mauris vehicula velit&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
-    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Nunc dignissim sapien&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
-    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Aenean egestas quam&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Another action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Something else here&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
   &lt;/<b>ul</b>&gt;
 &lt;/<b>details</b>&gt;
 
@@ -56,29 +59,29 @@
             </footer> 
           </article>
           <p><code><i>role</i>=<u>"button"</u></code> on the <code>&lt;<b>summary</b>&gt;</code> element can be used to turn the dropdown into a button.</p>
-          <article aria-label="Dropdown style">
+          <article aria-label="Dropdowns as Buttons">
             <details role="list">
               <summary aria-haspopup="listbox" role="button">Dropdown as a button 1</summary>
               <ul role="listbox">
-                <li><a href="#">Mauris vehicula velit</a></li>
-                <li><a href="#">Nunc dignissim sapien</a></li>
-                <li><a href="#">Aenean egestas quam</a></li>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
               </ul>
             </details>
             <details role="list">
               <summary aria-haspopup="listbox" role="button" class="secondary">Dropdown as a button 2</summary>
               <ul role="listbox">
-                <li><a href="#">Mauris vehicula velit</a></li>
-                <li><a href="#">Nunc dignissim sapien</a></li>
-                <li><a href="#">Aenean egestas quam</a></li>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
               </ul>
             </details>
             <details role="list">
               <summary aria-haspopup="listbox" role="button" class="contrast">Dropdown as a button 3</summary>
               <ul role="listbox">
-                <li><a href="#">Mauris vehicula velit</a></li>
-                <li><a href="#">Nunc dignissim sapien</a></li>
-                <li><a href="#">Aenean egestas quam</a></li>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
               </ul>
             </details>
             <footer class="code">
@@ -89,7 +92,9 @@
     Dropdown as a button 1
   &lt;/<b>summary</b>&gt;
   &lt;<b>ul</b> <i>role</i>=<u>"listbox"</u>&gt;
-    <em>…</em>
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Another action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Something else here&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
   &lt;/<b>ul</b>&gt;
 &lt;/<b>details</b>&gt;
 
@@ -99,7 +104,9 @@
     Dropdown as a button 2
   &lt;/<b>summary</b>&gt;
   &lt;<b>ul</b> <i>role</i>=<u>"listbox"</u>&gt;
-    <em>…</em>
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Another action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Something else here&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
   &lt;/<b>ul</b>&gt;
 &lt;/<b>details</b>&gt;
 
@@ -109,7 +116,9 @@
     Dropdown as a button 3
   &lt;/<b>summary</b>&gt;
   &lt;<b>ul</b> <i>role</i>=<u>"listbox"</u>&gt;
-    <em>…</em>
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Another action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Something else here&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
   &lt;/<b>ul</b>&gt;
 &lt;/<b>details</b>&gt;
 </code></pre>
@@ -117,7 +126,7 @@
             </footer> 
           </article>
           <p>Dropdowns can be used as custom selects with <code>&lt;<b>input</b> <i>type</i>=<u>"radio"</u>&gt;</code> or  <code>&lt;<b>input</b> <i>type</i>=<u>"checkbox"</u>&gt;</code></p>
-          <article aria-label="Dropdown style">
+          <article aria-label="Dropdowns with radio buttons or checkboxes">
             <details role="list">
               <summary aria-haspopup="listbox">Select single element</summary>
               <ul role="listbox">
@@ -218,6 +227,52 @@
               
             </footer> 
           </article>
+          <p>Dropdowns can be used inside the <a href="navs.html">&lt;nav&gt;</a> component.</p>
+          <article aria-label="Dropdowns inside a nav">
+            <nav>
+              <ul>
+                <li><strong>Brand</strong></li>
+              </ul>
+              <ul>
+                <li><a href="#" onclick="event.preventDefault()">Link</a></li>
+                <li><a href="#" onclick="event.preventDefault()">Link</a></li>
+                <li>
+                  <details role="list" dir="rtl">
+                    <summary aria-haspopup="listbox">Dropdown</summary>
+                    <ul role="listbox">
+                      <li><a href="#">Action</a></li>
+                      <li><a href="#">Another action</a></li>
+                      <li><a href="#">Something else here</a></li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </nav>
+            <footer class="code">
+
+<pre><code>&lt;<b>nav</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>strong</b>&gt;Brand&lt;/<b>strong</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;
+      &lt;<b>details</b> <i>role</i>=<u>"list"</u> <i>dir</i>=<u>"rtl"</u>&gt;
+        &lt;<b>summary</b> <i>aria-haspopup</i>=<u>"listbox"</u>&gt;Dropdown&lt;/<b>summary</b>&gt;
+        &lt;<b>ul</b> <i>role</i>=<u>"listbox"</u>&gt;
+          &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+          &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Another action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+          &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Something else here&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+        &lt;/<b>ul</b>&gt;
+      &lt;/<b>details</b>&gt;
+    &lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>nav</b>&gt;</code></pre>
+
+            </footer> 
+          </article>
+          <p>ℹ️&nbsp;Dropdowns inside a <code>&lt;<b>nav</b>&gt;</code> are still experimental and will probably evolve.</p>
         </section>
 
         ${require('./_footer.html')}
