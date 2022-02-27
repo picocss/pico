@@ -5,14 +5,18 @@
 details {
   display: block;
   margin-bottom: var(--spacing);
-  padding-bottom: calc(var(--spacing) * 0.5);
+  padding-bottom: calc(var(--spacing));
   border-bottom: var(--border-width) solid var(--accordion-border-color);
 
   summary {
-    color: var(--accordion-close-summary-color);
+    
     line-height: 1rem;
     list-style-type: none;
     cursor: pointer;
+
+    &:not([role="button"]) {
+      color: var(--accordion-close-summary-color);
+    }
 
     @if $enable-transitions {
       transition: color var(--transition);
@@ -51,14 +55,33 @@ details {
 
     &:focus {
       outline: none;
-      color: var(--accordion-active-summary-color);
+
+      &:not([role="button"]) {
+        color: var(--accordion-active-summary-color);
+      }
     }
 
-    ~ * {
-      margin-top: calc(var(--spacing) * 0.5);
+    // Type button
+    &[role="button"] {
+      width: 100%;
+      text-align: left;
+      
+      // Marker
+      &::after {
+        height: calc(1rem * var(--line-height));
+        background-image: var(--icon-chevron-button);
+      }
 
-      ~ * {
-        margin-top: 0;
+      @if $enable-classes {
+        
+        // .contrast
+        &:not(.outline).contrast {
+          
+          // Marker
+          &::after {
+            background-image: var(--icon-chevron-button-inverse);
+          }
+        }
       }
     }
   }
@@ -66,10 +89,12 @@ details {
   // Open
   &[open] {
     > summary {
-      margin-bottom: calc(var(--spacing) * 0.25);
+      margin-bottom: calc(var(--spacing));
 
-      &:not(:focus) {
-        color: var(--accordion-open-summary-color);
+      &:not([role="button"]) {
+        &:not(:focus) {
+          color: var(--accordion-open-summary-color);
+        }
       }
 
       &::after {
@@ -82,6 +107,8 @@ details {
 [dir="rtl"] {
   details {
     summary {
+      text-align: right;
+
       &::after {
         float: left;
       }
