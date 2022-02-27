@@ -117,7 +117,7 @@
   --dropdown-border-color: #{mix($grey-900, $grey-800)};
   --dropdown-box-shadow: var(--card-box-shadow);
   --dropdown-color: var(--color);
-  --dropdown-focus-background-color: #{rgba(mix($grey-900, $grey-800), 0.75)};
+  --dropdown-hover-background-color: #{rgba(mix($grey-900, $grey-800), 0.75)};
 
   // Modal (<dialog>)
   --modal-overlay-background-color: #{rgba(mix($grey-900, $grey-800), 0.9)};

@@ -73,15 +73,16 @@ details[role="list"] {
           margin-bottom: calc(var(--form-element-spacing-vertical) * 0.5);
         }
 
-        &:hover {
-          background-color: var(--dropdown-focus-background-color);
-        }
-
         a {
           display: block;
-          width: 100%;
+          margin: calc(var(--form-element-spacing-vertical) * -0.5) calc(var(--form-element-spacing-horizontal) * -1);
+          padding: calc(var(--form-element-spacing-vertical) * 0.5) var(--form-element-spacing-horizontal);
           color: var(--dropdown-color);
           text-decoration: none;
+
+          &:hover {
+            background-color: var(--dropdown-hover-background-color);
+          }
         }
       }
       
