@@ -2076,17 +2076,17 @@ details[role=list] {
   border-bottom: none;
 }
 details[role=list] summary {
+  height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
   margin-bottom: 0;
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
   border: var(--border-width) solid var(--form-element-border-color);
   border-radius: var(--border-radius);
-  height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
   line-height: inherit;
   cursor: pointer;
 }
 details[role=list] summary::after {
-  transform: rotate(0deg);
   height: 100%;
+  transform: rotate(0deg);
 }
 details[role=list] summary + ul {
   z-index: 100;
@@ -2110,11 +2110,11 @@ details[role=list] summary + ul li::marker {
   content: "";
 }
 details[role=list] summary + ul li label {
-  cursor: pointer;
   position: relative;
   width: 100%;
   margin: 0;
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
+  cursor: pointer;
 }
 details[role=list] summary + ul li label:hover {
   background-color: var(--secondary-focus);
