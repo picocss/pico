@@ -3,6 +3,9 @@
  */
 
 body > nav {
+  --nav-element-spacing-horizontal: 0.75rem;
+  --nav-link-spacing-vertical: 1rem;
+  --nav-link-spacing-horizontal: 0.75rem;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   z-index: 99;
   position: fixed;
@@ -26,31 +29,38 @@ body > nav {
   }
 
   // Band & Title
-  ul:first-of-type li {
-    // Brand
-    &:first-of-type {
-      a {
-        width: 3.5rem;
-        height: 3.5rem;
-        margin-left: calc(var(--spacing) * -1);
-        padding: 0;
-        background: var(--h1-color);
-        color: var(--nav-logo-color);
+  ul:first-of-type {
+    margin-left: calc(var(--spacing) * -1);
 
-        svg {
-          height: 3.5rem;
+    li {
+      padding: 0;
+  
+      // Brand
+      &:first-of-type {
+        a {
+          display: block;
+          margin: 0;
+          padding: 0;
+          background: var(--h1-color);
+          color: var(--nav-logo-color);
+  
+          svg {
+            display: block;
+            width: 3.5rem;
+            height: 3.5rem;
+          }
         }
       }
-    }
-
-    // Title
-    &:nth-of-type(2) {
-      display: none;
-      margin-left: var(--spacing);
-      color: var(--h1-color);
-
-      @media (min-width: map-get($breakpoints, "lg")) {
-        display: inline;
+  
+      // Title
+      &:nth-of-type(2) {
+        display: none;
+        margin-left: calc(var(--spacing) * 1.5);
+        color: var(--h1-color);
+  
+        @media (min-width: map-get($breakpoints, "lg")) {
+          display: inline;
+        }
       }
     }
   }

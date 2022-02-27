@@ -21,6 +21,10 @@
   --block-spacing-horizontal: var(--spacing);
   --form-element-spacing-vertical: 0.75rem;
   --form-element-spacing-horizontal: 1rem;
+  --nav-element-spacing-vertical: 1rem;
+  --nav-element-spacing-horizontal: 0.75rem;
+  --nav-link-spacing-vertical: 0.5rem;
+  --nav-link-spacing-horizontal: 0.5rem;
   --form-label-font-weight: var(--font-weight);
   --transition: 0.2s ease-in-out;
 }
@@ -1948,25 +1952,24 @@ nav ul {
 }
 nav ol:first-of-type,
 nav ul:first-of-type {
-  margin-left: calc(var(--spacing) * -0.5);
+  margin-left: calc(var(--nav-element-spacing-horizontal) * -1);
 }
 nav ol:last-of-type,
 nav ul:last-of-type {
-  margin-right: calc(var(--spacing) * -0.5);
+  margin-right: calc(var(--nav-element-spacing-horizontal) * -1);
 }
 nav li {
   display: inline-block;
   margin: 0;
-  padding: var(--spacing) calc(var(--spacing) * 0.5);
+  padding: var(--nav-element-spacing-vertical) var(--nav-element-spacing-horizontal);
 }
-nav li > *,
-nav li > input:not([type=checkbox]):not([type=radio]) {
-  margin-bottom: 0;
+nav li > * {
+  --spacing: 0;
 }
 nav a {
-  display: block;
-  margin: calc(var(--spacing) * -1) calc(var(--spacing) * -0.5);
-  padding: var(--spacing) calc(var(--spacing) * 0.5);
+  display: inline-block;
+  margin: calc(var(--nav-link-spacing-vertical) * -1) calc(var(--nav-link-spacing-horizontal) * -1);
+  padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
   border-radius: var(--border-radius);
   text-decoration: none;
 }
@@ -1981,11 +1984,13 @@ aside li {
   display: block;
 }
 aside li {
-  padding: calc(var(--spacing) * 0.5);
+  padding: calc(var(--nav-element-spacing-vertical) * 0.5) var(--nav-element-spacing-horizontal);
 }
 aside li a {
-  margin: calc(var(--spacing) * -0.5);
-  padding: calc(var(--spacing) * 0.5);
+  display: block;
+}
+aside li [role=button] {
+  margin: inherit;
 }
 
 /**
