@@ -2393,15 +2393,17 @@ progress::-moz-progress-bar {
     background-position: -200% 0;
   }
 }
-details[role=list] {
+/**
+ * Dropdown ([role="list"])
+ */
+details[role=list],
+li[role=list] {
   position: relative;
-  padding: 0;
-  border-bottom: none;
 }
-details[role=list] summary {
-  margin: 0;
-}
-details[role=list] summary + ul {
+details[role=list] summary + ul,
+details[role=list] > ul,
+li[role=list] summary + ul,
+li[role=list] > ul {
   display: flex;
   z-index: 99;
   position: absolute;
@@ -2409,9 +2411,6 @@ details[role=list] summary + ul {
   right: 0;
   left: 0;
   flex-direction: column;
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
   margin: 0;
   padding: 0;
   border: var(--border-width) solid var(--dropdown-border-color);
@@ -2423,37 +2422,83 @@ details[role=list] summary + ul {
   color: var(--dropdown-color);
   white-space: nowrap;
 }
-details[role=list] summary + ul li {
+details[role=list] summary + ul li,
+details[role=list] > ul li,
+li[role=list] summary + ul li,
+li[role=list] > ul li {
   width: 100%;
   margin-bottom: 0;
   padding: calc(var(--form-element-spacing-vertical) * 0.5) var(--form-element-spacing-horizontal);
   list-style: none;
 }
-details[role=list] summary + ul li:first-of-type {
+details[role=list] summary + ul li:first-of-type,
+details[role=list] > ul li:first-of-type,
+li[role=list] summary + ul li:first-of-type,
+li[role=list] > ul li:first-of-type {
   margin-top: calc(var(--form-element-spacing-vertical) * 0.5);
 }
-details[role=list] summary + ul li:last-of-type {
+details[role=list] summary + ul li:last-of-type,
+details[role=list] > ul li:last-of-type,
+li[role=list] summary + ul li:last-of-type,
+li[role=list] > ul li:last-of-type {
   margin-bottom: calc(var(--form-element-spacing-vertical) * 0.5);
 }
-details[role=list] summary + ul li a {
+details[role=list] summary + ul li a,
+details[role=list] > ul li a,
+li[role=list] summary + ul li a,
+li[role=list] > ul li a {
   display: block;
   margin: calc(var(--form-element-spacing-vertical) * -0.5) calc(var(--form-element-spacing-horizontal) * -1);
   padding: calc(var(--form-element-spacing-vertical) * 0.5) var(--form-element-spacing-horizontal);
+  overflow: hidden;
   color: var(--dropdown-color);
   text-decoration: none;
+  text-overflow: ellipsis;
 }
-details[role=list] summary + ul li a:hover {
+details[role=list] summary + ul li a:hover,
+details[role=list] > ul li a:hover,
+li[role=list] summary + ul li a:hover,
+li[role=list] > ul li a:hover {
   background-color: var(--dropdown-hover-background-color);
 }
-details[role=list] summary::after {
+
+details[role=list] summary::after,
+li[role=list] > a::after {
+  display: block;
+  width: 1.5rem;
   height: calc(1rem * var(--line-height));
+  float: right;
   transform: rotate(0deg);
+  background-position: right;
+  background-size: 1rem auto;
+  background-repeat: no-repeat;
+  content: "";
 }
-details[role=list][disabled] summary, details[role=list].disabled summary {
-  border-color: var(--form-element-disabled-border-color);
-  background-color: var(--form-element-disabled-background-color);
-  opacity: var(--form-element-disabled-opacity);
-  pointer-events: none;
+
+details[role=list] {
+  padding: 0;
+  border-bottom: none;
+}
+details[role=list] summary {
+  margin-bottom: 0;
+}
+details[role=list] summary:not([role=button]) {
+  height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
+  padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
+  border: var(--border-width) solid var(--form-element-border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--form-element-background-color);
+  color: var(--form-element-placeholder-color);
+  line-height: inherit;
+  cursor: pointer;
+  transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
+}
+details[role=list] summary:not([role=button]):active, details[role=list] summary:not([role=button]):focus {
+  border-color: var(--form-element-active-border-color);
+  background-color: var(--form-element-active-background-color);
+}
+details[role=list] summary:not([role=button]):focus {
+  box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
 }
 details[role=list][open] summary {
   border-bottom-right-radius: 0;
@@ -2472,55 +2517,38 @@ details[role=list][open] summary::before {
   cursor: default;
 }
 
-*:not(nav > ul > li):not(nav > aside > ul > li) > details[role=list] summary:not([role=button]) {
-  height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
-  padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
-  border: var(--border-width) solid var(--form-element-border-color);
-  border-radius: var(--border-radius);
-  background-color: var(--form-element-background-color);
-  color: var(--form-element-placeholder-color);
-  line-height: inherit;
-  cursor: pointer;
-  transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
-}
-*:not(nav > ul > li):not(nav > aside > ul > li) > details[role=list] summary:not([role=button]):active, *:not(nav > ul > li):not(nav > aside > ul > li) > details[role=list] summary:not([role=button]):focus {
-  border-color: var(--form-element-active-border-color);
-  background-color: var(--form-element-active-background-color);
-}
-*:not(nav > ul > li):not(nav > aside > ul > li) > details[role=list] summary:not([role=button]):focus {
-  box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
-}
-
-nav ul li details[role=list] {
-  display: inline-block;
-  margin: calc(var(--nav-link-spacing-vertical) * -1) calc(var(--nav-link-spacing-horizontal) * -1);
-}
-nav ul li details[role=list] summary:not([role=button]) {
-  padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
-  border-radius: var(--border-radius);
-  line-height: var(--line-height);
-}
-nav ul li details[role=list] summary:not([role=button]):focus {
-  background-color: var(--primary-focus);
-}
-nav ul li details[role=list] summary:not([role=button]) a {
-  pointer-events: none;
-}
-nav ul li details[role=list] summary:not([role=button]) a:focus {
-  background-color: transparent;
-}
-nav ul li details[role=list][open] summary {
+nav [role=list] summary + ul,
+nav [role=list] > ul {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
   border-radius: var(--border-radius);
 }
-nav ul li details[role=list][open] summary + ul {
-  margin-top: calc(var(--nav-link-spacing-horizontal) * 0.5);
-  border-radius: var(--border-radius);
-}
-nav ul li details[role=list][open] summary + ul a {
+nav [role=list] summary + ul li a,
+nav [role=list] > ul li a {
   border-radius: 0;
 }
-nav ul li details[role=list][open] summary[role=button] + ul {
-  margin-top: var(--nav-link-spacing-horizontal);
+
+nav [role=list][open] summary {
+  border-radius: var(--border-radius);
+}
+nav [role=list] summary + ul {
+  margin-top: 2px;
+}
+
+li[role=list]:hover > ul,
+li[role=list] a:active ~ ul,
+li[role=list] a:focus ~ ul {
+  display: flex;
+}
+li[role=list] > ul {
+  display: none;
+  margin-top: calc(var(--nav-link-spacing-vertical) + 2px);
+  -webkit-margin-start: calc(var(--nav-element-spacing-horizontal) - var(--nav-link-spacing-horizontal));
+  margin-inline-start: calc(var(--nav-element-spacing-horizontal) - var(--nav-link-spacing-horizontal));
+}
+li[role=list] > a::after {
+  background-image: var(--icon-chevron);
 }
 
 /**
