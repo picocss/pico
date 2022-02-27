@@ -2023,6 +2023,12 @@ progress::-moz-progress-bar {
   }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  [dir=rtl] progress:indeterminate {
+    animation-direction: reverse;
+  }
+}
+
 @-webkit-keyframes progressIndeterminate {
   0% {
     background-position: 200% 0;
