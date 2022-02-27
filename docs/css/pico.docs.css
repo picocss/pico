@@ -155,8 +155,8 @@ main > aside a.secondary:focus {
   background-color: transparent;
   color: var(--primary-hover);
 }
-main > aside a.active,
-main > aside a.active:hover {
+main > aside a[aria-current],
+main > aside a[aria-current]:hover {
   color: var(--primary);
 }
 main > aside details {
