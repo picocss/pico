@@ -139,13 +139,20 @@ details[role="list"] {
 }
 
 // All Dropdowns inside <nav>
-nav [role="list"] summary + ul,
-nav [role="list"] > ul {
-  min-width: fit-content;
-  border-radius: var(--border-radius);
+nav [role="list"] {
+  summary, a {
+    display: flex;
+    direction: ltr;
+  }
+  
+  summary + ul,
+  > ul {
+    min-width: fit-content;
+    border-radius: var(--border-radius);
 
-  li a {
-    border-radius: 0;
+    li a {
+      border-radius: 0;
+    }
   }
 }
 
