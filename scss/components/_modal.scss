@@ -92,10 +92,7 @@ dialog {
           transition: opacity var(--transition);
         }
 
-        &[aria-current],
-        &:hover,
-        &:active,
-        &:focus {
+        &:is([aria-current], :hover, :active, :focus) {
           opacity: 1;
         }
       }
@@ -126,8 +123,7 @@ dialog {
 @if ($enable-classes and $enable-transitions) {
   $animation-duration: 0.2s;
 
-  .modal-is-opening,
-  .modal-is-closing {
+  :where(.modal-is-opening, .modal-is-closing) {
     dialog,
     dialog > article {
       animation-duration: $animation-duration;

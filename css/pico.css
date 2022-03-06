@@ -1996,7 +1996,7 @@ dialog article .close {
   opacity: 0.5;
   transition: opacity var(--transition);
 }
-dialog article .close[aria-current], dialog article .close:hover, dialog article .close:active, dialog article .close:focus {
+dialog article .close:is([aria-current], :hover, :active, :focus) {
   opacity: 1;
 }
 dialog:not([open]), dialog[open=false] {
@@ -2012,10 +2012,8 @@ dialog:not([open]), dialog[open=false] {
   pointer-events: auto;
 }
 
-.modal-is-opening dialog,
-.modal-is-opening dialog > article,
-.modal-is-closing dialog,
-.modal-is-closing dialog > article {
+:where(.modal-is-opening, .modal-is-closing) dialog,
+:where(.modal-is-opening, .modal-is-closing) dialog > article {
   -webkit-animation-duration: 0.2s;
   animation-duration: 0.2s;
   -webkit-animation-timing-function: ease-in-out;
@@ -2023,15 +2021,13 @@ dialog:not([open]), dialog[open=false] {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-.modal-is-opening dialog,
-.modal-is-closing dialog {
+:where(.modal-is-opening, .modal-is-closing) dialog {
   -webkit-animation-duration: 0.8s;
   animation-duration: 0.8s;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
-.modal-is-opening dialog > article,
-.modal-is-closing dialog > article {
+:where(.modal-is-opening, .modal-is-closing) dialog > article {
   -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
   -webkit-animation-name: slideInDown;
