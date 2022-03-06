@@ -28,11 +28,6 @@ sup {
   top: -0.5em;
 }
 
-// Remove the margin on nested lists in Chrome, Edge, and Safari
-:where(dl, ol, ul) :where(dl, ol, ul) {
-  margin: 0;
-}
-
 // Pico
 // ––––––––––––––––––––
 
@@ -70,10 +65,7 @@ a,
       text-decoration var(--transition), box-shadow var(--transition);
   }
 
-  &[aria-current],
-  &:hover,
-  &:active,
-  &:focus {
+  &:is([aria-current], :hover, :active, :focus) {
     --color: var(--primary-hover);
     --text-decoration: underline;
   }
@@ -87,10 +79,7 @@ a,
     &.secondary {
       --color: var(--secondary);
 
-      &[aria-current],
-      &:hover,
-      &:active,
-      &:focus {
+      &:is([aria-current], :hover, :active, :focus) {
         --color: var(--secondary-hover);
       }
 
@@ -103,10 +92,7 @@ a,
     &.contrast {
       --color: var(--contrast);
 
-      &[aria-current],
-      &:hover,
-      &:active,
-      &:focus {
+      &:is([aria-current], :hover, :active, :focus) {
         --color: var(--contrast-hover);
       }
 
@@ -152,22 +138,8 @@ h6 {
 }
 
 // Margin-top for headings after a typography block
-address,
-blockquote,
-dl,
-figure,
-form,
-ol,
-p,
-pre,
-table,
-ul {
-  & ~ h1,
-  & ~ h2,
-  & ~ h3,
-  & ~ h4,
-  & ~ h5,
-  & ~ h6 {
+:where(address, blockquote, dl, figure, form, ol, p, pre, table, ul) {
+  ~ :is(h1, h2, h3, h4, h5, h6) {
     margin-top: var(--typography-spacing-vertical);
   }
 }
@@ -219,8 +191,7 @@ small {
 }
 
 // Lists
-ul,
-ol {
+:where(dl, ol, ul) {
   padding-right: 0;
   padding-left: var(--spacing);
   padding-inline-start: var(--spacing);
@@ -228,6 +199,15 @@ ol {
 
   li {
     margin-bottom: calc(var(--typography-spacing-vertical) * 0.25);
+  }
+}
+
+// Margin-top for nested lists
+// 1. Remove the margin on nested lists in Chrome, Edge, IE, and Safari
+:where(dl, ol, ul) {
+  :is(dl, ol, ul) {
+    margin: 0; // 1
+    margin-top: calc(var(--typography-spacing-vertical) * 0.25);
   }
 }
 

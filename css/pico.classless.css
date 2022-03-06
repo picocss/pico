@@ -633,10 +633,6 @@ sup {
   top: -0.5em;
 }
 
-:where(dl, ol, ul) :where(dl, ol, ul) {
-  margin: 0;
-}
-
 address,
 blockquote,
 dl,
@@ -668,11 +664,8 @@ a,
   transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition);
   transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition), -webkit-text-decoration var(--transition);
 }
-a[aria-current], a:hover, a:active, a:focus,
-[role=link][aria-current],
-[role=link]:hover,
-[role=link]:active,
-[role=link]:focus {
+a:is([aria-current], :hover, :active, :focus),
+[role=link]:is([aria-current], :hover, :active, :focus) {
   --color: var(--primary-hover);
   --text-decoration: underline;
 }
@@ -719,61 +712,7 @@ h6 {
   --color: var(--h6-color);
 }
 
-address ~ h1, address ~ h2, address ~ h3, address ~ h4, address ~ h5, address ~ h6,
-blockquote ~ h1,
-blockquote ~ h2,
-blockquote ~ h3,
-blockquote ~ h4,
-blockquote ~ h5,
-blockquote ~ h6,
-dl ~ h1,
-dl ~ h2,
-dl ~ h3,
-dl ~ h4,
-dl ~ h5,
-dl ~ h6,
-figure ~ h1,
-figure ~ h2,
-figure ~ h3,
-figure ~ h4,
-figure ~ h5,
-figure ~ h6,
-form ~ h1,
-form ~ h2,
-form ~ h3,
-form ~ h4,
-form ~ h5,
-form ~ h6,
-ol ~ h1,
-ol ~ h2,
-ol ~ h3,
-ol ~ h4,
-ol ~ h5,
-ol ~ h6,
-p ~ h1,
-p ~ h2,
-p ~ h3,
-p ~ h4,
-p ~ h5,
-p ~ h6,
-pre ~ h1,
-pre ~ h2,
-pre ~ h3,
-pre ~ h4,
-pre ~ h5,
-pre ~ h6,
-table ~ h1,
-table ~ h2,
-table ~ h3,
-table ~ h4,
-table ~ h5,
-table ~ h6,
-ul ~ h1,
-ul ~ h2,
-ul ~ h3,
-ul ~ h4,
-ul ~ h5,
-ul ~ h6 {
+:where(address, blockquote, dl, figure, form, ol, p, pre, table, ul) ~ :is(h1, h2, h3, h4, h5, h6) {
   margin-top: var(--typography-spacing-vertical);
 }
 
@@ -798,8 +737,7 @@ small {
   font-size: var(--font-size);
 }
 
-ul,
-ol {
+:where(dl, ol, ul) {
   padding-right: 0;
   padding-left: var(--spacing);
   -webkit-padding-start: var(--spacing);
@@ -807,9 +745,13 @@ ol {
   -webkit-padding-end: 0;
   padding-inline-end: 0;
 }
-ul li,
-ol li {
+:where(dl, ol, ul) li {
   margin-bottom: calc(var(--typography-spacing-vertical) * 0.25);
+}
+
+:where(dl, ol, ul) :is(dl, ol, ul) {
+  margin: 0;
+  margin-top: calc(var(--typography-spacing-vertical) * 0.25);
 }
 
 ul li {
@@ -914,14 +856,6 @@ button,
   -webkit-appearance: button;
 }
 
-button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
-  padding: 0;
-  border-style: none;
-}
-
 button {
   display: block;
   width: 100%;
@@ -956,23 +890,11 @@ input[type=reset],
   cursor: pointer;
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
-button[aria-current], button:hover, button:active, button:focus,
-input[type=submit][aria-current],
-input[type=submit]:hover,
-input[type=submit]:active,
-input[type=submit]:focus,
-input[type=button][aria-current],
-input[type=button]:hover,
-input[type=button]:active,
-input[type=button]:focus,
-input[type=reset][aria-current],
-input[type=reset]:hover,
-input[type=reset]:active,
-input[type=reset]:focus,
-[role=button][aria-current],
-[role=button]:hover,
-[role=button]:active,
-[role=button]:focus {
+button:is([aria-current], :hover, :active, :focus),
+input[type=submit]:is([aria-current], :hover, :active, :focus),
+input[type=button]:is([aria-current], :hover, :active, :focus),
+input[type=reset]:is([aria-current], :hover, :active, :focus),
+[role=button]:is([aria-current], :hover, :active, :focus) {
   --background-color: var(--primary-hover);
   --border-color: var(--primary-hover);
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
@@ -993,7 +915,7 @@ input[type=reset] {
   --color: var(--secondary-inverse);
   cursor: pointer;
 }
-input[type=reset][aria-current], input[type=reset]:hover, input[type=reset]:active, input[type=reset]:focus {
+input[type=reset]:is([aria-current], :hover, :active, :focus) {
   --background-color: var(--secondary-hover);
   --border-color: var(--secondary-hover);
 }
@@ -1002,12 +924,8 @@ input[type=reset]:focus {
     0 0 0 var(--outline-width) var(--secondary-focus);
 }
 
-button[disabled],
-input[type=submit][disabled],
-input[type=button][disabled],
-input[type=reset][disabled],
-a[role=button]:not([href]),
-[role=button][disabled] {
+:where(button, input[type="submit"], input[type="reset"], [role="button"])[disabled],
+a[role=button]:not([href]) {
   opacity: 0.5;
   pointer-events: none;
 }
@@ -1143,19 +1061,13 @@ textarea {
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 
-input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([readonly]):active, input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([readonly]):focus,
-select:active,
-select:focus,
-textarea:active,
-textarea:focus {
+input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([readonly]):is(:active, :focus),
+:where(select, textarea):is(:active, :focus) {
   --background-color: var(--form-element-active-background-color);
 }
 
-input:not([type=submit]):not([type=button]):not([type=reset]):not([role=switch]):not([readonly]):active, input:not([type=submit]):not([type=button]):not([type=reset]):not([role=switch]):not([readonly]):focus,
-select:active,
-select:focus,
-textarea:active,
-textarea:focus {
+input:not([type=submit]):not([type=button]):not([type=reset]):not([role=switch]):not([readonly]):is(:active, :focus),
+:where(select, textarea):is(:active, :focus) {
   --border-color: var(--form-element-active-border-color);
 }
 
@@ -1173,9 +1085,7 @@ textarea[disabled] {
   opacity: var(--form-element-disabled-opacity);
 }
 
-input:not([type=checkbox]):not([type=radio])[aria-invalid],
-select:not([type=checkbox]):not([type=radio])[aria-invalid],
-textarea:not([type=checkbox]):not([type=radio])[aria-invalid] {
+:where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid] {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   padding-left: var(--form-element-spacing-horizontal);
   -webkit-padding-start: var(--form-element-spacing-horizontal) !important;
@@ -1186,50 +1096,28 @@ textarea:not([type=checkbox]):not([type=radio])[aria-invalid] {
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
-input:not([type=checkbox]):not([type=radio])[aria-invalid=false],
-select:not([type=checkbox]):not([type=radio])[aria-invalid=false],
-textarea:not([type=checkbox]):not([type=radio])[aria-invalid=false] {
+:where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid=false] {
   background-image: var(--icon-valid);
 }
-input:not([type=checkbox]):not([type=radio])[aria-invalid=true],
-select:not([type=checkbox]):not([type=radio])[aria-invalid=true],
-textarea:not([type=checkbox]):not([type=radio])[aria-invalid=true] {
+:where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid=true] {
   background-image: var(--icon-invalid);
 }
-input[aria-invalid=false],
-select[aria-invalid=false],
-textarea[aria-invalid=false] {
+:where(input, select, textarea)[aria-invalid=false] {
   --border-color: var(--form-element-valid-border-color);
 }
-input[aria-invalid=false]:active, input[aria-invalid=false]:focus,
-select[aria-invalid=false]:active,
-select[aria-invalid=false]:focus,
-textarea[aria-invalid=false]:active,
-textarea[aria-invalid=false]:focus {
+:where(input, select, textarea)[aria-invalid=false]:is(:active, :focus) {
   --border-color: var(--form-element-valid-active-border-color) !important;
   --box-shadow: 0 0 0 var(--outline-width) var(--form-element-valid-focus-color) !important;
 }
-input[aria-invalid=true],
-select[aria-invalid=true],
-textarea[aria-invalid=true] {
+:where(input, select, textarea)[aria-invalid=true] {
   --border-color: var(--form-element-invalid-border-color);
 }
-input[aria-invalid=true]:active, input[aria-invalid=true]:focus,
-select[aria-invalid=true]:active,
-select[aria-invalid=true]:focus,
-textarea[aria-invalid=true]:active,
-textarea[aria-invalid=true]:focus {
+:where(input, select, textarea)[aria-invalid=true]:is(:active, :focus) {
   --border-color: var(--form-element-invalid-active-border-color) !important;
   --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color) !important;
 }
 
-[dir=rtl] input:not([type=checkbox]):not([type=radio])[aria-invalid], [dir=rtl] input:not([type=checkbox]):not([type=radio])[aria-invalid=true], [dir=rtl] input:not([type=checkbox]):not([type=radio])[aria-invalid=false],
-[dir=rtl] select:not([type=checkbox]):not([type=radio])[aria-invalid],
-[dir=rtl] select:not([type=checkbox]):not([type=radio])[aria-invalid=true],
-[dir=rtl] select:not([type=checkbox]):not([type=radio])[aria-invalid=false],
-[dir=rtl] textarea:not([type=checkbox]):not([type=radio])[aria-invalid],
-[dir=rtl] textarea:not([type=checkbox]):not([type=radio])[aria-invalid=true],
-[dir=rtl] textarea:not([type=checkbox]):not([type=radio])[aria-invalid=false] {
+[dir=rtl] :where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid], [dir=rtl] :where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid=true], [dir=rtl] :where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid=false] {
   background-position: center left 0.75rem;
 }
 
@@ -1269,9 +1157,7 @@ select:not([multiple]):not([size]) {
   background-position: center left 0.75rem;
 }
 
-input + small,
-select + small,
-textarea + small {
+:where(input, select, textarea) + small {
   display: block;
   width: 100%;
   margin-top: calc(var(--spacing) * -0.75);
@@ -1279,7 +1165,7 @@ textarea + small {
   color: var(--muted-color);
 }
 
-label > input, label > select, label > textarea {
+label > :where(input, select, textarea) {
   margin-top: calc(var(--spacing) * 0.25);
 }
 
@@ -1444,11 +1330,7 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[
   opacity: 0;
 }
 
-[dir=rtl] [type=date],
-[dir=rtl] [type=datetime-local],
-[dir=rtl] [type=month],
-[dir=rtl] [type=time],
-[dir=rtl] [type=week] {
+[dir=rtl] :is([type=date], [type=datetime-local], [type=month], [type=time], [type=week]) {
   text-align: right;
 }
 
@@ -1457,10 +1339,6 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[
   padding: calc(var(--form-element-spacing-vertical) * 0.5) 0;
   border: 0;
   border-radius: 0;
-  background: none;
-}
-[type=file]:hover, [type=file]:active, [type=file]:focus {
-  border: 0;
   background: none;
 }
 [type=file]::-webkit-file-upload-button {
@@ -1512,11 +1390,11 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[
   cursor: pointer;
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
-[type=file]::-webkit-file-upload-button:hover, [type=file]::-webkit-file-upload-button:active, [type=file]::-webkit-file-upload-button:focus {
+[type=file]::-webkit-file-upload-button:is(:hover, :active, :focus) {
   --background-color: var(--secondary-hover);
   --border-color: var(--secondary-hover);
 }
-[type=file]::file-selector-button:hover, [type=file]::file-selector-button:active, [type=file]::file-selector-button:focus {
+[type=file]::file-selector-button:is(:hover, :active, :focus) {
   --background-color: var(--secondary-hover);
   --border-color: var(--secondary-hover);
 }
@@ -1545,7 +1423,7 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[
   -webkit-transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
-[type=file]::-webkit-file-upload-button:hover, [type=file]::-webkit-file-upload-button:active, [type=file]::-webkit-file-upload-button:focus {
+[type=file]::-webkit-file-upload-button:is(:hover, :active, :focus) {
   --background-color: var(--secondary-hover);
   --border-color: var(--secondary-hover);
 }
@@ -1572,7 +1450,7 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[
   -ms-transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
-[type=file]::-ms-browse:hover, [type=file]::-ms-browse:active, [type=file]::-ms-browse:focus {
+[type=file]::-ms-browse:is(:hover, :active, :focus) {
   --background-color: var(--secondary-hover);
   --border-color: var(--secondary-hover);
 }
@@ -1997,19 +1875,14 @@ nav li {
 nav li > * {
   --spacing: 0;
 }
-nav a,
-nav [role=link] {
+nav :where(a, [role="link"]) {
   display: inline-block;
   margin: calc(var(--nav-link-spacing-vertical) * -1) calc(var(--nav-link-spacing-horizontal) * -1);
   padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
   border-radius: var(--border-radius);
   text-decoration: none;
 }
-nav a[aria-current], nav a:hover, nav a:active, nav a:focus,
-nav [role=link][aria-current],
-nav [role=link]:hover,
-nav [role=link]:active,
-nav [role=link]:focus {
+nav :where(a, [role="link"]):is([aria-current], :hover, :active, :focus) {
   text-decoration: none;
 }
 
@@ -2105,9 +1978,8 @@ details[role=list],
 li[role=list] {
   position: relative;
 }
+
 details[role=list] summary + ul,
-details[role=list] > ul,
-li[role=list] summary + ul,
 li[role=list] > ul {
   display: flex;
   z-index: 99;
@@ -2128,8 +2000,6 @@ li[role=list] > ul {
   white-space: nowrap;
 }
 details[role=list] summary + ul li,
-details[role=list] > ul li,
-li[role=list] summary + ul li,
 li[role=list] > ul li {
   width: 100%;
   margin-bottom: 0;
@@ -2137,20 +2007,14 @@ li[role=list] > ul li {
   list-style: none;
 }
 details[role=list] summary + ul li:first-of-type,
-details[role=list] > ul li:first-of-type,
-li[role=list] summary + ul li:first-of-type,
 li[role=list] > ul li:first-of-type {
   margin-top: calc(var(--form-element-spacing-vertical) * 0.5);
 }
 details[role=list] summary + ul li:last-of-type,
-details[role=list] > ul li:last-of-type,
-li[role=list] summary + ul li:last-of-type,
 li[role=list] > ul li:last-of-type {
   margin-bottom: calc(var(--form-element-spacing-vertical) * 0.5);
 }
 details[role=list] summary + ul li a,
-details[role=list] > ul li a,
-li[role=list] summary + ul li a,
 li[role=list] > ul li a {
   display: block;
   margin: calc(var(--form-element-spacing-vertical) * -0.5) calc(var(--form-element-spacing-horizontal) * -1);
@@ -2161,8 +2025,6 @@ li[role=list] > ul li a {
   text-overflow: ellipsis;
 }
 details[role=list] summary + ul li a:hover,
-details[role=list] > ul li a:hover,
-li[role=list] summary + ul li a:hover,
 li[role=list] > ul li a:hover {
   background-color: var(--dropdown-hover-background-color);
 }
@@ -2222,39 +2084,42 @@ details[role=list][open] summary::before {
   cursor: default;
 }
 
-nav [role=list] summary,
-nav [role=list] a {
+nav details[role=list] summary,
+nav li[role=list] a {
   display: flex;
   direction: ltr;
 }
-nav [role=list] summary + ul,
-nav [role=list] > ul {
+
+nav details[role=list] summary + ul,
+nav li[role=list] > ul {
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
   border-radius: var(--border-radius);
 }
-nav [role=list] summary + ul li a,
-nav [role=list] > ul li a {
+nav details[role=list] summary + ul li a,
+nav li[role=list] > ul li a {
   border-radius: 0;
 }
 
-nav [role=list] summary,
-nav [role=list] summary:not([role]) {
+nav details[role=list] summary,
+nav details[role=list] summary:not([role]) {
   height: auto;
   padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
 }
-nav [role=list][open] summary {
+nav details[role=list][open] summary {
   border-radius: var(--border-radius);
 }
-nav [role=list] summary + ul {
+nav details[role=list] summary + ul {
   margin-top: var(--outline-width);
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
 }
-nav [role=list] summary[role=link] {
+nav details[role=list] summary[role=link] {
   margin-bottom: calc(var(--nav-link-spacing-vertical) * -1);
   line-height: var(--line-height);
 }
-nav [role=list] summary[role=link] + ul {
+nav details[role=list] summary[role=link] + ul {
   margin-top: calc(var(--nav-link-spacing-vertical) + var(--outline-width));
   -webkit-margin-start: calc(var(--nav-link-spacing-horizontal) * -1);
   margin-inline-start: calc(var(--nav-link-spacing-horizontal) * -1);
