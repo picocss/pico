@@ -131,7 +131,7 @@ details[role="list"] {
       right: 0;
       bottom: 0;
       left: 0;
-      background: transparent;
+      background: none;
       content: "";
       cursor: default;
     }
@@ -168,11 +168,11 @@ nav [role="list"] {
   &[open] summary {
     border-radius: var(--border-radius);
   }
-  
+
   summary + ul {
     margin-top: var(--outline-width);
   }
-  
+
   summary[role="link"] {
     margin-bottom: calc(var(--nav-link-spacing-vertical) * -1);
     line-height: var(--line-height);
