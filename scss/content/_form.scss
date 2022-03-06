@@ -201,7 +201,7 @@ textarea {
 input:not([type="submit"]):not([type="button"]):not([type="reset"])[disabled],
 select[disabled],
 textarea[disabled],
-:where([disabled]) :is(input:not([type="submit"]):not([type="button"]):not([type="reset"]), select, textarea) {
+:where(fieldset[disabled]) :is(input:not([type="submit"]):not([type="button"]):not([type="reset"]), select, textarea) {
   --background-color: var(--form-element-disabled-background-color);
   --border-color: var(--form-element-disabled-border-color);
   opacity: var(--form-element-disabled-opacity);
