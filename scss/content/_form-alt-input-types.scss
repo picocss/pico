@@ -20,7 +20,7 @@
 
   // Swatch
   @mixin color-swatch {
-    border: none;
+    border: 0;
     border-radius: calc(var(--border-radius) * 0.5);
   }
 
@@ -35,7 +35,7 @@
 
 // Date & Time
 // :not() are needed to add Specificity and avoid !important on padding
-input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) {
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]) {
   &[type="date"],
   &[type="datetime-local"],
   &[type="month"],
@@ -84,14 +84,14 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) 
 [type="file"] {
   --color: var(--muted-color);
   padding: calc(var(--form-element-spacing-vertical) * 0.5) 0;
-  border: none;
+  border: 0;
   border-radius: 0;
   background: none;
 
   &:hover,
   &:active,
   &:focus {
-    border: none;
+    border: 0;
     background: none;
   }
 
@@ -157,7 +157,7 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) 
   appearance: none;
   width: 100%;
   height: $height-thumb;
-  background: transparent;
+  background: none;
 
   // Slider Track
   @mixin slider-track {
@@ -238,7 +238,7 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) 
 
 // Search
 // :not() are needed to add Specificity and avoid !important on padding
-input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) {
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]) {
   &[type="search"] {
     padding-left: calc(var(--form-element-spacing-horizontal) + 1.75rem);
     border-radius: 5rem;

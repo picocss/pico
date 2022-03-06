@@ -21,7 +21,7 @@ dialog {
   height: inherit;
   min-height: 100%;
   padding: var(--spacing);
-  border: none;
+  border: 0;
   background-color: var(--modal-overlay-background-color);
 
   // Content

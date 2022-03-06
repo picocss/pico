@@ -4,17 +4,16 @@
 
 // Reboot based on :
 // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
-// - sanitize.css v12.0.1 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+// - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
 // ––––––––––––––––––––
 
-// 1. Add the correct box sizing in Firefox
-// 2. Show the overflow in Edge and IE
+// 1. Correct the inheritance of border color in Firefox
+// 2. Add the correct box sizing in Firefox
 hr {
-  box-sizing: content-box; // 1
-  height: 0; // 1
-  overflow: visible; // 2
-  border: none;
+  height: 0; // 2
+  border: 0;
   border-top: 1px solid var(--muted-border-color);
+  color: inherit; // 1
 }
 
 // Add the correct display in IE 10+
@@ -22,7 +21,8 @@ hr {
 template {
   @if $enable-important {
     display: none !important;
-  } @else {
+  } 
+  @else {
     display: none;
   }
 }
