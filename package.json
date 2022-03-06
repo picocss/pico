@@ -79,21 +79,21 @@
     "watch:pico": "nodemon --watch scss/ --ext scss --exec 'npm run build:pico'"
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.8",
-    "@babel/core": "^7.16.5",
-    "@babel/preset-env": "^7.16.8",
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
     "autoprefixer": "^10.4.2",
-    "clean-css-cli": "^5.5.0",
+    "clean-css-cli": "^5.5.2",
     "css-declaration-sorter": "^6.1.4",
     "html-includes": "^4.4.1",
     "nodemon": "^2.0.15",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.5",
+    "postcss": "^8.4.7",
     "postcss-cli": "^9.1.0",
     "postcss-scss": "^4.0.3",
-    "rollup": "^2.64.0",
-    "sass": "^1.48.0",
-    "uglify-js": "^3.14.5"
+    "rollup": "^2.69.2",
+    "sass": "^1.49.9",
+    "uglify-js": "^3.15.2"
   },
   "browserslist": [
     ">= 0.5%",
