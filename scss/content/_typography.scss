@@ -82,10 +82,7 @@ a,
       text-decoration var(--transition), box-shadow var(--transition);
   }
 
-  &[aria-current],
-  &:hover,
-  &:active,
-  &:focus {
+  &:is([aria-current], :hover, :active, :focus) {
     --color: var(--primary-hover);
     --text-decoration: underline;
   }

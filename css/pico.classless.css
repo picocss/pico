@@ -675,11 +675,8 @@ a,
   transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition);
   transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition), -webkit-text-decoration var(--transition);
 }
-a[aria-current], a:hover, a:active, a:focus,
-[role=link][aria-current],
-[role=link]:hover,
-[role=link]:active,
-[role=link]:focus {
+a:is([aria-current], :hover, :active, :focus),
+[role=link]:is([aria-current], :hover, :active, :focus) {
   --color: var(--primary-hover);
   --text-decoration: underline;
 }
@@ -726,61 +723,7 @@ h6 {
   --color: var(--h6-color);
 }
 
-address ~ h1, address ~ h2, address ~ h3, address ~ h4, address ~ h5, address ~ h6,
-blockquote ~ h1,
-blockquote ~ h2,
-blockquote ~ h3,
-blockquote ~ h4,
-blockquote ~ h5,
-blockquote ~ h6,
-dl ~ h1,
-dl ~ h2,
-dl ~ h3,
-dl ~ h4,
-dl ~ h5,
-dl ~ h6,
-figure ~ h1,
-figure ~ h2,
-figure ~ h3,
-figure ~ h4,
-figure ~ h5,
-figure ~ h6,
-form ~ h1,
-form ~ h2,
-form ~ h3,
-form ~ h4,
-form ~ h5,
-form ~ h6,
-ol ~ h1,
-ol ~ h2,
-ol ~ h3,
-ol ~ h4,
-ol ~ h5,
-ol ~ h6,
-p ~ h1,
-p ~ h2,
-p ~ h3,
-p ~ h4,
-p ~ h5,
-p ~ h6,
-pre ~ h1,
-pre ~ h2,
-pre ~ h3,
-pre ~ h4,
-pre ~ h5,
-pre ~ h6,
-table ~ h1,
-table ~ h2,
-table ~ h3,
-table ~ h4,
-table ~ h5,
-table ~ h6,
-ul ~ h1,
-ul ~ h2,
-ul ~ h3,
-ul ~ h4,
-ul ~ h5,
-ul ~ h6 {
+:where(address, blockquote, dl, figure, form, ol, p, pre, table, ul) ~ :is(h1, h2, h3, h4, h5, h6) {
   margin-top: var(--typography-spacing-vertical);
 }
 
@@ -1155,19 +1098,13 @@ textarea {
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 
-input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([readonly]):active, input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([readonly]):focus,
-select:active,
-select:focus,
-textarea:active,
-textarea:focus {
+input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([readonly]):is(:active, :focus),
+:where(select, textarea):is(:active, :focus) {
   --background-color: var(--form-element-active-background-color);
 }
 
-input:not([type=submit]):not([type=button]):not([type=reset]):not([role=switch]):not([readonly]):active, input:not([type=submit]):not([type=button]):not([type=reset]):not([role=switch]):not([readonly]):focus,
-select:active,
-select:focus,
-textarea:active,
-textarea:focus {
+input:not([type=submit]):not([type=button]):not([type=reset]):not([role=switch]):not([readonly]):is(:active, :focus),
+:where(select, textarea):is(:active, :focus) {
   --border-color: var(--form-element-active-border-color);
 }
 
@@ -1185,9 +1122,7 @@ textarea[disabled] {
   opacity: var(--form-element-disabled-opacity);
 }
 
-input:not([type=checkbox]):not([type=radio])[aria-invalid],
-select:not([type=checkbox]):not([type=radio])[aria-invalid],
-textarea:not([type=checkbox]):not([type=radio])[aria-invalid] {
+:where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid] {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   padding-left: var(--form-element-spacing-horizontal);
   -webkit-padding-start: var(--form-element-spacing-horizontal) !important;
@@ -1198,50 +1133,28 @@ textarea:not([type=checkbox]):not([type=radio])[aria-invalid] {
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
-input:not([type=checkbox]):not([type=radio])[aria-invalid=false],
-select:not([type=checkbox]):not([type=radio])[aria-invalid=false],
-textarea:not([type=checkbox]):not([type=radio])[aria-invalid=false] {
+:where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid=false] {
   background-image: var(--icon-valid);
 }
-input:not([type=checkbox]):not([type=radio])[aria-invalid=true],
-select:not([type=checkbox]):not([type=radio])[aria-invalid=true],
-textarea:not([type=checkbox]):not([type=radio])[aria-invalid=true] {
+:where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid=true] {
   background-image: var(--icon-invalid);
 }
-input[aria-invalid=false],
-select[aria-invalid=false],
-textarea[aria-invalid=false] {
+:where(input, select, textarea)[aria-invalid=false] {
   --border-color: var(--form-element-valid-border-color);
 }
-input[aria-invalid=false]:active, input[aria-invalid=false]:focus,
-select[aria-invalid=false]:active,
-select[aria-invalid=false]:focus,
-textarea[aria-invalid=false]:active,
-textarea[aria-invalid=false]:focus {
+:where(input, select, textarea)[aria-invalid=false]:active, :where(input, select, textarea)[aria-invalid=false]:focus {
   --border-color: var(--form-element-valid-active-border-color) !important;
   --box-shadow: 0 0 0 var(--outline-width) var(--form-element-valid-focus-color) !important;
 }
-input[aria-invalid=true],
-select[aria-invalid=true],
-textarea[aria-invalid=true] {
+:where(input, select, textarea)[aria-invalid=true] {
   --border-color: var(--form-element-invalid-border-color);
 }
-input[aria-invalid=true]:active, input[aria-invalid=true]:focus,
-select[aria-invalid=true]:active,
-select[aria-invalid=true]:focus,
-textarea[aria-invalid=true]:active,
-textarea[aria-invalid=true]:focus {
+:where(input, select, textarea)[aria-invalid=true]:active, :where(input, select, textarea)[aria-invalid=true]:focus {
   --border-color: var(--form-element-invalid-active-border-color) !important;
   --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color) !important;
 }
 
-[dir=rtl] input:not([type=checkbox]):not([type=radio])[aria-invalid], [dir=rtl] input:not([type=checkbox]):not([type=radio])[aria-invalid=true], [dir=rtl] input:not([type=checkbox]):not([type=radio])[aria-invalid=false],
-[dir=rtl] select:not([type=checkbox]):not([type=radio])[aria-invalid],
-[dir=rtl] select:not([type=checkbox]):not([type=radio])[aria-invalid=true],
-[dir=rtl] select:not([type=checkbox]):not([type=radio])[aria-invalid=false],
-[dir=rtl] textarea:not([type=checkbox]):not([type=radio])[aria-invalid],
-[dir=rtl] textarea:not([type=checkbox]):not([type=radio])[aria-invalid=true],
-[dir=rtl] textarea:not([type=checkbox]):not([type=radio])[aria-invalid=false] {
+[dir=rtl] :where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid], [dir=rtl] :where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid=true], [dir=rtl] :where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid=false] {
   background-position: center left 0.75rem;
 }
 
@@ -1281,9 +1194,7 @@ select:not([multiple]):not([size]) {
   background-position: center left 0.75rem;
 }
 
-input + small,
-select + small,
-textarea + small {
+:where(input, select, textarea) + small {
   display: block;
   width: 100%;
   margin-top: calc(var(--spacing) * -0.75);
@@ -1291,7 +1202,7 @@ textarea + small {
   color: var(--muted-color);
 }
 
-label > input, label > select, label > textarea {
+label > :where(input, select, textarea) {
   margin-top: calc(var(--spacing) * 0.25);
 }
 
