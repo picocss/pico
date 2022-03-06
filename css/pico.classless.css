@@ -1981,9 +1981,8 @@ details[role=list],
 li[role=list] {
   position: relative;
 }
+
 details[role=list] summary + ul,
-details[role=list] > ul,
-li[role=list] summary + ul,
 li[role=list] > ul {
   display: flex;
   z-index: 99;
@@ -2004,8 +2003,6 @@ li[role=list] > ul {
   white-space: nowrap;
 }
 details[role=list] summary + ul li,
-details[role=list] > ul li,
-li[role=list] summary + ul li,
 li[role=list] > ul li {
   width: 100%;
   margin-bottom: 0;
@@ -2013,20 +2010,14 @@ li[role=list] > ul li {
   list-style: none;
 }
 details[role=list] summary + ul li:first-of-type,
-details[role=list] > ul li:first-of-type,
-li[role=list] summary + ul li:first-of-type,
 li[role=list] > ul li:first-of-type {
   margin-top: calc(var(--form-element-spacing-vertical) * 0.5);
 }
 details[role=list] summary + ul li:last-of-type,
-details[role=list] > ul li:last-of-type,
-li[role=list] summary + ul li:last-of-type,
 li[role=list] > ul li:last-of-type {
   margin-bottom: calc(var(--form-element-spacing-vertical) * 0.5);
 }
 details[role=list] summary + ul li a,
-details[role=list] > ul li a,
-li[role=list] summary + ul li a,
 li[role=list] > ul li a {
   display: block;
   margin: calc(var(--form-element-spacing-vertical) * -0.5) calc(var(--form-element-spacing-horizontal) * -1);
@@ -2037,8 +2028,6 @@ li[role=list] > ul li a {
   text-overflow: ellipsis;
 }
 details[role=list] summary + ul li a:hover,
-details[role=list] > ul li a:hover,
-li[role=list] summary + ul li a:hover,
 li[role=list] > ul li a:hover {
   background-color: var(--dropdown-hover-background-color);
 }
@@ -2098,39 +2087,42 @@ details[role=list][open] summary::before {
   cursor: default;
 }
 
-nav [role=list] summary,
-nav [role=list] a {
+nav details[role=list] summary,
+nav li[role=list] a {
   display: flex;
   direction: ltr;
 }
-nav [role=list] summary + ul,
-nav [role=list] > ul {
+
+nav details[role=list] summary + ul,
+nav li[role=list] > ul {
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
   border-radius: var(--border-radius);
 }
-nav [role=list] summary + ul li a,
-nav [role=list] > ul li a {
+nav details[role=list] summary + ul li a,
+nav li[role=list] > ul li a {
   border-radius: 0;
 }
 
-nav [role=list] summary,
-nav [role=list] summary:not([role]) {
+nav details[role=list] summary,
+nav details[role=list] summary:not([role]) {
   height: auto;
   padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
 }
-nav [role=list][open] summary {
+nav details[role=list][open] summary {
   border-radius: var(--border-radius);
 }
-nav [role=list] summary + ul {
+nav details[role=list] summary + ul {
   margin-top: var(--outline-width);
+  -webkit-margin-start: 0;
+  margin-inline-start: 0;
 }
-nav [role=list] summary[role=link] {
+nav details[role=list] summary[role=link] {
   margin-bottom: calc(var(--nav-link-spacing-vertical) * -1);
   line-height: var(--line-height);
 }
-nav [role=list] summary[role=link] + ul {
+nav details[role=list] summary[role=link] + ul {
   margin-top: calc(var(--nav-link-spacing-vertical) + var(--outline-width));
   -webkit-margin-start: calc(var(--nav-link-spacing-horizontal) * -1);
   margin-inline-start: calc(var(--nav-link-spacing-horizontal) * -1);
