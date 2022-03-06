@@ -869,14 +869,6 @@ button,
   -webkit-appearance: button;
 }
 
-button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
-  padding: 0;
-  border-style: none;
-}
-
 button {
   display: block;
   width: 100%;
@@ -888,11 +880,7 @@ button {
   text-decoration: none;
 }
 
-button,
-input[type=submit],
-input[type=button],
-input[type=reset],
-[role=button] {
+:where(button, input[type="submit"], input[type="button"], input[type="reset"], [role="button"]) {
   --background-color: var(--primary);
   --border-color: var(--primary);
   --color: var(--primary-inverse);
@@ -911,33 +899,13 @@ input[type=reset],
   cursor: pointer;
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
-button[aria-current], button:hover, button:active, button:focus,
-input[type=submit][aria-current],
-input[type=submit]:hover,
-input[type=submit]:active,
-input[type=submit]:focus,
-input[type=button][aria-current],
-input[type=button]:hover,
-input[type=button]:active,
-input[type=button]:focus,
-input[type=reset][aria-current],
-input[type=reset]:hover,
-input[type=reset]:active,
-input[type=reset]:focus,
-[role=button][aria-current],
-[role=button]:hover,
-[role=button]:active,
-[role=button]:focus {
+:where(button, input[type="submit"], input[type="button"], input[type="reset"], [role="button"]):is([aria-current], :hover, :active, :focus) {
   --background-color: var(--primary-hover);
   --border-color: var(--primary-hover);
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
   --color: var(--primary-inverse);
 }
-button:focus,
-input[type=submit]:focus,
-input[type=button]:focus,
-input[type=reset]:focus,
-[role=button]:focus {
+:where(button, input[type="submit"], input[type="button"], input[type="reset"], [role="button"]):focus {
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
     0 0 0 var(--outline-width) var(--primary-focus);
 }
@@ -948,7 +916,7 @@ input[type=reset] {
   --color: var(--secondary-inverse);
   cursor: pointer;
 }
-input[type=reset][aria-current], input[type=reset]:hover, input[type=reset]:active, input[type=reset]:focus {
+input[type=reset]:is([aria-current], :hover, :active, :focus) {
   --background-color: var(--secondary-hover);
   --border-color: var(--secondary-hover);
 }
@@ -957,12 +925,8 @@ input[type=reset]:focus {
     0 0 0 var(--outline-width) var(--secondary-focus);
 }
 
-button[disabled],
-input[type=submit][disabled],
-input[type=button][disabled],
-input[type=reset][disabled],
-a[role=button]:not([href]),
-[role=button][disabled] {
+:where(button, input[type="submit"], input[type="reset"], [role="button"])[disabled],
+a[role=button]:not([href]) {
   opacity: 0.5;
   pointer-events: none;
 }
