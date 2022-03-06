@@ -629,21 +629,6 @@ sup {
   top: -0.5em;
 }
 
-dl dl,
-dl ol,
-dl ul,
-ol dl,
-ul dl {
-  margin: 0;
-}
-
-ol ol,
-ol ul,
-ul ol,
-ul ul {
-  margin: 0;
-}
-
 address,
 blockquote,
 dl,
@@ -748,8 +733,7 @@ small {
   font-size: var(--font-size);
 }
 
-ul,
-ol {
+:where(dl, ol, ul) {
   padding-right: 0;
   padding-left: var(--spacing);
   -webkit-padding-start: var(--spacing);
@@ -757,9 +741,13 @@ ol {
   -webkit-padding-end: 0;
   padding-inline-end: 0;
 }
-ul li,
-ol li {
+:where(dl, ol, ul) li {
   margin-bottom: calc(var(--typography-spacing-vertical) * 0.25);
+}
+
+:where(dl, ol, ul) :is(dl, ol, ul) {
+  margin: 0;
+  margin-top: calc(var(--typography-spacing-vertical) * 0.25);
 }
 
 ul li {

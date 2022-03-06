@@ -28,23 +28,6 @@ sup {
   top: -0.5em;
 }
 
-// Remove the margin on nested lists in Chrome, Edge, IE, and Safari
-dl dl,
-dl ol,
-dl ul,
-ol dl,
-ul dl {
-  margin: 0;
-}
-
-// Remove the margin on nested lists in Edge 18- and IE
-ol ol,
-ol ul,
-ul ol,
-ul ul {
-  margin: 0;
-}
-
 // Pico
 // ––––––––––––––––––––
 
@@ -156,7 +139,7 @@ h6 {
 
 // Margin-top for headings after a typography block
 :where(address, blockquote, dl, figure, form, ol, p, pre, table, ul) {
-  & ~ :is(h1, h2, h3, h4, h5, h6) {
+  ~ :is(h1, h2, h3, h4, h5, h6) {
     margin-top: var(--typography-spacing-vertical);
   }
 }
@@ -208,8 +191,7 @@ small {
 }
 
 // Lists
-ul,
-ol {
+:where(dl, ol, ul) {
   padding-right: 0;
   padding-left: var(--spacing);
   padding-inline-start: var(--spacing);
@@ -217,6 +199,15 @@ ol {
 
   li {
     margin-bottom: calc(var(--typography-spacing-vertical) * 0.25);
+  }
+}
+
+// Margin-top for nested lists
+// 1. Remove the margin on nested lists in Chrome, Edge, IE, and Safari
+:where(dl, ol, ul) {
+  :is(dl, ol, ul) {
+    margin: 0; // 1
+    margin-top: calc(var(--typography-spacing-vertical) * 0.25);
   }
 }
 
