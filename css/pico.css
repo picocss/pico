@@ -2085,6 +2085,11 @@ nav :where(a, [role="link"]) {
 nav :where(a, [role="link"]):is([aria-current], :hover, :active, :focus) {
   text-decoration: none;
 }
+nav [role=button] {
+  margin-right: inherit;
+  margin-left: inherit;
+  padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
+}
 
 aside nav,
 aside ol,

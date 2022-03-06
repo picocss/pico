@@ -62,6 +62,14 @@ nav {
       text-decoration: none;
     }
   }
+
+  // Minimal support for role="button"
+  [role="button"] {
+    margin-right: inherit;
+    margin-left: inherit;
+    padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
+  }
+
 }
 
 // Vertical Nav
