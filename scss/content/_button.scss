@@ -85,11 +85,8 @@ input[type="reset"],
 @if $enable-classes {
   
   // Secondary
-  button.secondary,
-  input[type="submit"].secondary,
-  input[type="button"].secondary,
-  input[type="reset"],
-  [role="button"].secondary {
+  :is(button, input[type="submit"], input[type="button"], [role="button"]).secondary,
+  input[type="reset"] {
     --background-color: var(--secondary);
     --border-color: var(--secondary);
     --color: var(--secondary-inverse);
@@ -108,11 +105,7 @@ input[type="reset"],
   }
 
   // Contrast
-  button.contrast,
-  input[type="submit"].contrast,
-  input[type="button"].contrast,
-  input[type="reset"].contrast,
-  [role="button"].contrast {
+  :is(button, input[type="submit"], input[type="button"], [role="button"]).contrast {
     --background-color: var(--contrast);
     --border-color: var(--contrast);
     --color: var(--contrast-inverse);
@@ -130,11 +123,8 @@ input[type="reset"],
   }
 
   // Outline (primary)
-  button.outline,
-  input[type="submit"].outline,
-  input[type="button"].outline,
-  input[type="reset"].outline,
-  [role="button"].outline {
+  :is(button, input[type="submit"], input[type="button"], [role="button"]).outline,
+  input[type="reset"].outline {
     --background-color: transparent;
     --color: var(--primary);
 
@@ -145,11 +135,8 @@ input[type="reset"],
   }
 
   // Outline (secondary)
-  button.outline.secondary,
-  input[type="submit"].outline.secondary,
-  input[type="button"].outline.secondary,
-  input[type="reset"].outline.secondary,
-  [role="button"].outline.secondary {
+  :is(button, input[type="submit"], input[type="button"], [role="button"]).outline.secondary,
+  input[type="reset"].outline {
     --color: var(--secondary);
 
     &:is([aria-current], :hover, :active, :focus) {
@@ -158,11 +145,7 @@ input[type="reset"],
   }
 
   // Outline (contrast)
-  button.outline.contrast,
-  input[type="submit"].outline.contrast,
-  input[type="button"].outline.contrast,
-  input[type="reset"].outline.contrast,
-  [role="button"].outline.contrast {
+  :is(button, input[type="submit"], input[type="button"], [role="button"]).outline.contrast {
     --color: var(--contrast);
 
     &:is([aria-current], :hover, :active, :focus) {
