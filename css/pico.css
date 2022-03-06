@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Pico.css v1.4.4 (https://picocss.com)
  * Copyright 2019-2021 - Licensed under MIT
@@ -512,6 +513,7 @@ kbd {
 *::before,
 *::after {
   box-sizing: border-box;
+  background-repeat: no-repeat;
 }
 
 ::before,
@@ -520,10 +522,11 @@ kbd {
   vertical-align: inherit;
 }
 
-html {
+:where(:root) {
+  -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   background-color: var(--background-color);
   color: var(--color);
@@ -531,6 +534,7 @@ html {
   font-size: var(--font-size);
   line-height: var(--line-height);
   font-family: var(--font-family);
+  overflow-wrap: break-word;
   cursor: default;
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -860,12 +864,7 @@ del {
 /**
  * Embedded content
  */
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
+:where(audio, canvas, iframe, img, svg, video) {
   vertical-align: middle;
 }
 
@@ -879,7 +878,7 @@ audio:not([controls]) {
   height: 0;
 }
 
-iframe {
+:where(iframe) {
   border-style: none;
 }
 
@@ -889,7 +888,7 @@ img {
   border-style: none;
 }
 
-svg:not([fill]) {
+:where(svg:not([fill])) {
   fill: currentColor;
 }
 
@@ -1402,11 +1401,11 @@ label > :where(input, select, textarea) {
   padding: 0;
 }
 [type=color]::-webkit-color-swatch {
-  border: none;
+  border: 0;
   border-radius: calc(var(--border-radius) * 0.5);
 }
 [type=color]::-moz-color-swatch {
-  border: none;
+  border: 0;
   border-radius: calc(var(--border-radius) * 0.5);
 }
 
@@ -1441,7 +1440,7 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[
 [type=file] {
   --color: var(--muted-color);
   padding: calc(var(--form-element-spacing-vertical) * 0.5) 0;
-  border: none;
+  border: 0;
   border-radius: 0;
   background: none;
 }
@@ -1565,7 +1564,7 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[
   appearance: none;
   width: 100%;
   height: 1.25rem;
-  background: transparent;
+  background: none;
 }
 [type=range]::-webkit-slider-runnable-track {
   width: 100%;
@@ -1661,9 +1660,8 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[
 /**
  * Table
  */
-table {
+:where(table) {
   width: 100%;
-  border-color: inherit;
   border-collapse: collapse;
   border-spacing: 0;
   text-indent: 0;
@@ -1730,7 +1728,7 @@ pre {
 pre > code {
   display: block;
   padding: var(--spacing);
-  background: transparent;
+  background: none;
   font-size: 14px;
   line-height: var(--line-height);
 }
@@ -1762,11 +1760,10 @@ kbd {
  * Miscs
  */
 hr {
-  box-sizing: content-box;
   height: 0;
-  overflow: visible;
-  border: none;
+  border: 0;
   border-top: 1px solid var(--muted-border-color);
+  color: inherit;
 }
 
 [hidden],
@@ -1903,7 +1900,7 @@ dialog {
   height: inherit;
   min-height: 100%;
   padding: var(--spacing);
-  border: none;
+  border: 0;
   background-color: var(--modal-overlay-background-color);
 }
 dialog article {
@@ -2040,6 +2037,11 @@ dialog:not([open]), dialog[open=false] {
 /**
  * Nav
  */
+:where(nav li)::before {
+  float: left;
+  content: "​";
+}
+
 nav,
 nav ul {
   display: flex;
@@ -2122,7 +2124,7 @@ progress {
 }
 progress::-webkit-progress-bar {
   border-radius: var(--border-radius);
-  background: transparent;
+  background: none;
 }
 progress[value]::-webkit-progress-value {
   background-color: var(--progress-color);
@@ -2275,7 +2277,7 @@ details[role=list][open] summary::before {
   right: 0;
   bottom: 0;
   left: 0;
-  background: transparent;
+  background: none;
   content: "";
   cursor: default;
 }
@@ -2533,8 +2535,8 @@ textarea,
 }
 
 /**
- * Reduce Motion Features
- */
+* Reduce Motion Features
+*/
 @media (prefers-reduced-motion: reduce) {
   *:not([aria-busy=true]),
 :not([aria-busy=true])::before,

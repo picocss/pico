@@ -444,6 +444,7 @@ kbd {
 *::before,
 *::after {
   box-sizing: border-box;
+  background-repeat: no-repeat;
 }
 
 ::before,
@@ -452,10 +453,11 @@ kbd {
   vertical-align: inherit;
 }
 
-html {
+:where(:root) {
+  -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   background-color: var(--background-color);
   color: var(--color);
@@ -463,6 +465,7 @@ html {
   font-size: var(--font-size);
   line-height: var(--line-height);
   font-family: var(--font-family);
+  overflow-wrap: break-word;
   cursor: default;
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -789,12 +792,7 @@ del {
 /**
  * Embedded content
  */
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
+:where(audio, canvas, iframe, img, svg, video) {
   vertical-align: middle;
 }
 
@@ -808,7 +806,7 @@ audio:not([controls]) {
   height: 0;
 }
 
-iframe {
+:where(iframe) {
   border-style: none;
 }
 
@@ -818,7 +816,7 @@ img {
   border-style: none;
 }
 
-svg:not([fill]) {
+:where(svg:not([fill])) {
   fill: currentColor;
 }
 
@@ -1203,9 +1201,8 @@ label > :where(input, select, textarea) {
 /**
  * Table
  */
-table {
+:where(table) {
   width: 100%;
-  border-color: inherit;
   border-collapse: collapse;
   border-spacing: 0;
   text-indent: 0;
