@@ -838,7 +838,11 @@ button {
   text-decoration: none;
 }
 
-:where(button, input[type="submit"], input[type="button"], input[type="reset"], [role="button"]) {
+button,
+input[type=submit],
+input[type=button],
+input[type=reset],
+[role=button] {
   --background-color: var(--primary);
   --border-color: var(--primary);
   --color: var(--primary-inverse);
@@ -857,13 +861,21 @@ button {
   cursor: pointer;
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
-:where(button, input[type="submit"], input[type="button"], input[type="reset"], [role="button"]):is([aria-current], :hover, :active, :focus) {
+button:is([aria-current], :hover, :active, :focus),
+input[type=submit]:is([aria-current], :hover, :active, :focus),
+input[type=button]:is([aria-current], :hover, :active, :focus),
+input[type=reset]:is([aria-current], :hover, :active, :focus),
+[role=button]:is([aria-current], :hover, :active, :focus) {
   --background-color: var(--primary-hover);
   --border-color: var(--primary-hover);
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
   --color: var(--primary-inverse);
 }
-:where(button, input[type="submit"], input[type="button"], input[type="reset"], [role="button"]):focus {
+button:focus,
+input[type=submit]:focus,
+input[type=button]:focus,
+input[type=reset]:focus,
+[role=button]:focus {
   --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
     0 0 0 var(--outline-width) var(--primary-focus);
 }
