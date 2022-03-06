@@ -175,7 +175,8 @@ input[type="reset"],
 
 // Button [disabled]
 // Links without href are disabled by default
-:where(button, input[type="submit"], input[type="reset"], [role="button"])[disabled],
+:where(button, [type="submit"], [type="button"], [type="reset"], [role="button"])[disabled],
+:where([disabled]) :is(button, [type="submit"], [type="button"], [type="reset"], [role="button"]),
 a[role="button"]:not([href]) {
   opacity: 0.5;
   pointer-events: none;

@@ -924,7 +924,8 @@ input[type=reset]:focus {
     0 0 0 var(--outline-width) var(--secondary-focus);
 }
 
-:where(button, input[type="submit"], input[type="reset"], [role="button"])[disabled],
+:where(button, [type="submit"], [type="button"], [type="reset"], [role="button"])[disabled],
+:where([disabled]) :is(button, [type=submit], [type=button], [type=reset], [role=button]),
 a[role=button]:not([href]) {
   opacity: 0.5;
   pointer-events: none;
@@ -1079,10 +1080,12 @@ textarea:focus {
 
 input:not([type=submit]):not([type=button]):not([type=reset])[disabled],
 select[disabled],
-textarea[disabled] {
+textarea[disabled],
+:where([disabled]) :is(input:not([type=submit]):not([type=button]):not([type=reset]), select, textarea) {
   --background-color: var(--form-element-disabled-background-color);
   --border-color: var(--form-element-disabled-border-color);
   opacity: var(--form-element-disabled-opacity);
+  pointer-events: none;
 }
 
 :where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid] {
