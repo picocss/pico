@@ -38,8 +38,7 @@ nav {
     }
   }
 
-  a,
-  [role="link"] {
+  :where(a, [role="link"]) {
     display: inline-block;
     margin: calc(var(--nav-link-spacing-vertical) * -1)
       calc(var(--nav-link-spacing-horizontal) * -1);
@@ -47,10 +46,7 @@ nav {
     border-radius: var(--border-radius);
     text-decoration: none;
 
-    &[aria-current],
-    &:hover,
-    &:active,
-    &:focus {
+    &:is([aria-current], :hover, :active, :focus) {
       text-decoration: none;
     }
   }

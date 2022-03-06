@@ -1873,19 +1873,14 @@ nav li {
 nav li > * {
   --spacing: 0;
 }
-nav a,
-nav [role=link] {
+nav :where(a, [role="link"]) {
   display: inline-block;
   margin: calc(var(--nav-link-spacing-vertical) * -1) calc(var(--nav-link-spacing-horizontal) * -1);
   padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
   border-radius: var(--border-radius);
   text-decoration: none;
 }
-nav a[aria-current], nav a:hover, nav a:active, nav a:focus,
-nav [role=link][aria-current],
-nav [role=link]:hover,
-nav [role=link]:active,
-nav [role=link]:focus {
+nav :where(a, [role="link"]):is([aria-current], :hover, :active, :focus) {
   text-decoration: none;
 }
 
