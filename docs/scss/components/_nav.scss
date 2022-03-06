@@ -3,9 +3,8 @@
  */
 
 body > nav {
-  --nav-element-spacing-horizontal: 0.75rem;
   --nav-link-spacing-vertical: 1rem;
-  --nav-link-spacing-horizontal: 0.75rem;
+
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   z-index: 99;
   position: fixed;
