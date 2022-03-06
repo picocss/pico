@@ -35,7 +35,7 @@
 
 // Date & Time
 // :not() are needed to add Specificity and avoid !important on padding
-input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) {
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]) {
   &[type="date"],
   &[type="datetime-local"],
   &[type="month"],
@@ -70,14 +70,9 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) 
   }
 }
 
-[dir="rtl"] {
-  [type="date"],
-  [type="datetime-local"],
-  [type="month"],
-  [type="time"],
-  [type="week"] {
-    text-align: right;
-  }
+[dir="rtl"]
+  :is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
+  text-align: right;
 }
 
 // File
@@ -87,13 +82,6 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) 
   border: none;
   border-radius: 0;
   background: none;
-
-  &:hover,
-  &:active,
-  &:focus {
-    border: none;
-    background: none;
-  }
 
   @mixin file-selector-button {
     --background-color: var(--secondary);
@@ -123,9 +111,7 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) 
         box-shadow var(--transition);
     }
 
-    &:hover,
-    &:active,
-    &:focus {
+    &:is(:hover, :active, :focus) {
       --background-color: var(--secondary-hover);
       --border-color: var(--secondary-hover);
     }
@@ -238,7 +224,7 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) 
 
 // Search
 // :not() are needed to add Specificity and avoid !important on padding
-input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) {
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]) {
   &[type="search"] {
     padding-left: calc(var(--form-element-spacing-horizontal) + 1.75rem);
     border-radius: 5rem;
