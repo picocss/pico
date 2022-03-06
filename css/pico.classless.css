@@ -1106,14 +1106,14 @@ textarea[disabled] {
 :where(input, select, textarea)[aria-invalid=false] {
   --border-color: var(--form-element-valid-border-color);
 }
-:where(input, select, textarea)[aria-invalid=false]:active, :where(input, select, textarea)[aria-invalid=false]:focus {
+:where(input, select, textarea)[aria-invalid=false]:is(:active, :focus) {
   --border-color: var(--form-element-valid-active-border-color) !important;
   --box-shadow: 0 0 0 var(--outline-width) var(--form-element-valid-focus-color) !important;
 }
 :where(input, select, textarea)[aria-invalid=true] {
   --border-color: var(--form-element-invalid-border-color);
 }
-:where(input, select, textarea)[aria-invalid=true]:active, :where(input, select, textarea)[aria-invalid=true]:focus {
+:where(input, select, textarea)[aria-invalid=true]:is(:active, :focus) {
   --border-color: var(--form-element-invalid-active-border-color) !important;
   --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color) !important;
 }
