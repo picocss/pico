@@ -64,8 +64,8 @@ input[type="reset"],
 
   @if $enable-transitions {
     transition: background-color var(--transition),
-    border-color var(--transition), color var(--transition),
-    box-shadow var(--transition);
+      border-color var(--transition), color var(--transition),
+      box-shadow var(--transition);
   }
 
   &:is([aria-current], :hover, :active, :focus) {
@@ -83,9 +83,7 @@ input[type="reset"],
 
 // .secondary, .contrast & .outline
 @if $enable-classes {
-
-  //:where(button, input[type="submit"], input[type="button"], input[type="reset"], [role="button"]) {
-    
+  
   // Secondary
   button.secondary,
   input[type="submit"].secondary,
