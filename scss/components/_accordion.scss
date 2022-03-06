@@ -9,12 +9,11 @@ details {
   border-bottom: var(--border-width) solid var(--accordion-border-color);
 
   summary {
-    
     line-height: 1rem;
     list-style-type: none;
     cursor: pointer;
 
-    &:not([role="button"]) {
+    &:not([role]) {
       color: var(--accordion-close-summary-color);
     }
 
@@ -65,7 +64,7 @@ details {
     &[role="button"] {
       width: 100%;
       text-align: left;
-      
+
       // Marker
       &::after {
         height: calc(1rem * var(--line-height));
@@ -73,10 +72,8 @@ details {
       }
 
       @if $enable-classes {
-        
         // .contrast
         &:not(.outline).contrast {
-          
           // Marker
           &::after {
             background-image: var(--icon-chevron-button-inverse);
@@ -91,7 +88,7 @@ details {
     > summary {
       margin-bottom: calc(var(--spacing));
 
-      &:not([role="button"]) {
+      &:not([role]) {
         &:not(:focus) {
           color: var(--accordion-open-summary-color);
         }
@@ -99,7 +96,7 @@ details {
 
       &::after {
         transform: rotate(0);
-      } 
+      }
     }
   }
 }

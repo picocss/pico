@@ -662,7 +662,8 @@ ul {
   font-size: var(--font-size);
 }
 
-a {
+a,
+[role=link] {
   --color: var(--primary);
   --background-color: transparent;
   outline: none;
@@ -674,11 +675,16 @@ a {
   transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition);
   transition: background-color var(--transition), color var(--transition), text-decoration var(--transition), box-shadow var(--transition), -webkit-text-decoration var(--transition);
 }
-a[aria-current], a:hover, a:active, a:focus {
+a[aria-current], a:hover, a:active, a:focus,
+[role=link][aria-current],
+[role=link]:hover,
+[role=link]:active,
+[role=link]:focus {
   --color: var(--primary-hover);
   --text-decoration: underline;
 }
-a:focus {
+a:focus,
+[role=link]:focus {
   --background-color: var(--primary-focus);
 }
 
@@ -1817,7 +1823,7 @@ details summary {
   cursor: pointer;
   transition: color var(--transition);
 }
-details summary:not([role=button]) {
+details summary:not([role]) {
   color: var(--accordion-close-summary-color);
 }
 details summary::-webkit-details-marker {
@@ -1859,7 +1865,7 @@ details summary[role=button]::after {
 details[open] > summary {
   margin-bottom: calc(var(--spacing));
 }
-details[open] > summary:not([role=button]):not(:focus) {
+details[open] > summary:not([role]):not(:focus) {
   color: var(--accordion-open-summary-color);
 }
 details[open] > summary::after {
@@ -2000,14 +2006,19 @@ nav li {
 nav li > * {
   --spacing: 0;
 }
-nav a {
+nav a,
+nav [role=link] {
   display: inline-block;
   margin: calc(var(--nav-link-spacing-vertical) * -1) calc(var(--nav-link-spacing-horizontal) * -1);
   padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
   border-radius: var(--border-radius);
   text-decoration: none;
 }
-nav a[aria-current], nav a:hover, nav a:active, nav a:focus {
+nav a[aria-current], nav a:hover, nav a:active, nav a:focus,
+nav [role=link][aria-current],
+nav [role=link]:hover,
+nav [role=link]:active,
+nav [role=link]:focus {
   text-decoration: none;
 }
 
@@ -2185,7 +2196,7 @@ details[role=list] {
 details[role=list] summary {
   margin-bottom: 0;
 }
-details[role=list] summary:not([role=button]) {
+details[role=list] summary:not([role]) {
   height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
   border: var(--border-width) solid var(--form-element-border-color);
@@ -2196,11 +2207,11 @@ details[role=list] summary:not([role=button]) {
   cursor: pointer;
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
-details[role=list] summary:not([role=button]):active, details[role=list] summary:not([role=button]):focus {
+details[role=list] summary:not([role]):active, details[role=list] summary:not([role]):focus {
   border-color: var(--form-element-active-border-color);
   background-color: var(--form-element-active-background-color);
 }
-details[role=list] summary:not([role=button]):focus {
+details[role=list] summary:not([role]):focus {
   box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
 }
 details[role=list][open] summary {
@@ -2220,7 +2231,8 @@ details[role=list][open] summary::before {
   cursor: default;
 }
 
-nav [role=list] summary, nav [role=list] a {
+nav [role=list] summary,
+nav [role=list] a {
   display: flex;
   direction: ltr;
 }
@@ -2236,11 +2248,25 @@ nav [role=list] > ul li a {
   border-radius: 0;
 }
 
+nav [role=list] summary,
+nav [role=list] summary:not([role]) {
+  height: auto;
+  padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
+}
 nav [role=list][open] summary {
   border-radius: var(--border-radius);
 }
 nav [role=list] summary + ul {
-  margin-top: 2px;
+  margin-top: var(--outline-width);
+}
+nav [role=list] summary[role=link] {
+  margin-bottom: calc(var(--nav-link-spacing-vertical) * -1);
+  line-height: var(--line-height);
+}
+nav [role=list] summary[role=link] + ul {
+  margin-top: calc(var(--nav-link-spacing-vertical) + var(--outline-width));
+  -webkit-margin-start: calc(var(--nav-link-spacing-horizontal) * -1);
+  margin-inline-start: calc(var(--nav-link-spacing-horizontal) * -1);
 }
 
 li[role=list]:hover > ul,
@@ -2250,7 +2276,7 @@ li[role=list] a:focus ~ ul {
 }
 li[role=list] > ul {
   display: none;
-  margin-top: calc(var(--nav-link-spacing-vertical) + 2px);
+  margin-top: calc(var(--nav-link-spacing-vertical) + var(--outline-width));
   -webkit-margin-start: calc(var(--nav-element-spacing-horizontal) - var(--nav-link-spacing-horizontal));
   margin-inline-start: calc(var(--nav-element-spacing-horizontal) - var(--nav-link-spacing-horizontal));
 }

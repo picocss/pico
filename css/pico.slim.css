@@ -624,7 +624,8 @@ ul {
   font-size: var(--font-size);
 }
 
-a {
+a,
+[role=link] {
   --color: var(--primary);
   --background-color: transparent;
   outline: none;
@@ -633,29 +634,46 @@ a {
   -webkit-text-decoration: var(--text-decoration);
   text-decoration: var(--text-decoration);
 }
-a[aria-current], a:hover, a:active, a:focus {
+a[aria-current], a:hover, a:active, a:focus,
+[role=link][aria-current],
+[role=link]:hover,
+[role=link]:active,
+[role=link]:focus {
   --color: var(--primary-hover);
   --text-decoration: underline;
 }
-a:focus {
+a:focus,
+[role=link]:focus {
   --background-color: var(--primary-focus);
 }
-a.secondary {
+a.secondary,
+[role=link].secondary {
   --color: var(--secondary);
 }
-a.secondary[aria-current], a.secondary:hover, a.secondary:active, a.secondary:focus {
+a.secondary[aria-current], a.secondary:hover, a.secondary:active, a.secondary:focus,
+[role=link].secondary[aria-current],
+[role=link].secondary:hover,
+[role=link].secondary:active,
+[role=link].secondary:focus {
   --color: var(--secondary-hover);
 }
-a.secondary:focus {
+a.secondary:focus,
+[role=link].secondary:focus {
   --background-color: var(--secondary-focus);
 }
-a.contrast {
+a.contrast,
+[role=link].contrast {
   --color: var(--contrast);
 }
-a.contrast[aria-current], a.contrast:hover, a.contrast:active, a.contrast:focus {
+a.contrast[aria-current], a.contrast:hover, a.contrast:active, a.contrast:focus,
+[role=link].contrast[aria-current],
+[role=link].contrast:hover,
+[role=link].contrast:active,
+[role=link].contrast:focus {
   --color: var(--contrast-hover);
 }
-a.contrast:focus {
+a.contrast:focus,
+[role=link].contrast:focus {
   --background-color: var(--contrast-focus);
 }
 

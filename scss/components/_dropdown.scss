@@ -2,7 +2,7 @@
  * Dropdown ([role="list"])
  */
 
- // Menu
+// Menu
 details[role="list"],
 li[role="list"] {
   position: relative;
@@ -86,7 +86,7 @@ details[role="list"] {
   summary {
     margin-bottom: 0;
 
-    &:not([role="button"]) {
+    &:not([role]) {
       height: calc(
         1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 +
           var(--border-width) * 2
@@ -122,7 +122,7 @@ details[role="list"] {
   &[open] summary {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    
+
     &::before {
       display: block;
       z-index: 1;
@@ -140,11 +140,12 @@ details[role="list"] {
 
 // All Dropdowns inside <nav>
 nav [role="list"] {
-  summary, a {
+  summary,
+  a {
     display: flex;
     direction: ltr;
   }
-  
+
   summary + ul,
   > ul {
     min-width: fit-content;
@@ -158,18 +159,34 @@ nav [role="list"] {
 
 // Dropdowns inside <nav> as nested <details>
 nav [role="list"] {
+  summary,
+  summary:not([role]) {
+    height: auto;
+    padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
+  }
+
   &[open] summary {
     border-radius: var(--border-radius);
   }
+  
   summary + ul {
-    margin-top: 2px;
+    margin-top: var(--outline-width);
+  }
+  
+  summary[role="link"] {
+    margin-bottom: calc(var(--nav-link-spacing-vertical) * -1);
+    line-height: var(--line-height);
+
+    + ul {
+      margin-top: calc(var(--nav-link-spacing-vertical) + var(--outline-width));
+      margin-inline-start: calc(var(--nav-link-spacing-horizontal) * -1);
+    }
   }
 }
 
 // Dropdowns inside a <nav> without using <details>
 li[role="list"] {
-
-  // Open on hover (for mobile) 
+  // Open on hover (for mobile)
   // or on active/focus (for keyboard navigation)
   &:hover > ul,
   a:active ~ ul,
@@ -179,8 +196,10 @@ li[role="list"] {
 
   > ul {
     display: none;
-    margin-top: calc(var(--nav-link-spacing-vertical) + 2px);
-    margin-inline-start: calc(var(--nav-element-spacing-horizontal) - var(--nav-link-spacing-horizontal));
+    margin-top: calc(var(--nav-link-spacing-vertical) + var(--outline-width));
+    margin-inline-start: calc(
+      var(--nav-element-spacing-horizontal) - var(--nav-link-spacing-horizontal)
+    );
   }
 
   > a::after {
