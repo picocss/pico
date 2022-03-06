@@ -1804,12 +1804,14 @@ details summary::-moz-list-bullet {
 }
 details summary::after {
   display: block;
-  width: 1.5rem;
+  width: 1rem;
   height: 1rem;
+  -webkit-margin-start: calc(var(--spacing, 1rem) * 0.5);
+  margin-inline-start: calc(var(--spacing, 1rem) * 0.5);
   float: right;
   transform: rotate(-90deg);
   background-image: var(--icon-chevron);
-  background-position: right;
+  background-position: right center;
   background-size: 1rem auto;
   background-repeat: no-repeat;
   content: "";
@@ -1826,7 +1828,7 @@ details summary[role=button] {
   text-align: left;
 }
 details summary[role=button]::after {
-  height: calc(1rem * var(--line-height));
+  height: calc(1rem * var(--line-height, 1.5));
   background-image: var(--icon-chevron-button);
 }
 details summary[role=button]:not(.outline).contrast::after {
@@ -1847,7 +1849,7 @@ details[open] > summary::after {
 }
 [dir=rtl] details summary::after {
   float: left;
-  background-position: left;
+  background-position: left center;
 }
 
 /**
@@ -2230,11 +2232,13 @@ li[role=list] > ul li a:hover {
 details[role=list] summary::after,
 li[role=list] > a::after {
   display: block;
-  width: 1.5rem;
-  height: calc(1rem * var(--line-height));
+  width: 1rem;
+  height: calc(1rem * var(--line-height, 1.5));
+  -webkit-margin-start: 0.5rem;
+  margin-inline-start: 0.5rem;
   float: right;
   transform: rotate(0deg);
-  background-position: right;
+  background-position: right center;
   background-size: 1rem auto;
   background-repeat: no-repeat;
   content: "";

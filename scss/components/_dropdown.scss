@@ -66,11 +66,12 @@ details[role="list"] summary,
 li[role="list"] > a {
   &::after {
     display: block;
-    width: 1.5rem;
-    height: calc(1rem * var(--line-height));
+    width: 1rem;
+    height: calc(1rem * var(--line-height, 1.5));
+    margin-inline-start: 0.5rem;
     float: right;
     transform: rotate(0deg);
-    background-position: right;
+    background-position: right center;
     background-size: 1rem auto;
     background-repeat: no-repeat;
     content: "";

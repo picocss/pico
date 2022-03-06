@@ -37,12 +37,13 @@ details {
     // Marker
     &::after {
       display: block;
-      width: 1.5rem;
+      width: 1rem;
       height: 1rem;
+      margin-inline-start: calc(var(--spacing, 1rem) * 0.5);
       float: right;
       transform: rotate(-90deg);
       background-image: var(--icon-chevron);
-      background-position: right;
+      background-position: right center;
       background-size: 1rem auto;
       background-repeat: no-repeat;
       content: "";
@@ -67,7 +68,7 @@ details {
 
       // Marker
       &::after {
-        height: calc(1rem * var(--line-height));
+        height: calc(1rem * var(--line-height, 1.5));
         background-image: var(--icon-chevron-button);
       }
 
@@ -108,7 +109,7 @@ details {
 
       &::after {
         float: left;
-        background-position: left;
+        background-position: left center;
       }
     }
   }
