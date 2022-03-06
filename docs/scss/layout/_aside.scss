@@ -17,6 +17,7 @@ main > aside {
     }
 
     a#toggle-docs-navigation {
+      display: block;
       margin: 0;
       margin-bottom: var(--spacing);
       padding: 0;
@@ -64,7 +65,14 @@ main > aside {
       }
     }
   }
-  
+
+  details {
+    padding-bottom: 0;
+
+    summary {
+      padding-bottom: 0.5rem;
+    }
+  }
 
   li,
   summary {
@@ -73,8 +81,13 @@ main > aside {
     font-size: 16px;
   }
 
+  ul {
+    padding-left: 0.25rem;
+  }
+
   li a {
-    padding: 0.375rem 0.5rem;
+    --nav-link-spacing-vertical: 0.25rem;
+    --nav-link-spacing-horizontal: 0.75rem;
 
     svg {
       vertical-align: middle;
@@ -86,8 +99,8 @@ main > aside {
     color: var(--primary-hover);
   }
 
-  a.active,
-  a.active:hover {
+  a[aria-current],
+  a[aria-current]:hover {
     color: var(--primary);
   }
 
@@ -107,9 +120,9 @@ main > aside {
 
     &[open] {
       > summary {
-        margin-bottom: calc(var(--spacing) * 0.75);
+        margin-bottom: 0;
 
-        &:not(:focus) {
+        &:not([role=button]):not(:focus) {
           color: var(--h1-color);
         }
       }

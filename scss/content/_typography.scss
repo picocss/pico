@@ -68,7 +68,8 @@ ul {
 
 // Links
 // 1. Remove the gray background on active links in IE 10
-a {
+a,
+[role="link"] {
   --color: var(--primary);
   --background-color: transparent;
   outline: none;
@@ -81,6 +82,7 @@ a {
       text-decoration var(--transition), box-shadow var(--transition);
   }
 
+  &[aria-current],
   &:hover,
   &:active,
   &:focus {
@@ -97,7 +99,7 @@ a {
     &.secondary {
       --color: var(--secondary);
 
-      &:is(:hover, :active, :focus) {
+      &:is([aria-current], :hover, :active, :focus) {
         --color: var(--secondary-hover);
       }
 
@@ -110,7 +112,7 @@ a {
     &.contrast {
       --color: var(--contrast);
 
-      &:is(:hover, :active, :focus) {
+      &:is([aria-current], :hover, :active, :focus) {
         --color: var(--contrast-hover);
       }
 

@@ -19,32 +19,35 @@ nav {
     list-style: none;
 
     &:first-of-type {
-      margin-left: calc(var(--spacing) * -0.5);
+      margin-left: calc(var(--nav-element-spacing-horizontal) * -1);
     }
     &:last-of-type {
-      margin-right: calc(var(--spacing) * -0.5);
+      margin-right: calc(var(--nav-element-spacing-horizontal) * -1);
     }
   }
 
   li {
     display: inline-block;
     margin: 0;
-    padding: var(--spacing) calc(var(--spacing) * 0.5);
+    padding: var(--nav-element-spacing-vertical)
+      var(--nav-element-spacing-horizontal);
 
-    // HACK: Input & Button inside Nav
-    > *,
-    > input:not([type="checkbox"]):not([type="radio"]) {
-      margin-bottom: 0;
+    // Minimal support for buttons and forms elements
+    > * {
+      --spacing: 0;
     }
   }
 
-  a {
-    display: block;
-    margin: calc(var(--spacing) * -1) calc(var(--spacing) * -0.5);
-    padding: var(--spacing) calc(var(--spacing) * 0.5);
+  a,
+  [role="link"] {
+    display: inline-block;
+    margin: calc(var(--nav-link-spacing-vertical) * -1)
+      calc(var(--nav-link-spacing-horizontal) * -1);
+    padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
     border-radius: var(--border-radius);
     text-decoration: none;
 
+    &[aria-current],
     &:hover,
     &:active,
     &:focus {
@@ -63,11 +66,16 @@ aside {
   }
 
   li {
-    padding: calc(var(--spacing) * 0.5);
+    padding: calc(var(--nav-element-spacing-vertical) * 0.5)
+      var(--nav-element-spacing-horizontal);
 
     a {
-      margin: calc(var(--spacing) * -0.5);
-      padding: calc(var(--spacing) * 0.5);
+      display: block;
+    }
+
+    // Minimal support for links as buttons
+    [role="button"] {
+      margin: inherit;
     }
   }
 }
