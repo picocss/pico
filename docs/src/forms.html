@@ -210,6 +210,36 @@
 
             </footer>
           </article>
+          <p>Search:</p>
+          <article aria-label="Search, Search valid, Search invalid">
+            <input type="search" id="search" name="search" placeholder="Search">
+            <input type="search" id="search" name="search" placeholder="Search valid" aria-invalid="false">
+            <input type="search" id="search" name="search" placeholder="Search invalid" aria-invalid="true">
+            <p>RTL:</p>
+            <div dir="rtl">
+              <input type="search" id="search" name="search" placeholder="Search">
+              <input type="search" id="search" name="search" placeholder="Search valid" aria-invalid="false">
+              <input type="search" id="search" name="search" placeholder="Search invalid" aria-invalid="true">  
+            </div>
+            <footer class="code">
+
+<pre><code><em>&lt;!-- Search --&gt;</em>
+&lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search&quot;&gt;
+
+<em>&lt;!-- Search valid --&gt;</em>
+&lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search valid&quot; aria-invalid=&quot;false&quot;&gt;
+
+<em>&lt;!-- Search invalid --&gt;</em>
+&lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search invalid&quot; aria-invalid=&quot;true&quot;&gt;
+
+<em>&lt;!-- RTL --&gt;</em>
+&lt;div dir=&quot;rtl&quot;&gt;
+  &lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search&quot;&gt;
+  &lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search valid&quot; aria-invalid=&quot;false&quot;&gt;
+  &lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search invalid&quot; aria-invalid=&quot;true&quot;&gt;  
+&lt;/div&gt;
+            </footer>
+          </article>
           <p>Others input types:</p>
           <article aria-label="File browser, range slider, date, time, color examples">
             <label for="file">File browser
