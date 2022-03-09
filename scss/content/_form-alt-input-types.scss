@@ -232,6 +232,24 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="
     background-position: center left 1.125rem;
     background-size: 1rem auto;
     background-repeat: no-repeat;
+    
+    &[aria-invalid] {
+      @if $enable-important {
+        padding-left: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
+      } 
+      @else {
+        padding-left: calc(var(--form-element-spacing-horizontal) + 1.75rem);
+      }
+      background-position: center left 1.125rem, center right 0.75rem;
+    }
+
+    &[aria-invalid="false"] {
+      background-image: var(--icon-search), var(--icon-valid);
+    }
+
+    &[aria-invalid="true"] {
+      background-image: var(--icon-search), var(--icon-invalid);
+    }
   }
 }
 
@@ -240,5 +258,26 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="
   &::-webkit-search-cancel-button {
     -webkit-appearance: none;
     display: none;
+  }
+}
+
+[dir="rtl"] {
+  :where(input) {
+    &:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]) {
+      &[type="search"] {
+        padding-right: calc(var(--form-element-spacing-horizontal) + 1.75rem);
+        background-position: center right 1.125rem;
+        
+        &[aria-invalid] {
+          @if $enable-important {
+            padding-right: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
+          } 
+          @else {
+            padding-right: calc(var(--form-element-spacing-horizontal) + 1.75rem);
+          }
+          background-position: center right 1.125rem, center left 0.75rem;
+        }
+      }
+    }
   }
 }
