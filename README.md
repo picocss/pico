@@ -164,14 +164,15 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 **Components**
 - [Accordions](https://picocss.com/docs/accordions.html)
 - [Cards](https://picocss.com/docs/cards.html)
+- [Dropdowns](https://picocss.com/docs/dropdowns.html)
 - [Modal](https://picocss.com/docs/modal.html)
 - [Navs](https://picocss.com/docs/navs.html)
-- [Dropdowns](https://picocss.com/docs/dropdowns.html)
 - [Progress](https://picocss.com/docs/progress.html)
 
 **Utilities**
 - [Loading](https://picocss.com/docs/loading.html)
 - [Tooltips](https://picocss.com/docs/tooltips.html)
+
 ## Browser Support
 
 Pico is designed and tested for the latest stable Chrome, Firefox, Edge, and Safari releases. It does not support any version of IE, including IE 11.
