@@ -5,14 +5,17 @@
 details {
   display: block;
   margin-bottom: var(--spacing);
-  padding-bottom: calc(var(--spacing) * 0.5);
+  padding-bottom: var(--spacing);
   border-bottom: var(--border-width) solid var(--accordion-border-color);
 
   summary {
-    color: var(--accordion-close-summary-color);
     line-height: 1rem;
     list-style-type: none;
     cursor: pointer;
+
+    &:not([role]) {
+      color: var(--accordion-close-summary-color);
+    }
 
     @if $enable-transitions {
       transition: color var(--transition);
@@ -36,10 +39,11 @@ details {
       display: block;
       width: 1rem;
       height: 1rem;
+      margin-inline-start: calc(var(--spacing, 1rem) * 0.5);
       float: right;
       transform: rotate(-90deg);
       background-image: var(--icon-chevron);
-      background-position: center;
+      background-position: right center;
       background-size: 1rem auto;
       background-repeat: no-repeat;
       content: "";
@@ -51,14 +55,31 @@ details {
 
     &:focus {
       outline: none;
-      color: var(--accordion-active-summary-color);
+
+      &:not([role="button"]) {
+        color: var(--accordion-active-summary-color);
+      }
     }
 
-    ~ * {
-      margin-top: calc(var(--spacing) * 0.5);
+    // Type button
+    &[role="button"] {
+      width: 100%;
+      text-align: left;
 
-      ~ * {
-        margin-top: 0;
+      // Marker
+      &::after {
+        height: calc(1rem * var(--line-height, 1.5));
+        background-image: var(--icon-chevron-button);
+      }
+
+      @if $enable-classes {
+        // .contrast
+        &:not(.outline).contrast {
+          // Marker
+          &::after {
+            background-image: var(--icon-chevron-button-inverse);
+          }
+        }
       }
     }
   }
@@ -66,15 +87,17 @@ details {
   // Open
   &[open] {
     > summary {
-      margin-bottom: calc(var(--spacing) * 0.25);
+      margin-bottom: calc(var(--spacing));
 
-      &:not(:focus) {
-        color: var(--accordion-open-summary-color);
+      &:not([role]) {
+        &:not(:focus) {
+          color: var(--accordion-open-summary-color);
+        }
       }
 
       &::after {
         transform: rotate(0);
-      } 
+      }
     }
   }
 }
@@ -82,8 +105,11 @@ details {
 [dir="rtl"] {
   details {
     summary {
+      text-align: right;
+
       &::after {
         float: left;
+        background-position: left center;
       }
     }
   }

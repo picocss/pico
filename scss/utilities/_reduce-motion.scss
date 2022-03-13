@@ -1,12 +1,10 @@
 @if $enable-transitions and $enable-important {
-
-/**
+  /**
  * Reduce Motion Features
  */
 
-
   // Based on :
-  // - sanitize.css v12.0.1 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
   // ––––––––––––––––––––
 
   // 1. Remove animations when motion is reduced (opinionated)

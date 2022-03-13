@@ -10,11 +10,6 @@ section > hgroup {
   margin-bottom: calc(var(--typography-spacing-vertical) * 2);
 }
 
-a[role="button"] {
-  margin-right: calc(var(--typography-spacing-vertical) / 4);
-  margin-bottom: var(--typography-spacing-vertical);
-}
-
 [role="document"] {
   section > h1,
   section > h2,

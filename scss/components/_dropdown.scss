@@ -1,0 +1,208 @@
+/**
+ * Dropdown ([role="list"])
+ */
+
+// Menu
+details[role="list"],
+li[role="list"] {
+  position: relative;
+}
+
+details[role="list"] summary + ul,
+li[role="list"] > ul {
+  display: flex;
+  z-index: 99;
+  position: absolute;
+  top: auto;
+  right: 0;
+  left: 0;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  border: var(--border-width) solid var(--dropdown-border-color);
+  border-radius: var(--border-radius);
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  background-color: var(--dropdown-background-color);
+  box-shadow: var(--card-box-shadow);
+  color: var(--dropdown-color);
+  white-space: nowrap;
+
+  li {
+    width: 100%;
+    margin-bottom: 0;
+    padding: calc(var(--form-element-spacing-vertical) * 0.5)
+      var(--form-element-spacing-horizontal);
+    list-style: none;
+
+    &:first-of-type {
+      margin-top: calc(var(--form-element-spacing-vertical) * 0.5);
+    }
+
+    &:last-of-type {
+      margin-bottom: calc(var(--form-element-spacing-vertical) * 0.5);
+    }
+
+    a {
+      display: block;
+      margin: calc(var(--form-element-spacing-vertical) * -0.5)
+        calc(var(--form-element-spacing-horizontal) * -1);
+      padding: calc(var(--form-element-spacing-vertical) * 0.5)
+        var(--form-element-spacing-horizontal);
+      overflow: hidden;
+      color: var(--dropdown-color);
+      text-decoration: none;
+      text-overflow: ellipsis;
+
+      &:hover {
+        background-color: var(--dropdown-hover-background-color);
+      }
+    }
+  }
+}
+
+// Marker
+details[role="list"] summary,
+li[role="list"] > a {
+  &::after {
+    display: block;
+    width: 1rem;
+    height: calc(1rem * var(--line-height, 1.5));
+    margin-inline-start: 0.5rem;
+    float: right;
+    transform: rotate(0deg);
+    background-position: right center;
+    background-size: 1rem auto;
+    background-repeat: no-repeat;
+    content: "";
+  }
+}
+
+// Global dropdown only
+details[role="list"] {
+  padding: 0;
+  border-bottom: none;
+
+  // Style <summary> as <select>
+  summary {
+    margin-bottom: 0;
+
+    &:not([role]) {
+      height: calc(
+        1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 +
+          var(--border-width) * 2
+      );
+      padding: var(--form-element-spacing-vertical)
+        var(--form-element-spacing-horizontal);
+      border: var(--border-width) solid var(--form-element-border-color);
+      border-radius: var(--border-radius);
+      background-color: var(--form-element-background-color);
+      color: var(--form-element-placeholder-color);
+      line-height: inherit;
+      cursor: pointer;
+
+      @if $enable-transitions {
+        transition: background-color var(--transition),
+          border-color var(--transition), color var(--transition),
+          box-shadow var(--transition);
+      }
+
+      &:active,
+      &:focus {
+        border-color: var(--form-element-active-border-color);
+        background-color: var(--form-element-active-background-color);
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
+      }
+    }
+  }
+
+  // Close for details[role="list"]
+  &[open] summary {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+
+    &::before {
+      display: block;
+      z-index: 1;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: none;
+      content: "";
+      cursor: default;
+    }
+  }
+}
+
+// All Dropdowns inside <nav>
+nav details[role="list"] summary,
+nav li[role="list"] a {
+  display: flex;
+  direction: ltr;
+}
+
+nav details[role="list"] summary + ul,
+nav li[role="list"] > ul {
+  min-width: fit-content;
+  border-radius: var(--border-radius);
+
+  li a {
+    border-radius: 0;
+  }
+}
+
+// Dropdowns inside <nav> as nested <details>
+nav details[role="list"] {
+  summary,
+  summary:not([role]) {
+    height: auto;
+    padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
+  }
+
+  &[open] summary {
+    border-radius: var(--border-radius);
+  }
+
+  summary + ul {
+    margin-top: var(--outline-width);
+    margin-inline-start: 0;
+  }
+
+  summary[role="link"] {
+    margin-bottom: calc(var(--nav-link-spacing-vertical) * -1);
+    line-height: var(--line-height);
+
+    + ul {
+      margin-top: calc(var(--nav-link-spacing-vertical) + var(--outline-width));
+      margin-inline-start: calc(var(--nav-link-spacing-horizontal) * -1);
+    }
+  }
+}
+
+// Dropdowns inside a <nav> without using <details>
+li[role="list"] {
+  // Open on hover (for mobile)
+  // or on active/focus (for keyboard navigation)
+  &:hover > ul,
+  a:active ~ ul,
+  a:focus ~ ul {
+    display: flex;
+  }
+
+  > ul {
+    display: none;
+    margin-top: calc(var(--nav-link-spacing-vertical) + var(--outline-width));
+    margin-inline-start: calc(
+      var(--nav-element-spacing-horizontal) - var(--nav-link-spacing-horizontal)
+    );
+  }
+
+  > a::after {
+    background-image: var(--icon-chevron);
+  }
+}
