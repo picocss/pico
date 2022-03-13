@@ -176,6 +176,7 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 ## Browser Support
 
 Pico is designed and tested for the latest stable Chrome, Firefox, Edge, and Safari releases. It does not support any version of IE, including IE 11.
+
 ## Contributing
 
 If you are interested in contributing to Pico CSS, please read our [contributing guidelines](https://github.com/picocss/pico/blob/master/.github/CONTRIBUTING.md).
