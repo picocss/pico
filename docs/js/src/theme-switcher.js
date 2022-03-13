@@ -2,7 +2,7 @@
  * Theme switcher
  *
  * Pico.css - https://picocss.com
- * Copyright 2019-2021 - Licensed under MIT
+ * Copyright 2019-2022 - Licensed under MIT
  */
 
 export const themeSwitcher = {
@@ -14,11 +14,22 @@ export const themeSwitcher = {
     dark: '<i>Turn off dark mode</i>',
   },
   buttonsTarget: '.theme-switcher',
+  localStorageKey: 'picoPreferedColorScheme',
 
   // Init
   init() {
-    this.scheme = this._scheme;
+    this.scheme = this.schemeFromLocalStorage;
     this.initSwitchers();
+  },
+
+  // Get color scheme from local storage
+  get schemeFromLocalStorage() {
+    if (typeof window.localStorage !== 'undefined') {
+      if (window.localStorage.getItem(this.localStorageKey) !== null) {
+        return window.localStorage.getItem(this.localStorageKey);
+      }
+    }
+    return this._scheme;
   },
 
   // Prefered color scheme
@@ -52,6 +63,7 @@ export const themeSwitcher = {
       this._scheme = scheme;
     }
     this.applyScheme();
+    this.schemeToLocalStorage();
   },
 
   // Get scheme
@@ -70,6 +82,13 @@ export const themeSwitcher = {
         button.setAttribute('aria-label', text.replace(/<[^>]*>?/gm, ''));
       }
     );
+  },
+
+  // Store scheme to local storage
+  schemeToLocalStorage() {
+    if (typeof window.localStorage !== 'undefined') {
+      window.localStorage.setItem(this.localStorageKey, this.scheme);
+    }
   },
 };
 
