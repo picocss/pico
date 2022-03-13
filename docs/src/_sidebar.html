@@ -43,6 +43,7 @@
       <ul>
         <li><a href="./accordions.html" id="accordions-link" class="secondary">Accordions</a></li>
         <li><a href="./cards.html" id="cards-link" class="secondary">Cards</a></li>
+        <li><a href="./dropdowns.html" id="dropdowns-link" class="secondary">Dropdowns</a></li>
         <li><a href="./modal.html" id="modal-link" class="secondary">Modal</a></li>
         <li><a href="./navs.html" id="navs-link" class="secondary">Navs</a></li>
         <li><a href="./progress.html" id="progress-link" class="secondary">Progress</a></li>
@@ -67,7 +68,7 @@
   <script>
     const activeLink = document.querySelector(`aside a#${props.active}`);
     const parentAccordion = activeLink.closest('details');
-    activeLink.classList.add('active');
+    activeLink.setAttribute('aria-current', 'page');
     parentAccordion.setAttribute('open', 'true');
   </script>
 </aside>

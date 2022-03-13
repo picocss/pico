@@ -20,7 +20,7 @@
 
   // Swatch
   @mixin color-swatch {
-    border: none;
+    border: 0;
     border-radius: calc(var(--border-radius) * 0.5);
   }
 
@@ -35,7 +35,7 @@
 
 // Date & Time
 // :not() are needed to add Specificity and avoid !important on padding
-input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) {
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]) {
   &[type="date"],
   &[type="datetime-local"],
   &[type="month"],
@@ -70,30 +70,18 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) 
   }
 }
 
-[dir="rtl"] {
-  [type="date"],
-  [type="datetime-local"],
-  [type="month"],
-  [type="time"],
-  [type="week"] {
-    text-align: right;
-  }
+[dir="rtl"]
+  :is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
+  text-align: right;
 }
 
 // File
 [type="file"] {
   --color: var(--muted-color);
   padding: calc(var(--form-element-spacing-vertical) * 0.5) 0;
-  border: none;
+  border: 0;
   border-radius: 0;
   background: none;
-
-  &:hover,
-  &:active,
-  &:focus {
-    border: none;
-    background: none;
-  }
 
   @mixin file-selector-button {
     --background-color: var(--secondary);
@@ -123,9 +111,7 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) 
         box-shadow var(--transition);
     }
 
-    &:hover,
-    &:active,
-    &:focus {
+    &:is(:hover, :active, :focus) {
       --background-color: var(--secondary-hover);
       --border-color: var(--secondary-hover);
     }
@@ -157,7 +143,7 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) 
   appearance: none;
   width: 100%;
   height: $height-thumb;
-  background: transparent;
+  background: none;
 
   // Slider Track
   @mixin slider-track {
@@ -238,14 +224,32 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) 
 
 // Search
 // :not() are needed to add Specificity and avoid !important on padding
-input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) {
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]) {
   &[type="search"] {
-    padding-left: calc(var(--form-element-spacing-horizontal) + 1.75rem);
+    padding-inline-start: calc(var(--form-element-spacing-horizontal) + 1.75rem);
     border-radius: 5rem;
     background-image: var(--icon-search);
     background-position: center left 1.125rem;
     background-size: 1rem auto;
     background-repeat: no-repeat;
+    
+    &[aria-invalid] {
+      @if $enable-important {
+        padding-inline-start: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
+      } 
+      @else {
+        padding-inline-start: calc(var(--form-element-spacing-horizontal) + 1.75rem);
+      }
+      background-position: center left 1.125rem, center right 0.75rem;
+    }
+
+    &[aria-invalid="false"] {
+      background-image: var(--icon-search), var(--icon-valid);
+    }
+
+    &[aria-invalid="true"] {
+      background-image: var(--icon-search), var(--icon-invalid);
+    }
   }
 }
 
@@ -254,5 +258,19 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]) 
   &::-webkit-search-cancel-button {
     -webkit-appearance: none;
     display: none;
+  }
+}
+
+[dir="rtl"] {
+  :where(input) {
+    &:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]) {
+      &[type="search"] {
+        background-position: center right 1.125rem;
+        
+        &[aria-invalid] {
+          background-position: center right 1.125rem, center left 0.75rem;
+        }
+      }
+    }
   }
 }

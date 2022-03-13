@@ -136,7 +136,7 @@
               </label>
               <label for="switch_disabled">
                 <input type="checkbox" id="switch_disabled" name="switch_disabled" role="switch" disabled checked>
-                Publish on my profile my accomplishments
+                User must change password at next logon
               </label>
             </fieldset>
             <footer class="code">
@@ -162,7 +162,6 @@
   &lt;<b>label</b> <i>for</i>=<u>"large"</u>&gt;
     &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"large"</u> <i>name</i>=<u>"size"</u> <i>value</i>=<u>"large"</u>&gt;
     Large
-  &lt;/<b>label</b>&gt;
   &lt;/<b>label</b>&gt;
   &lt;<b>label</b> <i>for</i>=<u>"extralarge"</u>&gt;
     &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"extralarge"</u> <i>name</i>=<u>"size"</u> <i>value</i>=<u>"extralarge"</u> <i>disabled</i>&gt;
@@ -190,7 +189,7 @@
   &lt;/<b>label</b>&gt;
   &lt;<b>label</b> <i>for</i>=<u>"switch_disabled"</u>&gt;
     &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u> <i>id</i>=<u>"switch_disabled"</u> <i>name</i>=<u>"switch_disabled"</u> <i>role</i>=<u>"switch_disabled"</u> <i>disabled checked</i>&gt;
-    Publish on my profile my accomplishments
+    User must change password at next logon
   &lt;/<b>label</b>&gt;
 &lt;/<b>fieldset</b>&gt;</code></pre>
 
@@ -211,8 +210,10 @@
 
             </footer>
           </article>
+
           <p>Others input types:</p>
-          <article aria-label="File browser, range slider, date, time, color examples">
+          <article aria-label="Search, file browser, range slider, date, time, color examples">
+            <input type="search" id="search" name="search" placeholder="Search">
             <label for="file">File browser
               <input type="file" id="file" name="file">
             </label>
@@ -230,7 +231,10 @@
             </label>
             <footer class="code">
 
-<pre><code><em>&lt;!-- File browser --&gt;</em>
+<pre><code><em>&lt;!-- Search --&gt;</em>
+&lt;<b>input</b> <i>type</i>=<u>"search"</u> <i>id</i>=<u>"search"</u> <i>name</i>=<u>"search"</u> <i>placeholder</i>=<u>"Search"</u>&gt;
+  
+&lt;!-- File browser --&gt;</em>
 &lt;<b>label</b> <i>for</i>=<u>"file"</u>&gt;File browser
   &lt;<b>input</b> <i>type</i>=<u>"file"</u> <i>id</i>=<u>"file"</u> <i>name</i>=<u>"file"</u>&gt;
 &lt;/<b>label</b>&gt;

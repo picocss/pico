@@ -117,6 +117,13 @@
   }
 }
 
+// Docs: Buttons
+#buttons {
+  a[role="button"] {
+    margin-right: calc(var(--spacing) * 0.5);
+  }
+}
+
 // Docs: Forms
 #forms div.grid {
   grid-row-gap: 0;

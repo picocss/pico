@@ -14,7 +14,8 @@
 </p>
 
 ## Pico.css
-[![CSS Gzipped](https://img.badgesize.io/picocss/pico/master/css/pico.min.css?compression=gzip&color=1095c1&label=CSS%20gzipped)](https://unpkg.com/@picocss/pico@latest/css/pico.min.css)
+[![Standard gzipped CSS](https://img.badgesize.io/picocss/pico/master/css/pico.min.css?compression=gzip&color=1095c1&label=Standard%20CSS)](https://unpkg.com/@picocss/pico@latest/css/pico.min.css)
+[![Classless gzipped CSS](https://img.badgesize.io/picocss/pico/master/css/pico.classless.min.css?compression=gzip&color=1095c1&label=Classless%20CSS)](https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css)
 [![Github release](https://img.shields.io/github/v/release/picocss/pico?color=1095c1&logo=github&logoColor=white)](https://github.com/picocss/pico/releases/latest)
 [![npm version](https://img.shields.io/npm/v/@picocss/pico?color=1095c1)](https://www.npmjs.com/package/@picocss/pico)
 [![License](https://img.shields.io/badge/license-MIT-%231095c1)](https://github.com/picocss/pico/blob/master/LICENSE.md)
@@ -40,6 +41,7 @@ Shipped with two beautiful color themes, automatically enabled according to the 
 - [Examples](#examples)
 - [Limitations](#limitations)
 - [Documentation](#documentation)
+- [Browser Support](#browser-support)
 - [Contributing](#contributing)
 - [Copyright and license](#copyright-and-license)
 
@@ -162,6 +164,7 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 **Components**
 - [Accordions](https://picocss.com/docs/accordions.html)
 - [Cards](https://picocss.com/docs/cards.html)
+- [Dropdowns](https://picocss.com/docs/dropdowns.html)
 - [Modal](https://picocss.com/docs/modal.html)
 - [Navs](https://picocss.com/docs/navs.html)
 - [Progress](https://picocss.com/docs/progress.html)
@@ -169,6 +172,10 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 **Utilities**
 - [Loading](https://picocss.com/docs/loading.html)
 - [Tooltips](https://picocss.com/docs/tooltips.html)
+
+## Browser Support
+
+Pico is designed and tested for the latest stable Chrome, Firefox, Edge, and Safari releases. It does not support any version of IE, including IE 11.
 
 ## Contributing
 
