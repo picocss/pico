@@ -40,6 +40,7 @@ Shipped with two beautiful color themes, automatically enabled according to the 
 - [Examples](#examples)
 - [Limitations](#limitations)
 - [Documentation](#documentation)
+- [Browser Support](#browser-support)
 - [Contributing](#contributing)
 - [Copyright and license](#copyright-and-license)
 
@@ -170,7 +171,9 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 **Utilities**
 - [Loading](https://picocss.com/docs/loading.html)
 - [Tooltips](https://picocss.com/docs/tooltips.html)
+## Browser Support
 
+Pico is designed for and tested on the latest, stable Chrome, Firefox, Edge, and Safari releases. It does not support any version of IE, including IE 11.
 ## Contributing
 
 - [`dev`](https://github.com/picocss/pico/tree/dev) branch is open to pull requests.
