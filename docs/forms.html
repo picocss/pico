@@ -79,22 +79,10 @@
   &lt;/<b>label</b>&gt;
 &lt;/<b>fieldset</b>&gt;</code></pre></footer></article><p>You can change a checkbox to an indeterminate state by setting the <code><i>indeterminate</i></code> property to <code><u>true</u></code></p><article aria-label="Indeterminate checkbox example"><label for="indeterminate-checkbox"><input type="checkbox" id="indeterminate-checkbox" name="indeterminate-checkbox"> Select all</label><script>document.getElementById("indeterminate-checkbox").indeterminate=!0</script><footer class="code"><pre><code>&lt;<b>script</b>&gt;
   <i>document</i>.<b>getElementById</b>(<u>'indeterminate-checkbox'</u>).<i>indeterminate</i> = <u>true</u>;
-&lt;/<b>script</b>&gt;</code></pre></footer></article><p>Search:</p><article aria-label="Search, Search valid, Search invalid"><input type="search" id="search" name="search" placeholder="Search"> <input type="search" id="search" name="search" placeholder="Search valid" aria-invalid="false"> <input type="search" id="search" name="search" placeholder="Search invalid" aria-invalid="true"><p>RTL:</p><div dir="rtl"><input type="search" id="search" name="search" placeholder="Search"> <input type="search" id="search" name="search" placeholder="Search valid" aria-invalid="false"> <input type="search" id="search" name="search" placeholder="Search invalid" aria-invalid="true"></div><footer class="code"><pre><code><em>&lt;!-- Search --&gt;</em>
-&lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search&quot;&gt;
-
-<em>&lt;!-- Search valid --&gt;</em>
-&lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search valid&quot; aria-invalid=&quot;false&quot;&gt;
-
-<em>&lt;!-- Search invalid --&gt;</em>
-&lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search invalid&quot; aria-invalid=&quot;true&quot;&gt;
-
-<em>&lt;!-- RTL --&gt;</em>
-&lt;div dir=&quot;rtl&quot;&gt;
-  &lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search&quot;&gt;
-  &lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search valid&quot; aria-invalid=&quot;false&quot;&gt;
-  &lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search invalid&quot; aria-invalid=&quot;true&quot;&gt;  
-&lt;/div&gt;
-            </code></pre></footer></article><p>Others input types:</p><article aria-label="File browser, range slider, date, time, color examples"><label for="file">File browser <input type="file" id="file" name="file"></label> <label for="range">Range slider <input type="range" min="0" max="100" value="50" id="range" name="range"></label> <label for="date">Date <input type="date" id="date" name="date"></label> <label for="time">Time <input type="time" id="time" name="time"></label> <label for="color">Color <input type="color" id="color" name="color" value="#0eaaaa"></label><footer class="code"><pre><code><em>&lt;!-- File browser --&gt;</em>
+&lt;/<b>script</b>&gt;</code></pre></footer></article><p>Others input types:</p><article aria-label="Search, file browser, range slider, date, time, color examples"><input type="search" id="search" name="search" placeholder="Search"> <label for="file">File browser <input type="file" id="file" name="file"></label> <label for="range">Range slider <input type="range" min="0" max="100" value="50" id="range" name="range"></label> <label for="date">Date <input type="date" id="date" name="date"></label> <label for="time">Time <input type="time" id="time" name="time"></label> <label for="color">Color <input type="color" id="color" name="color" value="#0eaaaa"></label><footer class="code"><pre><code><em>&lt;!-- Search --&gt;</em>
+&lt;<b>input</b> <i>type</i>=<u>"search"</u> <i>id</i>=<u>"search"</u> <i>name</i>=<u>"search"</u> <i>placeholder</i>=<u>"Search"</u>&gt;
+  
+&lt;!-- File browser --&gt;
 &lt;<b>label</b> <i>for</i>=<u>"file"</u>&gt;File browser
   &lt;<b>input</b> <i>type</i>=<u>"file"</u> <i>id</i>=<u>"file"</u> <i>name</i>=<u>"file"</u>&gt;
 &lt;/<b>label</b>&gt;

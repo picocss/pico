@@ -210,38 +210,10 @@
 
             </footer>
           </article>
-          <p>Search:</p>
-          <article aria-label="Search, Search valid, Search invalid">
-            <input type="search" id="search" name="search" placeholder="Search">
-            <input type="search" id="search" name="search" placeholder="Search valid" aria-invalid="false">
-            <input type="search" id="search" name="search" placeholder="Search invalid" aria-invalid="true">
-            <p>RTL:</p>
-            <div dir="rtl">
-              <input type="search" id="search" name="search" placeholder="Search">
-              <input type="search" id="search" name="search" placeholder="Search valid" aria-invalid="false">
-              <input type="search" id="search" name="search" placeholder="Search invalid" aria-invalid="true">  
-            </div>
-            <footer class="code">
 
-<pre><code><em>&lt;!-- Search --&gt;</em>
-&lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search&quot;&gt;
-
-<em>&lt;!-- Search valid --&gt;</em>
-&lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search valid&quot; aria-invalid=&quot;false&quot;&gt;
-
-<em>&lt;!-- Search invalid --&gt;</em>
-&lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search invalid&quot; aria-invalid=&quot;true&quot;&gt;
-
-<em>&lt;!-- RTL --&gt;</em>
-&lt;div dir=&quot;rtl&quot;&gt;
-  &lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search&quot;&gt;
-  &lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search valid&quot; aria-invalid=&quot;false&quot;&gt;
-  &lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot; placeholder=&quot;Search invalid&quot; aria-invalid=&quot;true&quot;&gt;  
-&lt;/div&gt;
-            </footer>
-          </article>
           <p>Others input types:</p>
-          <article aria-label="File browser, range slider, date, time, color examples">
+          <article aria-label="Search, file browser, range slider, date, time, color examples">
+            <input type="search" id="search" name="search" placeholder="Search">
             <label for="file">File browser
               <input type="file" id="file" name="file">
             </label>
@@ -259,7 +231,10 @@
             </label>
             <footer class="code">
 
-<pre><code><em>&lt;!-- File browser --&gt;</em>
+<pre><code><em>&lt;!-- Search --&gt;</em>
+&lt;<b>input</b> <i>type</i>=<u>"search"</u> <i>id</i>=<u>"search"</u> <i>name</i>=<u>"search"</u> <i>placeholder</i>=<u>"Search"</u>&gt;
+  
+&lt;!-- File browser --&gt;</em>
 &lt;<b>label</b> <i>for</i>=<u>"file"</u>&gt;File browser
   &lt;<b>input</b> <i>type</i>=<u>"file"</u> <i>id</i>=<u>"file"</u> <i>name</i>=<u>"file"</u>&gt;
 &lt;/<b>label</b>&gt;
