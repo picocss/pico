@@ -1514,7 +1514,8 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[
 }
 
 input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=search] {
-  padding-left: calc(var(--form-element-spacing-horizontal) + 1.75rem);
+  -webkit-padding-start: calc(var(--form-element-spacing-horizontal) + 1.75rem);
+  padding-inline-start: calc(var(--form-element-spacing-horizontal) + 1.75rem);
   border-radius: 5rem;
   background-image: var(--icon-search);
   background-position: center left 1.125rem;
@@ -1522,7 +1523,8 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[
   background-repeat: no-repeat;
 }
 input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=search][aria-invalid] {
-  padding-left: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
+  -webkit-padding-start: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
+  padding-inline-start: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
   background-position: center left 1.125rem, center right 0.75rem;
 }
 input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=search][aria-invalid=false] {
@@ -1538,11 +1540,9 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[
 }
 
 [dir=rtl] :where(input):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=search] {
-  padding-right: calc(var(--form-element-spacing-horizontal) + 1.75rem);
   background-position: center right 1.125rem;
 }
 [dir=rtl] :where(input):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file])[type=search][aria-invalid] {
-  padding-right: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
   background-position: center right 1.125rem, center left 0.75rem;
 }
 
