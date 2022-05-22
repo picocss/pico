@@ -3,6 +3,3 @@ tests/
 .nvmrc
 .prettierrc.js
 *.DS_Store
-/.settings/
-/.buildpath
-/.project
