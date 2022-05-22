@@ -18,7 +18,9 @@
   "authors": [
     {
       "name": "Lucas Larroche",
-      "role" : "Lead Developer"
+      "email": "lucas@larroche.com",
+      "homepage": "https://lucaslarroche.com",
+      "role": "Developer"
     }
   ],
   "support": {
