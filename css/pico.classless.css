@@ -1820,6 +1820,7 @@ dialog {
   padding: var(--spacing);
   border: 0;
   background-color: var(--modal-overlay-background-color);
+  color: var(--color);
 }
 dialog article {
   max-height: calc(100vh - var(--spacing) * 2);
