@@ -3,7 +3,7 @@
   <head>
     ${require('./_head.html') 
       title="Documentation" 
-      description="Pico works without package manager or dependencies! There are 3 ways to get started with pico.css: manually, from a CDN, with NPM."
+      description="Pico works without package manager or dependencies! There are 4 ways to get started with pico.css: manually, from a CDN, with NPM, or with Composer."
       canonical=""
     }
   </head>
@@ -20,7 +20,7 @@
             <h1>Usage</h1>
             <h2>Works without package manager or dependencies 🙂!</h2>
           </hgroup>
-          <p>There are 3 ways to get started with pico.css:</p>
+          <p>There are 4 ways to get started with pico.css:</p>
           <h3>Install manually</h3>
           <p><a href="https://github.com/picocss/pico/archive/refs/heads/master.zip">Download Pico</a> and link <code>/css/pico.min.css</code> in the <code>&lt;<b>head</b>&gt;</code> of your website.</p>
           <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"css/pico.min.css"</u>&gt;</code></pre>
@@ -29,6 +29,8 @@
           <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@picocss/pico@latest/css/pico.min.css"</u>&gt;</code></pre>
           <h3>Install with NPM</h3>
           <pre><code><b>npm</b> <i>install</i> <u>@picocss/pico</u></code></pre>
+          <h3>Install with Composer</h3>
+          <pre><code><b>composer</b> <i>require</i> <u>picocss/pico</u></code></pre>          
           <p>Starter HTML template:</p>
 
 <pre><code><em>&lt;!doctype html&gt;</em>
