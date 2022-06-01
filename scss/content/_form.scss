@@ -146,6 +146,8 @@ textarea {
   appearance: none;
   padding: var(--form-element-spacing-vertical)
     var(--form-element-spacing-horizontal);
+}
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]),
   vertical-align: middle;
 }
 
