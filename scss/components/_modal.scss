@@ -22,6 +22,7 @@ dialog {
   min-height: 100%;
   padding: var(--spacing);
   border: 0;
+  backdrop-filter: var(--modal-overlay-backdrop-filter);
   background-color: var(--modal-overlay-background-color);
   color: var(--color);
 
@@ -134,11 +135,11 @@ dialog {
 
     dialog {
       animation-duration: ($animation-duration * 4);
-      animation-name: fadeIn;
+      animation-name: modalOverlay;
 
       > article {
         animation-delay: $animation-duration;
-        animation-name: slideInDown;
+        animation-name: modal;
       }
     }
   }
@@ -151,23 +152,17 @@ dialog {
     }
   }
 
-  @keyframes fadeIn {
+  @keyframes modalOverlay {
     from {
+      backdrop-filter: none;
       background-color: transparent;
-    }
-    to {
-      background-color: var(--modal-overlay-background-color);
     }
   }
 
-  @keyframes slideInDown {
+  @keyframes modal {
     from {
       transform: translateY(-100%);
       opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
     }
   }
 }

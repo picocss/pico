@@ -283,7 +283,8 @@ kbd {
   --dropdown-box-shadow: var(--card-box-shadow);
   --dropdown-color: var(--color);
   --dropdown-hover-background-color: hsl(205deg, 20%, 94%);
-  --modal-overlay-background-color: rgba(213, 220, 226, 0.8);
+  --modal-overlay-background-color: rgba(213, 220, 226, 0.7);
+  --modal-overlay-backdrop-filter: blur(0.25rem);
   --progress-background-color: hsl(205deg, 18%, 86%);
   --progress-color: var(--primary);
   --loading-spinner-opacity: 0.5;
@@ -390,7 +391,8 @@ kbd {
     --dropdown-box-shadow: var(--card-box-shadow);
     --dropdown-color: var(--color);
     --dropdown-hover-background-color: rgba(36, 51, 62, 0.75);
-    --modal-overlay-background-color: rgba(36, 51, 62, 0.9);
+    --modal-overlay-background-color: rgba(36, 51, 62, 0.8);
+    --modal-overlay-backdrop-filter: blur(0.25rem);
     --progress-background-color: #24333e;
     --progress-color: var(--primary);
     --loading-spinner-opacity: 0.5;
@@ -496,7 +498,8 @@ kbd {
   --dropdown-box-shadow: var(--card-box-shadow);
   --dropdown-color: var(--color);
   --dropdown-hover-background-color: rgba(36, 51, 62, 0.75);
-  --modal-overlay-background-color: rgba(36, 51, 62, 0.9);
+  --modal-overlay-background-color: rgba(36, 51, 62, 0.8);
+  --modal-overlay-backdrop-filter: blur(0.25rem);
   --progress-background-color: #24333e;
   --progress-color: var(--primary);
   --loading-spinner-opacity: 0.5;
@@ -1808,6 +1811,8 @@ dialog {
   min-height: 100%;
   padding: var(--spacing);
   border: 0;
+  -webkit-backdrop-filter: var(--modal-overlay-backdrop-filter);
+  backdrop-filter: var(--modal-overlay-backdrop-filter);
   background-color: var(--modal-overlay-background-color);
   color: var(--color);
 }

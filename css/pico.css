@@ -288,7 +288,8 @@ kbd {
   --dropdown-box-shadow: var(--card-box-shadow);
   --dropdown-color: var(--color);
   --dropdown-hover-background-color: hsl(205deg, 20%, 94%);
-  --modal-overlay-background-color: rgba(213, 220, 226, 0.8);
+  --modal-overlay-background-color: rgba(213, 220, 226, 0.7);
+  --modal-overlay-backdrop-filter: blur(0.25rem);
   --progress-background-color: hsl(205deg, 18%, 86%);
   --progress-color: var(--primary);
   --loading-spinner-opacity: 0.5;
@@ -395,7 +396,8 @@ kbd {
     --dropdown-box-shadow: var(--card-box-shadow);
     --dropdown-color: var(--color);
     --dropdown-hover-background-color: rgba(36, 51, 62, 0.75);
-    --modal-overlay-background-color: rgba(36, 51, 62, 0.9);
+    --modal-overlay-background-color: rgba(36, 51, 62, 0.8);
+    --modal-overlay-backdrop-filter: blur(0.25rem);
     --progress-background-color: #24333e;
     --progress-color: var(--primary);
     --loading-spinner-opacity: 0.5;
@@ -501,7 +503,8 @@ kbd {
   --dropdown-box-shadow: var(--card-box-shadow);
   --dropdown-color: var(--color);
   --dropdown-hover-background-color: rgba(36, 51, 62, 0.75);
-  --modal-overlay-background-color: rgba(36, 51, 62, 0.9);
+  --modal-overlay-background-color: rgba(36, 51, 62, 0.8);
+  --modal-overlay-backdrop-filter: blur(0.25rem);
   --progress-background-color: #24333e;
   --progress-color: var(--primary);
   --loading-spinner-opacity: 0.5;
@@ -1944,6 +1947,8 @@ dialog {
   min-height: 100%;
   padding: var(--spacing);
   border: 0;
+  -webkit-backdrop-filter: var(--modal-overlay-backdrop-filter);
+  backdrop-filter: var(--modal-overlay-backdrop-filter);
   background-color: var(--modal-overlay-background-color);
   color: var(--color);
 }
@@ -2024,14 +2029,14 @@ dialog:not([open]), dialog[open=false] {
 :where(.modal-is-opening, .modal-is-closing) dialog {
   -webkit-animation-duration: 0.8s;
   animation-duration: 0.8s;
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
+  -webkit-animation-name: modalOverlay;
+  animation-name: modalOverlay;
 }
 :where(.modal-is-opening, .modal-is-closing) dialog > article {
   -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
-  -webkit-animation-name: slideInDown;
-  animation-name: slideInDown;
+  -webkit-animation-name: modal;
+  animation-name: modal;
 }
 
 .modal-is-closing dialog,
@@ -2041,41 +2046,31 @@ dialog:not([open]), dialog[open=false] {
   animation-direction: reverse;
 }
 
-@-webkit-keyframes fadeIn {
+@-webkit-keyframes modalOverlay {
   from {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
     background-color: transparent;
-  }
-  to {
-    background-color: var(--modal-overlay-background-color);
   }
 }
 
-@keyframes fadeIn {
+@keyframes modalOverlay {
   from {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
     background-color: transparent;
   }
-  to {
-    background-color: var(--modal-overlay-background-color);
-  }
 }
-@-webkit-keyframes slideInDown {
+@-webkit-keyframes modal {
   from {
     transform: translateY(-100%);
     opacity: 0;
   }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
-@keyframes slideInDown {
+@keyframes modal {
   from {
     transform: translateY(-100%);
     opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
   }
 }
 /**
