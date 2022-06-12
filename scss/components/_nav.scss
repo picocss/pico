@@ -63,13 +63,13 @@ nav {
         a::after {
           padding-left: 0.5rem;
           content: "/";
-          color: var(--muted-color) !important;
+          color: var(--muted-color);
         }
       }
     }
 
     & a[aria-current="page"] {
-      color: inherit !important;
+      color: inherit;
     }
   }
 }
