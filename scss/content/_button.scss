@@ -4,11 +4,11 @@
 
 // Reboot based on :
 // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
-// - sanitize.css v12.0.1 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+// - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
 // ––––––––––––––––––––
 
 // 1. Change the font styles in all browsers
-// 2. Remove the margin in Firefox and Safari
+// 2. Remove the margin on controls in Safari
 // 3. Show the overflow in Edge
 button {
   margin: 0; // 2
@@ -17,21 +17,12 @@ button {
   text-transform: none; // 1
 }
 
-// Correct the inability to style clickable types in iOS and Safari
+// Correct the inability to style buttons in iOS and Safari
 button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button;
-}
-
-// Remove the inner border and padding in Firefox
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  padding: 0;
-  border-style: none;
 }
 
 // Pico
@@ -77,9 +68,7 @@ input[type="reset"],
       box-shadow var(--transition);
   }
 
-  &:hover,
-  &:active,
-  &:focus {
+  &:is([aria-current], :hover, :active, :focus) {
     --background-color: var(--primary-hover);
     --border-color: var(--primary-hover);
     --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
@@ -96,19 +85,14 @@ input[type="reset"],
 @if $enable-classes {
 
   // Secondary
-  button.secondary,
-  input[type="submit"].secondary,
-  input[type="button"].secondary,
-  input[type="reset"],
-  [role="button"].secondary {
+  :is(button, input[type="submit"], input[type="button"], [role="button"]).secondary,
+  input[type="reset"] {
     --background-color: var(--secondary);
     --border-color: var(--secondary);
     --color: var(--secondary-inverse);
     cursor: pointer;
 
-    &:hover,
-    &:active,
-    &:focus {
+    &:is([aria-current], :hover, :active, :focus) {
       --background-color: var(--secondary-hover);
       --border-color: var(--secondary-hover);
       --color: var(--secondary-inverse);
@@ -121,18 +105,12 @@ input[type="reset"],
   }
 
   // Contrast
-  button.contrast,
-  input[type="submit"].contrast,
-  input[type="button"].contrast,
-  input[type="reset"].contrast,
-  [role="button"].contrast {
+  :is(button, input[type="submit"], input[type="button"], [role="button"]).contrast {
     --background-color: var(--contrast);
     --border-color: var(--contrast);
     --color: var(--contrast-inverse);
 
-    &:hover,
-    &:active,
-    &:focus {
+    &:is([aria-current], :hover, :active, :focus) {
       --background-color: var(--contrast-hover);
       --border-color: var(--contrast-hover);
       --color: var(--contrast-inverse);
@@ -145,53 +123,36 @@ input[type="reset"],
   }
 
   // Outline (primary)
-  button.outline,
-  input[type="submit"].outline,
-  input[type="button"].outline,
-  input[type="reset"].outline,
-  [role="button"].outline {
+  :is(button, input[type="submit"], input[type="button"], [role="button"]).outline,
+  input[type="reset"].outline {
     --background-color: transparent;
     --color: var(--primary);
 
-    &:hover,
-    &:active,
-    &:focus {
+    &:is([aria-current], :hover, :active, :focus) {
       --background-color: transparent;
       --color: var(--primary-hover);
     }
   }
 
   // Outline (secondary)
-  button.outline.secondary,
-  input[type="submit"].outline.secondary,
-  input[type="button"].outline.secondary,
-  input[type="reset"].outline.secondary,
-  [role="button"].outline.secondary {
+  :is(button, input[type="submit"], input[type="button"], [role="button"]).outline.secondary,
+  input[type="reset"].outline {
     --color: var(--secondary);
 
-    &:hover,
-    &:active,
-    &:focus {
+    &:is([aria-current], :hover, :active, :focus) {
       --color: var(--secondary-hover);
     }
   }
 
   // Outline (contrast)
-  button.outline.contrast,
-  input[type="submit"].outline.contrast,
-  input[type="button"].outline.contrast,
-  input[type="reset"].outline.contrast,
-  [role="button"].outline.contrast {
+  :is(button, input[type="submit"], input[type="button"], [role="button"]).outline.contrast {
     --color: var(--contrast);
 
-    &:hover,
-    &:active,
-    &:focus {
+    &:is([aria-current], :hover, :active, :focus) {
       --color: var(--contrast-hover);
     }
   }
-}
-
+} 
 @else {
   // Secondary button without .class
   input[type="reset"] {
@@ -200,9 +161,7 @@ input[type="reset"],
     --color: var(--secondary-inverse);
     cursor: pointer;
 
-    &:hover,
-    &:active,
-    &:focus {
+    &:is([aria-current], :hover, :active, :focus) {
       --background-color: var(--secondary-hover);
       --border-color: var(--secondary-hover);
     }
@@ -215,13 +174,10 @@ input[type="reset"],
 }
 
 // Button [disabled]
-// 1. Links without href are disabled by default
-button[disabled],
-input[type="submit"][disabled],
-input[type="button"][disabled],
-input[type="reset"][disabled],
-a[role="button"]:not([href]), // 1
-[role="button"][disabled] {
+// Links without href are disabled by default
+:where(button, [type="submit"], [type="button"], [type="reset"], [role="button"])[disabled],
+:where(fieldset[disabled]) :is(button, [type="submit"], [type="button"], [type="reset"], [role="button"]),
+a[role="button"]:not([href]) {
   opacity: 0.5;
   pointer-events: none;
 }

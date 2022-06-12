@@ -1,6 +1,6 @@
 /*!
- * Pico.css v1.4.4 (https://picocss.com)
- * Copyright 2019-2021 - Licensed under MIT
+ * Pico.css v1.5.2 (https://picocss.com)
+ * Copyright 2019-2022 - Licensed under MIT
  */
 
 // Config
@@ -34,6 +34,7 @@
 @import "components/modal"; // dialog
 @import "components/nav"; // nav
 @import "components/progress"; // progress
+@import "components/dropdown"; // dropdown
 
 // Utilities
 @import "utilities/loading"; // aria-busy=true

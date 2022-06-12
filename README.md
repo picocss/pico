@@ -14,10 +14,12 @@
 </p>
 
 ## Pico.css
-[![CSS Gzipped](https://img.badgesize.io/picocss/pico/master/css/pico.min.css?compression=gzip&color=1095c1&label=CSS%20gzipped)](https://unpkg.com/@picocss/pico@latest/css/pico.min.css)
+[![Standard gzipped CSS](https://img.badgesize.io/picocss/pico/master/css/pico.min.css?compression=gzip&color=1095c1&label=Standard%20CSS)](https://unpkg.com/@picocss/pico@latest/css/pico.min.css)
+[![Classless gzipped CSS](https://img.badgesize.io/picocss/pico/master/css/pico.classless.min.css?compression=gzip&color=1095c1&label=Classless%20CSS)](https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css)
 [![Github release](https://img.shields.io/github/v/release/picocss/pico?color=1095c1&logo=github&logoColor=white)](https://github.com/picocss/pico/releases/latest)
 [![npm version](https://img.shields.io/npm/v/@picocss/pico?color=1095c1)](https://www.npmjs.com/package/@picocss/pico)
 [![License](https://img.shields.io/badge/license-MIT-%231095c1)](https://github.com/picocss/pico/blob/master/LICENSE.md)
+[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/picocss.svg?style=social&label=Follow%20%40picocss)](https://twitter.com/picocss)
 
 https://user-images.githubusercontent.com/23470684/126863110-94061cf1-36ea-4697-94bd-2e1071a95a2f.mp4
 
@@ -40,12 +42,13 @@ Shipped with two beautiful color themes, automatically enabled according to the 
 - [Examples](#examples)
 - [Limitations](#limitations)
 - [Documentation](#documentation)
+- [Browser Support](#browser-support)
 - [Contributing](#contributing)
 - [Copyright and license](#copyright-and-license)
 
 ## Usage
 
-There are 3 ways to get started with pico.css:
+There are 4 ways to get started with pico.css:
 
 **Install manually**
 
@@ -67,6 +70,12 @@ Alternatively, you can use [unpkg CDN](https://unpkg.com/@picocss/pico@latest/) 
 
 ```shell
 npm install @picocss/pico
+```
+
+**Install with Composer**
+
+```shell
+composer require picocss/pico
 ```
 
 ## Class-less version
@@ -162,6 +171,7 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 **Components**
 - [Accordions](https://picocss.com/docs/accordions.html)
 - [Cards](https://picocss.com/docs/cards.html)
+- [Dropdowns](https://picocss.com/docs/dropdowns.html)
 - [Modal](https://picocss.com/docs/modal.html)
 - [Navs](https://picocss.com/docs/navs.html)
 - [Progress](https://picocss.com/docs/progress.html)
@@ -170,11 +180,13 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 - [Loading](https://picocss.com/docs/loading.html)
 - [Tooltips](https://picocss.com/docs/tooltips.html)
 
+## Browser Support
+
+Pico is designed and tested for the latest stable Chrome, Firefox, Edge, and Safari releases. It does not support any version of IE, including IE 11.
+
 ## Contributing
 
-- [`dev`](https://github.com/picocss/pico/tree/dev) branch is open to pull requests.
-- Do not edit [`/css`](https://github.com/picocss/pico/tree/master/css) files directly. Edit the source files in [`/scss`](https://github.com/picocss/pico/tree/master/scss), then recompile the [`/css`](https://github.com/picocss/pico/tree/master/css) files with `npm run build`.
-- Do not edit [`/docs/*.html`](https://github.com/picocss/pico/tree/master/docs) files directly. Edit the source files in [`/docs/src`](https://github.com/picocss/pico/tree/master/docs/src), then recompile the docs files with `npm run build`.
+If you are interested in contributing to Pico CSS, please read our [contributing guidelines](https://github.com/picocss/pico/blob/master/.github/CONTRIBUTING.md).
 
 ## Copyright and license
 

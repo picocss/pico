@@ -2,7 +2,7 @@
  * Grid
  *
  * Pico.css - https://picocss.com
- * Copyright 2019-2021 - Licensed under MIT
+ * Copyright 2019-2022 - Licensed under MIT
  */
 
 const grid = {

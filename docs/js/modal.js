@@ -2,7 +2,7 @@
  * Modal
  *
  * Pico.css - https://picocss.com
- * Copyright 2019-2021 - Licensed under MIT
+ * Copyright 2019-2022 - Licensed under MIT
  */
 
 // Config
@@ -16,7 +16,7 @@ let visibleModal = null;
 // Toggle modal
 const toggleModal = event => {
   event.preventDefault();
-  const modal = document.getElementById(event.target.getAttribute('data-target'));
+  const modal = document.getElementById(event.currentTarget.getAttribute('data-target'));
   (typeof(modal) != 'undefined' && modal != null)
     && isModalOpen(modal) ? closeModal(modal) : openModal(modal)
 }

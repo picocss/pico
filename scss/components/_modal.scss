@@ -21,23 +21,24 @@ dialog {
   height: inherit;
   min-height: 100%;
   padding: var(--spacing);
-  border: none;
+  border: 0;
   background-color: var(--modal-overlay-background-color);
+  color: var(--color);
 
   // Content
   article {
     max-height: calc(100vh - var(--spacing) * 2);
     overflow: auto;
 
-    @if map-get($breakpoints, 'sm') {
-      @media (min-width: map-get($breakpoints, 'sm')) {
-        max-width: map-get($viewports, 'sm');
+    @if map-get($breakpoints, "sm") {
+      @media (min-width: map-get($breakpoints, "sm")) {
+        max-width: map-get($viewports, "sm");
       }
     }
 
-    @if map-get($breakpoints, 'md') {
-      @media (min-width: map-get($breakpoints, 'md')) {
-        max-width: map-get($viewports, 'md');
+    @if map-get($breakpoints, "md") {
+      @media (min-width: map-get($breakpoints, "md")) {
+        max-width: map-get($viewports, "md");
       }
     }
 
@@ -58,7 +59,7 @@ dialog {
     > footer {
       text-align: right;
 
-      [role='button'] {
+      [role="button"] {
         margin-bottom: 0;
 
         &:not(:first-of-type) {
@@ -92,9 +93,7 @@ dialog {
           transition: opacity var(--transition);
         }
 
-        &:hover,
-        &:active,
-        &:focus {
+        &:is([aria-current], :hover, :active, :focus) {
           opacity: 1;
         }
       }
@@ -103,7 +102,7 @@ dialog {
 
   // Closed state
   &:not([open]),
-  &[open='false'] {
+  &[open="false"] {
     display: none;
   }
 }
@@ -125,8 +124,7 @@ dialog {
 @if ($enable-classes and $enable-transitions) {
   $animation-duration: 0.2s;
 
-  .modal-is-opening,
-  .modal-is-closing {
+  :where(.modal-is-opening, .modal-is-closing) {
     dialog,
     dialog > article {
       animation-duration: $animation-duration;

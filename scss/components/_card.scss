@@ -5,7 +5,6 @@
 article {
   margin: var(--block-spacing-vertical) 0;
   padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
-  overflow: hidden;
   border-radius: var(--border-radius);
   background: var(--card-background-color);
   box-shadow: var(--card-box-shadow);
@@ -23,11 +22,15 @@ article {
     margin-top: calc(var(--block-spacing-vertical) * -1);
     margin-bottom: var(--block-spacing-vertical);
     border-bottom: var(--border-width) solid var(--card-border-color);
+    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius);
   }
 
   > footer {
     margin-top: var(--block-spacing-vertical);
     margin-bottom: calc(var(--block-spacing-vertical) * -1);
     border-top: var(--border-width) solid var(--card-border-color);
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
   }
 }

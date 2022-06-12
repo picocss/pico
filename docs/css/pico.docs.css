@@ -102,6 +102,7 @@ main > aside nav {
   }
 }
 main > aside nav a#toggle-docs-navigation {
+  display: block;
   margin: 0;
   margin-bottom: var(--spacing);
   padding: 0;
@@ -134,14 +135,24 @@ main > aside nav.closed-on-mobile details {
 main > aside nav.open a#toggle-docs-navigation svg.expand {
   display: none;
 }
+main > aside details {
+  padding-bottom: 0;
+}
+main > aside details summary {
+  padding-bottom: 0.5rem;
+}
 main > aside li,
 main > aside summary {
   padding-top: 0;
   padding-bottom: 0;
   font-size: 16px;
 }
+main > aside ul {
+  padding-left: 0.25rem;
+}
 main > aside li a {
-  padding: 0.375rem 0.5rem;
+  --nav-link-spacing-vertical: 0.25rem;
+  --nav-link-spacing-horizontal: 0.75rem;
 }
 main > aside li a svg {
   vertical-align: middle;
@@ -150,8 +161,8 @@ main > aside a.secondary:focus {
   background-color: transparent;
   color: var(--primary-hover);
 }
-main > aside a.active,
-main > aside a.active:hover {
+main > aside a[aria-current],
+main > aside a[aria-current]:hover {
   color: var(--primary);
 }
 main > aside details {
@@ -167,9 +178,9 @@ main > aside details summary::after {
   display: none;
 }
 main > aside details[open] > summary {
-  margin-bottom: calc(var(--spacing) * 0.75);
+  margin-bottom: 0;
 }
-main > aside details[open] > summary:not(:focus) {
+main > aside details[open] > summary:not([role=button]):not(:focus) {
   color: var(--h1-color);
 }
 
@@ -266,6 +277,10 @@ main > aside details[open] > summary:not(:focus) {
   vertical-align: bottom;
 }
 
+#buttons a[role=button] {
+  margin-right: calc(var(--spacing) * 0.5);
+}
+
 #forms div.grid {
   grid-row-gap: 0;
 }
@@ -283,11 +298,6 @@ h1 {
 
 section > hgroup {
   margin-bottom: calc(var(--typography-spacing-vertical) * 2);
-}
-
-a[role=button] {
-  margin-right: calc(var(--typography-spacing-vertical) / 4);
-  margin-bottom: var(--typography-spacing-vertical);
 }
 
 [role=document] section > h1,
@@ -390,6 +400,7 @@ dialog.example:not([open]), dialog.example[open=false] {
  * Docs: Navs
  */
 body > nav {
+  --nav-link-spacing-vertical: 1rem;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   z-index: 99;
   position: fixed;
@@ -409,20 +420,27 @@ body > nav a {
 body > nav svg {
   vertical-align: text-bottom;
 }
-body > nav ul:first-of-type li:first-of-type a {
-  width: 3.5rem;
-  height: 3.5rem;
+body > nav ul:first-of-type {
   margin-left: calc(var(--spacing) * -1);
+}
+body > nav ul:first-of-type li {
+  padding: 0;
+}
+body > nav ul:first-of-type li:first-of-type a {
+  display: block;
+  margin: 0;
   padding: 0;
   background: var(--h1-color);
   color: var(--nav-logo-color);
 }
 body > nav ul:first-of-type li:first-of-type a svg {
+  display: block;
+  width: 3.5rem;
   height: 3.5rem;
 }
 body > nav ul:first-of-type li:nth-of-type(2) {
   display: none;
-  margin-left: var(--spacing);
+  margin-left: calc(var(--spacing) * 1.5);
   color: var(--h1-color);
 }
 @media (min-width: 992px) {

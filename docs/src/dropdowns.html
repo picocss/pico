@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    ${require('./_head.html')
+      title="Dropdowns"
+      description="Dropdown menus and custom selects without JavaScript." 
+      canonical="dropdowns.html"
+    }
+  </head>
+
+  <body>
+    ${require('./_nav.html')}
+
+    <main class="container" id="docs">
+      ${require('./_sidebar.html') active="dropdowns-link"}
+
+      <div role="document">
+        <section id="dropdown">
+          <hgroup>
+            <h1>Dropdowns</h1>
+            <h2>Dropdown menus and custom selects without JavaScript.</h2>
+          </hgroup>
+          <p>Dropdowns are built with <code>&lt;<b>details</b> <i>role</i>=<u>"list"</u>&gt;</code> as a wrapper and <code>&lt;<b>summary</b>&gt;</code> and <code>&lt;<b>ul</b>&gt;</code> as direct children.</p>
+          <p>For style consistency with the form elements, dropdowns are styled like a <a href="forms.html">&lt;select&gt;</a> by default.</p>
+          <article aria-label="Dropdowns as Selects">
+            <details role="list">
+              <summary aria-haspopup="listbox">Dropdown</summary>
+              <ul role="listbox">
+                <li><a href="#" onclick="event.preventDefault()">Action</a></li>
+                <li><a href="#" onclick="event.preventDefault()">Another action</a></li>
+                <li><a href="#" onclick="event.preventDefault()">Something else here</a></li>
+              </ul>
+            </details>
+            <select required>
+              <option value="" disabled selected>Select</option>
+              <option>Option</option>
+              <option>Another option</option>
+              <option>Something else here</option>
+            </select>
+            <footer class="code">
+
+<pre><code><em>&lt;!-- Dropdown --&gt;</em>
+&lt;<b>details</b> <i>role</i>=<u>"list"</u>&gt;
+  &lt;<b>summary</b> <i>aria-haspopup</i>=<u>"listbox"</u>&gt;Dropdown&lt;/<b>summary</b>&gt;
+  &lt;<b>ul</b> <i>role</i>=<u>"listbox"</u>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Another action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Something else here&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>details</b>&gt;
+
+<em>&lt;!-- Select --&gt;</em>
+&lt;<b>select</b></u>&gt;
+  &lt;<b>option</b> <i>value</i>=<u>""</u> <i>disabled selected</i>&gt;Select&lt;/<b>option</b>&gt;
+  &lt;<b>option</b>&gt;…&lt;/<b>option</b>&gt;
+&lt;/<b>select</b>&gt;
+</code></pre>
+
+            </footer> 
+          </article>
+          <p><code>&lt;<b>summary</b> <i>role</i>=<u>"button"</u>&gt;</code> transforms the dropdown into a button.</p>
+          <article aria-label="Dropdowns as Buttons">
+            <details role="list">
+              <summary aria-haspopup="listbox" role="button">Dropdown as a button 1</summary>
+              <ul role="listbox">
+                <li><a href="#" onclick="event.preventDefault()">Action</a></li>
+                <li><a href="#" onclick="event.preventDefault()">Another action</a></li>
+                <li><a href="#" onclick="event.preventDefault()">Something else here</a></li>
+              </ul>
+            </details>
+            <details role="list">
+              <summary aria-haspopup="listbox" role="button" class="secondary">Dropdown as a button 2</summary>
+              <ul role="listbox">
+                <li><a href="#" onclick="event.preventDefault()">Action</a></li>
+                <li><a href="#" onclick="event.preventDefault()">Another action</a></li>
+                <li><a href="#" onclick="event.preventDefault()">Something else here</a></li>
+              </ul>
+            </details>
+            <details role="list">
+              <summary aria-haspopup="listbox" role="button" class="contrast">Dropdown as a button 3</summary>
+              <ul role="listbox">
+                <li><a href="#" onclick="event.preventDefault()">Action</a></li>
+                <li><a href="#" onclick="event.preventDefault()">Another action</a></li>
+                <li><a href="#" onclick="event.preventDefault()">Something else here</a></li>
+              </ul>
+            </details>
+            <footer class="code">
+
+<pre><code><em>&lt;!-- Primary --&gt;</em>
+&lt;<b>details</b> <i>role</i>=<u>"list"</u>&gt;
+  &lt;<b>summary</b> <i>aria-haspopup</i>=<u>"listbox"</u> <i>role</i>=<u>"button"</u>&gt;
+    Dropdown as a button 1
+  &lt;/<b>summary</b>&gt;
+  &lt;<b>ul</b> <i>role</i>=<u>"listbox"</u>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Another action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Something else here&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>details</b>&gt;
+
+<em>&lt;!-- Secondary --&gt;</em>
+&lt;<b>details</b> <i>role</i>=<u>"list"</u>&gt;
+  &lt;<b>summary</b> <i>aria-haspopup</i>=<u>"listbox"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"secondary"</u>&gt;
+    Dropdown as a button 2
+  &lt;/<b>summary</b>&gt;
+  &lt;<b>ul</b> <i>role</i>=<u>"listbox"</u>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Another action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Something else here&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>details</b>&gt;
+
+<em>&lt;!-- Contrast --&gt;</em>
+&lt;<b>details</b> <i>role</i>=<u>"list"</u>&gt;
+  &lt;<b>summary</b> <i>aria-haspopup</i>=<u>"listbox"</u> <i>role</i>=<u>"button"</u> <i>class</i>=<u>"contrast"</u>&gt;
+    Dropdown as a button 3
+  &lt;/<b>summary</b>&gt;
+  &lt;<b>ul</b> <i>role</i>=<u>"listbox"</u>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Another action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Something else here&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>details</b>&gt;
+</code></pre>
+              
+            </footer> 
+          </article>
+          <p>Dropdowns can be used as custom selects with <code>&lt;<b>input</b> <i>type</i>=<u>"radio"</u>&gt;</code> or  <code>&lt;<b>input</b> <i>type</i>=<u>"checkbox"</u>&gt;</code></p>
+          <article aria-label="Dropdowns with radio buttons or checkboxes">
+            <details role="list">
+              <summary aria-haspopup="listbox">Select single element</summary>
+              <ul role="listbox">
+                <li>
+                  <label for="small">
+                    <input type="radio" id="small" name="size" value="small" />
+                    Small
+                  </label>
+                </li>
+                <li>
+                  <label for="medium">
+                    <input type="radio" id="medium" name="size" value="medium" />
+                    Medium
+                  </label>
+                </li>
+                <li>
+                  <label for="large">
+                    <input type="radio" id="large" name="size" value="large" />
+                    Large
+                  </label>
+                </li>
+              </ul>
+            </details>
+            <details role="list">
+              <summary aria-haspopup="listbox">Select multiple elements</summary>
+              <ul role="listbox">
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    Banana
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    Watermelon
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input type="checkbox" />
+                    Apple
+                  </label>
+                </li>
+              </ul>
+            </details>
+            <footer class="code">
+
+<pre><code><em>&lt;!-- With radio buttons --&gt;</em>
+&lt;<b>details</b> <i>role</i>=<u>"list"</u>&gt;
+  &lt;<b>summary</b> <i>aria-haspopup</i>=<u>"listbox"</u>&gt;Dropdown&lt;/<b>summary</b>&gt;
+  &lt;<b>ul</b> <i>role</i>=<u>"listbox"</u>&gt;
+    &lt;<b>li</b>&gt;
+      &lt;<b>label</b> <i>for</i>=<u>"small"</u>&gt;
+        &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"small"</u> <i>name</i>=<u>"size"</u> <i>value</i>=<u>"small"</u>&gt;
+        Small
+      &lt;/<b>label</b>&gt;
+    &lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;
+      &lt;<b>label</b> <i>for</i>=<u>"medium"</u>&gt;
+        &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"medium"</u> <i>name</i>=<u>"size"</u> <i>value</i>=<u>"medium"</u>&gt;
+        Medium
+      &lt;/<b>label</b>&gt;
+    &lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;
+      &lt;<b>label</b> <i>for</i>=<u>"large"</u>&gt;
+        &lt;<b>input</b> <i>type</i>=<u>"radio"</u> <i>id</i>=<u>"large"</u> <i>name</i>=<u>"size"</u> <i>value</i>=<u>"large"</u>&gt;
+        Large
+      &lt;/<b>label</b>&gt;
+    &lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>details</b>&gt;
+
+<em>&lt;!-- With checkboxes --&gt;</em>
+&lt;<b>details</b> <i>role</i>=<u>"list"</u>&gt;
+  &lt;<b>summary</b> <i>aria-haspopup</i>=<u>"listbox"</u>&gt;Dropdown&lt;/<b>summary</b>&gt;
+  &lt;<b>ul</b> <i>role</i>=<u>"listbox"</u>&gt;
+    &lt;<b>li</b>&gt;
+      &lt;<b>label</b>&gt;
+        &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u>&gt;
+        Banana
+      &lt;/<b>label</b>&gt;
+    &lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;
+      &lt;<b>label</b>&gt;
+        &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u>&gt;
+        Watermelon
+      &lt;/<b>label</b>&gt;
+    &lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;
+      &lt;<b>label</b>&gt;
+        &lt;<b>input</b> <i>type</i>=<u>"checkbox"</u>&gt;
+        Apple
+      &lt;/<b>label</b>&gt;
+    &lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>details</b>&gt;
+              
+            </footer> 
+          </article>
+          <p>Dropdowns can be used inside a <a href="navs.html">&lt;nav&gt;</a> with a nested <code>&lt;<b>details</b> <i>role</i>=<u>"list"</u>&gt;</code></p>
+          <p>Example with a dropdown as a link:</p>
+          <article aria-label="Dropdowns inside a nav">
+            <nav>
+              <ul>
+                <li><strong>Brand</strong></li>
+              </ul>
+              <ul>
+                <li><a href="#" onclick="event.preventDefault()">Link</a></li>
+                <li>
+                  <details role="list" dir="rtl">
+                    <summary aria-haspopup="listbox" role="link">Dropdown</summary>
+                    <ul role="listbox">
+                      <li><a href="#" onclick="event.preventDefault()">Action</a></li>
+                      <li><a href="#" onclick="event.preventDefault()">Another action</a></li>
+                      <li><a href="#" onclick="event.preventDefault()">Something else here</a></li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </nav>
+            <footer class="code">
+
+<pre><code>&lt;<b>nav</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>strong</b>&gt;Brand&lt;/<b>strong</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;
+      &lt;<b>details</b> <i>role</i>=<u>"list"</u> <i>dir</i>=<u>"rtl"</u>&gt;
+        &lt;<b>summary</b> <i>aria-haspopup</i>=<u>"listbox"</u> <i>role</i>=<u>"link"</u>&gt;Dropdown&lt;/<b>summary</b>&gt;
+        &lt;<b>ul</b> <i>role</i>=<u>"listbox"</u>&gt;
+          &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+          &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Another action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+          &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Something else here&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+        &lt;/<b>ul</b>&gt;
+      &lt;/<b>details</b>&gt;
+    &lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>nav</b>&gt;</code></pre>
+
+            </footer> 
+          </article>
+          <p>Example with a default dropdown and a dropdown as a button:</p>
+          <article aria-label="Dropdowns inside a nav">
+            <nav>
+              <ul>
+                <li>
+                  <details role="list">
+                    <summary aria-haspopup="listbox">Dropdown</summary>
+                    <ul role="listbox">
+                      <li><a href="#" onclick="event.preventDefault()">Action</a></li>
+                      <li><a href="#" onclick="event.preventDefault()">Another action</a></li>
+                      <li><a href="#" onclick="event.preventDefault()">Something else here</a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li>
+                  <details role="list">
+                    <summary aria-haspopup="listbox" role="button">Dropdown</summary>
+                    <ul role="listbox">
+                      <li><a href="#" onclick="event.preventDefault()">Action</a></li>
+                      <li><a href="#" onclick="event.preventDefault()">Another action</a></li>
+                      <li><a href="#" onclick="event.preventDefault()">Something else here</a></li>
+                    </ul>
+                  </details>
+                </li>
+              </ul>
+            </nav>
+            <footer class="code">
+
+<pre><code>&lt;<b>nav</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;
+      &lt;<b>details</b> <i>role</i>=<u>"list"</u>&gt;
+        &lt;<b>summary</b> <i>aria-haspopup</i>=<u>"listbox"</u>&gt;Dropdown&lt;/<b>summary</b>&gt;
+        &lt;<b>ul</b> <i>role</i>=<u>"listbox"</u>&gt;
+          &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+          &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Another action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+          &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Something else here&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+        &lt;/<b>ul</b>&gt;
+      &lt;/<b>details</b>&gt;
+    &lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;
+      &lt;<b>details</b> <i>role</i>=<u>"list"</u>&gt;
+        &lt;<b>summary</b> <i>aria-haspopup</i>=<u>"listbox"</u> <i>role</i>=<u>"button"</u>&gt;Dropdown&lt;/<b>summary</b>&gt;
+        &lt;<b>ul</b> <i>role</i>=<u>"listbox"</u>&gt;
+          &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+          &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Another action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+          &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Something else here&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+        &lt;/<b>ul</b>&gt;
+      &lt;/<b>details</b>&gt;
+    &lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>nav</b>&gt;</code></pre>
+
+            </footer> 
+          </article>
+          <p>You can also use  <code>&lt;<b>li</b> <i>role</i>=<u>"list"</u>&gt;</code> as a nested wrapper to render a list as a dropdown.</p>
+          <p>ℹ️&nbsp;This syntax is experimental. In this version, the dropdown menu is triggered on hover.</p>
+          <article aria-label="Dropdowns inside a nav">
+            <nav>
+              <ul>
+                <li><strong>Brand</strong></li>
+              </ul>
+              <ul>
+                <li><a href="#" onclick="event.preventDefault()">Link</a></li>
+                <li><a href="#" onclick="event.preventDefault()">Link</a></li>
+                <li role="list" dir="rtl">
+                  <a href="#" onclick="event.preventDefault()" aria-haspopup="listbox">Dropdown</a>
+                  <ul role="listbox">
+                    <li><a href="#" onclick="event.preventDefault()">Action</a></li>
+                    <li><a href="#" onclick="event.preventDefault()">Another action</a></li>
+                    <li><a href="#" onclick="event.preventDefault()">Something else here</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+            <footer class="code">
+
+<pre><code>&lt;<b>nav</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>strong</b>&gt;Brand&lt;/<b>strong</b>&gt;&lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Link&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+    &lt;<b>li</b> <i>role</i>=<u>"list"</u> <i>dir</i>=<u>"rtl"</u>&gt;
+      &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>aria-haspopup</i>=<u>"listbox"</u>&gt;Dropdown&lt;/<b>a</b>&gt;
+      &lt;<b>ul</b> <i>role</i>=<u>"listbox"</u>&gt;
+        &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+        &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Another action&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+        &lt;<b>li</b>&gt;&lt;<b>a</b>&gt;Something else here&lt;/<b>a</b>&gt;&lt;/<b>li</b>&gt;
+      &lt;/<b>ul</b>&gt;
+    &lt;/<b>li</b>&gt;
+  &lt;/<b>ul</b>&gt;
+&lt;/<b>nav</b>&gt;</code></pre>
+
+            </footer> 
+          </article>
+        </section>
+
+        ${require('./_footer.html')}
+
+      </div>
+    </main>
+    <script src="js/commons.min.js"></script>
+  </body>
+</html>
