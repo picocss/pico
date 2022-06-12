@@ -55,13 +55,13 @@ nav {
   &[aria-label="breadcrumb"] {
     align-items: center;
     justify-content: left;
-    
+
     & ul li {
-      padding-left:0;
-  
+      padding-inline-start: 0;
+
       &:not(:last-child) {
         a::after {
-          padding-left: 0.5rem;
+          padding-inline-start: 0.5rem;
           content: "/";
           color: var(--muted-color);
         }
