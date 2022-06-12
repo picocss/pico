@@ -71,6 +71,14 @@ progress {
   }
 }
 
+[dir="rtl"] {
+  @media (prefers-reduced-motion: no-preference) {
+    progress:indeterminate {
+      animation-direction: reverse;
+    }
+  }
+}
+
 @keyframes progressIndeterminate {
   0% {
     background-position: 200% 0;
