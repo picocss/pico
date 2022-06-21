@@ -105,11 +105,19 @@
   --accordion-open-summary-color: var(--muted-color);
 
   // Card (<article>)
+  $box-shadow-elevation: 1rem;
+  $box-shadow-blur-strengh: 6rem;
+  $box-shadow-opacity: 0.06;
   --card-background-color: #{mix($black, $grey-900, 25%)};
-  --card-border-color: #{mix($black, $grey-900, 37.5%)};
-  --card-box-shadow: 0 0.125rem 1rem #{rgba($black, 0.06)},
-    0 0.125rem 2rem #{rgba($black, 0.12)},
-    0 0 0 0.0625rem #{rgba($black, 0.036)};
+  --card-border-color: var(--card-background-color);
+  --card-box-shadow:
+    #{($box-shadow-elevation * 0.5 * 0.029)} #{($box-shadow-elevation * 0.029)} #{($box-shadow-blur-strengh * 0.029)} #{rgba($black, ($box-shadow-opacity * 0.283))},
+    #{($box-shadow-elevation * 0.5 * 0.067)} #{($box-shadow-elevation * 0.067)} #{($box-shadow-blur-strengh * 0.067)} #{rgba($black, ($box-shadow-opacity * 0.4))},
+    #{($box-shadow-elevation * 0.5 * 0.125)} #{($box-shadow-elevation * 0.125)} #{($box-shadow-blur-strengh * 0.125)} #{rgba($black, ($box-shadow-opacity * 0.5))},
+    #{($box-shadow-elevation * 0.5 * 0.225)} #{($box-shadow-elevation * 0.225)} #{($box-shadow-blur-strengh * 0.225)} #{rgba($black, ($box-shadow-opacity * 0.6))},
+    #{($box-shadow-elevation * 0.5 * 0.417)} #{($box-shadow-elevation * 0.417)} #{($box-shadow-blur-strengh * 0.417)} #{rgba($black, ($box-shadow-opacity * 0.717))},
+    #{($box-shadow-elevation * 0.5)} #{$box-shadow-elevation} #{$box-shadow-blur-strengh} #{rgba($black, $box-shadow-opacity)},
+    0 0 0 0.0625rem #{rgba($black, ($box-shadow-opacity * 0.25) )};
   --card-sectionning-background-color: #{mix($black, $grey-900, 12.5%)};
 
   // Dropdown (<details role="list">)

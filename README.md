@@ -19,6 +19,7 @@
 [![Github release](https://img.shields.io/github/v/release/picocss/pico?color=1095c1&logo=github&logoColor=white)](https://github.com/picocss/pico/releases/latest)
 [![npm version](https://img.shields.io/npm/v/@picocss/pico?color=1095c1)](https://www.npmjs.com/package/@picocss/pico)
 [![License](https://img.shields.io/badge/license-MIT-%231095c1)](https://github.com/picocss/pico/blob/master/LICENSE.md)
+[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/picocss.svg?style=social&label=Follow%20%40picocss)](https://twitter.com/picocss)
 
 https://user-images.githubusercontent.com/23470684/126863110-94061cf1-36ea-4697-94bd-2e1071a95a2f.mp4
 
@@ -47,7 +48,7 @@ Shipped with two beautiful color themes, automatically enabled according to the 
 
 ## Usage
 
-There are 3 ways to get started with pico.css:
+There are 4 ways to get started with pico.css:
 
 **Install manually**
 
@@ -69,6 +70,12 @@ Alternatively, you can use [unpkg CDN](https://unpkg.com/@picocss/pico@latest/) 
 
 ```shell
 npm install @picocss/pico
+```
+
+**Install with Composer**
+
+```shell
+composer require picocss/pico
 ```
 
 ## Class-less version
