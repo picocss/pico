@@ -1,0 +1,19 @@
+/**
+ * Docs: Tooltips
+ */
+
+.tooltip-placement {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+  .top, .bottom{
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  .left{
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .right{
+    grid-column-start: 3;
+  }
+}

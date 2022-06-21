@@ -24,11 +24,24 @@
             <p>Tooltip on a <a href="#" onclick="event.preventDefault()" data-tooltip="Tooltip">link</a></p>
             <p>Tooltip on <em data-tooltip="Tooltip">inline element</em></p>
             <p><button data-tooltip="Tooltip" aria-label="Example button">Tooltip on a button</button></p>
+            <p>Tooltip with <code>data-placement</code></p>
+            <div class="tooltip-placement">
+                <div class="top"><button data-tooltip="Top" data-placement="top" aria-label="Top tooltip">Top tooltip</button></div>
+                <div class="left"><button data-tooltip="Left" data-placement="left" aria-label="Left tooltip">Left tooltip</button></div>
+                <div class="right"><button data-tooltip="Right" data-placement="right" aria-label="Right tooltip">Right tooltip</button></div>
+                <div class="bottom"><button data-tooltip="Bottom" data-placement="bottom" aria-label="Bottom tooltip">Bottom tooltip</button></div>
+            </div>
             <footer class="code">
 
 <pre><code>&lt;<b>p</b>&gt;Tooltip on a &lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>data-tooltip</i>=<u>"Tooltip"</u>&gt;link&lt;/<b>a</b>&gt;&lt;/<b>p</b>&gt;
 &lt;<b>p</b>&gt;Tooltip on &lt;<b>em</b> <i>data-tooltip</i>=<u>"Tooltip"</u>&gt;inline element&lt;/<b>em</b>&gt;&lt;/<b>p</b>&gt;
-&lt;<b>p</b>&gt;&lt;<b>button</b> <i>data-tooltip</i>=<u>"Tooltip"</u>&gt;Tooltip on a button&lt;/<b>button</b>&gt;&lt;/<b>p</b>&gt;</code></pre>
+&lt;<b>p</b>&gt;&lt;<b>button</b> <i>data-tooltip</i>=<u>"Tooltip"</u>&gt;Tooltip on a button&lt;/<b>button</b>&gt;&lt;/<b>p</b>&gt;
+<em>&lt;-- Placement --&gt;</em>
+&lt;<b>div</b>&gt;&lt;<b>button</b> <i>data-tooltip</i>=<u>"Top"</u> <i>data-placement</i>=<u>"top"</u>&gt;Top tooltip&lt;/<b>button</b>&gt;&lt;/<b>div</b>&gt;
+&lt;<b>div</b>&gt;&lt;<b>button</b> <i>data-tooltip</i>=<u>"Left"</u> <i>data-placement</i>=<u>"left"</u>&gt;Left tooltip&lt;/<b>button</b>&gt;&lt;/<b>div</b>&gt;
+&lt;<b>div</b>&gt;&lt;<b>button</b> <i>data-tooltip</i>=<u>"Right"</u> <i>data-placement</i>=<u>"right"</u>&gt;Right tooltip&lt;/<b>button</b>&gt;&lt;/<b>div</b>&gt;
+&lt;<b>div</b>&gt;&lt;<b>button</b> <i>data-tooltip</i>=<u>"Bottom"</u> <i>data-placement</i>=<u>"bottom"</u>&gt;Bottom tooltip&lt;/<b>button</b>&gt;&lt;/<b>div</b>&gt;
+</code></pre>
 
             </footer>
           </article>
