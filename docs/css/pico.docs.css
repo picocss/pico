@@ -505,4 +505,23 @@ body > nav ul:first-of-type li:nth-of-type(2) {
   }
 }
 
+/**
+ * Docs: Tooltips
+ */
+.tooltip-placement {
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
+}
+.tooltip-placement .top, .tooltip-placement .bottom {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.tooltip-placement .left {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.tooltip-placement .right {
+  grid-column-start: 3;
+}
+
 /*# sourceMappingURL=pico.docs.css.map */
