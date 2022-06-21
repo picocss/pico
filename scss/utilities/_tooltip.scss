@@ -11,8 +11,8 @@
     cursor: help;
   }
 
-  &[placement=top]::before,
-  &[placement=top]::after,
+  &[data-placement=top]::before,
+  &[data-placement=top]::after,
   &::before,
   &::after {
     display: block;
@@ -37,7 +37,7 @@
     pointer-events: none;
   }
   // Caret
-  &[placement=top]::after,
+  &[data-placement=top]::after,
   &::after {
     padding: 0;
     transform: translate(-50%, 0rem);
@@ -49,7 +49,7 @@
     content: "";
     color: var(--tooltip-background-color);
   }
-  &[placement=bottom] {
+  &[data-placement=bottom] {
     &::before,
     &::after {
       top: 100%;
@@ -62,7 +62,7 @@
       border-bottom: .3rem solid;
     }
   }
-  &[placement=left] {
+  &[data-placement=left] {
     &::before,
     &::after {
       top: 50%;
@@ -77,7 +77,7 @@
       border-left: .3rem solid;
     }
   }
-  &[placement=right] {
+  &[data-placement=right] {
     &::before,
     &::after {
       top: 50%;
@@ -105,59 +105,59 @@
   // Animations, excluding touch devices
   @if $enable-transitions {
     @media (hover: hover) and (pointer: fine) {
-      &[placement=bottom]:focus,
-      &[placement=bottom]:hover
+      &[data-placement=bottom]:focus,
+      &[data-placement=bottom]:hover
       &:focus,
       &:hover {
         &::before,
         &::after {
           animation-duration: .2s;
-          animation-name: slide-top;
+          animation-name: tooltip-slide-top;
         }
 
         &::after {
-          animation-name: slideCaret-top; 
+          animation-name: tooltip-caret-slide-top; 
         }
       }
-      &[placement=bottom] {
+      &[data-placement=bottom] {
         &:focus,
         &:hover {
           &::before,
           &::after {
             animation-duration: .2s;
-            animation-name: slide-bottom;
+            animation-name: tooltip-slide-bottom;
           }
   
           &::after {
-            animation-name: slideCaret-bottom; 
+            animation-name: tooltip-caret-slide-bottom; 
           }
         }
       }
-      &[placement=left] {
+      &[data-placement=left] {
         &:focus,
         &:hover {
           &::before,
           &::after {
             animation-duration: .2s;
-            animation-name: slide-left;
+            animation-name: tooltip-slide-left;
           }
   
           &::after {
-            animation-name: slideCaret-left; 
+            animation-name: tooltip-caret-slide-left; 
           }
         }
       }
-      &[placement=right] {
+      &[data-placement=right] {
         &:focus,
         &:hover {
           &::before,
           &::after {
             animation-duration: .2s;
-            animation-name: slide-right;
+            animation-name: tooltip-slide-right;
           }
   
           &::after {
-            animation-name: slideCaret-right; 
+            animation-name: tooltip-caret-slide-right; 
           }
         }
       }
@@ -167,7 +167,7 @@
 
 // Animations
 @if $enable-transitions {
-  @keyframes slide-top {
+  @keyframes tooltip-slide-top {
     from {
       transform: translate(-50%, .75rem);
       opacity: 0;
@@ -177,7 +177,7 @@
       opacity: 1;
     }
   }
-  @keyframes slideCaret-top {
+  @keyframes tooltip-caret-slide-top {
     from {
       opacity: 0;
     }
@@ -191,7 +191,7 @@
     }
   }
 
-  @keyframes slide-bottom {
+  @keyframes tooltip-slide-bottom {
     from {
       transform: translate(-50%, -.75rem);
       opacity: 0;
@@ -201,7 +201,7 @@
       opacity: 1;
     }
   }
-  @keyframes slideCaret-bottom {
+  @keyframes tooltip-caret-slide-bottom {
     from {
       opacity: 0;
     }
@@ -215,7 +215,7 @@
     }
   }
 
-  @keyframes slide-left {
+  @keyframes tooltip-slide-left {
     from {
       transform: translate(.75rem, -50%);
       opacity: 0;
@@ -225,7 +225,7 @@
       opacity: 1;
     }
   }
-  @keyframes slideCaret-left {
+  @keyframes tooltip-caret-slide-left {
     from {
       opacity: 0;
     }
@@ -239,7 +239,7 @@
     }
   }
 
-  @keyframes slide-right {
+  @keyframes tooltip-slide-right {
     from {
       transform: translate(-.75rem, -50%);
       opacity: 0;
@@ -249,7 +249,7 @@
       opacity: 1;
     }
   }
-  @keyframes slideCaret-right {
+  @keyframes tooltip-caret-slide-right {
     from {
       opacity: 0;
     }
