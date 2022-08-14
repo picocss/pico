@@ -294,8 +294,8 @@ select:invalid {
   opacity: 1;
 }
 
-// Margin bottom (Not Checkboxes and Radios)
-input:not([type="checkbox"]):not([type="radio"]),
+// Margin bottom (Not Checkboxes and Radios and Inline Buttons)
+input:not([type="checkbox"]):not([type="radio"]):not([role="button"]),
 select,
 textarea {
   margin-bottom: var(--spacing);
