@@ -74,10 +74,10 @@
 
 // Responsives spacings
 @if $enable-responsive-spacings {
-  // Sectionning
-  body > header,
-  body > main,
-  body > footer,
+  // Sectioning
+  #{$semantic-root-element} > header,
+  #{$semantic-root-element} > main,
+  #{$semantic-root-element} > footer,
   section {
     @if map-get($breakpoints, "sm") {
       @media (min-width: map-get($breakpoints, "sm")) {
