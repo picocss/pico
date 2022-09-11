@@ -35,12 +35,8 @@
 
 // Date & Time
 // :not() are needed to add Specificity and avoid !important on padding
-input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]) {
-  &[type="date"],
-  &[type="datetime-local"],
-  &[type="month"],
-  &[type="time"],
-  &[type="week"] {
+input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
+  &:is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
     --icon-position: 0.75rem;
     --icon-width: 1rem;
     padding-right: calc(var(--icon-width) + var(--icon-position));
@@ -224,7 +220,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="
 
 // Search
 // :not() are needed to add Specificity and avoid !important on padding
-input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]) {
+input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
   &[type="search"] {
     padding-inline-start: calc(var(--form-element-spacing-horizontal) + 1.75rem);
     border-radius: 5rem;
@@ -263,7 +259,7 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="
 
 [dir="rtl"] {
   :where(input) {
-    &:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]) {
+    &:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
       &[type="search"] {
         background-position: center right 1.125rem;
         

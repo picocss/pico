@@ -5,7 +5,7 @@
 [data-tooltip] {
   position: relative;
 
-  &:not(a):not(button):not(input) {
+  &:not(a, button, input) {
     border-bottom: 1px dotted;
     text-decoration: none;
     cursor: help;

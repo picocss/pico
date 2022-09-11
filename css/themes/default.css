@@ -180,7 +180,7 @@ tfoot td {
   --border-width: 3px;
 }
 
-:not(thead):not(tfoot) > * > td {
+:not(thead, tfoot) > * > td {
   --font-size: 0.875em;
 }
 
