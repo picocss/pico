@@ -516,4 +516,11 @@ kbd {
   color-scheme: dark;
 }
 
+progress,
+[type=checkbox],
+[type=radio],
+[type=range] {
+  accent-color: var(--primary);
+}
+
 /*# sourceMappingURL=default.css.map */
