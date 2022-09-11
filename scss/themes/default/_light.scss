@@ -116,7 +116,7 @@
     #{($box-shadow-elevation * 0.5 * 0.417)} #{($box-shadow-elevation * 0.417)} #{($box-shadow-blur-strengh * 0.417)} #{rgba($grey-900, ($box-shadow-opacity * 0.717))},
     #{($box-shadow-elevation * 0.5)} #{$box-shadow-elevation} #{$box-shadow-blur-strengh} #{rgba($grey-900, $box-shadow-opacity)},
     0 0 0 0.0625rem #{rgba($grey-900, ($box-shadow-opacity * 0.25) )};
---card-sectionning-background-color: #{mix($grey-50, $white, 25%)};
+  --card-sectionning-background-color: #{mix($grey-50, $white, 25%)};
 
   // Dropdown (<details role="list">)
   --dropdown-background-color: #{mix($grey-50, $white, 25%)};
@@ -126,7 +126,7 @@
   --dropdown-hover-background-color: #{$grey-50};
 
   // Modal (<dialog>)
-  --modal-overlay-background-color: #{rgba($grey-100, 0.8)};
+  --modal-overlay-background-color: #{rgba($grey-100, 0.7)};
 
   // Progress
   --progress-background-color: #{$grey-100};
