@@ -2352,7 +2352,6 @@ a[aria-busy=true] {
     animation-name: tooltip-caret-slide-right;
   }
 }
-
 @-webkit-keyframes tooltip-slide-top {
   from {
     transform: translate(-50%, 0.75rem);
@@ -2363,7 +2362,6 @@ a[aria-busy=true] {
     opacity: 1;
   }
 }
-
 @keyframes tooltip-slide-top {
   from {
     transform: translate(-50%, 0.75rem);
@@ -2538,6 +2536,7 @@ a[aria-busy=true] {
     opacity: 1;
   }
 }
+
 /**
  * Accessibility & User interaction
  */
