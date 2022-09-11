@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico.css v1.5.2 (https://picocss.com)
+ * Pico.css v1.5.3 (https://picocss.com)
  * Copyright 2019-2022 - Licensed under MIT
  */
 /**
@@ -1027,7 +1027,6 @@ textarea {
   -moz-appearance: none;
   appearance: none;
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
-  vertical-align: middle;
 }
 
 input,
