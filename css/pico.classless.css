@@ -1928,7 +1928,6 @@ nav :where(a, [role=link]) {
 nav :where(a, [role=link]):is([aria-current], :hover, :active, :focus) {
   text-decoration: none;
 }
-
 nav[aria-label=breadcrumb] {
   align-items: center;
   justify-content: left;
@@ -1946,7 +1945,6 @@ nav[aria-label=breadcrumb] ul li:not(:last-child) a::after {
 nav[aria-label=breadcrumb] a[aria-current=page] {
   color: inherit;
 }
-
 nav [role=button] {
   margin-right: inherit;
   margin-left: inherit;
