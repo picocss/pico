@@ -114,14 +114,48 @@
   &lt;/<b>nav</b>&gt;
 &lt;/<b>aside</b>&gt;</code></pre>
 
-            </footer>
-          </article>
-        </section>
+          </footer>
+        </article>
 
-        ${require('./_footer.html')}
-        
-      </div>
-    </main>
-    <script src="js/commons.min.js"></script>
-  </body>
+        <p>With <code><i>aria-label</i>=<u>"breadcrumb"</u></code>, you can turn a nav into a breadcrumb, specifying the current page with: <code><i>aria-current</i>=<u>"page"</u></code>.</p>
+
+        <article aria-label="breadcrumb nav example">
+          <nav aria-label="breadcrumb">
+            <ul>
+              <li>
+                <a href="#">First link</a>
+              </li>
+              <li>
+                <a href="#">Second link</a>
+              </li>
+              <li>
+                <a aria-current="page">
+                  Last link
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+          <footer class="code">
+
+<pre><code>&lt;<b>nav</b> <i>aria-label</i>=<u>"breadcrumb"</u>&gt;
+  &lt;<b>ul</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;First link&lt;<b>/a</b>&gt;&lt;<b>/li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Second link&lt;<b>/a</b>&gt;&lt;<b>/li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>aria-current</i>=<u>"page"</u>&gt;Last link&lt;<b>/a</b>&gt;&lt;<b>/li</b>&gt;
+  &lt;<b>/ul</b>&gt;
+&lt;/<b>nav</b>&gt;</code></pre>
+
+          </footer>
+        </article>
+
+      </section>
+
+      ${require('./_footer.html')}
+
+    </div>
+  </main>
+  <script src="js/commons.min.js"></script>
+</body>
+
 </html>
