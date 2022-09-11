@@ -31,7 +31,7 @@ body > main {
 }
 
 // External links
-div[role="document"] section a[href*="//"]:not([href*="https://picocss.com"]):not([role])::after
+div[role="document"] section a[href*="//"]:not([href*="https://picocss.com"], [role])::after
 {
   display: inline-block;
   width: 1rem;
