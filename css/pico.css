@@ -521,6 +521,13 @@ kbd {
   color-scheme: dark;
 }
 
+progress,
+[type=checkbox],
+[type=radio],
+[type=range] {
+  accent-color: var(--primary);
+}
+
 /**
  * Document
  * Content-box & Responsive typography
