@@ -135,7 +135,7 @@ dialog {
 
     dialog {
       animation-duration: ($animation-duration * 4);
-      animation-name: modalOverlay;
+      animation-name: modal-overlay ;
 
       > article {
         animation-delay: $animation-duration;
@@ -152,7 +152,7 @@ dialog {
     }
   }
 
-  @keyframes modalOverlay {
+  @keyframes modal-overlay {
     from {
       backdrop-filter: none;
       background-color: transparent;

@@ -2005,8 +2005,8 @@ progress::-moz-progress-bar {
 @media (prefers-reduced-motion: no-preference) {
   progress:indeterminate {
     background: var(--progress-background-color) linear-gradient(to right, var(--progress-color) 30%, var(--progress-background-color) 30%) top left/150% 150% no-repeat;
-    -webkit-animation: progressIndeterminate 1s linear infinite;
-    animation: progressIndeterminate 1s linear infinite;
+    -webkit-animation: progress-indeterminate 1s linear infinite;
+    animation: progress-indeterminate 1s linear infinite;
   }
   progress:indeterminate[value]::-webkit-progress-value {
     background-color: transparent;
@@ -2022,7 +2022,7 @@ progress::-moz-progress-bar {
   }
 }
 
-@-webkit-keyframes progressIndeterminate {
+@-webkit-keyframes progress-indeterminate {
   0% {
     background-position: 200% 0;
   }
@@ -2031,7 +2031,7 @@ progress::-moz-progress-bar {
   }
 }
 
-@keyframes progressIndeterminate {
+@keyframes progress-indeterminate {
   0% {
     background-position: 200% 0;
   }

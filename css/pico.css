@@ -2026,8 +2026,8 @@ dialog:not([open]), dialog[open=false] {
 :where(.modal-is-opening, .modal-is-closing) dialog {
   -webkit-animation-duration: 0.8s;
   animation-duration: 0.8s;
-  -webkit-animation-name: modalOverlay;
-  animation-name: modalOverlay;
+  -webkit-animation-name: modal-overlay;
+  animation-name: modal-overlay;
 }
 :where(.modal-is-opening, .modal-is-closing) dialog > article {
   -webkit-animation-delay: 0.2s;
@@ -2043,7 +2043,7 @@ dialog:not([open]), dialog[open=false] {
   animation-direction: reverse;
 }
 
-@-webkit-keyframes modalOverlay {
+@-webkit-keyframes modal-overlay {
   from {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
@@ -2051,7 +2051,7 @@ dialog:not([open]), dialog[open=false] {
   }
 }
 
-@keyframes modalOverlay {
+@keyframes modal-overlay {
   from {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
@@ -2193,8 +2193,8 @@ progress::-moz-progress-bar {
 @media (prefers-reduced-motion: no-preference) {
   progress:indeterminate {
     background: var(--progress-background-color) linear-gradient(to right, var(--progress-color) 30%, var(--progress-background-color) 30%) top left/150% 150% no-repeat;
-    -webkit-animation: progressIndeterminate 1s linear infinite;
-    animation: progressIndeterminate 1s linear infinite;
+    -webkit-animation: progress-indeterminate 1s linear infinite;
+    animation: progress-indeterminate 1s linear infinite;
   }
   progress:indeterminate[value]::-webkit-progress-value {
     background-color: transparent;
@@ -2210,7 +2210,7 @@ progress::-moz-progress-bar {
   }
 }
 
-@-webkit-keyframes progressIndeterminate {
+@-webkit-keyframes progress-indeterminate {
   0% {
     background-position: 200% 0;
   }
@@ -2219,7 +2219,7 @@ progress::-moz-progress-bar {
   }
 }
 
-@keyframes progressIndeterminate {
+@keyframes progress-indeterminate {
   0% {
     background-position: 200% 0;
   }
