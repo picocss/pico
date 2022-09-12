@@ -123,13 +123,13 @@
           <nav aria-label="breadcrumb">
             <ul>
               <li>
-                <a href="#">First link</a>
+                <a href="#" onclick="event.preventDefault()">First link</a>
               </li>
               <li>
-                <a href="#">Second link</a>
+                <a href="#" onclick="event.preventDefault()">Second link</a>
               </li>
               <li>
-                <a aria-current="page">
+                <a href="#" onclick="event.preventDefault()" aria-current="page" >
                   Last link
                 </a>
               </li>
@@ -142,7 +142,7 @@
   &lt;<b>ul</b>&gt;
     &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;First link&lt;<b>/a</b>&gt;&lt;<b>/li</b>&gt;
     &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Second link&lt;<b>/a</b>&gt;&lt;<b>/li</b>&gt;
-    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>aria-current</i>=<u>"page"</u>&gt;Last link&lt;<b>/a</b>&gt;&lt;<b>/li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u> <i>aria-current</i>=<u>"page"</u>&gt;Last link&lt;<b>/a</b>&gt;&lt;<b>/li</b>&gt;
   &lt;<b>/ul</b>&gt;
 &lt;/<b>nav</b>&gt;</code></pre>
 
