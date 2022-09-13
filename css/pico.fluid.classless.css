@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico.css v1.5.4 (https://picocss.com)
+ * Pico.css v1.5.5 (https://picocss.com)
  * Copyright 2019-2022 - Licensed under MIT
  */
 /**
@@ -1910,20 +1910,26 @@ nav :where(a, [role=link]):is([aria-current], :hover, :active, :focus) {
 }
 nav[aria-label=breadcrumb] {
   align-items: center;
-  justify-content: left;
+  justify-content: start;
 }
-nav[aria-label=breadcrumb] ul li {
-  -webkit-padding-start: 0;
-  padding-inline-start: 0;
+nav[aria-label=breadcrumb] ul li:not(:first-child) {
+  -webkit-margin-start: var(--nav-link-spacing-horizontal);
+  margin-inline-start: var(--nav-link-spacing-horizontal);
 }
-nav[aria-label=breadcrumb] ul li:not(:last-child) a::after {
-  -webkit-padding-start: 0.5rem;
-  padding-inline-start: 0.5rem;
+nav[aria-label=breadcrumb] ul li:not(:last-child) ::after {
+  position: absolute;
+  width: calc(var(--nav-link-spacing-horizontal) * 2);
+  -webkit-margin-start: calc(var(--nav-link-spacing-horizontal) / 2);
+  margin-inline-start: calc(var(--nav-link-spacing-horizontal) / 2);
   content: "/";
   color: var(--muted-color);
+  text-align: center;
 }
-nav[aria-label=breadcrumb] a[aria-current=page] {
+nav[aria-label=breadcrumb] a[aria-current] {
+  background-color: transparent;
   color: inherit;
+  text-decoration: none;
+  pointer-events: none;
 }
 nav [role=button] {
   margin-right: inherit;
@@ -1945,6 +1951,10 @@ aside li a {
 }
 aside li [role=button] {
   margin: inherit;
+}
+
+[dir=rtl] nav[aria-label=breadcrumb] ul li:not(:last-child) ::after {
+  content: "\\";
 }
 
 /**

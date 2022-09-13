@@ -117,22 +117,18 @@
           </footer>
         </article>
 
-        <p>With <code><i>aria-label</i>=<u>"breadcrumb"</u></code>, you can turn a nav into a breadcrumb, specifying the current page with: <code><i>aria-current</i>=<u>"page"</u></code>.</p>
+        <p>With <code><i>aria-label</i>=<u>"breadcrumb"</u></code>, you can turn a nav into a breadcrumb.</p>
 
-        <article aria-label="breadcrumb nav example">
+        <article aria-label="Breadcrumb example">
           <nav aria-label="breadcrumb">
             <ul>
               <li>
-                <a href="#">First link</a>
+                <a href="#" onclick="event.preventDefault()">Home</a>
               </li>
               <li>
-                <a href="#">Second link</a>
+                <a href="#" onclick="event.preventDefault()">Category</a>
               </li>
-              <li>
-                <a aria-current="page">
-                  Last link
-                </a>
-              </li>
+              <li>Page</li>
             </ul>
           </nav>
 
@@ -140,9 +136,9 @@
 
 <pre><code>&lt;<b>nav</b> <i>aria-label</i>=<u>"breadcrumb"</u>&gt;
   &lt;<b>ul</b>&gt;
-    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;First link&lt;<b>/a</b>&gt;&lt;<b>/li</b>&gt;
-    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Second link&lt;<b>/a</b>&gt;&lt;<b>/li</b>&gt;
-    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>aria-current</i>=<u>"page"</u>&gt;Last link&lt;<b>/a</b>&gt;&lt;<b>/li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Home&lt;<b>/a</b>&gt;&lt;<b>/li</b>&gt;
+    &lt;<b>li</b>&gt;&lt;<b>a</b> <i>href</i>=<u>"#"</u>&gt;Category&lt;<b>/a</b>&gt;&lt;<b>/li</b>&gt;
+    &lt;<b>li</b>&gt;Page&lt;<b>/li</b>&gt;
   &lt;<b>/ul</b>&gt;
 &lt;/<b>nav</b>&gt;</code></pre>
 
