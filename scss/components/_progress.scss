@@ -59,7 +59,7 @@ progress {
           var(--progress-background-color) 30%
         )
         top left / 150% 150% no-repeat;
-      animation: progressIndeterminate 1s linear infinite;
+      animation: progress-indeterminate  1s linear infinite;
 
       &[value]::-webkit-progress-value {
         background-color: transparent;
@@ -79,7 +79,7 @@ progress {
   }
 }
 
-@keyframes progressIndeterminate {
+@keyframes progress-indeterminate {
   0% {
     background-position: 200% 0;
   }
