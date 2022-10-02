@@ -22,6 +22,15 @@
           </hgroup>
           <p>Pico provides a <code>.classless</code> version (<a href="https://picocss.com/examples/classless/">example</a>).</p>
           <p>In this version, <code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code>, and <code>&lt;<b>footer</b>&gt;</code> act as <a href="./containers.html">containers</a> to define a centered or a fluid viewport.</p>
+
+<pre><code><em>// Containers</em>
+<b>body</b> > <b>header</b>,
+<b>body</b> > <b>main</b>,
+<b>body</b> > <b>footer</b> {
+  <em>…</em>
+}
+</code></pre>
+
           <p><strong>Usage:</strong></p>
           <p>Use the default <code>.classless</code> version if you need centered viewports:</p>
           <pre><code>&lt;<b>link</b> <i>rel</i>=<u>"stylesheet</u>" <i>href</i>=<u>"css/pico.classless.min.css"</u>&gt;</code></pre>
@@ -37,7 +46,34 @@
 &lt;<b>link</b> <i>rel</i>=<u>"stylesheet"</u> <i>href</i>=<u>"https://unpkg.com/@picocss/pico@latest/css/pico.fluid.classless.min.css"</u>&gt;
 </code></pre>
 
+          <p>If you need to customize the default parent (<code>&lt;<b>body</b>&gt;</code>) for <code>&lt;<b>header</b>&gt;</code>, <code>&lt;<b>main</b>&gt;</code>, and <code>&lt;<b>footer</b>&gt;</code>, you can recompile Pico by defining another CSS selector.</p>
+          <p>Useful for <a href="https://reactjs.org/">React</a>, <a href="https://reactjs.org/">Gatsby</a> or <a href="https://nextjs.org/">Next.js</a>.</p>
+
+<pre><code><em>/* Custom Class-less version for React */</em>
+
+<em>// Set the root element</em>
+<i>$semantic-root-element</i>: <u>"#root"</u>;
+
+<em>// Enable &lt;header&gt;, &lt;main&gt;, &lt;footer&gt; inside $semantic-root-element as containers</em>
+<i>$enable-semantic-container</i>: <u>true</u>;
+
+<em>// Enable .classes</em>
+<i>$enable-classes</i>: <u>false</u>;
+
+<em>// Import Pico</em>
+<b>@import</b> <u>"@picocss/pico/scss/pico"</u>;</code></pre>
+
         </section>
+
+        <p>The code above will compile Pico with the containers defined like this:</p>
+
+<pre><code><em>// Containers</em></em>
+<i>#root</i> > <b>header</b>,
+<i>#root</i> > <b>main</b>,
+<i>#root</i> > <b>footer</b> {
+  <em>…</em>
+}
+</code></pre>
 
         ${require('./_footer.html')}
         
