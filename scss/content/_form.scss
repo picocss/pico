@@ -209,7 +209,7 @@ textarea[disabled],
 
 // Aria-invalid
 :where(input, select, textarea) {
-  &:not([type="checkbox"]):not([type="radio"]):not([type="date"]) {
+  &:not([type="checkbox"], [type="radio"], [type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
     &[aria-invalid] {
       @if $enable-important {
         padding-right: calc(
