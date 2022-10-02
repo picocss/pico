@@ -109,7 +109,7 @@ textarea {
 // ––––––––––––––––––––
 
 // Force height for alternatives input types
-input:not([type="checkbox"]):not([type="radio"]):not([type="range"]) {
+input:not([type="checkbox"], [type="radio"], [type="range"]) {
   height: calc(
     (1rem * var(--line-height)) + (var(--form-element-spacing-vertical) * 2) +
       (var(--border-width) * 2)
@@ -133,14 +133,14 @@ fieldset legend {
 }
 
 // Blocks, 100%
-input:not([type="checkbox"]):not([type="radio"]),
+input:not([type="checkbox"], [type="radio"]),
 select,
 textarea {
   width: 100%;
 }
 
 // Reset appearance (Not Checkboxes, Radios, Range and File)
-input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]),
+input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
 select,
 textarea {
   appearance: none;
@@ -172,7 +172,7 @@ textarea {
 }
 
 // Active & Focus
-input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]):not([readonly]),
+input:not([type="submit"], [type="button"], [type="reset"], [type="checkbox"], [type="radio"], [readonly]),
 :where(select, textarea) {
   &:is(:active, :focus) {
     --background-color: var(--form-element-active-background-color);
@@ -180,7 +180,7 @@ input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="c
 }
 
 // Active & Focus
-input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([role="switch"]):not([readonly]),
+input:not([type="submit"], [type="button"], [type="reset"], [role="switch"], [readonly]),
 :where(select, textarea) {
   &:is(:active, :focus) {
     --border-color: var(--form-element-active-border-color);
@@ -188,7 +188,7 @@ input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([role="s
 }
 
 // Focus
-input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="range"]):not([type="file"]):not([readonly]),
+input:not([type="submit"], [type="button"], [type="reset"], [type="range"], [type="file"], [readonly]),
 select,
 textarea {
   &:focus {
@@ -197,10 +197,10 @@ textarea {
 }
 
 // Disabled
-input:not([type="submit"]):not([type="button"]):not([type="reset"])[disabled],
+input:not([type="submit"], [type="button"], [type="reset"])[disabled],
 select[disabled],
 textarea[disabled],
-:where(fieldset[disabled]) :is(input:not([type="submit"]):not([type="button"]):not([type="reset"]), select, textarea) {
+:where(fieldset[disabled]) :is(input:not([type="submit"], [type="button"], [type="reset"]), select, textarea) {
   --background-color: var(--form-element-disabled-background-color);
   --border-color: var(--form-element-disabled-border-color);
   opacity: var(--form-element-disabled-opacity);
@@ -209,7 +209,7 @@ textarea[disabled],
 
 // Aria-invalid
 :where(input, select, textarea) {
-  &:not([type="checkbox"]):not([type="radio"]) {
+  &:not([type="checkbox"], [type="radio"]) {
     &[aria-invalid] {
       @if $enable-important {
         padding-right: calc(
@@ -274,10 +274,8 @@ textarea[disabled],
 
 [dir="rtl"] {
   :where(input, select, textarea) {
-    &:not([type="checkbox"]):not([type="radio"]) {
-      &[aria-invalid],
-      &[aria-invalid="true"],
-      &[aria-invalid="false"] {
+    &:not([type="checkbox"], [type="radio"]) {
+      &:is([aria-invalid], [aria-invalid="true"], [aria-invalid="false"] ){
         background-position: center left 0.75rem;
       }
     }
@@ -295,7 +293,7 @@ select:invalid {
 }
 
 // Margin bottom (Not Checkboxes and Radios)
-input:not([type="checkbox"]):not([type="radio"]),
+input:not([type="checkbox"], [type="radio"]),
 select,
 textarea {
   margin-bottom: var(--spacing);
@@ -309,7 +307,7 @@ select {
     background-color: transparent;
   }
 
-  &:not([multiple]):not([size]) {
+  &:not([multiple], [size]) {
     padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
     padding-left: var(--form-element-spacing-horizontal);
     padding-inline-start: var(--form-element-spacing-horizontal);
@@ -323,7 +321,7 @@ select {
 
 [dir="rtl"] {
   select {
-    &:not([multiple]):not([size]) {
+    &:not([multiple], [size]) {
       background-position: center left 0.75rem;
     }
   }

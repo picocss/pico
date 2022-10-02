@@ -63,13 +63,42 @@ nav {
     }
   }
 
+  // Breadcrumb
+  &[aria-label="breadcrumb"] {
+    align-items: center;
+    justify-content: start;
+
+    & ul li {
+      &:not(:first-child) {
+        margin-inline-start: var(--nav-link-spacing-horizontal);
+      }
+
+      &:not(:last-child) {
+        ::after {
+          position: absolute;
+          width: calc(var(--nav-link-spacing-horizontal) * 2);
+          margin-inline-start: calc(var(--nav-link-spacing-horizontal) / 2);
+          content: "/";
+          color: var(--muted-color);
+          text-align: center;
+        }
+      }
+    }
+
+    & a[aria-current] {
+      background-color: transparent;
+      color: inherit;
+      text-decoration: none;
+      pointer-events: none;
+    }
+  }
+
   // Minimal support for role="button"
   [role="button"] {
     margin-right: inherit;
     margin-left: inherit;
     padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
   }
-
 }
 
 // Vertical Nav
@@ -92,6 +121,21 @@ aside {
     // Minimal support for links as buttons
     [role="button"] {
       margin: inherit;
+    }
+  }
+}
+
+// Breadcrumb RTL
+[dir="rtl"] {
+  nav {
+    &[aria-label="breadcrumb"] {
+      & ul li {
+        &:not(:last-child) {
+          ::after {
+            content: "\\";
+          }
+        }
+      }
     }
   }
 }

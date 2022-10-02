@@ -27,3 +27,11 @@
 [data-theme="dark"] {
   @include dark;
 }
+
+// Accent-color
+progress,
+[type="checkbox"],
+[type="radio"],
+[type="range"] {
+  accent-color: var(--primary);
+}

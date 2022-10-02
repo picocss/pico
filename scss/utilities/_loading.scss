@@ -9,7 +9,7 @@
 }
 
 // Everyting except form elements
-[aria-busy="true"]:not(input):not(select):not(textarea) {
+[aria-busy="true"]:not(input, select, textarea) {
 
   &::before {
     display: inline-block;

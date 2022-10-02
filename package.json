@@ -1,6 +1,6 @@
 {
   "name": "@picocss/pico",
-  "version": "1.5.3",
+  "version": "1.5.5",
   "description": "Minimal CSS Framework for semantic HTML",
   "author": "Lucas Larroche",
   "main": "css/pico.min.css",
@@ -79,21 +79,21 @@
     "watch:pico": "nodemon --watch scss/ --ext scss --exec 'npm run build:pico'"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.10",
-    "@babel/core": "^7.18.2",
-    "@babel/preset-env": "^7.18.2",
-    "autoprefixer": "^10.4.7",
-    "clean-css-cli": "^5.6.0",
-    "css-declaration-sorter": "^6.3.0",
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.0",
+    "@babel/preset-env": "^7.19.0",
+    "autoprefixer": "^10.4.8",
+    "clean-css-cli": "^5.6.1",
+    "css-declaration-sorter": "^6.3.1",
     "html-includes": "^4.4.1",
-    "nodemon": "^2.0.16",
+    "nodemon": "^2.0.19",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.14",
-    "postcss-cli": "^9.1.0",
+    "postcss": "^8.4.16",
+    "postcss-cli": "^10.0.0",
     "postcss-scss": "^4.0.4",
-    "rollup": "^2.75.6",
-    "sass": "^1.52.3",
-    "uglify-js": "^3.16.0"
+    "rollup": "^2.79.0",
+    "sass": "^1.54.9",
+    "uglify-js": "^3.17.0"
   },
   "browserslist": [
     ">= 0.5%",
