@@ -1137,7 +1137,7 @@ textarea {
   border-width: 0;
 }
 
-input:not([type=checkbox], [type=radio], [type=range]) {
+input:not([type=checkbox]):not([type=radio]):not([type=range]) {
   height: calc(1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) * 2);
 }
 
@@ -1155,13 +1155,13 @@ fieldset legend {
   font-weight: var(--form-label-font-weight, var(--font-weight));
 }
 
-input:not([type=checkbox], [type=radio]),
+input:not([type=checkbox]):not([type=radio]),
 select,
 textarea {
   width: 100%;
 }
 
-input:not([type=checkbox], [type=radio], [type=range], [type=file]),
+input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]),
 select,
 textarea {
   -webkit-appearance: none;
@@ -1187,33 +1187,33 @@ textarea {
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
 }
 
-input:not([type=submit], [type=button], [type=reset], [type=checkbox], [type=radio], [readonly]):is(:active, :focus),
+input:not([type=submit]):not([type=button]):not([type=reset]):not([type=checkbox]):not([type=radio]):not([readonly]):is(:active, :focus),
 :where(select, textarea):is(:active, :focus) {
   --background-color: var(--form-element-active-background-color);
 }
 
-input:not([type=submit], [type=button], [type=reset], [role=switch], [readonly]):is(:active, :focus),
+input:not([type=submit]):not([type=button]):not([type=reset]):not([role=switch]):not([readonly]):is(:active, :focus),
 :where(select, textarea):is(:active, :focus) {
   --border-color: var(--form-element-active-border-color);
 }
 
-input:not([type=submit], [type=button], [type=reset], [type=range], [type=file], [readonly]):focus,
+input:not([type=submit]):not([type=button]):not([type=reset]):not([type=range]):not([type=file]):not([readonly]):focus,
 select:focus,
 textarea:focus {
   --box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
 }
 
-input:not([type=submit], [type=button], [type=reset])[disabled],
+input:not([type=submit]):not([type=button]):not([type=reset])[disabled],
 select[disabled],
 textarea[disabled],
-:where(fieldset[disabled]) :is(input:not([type=submit], [type=button], [type=reset]), select, textarea) {
+:where(fieldset[disabled]) :is(input:not([type=submit]):not([type=button]):not([type=reset]), select, textarea) {
   --background-color: var(--form-element-disabled-background-color);
   --border-color: var(--form-element-disabled-border-color);
   opacity: var(--form-element-disabled-opacity);
   pointer-events: none;
 }
 
-:where(input, select, textarea):not([type=checkbox], [type=radio])[aria-invalid] {
+:where(input, select, textarea):not([type=checkbox], [type=radio], [type=date], [type=datetime-local], [type=month], [type=time], [type=week])[aria-invalid] {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   padding-left: var(--form-element-spacing-horizontal);
   -webkit-padding-start: var(--form-element-spacing-horizontal) !important;
@@ -1224,10 +1224,10 @@ textarea[disabled],
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
-:where(input, select, textarea):not([type=checkbox], [type=radio])[aria-invalid=false] {
+:where(input, select, textarea):not([type=checkbox], [type=radio], [type=date], [type=datetime-local], [type=month], [type=time], [type=week])[aria-invalid=false] {
   background-image: var(--icon-valid);
 }
-:where(input, select, textarea):not([type=checkbox], [type=radio])[aria-invalid=true] {
+:where(input, select, textarea):not([type=checkbox], [type=radio], [type=date], [type=datetime-local], [type=month], [type=time], [type=week])[aria-invalid=true] {
   background-image: var(--icon-invalid);
 }
 :where(input, select, textarea)[aria-invalid=false] {
@@ -1245,7 +1245,7 @@ textarea[disabled],
   --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color) !important;
 }
 
-[dir=rtl] :where(input, select, textarea):not([type=checkbox], [type=radio]):is([aria-invalid], [aria-invalid=true], [aria-invalid=false]) {
+[dir=rtl] :where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid], [dir=rtl] :where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid=true], [dir=rtl] :where(input, select, textarea):not([type=checkbox]):not([type=radio])[aria-invalid=false] {
   background-position: center left 0.75rem;
 }
 
@@ -1258,7 +1258,7 @@ select:invalid {
   opacity: 1;
 }
 
-input:not([type=checkbox], [type=radio]),
+input:not([type=checkbox]):not([type=radio]),
 select,
 textarea {
   margin-bottom: var(--spacing);
@@ -1268,7 +1268,7 @@ select::-ms-expand {
   border: 0;
   background-color: transparent;
 }
-select:not([multiple], [size]) {
+select:not([multiple]):not([size]) {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   padding-left: var(--form-element-spacing-horizontal);
   -webkit-padding-start: var(--form-element-spacing-horizontal);
@@ -1281,7 +1281,7 @@ select:not([multiple], [size]) {
   background-repeat: no-repeat;
 }
 
-[dir=rtl] select:not([multiple], [size]) {
+[dir=rtl] select:not([multiple]):not([size]) {
   background-position: center left 0.75rem;
 }
 
