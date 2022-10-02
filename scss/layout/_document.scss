@@ -35,13 +35,13 @@
   -webkit-tap-highlight-color: transparent; // 5
   -webkit-text-size-adjust: 100%; // 6
   text-size-adjust: 100%; // 6
-  text-rendering: optimizeLegibility;
   background-color: var(--background-color);
   color: var(--color);
   font-weight: var(--font-weight);
   font-size: var(--font-size);
   line-height: var(--line-height); // 2
   font-family: var(--font-family);
+  text-rendering: optimizeLegibility;
   overflow-wrap: break-word; // 3
   cursor: default; // 1
   tab-size: 4; // 4

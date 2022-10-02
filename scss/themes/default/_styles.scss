@@ -70,6 +70,9 @@
 
   // Transitions
   --transition: 0.2s ease-in-out;
+
+  // Modal (<dialog>)
+  --modal-overlay-backdrop-filter: blur(0.25rem);
 }
 
 // Responsives spacings
@@ -225,7 +228,7 @@ tfoot {
   }
 }
 
-:not(thead):not(tfoot) > * > td {
+:not(thead, tfoot) > * > td {
   --font-size: 0.875em;
 }
 
