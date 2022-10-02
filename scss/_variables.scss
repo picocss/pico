@@ -32,6 +32,9 @@ $enable-transitions: true !default;
 // Enable overriding with !important
 $enable-important: true !default;
 
+// Set the root element for $enable-semantic-container and $enable-responsive-spacings
+$semantic-root-element: "body" !default;
+
 // Responsive
 // ––––––––––––––––––––
 
