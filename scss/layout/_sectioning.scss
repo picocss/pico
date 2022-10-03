@@ -17,7 +17,7 @@ main {
 // ––––––––––––––––––––
 
 // 1. Remove the margin in all browsers (opinionated)
-body {
+#{$semantic-root-element} {
   width: 100%;
   margin: 0; // 1
 

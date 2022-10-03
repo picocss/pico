@@ -1,13 +1,16 @@
 // Config
 // ––––––––––––––––––––
 
-// Enable <header>, <main>, <footer> inside <body> as a container
+// Set the root element for $enable-semantic-container and $enable-responsive-spacings
+$semantic-root-element: "body" !default;
+
+// Enable <header>, <main>, <footer> inside $semantic-root-element as containers
 $enable-semantic-container: false !default;
 
 // Enable .container and .container-fluid
 $enable-class-container: true !default;
 
-// Enable a centered viewport for <header>, <main>, <footer> inside <body>
+// Enable a centered viewport for <header>, <main>, <footer> inside $enable-semantic-container 
 // Fluid layout if disabled
 $enable-viewport: true !default;
 

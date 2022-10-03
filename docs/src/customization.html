@@ -102,19 +102,19 @@
 <i>$primary-600</i>: <u class="c600">…</u>;
 <i>$primary-700</i>: <u class="c700">…</u>;
 
-<em>// Import full Pico source code</em>
-<b>@import</b> <u>"path/pico"</u>;</code></pre>
+<em>// Import Pico</em>
+<b>@import</b> <u>"@picocss/pico/scss/pico"</u>;</code></pre>
 
           <p>Alternatively, you can create a custom theme and import it into your project with the components you need.</p>
 
-<pre><code><em>/* Custom <span class="name"> </span>version */</em>
+<pre><code><em>/* Custom version */</em>
 
 <em>// Custom theme</em>
-<b>@import</b> <u>"path/themes/custom"</u>;
+<b>@import</b> <u>"path/themes/custom"</u>;;
 
 <em>// Import needed components</em>
-<b>@import</b> <u>"path/layout/document"</u>;
-<b>@import</b> <u>"path/layout/sectioning"</u>;
+<b>@import</b> <u>"@picocss/pico/scss/pico/layout/document"</u>;
+<b>@import</b> <u>"@picocss/pico/scss/pico/layout/sectioning"</u>;
 <em>…</em>
 </code></pre>
 

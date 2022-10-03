@@ -1,5 +1,5 @@
 /*!
- * Pico.css v1.5.5 (https://picocss.com)
+ * Pico.css v1.5.6 (https://picocss.com)
  * Copyright 2019-2022 - Licensed under MIT
  *
  * Slim version example
@@ -1139,7 +1139,7 @@ textarea[disabled],
   pointer-events: none;
 }
 
-:where(input, select, textarea):not([type=checkbox], [type=radio])[aria-invalid] {
+:where(input, select, textarea):not([type=checkbox], [type=radio], [type=date], [type=datetime-local], [type=month], [type=time], [type=week])[aria-invalid] {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   padding-left: var(--form-element-spacing-horizontal);
   -webkit-padding-start: var(--form-element-spacing-horizontal);
@@ -1150,10 +1150,10 @@ textarea[disabled],
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
-:where(input, select, textarea):not([type=checkbox], [type=radio])[aria-invalid=false] {
+:where(input, select, textarea):not([type=checkbox], [type=radio], [type=date], [type=datetime-local], [type=month], [type=time], [type=week])[aria-invalid=false] {
   background-image: var(--icon-valid);
 }
-:where(input, select, textarea):not([type=checkbox], [type=radio])[aria-invalid=true] {
+:where(input, select, textarea):not([type=checkbox], [type=radio], [type=date], [type=datetime-local], [type=month], [type=time], [type=week])[aria-invalid=true] {
   background-image: var(--icon-invalid);
 }
 :where(input, select, textarea)[aria-invalid=false] {

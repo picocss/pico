@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico.css v1.5.5 (https://picocss.com)
+ * Pico.css v1.5.6 (https://picocss.com)
  * Copyright 2019-2022 - Licensed under MIT
  */
 /**
@@ -1213,7 +1213,7 @@ textarea[disabled],
   pointer-events: none;
 }
 
-:where(input, select, textarea):not([type=checkbox], [type=radio])[aria-invalid] {
+:where(input, select, textarea):not([type=checkbox], [type=radio], [type=date], [type=datetime-local], [type=month], [type=time], [type=week])[aria-invalid] {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   padding-left: var(--form-element-spacing-horizontal);
   -webkit-padding-start: var(--form-element-spacing-horizontal) !important;
@@ -1224,10 +1224,10 @@ textarea[disabled],
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
-:where(input, select, textarea):not([type=checkbox], [type=radio])[aria-invalid=false] {
+:where(input, select, textarea):not([type=checkbox], [type=radio], [type=date], [type=datetime-local], [type=month], [type=time], [type=week])[aria-invalid=false] {
   background-image: var(--icon-valid);
 }
-:where(input, select, textarea):not([type=checkbox], [type=radio])[aria-invalid=true] {
+:where(input, select, textarea):not([type=checkbox], [type=radio], [type=date], [type=datetime-local], [type=month], [type=time], [type=week])[aria-invalid=true] {
   background-image: var(--icon-invalid);
 }
 :where(input, select, textarea)[aria-invalid=false] {
@@ -1469,31 +1469,6 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   border-radius: 0;
   background: none;
 }
-[type=file]::-webkit-file-upload-button {
-  --background-color: var(--secondary);
-  --border-color: var(--secondary);
-  --color: var(--secondary-inverse);
-  margin-right: calc(var(--spacing) / 2);
-  margin-left: 0;
-  -webkit-margin-start: 0;
-  margin-inline-start: 0;
-  -webkit-margin-end: calc(var(--spacing) / 2);
-  margin-inline-end: calc(var(--spacing) / 2);
-  padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
-  border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
-  outline: none;
-  background-color: var(--background-color);
-  box-shadow: var(--box-shadow);
-  color: var(--color);
-  font-weight: var(--font-weight);
-  font-size: 1rem;
-  line-height: var(--line-height);
-  text-align: center;
-  cursor: pointer;
-  -webkit-transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
-  transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
-}
 [type=file]::file-selector-button {
   --background-color: var(--secondary);
   --border-color: var(--secondary);
@@ -1517,10 +1492,6 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   text-align: center;
   cursor: pointer;
   transition: background-color var(--transition), border-color var(--transition), color var(--transition), box-shadow var(--transition);
-}
-[type=file]::-webkit-file-upload-button:is(:hover, :active, :focus) {
-  --background-color: var(--secondary-hover);
-  --border-color: var(--secondary-hover);
 }
 [type=file]::file-selector-button:is(:hover, :active, :focus) {
   --background-color: var(--secondary-hover);
@@ -2023,39 +1994,23 @@ dialog:not([open]), dialog[open=false] {
 
 :where(.modal-is-opening, .modal-is-closing) dialog,
 :where(.modal-is-opening, .modal-is-closing) dialog > article {
-  -webkit-animation-duration: 0.2s;
   animation-duration: 0.2s;
-  -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
-  -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
 :where(.modal-is-opening, .modal-is-closing) dialog {
-  -webkit-animation-duration: 0.8s;
   animation-duration: 0.8s;
-  -webkit-animation-name: modal-overlay;
   animation-name: modal-overlay;
 }
 :where(.modal-is-opening, .modal-is-closing) dialog > article {
-  -webkit-animation-delay: 0.2s;
   animation-delay: 0.2s;
-  -webkit-animation-name: modal;
   animation-name: modal;
 }
 
 .modal-is-closing dialog,
 .modal-is-closing dialog > article {
-  -webkit-animation-delay: 0s;
   animation-delay: 0s;
   animation-direction: reverse;
-}
-
-@-webkit-keyframes modal-overlay {
-  from {
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    background-color: transparent;
-  }
 }
 
 @keyframes modal-overlay {
@@ -2063,12 +2018,6 @@ dialog:not([open]), dialog[open=false] {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
     background-color: transparent;
-  }
-}
-@-webkit-keyframes modal {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
   }
 }
 @keyframes modal {
@@ -2210,7 +2159,6 @@ progress::-moz-progress-bar {
 @media (prefers-reduced-motion: no-preference) {
   progress:indeterminate {
     background: var(--progress-background-color) linear-gradient(to right, var(--progress-color) 30%, var(--progress-background-color) 30%) top left/150% 150% no-repeat;
-    -webkit-animation: progress-indeterminate 1s linear infinite;
     animation: progress-indeterminate 1s linear infinite;
   }
   progress:indeterminate[value]::-webkit-progress-value {
@@ -2224,15 +2172,6 @@ progress::-moz-progress-bar {
 @media (prefers-reduced-motion: no-preference) {
   [dir=rtl] progress:indeterminate {
     animation-direction: reverse;
-  }
-}
-
-@-webkit-keyframes progress-indeterminate {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
   }
 }
 
@@ -2367,7 +2306,6 @@ nav li[role=list] a {
 
 nav details[role=list] summary + ul,
 nav li[role=list] > ul {
-  min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
   border-radius: var(--border-radius);
@@ -2432,7 +2370,6 @@ li[role=list] > a::after {
   content: "";
   vertical-align: text-bottom;
   vertical-align: -0.125em;
-  -webkit-animation: spinner 0.75s linear infinite;
   animation: spinner 0.75s linear infinite;
   opacity: var(--loading-spinner-opacity);
 }
@@ -2454,12 +2391,6 @@ input[type=button][aria-busy=true],
 input[type=reset][aria-busy=true],
 a[aria-busy=true] {
   pointer-events: none;
-}
-
-@-webkit-keyframes spinner {
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 @keyframes spinner {
@@ -2550,54 +2481,32 @@ a[aria-busy=true] {
 }
 @media (hover: hover) and (pointer: fine) {
   [data-tooltip][data-placement=bottom]:focus::before, [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover [data-tooltip]:focus::before, [data-tooltip][data-placement=bottom]:hover [data-tooltip]:focus::after, [data-tooltip]:hover::before, [data-tooltip]:hover::after {
-    -webkit-animation-duration: 0.2s;
     animation-duration: 0.2s;
-    -webkit-animation-name: tooltip-slide-top;
     animation-name: tooltip-slide-top;
   }
   [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover [data-tooltip]:focus::after, [data-tooltip]:hover::after {
-    -webkit-animation-name: tooltip-caret-slide-top;
     animation-name: tooltip-caret-slide-top;
   }
   [data-tooltip][data-placement=bottom]:focus::before, [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover::before, [data-tooltip][data-placement=bottom]:hover::after {
-    -webkit-animation-duration: 0.2s;
     animation-duration: 0.2s;
-    -webkit-animation-name: tooltip-slide-bottom;
     animation-name: tooltip-slide-bottom;
   }
   [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover::after {
-    -webkit-animation-name: tooltip-caret-slide-bottom;
     animation-name: tooltip-caret-slide-bottom;
   }
   [data-tooltip][data-placement=left]:focus::before, [data-tooltip][data-placement=left]:focus::after, [data-tooltip][data-placement=left]:hover::before, [data-tooltip][data-placement=left]:hover::after {
-    -webkit-animation-duration: 0.2s;
     animation-duration: 0.2s;
-    -webkit-animation-name: tooltip-slide-left;
     animation-name: tooltip-slide-left;
   }
   [data-tooltip][data-placement=left]:focus::after, [data-tooltip][data-placement=left]:hover::after {
-    -webkit-animation-name: tooltip-caret-slide-left;
     animation-name: tooltip-caret-slide-left;
   }
   [data-tooltip][data-placement=right]:focus::before, [data-tooltip][data-placement=right]:focus::after, [data-tooltip][data-placement=right]:hover::before, [data-tooltip][data-placement=right]:hover::after {
-    -webkit-animation-duration: 0.2s;
     animation-duration: 0.2s;
-    -webkit-animation-name: tooltip-slide-right;
     animation-name: tooltip-slide-right;
   }
   [data-tooltip][data-placement=right]:focus::after, [data-tooltip][data-placement=right]:hover::after {
-    -webkit-animation-name: tooltip-caret-slide-right;
     animation-name: tooltip-caret-slide-right;
-  }
-}
-@-webkit-keyframes tooltip-slide-top {
-  from {
-    transform: translate(-50%, 0.75rem);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, -0.25rem);
-    opacity: 1;
   }
 }
 @keyframes tooltip-slide-top {
@@ -2607,19 +2516,6 @@ a[aria-busy=true] {
   }
   to {
     transform: translate(-50%, -0.25rem);
-    opacity: 1;
-  }
-}
-@-webkit-keyframes tooltip-caret-slide-top {
-  from {
-    opacity: 0;
-  }
-  50% {
-    transform: translate(-50%, -0.25rem);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, 0rem);
     opacity: 1;
   }
 }
@@ -2636,16 +2532,6 @@ a[aria-busy=true] {
     opacity: 1;
   }
 }
-@-webkit-keyframes tooltip-slide-bottom {
-  from {
-    transform: translate(-50%, -0.75rem);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, 0.25rem);
-    opacity: 1;
-  }
-}
 @keyframes tooltip-slide-bottom {
   from {
     transform: translate(-50%, -0.75rem);
@@ -2653,19 +2539,6 @@ a[aria-busy=true] {
   }
   to {
     transform: translate(-50%, 0.25rem);
-    opacity: 1;
-  }
-}
-@-webkit-keyframes tooltip-caret-slide-bottom {
-  from {
-    opacity: 0;
-  }
-  50% {
-    transform: translate(-50%, -0.5rem);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, -0.3rem);
     opacity: 1;
   }
 }
@@ -2682,16 +2555,6 @@ a[aria-busy=true] {
     opacity: 1;
   }
 }
-@-webkit-keyframes tooltip-slide-left {
-  from {
-    transform: translate(0.75rem, -50%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-0.25rem, -50%);
-    opacity: 1;
-  }
-}
 @keyframes tooltip-slide-left {
   from {
     transform: translate(0.75rem, -50%);
@@ -2699,19 +2562,6 @@ a[aria-busy=true] {
   }
   to {
     transform: translate(-0.25rem, -50%);
-    opacity: 1;
-  }
-}
-@-webkit-keyframes tooltip-caret-slide-left {
-  from {
-    opacity: 0;
-  }
-  50% {
-    transform: translate(0.05rem, -50%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(0.3rem, -50%);
     opacity: 1;
   }
 }
@@ -2728,16 +2578,6 @@ a[aria-busy=true] {
     opacity: 1;
   }
 }
-@-webkit-keyframes tooltip-slide-right {
-  from {
-    transform: translate(-0.75rem, -50%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(0.25rem, -50%);
-    opacity: 1;
-  }
-}
 @keyframes tooltip-slide-right {
   from {
     transform: translate(-0.75rem, -50%);
@@ -2745,19 +2585,6 @@ a[aria-busy=true] {
   }
   to {
     transform: translate(0.25rem, -50%);
-    opacity: 1;
-  }
-}
-@-webkit-keyframes tooltip-caret-slide-right {
-  from {
-    opacity: 0;
-  }
-  50% {
-    transform: translate(-0.05rem, -50%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-0.3rem, -50%);
     opacity: 1;
   }
 }
@@ -2820,11 +2647,8 @@ textarea,
 :not([aria-busy=true])::before,
 :not([aria-busy=true])::after {
     background-attachment: initial !important;
-    -webkit-animation-duration: 1ms !important;
     animation-duration: 1ms !important;
-    -webkit-animation-delay: -1ms !important;
     animation-delay: -1ms !important;
-    -webkit-animation-iteration-count: 1 !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-delay: 0s !important;
