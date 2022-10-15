@@ -41,8 +41,7 @@ nav {
   li {
     display: inline-block;
     margin: 0;
-    padding: var(--nav-element-spacing-vertical)
-      var(--nav-element-spacing-horizontal);
+    padding: var(--nav-element-spacing-vertical) var(--nav-element-spacing-horizontal);
 
     // Minimal support for buttons and forms elements
     > * {
@@ -111,8 +110,7 @@ aside {
   }
 
   li {
-    padding: calc(var(--nav-element-spacing-vertical) * 0.5)
-      var(--nav-element-spacing-horizontal);
+    padding: calc(var(--nav-element-spacing-vertical) * 0.5) var(--nav-element-spacing-horizontal);
 
     a {
       display: block;

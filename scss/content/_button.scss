@@ -48,8 +48,7 @@ input[type="reset"],
   --border-color: var(--primary);
   --color: var(--primary-inverse);
   --box-shadow: var(--button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
-  padding: var(--form-element-spacing-vertical)
-    var(--form-element-spacing-horizontal);
+  padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
   border: var(--border-width) solid var(--border-color);
   border-radius: var(--border-radius);
   outline: none;
@@ -63,9 +62,8 @@ input[type="reset"],
   cursor: pointer;
 
   @if $enable-transitions {
-    transition: background-color var(--transition),
-      border-color var(--transition), color var(--transition),
-      box-shadow var(--transition);
+    transition: background-color var(--transition), border-color var(--transition),
+      color var(--transition), box-shadow var(--transition);
   }
 
   &:is([aria-current], :hover, :active, :focus) {
@@ -83,7 +81,6 @@ input[type="reset"],
 
 // .secondary, .contrast & .outline
 @if $enable-classes {
-
   // Secondary
   :is(button, input[type="submit"], input[type="button"], [role="button"]).secondary,
   input[type="reset"] {
@@ -152,8 +149,7 @@ input[type="reset"],
       --color: var(--contrast-hover);
     }
   }
-} 
-@else {
+} @else {
   // Secondary button without .class
   input[type="reset"] {
     --background-color: var(--secondary);
@@ -176,7 +172,8 @@ input[type="reset"],
 // Button [disabled]
 // Links without href are disabled by default
 :where(button, [type="submit"], [type="button"], [type="reset"], [role="button"])[disabled],
-:where(fieldset[disabled]) :is(button, [type="submit"], [type="button"], [type="reset"], [role="button"]),
+:where(fieldset[disabled])
+  :is(button, [type="submit"], [type="button"], [type="reset"], [role="button"]),
 a[role="button"]:not([href]) {
   opacity: 0.5;
   pointer-events: none;

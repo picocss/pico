@@ -13,8 +13,7 @@ article {
   > footer {
     margin-right: calc(var(--block-spacing-horizontal) * -1);
     margin-left: calc(var(--block-spacing-horizontal) * -1);
-    padding: calc(var(--block-spacing-vertical) * 0.66)
-      var(--block-spacing-horizontal);
+    padding: calc(var(--block-spacing-vertical) * 0.66) var(--block-spacing-horizontal);
     background-color: var(--card-sectionning-background-color);
   }
 

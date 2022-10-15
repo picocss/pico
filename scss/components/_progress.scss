@@ -53,13 +53,9 @@ progress {
   @media (prefers-reduced-motion: no-preference) {
     &:indeterminate {
       background: var(--progress-background-color)
-        linear-gradient(
-          to right,
-          var(--progress-color) 30%,
-          var(--progress-background-color) 30%
-        )
+        linear-gradient(to right, var(--progress-color) 30%, var(--progress-background-color) 30%)
         top left / 150% 150% no-repeat;
-      animation: progress-indeterminate  1s linear infinite;
+      animation: progress-indeterminate 1s linear infinite;
 
       &[value]::-webkit-progress-value {
         background-color: transparent;

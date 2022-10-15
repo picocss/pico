@@ -7,9 +7,8 @@
  * Theme: default
  */
 :root {
-  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
-    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --line-height: 1.5;
   --font-weight: 400;
   --font-size: 16px;
@@ -188,9 +187,9 @@ pre,
 code,
 kbd,
 samp {
-  --font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace",
-    "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono", "Oxygen Mono",
+    "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
 }
 
 kbd {
@@ -269,8 +268,7 @@ kbd {
   --accordion-open-summary-color: var(--muted-color);
   --card-background-color: var(--background-color);
   --card-border-color: var(--muted-border-color);
-  --card-box-shadow:
-    0.0145rem 0.029rem 0.174rem rgba(27, 40, 50, 0.01698),
+  --card-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(27, 40, 50, 0.01698),
     0.0335rem 0.067rem 0.402rem rgba(27, 40, 50, 0.024),
     0.0625rem 0.125rem 0.75rem rgba(27, 40, 50, 0.03),
     0.1125rem 0.225rem 1.35rem rgba(27, 40, 50, 0.036),
@@ -376,8 +374,7 @@ kbd {
     --accordion-open-summary-color: var(--muted-color);
     --card-background-color: #141e26;
     --card-border-color: var(--card-background-color);
-    --card-box-shadow:
-      0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
+    --card-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
       0.0335rem 0.067rem 0.402rem rgba(0, 0, 0, 0.024),
       0.0625rem 0.125rem 0.75rem rgba(0, 0, 0, 0.03),
       0.1125rem 0.225rem 1.35rem rgba(0, 0, 0, 0.036),
@@ -482,8 +479,7 @@ kbd {
   --accordion-open-summary-color: var(--muted-color);
   --card-background-color: #141e26;
   --card-border-color: var(--card-background-color);
-  --card-box-shadow:
-    0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
+  --card-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
     0.0335rem 0.067rem 0.402rem rgba(0, 0, 0, 0.024),
     0.0625rem 0.125rem 0.75rem rgba(0, 0, 0, 0.03),
     0.1125rem 0.225rem 1.35rem rgba(0, 0, 0, 0.036),

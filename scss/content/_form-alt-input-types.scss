@@ -102,9 +102,8 @@ input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
     cursor: pointer;
 
     @if $enable-transitions {
-      transition: background-color var(--transition),
-        border-color var(--transition), color var(--transition),
-        box-shadow var(--transition);
+      transition: background-color var(--transition), border-color var(--transition),
+        color var(--transition), box-shadow var(--transition);
     }
 
     &:is(:hover, :active, :focus) {
@@ -149,8 +148,7 @@ input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
     background-color: var(--range-border-color);
 
     @if $enable-transitions {
-      transition: background-color var(--transition),
-        box-shadow var(--transition);
+      transition: background-color var(--transition), box-shadow var(--transition);
     }
   }
 
@@ -178,8 +176,7 @@ input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
     cursor: pointer;
 
     @if $enable-transitions {
-      transition: background-color var(--transition),
-        transform var(--transition);
+      transition: background-color var(--transition), transform var(--transition);
     }
   }
   &::-webkit-slider-thumb {
@@ -228,12 +225,11 @@ input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
     background-position: center left 1.125rem;
     background-size: 1rem auto;
     background-repeat: no-repeat;
-    
+
     &[aria-invalid] {
       @if $enable-important {
         padding-inline-start: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
-      } 
-      @else {
+      } @else {
         padding-inline-start: calc(var(--form-element-spacing-horizontal) + 1.75rem);
       }
       background-position: center left 1.125rem, center right 0.75rem;
@@ -262,7 +258,7 @@ input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
     &:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
       &[type="search"] {
         background-position: center right 1.125rem;
-        
+
         &[aria-invalid] {
           background-position: center right 1.125rem, center left 0.75rem;
         }
