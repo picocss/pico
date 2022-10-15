@@ -21,8 +21,7 @@ hr {
 template {
   @if $enable-important {
     display: none !important;
-  } 
-  @else {
+  } @else {
     display: none;
   }
 }

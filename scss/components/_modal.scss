@@ -45,8 +45,7 @@ dialog {
 
     > header,
     > footer {
-      padding: calc(var(--block-spacing-vertical) * 0.5)
-        var(--block-spacing-horizontal);
+      padding: calc(var(--block-spacing-vertical) * 0.5) var(--block-spacing-horizontal);
     }
 
     > header {
@@ -135,7 +134,7 @@ dialog {
 
     dialog {
       animation-duration: ($animation-duration * 4);
-      animation-name: modal-overlay ;
+      animation-name: modal-overlay;
 
       > article {
         animation-delay: $animation-duration;

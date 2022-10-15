@@ -127,7 +127,6 @@
 [type="radio"]:checked,
 [type="checkbox"][role="switch"],
 [type="checkbox"][role="switch"]:checked {
-  
   &[aria-invalid="false"] {
     --border-color: var(--form-element-valid-border-color);
   }

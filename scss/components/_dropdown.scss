@@ -31,8 +31,7 @@ li[role="list"] > ul {
   li {
     width: 100%;
     margin-bottom: 0;
-    padding: calc(var(--form-element-spacing-vertical) * 0.5)
-      var(--form-element-spacing-horizontal);
+    padding: calc(var(--form-element-spacing-vertical) * 0.5) var(--form-element-spacing-horizontal);
     list-style: none;
 
     &:first-of-type {
@@ -89,11 +88,10 @@ details[role="list"] {
 
     &:not([role]) {
       height: calc(
-        1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 +
-          var(--border-width) * 2
+        1rem * var(--line-height) + var(--form-element-spacing-vertical) * 2 + var(--border-width) *
+          2
       );
-      padding: var(--form-element-spacing-vertical)
-        var(--form-element-spacing-horizontal);
+      padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
       border: var(--border-width) solid var(--form-element-border-color);
       border-radius: var(--border-radius);
       background-color: var(--form-element-background-color);
@@ -102,9 +100,8 @@ details[role="list"] {
       cursor: pointer;
 
       @if $enable-transitions {
-        transition: background-color var(--transition),
-          border-color var(--transition), color var(--transition),
-          box-shadow var(--transition);
+        transition: background-color var(--transition), border-color var(--transition),
+          color var(--transition), box-shadow var(--transition);
       }
 
       &:active,

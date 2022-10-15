@@ -1,9 +1,8 @@
 // Commons Styles
 :root {
   // Typography
-  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
-    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --line-height: 1.5;
   --font-weight: 400;
   --font-size: 16px;
@@ -136,7 +135,6 @@
 
   // Modal
   dialog > article {
-
     --block-spacing-vertical: calc(var(--spacing) * 2);
     --block-spacing-horizontal: var(--spacing);
 
@@ -237,9 +235,9 @@ pre,
 code,
 kbd,
 samp {
-  --font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace",
-    "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono", "Oxygen Mono",
+    "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
 }
 
 kbd {
