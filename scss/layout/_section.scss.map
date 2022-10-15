@@ -1,0 +1,1 @@
+{"version":3,"sources":["_section.scss"],"names":[],"mappings":"AAAA;;;EAGE;;AAEF;EACE,4CAA4C;AAC9C","file":"_section.scss","sourcesContent":["/**\n * Section\n * Responsive spacings for section\n */\n\nsection {\n  margin-bottom: var(--block-spacing-vertical);\n}\n"]}
