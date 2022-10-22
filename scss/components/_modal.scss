@@ -1,3 +1,5 @@
+@use "../settings";
+
 /**
  * Modal (<dialog>)
  */
@@ -31,15 +33,15 @@ dialog {
     max-height: calc(100vh - var(--spacing) * 2);
     overflow: auto;
 
-    @if map-get($breakpoints, "sm") {
-      @media (min-width: map-get($breakpoints, "sm")) {
-        max-width: map-get($viewports, "sm");
+    @if map-get(settings.$breakpoints, "sm") {
+      @media (min-width: map-get(settings.$breakpoints, "sm")) {
+        max-width: map-get(settings.$viewports, "sm");
       }
     }
 
-    @if map-get($breakpoints, "md") {
-      @media (min-width: map-get($breakpoints, "md")) {
-        max-width: map-get($viewports, "md");
+    @if map-get(settings.$breakpoints, "md") {
+      @media (min-width: map-get(settings.$breakpoints, "md")) {
+        max-width: map-get(settings.$viewports, "md");
       }
     }
 
@@ -75,7 +77,7 @@ dialog {
     }
 
     // Close icon
-    @if $enable-classes {
+    @if settings.$enable-classes {
       .close {
         display: block;
         width: 1rem;
@@ -89,7 +91,7 @@ dialog {
         background-repeat: no-repeat;
         opacity: 0.5;
 
-        @if $enable-transitions {
+        @if settings.$enable-transitions {
           transition: opacity var(--transition);
         }
 
@@ -108,7 +110,7 @@ dialog {
 }
 
 // Utilities
-@if $enable-classes {
+@if settings.$enable-classes {
   .modal-is-open {
     padding-right: var(--scrollbar-width, 0px);
     overflow: hidden;
@@ -121,7 +123,7 @@ dialog {
 }
 
 // Animations
-@if ($enable-classes and $enable-transitions) {
+@if (settings.$enable-classes and settings.$enable-transitions) {
   $animation-duration: 0.2s;
 
   :where(.modal-is-opening, .modal-is-closing) {

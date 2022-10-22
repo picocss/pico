@@ -1,0 +1,32 @@
+/**
+ * Input type color
+ */
+
+[type="color"] {
+  // Wrapper
+  @mixin color-wrapper {
+    padding: 0;
+  }
+
+  &::-webkit-color-swatch-wrapper {
+    @include color-wrapper;
+  }
+
+  &::-moz-focus-inner {
+    @include color-wrapper;
+  }
+
+  // Swatch
+  @mixin color-swatch {
+    border: 0;
+    border-radius: calc(var(--border-radius) * 0.5);
+  }
+
+  &::-webkit-color-swatch {
+    @include color-swatch;
+  }
+
+  &::-moz-color-swatch {
+    @include color-swatch;
+  }
+}

@@ -1,3 +1,5 @@
+@use "../settings";
+
 /**
  * Typography
  */
@@ -60,7 +62,7 @@ a,
   color: var(--color);
   text-decoration: var(--text-decoration);
 
-  @if $enable-transitions {
+  @if settings.$enable-transitions {
     transition: background-color var(--transition), color var(--transition),
       text-decoration var(--transition), box-shadow var(--transition);
   }
@@ -74,7 +76,7 @@ a,
     --background-color: var(--primary-focus);
   }
 
-  @if $enable-classes {
+  @if settings.$enable-classes {
     // Secondary
     &.secondary {
       --color: var(--secondary);
@@ -145,7 +147,7 @@ h6 {
 }
 
 // Heading group
-@if $enable-classes == false {
+@if settings.$enable-classes == false {
   hgroup {
     margin-bottom: var(--typography-spacing-vertical);
 
@@ -162,7 +164,7 @@ h6 {
   }
 }
 
-@if $enable-classes {
+@if settings.$enable-classes {
   hgroup,
   .headings {
     margin-bottom: var(--typography-spacing-vertical);
