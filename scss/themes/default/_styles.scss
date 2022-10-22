@@ -11,29 +11,13 @@
   #{$✨}font-weight: 400;
   #{$✨}font-size: 16px;
 
-  // Responsive typography
+  // Responsive root font size
   @if $enable-responsive-typography {
-    @if map-get($breakpoints, "sm") {
-      @media (min-width: map-get($breakpoints, "sm")) {
-        #{$✨}font-size: 17px;
-      }
-    }
-
-    @if map-get($breakpoints, "md") {
-      @media (min-width: map-get($breakpoints, "md")) {
-        #{$✨}font-size: 18px;
-      }
-    }
-
-    @if map-get($breakpoints, "lg") {
-      @media (min-width: map-get($breakpoints, "lg")) {
-        #{$✨}font-size: 19px;
-      }
-    }
-
-    @if map-get($breakpoints, "xl") {
-      @media (min-width: map-get($breakpoints, "xl")) {
-        #{$✨}font-size: 20px;
+    @each $key, $values in $breakpoints {
+      @if $values {
+        @media (min-width: map.get($values, "breakpoint")) {
+          #{$✨}font-size: map.get($values, "root-font-size");
+        }
       }
     }
   }
@@ -85,54 +69,42 @@
   #{$semantic-root-element} > main,
   #{$semantic-root-element} > footer,
   section {
-    @if map-get($breakpoints, "sm") {
-      @media (min-width: map-get($breakpoints, "sm")) {
-        #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 2.5);
-      }
-    }
-
-    @if map-get($breakpoints, "md") {
-      @media (min-width: map-get($breakpoints, "md")) {
-        #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 3);
-      }
-    }
-
-    @if map-get($breakpoints, "lg") {
-      @media (min-width: map-get($breakpoints, "lg")) {
-        #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 3.5);
-      }
-    }
-
-    @if map-get($breakpoints, "xl") {
-      @media (min-width: map-get($breakpoints, "xl")) {
-        #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 4);
+    @each $key, $values in $breakpoints {
+      @if $values {
+        @media (min-width: map.get($values, "breakpoint")) {
+          $multiplier: 1;
+          @if $key == "sm" {
+            $multiplier: 2.5;
+          } @else if $key == "md" {
+            $multiplier: 3;
+          } @else if $key == "lg" {
+            $multiplier: 3.5;
+          } @else if $key == "xl" {
+            $multiplier: 4;
+          }
+          #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * $multiplier);
+        }
       }
     }
   }
 
   // Card (<article>)
   article {
-    @if map-get($breakpoints, "sm") {
-      @media (min-width: map-get($breakpoints, "sm")) {
-        #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * 1.25);
-      }
-    }
-
-    @if map-get($breakpoints, "md") {
-      @media (min-width: map-get($breakpoints, "md")) {
-        #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * 1.5);
-      }
-    }
-
-    @if map-get($breakpoints, "lg") {
-      @media (min-width: map-get($breakpoints, "lg")) {
-        #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * 1.75);
-      }
-    }
-
-    @if map-get($breakpoints, "xl") {
-      @media (min-width: map-get($breakpoints, "xl")) {
-        #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * 2);
+    @each $key, $values in $breakpoints {
+      @if $values {
+        @media (min-width: map.get($values, "breakpoint")) {
+          $multiplier: 1;
+          @if $key == "sm" {
+            $multiplier: 1.25;
+          } @else if $key == "md" {
+            $multiplier: 1.5;
+          } @else if $key == "lg" {
+            $multiplier: 1.75;
+          } @else if $key == "xl" {
+            $multiplier: 2;
+          }
+          #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * $multiplier);
+        }
       }
     }
   }
@@ -142,15 +114,15 @@
     #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 2);
     #{$✨}block-spacing-horizontal: var(#{$✨}spacing);
 
-    @if map-get($breakpoints, "sm") {
-      @media (min-width: map-get($breakpoints, "sm")) {
+    @if map.get($breakpoints, "sm") {
+      @media (min-width: map.get(map.get($breakpoints, "sm"), "breakpoint")) {
         #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 2.5);
         #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * 1.25);
       }
     }
 
-    @if map-get($breakpoints, "md") {
-      @media (min-width: map-get($breakpoints, "md")) {
+    @if map.get($breakpoints, "md") {
+      @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
         #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 3);
         #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * 1.5);
       }
