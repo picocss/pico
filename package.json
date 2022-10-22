@@ -29,20 +29,20 @@
   },
   "scripts": {
     "✨": "run-s build",
-    "build": "run-s lint \"build:*\" --silent",
+    "build": "run-s start lint \"build:*\" done --silent",
     "watch": "nodemon -q --watch scss/ --ext scss --exec 'run-s build'",
     "lint": "run-s \"lint:*\" --silent",
     "lint:prettier": "prettier --write --loglevel silent 'scss/**/*.scss'",
     "lint:sort-scss": "postcss --config scss ./scss/**/*.scss --replace",
     "build:css": "sass --style expanded --source-map --embed-sources --no-error-css scss/:css/",
-    "build:autoprefix": "postcss --config css --replace css/*.css css/*/*.css !css/*.min.css !css/*/*.min.css",
-    "build:minify": "cleancss -O1 --with-rebase --batch --batch-suffix .min css/*.css css/*/*.css !css/*.min.css !css/*/*.min.css",
-    "prebuild": "echo '\\033[96m[@picocss/pico] ✨ Start\\033[0m'",
+    "build:autoprefix": "postcss --config css --replace css/*.css !css/*.min.css",
+    "build:minify": "cleancss -O1 --with-rebase --batch --batch-suffix .min css/*.css !css/*.min.css",
     "prelint": "echo '[@picocss/pico] ✨ Lint'",
     "prebuild:css": "echo '[@picocss/pico] ✨ Compile'",
     "prebuild:autoprefix": "echo '[@picocss/pico] ✨ Autoprefix'",
     "prebuild:minify": "echo '[@picocss/pico] ✨ Minify'",
-    "postbuild:minify": "echo '\\033[32m[@picocss/pico] ✨ Done\\033[0m'"
+    "start": "echo '\\033[96m[@picocss/pico] ✨ Start\\033[0m'",
+    "done": "echo '\\033[32m[@picocss/pico] ✨ Done\\033[0m'"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.12",
