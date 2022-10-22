@@ -1,4 +1,6 @@
-@if ($enable-class-container and $enable-classes) {
+@use "../settings";
+
+@if (settings.$enable-class-container and settings.$enable-classes) {
   /**
  * Container
  */
@@ -13,29 +15,29 @@
   }
 
   .container {
-    @if map-get($breakpoints, "sm") {
-      @media (min-width: map-get($breakpoints, "sm")) {
-        max-width: map-get($viewports, "sm");
+    @if map-get(settings.$breakpoints, "sm") {
+      @media (min-width: map-get(settings.$breakpoints, "sm")) {
+        max-width: map-get(settings.$viewports, "sm");
         padding-right: 0;
         padding-left: 0;
       }
     }
 
-    @if map-get($breakpoints, "md") {
-      @media (min-width: map-get($breakpoints, "md")) {
-        max-width: map-get($viewports, "md");
+    @if map-get(settings.$breakpoints, "md") {
+      @media (min-width: map-get(settings.$breakpoints, "md")) {
+        max-width: map-get(settings.$viewports, "md");
       }
     }
 
-    @if map-get($breakpoints, "lg") {
-      @media (min-width: map-get($breakpoints, "lg")) {
-        max-width: map-get($viewports, "lg");
+    @if map-get(settings.$breakpoints, "lg") {
+      @media (min-width: map-get(settings.$breakpoints, "lg")) {
+        max-width: map-get(settings.$viewports, "lg");
       }
     }
 
-    @if map-get($breakpoints, "xl") {
-      @media (min-width: map-get($breakpoints, "xl")) {
-        max-width: map-get($viewports, "xl");
+    @if map-get(settings.$breakpoints, "xl") {
+      @media (min-width: map-get(settings.$breakpoints, "xl")) {
+        max-width: map-get(settings.$viewports, "xl");
       }
     }
   }

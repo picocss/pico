@@ -1,0 +1,58 @@
+@use "../settings";
+
+/**
+ * Input type file
+ */
+
+[type="file"] {
+  --color: var(--muted-color);
+  padding: calc(var(--form-element-spacing-vertical) * 0.5) 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+
+  @mixin file-selector-button {
+    --background-color: var(--secondary);
+    --border-color: var(--secondary);
+    --color: var(--secondary-inverse);
+    margin-right: calc(var(--spacing) / 2);
+    margin-left: 0;
+    margin-inline-start: 0;
+    margin-inline-end: calc(var(--spacing) / 2);
+    padding: calc(var(--form-element-spacing-vertical) * 0.5)
+      calc(var(--form-element-spacing-horizontal) * 0.5);
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--border-radius);
+    outline: none;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    color: var(--color);
+    font-weight: var(--font-weight);
+    font-size: 1rem;
+    line-height: var(--line-height);
+    text-align: center;
+    cursor: pointer;
+
+    @if settings.$enable-transitions {
+      transition: background-color var(--transition), border-color var(--transition),
+        color var(--transition), box-shadow var(--transition);
+    }
+
+    &:is(:hover, :active, :focus) {
+      --background-color: var(--secondary-hover);
+      --border-color: var(--secondary-hover);
+    }
+  }
+
+  &::file-selector-button {
+    @include file-selector-button;
+  }
+
+  &::-webkit-file-upload-button {
+    @include file-selector-button;
+  }
+
+  &::-ms-browse {
+    @include file-selector-button;
+  }
+}

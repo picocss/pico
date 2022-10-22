@@ -1,43 +1,46 @@
-/*!
- * Pico.css v2.0.0-alpha1 (https://picocss.com)
- * Copyright 2019-2022 - Licensed under MIT
- */
+@use "utils/copyright";
 
 // Config
-@import "variables";
+@forward "settings";
 
 // Theming
-@import "themes/default";
+@use "themes/default";
 
-// Layout
-@import "layout/document"; // html
-@import "layout/sectioning"; // body, header, main, footer
-@import "layout/container"; // .container, .container-fluid
-@import "layout/section"; // section
-@import "layout/grid"; // .grid
-@import "layout/scroller"; // figure
+// // Layout
+@use "layout/document"; // html
+@use "layout/sectioning"; // body, header, main, footer
+@use "layout/container"; // .container, .container-fluid
+@use "layout/section"; // section
+@use "layout/grid"; // .grid
+@use "layout/scroller"; // figure
 
-// Content
-@import "content/typography"; // a, headings, p, ul, blockquote, ...
-@import "content/embedded"; // audio, canvas, iframe, img, svg, video
-@import "content/button"; // button, a[role=button], type=button, type=submit ...
-@import "content/form"; // input, select, textarea, label, fieldset, legend
-@import "content/form-checkbox-radio"; // type=checkbox, type=radio, role=switch
-@import "content/form-alt-input-types"; // type=color, type=date, type=file, type=search, ...
-@import "content/table"; // table, tr, td, ...
-@import "content/code"; // pre, code, ...
-@import "content/miscs"; // hr, template, [hidden], dialog, canvas
+// // Content
+@use "content/typography"; // a, headings, p, ul, blockquote, ...
+@use "content/embedded"; // audio, canvas, iframe, img, svg, video
+@use "content/button"; // button, a[role="button"], type="button", type="submit" ...
+@use "content/table"; // table, tr, td, ...
+@use "content/code"; // pre, code, ...
+@use "content/miscs"; // hr, template, [hidden], dialog, canvas
 
-// Components
-@import "components/accordion"; // details, summary
-@import "components/card"; // article
-@import "components/modal"; // dialog
-@import "components/nav"; // nav
-@import "components/progress"; // progress
-@import "components/dropdown"; // dropdown
+// Forms
+@use "forms/basics"; // input, select, textarea, label, fieldset, legend
+@use "forms/checkbox-radio-switch"; // type="checkbox", type="radio", role="switch"
+@use "forms/input-color"; // type="color"
+@use "forms/input-date"; // type="date", type="datetime-local", type="month", type="time", type="week"
+@use "forms/input-file"; // type="file"
+@use "forms/input-range"; // type="range"
+@use "forms/input-search"; // type="search"
 
-// Utilities
-@import "utilities/loading"; // aria-busy=true
-@import "utilities/tooltip"; // data-tooltip
-@import "utilities/accessibility"; // -ms-touch-action, aria-*
-@import "utilities/reduce-motion"; // prefers-reduced-motion
+// // Components
+@use "components/accordion"; // details, summary
+@use "components/card"; // article
+@use "components/dropdown"; // dropdown
+@use "components/loading"; // aria-busy=true
+@use "components/modal"; // dialog
+@use "components/nav"; // nav
+@use "components/progress"; // progress
+@use "components/tooltip"; // data-tooltip
+
+// // Utilities
+@use "utilities/accessibility"; // -ms-touch-action, aria-*
+@use "utilities/reduce-motion"; // prefers-reduced-motion

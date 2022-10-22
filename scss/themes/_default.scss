@@ -1,21 +1,19 @@
-/**
- * Theme: default
- */
-
-// Variables
-@import "../variables";
-@import "default/colors";
+@use "../settings";
+@use "default/light" as *;
+@use "default/dark" as *;
 
 // Commons styles
-@import "default/styles";
+@use "default/styles";
 
 // Light theme (Default)
 // Can be forced with data-theme="light"
-@import "default/light";
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
+  @include light;
+}
 
 // Dark theme (Auto)
 // Automatically enabled if user has Dark mode enabled
-@import "default/dark";
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     @include dark;
@@ -28,7 +26,6 @@
   @include dark;
 }
 
-// Accent-color
 progress,
 [type="checkbox"],
 [type="radio"],

@@ -1,3 +1,5 @@
+@use "../settings";
+
 /**
  * Tooltip ([data-tooltip])
  */
@@ -109,7 +111,7 @@
     }
   }
 
-  @if $enable-transitions {
+  @if settings.$enable-transitions {
     // Animations, excluding touch devices
     @media (hover: hover) and (pointer: fine) {
       &[data-placement="bottom"]:focus,

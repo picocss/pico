@@ -1,3 +1,5 @@
+@use "../settings";
+
 /**
  * Miscs
  */
@@ -19,7 +21,7 @@ hr {
 // Add the correct display in IE 10+
 [hidden],
 template {
-  @if $enable-important {
+  @if settings.$enable-important {
     display: none !important;
   } @else {
     display: none;

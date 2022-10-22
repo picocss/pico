@@ -1,5 +1,7 @@
+@use "../settings";
+
 /**
- * Form elements
+ * Basics form elements
  */
 
 // Reboot based on :
@@ -163,7 +165,7 @@ textarea {
   color: var(--color);
   font-weight: var(--font-weight);
 
-  @if $enable-transitions {
+  @if settings.$enable-transitions {
     transition: background-color var(--transition), border-color var(--transition),
       color var(--transition), box-shadow var(--transition);
   }
@@ -210,7 +212,7 @@ textarea[disabled],
 :where(input, select, textarea) {
   &:not([type="checkbox"], [type="radio"], [type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
     &[aria-invalid] {
-      @if $enable-important {
+      @if settings.$enable-important {
         padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
         padding-left: var(--form-element-spacing-horizontal);
         padding-inline-start: var(--form-element-spacing-horizontal) !important;
@@ -239,7 +241,7 @@ textarea[disabled],
     --border-color: var(--form-element-valid-border-color);
 
     &:is(:active, :focus) {
-      @if $enable-important {
+      @if settings.$enable-important {
         --border-color: var(--form-element-valid-active-border-color) !important;
         --box-shadow: 0 0 0 var(--outline-width) var(--form-element-valid-focus-color) !important;
       } @else {
@@ -253,7 +255,7 @@ textarea[disabled],
     --border-color: var(--form-element-invalid-border-color);
 
     &:is(:active, :focus) {
-      @if $enable-important {
+      @if settings.$enable-important {
         --border-color: var(--form-element-invalid-active-border-color) !important;
         --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color) !important;
       } @else {

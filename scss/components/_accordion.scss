@@ -1,3 +1,5 @@
+@use "../settings";
+
 /**
  * Accordion (<details>)
  */
@@ -17,7 +19,7 @@ details {
       color: var(--accordion-close-summary-color);
     }
 
-    @if $enable-transitions {
+    @if settings.$enable-transitions {
       transition: color var(--transition);
     }
 
@@ -48,7 +50,7 @@ details {
       background-repeat: no-repeat;
       content: "";
 
-      @if $enable-transitions {
+      @if settings.$enable-transitions {
         transition: transform var(--transition);
       }
     }
@@ -72,7 +74,7 @@ details {
         background-image: var(--icon-chevron-button);
       }
 
-      @if $enable-classes {
+      @if settings.$enable-classes {
         // .contrast
         &:not(.outline).contrast {
           // Marker

@@ -1,3 +1,5 @@
+@use "../settings";
+
 /**
  * Button
  */
@@ -61,7 +63,7 @@ input[type="reset"],
   text-align: center;
   cursor: pointer;
 
-  @if $enable-transitions {
+  @if settings.$enable-transitions {
     transition: background-color var(--transition), border-color var(--transition),
       color var(--transition), box-shadow var(--transition);
   }
@@ -80,7 +82,7 @@ input[type="reset"],
 }
 
 // .secondary, .contrast & .outline
-@if $enable-classes {
+@if settings.$enable-classes {
   // Secondary
   :is(button, input[type="submit"], input[type="button"], [role="button"]).secondary,
   input[type="reset"] {

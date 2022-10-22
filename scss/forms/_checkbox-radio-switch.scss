@@ -1,6 +1,7 @@
+@use "../settings";
+
 /**
- * Form elements
- * Checkboxes & Radios
+ * Checkboxes, Radios and Switches
  */
 
 [type="checkbox"],
@@ -105,7 +106,7 @@
     background-color: var(--color);
     content: "";
 
-    @if $enable-transitions {
+    @if settings.$enable-transitions {
       transition: margin $switch-transition;
     }
   }
