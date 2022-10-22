@@ -1,4 +1,4 @@
-@use "../settings";
+@use "../settings" as *;
 
 /**
  * Basics form elements
@@ -17,7 +17,7 @@ select,
 textarea {
   margin: 0; // 2
   font-size: 1rem; // 1
-  line-height: var(--line-height); // 1
+  line-height: var(#{$✨}line-height); // 1
   font-family: inherit; // 1
   letter-spacing: inherit; // 2
 }
@@ -113,15 +113,15 @@ textarea {
 // Force height for alternatives input types
 input:not([type="checkbox"], [type="radio"], [type="range"]) {
   height: calc(
-    (1rem * var(--line-height)) + (var(--form-element-spacing-vertical) * 2) +
-      (var(--border-width) * 2)
+    (1rem * var(#{$✨}line-height)) + (var(#{$✨}form-element-spacing-vertical) * 2) +
+      (var(#{$✨}border-width) * 2)
   );
 }
 
 // Fieldset
 fieldset {
   margin: 0;
-  margin-bottom: var(--spacing);
+  margin-bottom: var(#{$✨}spacing);
   padding: 0;
   border: 0;
 }
@@ -130,8 +130,8 @@ fieldset {
 label,
 fieldset legend {
   display: block;
-  margin-bottom: calc(var(--spacing) * 0.25);
-  font-weight: var(--form-label-font-weight, var(--font-weight));
+  margin-bottom: calc(var(#{$✨}spacing) * 0.25);
+  font-weight: var(#{$✨}form-label-font-weight, var(#{$✨}font-weight));
 }
 
 // Blocks, 100%
@@ -146,28 +146,28 @@ input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
 select,
 textarea {
   appearance: none;
-  padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
+  padding: var(#{$✨}form-element-spacing-vertical) var(#{$✨}form-element-spacing-horizontal);
 }
 
 // Commons styles
 input,
 select,
 textarea {
-  --background-color: var(--form-element-background-color);
-  --border-color: var(--form-element-border-color);
-  --color: var(--form-element-color);
-  --box-shadow: none;
-  border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
+  #{$✨}background-color: var(#{$✨}form-element-background-color);
+  #{$✨}border-color: var(#{$✨}form-element-border-color);
+  #{$✨}color: var(#{$✨}form-element-color);
+  #{$✨}box-shadow: none;
+  border: var(#{$✨}border-width) solid var(#{$✨}border-color);
+  border-radius: var(#{$✨}border-radius);
   outline: none;
-  background-color: var(--background-color);
-  box-shadow: var(--box-shadow);
-  color: var(--color);
-  font-weight: var(--font-weight);
+  background-color: var(#{$✨}background-color);
+  box-shadow: var(#{$✨}box-shadow);
+  color: var(#{$✨}color);
+  font-weight: var(#{$✨}font-weight);
 
-  @if settings.$enable-transitions {
-    transition: background-color var(--transition), border-color var(--transition),
-      color var(--transition), box-shadow var(--transition);
+  @if $enable-transitions {
+    transition: background-color var(#{$✨}transition), border-color var(#{$✨}transition),
+      color var(#{$✨}transition), box-shadow var(#{$✨}transition);
   }
 }
 
@@ -175,7 +175,7 @@ textarea {
 input:not([type="submit"], [type="button"], [type="reset"], [type="checkbox"], [type="radio"], [readonly]),
 :where(select, textarea) {
   &:is(:active, :focus) {
-    --background-color: var(--form-element-active-background-color);
+    #{$✨}background-color: var(#{$✨}form-element-active-background-color);
   }
 }
 
@@ -183,7 +183,7 @@ input:not([type="submit"], [type="button"], [type="reset"], [type="checkbox"], [
 input:not([type="submit"], [type="button"], [type="reset"], [role="switch"], [readonly]),
 :where(select, textarea) {
   &:is(:active, :focus) {
-    --border-color: var(--form-element-active-border-color);
+    #{$✨}border-color: var(#{$✨}form-element-active-border-color);
   }
 }
 
@@ -192,7 +192,7 @@ input:not([type="submit"], [type="button"], [type="reset"], [type="range"], [typ
 select,
 textarea {
   &:focus {
-    --box-shadow: 0 0 0 var(--outline-width) var(--form-element-focus-color);
+    #{$✨}box-shadow: 0 0 0 var(#{$✨}outline-width) var(#{$✨}form-element-focus-color);
   }
 }
 
@@ -202,9 +202,9 @@ select[disabled],
 textarea[disabled],
 :where(fieldset[disabled])
   :is(input:not([type="submit"], [type="button"], [type="reset"]), select, textarea) {
-  --background-color: var(--form-element-disabled-background-color);
-  --border-color: var(--form-element-disabled-border-color);
-  opacity: var(--form-element-disabled-opacity);
+  #{$✨}background-color: var(#{$✨}form-element-disabled-background-color);
+  #{$✨}border-color: var(#{$✨}form-element-disabled-border-color);
+  opacity: var(#{$✨}form-element-disabled-opacity);
   pointer-events: none;
 }
 
@@ -212,16 +212,16 @@ textarea[disabled],
 :where(input, select, textarea) {
   &:not([type="checkbox"], [type="radio"], [type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
     &[aria-invalid] {
-      @if settings.$enable-important {
-        padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
-        padding-left: var(--form-element-spacing-horizontal);
-        padding-inline-start: var(--form-element-spacing-horizontal) !important;
-        padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
+      @if $enable-important {
+        padding-right: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem) !important;
+        padding-left: var(#{$✨}form-element-spacing-horizontal);
+        padding-inline-start: var(#{$✨}form-element-spacing-horizontal) !important;
+        padding-inline-end: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem) !important;
       } @else {
-        padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
-        padding-left: var(--form-element-spacing-horizontal);
-        padding-inline-start: var(--form-element-spacing-horizontal);
-        padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
+        padding-right: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem);
+        padding-left: var(#{$✨}form-element-spacing-horizontal);
+        padding-inline-start: var(#{$✨}form-element-spacing-horizontal);
+        padding-inline-end: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem);
       }
       background-position: center right 0.75rem;
       background-size: 1rem auto;
@@ -229,38 +229,50 @@ textarea[disabled],
     }
 
     &[aria-invalid="false"] {
-      background-image: var(--icon-valid);
+      background-image: var(#{$✨}icon-valid);
     }
 
     &[aria-invalid="true"] {
-      background-image: var(--icon-invalid);
+      background-image: var(#{$✨}icon-invalid);
     }
   }
 
   &[aria-invalid="false"] {
-    --border-color: var(--form-element-valid-border-color);
+    #{$✨}border-color: var(#{$✨}form-element-valid-border-color);
 
     &:is(:active, :focus) {
-      @if settings.$enable-important {
-        --border-color: var(--form-element-valid-active-border-color) !important;
-        --box-shadow: 0 0 0 var(--outline-width) var(--form-element-valid-focus-color) !important;
+      @if $enable-important {
+        #{$✨}border-color: var(#{$✨}form-element-valid-active-border-color) !important;
+        #{$✨}box-shadow: 0
+          0
+          0
+          var(#{$✨}outline-width)
+          var(#{$✨}form-element-valid-focus-color) !important;
       } @else {
-        --border-color: var(--form-element-valid-active-border-color);
-        --box-shadow: 0 0 0 var(--outline-width) var(--form-element-valid-focus-color);
+        #{$✨}border-color: var(#{$✨}form-element-valid-active-border-color);
+        #{$✨}box-shadow: 0 0 0 var(#{$✨}outline-width) var(#{$✨}form-element-valid-focus-color);
       }
     }
   }
 
   &[aria-invalid="true"] {
-    --border-color: var(--form-element-invalid-border-color);
+    #{$✨}border-color: var(#{$✨}form-element-invalid-border-color);
 
     &:is(:active, :focus) {
-      @if settings.$enable-important {
-        --border-color: var(--form-element-invalid-active-border-color) !important;
-        --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color) !important;
+      @if $enable-important {
+        #{$✨}border-color: var(#{$✨}form-element-invalid-active-border-color) !important;
+        #{$✨}box-shadow: 0
+          0
+          0
+          var(#{$✨}outline-width)
+          var(#{$✨}form-element-invalid-focus-color) !important;
       } @else {
-        --border-color: var(--form-element-invalid-active-border-color);
-        --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color);
+        #{$✨}border-color: var(#{$✨}form-element-invalid-active-border-color);
+        #{$✨}box-shadow: 0
+          0
+          0
+          var(#{$✨}outline-width)
+          var(#{$✨}form-element-invalid-focus-color);
       }
     }
   }
@@ -282,7 +294,7 @@ input::-webkit-input-placeholder,
 textarea::placeholder,
 textarea::-webkit-input-placeholder,
 select:invalid {
-  color: var(--form-element-placeholder-color);
+  color: var(#{$✨}form-element-placeholder-color);
   opacity: 1;
 }
 
@@ -290,7 +302,7 @@ select:invalid {
 input:not([type="checkbox"], [type="radio"]),
 select,
 textarea {
-  margin-bottom: var(--spacing);
+  margin-bottom: var(#{$✨}spacing);
 }
 
 // Select
@@ -302,11 +314,11 @@ select {
   }
 
   &:not([multiple], [size]) {
-    padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
-    padding-left: var(--form-element-spacing-horizontal);
-    padding-inline-start: var(--form-element-spacing-horizontal);
-    padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
-    background-image: var(--icon-chevron);
+    padding-right: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem);
+    padding-left: var(#{$✨}form-element-spacing-horizontal);
+    padding-inline-start: var(#{$✨}form-element-spacing-horizontal);
+    padding-inline-end: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem);
+    background-image: var(#{$✨}icon-chevron);
     background-position: center right 0.75rem;
     background-size: 1rem auto;
     background-repeat: no-repeat;
@@ -326,15 +338,15 @@ select {
   + small {
     display: block;
     width: 100%;
-    margin-top: calc(var(--spacing) * -0.75);
-    margin-bottom: var(--spacing);
-    color: var(--muted-color);
+    margin-top: calc(var(#{$✨}spacing) * -0.75);
+    margin-bottom: var(#{$✨}spacing);
+    color: var(#{$✨}muted-color);
   }
 }
 
 // Styles for Input inside a label
 label {
   > :where(input, select, textarea) {
-    margin-top: calc(var(--spacing) * 0.25);
+    margin-top: calc(var(#{$✨}spacing) * 0.25);
   }
 }

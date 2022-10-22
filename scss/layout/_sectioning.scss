@@ -1,4 +1,4 @@
-@use "../settings";
+@use "../settings" as *;
 
 /**
  * Sectioning
@@ -19,7 +19,7 @@ main {
 // ––––––––––––––––––––
 
 // 1. Remove the margin in all browsers (opinionated)
-#{settings.$semantic-root-element} {
+#{$semantic-root-element} {
   width: 100%;
   margin: 0; // 1
 
@@ -31,34 +31,34 @@ main {
     margin-left: auto;
 
     // Semantic container
-    @if settings.$enable-semantic-container {
-      padding: var(--block-spacing-vertical) var(--block-spacing-horizontal);
+    @if $enable-semantic-container {
+      padding: var(#{$✨}block-spacing-vertical) var(#{$✨}block-spacing-horizontal);
 
       // Centered viewport
-      @if settings.$enable-viewport {
-        @if map-get(settings.$breakpoints, "sm") and settings.$enable-viewport {
-          @media (min-width: map-get(settings.$breakpoints, "sm")) {
-            max-width: map-get(settings.$viewports, "sm");
+      @if $enable-viewport {
+        @if map-get($breakpoints, "sm") and $enable-viewport {
+          @media (min-width: map-get($breakpoints, "sm")) {
+            max-width: map-get($viewports, "sm");
             padding-right: 0;
             padding-left: 0;
           }
         }
 
-        @if map-get(settings.$breakpoints, "md") and settings.$enable-viewport {
-          @media (min-width: map-get(settings.$breakpoints, "md")) {
-            max-width: map-get(settings.$viewports, "md");
+        @if map-get($breakpoints, "md") and $enable-viewport {
+          @media (min-width: map-get($breakpoints, "md")) {
+            max-width: map-get($viewports, "md");
           }
         }
 
-        @if map-get(settings.$breakpoints, "lg") and settings.$enable-viewport {
-          @media (min-width: map-get(settings.$breakpoints, "lg")) {
-            max-width: map-get(settings.$viewports, "lg");
+        @if map-get($breakpoints, "lg") and $enable-viewport {
+          @media (min-width: map-get($breakpoints, "lg")) {
+            max-width: map-get($viewports, "lg");
           }
         }
 
-        @if map-get(settings.$breakpoints, "xl") and settings.$enable-viewport {
-          @media (min-width: map-get(settings.$breakpoints, "xl")) {
-            max-width: map-get(settings.$viewports, "xl");
+        @if map-get($breakpoints, "xl") and $enable-viewport {
+          @media (min-width: map-get($breakpoints, "xl")) {
+            max-width: map-get($viewports, "xl");
           }
         }
       }
@@ -66,7 +66,7 @@ main {
 
     // Semantic container
     @else {
-      padding: var(--block-spacing-vertical) 0;
+      padding: var(#{$✨}block-spacing-vertical) 0;
     }
   }
 }

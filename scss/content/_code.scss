@@ -1,3 +1,5 @@
+@use "../settings" as *;
+
 /**
  * Code
  */
@@ -14,7 +16,7 @@ code,
 kbd,
 samp {
   font-size: 0.875em; // 2
-  font-family: var(--font-family); // 1
+  font-family: var(#{$✨}font-family); // 1
 }
 
 // Prevent overflow of the container in all browsers (opinionated)
@@ -29,10 +31,10 @@ pre {
 pre,
 code,
 kbd {
-  border-radius: var(--border-radius);
-  background: var(--code-background-color);
-  color: var(--code-color);
-  font-weight: var(--font-weight);
+  border-radius: var(#{$✨}border-radius);
+  background: var(#{$✨}code-background-color);
+  color: var(#{$✨}code-color);
+  font-weight: var(#{$✨}font-weight);
   line-height: initial;
 }
 
@@ -44,15 +46,15 @@ kbd {
 
 pre {
   display: block;
-  margin-bottom: var(--spacing);
+  margin-bottom: var(#{$✨}spacing);
   overflow-x: auto;
 
   > code {
     display: block;
-    padding: var(--spacing);
+    padding: var(#{$✨}spacing);
     background: none;
     font-size: 14px;
-    line-height: var(--line-height);
+    line-height: var(#{$✨}line-height);
   }
 }
 
@@ -60,32 +62,32 @@ pre {
 code {
   // Tags
   b {
-    color: var(--code-tag-color);
-    font-weight: var(--font-weight);
+    color: var(#{$✨}code-tag-color);
+    font-weight: var(#{$✨}font-weight);
   }
 
   // Properties
   i {
-    color: var(--code-property-color);
+    color: var(#{$✨}code-property-color);
     font-style: normal;
   }
 
   // Values
   u {
-    color: var(--code-value-color);
+    color: var(#{$✨}code-value-color);
     text-decoration: none;
   }
 
   // Comments
   em {
-    color: var(--code-comment-color);
+    color: var(#{$✨}code-comment-color);
     font-style: normal;
   }
 }
 
 // kbd
 kbd {
-  background-color: var(--code-kbd-background-color);
-  color: var(--code-kbd-color);
+  background-color: var(#{$✨}code-kbd-background-color);
+  color: var(#{$✨}code-kbd-color);
   vertical-align: baseline;
 }

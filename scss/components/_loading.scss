@@ -1,3 +1,5 @@
+@use "../settings" as *;
+
 /**
  * Loading ([aria-busy=true])
  */
@@ -20,15 +22,15 @@
     vertical-align: text-bottom;
     vertical-align: -0.125em; // Visual alignment
     animation: spinner 0.75s linear infinite;
-    opacity: var(--loading-spinner-opacity);
+    opacity: var(#{$✨}loading-spinner-opacity);
   }
 
   &:not(:empty) {
     &::before {
-      margin-right: calc(var(--spacing) * 0.5);
+      margin-right: calc(var(#{$✨}spacing) * 0.5);
       margin-left: 0;
       margin-inline-start: 0;
-      margin-inline-end: calc(var(--spacing) * 0.5);
+      margin-inline-end: calc(var(#{$✨}spacing) * 0.5);
     }
   }
 

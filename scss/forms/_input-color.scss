@@ -1,3 +1,5 @@
+@use "../settings" as *;
+
 /**
  * Input type color
  */
@@ -19,7 +21,7 @@
   // Swatch
   @mixin color-swatch {
     border: 0;
-    border-radius: calc(var(--border-radius) * 0.5);
+    border-radius: calc(var(#{$✨}border-radius) * 0.5);
   }
 
   &::-webkit-color-swatch {

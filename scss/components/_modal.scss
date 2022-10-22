@@ -1,11 +1,11 @@
-@use "../settings";
+@use "../settings" as *;
 
 /**
  * Modal (<dialog>)
  */
 
 :root {
-  --scrollbar-width: 0px;
+  #{$✨}scrollbar-width: 0px;
 }
 
 dialog {
@@ -22,38 +22,38 @@ dialog {
   min-width: 100%;
   height: inherit;
   min-height: 100%;
-  padding: var(--spacing);
+  padding: var(#{$✨}spacing);
   border: 0;
-  backdrop-filter: var(--modal-overlay-backdrop-filter);
-  background-color: var(--modal-overlay-background-color);
-  color: var(--color);
+  backdrop-filter: var(#{$✨}modal-overlay-backdrop-filter);
+  background-color: var(#{$✨}modal-overlay-background-color);
+  color: var(#{$✨}color);
 
   // Content
   article {
-    max-height: calc(100vh - var(--spacing) * 2);
+    max-height: calc(100vh - var(#{$✨}spacing) * 2);
     overflow: auto;
 
-    @if map-get(settings.$breakpoints, "sm") {
-      @media (min-width: map-get(settings.$breakpoints, "sm")) {
-        max-width: map-get(settings.$viewports, "sm");
+    @if map-get($breakpoints, "sm") {
+      @media (min-width: map-get($breakpoints, "sm")) {
+        max-width: map-get($viewports, "sm");
       }
     }
 
-    @if map-get(settings.$breakpoints, "md") {
-      @media (min-width: map-get(settings.$breakpoints, "md")) {
-        max-width: map-get(settings.$viewports, "md");
+    @if map-get($breakpoints, "md") {
+      @media (min-width: map-get($breakpoints, "md")) {
+        max-width: map-get($viewports, "md");
       }
     }
 
     > header,
     > footer {
-      padding: calc(var(--block-spacing-vertical) * 0.5) var(--block-spacing-horizontal);
+      padding: calc(var(#{$✨}block-spacing-vertical) * 0.5) var(#{$✨}block-spacing-horizontal);
     }
 
     > header {
       .close {
         margin: 0;
-        margin-left: var(--spacing);
+        margin-left: var(#{$✨}spacing);
         float: right;
       }
     }
@@ -65,7 +65,7 @@ dialog {
         margin-bottom: 0;
 
         &:not(:first-of-type) {
-          margin-left: calc(var(--spacing) * 0.5);
+          margin-left: calc(var(#{$✨}spacing) * 0.5);
         }
       }
     }
@@ -77,22 +77,22 @@ dialog {
     }
 
     // Close icon
-    @if settings.$enable-classes {
+    @if $enable-classes {
       .close {
         display: block;
         width: 1rem;
         height: 1rem;
-        margin-top: calc(var(--block-spacing-vertical) * -0.5);
-        margin-bottom: var(--typography-spacing-vertical);
+        margin-top: calc(var(#{$✨}block-spacing-vertical) * -0.5);
+        margin-bottom: var(#{$✨}typography-spacing-vertical);
         margin-left: auto;
-        background-image: var(--icon-close);
+        background-image: var(#{$✨}icon-close);
         background-position: center;
         background-size: auto 1rem;
         background-repeat: no-repeat;
         opacity: 0.5;
 
-        @if settings.$enable-transitions {
-          transition: opacity var(--transition);
+        @if $enable-transitions {
+          transition: opacity var(#{$✨}transition);
         }
 
         &:is([aria-current], :hover, :active, :focus) {
@@ -110,9 +110,9 @@ dialog {
 }
 
 // Utilities
-@if settings.$enable-classes {
+@if $enable-classes {
   .modal-is-open {
-    padding-right: var(--scrollbar-width, 0px);
+    padding-right: var(#{$✨}scrollbar-width, 0px);
     overflow: hidden;
     pointer-events: none;
 
@@ -123,7 +123,7 @@ dialog {
 }
 
 // Animations
-@if (settings.$enable-classes and settings.$enable-transitions) {
+@if ($enable-classes and $enable-transitions) {
   $animation-duration: 0.2s;
 
   :where(.modal-is-opening, .modal-is-closing) {

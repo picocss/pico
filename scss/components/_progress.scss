@@ -1,3 +1,5 @@
+@use "../settings" as *;
+
 /**
  * Progress
  */
@@ -27,33 +29,37 @@ progress {
   appearance: none;
   width: 100%;
   height: 0.5rem;
-  margin-bottom: calc(var(--spacing) * 0.5);
+  margin-bottom: calc(var(#{$✨}spacing) * 0.5);
   overflow: hidden;
 
   // Remove Firefox and Opera border
   border: 0;
-  border-radius: var(--border-radius);
-  background-color: var(--progress-background-color);
+  border-radius: var(#{$✨}border-radius);
+  background-color: var(#{$✨}progress-background-color);
 
   // IE10 uses `color` to set the bar background-color
-  color: var(--progress-color);
+  color: var(#{$✨}progress-color);
 
   &::-webkit-progress-bar {
-    border-radius: var(--border-radius);
+    border-radius: var(#{$✨}border-radius);
     background: none;
   }
   &[value]::-webkit-progress-value {
-    background-color: var(--progress-color);
+    background-color: var(#{$✨}progress-color);
   }
   &::-moz-progress-bar {
-    background-color: var(--progress-color);
+    background-color: var(#{$✨}progress-color);
   }
 
   // Indeterminate state
   @media (prefers-reduced-motion: no-preference) {
     &:indeterminate {
-      background: var(--progress-background-color)
-        linear-gradient(to right, var(--progress-color) 30%, var(--progress-background-color) 30%)
+      background: var(#{$✨}progress-background-color)
+        linear-gradient(
+          to right,
+          var(#{$✨}progress-color) 30%,
+          var(#{$✨}progress-background-color) 30%
+        )
         top left / 150% 150% no-repeat;
       animation: progress-indeterminate 1s linear infinite;
 

@@ -1,3 +1,5 @@
+@use "../settings" as *;
+
 /**
  * Horizontal scroller (<figure>)
  */
@@ -10,7 +12,7 @@ figure {
   overflow-x: auto;
 
   figcaption {
-    padding: calc(var(--spacing) * 0.5) 0;
-    color: var(--muted-color);
+    padding: calc(var(#{$✨}spacing) * 0.5) 0;
+    color: var(#{$✨}muted-color);
   }
 }

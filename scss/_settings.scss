@@ -1,6 +1,9 @@
 // Config
 // ––––––––––––––––––––
 
+// Prefix for CSS variables
+$css-var-prefix: "pico-" !default;
+
 // Set the root element for $enable-semantic-container and $enable-responsive-spacings
 $semantic-root-element: "body" !default;
 
@@ -67,3 +70,6 @@ $viewports: (
   lg: 920px,
   xl: 1130px
 ) !default;
+
+// Shortcut for CSS vars prefix
+$✨: --#{$css-var-prefix};

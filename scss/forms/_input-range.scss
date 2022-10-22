@@ -1,4 +1,4 @@
-@use "../settings";
+@use "../settings" as *;
 
 /**
  * Input type range
@@ -22,11 +22,11 @@
   @mixin slider-track {
     width: 100%;
     height: $height-track;
-    border-radius: var(--border-radius);
-    background-color: var(--range-border-color);
+    border-radius: var(#{$✨}border-radius);
+    background-color: var(#{$✨}range-border-color);
 
-    @if settings.$enable-transitions {
-      transition: background-color var(--transition), box-shadow var(--transition);
+    @if $enable-transitions {
+      transition: background-color var(#{$✨}transition), box-shadow var(#{$✨}transition);
     }
   }
 
@@ -48,13 +48,13 @@
     width: $height-thumb;
     height: $height-thumb;
     margin-top: #{(-($height-thumb * 0.5) + ($height-track * 0.5))};
-    border: $border-thumb solid var(--range-thumb-border-color);
+    border: $border-thumb solid var(#{$✨}range-thumb-border-color);
     border-radius: 50%;
-    background-color: var(--range-thumb-color);
+    background-color: var(#{$✨}range-thumb-color);
     cursor: pointer;
 
-    @if settings.$enable-transitions {
-      transition: background-color var(--transition), transform var(--transition);
+    @if $enable-transitions {
+      transition: background-color var(#{$✨}transition), transform var(#{$✨}transition);
     }
   }
   &::-webkit-slider-thumb {
@@ -71,12 +71,12 @@
 
   &:hover,
   &:focus {
-    --range-border-color: var(--range-active-border-color);
-    --range-thumb-color: var(--range-thumb-hover-color);
+    #{$✨}range-border-color: var(#{$✨}range-active-border-color);
+    #{$✨}range-thumb-color: var(#{$✨}range-thumb-hover-color);
   }
 
   &:active {
-    --range-thumb-color: var(--range-thumb-active-color);
+    #{$✨}range-thumb-color: var(#{$✨}range-thumb-active-color);
 
     // Slider Thumb
     &::-webkit-slider-thumb {
