@@ -114,6 +114,7 @@ dialog {
     padding-right: var(--scrollbar-width, 0px);
     overflow: hidden;
     pointer-events: none;
+    touch-action: none;
 
     dialog {
       pointer-events: auto;
