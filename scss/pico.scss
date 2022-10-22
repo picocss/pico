@@ -6,7 +6,7 @@
 // Theming
 @use "themes/default";
 
-// // Layout
+// Layout
 @use "layout/document"; // html
 @use "layout/sectioning"; // body, header, main, footer
 @use "layout/container"; // .container, .container-fluid
@@ -14,7 +14,7 @@
 @use "layout/grid"; // .grid
 @use "layout/scroller"; // figure
 
-// // Content
+// Content
 @use "content/typography"; // a, headings, p, ul, blockquote, ...
 @use "content/embedded"; // audio, canvas, iframe, img, svg, video
 @use "content/button"; // button, a[role="button"], type="button", type="submit" ...
@@ -31,7 +31,7 @@
 @use "forms/input-range"; // type="range"
 @use "forms/input-search"; // type="search"
 
-// // Components
+// Components
 @use "components/accordion"; // details, summary
 @use "components/card"; // article
 @use "components/dropdown"; // dropdown
@@ -41,6 +41,6 @@
 @use "components/progress"; // progress
 @use "components/tooltip"; // data-tooltip
 
-// // Utilities
+// Utilities
 @use "utilities/accessibility"; // -ms-touch-action, aria-*
 @use "utilities/reduce-motion"; // prefers-reduced-motion

@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../settings" as *;
 
 @if ($enable-classes and $enable-grid) {
@@ -13,8 +14,8 @@
     grid-template-columns: 1fr;
     margin: 0;
 
-    @if map-get($breakpoints, "lg") {
-      @media (min-width: map-get($breakpoints, "lg")) {
+    @if map.get($breakpoints, "lg") {
+      @media (min-width: map.get(map.get($breakpoints, "lg"), "breakpoint")) {
         grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
       }
     }

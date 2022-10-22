@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // Config
 // ––––––––––––––––––––
 
@@ -22,7 +24,7 @@ $enable-viewport: true !default;
 $enable-responsive-spacings: true !default;
 
 // Enable responsive typography
-// Fixed root element size if disabled
+// Fixed root element size (rem) if disabled
 $enable-responsive-typography: true !default;
 
 // Enable .classes
@@ -38,38 +40,37 @@ $enable-transitions: true !default;
 // Enable overriding with !important
 $enable-important: true !default;
 
-// Responsive
-// ––––––––––––––––––––
+// Breakpoints, viewports and root font size
+$breakpoints: () !default;
+$breakpoints: map.deep-merge(
+  (
+    // Small (landscape phones)  
+    sm: (
+      breakpoint: 576px,
+      viewport: 510px,
+      root-font-size: 17px,
+    ),
+    // Medium (tablets)
+    md: (
+      breakpoint: 768px,
+      viewport: 700px,
+      root-font-size: 18px,
+    ),
+    // Large (desktops)
+    lg: (
+      breakpoint: 992px,
+      viewport: 920px,
+      root-font-size: 19px,
+    ),
+    // Extra large (large desktops)
+    xl: (
+      breakpoint: 1200px,
+      viewport: 1130px,
+      root-font-size: 20px,
+    ),
+  ),
+  $breakpoints
+);
 
-// xs: Extra small (portrait phones)
-// sm: Small(landscape phones)
-// md: Medium(tablets)
-// lg: Large(desktops)
-// xl: Extra large (large desktops)
-
-// NOTE:
-// To provide an easy and fine styling on each breakpoint
-// we didn't use @each, @mixin or @include.
-// That means you need to edit each CSS selector file to add a breakpoint
-
-// Breakpoints
-// 'null' disable the breakpoint
-$breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-) !default;
-
-// Viewports
-$viewports: (
-  // 'null' disable the viewport on a breakpoint
-  sm: 510px,
-  md: 700px,
-  lg: 920px,
-  xl: 1130px
-) !default;
-
-// Shortcut for CSS vars prefix
+// // Shortcut for CSS vars prefix
 $✨: --#{$css-var-prefix};
