@@ -1,4 +1,4 @@
-@use "../settings";
+@use "../settings" as *;
 
 /**
  * Typography
@@ -44,62 +44,62 @@ pre,
 table,
 ul {
   margin-top: 0;
-  margin-bottom: var(--typography-spacing-vertical);
-  color: var(--color);
+  margin-bottom: var(#{$✨}typography-spacing-vertical);
+  color: var(#{$✨}color);
   font-style: normal;
-  font-weight: var(--font-weight);
-  font-size: var(--font-size);
+  font-weight: var(#{$✨}font-weight);
+  font-size: var(#{$✨}font-size);
 }
 
 // Links
 // 1. Remove the gray background on active links in IE 10
 a,
 [role="link"] {
-  --color: var(--primary);
-  --background-color: transparent;
+  #{$✨}color: var(#{$✨}primary);
+  #{$✨}background-color: transparent;
   outline: none;
-  background-color: var(--background-color); // 1
-  color: var(--color);
-  text-decoration: var(--text-decoration);
+  background-color: var(#{$✨}background-color); // 1
+  color: var(#{$✨}color);
+  text-decoration: var(#{$✨}text-decoration);
 
-  @if settings.$enable-transitions {
-    transition: background-color var(--transition), color var(--transition),
-      text-decoration var(--transition), box-shadow var(--transition);
+  @if $enable-transitions {
+    transition: background-color var(#{$✨}transition), color var(#{$✨}transition),
+      text-decoration var(#{$✨}transition), box-shadow var(#{$✨}transition);
   }
 
   &:is([aria-current], :hover, :active, :focus) {
-    --color: var(--primary-hover);
-    --text-decoration: underline;
+    #{$✨}color: var(#{$✨}primary-hover);
+    #{$✨}text-decoration: underline;
   }
 
   &:focus {
-    --background-color: var(--primary-focus);
+    #{$✨}background-color: var(#{$✨}primary-focus);
   }
 
-  @if settings.$enable-classes {
+  @if $enable-classes {
     // Secondary
     &.secondary {
-      --color: var(--secondary);
+      #{$✨}color: var(#{$✨}secondary);
 
       &:is([aria-current], :hover, :active, :focus) {
-        --color: var(--secondary-hover);
+        #{$✨}color: var(#{$✨}secondary-hover);
       }
 
       &:focus {
-        --background-color: var(--secondary-focus);
+        #{$✨}background-color: var(#{$✨}secondary-focus);
       }
     }
 
     // Contrast
     &.contrast {
-      --color: var(--contrast);
+      #{$✨}color: var(#{$✨}contrast);
 
       &:is([aria-current], :hover, :active, :focus) {
-        --color: var(--contrast-hover);
+        #{$✨}color: var(#{$✨}contrast-hover);
       }
 
       &:focus {
-        --background-color: var(--contrast-focus);
+        #{$✨}background-color: var(#{$✨}contrast-focus);
       }
     }
   }
@@ -113,69 +113,69 @@ h4,
 h5,
 h6 {
   margin-top: 0;
-  margin-bottom: var(--typography-spacing-vertical);
-  color: var(--color);
-  font-weight: var(--font-weight);
-  font-size: var(--font-size);
-  font-family: var(--font-family);
+  margin-bottom: var(#{$✨}typography-spacing-vertical);
+  color: var(#{$✨}color);
+  font-weight: var(#{$✨}font-weight);
+  font-size: var(#{$✨}font-size);
+  font-family: var(#{$✨}font-family);
 }
 
 h1 {
-  --color: var(--h1-color);
+  #{$✨}color: var(#{$✨}h1-color);
 }
 h2 {
-  --color: var(--h2-color);
+  #{$✨}color: var(#{$✨}h2-color);
 }
 h3 {
-  --color: var(--h3-color);
+  #{$✨}color: var(#{$✨}h3-color);
 }
 h4 {
-  --color: var(--h4-color);
+  #{$✨}color: var(#{$✨}h4-color);
 }
 h5 {
-  --color: var(--h5-color);
+  #{$✨}color: var(#{$✨}h5-color);
 }
 h6 {
-  --color: var(--h6-color);
+  #{$✨}color: var(#{$✨}h6-color);
 }
 
 // Margin-top for headings after a typography block
 :where(address, blockquote, dl, figure, form, ol, p, pre, table, ul) {
   ~ :is(h1, h2, h3, h4, h5, h6) {
-    margin-top: var(--typography-spacing-vertical);
+    margin-top: var(#{$✨}typography-spacing-vertical);
   }
 }
 
 // Heading group
-@if settings.$enable-classes == false {
+@if $enable-classes == false {
   hgroup {
-    margin-bottom: var(--typography-spacing-vertical);
+    margin-bottom: var(#{$✨}typography-spacing-vertical);
 
     > * {
       margin-bottom: 0;
     }
 
     > *:last-child {
-      --color: var(--muted-color);
-      --font-weight: unset;
+      #{$✨}color: var(#{$✨}muted-color);
+      #{$✨}font-weight: unset;
       font-size: 1rem;
       font-family: unset;
     }
   }
 }
 
-@if settings.$enable-classes {
+@if $enable-classes {
   hgroup,
   .headings {
-    margin-bottom: var(--typography-spacing-vertical);
+    margin-bottom: var(#{$✨}typography-spacing-vertical);
 
     > * {
       margin-bottom: 0;
     }
 
     > *:last-child {
-      --color: var(--muted-color);
-      --font-weight: unset;
+      #{$✨}color: var(#{$✨}muted-color);
+      #{$✨}font-weight: unset;
       font-size: 1rem;
       font-family: unset;
     }
@@ -184,23 +184,23 @@ h6 {
 
 // Paragraphs
 p {
-  margin-bottom: var(--typography-spacing-vertical);
+  margin-bottom: var(#{$✨}typography-spacing-vertical);
 }
 
 // Small
 small {
-  font-size: var(--font-size);
+  font-size: var(#{$✨}font-size);
 }
 
 // Lists
 :where(dl, ol, ul) {
   padding-right: 0;
-  padding-left: var(--spacing);
-  padding-inline-start: var(--spacing);
+  padding-left: var(#{$✨}spacing);
+  padding-inline-start: var(#{$✨}spacing);
   padding-inline-end: 0;
 
   li {
-    margin-bottom: calc(var(--typography-spacing-vertical) * 0.25);
+    margin-bottom: calc(var(#{$✨}typography-spacing-vertical) * 0.25);
   }
 }
 
@@ -209,7 +209,7 @@ small {
 :where(dl, ol, ul) {
   :is(dl, ol, ul) {
     margin: 0; // 1
-    margin-top: calc(var(--typography-spacing-vertical) * 0.25);
+    margin-top: calc(var(#{$✨}typography-spacing-vertical) * 0.25);
   }
 }
 
@@ -220,24 +220,24 @@ ul li {
 // Highlighted text
 mark {
   padding: 0.125rem 0.25rem;
-  background-color: var(--mark-background-color);
-  color: var(--mark-color);
+  background-color: var(#{$✨}mark-background-color);
+  color: var(#{$✨}mark-color);
   vertical-align: baseline;
 }
 
 // Blockquote
 blockquote {
   display: block;
-  margin: var(--typography-spacing-vertical) 0;
-  padding: var(--spacing);
+  margin: var(#{$✨}typography-spacing-vertical) 0;
+  padding: var(#{$✨}spacing);
   border-right: none;
-  border-left: 0.25rem solid var(--blockquote-border-color);
-  border-inline-start: 0.25rem solid var(--blockquote-border-color);
+  border-left: 0.25rem solid var(#{$✨}blockquote-border-color);
+  border-inline-start: 0.25rem solid var(#{$✨}blockquote-border-color);
   border-inline-end: none;
 
   footer {
-    margin-top: calc(var(--typography-spacing-vertical) * 0.5);
-    color: var(--blockquote-footer-color);
+    margin-top: calc(var(#{$✨}typography-spacing-vertical) * 0.5);
+    color: var(#{$✨}blockquote-footer-color);
   }
 }
 
@@ -251,16 +251,16 @@ abbr[title] {
 
 // Ins
 ins {
-  color: var(--ins-color);
+  color: var(#{$✨}ins-color);
   text-decoration: none;
 }
 
 // del
 del {
-  color: var(--del-color);
+  color: var(#{$✨}del-color);
 }
 
 // selection
 ::selection {
-  background-color: var(--primary-focus);
+  background-color: var(#{$✨}primary-focus);
 }

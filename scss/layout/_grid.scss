@@ -1,20 +1,20 @@
-@use "../settings";
+@use "../settings" as *;
 
-@if (settings.$enable-classes and settings.$enable-grid) {
+@if ($enable-classes and $enable-grid) {
   /**
  * Grid
  * Minimal grid system with auto-layout columns
  */
 
   .grid {
-    grid-column-gap: var(--grid-spacing-horizontal);
-    grid-row-gap: var(--grid-spacing-vertical);
+    grid-column-gap: var(#{$✨}grid-spacing-horizontal);
+    grid-row-gap: var(#{$✨}grid-spacing-vertical);
     display: grid;
     grid-template-columns: 1fr;
     margin: 0;
 
-    @if map-get(settings.$breakpoints, "lg") {
-      @media (min-width: map-get(settings.$breakpoints, "lg")) {
+    @if map-get($breakpoints, "lg") {
+      @media (min-width: map-get($breakpoints, "lg")) {
         grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
       }
     }

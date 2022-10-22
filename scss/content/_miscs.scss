@@ -1,4 +1,4 @@
-@use "../settings";
+@use "../settings" as *;
 
 /**
  * Miscs
@@ -14,14 +14,14 @@
 hr {
   height: 0; // 2
   border: 0;
-  border-top: 1px solid var(--muted-border-color);
+  border-top: 1px solid var(#{$✨}muted-border-color);
   color: inherit; // 1
 }
 
 // Add the correct display in IE 10+
 [hidden],
 template {
-  @if settings.$enable-important {
+  @if $enable-important {
     display: none !important;
   } @else {
     display: none;

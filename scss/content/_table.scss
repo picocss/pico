@@ -1,3 +1,5 @@
+@use "../settings" as *;
+
 /**
  * Table
  */
@@ -22,11 +24,11 @@
 // Cells
 th,
 td {
-  padding: calc(var(--spacing) / 2) var(--spacing);
-  border-bottom: var(--border-width) solid var(--table-border-color);
-  color: var(--color);
-  font-weight: var(--font-weight);
-  font-size: var(--font-size);
+  padding: calc(var(#{$✨}spacing) / 2) var(#{$✨}spacing);
+  border-bottom: var(#{$✨}border-width) solid var(#{$✨}table-border-color);
+  color: var(#{$✨}color);
+  font-weight: var(#{$✨}font-weight);
+  font-size: var(#{$✨}font-size);
   text-align: left;
   text-align: start;
 }
@@ -35,7 +37,7 @@ td {
 tfoot {
   th,
   td {
-    border-top: var(--border-width) solid var(--table-border-color);
+    border-top: var(#{$✨}border-width) solid var(#{$✨}table-border-color);
     border-bottom: 0;
   }
 }
@@ -44,7 +46,7 @@ tfoot {
 table {
   &[role="grid"] {
     tbody tr:nth-child(odd) {
-      background-color: var(--table-row-stripped-background-color);
+      background-color: var(#{$✨}table-row-stripped-background-color);
     }
   }
 }

@@ -1,4 +1,4 @@
-@use "../settings";
+@use "../settings" as *;
 
 /**
  * Tooltip ([data-tooltip])
@@ -25,12 +25,12 @@
     padding: 0.25rem 0.5rem;
     overflow: hidden;
     transform: translate(-50%, -0.25rem);
-    border-radius: var(--border-radius);
-    background: var(--tooltip-background-color);
+    border-radius: var(#{$✨}border-radius);
+    background: var(#{$✨}tooltip-background-color);
     content: attr(data-tooltip);
-    color: var(--tooltip-color);
+    color: var(#{$✨}tooltip-color);
     font-style: normal;
-    font-weight: var(--font-weight);
+    font-weight: var(#{$✨}font-weight);
     font-size: 0.875rem;
     text-decoration: none;
     text-overflow: ellipsis;
@@ -50,7 +50,7 @@
     border-radius: 0;
     background-color: transparent;
     content: "";
-    color: var(--tooltip-background-color);
+    color: var(#{$✨}tooltip-background-color);
   }
 
   &[data-placement="bottom"] {
@@ -111,7 +111,7 @@
     }
   }
 
-  @if settings.$enable-transitions {
+  @if $enable-transitions {
     // Animations, excluding touch devices
     @media (hover: hover) and (pointer: fine) {
       &[data-placement="bottom"]:focus,

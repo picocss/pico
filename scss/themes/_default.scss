@@ -1,6 +1,6 @@
-@use "../settings";
-@use "default/light" as *;
-@use "default/dark" as *;
+@use "../settings" as *;
+@use "default/light";
+@use "default/dark";
 
 // Commons styles
 @use "default/styles";
@@ -9,26 +9,26 @@
 // Can be forced with data-theme="light"
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
-  @include light;
+  @include light.theme;
 }
 
 // Dark theme (Auto)
 // Automatically enabled if user has Dark mode enabled
 @media only screen and (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    @include dark;
+    @include dark.theme;
   }
 }
 
 // Dark theme (Forced)
 // Enabled if forced with data-theme="dark"
 [data-theme="dark"] {
-  @include dark;
+  @include dark.theme;
 }
 
 progress,
 [type="checkbox"],
 [type="radio"],
 [type="range"] {
-  accent-color: var(--primary);
+  accent-color: var(#{$✨}primary);
 }

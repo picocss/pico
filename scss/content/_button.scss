@@ -1,4 +1,4 @@
-@use "../settings";
+@use "../settings" as *;
 
 /**
  * Button
@@ -33,7 +33,7 @@ button,
 button {
   display: block;
   width: 100%;
-  margin-bottom: var(--spacing);
+  margin-bottom: var(#{$✨}spacing);
 }
 
 [role="button"] {
@@ -46,127 +46,127 @@ input[type="submit"],
 input[type="button"],
 input[type="reset"],
 [role="button"] {
-  --background-color: var(--primary);
-  --border-color: var(--primary);
-  --color: var(--primary-inverse);
-  --box-shadow: var(--button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
-  padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
-  border: var(--border-width) solid var(--border-color);
-  border-radius: var(--border-radius);
+  #{$✨}background-color: var(#{$✨}primary);
+  #{$✨}border-color: var(#{$✨}primary);
+  #{$✨}color: var(#{$✨}primary-inverse);
+  #{$✨}box-shadow: var(#{$✨}button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+  padding: var(#{$✨}form-element-spacing-vertical) var(#{$✨}form-element-spacing-horizontal);
+  border: var(#{$✨}border-width) solid var(#{$✨}border-color);
+  border-radius: var(#{$✨}border-radius);
   outline: none;
-  background-color: var(--background-color);
-  box-shadow: var(--box-shadow);
-  color: var(--color);
-  font-weight: var(--font-weight);
+  background-color: var(#{$✨}background-color);
+  box-shadow: var(#{$✨}box-shadow);
+  color: var(#{$✨}color);
+  font-weight: var(#{$✨}font-weight);
   font-size: 1rem;
-  line-height: var(--line-height);
+  line-height: var(#{$✨}line-height);
   text-align: center;
   cursor: pointer;
 
-  @if settings.$enable-transitions {
-    transition: background-color var(--transition), border-color var(--transition),
-      color var(--transition), box-shadow var(--transition);
+  @if $enable-transitions {
+    transition: background-color var(#{$✨}transition), border-color var(#{$✨}transition),
+      color var(#{$✨}transition), box-shadow var(#{$✨}transition);
   }
 
   &:is([aria-current], :hover, :active, :focus) {
-    --background-color: var(--primary-hover);
-    --border-color: var(--primary-hover);
-    --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
-    --color: var(--primary-inverse);
+    #{$✨}background-color: var(#{$✨}primary-hover);
+    #{$✨}border-color: var(#{$✨}primary-hover);
+    #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+    #{$✨}color: var(#{$✨}primary-inverse);
   }
 
   &:focus {
-    --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-      0 0 0 var(--outline-width) var(--primary-focus);
+    #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+      0 0 0 var(#{$✨}outline-width) var(#{$✨}primary-focus);
   }
 }
 
 // .secondary, .contrast & .outline
-@if settings.$enable-classes {
+@if $enable-classes {
   // Secondary
   :is(button, input[type="submit"], input[type="button"], [role="button"]).secondary,
   input[type="reset"] {
-    --background-color: var(--secondary);
-    --border-color: var(--secondary);
-    --color: var(--secondary-inverse);
+    #{$✨}background-color: var(#{$✨}secondary);
+    #{$✨}border-color: var(#{$✨}secondary);
+    #{$✨}color: var(#{$✨}secondary-inverse);
     cursor: pointer;
 
     &:is([aria-current], :hover, :active, :focus) {
-      --background-color: var(--secondary-hover);
-      --border-color: var(--secondary-hover);
-      --color: var(--secondary-inverse);
+      #{$✨}background-color: var(#{$✨}secondary-hover);
+      #{$✨}border-color: var(#{$✨}secondary-hover);
+      #{$✨}color: var(#{$✨}secondary-inverse);
     }
 
     &:focus {
-      --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-        0 0 0 var(--outline-width) var(--secondary-focus);
+      #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+        0 0 0 var(#{$✨}outline-width) var(#{$✨}secondary-focus);
     }
   }
 
   // Contrast
   :is(button, input[type="submit"], input[type="button"], [role="button"]).contrast {
-    --background-color: var(--contrast);
-    --border-color: var(--contrast);
-    --color: var(--contrast-inverse);
+    #{$✨}background-color: var(#{$✨}contrast);
+    #{$✨}border-color: var(#{$✨}contrast);
+    #{$✨}color: var(#{$✨}contrast-inverse);
 
     &:is([aria-current], :hover, :active, :focus) {
-      --background-color: var(--contrast-hover);
-      --border-color: var(--contrast-hover);
-      --color: var(--contrast-inverse);
+      #{$✨}background-color: var(#{$✨}contrast-hover);
+      #{$✨}border-color: var(#{$✨}contrast-hover);
+      #{$✨}color: var(#{$✨}contrast-inverse);
     }
 
     &:focus {
-      --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-        0 0 0 var(--outline-width) var(--contrast-focus);
+      #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+        0 0 0 var(#{$✨}outline-width) var(#{$✨}contrast-focus);
     }
   }
 
   // Outline (primary)
   :is(button, input[type="submit"], input[type="button"], [role="button"]).outline,
   input[type="reset"].outline {
-    --background-color: transparent;
-    --color: var(--primary);
+    #{$✨}background-color: transparent;
+    #{$✨}color: var(#{$✨}primary);
 
     &:is([aria-current], :hover, :active, :focus) {
-      --background-color: transparent;
-      --color: var(--primary-hover);
+      #{$✨}background-color: transparent;
+      #{$✨}color: var(#{$✨}primary-hover);
     }
   }
 
   // Outline (secondary)
   :is(button, input[type="submit"], input[type="button"], [role="button"]).outline.secondary,
   input[type="reset"].outline {
-    --color: var(--secondary);
+    #{$✨}color: var(#{$✨}secondary);
 
     &:is([aria-current], :hover, :active, :focus) {
-      --color: var(--secondary-hover);
+      #{$✨}color: var(#{$✨}secondary-hover);
     }
   }
 
   // Outline (contrast)
   :is(button, input[type="submit"], input[type="button"], [role="button"]).outline.contrast {
-    --color: var(--contrast);
+    #{$✨}color: var(#{$✨}contrast);
 
     &:is([aria-current], :hover, :active, :focus) {
-      --color: var(--contrast-hover);
+      #{$✨}color: var(#{$✨}contrast-hover);
     }
   }
 } @else {
   // Secondary button without .class
   input[type="reset"] {
-    --background-color: var(--secondary);
-    --border-color: var(--secondary);
-    --color: var(--secondary-inverse);
+    #{$✨}background-color: var(#{$✨}secondary);
+    #{$✨}border-color: var(#{$✨}secondary);
+    #{$✨}color: var(#{$✨}secondary-inverse);
     cursor: pointer;
 
     &:is([aria-current], :hover, :active, :focus) {
-      --background-color: var(--secondary-hover);
-      --border-color: var(--secondary-hover);
+      #{$✨}background-color: var(#{$✨}secondary-hover);
+      #{$✨}border-color: var(#{$✨}secondary-hover);
     }
 
     &:focus {
-      --box-shadow: var(--button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-        0 0 0 var(--outline-width) var(--secondary-focus);
+      #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+        0 0 0 var(#{$✨}outline-width) var(#{$✨}secondary-focus);
     }
   }
 }
