@@ -1,34 +1,37 @@
+@use "sass:map";
 @use "../settings" as *;
 
-/**
- * Input type color
- */
+// Wrapper
+@mixin color-wrapper {
+  padding: 0;
+}
 
-[type="color"] {
-  // Wrapper
-  @mixin color-wrapper {
-    padding: 0;
-  }
+// Swatch
+@mixin color-swatch {
+  border: 0;
+  border-radius: calc(var(#{$✨}border-radius) * 0.5);
+}
 
-  &::-webkit-color-swatch-wrapper {
-    @include color-wrapper;
-  }
+@if map.get($modules, "forms/input-color") {
+  /**
+   * Input type color
+   */
 
-  &::-moz-focus-inner {
-    @include color-wrapper;
-  }
+  [type="color"] {
+    &::-webkit-color-swatch-wrapper {
+      @include color-wrapper;
+    }
 
-  // Swatch
-  @mixin color-swatch {
-    border: 0;
-    border-radius: calc(var(#{$✨}border-radius) * 0.5);
-  }
+    &::-moz-focus-inner {
+      @include color-wrapper;
+    }
 
-  &::-webkit-color-swatch {
-    @include color-swatch;
-  }
+    &::-webkit-color-swatch {
+      @include color-swatch;
+    }
 
-  &::-moz-color-swatch {
-    @include color-swatch;
+    &::-moz-color-swatch {
+      @include color-swatch;
+    }
   }
 }

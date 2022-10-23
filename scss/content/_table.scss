@@ -1,52 +1,55 @@
+@use "sass:map";
 @use "../settings" as *;
 
-/**
- * Table
- */
+@if map.get($modules, "content/table") {
+  /**
+   * Table
+   */
 
-// Reboot based on :
-// - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
-// - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
-// ––––––––––––––––––––
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
 
-// 1. Collapse border spacing in all browsers (opinionated)
-// 2. Remove text indentation from table contents in Chrome, Edge, and Safari
-:where(table) {
-  width: 100%;
-  border-collapse: collapse; // 1
-  border-spacing: 0;
-  text-indent: 0; // 2
-}
+  // 1. Collapse border spacing in all browsers (opinionated)
+  // 2. Remove text indentation from table contents in Chrome, Edge, and Safari
+  :where(table) {
+    width: 100%;
+    border-collapse: collapse; // 1
+    border-spacing: 0;
+    text-indent: 0; // 2
+  }
 
-// Pico
-// ––––––––––––––––––––
+  // Pico
+  // ––––––––––––––––––––
 
-// Cells
-th,
-td {
-  padding: calc(var(#{$✨}spacing) / 2) var(#{$✨}spacing);
-  border-bottom: var(#{$✨}border-width) solid var(#{$✨}table-border-color);
-  color: var(#{$✨}color);
-  font-weight: var(#{$✨}font-weight);
-  font-size: var(#{$✨}font-size);
-  text-align: left;
-  text-align: start;
-}
-
-// Footer
-tfoot {
+  // Cells
   th,
   td {
-    border-top: var(#{$✨}border-width) solid var(#{$✨}table-border-color);
-    border-bottom: 0;
+    padding: calc(var(#{$✨}spacing) / 2) var(#{$✨}spacing);
+    border-bottom: var(#{$✨}border-width) solid var(#{$✨}table-border-color);
+    color: var(#{$✨}color);
+    font-weight: var(#{$✨}font-weight);
+    font-size: var(#{$✨}font-size);
+    text-align: left;
+    text-align: start;
   }
-}
 
-// Striped
-table {
-  &[role="grid"] {
-    tbody tr:nth-child(odd) {
-      background-color: var(#{$✨}table-row-stripped-background-color);
+  // Footer
+  tfoot {
+    th,
+    td {
+      border-top: var(#{$✨}border-width) solid var(#{$✨}table-border-color);
+      border-bottom: 0;
+    }
+  }
+
+  // Striped
+  table {
+    &[role="grid"] {
+      tbody tr:nth-child(odd) {
+        background-color: var(#{$✨}table-row-stripped-background-color);
+      }
     }
   }
 }

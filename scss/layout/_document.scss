@@ -1,50 +1,53 @@
+@use "sass:map";
 @use "../settings" as *;
 
-/**
- * Document
- * Content-box & Responsive typography
- */
+@if map.get($modules, "layout/document") {
+  /**
+   * Document
+   * Content-box & Responsive typography
+   */
 
-// Reboot based on :
-// - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
-// - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
-// ––––––––––––––––––––
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
 
-// 1. Add border box sizing in all browsers (opinionated)
-// 2. Backgrounds do not repeat by default (opinionated)
-*,
-*::before,
-*::after {
-  box-sizing: border-box; // 1
-  background-repeat: no-repeat; // 2
-}
+  // 1. Add border box sizing in all browsers (opinionated)
+  // 2. Backgrounds do not repeat by default (opinionated)
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box; // 1
+    background-repeat: no-repeat; // 2
+  }
 
-// 1. Add text decoration inheritance in all browsers (opinionated)
-// 2. Add vertical alignment inheritance in all browsers (opinionated)
-::before,
-::after {
-  text-decoration: inherit; // 1
-  vertical-align: inherit; // 2
-}
+  // 1. Add text decoration inheritance in all browsers (opinionated)
+  // 2. Add vertical alignment inheritance in all browsers (opinionated)
+  ::before,
+  ::after {
+    text-decoration: inherit; // 1
+    vertical-align: inherit; // 2
+  }
 
-// 1. Use the default cursor in all browsers (opinionated)
-// 2. Change the line height in all browsers (opinionated)
-// 3. Breaks words to prevent overflow in all browsers (opinionated)
-// 4. Use a 4-space tab width in all browsers (opinionated)
-// 5. Remove the grey highlight on links in iOS (opinionated)
-// 6. Prevent adjustments of font size after orientation changes in iOS
-:where(:root) {
-  -webkit-tap-highlight-color: transparent; // 5
-  -webkit-text-size-adjust: 100%; // 6
-  text-size-adjust: 100%; // 6
-  background-color: var(#{$✨}background-color);
-  color: var(#{$✨}color);
-  font-weight: var(#{$✨}font-weight);
-  font-size: var(#{$✨}font-size);
-  line-height: var(#{$✨}line-height); // 2
-  font-family: var(#{$✨}font-family);
-  text-rendering: optimizeLegibility;
-  overflow-wrap: break-word; // 3
-  cursor: default; // 1
-  tab-size: 4; // 4
+  // 1. Use the default cursor in all browsers (opinionated)
+  // 2. Change the line height in all browsers (opinionated)
+  // 3. Breaks words to prevent overflow in all browsers (opinionated)
+  // 4. Use a 4-space tab width in all browsers (opinionated)
+  // 5. Remove the grey highlight on links in iOS (opinionated)
+  // 6. Prevent adjustments of font size after orientation changes in iOS
+  :where(:root) {
+    -webkit-tap-highlight-color: transparent; // 5
+    -webkit-text-size-adjust: 100%; // 6
+    text-size-adjust: 100%; // 6
+    background-color: var(#{$✨}background-color);
+    color: var(#{$✨}color);
+    font-weight: var(#{$✨}font-weight);
+    font-size: var(#{$✨}font-size);
+    line-height: var(#{$✨}line-height); // 2
+    font-family: var(#{$✨}font-family);
+    text-rendering: optimizeLegibility;
+    overflow-wrap: break-word; // 3
+    cursor: default; // 1
+    tab-size: 4; // 4
+  }
 }

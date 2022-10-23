@@ -1,94 +1,98 @@
+@use "sass:map";
 @use "../settings" as *;
 
-/**
- * Input type range
- */
+// Config
+$height-track: 0.25rem;
+$height-thumb: 1.25rem;
+$border-thumb: 2px;
 
-[type="range"] {
-  // Config
-  $height-track: 0.25rem;
-  $height-thumb: 1.25rem;
-  $border-thumb: 2px;
-
-  // Styles
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+// Slider Track
+@mixin slider-track {
   width: 100%;
+  height: $height-track;
+  border-radius: var(#{$✨}border-radius);
+  background-color: var(#{$✨}range-border-color);
+
+  @if $enable-transitions {
+    transition: background-color var(#{$✨}transition), box-shadow var(#{$✨}transition);
+  }
+}
+
+// Slider Thumb
+@mixin slider-thumb {
+  -webkit-appearance: none;
+  width: $height-thumb;
   height: $height-thumb;
-  background: none;
+  margin-top: #{(-($height-thumb * 0.5) + ($height-track * 0.5))};
+  border: $border-thumb solid var(#{$✨}range-thumb-border-color);
+  border-radius: 50%;
+  background-color: var(#{$✨}range-thumb-color);
+  cursor: pointer;
 
-  // Slider Track
-  @mixin slider-track {
-    width: 100%;
-    height: $height-track;
-    border-radius: var(#{$✨}border-radius);
-    background-color: var(#{$✨}range-border-color);
-
-    @if $enable-transitions {
-      transition: background-color var(#{$✨}transition), box-shadow var(#{$✨}transition);
-    }
+  @if $enable-transitions {
+    transition: background-color var(#{$✨}transition), transform var(#{$✨}transition);
   }
+}
 
-  &::-webkit-slider-runnable-track {
-    @include slider-track;
-  }
+@if map.get($modules, "forms/input-range") {
+  /**
+   * Input type range
+   */
 
-  &::-moz-range-track {
-    @include slider-track;
-  }
-
-  &::-ms-track {
-    @include slider-track;
-  }
-
-  // Slider Thumb
-  @mixin slider-thumb {
+  [type="range"] {
+    // Styles
     -webkit-appearance: none;
-    width: $height-thumb;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
     height: $height-thumb;
-    margin-top: #{(-($height-thumb * 0.5) + ($height-track * 0.5))};
-    border: $border-thumb solid var(#{$✨}range-thumb-border-color);
-    border-radius: 50%;
-    background-color: var(#{$✨}range-thumb-color);
-    cursor: pointer;
+    background: none;
 
-    @if $enable-transitions {
-      transition: background-color var(#{$✨}transition), transform var(#{$✨}transition);
+    &::-webkit-slider-runnable-track {
+      @include slider-track;
     }
-  }
-  &::-webkit-slider-thumb {
-    @include slider-thumb;
-  }
 
-  &::-moz-range-thumb {
-    @include slider-thumb;
-  }
+    &::-moz-range-track {
+      @include slider-track;
+    }
 
-  &::-ms-thumb {
-    @include slider-thumb;
-  }
+    &::-ms-track {
+      @include slider-track;
+    }
 
-  &:hover,
-  &:focus {
-    #{$✨}range-border-color: var(#{$✨}range-active-border-color);
-    #{$✨}range-thumb-color: var(#{$✨}range-thumb-hover-color);
-  }
-
-  &:active {
-    #{$✨}range-thumb-color: var(#{$✨}range-thumb-active-color);
-
-    // Slider Thumb
     &::-webkit-slider-thumb {
-      transform: scale(1.25);
+      @include slider-thumb;
     }
 
     &::-moz-range-thumb {
-      transform: scale(1.25);
+      @include slider-thumb;
     }
 
     &::-ms-thumb {
-      transform: scale(1.25);
+      @include slider-thumb;
+    }
+
+    &:hover,
+    &:focus {
+      #{$✨}range-border-color: var(#{$✨}range-active-border-color);
+      #{$✨}range-thumb-color: var(#{$✨}range-thumb-hover-color);
+    }
+
+    &:active {
+      #{$✨}range-thumb-color: var(#{$✨}range-thumb-active-color);
+
+      // Slider Thumb
+      &::-webkit-slider-thumb {
+        transform: scale(1.25);
+      }
+
+      &::-moz-range-thumb {
+        transform: scale(1.25);
+      }
+
+      &::-ms-thumb {
+        transform: scale(1.25);
+      }
     }
   }
 }

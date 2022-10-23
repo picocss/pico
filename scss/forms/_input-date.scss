@@ -1,42 +1,45 @@
+@use "sass:map";
 @use "../settings" as *;
 
-/**
- * Input type datetime
- */
+@if map.get($modules, "forms/input-date") {
+  /**
+   * Input type datetime
+   */
 
-// :not() are needed to add Specificity and avoid !important on padding
-input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
-  &:is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
-    #{$✨}icon-position: 0.75rem;
-    #{$✨}icon-width: 1rem;
-    padding-right: calc(var(#{$✨}icon-width) + var(#{$✨}icon-position));
-    background-image: var(#{$✨}icon-date);
-    background-position: center right var(#{$✨}icon-position);
-    background-size: var(#{$✨}icon-width) auto;
-    background-repeat: no-repeat;
+  // :not() are needed to add Specificity and avoid !important on padding
+  input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
+    &:is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
+      #{$✨}icon-position: 0.75rem;
+      #{$✨}icon-width: 1rem;
+      padding-right: calc(var(#{$✨}icon-width) + var(#{$✨}icon-position));
+      background-image: var(#{$✨}icon-date);
+      background-position: center right var(#{$✨}icon-position);
+      background-size: var(#{$✨}icon-width) auto;
+      background-repeat: no-repeat;
+    }
+
+    // Time
+    &[type="time"] {
+      background-image: var(#{$✨}icon-time);
+    }
   }
 
-  // Time
-  &[type="time"] {
-    background-image: var(#{$✨}icon-time);
+  // Calendar picker
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="time"],
+  [type="week"] {
+    &::-webkit-calendar-picker-indicator {
+      width: var(#{$✨}icon-width);
+      margin-right: calc(var(#{$✨}icon-width) * -1);
+      margin-left: var(#{$✨}icon-position);
+      opacity: 0;
+    }
   }
-}
 
-// Calendar picker
-[type="date"],
-[type="datetime-local"],
-[type="month"],
-[type="time"],
-[type="week"] {
-  &::-webkit-calendar-picker-indicator {
-    width: var(#{$✨}icon-width);
-    margin-right: calc(var(#{$✨}icon-width) * -1);
-    margin-left: var(#{$✨}icon-position);
-    opacity: 0;
+  [dir="rtl"]
+    :is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
+    text-align: right;
   }
-}
-
-[dir="rtl"]
-  :is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
-  text-align: right;
 }

@@ -1,0 +1,60 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/link") {
+  /**
+   * Link
+   */
+
+  a,
+  [role="link"] {
+    #{$✨}color: var(#{$✨}primary);
+    #{$✨}background-color: transparent;
+    outline: none;
+    background-color: var(#{$✨}background-color); // 1
+    color: var(#{$✨}color);
+    text-decoration: var(#{$✨}text-decoration);
+
+    @if $enable-transitions {
+      transition: background-color var(#{$✨}transition), color var(#{$✨}transition),
+        text-decoration var(#{$✨}transition), box-shadow var(#{$✨}transition);
+    }
+
+    &:is([aria-current], :hover, :active, :focus) {
+      #{$✨}color: var(#{$✨}primary-hover);
+      #{$✨}text-decoration: underline;
+    }
+
+    &:focus {
+      #{$✨}background-color: var(#{$✨}primary-focus);
+    }
+
+    @if $enable-classes {
+      // Secondary
+      &.secondary {
+        #{$✨}color: var(#{$✨}secondary);
+
+        &:is([aria-current], :hover, :active, :focus) {
+          #{$✨}color: var(#{$✨}secondary-hover);
+        }
+
+        &:focus {
+          #{$✨}background-color: var(#{$✨}secondary-focus);
+        }
+      }
+
+      // Contrast
+      &.contrast {
+        #{$✨}color: var(#{$✨}contrast);
+
+        &:is([aria-current], :hover, :active, :focus) {
+          #{$✨}color: var(#{$✨}contrast-hover);
+        }
+
+        &:focus {
+          #{$✨}background-color: var(#{$✨}contrast-focus);
+        }
+      }
+    }
+  }
+}

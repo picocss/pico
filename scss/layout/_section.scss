@@ -1,10 +1,12 @@
+@use "sass:map";
 @use "../settings" as *;
 
-/**
- * Section
- * Responsive spacings for section
- */
+@if map.get($modules, "layout/section") {
+  /**
+   * Section
+   */
 
-section {
-  margin-bottom: var(#{$✨}block-spacing-vertical);
+  section {
+    margin-bottom: var(#{$✨}block-spacing-vertical);
+  }
 }

@@ -1,93 +1,96 @@
+@use "sass:map";
 @use "../settings" as *;
 
-/**
- * Code
- */
+@if map.get($modules, "content/code") {
+  /**
+   * Code
+   */
 
-// Reboot based on :
-// - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
-// - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
-// ––––––––––––––––––––
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
 
-// 1. Correct the inheritance and scaling of font size in all browsers
-// 2. Correct the odd `em` font sizing in all browsers
-pre,
-code,
-kbd,
-samp {
-  font-size: 0.875em; // 2
-  font-family: var(#{$✨}font-family); // 1
-}
-
-// Prevent overflow of the container in all browsers (opinionated)
-pre {
-  -ms-overflow-style: scrollbar;
-  overflow: auto;
-}
-
-// Pico
-// ––––––––––––––––––––
-
-pre,
-code,
-kbd {
-  border-radius: var(#{$✨}border-radius);
-  background: var(#{$✨}code-background-color);
-  color: var(#{$✨}code-color);
-  font-weight: var(#{$✨}font-weight);
-  line-height: initial;
-}
-
-code,
-kbd {
-  display: inline-block;
-  padding: 0.375rem 0.5rem;
-}
-
-pre {
-  display: block;
-  margin-bottom: var(#{$✨}spacing);
-  overflow-x: auto;
-
-  > code {
-    display: block;
-    padding: var(#{$✨}spacing);
-    background: none;
-    font-size: 14px;
-    line-height: var(#{$✨}line-height);
+  // 1. Correct the inheritance and scaling of font size in all browsers
+  // 2. Correct the odd `em` font sizing in all browsers
+  pre,
+  code,
+  kbd,
+  samp {
+    font-size: 0.875em; // 2
+    font-family: var(#{$✨}font-family); // 1
   }
-}
 
-// Code Syntax
-code {
-  // Tags
-  b {
-    color: var(#{$✨}code-tag-color);
+  // Prevent overflow of the container in all browsers (opinionated)
+  pre {
+    -ms-overflow-style: scrollbar;
+    overflow: auto;
+  }
+
+  // Pico
+  // ––––––––––––––––––––
+
+  pre,
+  code,
+  kbd {
+    border-radius: var(#{$✨}border-radius);
+    background: var(#{$✨}code-background-color);
+    color: var(#{$✨}code-color);
     font-weight: var(#{$✨}font-weight);
+    line-height: initial;
   }
 
-  // Properties
-  i {
-    color: var(#{$✨}code-property-color);
-    font-style: normal;
+  code,
+  kbd {
+    display: inline-block;
+    padding: 0.375rem 0.5rem;
   }
 
-  // Values
-  u {
-    color: var(#{$✨}code-value-color);
-    text-decoration: none;
+  pre {
+    display: block;
+    margin-bottom: var(#{$✨}spacing);
+    overflow-x: auto;
+
+    > code {
+      display: block;
+      padding: var(#{$✨}spacing);
+      background: none;
+      font-size: 14px;
+      line-height: var(#{$✨}line-height);
+    }
   }
 
-  // Comments
-  em {
-    color: var(#{$✨}code-comment-color);
-    font-style: normal;
-  }
-}
+  // Code Syntax
+  code {
+    // Tags
+    b {
+      color: var(#{$✨}code-tag-color);
+      font-weight: var(#{$✨}font-weight);
+    }
 
-// kbd
-kbd {
-  background-color: var(#{$✨}code-kbd-background-color);
-  color: var(#{$✨}code-kbd-color);
-  vertical-align: baseline;
+    // Properties
+    i {
+      color: var(#{$✨}code-property-color);
+      font-style: normal;
+    }
+
+    // Values
+    u {
+      color: var(#{$✨}code-value-color);
+      text-decoration: none;
+    }
+
+    // Comments
+    em {
+      color: var(#{$✨}code-comment-color);
+      font-style: normal;
+    }
+  }
+
+  // kbd
+  kbd {
+    background-color: var(#{$✨}code-kbd-background-color);
+    color: var(#{$✨}code-kbd-color);
+    vertical-align: baseline;
+  }
 }
