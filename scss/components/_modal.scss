@@ -1,170 +1,172 @@
 @use "sass:map";
 @use "../settings" as *;
 
-/**
- * Modal (<dialog>)
- */
+@if map.get($modules, "components/modal") {
+  /**
+   * Modal (<dialog>)
+   */
 
-:root {
-  #{$✨}scrollbar-width: 0px;
-}
+  :root {
+    #{$✨}scrollbar-width: 0px;
+  }
 
-dialog {
-  display: flex;
-  z-index: 999;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  align-items: center;
-  justify-content: center;
-  width: inherit;
-  min-width: 100%;
-  height: inherit;
-  min-height: 100%;
-  padding: var(#{$✨}spacing);
-  border: 0;
-  backdrop-filter: var(#{$✨}modal-overlay-backdrop-filter);
-  background-color: var(#{$✨}modal-overlay-background-color);
-  color: var(#{$✨}color);
+  dialog {
+    display: flex;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    min-width: 100%;
+    height: inherit;
+    min-height: 100%;
+    padding: var(#{$✨}spacing);
+    border: 0;
+    backdrop-filter: var(#{$✨}modal-overlay-backdrop-filter);
+    background-color: var(#{$✨}modal-overlay-background-color);
+    color: var(#{$✨}color);
 
-  // Content
-  article {
-    max-height: calc(100vh - var(#{$✨}spacing) * 2);
-    overflow: auto;
+    // Content
+    article {
+      max-height: calc(100vh - var(#{$✨}spacing) * 2);
+      overflow: auto;
 
-    @if map.get($breakpoints, "sm") {
-      @media (min-width: map.get(map.get($breakpoints, "sm"), "breakpoint")) {
-        max-width: map.get(map.get($breakpoints, "sm"), "viewport");
+      @if map.get($breakpoints, "sm") {
+        @media (min-width: map.get(map.get($breakpoints, "sm"), "breakpoint")) {
+          max-width: map.get(map.get($breakpoints, "sm"), "viewport");
+        }
       }
-    }
 
-    @if map.get($breakpoints, "md") {
-      @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
-        max-width: map.get(map.get($breakpoints, "md"), "viewport");
+      @if map.get($breakpoints, "md") {
+        @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
+          max-width: map.get(map.get($breakpoints, "md"), "viewport");
+        }
       }
-    }
 
-    > header,
-    > footer {
-      padding: calc(var(#{$✨}block-spacing-vertical) * 0.5) var(#{$✨}block-spacing-horizontal);
-    }
-
-    > header {
-      .close {
-        margin: 0;
-        margin-left: var(#{$✨}spacing);
-        float: right;
+      > header,
+      > footer {
+        padding: calc(var(#{$✨}block-spacing-vertical) * 0.5) var(#{$✨}block-spacing-horizontal);
       }
-    }
 
-    > footer {
-      text-align: right;
+      > header {
+        .close {
+          margin: 0;
+          margin-left: var(#{$✨}spacing);
+          float: right;
+        }
+      }
 
-      [role="button"] {
-        margin-bottom: 0;
+      > footer {
+        text-align: right;
 
-        &:not(:first-of-type) {
-          margin-left: calc(var(#{$✨}spacing) * 0.5);
+        [role="button"] {
+          margin-bottom: 0;
+
+          &:not(:first-of-type) {
+            margin-left: calc(var(#{$✨}spacing) * 0.5);
+          }
+        }
+      }
+
+      p {
+        &:last-of-type {
+          margin: 0;
+        }
+      }
+
+      // Close icon
+      @if $enable-classes {
+        .close {
+          display: block;
+          width: 1rem;
+          height: 1rem;
+          margin-top: calc(var(#{$✨}spacing) * -1);
+          margin-bottom: var(#{$✨}spacing);
+          margin-left: auto;
+          background-image: var(#{$✨}icon-close);
+          background-position: center;
+          background-size: auto 1rem;
+          background-repeat: no-repeat;
+          opacity: 0.5;
+
+          @if $enable-transitions {
+            transition: opacity var(#{$✨}transition);
+          }
+
+          &:is([aria-current], :hover, :active, :focus) {
+            opacity: 1;
+          }
         }
       }
     }
 
-    p {
-      &:last-of-type {
-        margin: 0;
+    // Closed state
+    &:not([open]),
+    &[open="false"] {
+      display: none;
+    }
+  }
+
+  // Utilities
+  @if $enable-classes {
+    .modal-is-open {
+      padding-right: var(#{$✨}scrollbar-width, 0px);
+      overflow: hidden;
+      pointer-events: none;
+
+      dialog {
+        pointer-events: auto;
       }
     }
+  }
 
-    // Close icon
-    @if $enable-classes {
-      .close {
-        display: block;
-        width: 1rem;
-        height: 1rem;
-        margin-top: calc(var(#{$✨}block-spacing-vertical) * -0.5);
-        margin-bottom: var(#{$✨}typography-spacing-vertical);
-        margin-left: auto;
-        background-image: var(#{$✨}icon-close);
-        background-position: center;
-        background-size: auto 1rem;
-        background-repeat: no-repeat;
-        opacity: 0.5;
+  // Animations
+  @if $enable-classes and $enable-transitions {
+    $animation-duration: 0.2s;
 
-        @if $enable-transitions {
-          transition: opacity var(#{$✨}transition);
+    :where(.modal-is-opening, .modal-is-closing) {
+      dialog,
+      dialog > article {
+        animation-duration: $animation-duration;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+      }
+
+      dialog {
+        animation-duration: ($animation-duration * 4);
+        animation-name: modal-overlay;
+
+        > article {
+          animation-delay: $animation-duration;
+          animation-name: modal;
         }
-
-        &:is([aria-current], :hover, :active, :focus) {
-          opacity: 1;
-        }
       }
     }
-  }
 
-  // Closed state
-  &:not([open]),
-  &[open="false"] {
-    display: none;
-  }
-}
-
-// Utilities
-@if $enable-classes {
-  .modal-is-open {
-    padding-right: var(#{$✨}scrollbar-width, 0px);
-    overflow: hidden;
-    pointer-events: none;
-
-    dialog {
-      pointer-events: auto;
-    }
-  }
-}
-
-// Animations
-@if ($enable-classes and $enable-transitions) {
-  $animation-duration: 0.2s;
-
-  :where(.modal-is-opening, .modal-is-closing) {
-    dialog,
-    dialog > article {
-      animation-duration: $animation-duration;
-      animation-timing-function: ease-in-out;
-      animation-fill-mode: both;
-    }
-
-    dialog {
-      animation-duration: ($animation-duration * 4);
-      animation-name: modal-overlay;
-
-      > article {
-        animation-delay: $animation-duration;
-        animation-name: modal;
+    .modal-is-closing {
+      dialog,
+      dialog > article {
+        animation-delay: 0s;
+        animation-direction: reverse;
       }
     }
-  }
 
-  .modal-is-closing {
-    dialog,
-    dialog > article {
-      animation-delay: 0s;
-      animation-direction: reverse;
+    @keyframes modal-overlay {
+      from {
+        backdrop-filter: none;
+        background-color: transparent;
+      }
     }
-  }
 
-  @keyframes modal-overlay {
-    from {
-      backdrop-filter: none;
-      background-color: transparent;
-    }
-  }
-
-  @keyframes modal {
-    from {
-      transform: translateY(-100%);
-      opacity: 0;
+    @keyframes modal {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
     }
   }
 }

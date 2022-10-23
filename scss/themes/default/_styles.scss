@@ -1,221 +1,259 @@
 @use "sass:map";
 @use "../../settings" as *;
 
-// Commons Styles:
-:root {
+@if map.get($modules, "themes/default") {
+  /**
+   * Styles
+   */
+
+  :root {
+    // Typography
+    #{$✨}font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell",
+      "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+    #{$✨}line-height: 1.5;
+    #{$✨}font-weight: 400;
+    #{$✨}font-size: 16px;
+
+    // Responsive root font size
+    @if $enable-responsive-typography {
+      @each $key, $values in $breakpoints {
+        @if $values {
+          @media (min-width: map.get($values, "breakpoint")) {
+            #{$✨}font-size: map.get($values, "root-font-size");
+          }
+        }
+      }
+    }
+
+    // Borders
+    #{$✨}border-radius: 0.25rem;
+    #{$✨}border-width: 1px;
+    #{$✨}outline-width: 3px;
+
+    // Transitions
+    #{$✨}transition: 0.2s ease-in-out;
+
+    // Spacings
+    #{$✨}spacing: 1rem;
+
+    // Spacings for typography elements
+    @if map.get($modules, "content/typography") {
+      #{$✨}typography-spacing-vertical: 1.5rem;
+    }
+
+    // Spacings for body > header, body > main, body > footer, section, article
+    @if map.get($modules, "layout/landmarks") or
+      map.get($modules, "layout/section") or
+      map.get($modules, "components/card") or
+      map.get($modules, "components/modal")
+    {
+      #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 2);
+      #{$✨}block-spacing-horizontal: var(#{$✨}spacing);
+    }
+
+    @if map.get($modules, "layout/grid") and $enable-classes {
+      #{$✨}grid-spacing-vertical: 0;
+      #{$✨}grid-spacing-horizontal: var(#{$✨}spacing);
+    }
+
+    // Spacings for form elements and button
+    @if map.get($modules, "content/button") or map.get($modules, "forms/basic") {
+      #{$✨}form-element-spacing-vertical: 0.75rem;
+      #{$✨}form-element-spacing-horizontal: 1rem;
+    }
+
+    // Font weight for form labels & fieldsets legend
+    @if map.get($modules, "forms/basic") {
+      #{$✨}form-label-font-weight: var(#{$✨}font-weight);
+    }
+
+    // Modal (<dialog>)
+    @if map.get($modules, "components/modal") {
+      #{$✨}modal-overlay-backdrop-filter: blur(0.25rem);
+    }
+
+    // Spacings for nav component
+    @if map.get($modules, "components/nav") {
+      #{$✨}nav-element-spacing-vertical: 1rem;
+      #{$✨}nav-element-spacing-horizontal: 0.5rem;
+      #{$✨}nav-link-spacing-vertical: 0.5rem;
+      #{$✨}nav-link-spacing-horizontal: 0.5rem;
+    }
+  }
+
+  // Responsives spacings
+  @if $enable-responsive-spacings {
+    // Landmarks and section
+    @if map.get($modules, "layout/landmarks") or map.get($modules, "layout/section") {
+      #{$semantic-root-element} > header,
+      #{$semantic-root-element} > main,
+      #{$semantic-root-element} > footer,
+      section {
+        @each $key, $values in $breakpoints {
+          @if $values {
+            @media (min-width: map.get($values, "breakpoint")) {
+              $multiplier: 1;
+              @if $key == "sm" {
+                $multiplier: 2.5;
+              } @else if $key == "md" {
+                $multiplier: 3;
+              } @else if $key == "lg" {
+                $multiplier: 3.5;
+              } @else if $key == "xl" {
+                $multiplier: 4;
+              }
+              #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * $multiplier);
+            }
+          }
+        }
+      }
+    }
+
+    // Card (<article>)
+    @if map.get($modules, "components/card") {
+      article {
+        @each $key, $values in $breakpoints {
+          @if $values {
+            @media (min-width: map.get($values, "breakpoint")) {
+              $multiplier: 1;
+              @if $key == "sm" {
+                $multiplier: 1.25;
+              } @else if $key == "md" {
+                $multiplier: 1.5;
+              } @else if $key == "lg" {
+                $multiplier: 1.75;
+              } @else if $key == "xl" {
+                $multiplier: 2;
+              }
+              #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * $multiplier);
+            }
+          }
+        }
+      }
+    }
+
+    // Modal
+    @if map.get($modules, "components/modal") {
+      dialog > article {
+        #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 2);
+        #{$✨}block-spacing-horizontal: var(#{$✨}spacing);
+
+        @if map.get($breakpoints, "sm") {
+          @media (min-width: map.get(map.get($breakpoints, "sm"), "breakpoint")) {
+            #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 2.5);
+            #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * 1.25);
+          }
+        }
+
+        @if map.get($breakpoints, "md") {
+          @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
+            #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 3);
+            #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * 1.5);
+          }
+        }
+      }
+    }
+  }
+
+  // Link
+  @if map.get($modules, "content/link") {
+    a {
+      #{$✨}text-decoration: none;
+
+      // Secondary & Contrast
+      @if enable-classes {
+        &.secondary,
+        &.contrast {
+          #{$✨}text-decoration: underline;
+        }
+      }
+    }
+  }
+
   // Typography
-  #{$✨}font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell",
-    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
-  #{$✨}line-height: 1.5;
-  #{$✨}font-weight: 400;
-  #{$✨}font-size: 16px;
+  @if map.get($modules, "content/typography") {
+    // Small
+    small {
+      #{$✨}font-size: 0.875em;
+    }
 
-  // Responsive root font size
-  @if $enable-responsive-typography {
-    @each $key, $values in $breakpoints {
-      @if $values {
-        @media (min-width: map.get($values, "breakpoint")) {
-          #{$✨}font-size: map.get($values, "root-font-size");
-        }
-      }
+    // Headings
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      #{$✨}font-weight: 700;
+    }
+
+    h1 {
+      #{$✨}font-size: 2rem;
+      #{$✨}typography-spacing-vertical: 3rem;
+    }
+
+    h2 {
+      #{$✨}font-size: 1.75rem;
+      #{$✨}typography-spacing-vertical: 2.625rem;
+    }
+
+    h3 {
+      #{$✨}font-size: 1.5rem;
+      #{$✨}typography-spacing-vertical: 2.25rem;
+    }
+
+    h4 {
+      #{$✨}font-size: 1.25rem;
+      #{$✨}typography-spacing-vertical: 1.874rem;
+    }
+
+    h5 {
+      #{$✨}font-size: 1.125rem;
+      #{$✨}typography-spacing-vertical: 1.6875rem;
     }
   }
 
-  // Borders
-  #{$✨}border-radius: 0.25rem;
-  #{$✨}border-width: 1px;
-  #{$✨}outline-width: 3px;
-
-  // Spacings
-  #{$✨}spacing: 1rem;
-
-  // Spacings for typography elements
-  #{$✨}typography-spacing-vertical: 1.5rem;
-
-  // Spacings for body > header, body > main, body > footer, section, article
-  #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 2);
-  #{$✨}block-spacing-horizontal: var(#{$✨}spacing);
-
-  @if ($enable-classes and $enable-grid) {
-    #{$✨}grid-spacing-vertical: 0;
-    #{$✨}grid-spacing-horizontal: var(#{$✨}spacing);
-  }
-
-  // Spacings for form elements and button
-  #{$✨}form-element-spacing-vertical: 0.75rem;
-  #{$✨}form-element-spacing-horizontal: 1rem;
-
-  // Spacings for nav component
-  #{$✨}nav-element-spacing-vertical: 1rem;
-  #{$✨}nav-element-spacing-horizontal: 0.5rem;
-  #{$✨}nav-link-spacing-vertical: 0.5rem;
-  #{$✨}nav-link-spacing-horizontal: 0.5rem;
-
-  // Font weight for form labels & fieldsets legend
-  #{$✨}form-label-font-weight: var(#{$✨}font-weight);
-
-  // Transitions
-  #{$✨}transition: 0.2s ease-in-out;
-
-  // Modal (<dialog>)
-  #{$✨}modal-overlay-backdrop-filter: blur(0.25rem);
-}
-
-// Responsives spacings
-@if $enable-responsive-spacings {
-  // Sectioning
-  #{$semantic-root-element} > header,
-  #{$semantic-root-element} > main,
-  #{$semantic-root-element} > footer,
-  section {
-    @each $key, $values in $breakpoints {
-      @if $values {
-        @media (min-width: map.get($values, "breakpoint")) {
-          $multiplier: 1;
-          @if $key == "sm" {
-            $multiplier: 2.5;
-          } @else if $key == "md" {
-            $multiplier: 3;
-          } @else if $key == "lg" {
-            $multiplier: 3.5;
-          } @else if $key == "xl" {
-            $multiplier: 4;
-          }
-          #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * $multiplier);
-        }
-      }
-    }
-  }
-
-  // Card (<article>)
-  article {
-    @each $key, $values in $breakpoints {
-      @if $values {
-        @media (min-width: map.get($values, "breakpoint")) {
-          $multiplier: 1;
-          @if $key == "sm" {
-            $multiplier: 1.25;
-          } @else if $key == "md" {
-            $multiplier: 1.5;
-          } @else if $key == "lg" {
-            $multiplier: 1.75;
-          } @else if $key == "xl" {
-            $multiplier: 2;
-          }
-          #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * $multiplier);
-        }
-      }
-    }
-  }
-
-  // Modal
-  dialog > article {
-    #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 2);
-    #{$✨}block-spacing-horizontal: var(#{$✨}spacing);
-
-    @if map.get($breakpoints, "sm") {
-      @media (min-width: map.get(map.get($breakpoints, "sm"), "breakpoint")) {
-        #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 2.5);
-        #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * 1.25);
+  // Table
+  @if map.get($modules, "content/table") {
+    thead,
+    tfoot {
+      th,
+      td {
+        #{$✨}border-width: 3px;
       }
     }
 
-    @if map.get($breakpoints, "md") {
-      @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
-        #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 3);
-        #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * 1.5);
-      }
+    :not(thead, tfoot) > * > td {
+      #{$✨}font-size: 0.875em;
     }
   }
-}
 
-// Link
-a {
-  #{$✨}text-decoration: none;
+  // Code
+  @if map.get($modules, "content/code") {
+    pre,
+    code,
+    kbd,
+    samp {
+      #{$✨}font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono",
+        "Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol", "Noto Color Emoji";
+    }
 
-  // Secondary & Contrast
-  @if enable-classes {
-    &.secondary,
-    &.contrast {
-      #{$✨}text-decoration: underline;
+    kbd {
+      #{$✨}font-weight: bolder;
     }
   }
-}
 
-// Small
-small {
-  #{$✨}font-size: 0.875em;
-}
+  // Checkboxes, Radios and Switches
+  @if map.get($modules, "forms/checkbox-radio-switch") {
+    [type="checkbox"],
+    [type="radio"] {
+      #{$✨}border-width: 2px;
+    }
 
-// Headings
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  #{$✨}font-weight: 700;
-}
-
-h1 {
-  #{$✨}font-size: 2rem;
-  #{$✨}typography-spacing-vertical: 3rem;
-}
-
-h2 {
-  #{$✨}font-size: 1.75rem;
-  #{$✨}typography-spacing-vertical: 2.625rem;
-}
-
-h3 {
-  #{$✨}font-size: 1.5rem;
-  #{$✨}typography-spacing-vertical: 2.25rem;
-}
-
-h4 {
-  #{$✨}font-size: 1.25rem;
-  #{$✨}typography-spacing-vertical: 1.874rem;
-}
-
-h5 {
-  #{$✨}font-size: 1.125rem;
-  #{$✨}typography-spacing-vertical: 1.6875rem;
-}
-
-// Forms elements
-[type="checkbox"],
-[type="radio"] {
-  #{$✨}border-width: 2px;
-}
-
-[type="checkbox"][role="switch"] {
-  #{$✨}border-width: 3px;
-}
-
-// Table
-thead,
-tfoot {
-  th,
-  td {
-    #{$✨}border-width: 3px;
+    [type="checkbox"][role="switch"] {
+      #{$✨}border-width: 3px;
+    }
   }
-}
-
-:not(thead, tfoot) > * > td {
-  #{$✨}font-size: 0.875em;
-}
-
-// Code
-pre,
-code,
-kbd,
-samp {
-  #{$✨}font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono",
-    "Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-kbd {
-  #{$✨}font-weight: bolder;
 }

@@ -1,11 +1,11 @@
 @use "sass:map";
 @use "../settings" as *;
 
-@if ($enable-classes and $enable-grid) {
+@if map.get($modules, "layout/grid") and $enable-classes {
   /**
- * Grid
- * Minimal grid system with auto-layout columns
- */
+   * Grid
+   * Minimal grid system with auto-layout columns
+   */
 
   .grid {
     grid-column-gap: var(#{$✨}grid-spacing-horizontal);

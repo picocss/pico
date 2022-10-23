@@ -1,34 +1,37 @@
+@use "sass:map";
 @use "../settings" as *;
 
-/**
- * Miscs
- */
+@if map.get($modules, "content/miscs") {
+  /**
+   * Miscs
+   */
 
-// Reboot based on :
-// - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
-// - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
-// ––––––––––––––––––––
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
 
-// 1. Correct the inheritance of border color in Firefox
-// 2. Add the correct box sizing in Firefox
-hr {
-  height: 0; // 2
-  border: 0;
-  border-top: 1px solid var(#{$✨}muted-border-color);
-  color: inherit; // 1
-}
-
-// Add the correct display in IE 10+
-[hidden],
-template {
-  @if $enable-important {
-    display: none !important;
-  } @else {
-    display: none;
+  // 1. Correct the inheritance of border color in Firefox
+  // 2. Add the correct box sizing in Firefox
+  hr {
+    height: 0; // 2
+    border: 0;
+    border-top: 1px solid var(#{$✨}muted-border-color);
+    color: inherit; // 1
   }
-}
 
-// Add the correct display in IE 9-
-canvas {
-  display: inline-block;
+  // Add the correct display in IE 10+
+  [hidden],
+  template {
+    @if $enable-important {
+      display: none !important;
+    } @else {
+      display: none;
+    }
+  }
+
+  // Add the correct display in IE 9-
+  canvas {
+    display: inline-block;
+  }
 }

@@ -1,9 +1,10 @@
+@use "sass:map";
 @use "../settings" as *;
 
-@if enable-transitions and enable-important {
+@if map.get($modules, "utilities/reduce-motion") and enable-transitions and enable-important {
   /**
- * Reduce Motion Features
- */
+   * Reduce Motion Features
+   */
 
   // Based on :
   // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css

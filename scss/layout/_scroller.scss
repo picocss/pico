@@ -1,18 +1,21 @@
+@use "sass:map";
 @use "../settings" as *;
 
-/**
- * Horizontal scroller (<figure>)
- */
+@if map.get($modules, "layout/scroller") {
+  /**
+   * Horizontal scroller (<figure>)
+   */
 
-// Wrapper to make any content responsive across all viewports
-figure {
-  display: block;
-  margin: 0;
-  padding: 0;
-  overflow-x: auto;
+  // Wrapper to make allow any content to be scrolled horizontally
+  figure {
+    display: block;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
 
-  figcaption {
-    padding: calc(var(#{$✨}spacing) * 0.5) 0;
-    color: var(#{$✨}muted-color);
+    figcaption {
+      padding: calc(var(#{$✨}spacing) * 0.5) 0;
+      color: var(#{$✨}muted-color);
+    }
   }
 }
