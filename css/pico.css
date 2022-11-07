@@ -2177,6 +2177,7 @@ dialog:not([open]), dialog[open=false] {
   padding-right: var(--pico-scrollbar-width, 0px);
   overflow: hidden;
   pointer-events: none;
+  touch-action: none;
 }
 .modal-is-open dialog {
   pointer-events: auto;
