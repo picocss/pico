@@ -15,7 +15,7 @@
   --h6-color: #{mix($grey-700, $grey-600)};
 
   // Muted colors
-  --muted-color: #{$grey-500};
+  --muted-color: #{$grey-600};
   --muted-border-color: #{$grey-50};
 
   // Primary colors
@@ -91,7 +91,7 @@
 
   // Code
   --code-background-color: #{$grey-50};
-  --code-color: var(--muted-color);
+  --code-color: var(--color);
   --code-kbd-background-color: var(--contrast);
   --code-kbd-color: var(--contrast-inverse);
   --code-tag-color: #{hsl(330, 40%, 50%)};

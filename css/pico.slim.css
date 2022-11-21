@@ -143,7 +143,7 @@ kbd {
   --h4-color: #374956;
   --h5-color: hsl(205deg, 20%, 32%);
   --h6-color: #4d606d;
-  --muted-color: hsl(205deg, 10%, 50%);
+  --muted-color: hsl(205deg, 15%, 41%);
   --muted-border-color: hsl(205deg, 20%, 94%);
   --primary: hsl(195deg, 85%, 41%);
   --primary-hover: hsl(195deg, 90%, 32%);
@@ -193,7 +193,7 @@ kbd {
   --table-border-color: var(--muted-border-color);
   --table-row-stripped-background-color: #f6f8f9;
   --code-background-color: hsl(205deg, 20%, 94%);
-  --code-color: var(--muted-color);
+  --code-color: var(--color);
   --code-kbd-background-color: var(--contrast);
   --code-kbd-color: var(--contrast-inverse);
   --code-tag-color: hsl(330deg, 40%, 50%);
@@ -249,7 +249,7 @@ kbd {
     --h4-color: #c8d1d8;
     --h5-color: hsl(205deg, 16%, 77%);
     --h6-color: #afbbc4;
-    --muted-color: hsl(205deg, 10%, 50%);
+    --muted-color: hsl(205deg, 12%, 59%);
     --muted-border-color: #1f2d38;
     --primary: hsl(195deg, 85%, 41%);
     --primary-hover: hsl(195deg, 80%, 50%);
@@ -299,7 +299,7 @@ kbd {
     --table-border-color: var(--muted-border-color);
     --table-row-stripped-background-color: rgba(115, 130, 140, 0.05);
     --code-background-color: #18232c;
-    --code-color: var(--muted-color);
+    --code-color: var(--color);
     --code-kbd-background-color: var(--contrast);
     --code-kbd-color: var(--contrast-inverse);
     --code-tag-color: hsl(330deg, 30%, 50%);
@@ -355,7 +355,7 @@ kbd {
   --h4-color: #c8d1d8;
   --h5-color: hsl(205deg, 16%, 77%);
   --h6-color: #afbbc4;
-  --muted-color: hsl(205deg, 10%, 50%);
+  --muted-color: hsl(205deg, 12%, 59%);
   --muted-border-color: #1f2d38;
   --primary: hsl(195deg, 85%, 41%);
   --primary-hover: hsl(195deg, 80%, 50%);
@@ -405,7 +405,7 @@ kbd {
   --table-border-color: var(--muted-border-color);
   --table-row-stripped-background-color: rgba(115, 130, 140, 0.05);
   --code-background-color: #18232c;
-  --code-color: var(--muted-color);
+  --code-color: var(--color);
   --code-kbd-background-color: var(--contrast);
   --code-kbd-color: var(--contrast-inverse);
   --code-tag-color: hsl(330deg, 30%, 50%);
