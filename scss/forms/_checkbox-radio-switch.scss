@@ -30,8 +30,8 @@
     &:checked,
     &:checked:active,
     &:checked:focus {
-      #{$✨}background-color: var(#{$✨}primary);
-      #{$✨}border-color: var(#{$✨}primary);
+      #{$✨}background-color: var(#{$✨}primary-background);
+      #{$✨}border-color: var(#{$✨}primary-border);
       background-image: var(#{$✨}icon-checkbox);
       background-position: center;
       background-size: 0.75em auto;
@@ -49,8 +49,8 @@
   // Checkboxes
   [type="checkbox"] {
     &:indeterminate {
-      #{$✨}background-color: var(#{$✨}primary);
-      #{$✨}border-color: var(#{$✨}primary);
+      #{$✨}background-color: var(#{$✨}primary-background);
+      #{$✨}border-color: var(#{$✨}primary-border);
       background-image: var(#{$✨}icon-minus);
       background-position: center;
       background-size: 0.75em auto;
