@@ -47,6 +47,7 @@
   "devDependencies": {
     "@picocss/colors": "github:picocss/colors",
     "autoprefixer": "^10.4.13",
+    "caniuse-lite": "1.0.30001441",
     "clean-css-cli": "^5.6.1",
     "css-declaration-sorter": "^6.3.1",
     "nodemon": "^2.0.20",
