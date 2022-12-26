@@ -240,7 +240,7 @@ kbd {
 }
 
 @media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme=light]) {
+  :root:not([data-theme]) {
     --background-color: #11191f;
     --color: hsl(205deg, 16%, 77%);
     --h1-color: hsl(205deg, 20%, 94%);
