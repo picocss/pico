@@ -10,10 +10,13 @@
   [role="link"] {
     #{$✨}color: var(#{$✨}primary);
     #{$✨}background-color: transparent;
+    #{$✨}underline: var(#{$✨}primary-underline);
     outline: none;
     background-color: var(#{$✨}background-color); // 1
     color: var(#{$✨}color);
     text-decoration: var(#{$✨}text-decoration);
+    text-decoration-color: var(#{$✨}underline);
+    text-underline-offset: 0.125em;
 
     @if $enable-transitions {
       transition: background-color var(#{$✨}transition), color var(#{$✨}transition),
@@ -22,6 +25,7 @@
 
     &:is([aria-current], :hover, :active, :focus) {
       #{$✨}color: var(#{$✨}primary-hover);
+      #{$✨}underline: var(#{$✨}primary-underline-hover);
       #{$✨}text-decoration: underline;
     }
 
@@ -33,9 +37,11 @@
       // Secondary
       &.secondary {
         #{$✨}color: var(#{$✨}secondary);
+        #{$✨}underline: var(#{$✨}secondary-underline);
 
         &:is([aria-current], :hover, :active, :focus) {
           #{$✨}color: var(#{$✨}secondary-hover);
+          #{$✨}underline: var(#{$✨}secondary-underline-hover);
         }
 
         &:focus {
@@ -46,9 +52,11 @@
       // Contrast
       &.contrast {
         #{$✨}color: var(#{$✨}contrast);
+        #{$✨}underline: var(#{$✨}contrast-underline);
 
         &:is([aria-current], :hover, :active, :focus) {
           #{$✨}color: var(#{$✨}contrast-hover);
+          #{$✨}underline: var(#{$✨}contrast-underline-hover);
         }
 
         &:focus {

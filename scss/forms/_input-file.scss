@@ -1,16 +1,21 @@
 @use "sass:map";
 @use "../settings" as *;
 
+@mixin file-selector-button-hover {
+  #{$✨}background-color: var(#{$✨}secondary-background-hover);
+  #{$✨}border-color: var(#{$✨}secondary-border-hover);
+}
+
 @mixin file-selector-button {
-  #{$✨}background-color: var(#{$✨}secondary);
-  #{$✨}border-color: var(#{$✨}secondary);
+  #{$✨}background-color: var(#{$✨}secondary-background);
+  #{$✨}border-color: var(#{$✨}secondary-border);
   #{$✨}color: var(#{$✨}secondary-inverse);
   margin-right: calc(var(#{$✨}spacing) / 2);
   margin-left: 0;
   margin-inline-start: 0;
   margin-inline-end: calc(var(#{$✨}spacing) / 2);
   padding: calc(var(#{$✨}form-element-spacing-vertical) * 0.5)
-    calc(var(#{$✨}form-element-spacing-horizontal) * 0.5);
+    var(#{$✨}form-element-spacing-horizontal);
   border: var(#{$✨}border-width) solid var(#{$✨}border-color);
   border-radius: var(#{$✨}border-radius);
   outline: none;
@@ -29,8 +34,7 @@
   }
 
   &:is(:hover, :active, :focus) {
-    #{$✨}background-color: var(#{$✨}secondary-hover);
-    #{$✨}border-color: var(#{$✨}secondary-hover);
+    @include file-selector-button-hover;
   }
 }
 
@@ -41,6 +45,8 @@
 
   [type="file"] {
     #{$✨}color: var(#{$✨}muted-color);
+    z-index: 1;
+    position: relative;
     padding: calc(var(#{$✨}form-element-spacing-vertical) * 0.5) 0;
     border: 0;
     border-radius: 0;
@@ -56,6 +62,20 @@
 
     &::-ms-browse {
       @include file-selector-button;
+    }
+
+    &:is(:hover, :active, :focus) {
+      &::file-selector-button {
+        @include file-selector-button-hover;
+      }
+
+      &::-webkit-file-upload-button {
+        @include file-selector-button-hover;
+      }
+
+      &::-ms-browse {
+        @include file-selector-button-hover;
+      }
     }
   }
 }

@@ -192,8 +192,7 @@
 
   // Focus
   input:not([type="submit"], [type="button"], [type="reset"], [type="range"], [type="file"], [readonly]),
-  select,
-  textarea {
+  :where(select, textarea) {
     &:focus {
       #{$✨}box-shadow: 0 0 0 var(#{$✨}outline-width) var(#{$✨}form-element-focus-color);
     }

@@ -14,6 +14,7 @@
     #{$✨}line-height: 1.5;
     #{$✨}font-weight: 400;
     #{$✨}font-size: 16px;
+    #{$✨}text-underline-offset: 0.1rem;
 
     // Responsive root font size
     @if $enable-responsive-typography {
@@ -29,7 +30,7 @@
     // Borders
     #{$✨}border-radius: 0.25rem;
     #{$✨}border-width: 1px;
-    #{$✨}outline-width: 3px;
+    #{$✨}outline-width: 0.1875rem;
 
     // Transitions
     #{$✨}transition: 0.2s ease-in-out;
@@ -70,7 +71,7 @@
 
     // Modal (<dialog>)
     @if map.get($modules, "components/modal") {
-      #{$✨}modal-overlay-backdrop-filter: blur(0.25rem);
+      #{$✨}modal-overlay-backdrop-filter: blur(0.375rem);
     }
 
     // Spacings for nav component
@@ -159,7 +160,7 @@
   // Link
   @if map.get($modules, "content/link") {
     a {
-      #{$✨}text-decoration: none;
+      #{$✨}text-decoration: underline;
 
       // Secondary & Contrast
       @if enable-classes {
@@ -245,15 +246,21 @@
     }
   }
 
+  // Inputs and Selects
+  input:not([type="submit"], [type="button"], [type="reset"], [type="checkbox"], [type="radio"], [type="file"]),
+  :where(select, textarea) {
+    #{$✨}outline-width: 0.0625rem;
+  }
+
   // Checkboxes, Radios and Switches
   @if map.get($modules, "forms/checkbox-radio-switch") {
     [type="checkbox"],
     [type="radio"] {
-      #{$✨}border-width: 2px;
+      #{$✨}border-width: 0.125rem;
     }
 
     [type="checkbox"][role="switch"] {
-      #{$✨}border-width: 3px;
+      #{$✨}border-width: 0.1875rem;
     }
   }
 }

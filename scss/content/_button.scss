@@ -48,8 +48,8 @@
   input[type="button"],
   input[type="reset"],
   [role="button"] {
-    #{$✨}background-color: var(#{$✨}primary);
-    #{$✨}border-color: var(#{$✨}primary);
+    #{$✨}background-color: var(#{$✨}primary-background);
+    #{$✨}border-color: var(#{$✨}primary-border);
     #{$✨}color: var(#{$✨}primary-inverse);
     #{$✨}box-shadow: var(#{$✨}button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
     padding: var(#{$✨}form-element-spacing-vertical) var(#{$✨}form-element-spacing-horizontal);
@@ -71,8 +71,8 @@
     }
 
     &:is([aria-current], :hover, :active, :focus) {
-      #{$✨}background-color: var(#{$✨}primary-hover);
-      #{$✨}border-color: var(#{$✨}primary-hover);
+      #{$✨}background-color: var(#{$✨}primary-background-hover);
+      #{$✨}border-color: var(#{$✨}primary-border-hover);
       #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
       #{$✨}color: var(#{$✨}primary-inverse);
     }
@@ -88,14 +88,14 @@
     // Secondary
     :is(button, input[type="submit"], input[type="button"], [role="button"]).secondary,
     input[type="reset"] {
-      #{$✨}background-color: var(#{$✨}secondary);
-      #{$✨}border-color: var(#{$✨}secondary);
+      #{$✨}background-color: var(#{$✨}secondary-background);
+      #{$✨}border-color: var(#{$✨}secondary-border);
       #{$✨}color: var(#{$✨}secondary-inverse);
       cursor: pointer;
 
       &:is([aria-current], :hover, :active, :focus) {
-        #{$✨}background-color: var(#{$✨}secondary-hover);
-        #{$✨}border-color: var(#{$✨}secondary-hover);
+        #{$✨}background-color: var(#{$✨}secondary-background-hover);
+        #{$✨}border-color: var(#{$✨}secondary-border-hover);
         #{$✨}color: var(#{$✨}secondary-inverse);
       }
 
@@ -107,13 +107,13 @@
 
     // Contrast
     :is(button, input[type="submit"], input[type="button"], [role="button"]).contrast {
-      #{$✨}background-color: var(#{$✨}contrast);
-      #{$✨}border-color: var(#{$✨}contrast);
+      #{$✨}background-color: var(#{$✨}contrast-background);
+      #{$✨}border-color: var(#{$✨}contrast-border);
       #{$✨}color: var(#{$✨}contrast-inverse);
 
       &:is([aria-current], :hover, :active, :focus) {
-        #{$✨}background-color: var(#{$✨}contrast-hover);
-        #{$✨}border-color: var(#{$✨}contrast-hover);
+        #{$✨}background-color: var(#{$✨}contrast-background-hover);
+        #{$✨}border-color: var(#{$✨}contrast-border-hover);
         #{$✨}color: var(#{$✨}contrast-inverse);
       }
 
@@ -128,6 +128,7 @@
     input[type="reset"].outline {
       #{$✨}background-color: transparent;
       #{$✨}color: var(#{$✨}primary);
+      #{$✨}border-color: currentColor;
 
       &:is([aria-current], :hover, :active, :focus) {
         #{$✨}background-color: transparent;
@@ -139,6 +140,7 @@
     :is(button, input[type="submit"], input[type="button"], [role="button"]).outline.secondary,
     input[type="reset"].outline {
       #{$✨}color: var(#{$✨}secondary);
+      #{$✨}border-color: currentColor;
 
       &:is([aria-current], :hover, :active, :focus) {
         #{$✨}color: var(#{$✨}secondary-hover);

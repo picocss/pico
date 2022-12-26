@@ -168,7 +168,7 @@
     summary,
     summary:not([role]) {
       height: auto;
-      padding: var(#{$✨}nav-link-spacing-vertical) var(#{$✨}nav-link-spacing-horizontal);
+      padding: var(#{$✨}nav-link-spacing-vertical) var(#{$✨}form-element-spacing-horizontal);
     }
 
     &[open] summary {

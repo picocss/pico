@@ -60,33 +60,6 @@
     }
   }
 
-  // Code Syntax
-  code {
-    // Tags
-    b {
-      color: var(#{$✨}code-tag-color);
-      font-weight: var(#{$✨}font-weight);
-    }
-
-    // Properties
-    i {
-      color: var(#{$✨}code-property-color);
-      font-style: normal;
-    }
-
-    // Values
-    u {
-      color: var(#{$✨}code-value-color);
-      text-decoration: none;
-    }
-
-    // Comments
-    em {
-      color: var(#{$✨}code-comment-color);
-      font-style: normal;
-    }
-  }
-
   // kbd
   kbd {
     background-color: var(#{$✨}code-kbd-background-color);

@@ -45,6 +45,7 @@
     font-size: var(#{$✨}font-size);
     line-height: var(#{$✨}line-height); // 2
     font-family: var(#{$✨}font-family);
+    text-underline-offset: var(#{$✨}text-underline-offset);
     text-rendering: optimizeLegibility;
     overflow-wrap: break-word; // 3
     cursor: default; // 1
