@@ -46,16 +46,16 @@
   },
   "devDependencies": {
     "@picocss/colors": "github:picocss/colors",
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "^10.4.13",
     "clean-css-cli": "^5.6.1",
     "css-declaration-sorter": "^6.3.1",
     "nodemon": "^2.0.20",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.17",
-    "postcss-cli": "^10.0.0",
-    "postcss-scss": "^4.0.5",
-    "prettier": "2.7.1",
-    "sass": "^1.55.0"
+    "postcss": "^8.4.20",
+    "postcss-cli": "^10.1.0",
+    "postcss-scss": "^4.0.6",
+    "prettier": "^2.8.1",
+    "sass": "^1.57.1"
   },
   "browserslist": [
     ">= 0.5%",

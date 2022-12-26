@@ -119,7 +119,14 @@
     #{$✨}form-element-valid-focus-color: var(#{$✨}form-element-valid-active-border-color);
 
     // Focus for buttons, radio and select
-    input:is([type="submit"], [type="button"], [type="reset"], [type="checkbox"], [type="radio"], [type="file"]) {
+    input:is(
+        [type="submit"],
+        [type="button"],
+        [type="reset"],
+        [type="checkbox"],
+        [type="radio"],
+        [type="file"]
+      ) {
       #{$✨}form-element-focus-color: var(#{$✨}primary-focus);
     }
   }

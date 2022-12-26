@@ -247,7 +247,14 @@
   }
 
   // Inputs and Selects
-  input:not([type="submit"], [type="button"], [type="reset"], [type="checkbox"], [type="radio"], [type="file"]),
+  input:not(
+      [type="submit"],
+      [type="button"],
+      [type="reset"],
+      [type="checkbox"],
+      [type="radio"],
+      [type="file"]
+    ),
   :where(select, textarea) {
     #{$✨}outline-width: 0.0625rem;
   }

@@ -175,7 +175,14 @@
   }
 
   // Active & Focus
-  input:not([type="submit"], [type="button"], [type="reset"], [type="checkbox"], [type="radio"], [readonly]),
+  input:not(
+      [type="submit"],
+      [type="button"],
+      [type="reset"],
+      [type="checkbox"],
+      [type="radio"],
+      [readonly]
+    ),
   :where(select, textarea) {
     &:is(:active, :focus) {
       #{$✨}background-color: var(#{$✨}form-element-active-background-color);
@@ -191,7 +198,14 @@
   }
 
   // Focus
-  input:not([type="submit"], [type="button"], [type="reset"], [type="range"], [type="file"], [readonly]),
+  input:not(
+      [type="submit"],
+      [type="button"],
+      [type="reset"],
+      [type="range"],
+      [type="file"],
+      [readonly]
+    ),
   :where(select, textarea) {
     &:focus {
       #{$✨}box-shadow: 0 0 0 var(#{$✨}outline-width) var(#{$✨}form-element-focus-color);
@@ -212,7 +226,15 @@
 
   // Aria-invalid
   :where(input, select, textarea) {
-    &:not([type="checkbox"], [type="radio"], [type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
+    &:not(
+        [type="checkbox"],
+        [type="radio"],
+        [type="date"],
+        [type="datetime-local"],
+        [type="month"],
+        [type="time"],
+        [type="week"]
+      ) {
       &[aria-invalid] {
         @if $enable-important {
           padding-right: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem) !important;
