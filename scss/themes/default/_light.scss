@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../../../node_modules/@picocss/colors/scss/colors" as *;
+@use "colors" as *;
 @use "../../settings" as *;
 @use "../../utils/box-shadow";
 @use "../../utils/functions";

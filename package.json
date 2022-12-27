@@ -34,7 +34,7 @@
     "lint": "run-s \"lint:*\" --silent",
     "lint:prettier": "prettier --write --loglevel silent 'scss/**/*.scss'",
     "lint:sort-scss": "postcss --config scss ./scss/**/*.scss --replace",
-    "build:css": "sass --style expanded --source-map --embed-sources --no-error-css scss/:css/",
+    "build:css": "sass --load-path=node_modules/@picocss/colors/scss --style expanded --source-map --embed-sources --no-error-css scss/:css/",
     "build:autoprefix": "postcss --config css --replace css/*.css !css/*.min.css",
     "build:minify": "cleancss -O1 --with-rebase --batch --batch-suffix .min css/*.css !css/*.min.css",
     "prelint": "echo '[@picocss/pico] ✨ Lint'",
