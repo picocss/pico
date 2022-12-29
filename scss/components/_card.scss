@@ -7,7 +7,7 @@
    */
 
   article {
-    margin: var(#{$✨}block-spacing-vertical) 0;
+    margin-bottom: var(#{$✨}block-spacing-vertical);
     padding: var(#{$✨}block-spacing-vertical) var(#{$✨}block-spacing-horizontal);
     border-radius: var(#{$✨}border-radius);
     background: var(#{$✨}card-background-color);
