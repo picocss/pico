@@ -370,6 +370,16 @@
       margin-bottom: var(#{$✨}spacing);
       color: var(#{$✨}muted-color);
     }
+    &[aria-invalid="false"] {
+      + small {
+        color: var(#{$✨}ins-color);
+      }
+    }
+    &[aria-invalid="true"] {
+      + small {
+        color: var(#{$✨}del-color);
+      }
+    }
   }
 
   // Styles for Input inside a label
