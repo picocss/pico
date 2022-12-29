@@ -23,9 +23,9 @@
 
   // Correct the inability to style buttons in iOS and Safari
   button,
-  [type="button"],
-  [type="reset"],
-  [type="submit"] {
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
     -webkit-appearance: button;
   }
 
@@ -34,19 +34,19 @@
 
   button {
     display: block;
-    width: 100%;
     margin-bottom: var(#{$✨}spacing);
   }
 
-  [role="button"] {
-    display: inline-block;
-    text-decoration: none;
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    width: 100%;
   }
 
   button,
   input[type="submit"],
-  input[type="button"],
   input[type="reset"],
+  input[type="button"],
   [role="button"] {
     #{$✨}background-color: var(#{$✨}primary-background);
     #{$✨}border-color: var(#{$✨}primary-border);
@@ -176,12 +176,17 @@
   }
 
   // Button [disabled]
-  // Links without href are disabled by default
-  :where(button, [type="submit"], [type="button"], [type="reset"], [role="button"])[disabled],
+  :where(
+      button,
+      input[type="submit"],
+      input[type="reset"],
+      input[type="button"],
+      [role="button"]
+    )[disabled],
   :where(fieldset[disabled])
-    :is(button, [type="submit"], [type="button"], [type="reset"], [role="button"]),
-  a[role="button"]:not([href]) {
+    :is(button, input[type="submit"], input[type="button"], input[type="reset"], [role="button"]) {
     opacity: 0.5;
     pointer-events: none;
+    user-select: none;
   }
 }
