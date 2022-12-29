@@ -59,9 +59,8 @@
         calc(var(#{$✨}nav-link-spacing-horizontal) * -1);
       padding: var(#{$✨}nav-link-spacing-vertical) var(#{$✨}nav-link-spacing-horizontal);
       border-radius: var(#{$✨}border-radius);
-      text-decoration: none;
 
-      &:is([aria-current], :hover, :active, :focus) {
+      &:not(:hover) {
         text-decoration: none;
       }
     }
@@ -96,11 +95,13 @@
       }
     }
 
-    // Minimal support for role="button"
+    // Minimal support for button and role="button"
+    button,
     [role="button"] {
       margin-right: inherit;
       margin-left: inherit;
-      padding: var(#{$✨}nav-link-spacing-vertical) var(#{$✨}nav-link-spacing-horizontal);
+      padding: calc(var(#{$✨}nav-link-spacing-vertical) - (var(#{$✨}border-width) * 2))
+        var(#{$✨}nav-link-spacing-horizontal);
     }
   }
 
