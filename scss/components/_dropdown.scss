@@ -62,6 +62,16 @@
           background-color: var(#{$✨}dropdown-hover-background-color);
         }
       }
+
+      &:has(label) {
+        &:hover {
+          background-color: var(#{$✨}dropdown-hover-background-color);
+
+          label {
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 
