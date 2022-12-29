@@ -270,4 +270,13 @@
       #{$✨}border-width: 0.1875rem;
     }
   }
+
+  // Dropdown (<details role="list">)
+  @if map.get($modules, "components/dropdown") {
+    details[role="list"] {
+      summary:not([role="button"]) {
+        #{$✨}outline-width: 0.0625rem;
+      }
+    }
+  }
 }
