@@ -1,48 +1,5 @@
 // Pico classless version
 @use "pico" with (
   $enable-semantic-container: true,
-  $enable-classes: false,
-  $modules: (
-    // Theme
-    "themes/default": true,
-
-    // Layout
-    "layout/document": true,
-    "layout/landmarks": true,
-    "layout/container": true,
-    "layout/section": true,
-    "layout/grid": true,
-    "layout/scroller": true,
-
-    // Content
-    "content/typography": true,
-    "content/embedded": true,
-    "content/button": true,
-    "content/table": true,
-    "content/code": true,
-    "content/miscs": true,
-
-    // Forms
-    "forms/basics": true,
-    "forms/checkbox-radio-switch": true,
-    "forms/input-color": true,
-    "forms/input-date": true,
-    "forms/input-file": true,
-    "forms/input-range": true,
-    "forms/input-search": true,
-
-    // Components
-    "components/accordion": true,
-    "components/card": true,
-    "components/dropdown": true,
-    "components/loading": true,
-    "components/modal": true,
-    "components/nav": true,
-    "components/progress": true,
-    "components/tooltip": true,
-
-    // Utilities
-    "utilities/accessibility": true,
-    "utilities/reduce-motion": true,
-  )
+  $enable-classes: false
 );
