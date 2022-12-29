@@ -40,7 +40,7 @@
 
     // Spacings for typography elements
     @if map.get($modules, "content/typography") {
-      #{$✨}typography-spacing-vertical: 1.5rem;
+      #{$✨}typography-spacing-vertical: 1rem;
     }
 
     // Spacings for body > header, body > main, body > footer, section, article
@@ -191,27 +191,27 @@
 
     h1 {
       #{$✨}font-size: 2rem;
-      #{$✨}typography-spacing-vertical: 3rem;
+      #{$✨}typography-spacing-top: 3rem;
     }
 
     h2 {
       #{$✨}font-size: 1.75rem;
-      #{$✨}typography-spacing-vertical: 2.625rem;
+      #{$✨}typography-spacing-top: 2.625rem;
     }
 
     h3 {
       #{$✨}font-size: 1.5rem;
-      #{$✨}typography-spacing-vertical: 2.25rem;
+      #{$✨}typography-spacing-top: 2.25rem;
     }
 
     h4 {
       #{$✨}font-size: 1.25rem;
-      #{$✨}typography-spacing-vertical: 1.874rem;
+      #{$✨}typography-spacing-top: 1.874rem;
     }
 
     h5 {
       #{$✨}font-size: 1.125rem;
-      #{$✨}typography-spacing-vertical: 1.6875rem;
+      #{$✨}typography-spacing-top: 1.6875rem;
     }
   }
 
