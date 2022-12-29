@@ -13,9 +13,9 @@
   --pico-muted-color: #646b79;
   --pico-muted-border-color: #e7eaf0;
   --pico-primary: #0172ad;
-  --pico-primary-hover: #02659a;
+  --pico-primary-hover: #015887;
   --pico-primary-underline: rgba(1, 114, 173, 0.5);
-  --pico-primary-underline-hover: var(--pico-primary);
+  --pico-primary-underline-hover: var(--pico-primary-hover);
   --pico-primary-background: #0172ad;
   --pico-primary-background-hover: #02659a;
   --pico-primary-border: var(--pico-primary-background);
@@ -23,9 +23,9 @@
   --pico-primary-focus: rgba(2, 154, 232, 0.25);
   --pico-primary-inverse: #fff;
   --pico-secondary: #5d6b89;
-  --pico-secondary-hover: #525f7a;
+  --pico-secondary-hover: #48536b;
   --pico-secondary-underline: rgba(93, 107, 137, 0.5);
-  --pico-secondary-underline-hover: var(--pico-secondary);
+  --pico-secondary-underline-hover: var(--pico-secondary-hover);
   --pico-secondary-background: #5d6b89;
   --pico-secondary-background-hover: #525f7a;
   --pico-secondary-border: var(--pico-secondary-background);
@@ -33,9 +33,9 @@
   --pico-secondary-focus: rgba(93, 107, 137, 0.25);
   --pico-secondary-inverse: #fff;
   --pico-contrast: #181c25;
-  --pico-contrast-hover: #0e1118;
+  --pico-contrast-hover: #000;
   --pico-contrast-underline: rgba(24, 28, 37, 0.5);
-  --pico-contrast-underline-hover: var(--pico-secondary);
+  --pico-contrast-underline-hover: var(--pico-secondary-hover);
   --pico-contrast-background: #181c25;
   --pico-contrast-background-hover: #000;
   --pico-contrast-border: var(--pico-contrast-background);
@@ -51,7 +51,7 @@
   --pico-h6-color: #646b79;
   --pico-mark-background-color: #fde7c0;
   --pico-mark-color: #0f1114;
-  --pico-ins-color: #006d46;
+  --pico-ins-color: #007a50;
   --pico-del-color: #9b2318;
   --pico-blockquote-border-color: var(--pico-muted-border-color);
   --pico-blockquote-footer-color: var(--pico-muted-color);
@@ -59,7 +59,7 @@
   --pico-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-table-border-color: var(--pico-muted-border-color);
   --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
-  --pico-code-background-color: #fbfcfc;
+  --pico-code-background-color: #f3f5f7;
   --pico-code-color: var(--pico-muted-color);
   --pico-code-kbd-background-color: var(--pico-color);
   --pico-code-kbd-color: var(--pico-background-color);
@@ -73,11 +73,11 @@
   --pico-form-element-disabled-background-color: var(--pico-form-element-background-color);
   --pico-form-element-disabled-border-color: var(--pico-form-element-border-color);
   --pico-form-element-disabled-opacity: 0.5;
-  --pico-form-element-invalid-border-color: #af291d;
-  --pico-form-element-invalid-active-border-color: #9b2318;
+  --pico-form-element-invalid-border-color: #9b2318;
+  --pico-form-element-invalid-active-border-color: #861d13;
   --pico-form-element-invalid-focus-color: var(--pico-form-element-invalid-active-border-color);
-  --pico-form-element-valid-border-color: #00895a;
-  --pico-form-element-valid-active-border-color: #007a50;
+  --pico-form-element-valid-border-color: #007a50;
+  --pico-form-element-valid-active-border-color: #006d46;
   --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
   --pico-switch-background-color: #bfc7d9;
   --pico-switch-color: var(--pico-primary-inverse);
@@ -100,7 +100,7 @@
   --pico-dropdown-border-color: #eff1f4;
   --pico-dropdown-box-shadow: var(--pico-box-shadow);
   --pico-dropdown-color: var(--pico-color);
-  --pico-dropdown-hover-background-color: #f7f8fa;
+  --pico-dropdown-hover-background-color: #eff1f4;
   --pico-loading-spinner-opacity: 0.5;
   --pico-modal-overlay-background-color: rgba(239, 241, 244, 0.7);
   --pico-progress-background-color: #dfe3eb;
@@ -114,8 +114,8 @@
   --pico-icon-chevron-button-inverse: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   --pico-icon-date: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
   --pico-icon-time: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
-  --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(0, 137, 90)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-  --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(175, 41, 29)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+  --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(0, 122, 80)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(155, 35, 24)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
   --pico-icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
   --pico-icon-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
   color-scheme: light;
@@ -136,15 +136,15 @@
 }
 
 @media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme=light]) {
+  :root:not([data-theme]) {
     --pico-background-color: #13171f;
     --pico-color: #c2c7d0;
     --pico-muted-color: #7b8495;
     --pico-muted-border-color: #202632;
     --pico-primary: #01aaff;
-    --pico-primary-hover: #51b4ff;
+    --pico-primary-hover: #79c0ff;
     --pico-primary-underline: rgba(1, 170, 255, 0.5);
-    --pico-primary-underline-hover: var(--pico-primary);
+    --pico-primary-underline-hover: var(--pico-primary-hover);
     --pico-primary-background: #02659a;
     --pico-primary-background-hover: #0172ad;
     --pico-primary-border: var(--pico-primary-background);
@@ -152,9 +152,9 @@
     --pico-primary-focus: rgba(1, 170, 255, 0.25);
     --pico-primary-inverse: #fff;
     --pico-secondary: #969eaf;
-    --pico-secondary-hover: #a0acc7;
+    --pico-secondary-hover: #b3b9c5;
     --pico-secondary-underline: rgba(150, 158, 175, 0.5);
-    --pico-secondary-underline-hover: var(--pico-secondary);
+    --pico-secondary-underline-hover: var(--pico-secondary-hover);
     --pico-secondary-background: #48536b;
     --pico-secondary-background-hover: #525f7a;
     --pico-secondary-border: var(--pico-secondary-background);
@@ -162,9 +162,9 @@
     --pico-secondary-focus: rgba(144, 158, 190, 0.25);
     --pico-secondary-inverse: #fff;
     --pico-contrast: #dfe3eb;
-    --pico-contrast-hover: #eff1f4;
+    --pico-contrast-hover: #fff;
     --pico-contrast-underline: rgba(223, 227, 235, 0.5);
-    --pico-contrast-underline-hover: var(--pico-contrast);
+    --pico-contrast-underline-hover: var(--pico-contrast-hover);
     --pico-contrast-background: #eff1f4;
     --pico-contrast-background-hover: #fff;
     --pico-contrast-border: var(--pico-contrast-background);
@@ -180,8 +180,8 @@
     --pico-h6-color: #8891a4;
     --pico-mark-background-color: #014063;
     --pico-mark-color: #fff;
-    --pico-ins-color: #00a66e;
-    --pico-del-color: #f06048;
+    --pico-ins-color: #179e71;
+    --pico-del-color: #d77261;
     --pico-blockquote-border-color: var(--pico-muted-border-color);
     --pico-blockquote-footer-color: var(--pico-muted-color);
     --pico-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
@@ -202,11 +202,11 @@
     --pico-form-element-disabled-background-color: var(--pico-form-element-background-color);
     --pico-form-element-disabled-border-color: var(--pico-form-element-border-color);
     --pico-form-element-disabled-opacity: 0.5;
-    --pico-form-element-invalid-border-color: #861d13;
-    --pico-form-element-invalid-active-border-color: #9b2318;
+    --pico-form-element-invalid-border-color: #d77261;
+    --pico-form-element-invalid-active-border-color: #b95046;
     --pico-form-element-invalid-focus-color: var(--pico-form-element-invalid-active-border-color);
-    --pico-form-element-valid-border-color: #006d46;
-    --pico-form-element-valid-active-border-color: #007a50;
+    --pico-form-element-valid-border-color: #179e71;
+    --pico-form-element-valid-active-border-color: #15845e;
     --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
     --pico-switch-background-color: #333c4e;
     --pico-switch-color: var(--pico-primary-inverse);
@@ -243,13 +243,13 @@
     --pico-icon-chevron-button-inverse: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     --pico-icon-date: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
     --pico-icon-time: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
-    --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(0, 109, 70)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-    --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(134, 29, 19)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+    --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(23, 158, 113)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(215, 114, 97)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
     --pico-icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
     --pico-icon-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
     color-scheme: dark;
   }
-  :root:not([data-theme=light]) input:is([type=submit],
+  :root:not([data-theme]) input:is([type=submit],
   [type=button],
   [type=reset],
   [type=checkbox],
@@ -264,9 +264,9 @@
   --pico-muted-color: #7b8495;
   --pico-muted-border-color: #202632;
   --pico-primary: #01aaff;
-  --pico-primary-hover: #51b4ff;
+  --pico-primary-hover: #79c0ff;
   --pico-primary-underline: rgba(1, 170, 255, 0.5);
-  --pico-primary-underline-hover: var(--pico-primary);
+  --pico-primary-underline-hover: var(--pico-primary-hover);
   --pico-primary-background: #02659a;
   --pico-primary-background-hover: #0172ad;
   --pico-primary-border: var(--pico-primary-background);
@@ -274,9 +274,9 @@
   --pico-primary-focus: rgba(1, 170, 255, 0.25);
   --pico-primary-inverse: #fff;
   --pico-secondary: #969eaf;
-  --pico-secondary-hover: #a0acc7;
+  --pico-secondary-hover: #b3b9c5;
   --pico-secondary-underline: rgba(150, 158, 175, 0.5);
-  --pico-secondary-underline-hover: var(--pico-secondary);
+  --pico-secondary-underline-hover: var(--pico-secondary-hover);
   --pico-secondary-background: #48536b;
   --pico-secondary-background-hover: #525f7a;
   --pico-secondary-border: var(--pico-secondary-background);
@@ -284,9 +284,9 @@
   --pico-secondary-focus: rgba(144, 158, 190, 0.25);
   --pico-secondary-inverse: #fff;
   --pico-contrast: #dfe3eb;
-  --pico-contrast-hover: #eff1f4;
+  --pico-contrast-hover: #fff;
   --pico-contrast-underline: rgba(223, 227, 235, 0.5);
-  --pico-contrast-underline-hover: var(--pico-contrast);
+  --pico-contrast-underline-hover: var(--pico-contrast-hover);
   --pico-contrast-background: #eff1f4;
   --pico-contrast-background-hover: #fff;
   --pico-contrast-border: var(--pico-contrast-background);
@@ -302,8 +302,8 @@
   --pico-h6-color: #8891a4;
   --pico-mark-background-color: #014063;
   --pico-mark-color: #fff;
-  --pico-ins-color: #00a66e;
-  --pico-del-color: #f06048;
+  --pico-ins-color: #179e71;
+  --pico-del-color: #d77261;
   --pico-blockquote-border-color: var(--pico-muted-border-color);
   --pico-blockquote-footer-color: var(--pico-muted-color);
   --pico-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
@@ -324,11 +324,11 @@
   --pico-form-element-disabled-background-color: var(--pico-form-element-background-color);
   --pico-form-element-disabled-border-color: var(--pico-form-element-border-color);
   --pico-form-element-disabled-opacity: 0.5;
-  --pico-form-element-invalid-border-color: #861d13;
-  --pico-form-element-invalid-active-border-color: #9b2318;
+  --pico-form-element-invalid-border-color: #d77261;
+  --pico-form-element-invalid-active-border-color: #b95046;
   --pico-form-element-invalid-focus-color: var(--pico-form-element-invalid-active-border-color);
-  --pico-form-element-valid-border-color: #006d46;
-  --pico-form-element-valid-active-border-color: #007a50;
+  --pico-form-element-valid-border-color: #179e71;
+  --pico-form-element-valid-active-border-color: #15845e;
   --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
   --pico-switch-background-color: #333c4e;
   --pico-switch-color: var(--pico-primary-inverse);
@@ -365,8 +365,8 @@
   --pico-icon-chevron-button-inverse: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   --pico-icon-date: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
   --pico-icon-time: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
-  --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(0, 109, 70)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-  --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(134, 29, 19)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+  --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(23, 158, 113)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(215, 114, 97)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
   --pico-icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
   --pico-icon-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
   color-scheme: dark;
@@ -401,7 +401,7 @@ progress,
   --pico-outline-width: 0.1875rem;
   --pico-transition: 0.2s ease-in-out;
   --pico-spacing: 1rem;
-  --pico-typography-spacing-vertical: 1.5rem;
+  --pico-typography-spacing-vertical: 1rem;
   --pico-block-spacing-vertical: calc(var(--pico-spacing) * 2);
   --pico-block-spacing-horizontal: var(--pico-spacing);
   --pico-form-element-spacing-vertical: 0.75rem;
@@ -526,27 +526,27 @@ h6 {
 
 h1 {
   --pico-font-size: 2rem;
-  --pico-typography-spacing-vertical: 3rem;
+  --pico-typography-spacing-top: 3rem;
 }
 
 h2 {
   --pico-font-size: 1.75rem;
-  --pico-typography-spacing-vertical: 2.625rem;
+  --pico-typography-spacing-top: 2.625rem;
 }
 
 h3 {
   --pico-font-size: 1.5rem;
-  --pico-typography-spacing-vertical: 2.25rem;
+  --pico-typography-spacing-top: 2.25rem;
 }
 
 h4 {
   --pico-font-size: 1.25rem;
-  --pico-typography-spacing-vertical: 1.874rem;
+  --pico-typography-spacing-top: 1.874rem;
 }
 
 h5 {
   --pico-font-size: 1.125rem;
-  --pico-typography-spacing-vertical: 1.6875rem;
+  --pico-typography-spacing-top: 1.6875rem;
 }
 
 thead th,
@@ -588,6 +588,10 @@ input:not([type=submit],
 
 [type=checkbox][role=switch] {
   --pico-border-width: 0.1875rem;
+}
+
+details[role=list] summary:not([role=button]) {
+  --pico-outline-width: 0.0625rem;
 }
 
 /**
@@ -808,8 +812,8 @@ h6 {
   --pico-color: var(--pico-h6-color);
 }
 
-:where(address, blockquote, dl, figure, form, ol, p, pre, table, ul) ~ :is(h1, h2, h3, h4, h5, h6) {
-  margin-top: var(--pico-typography-spacing-vertical);
+:where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) ~ :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: var(--pico-typography-spacing-top);
 }
 
 hgroup {
@@ -946,27 +950,27 @@ button {
 }
 
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+input[type=submit],
+input[type=reset],
+input[type=button] {
   -webkit-appearance: button;
 }
 
 button {
   display: block;
-  width: 100%;
   margin-bottom: var(--pico-spacing);
 }
 
-[role=button] {
-  display: inline-block;
-  text-decoration: none;
+input[type=submit],
+input[type=reset],
+input[type=button] {
+  width: 100%;
 }
 
 button,
 input[type=submit],
-input[type=button],
 input[type=reset],
+input[type=button],
 [role=button] {
   --pico-background-color: var(--pico-primary-background);
   --pico-border-color: var(--pico-primary-border);
@@ -988,8 +992,8 @@ input[type=reset],
 }
 button:is([aria-current], :hover, :active, :focus),
 input[type=submit]:is([aria-current], :hover, :active, :focus),
-input[type=button]:is([aria-current], :hover, :active, :focus),
 input[type=reset]:is([aria-current], :hover, :active, :focus),
+input[type=button]:is([aria-current], :hover, :active, :focus),
 [role=button]:is([aria-current], :hover, :active, :focus) {
   --pico-background-color: var(--pico-primary-background-hover);
   --pico-border-color: var(--pico-primary-border-hover);
@@ -998,8 +1002,8 @@ input[type=reset]:is([aria-current], :hover, :active, :focus),
 }
 button:focus,
 input[type=submit]:focus,
-input[type=button]:focus,
 input[type=reset]:focus,
+input[type=button]:focus,
 [role=button]:focus {
   --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
 }
@@ -1018,11 +1022,17 @@ input[type=reset]:focus {
   --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pico-outline-width) var(--pico-secondary-focus);
 }
 
-:where(button, [type=submit], [type=button], [type=reset], [role=button])[disabled],
-:where(fieldset[disabled]) :is(button, [type=submit], [type=button], [type=reset], [role=button]),
-a[role=button]:not([href]) {
+:where(button,
+input[type=submit],
+input[type=reset],
+input[type=button],
+[role=button])[disabled],
+:where(fieldset[disabled]) :is(button, input[type=submit], input[type=button], input[type=reset], [role=button]) {
   opacity: 0.5;
   pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 /**
@@ -1384,9 +1394,15 @@ select:not([multiple], [size]) {
 :where(input, select, textarea) + small {
   display: block;
   width: 100%;
-  margin-top: calc(var(--pico-spacing) * -0.75);
+  margin-top: calc(var(--pico-spacing) * -0.625);
   margin-bottom: var(--pico-spacing);
   color: var(--pico-muted-color);
+}
+:where(input, select, textarea)[aria-invalid=false] + small {
+  color: var(--pico-ins-color);
+}
+:where(input, select, textarea)[aria-invalid=true] + small {
+  color: var(--pico-del-color);
 }
 
 label > :where(input, select, textarea) {
@@ -1780,11 +1796,6 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search]
   background-image: var(--pico-icon-search), var(--pico-icon-invalid);
 }
 
-[type=search]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  display: none;
-}
-
 [dir=rtl] :where(input):not([type=checkbox], [type=radio], [type=range], [type=file])[type=search] {
   background-position: center right 1.125rem;
 }
@@ -1798,6 +1809,8 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search]
 details {
   display: block;
   margin-bottom: var(--pico-spacing);
+}
+details:not([role=list], :has(summary[role=button])) {
   padding-bottom: var(--pico-spacing);
   border-bottom: var(--pico-border-width) solid var(--pico-accordion-border-color);
 }
@@ -1870,7 +1883,7 @@ details[open] > summary::after {
  * Card (<article>)
  */
 article {
-  margin: var(--pico-block-spacing-vertical) 0;
+  margin-bottom: var(--pico-block-spacing-vertical);
   padding: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
   border-radius: var(--pico-border-radius);
   background: var(--pico-card-background-color);
@@ -1955,6 +1968,14 @@ details[role=list] summary + ul li a:hover,
 li[role=list] > ul li a:hover {
   background-color: var(--pico-dropdown-hover-background-color);
 }
+details[role=list] summary + ul li:has(label):hover,
+li[role=list] > ul li:has(label):hover {
+  background-color: var(--pico-dropdown-hover-background-color);
+}
+details[role=list] summary + ul li:has(label):hover label,
+li[role=list] > ul li:has(label):hover label {
+  cursor: pointer;
+}
 
 details[role=list] summary::after,
 li[role=list] > a::after {
@@ -1984,7 +2005,6 @@ details[role=list] summary:not([role]) {
   border: var(--pico-border-width) solid var(--pico-form-element-border-color);
   border-radius: var(--pico-border-radius);
   background-color: var(--pico-form-element-background-color);
-  color: var(--pico-form-element-placeholder-color);
   line-height: inherit;
   cursor: pointer;
   transition: background-color var(--pico-transition), border-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition);
@@ -1999,6 +2019,12 @@ details[role=list] summary:not([role]):focus {
 details[role=list][open] summary {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+details[role=list][open] summary:not([role=button]):active, details[role=list][open] summary:not([role=button]):focus {
+  border-color: var(--pico-form-element-border-color);
+}
+details[role=list][open] summary:focus {
+  box-shadow: none;
 }
 details[role=list][open] summary::before {
   display: block;
@@ -2224,9 +2250,8 @@ nav :where(a, [role=link]) {
   margin: calc(var(--pico-nav-link-spacing-vertical) * -1) calc(var(--pico-nav-link-spacing-horizontal) * -1);
   padding: var(--pico-nav-link-spacing-vertical) var(--pico-nav-link-spacing-horizontal);
   border-radius: var(--pico-border-radius);
-  text-decoration: none;
 }
-nav :where(a, [role=link]):is([aria-current], :hover, :active, :focus) {
+nav :where(a, [role=link]):not(:hover) {
   text-decoration: none;
 }
 nav[aria-label=breadcrumb] {
@@ -2252,10 +2277,11 @@ nav[aria-label=breadcrumb] a[aria-current] {
   text-decoration: none;
   pointer-events: none;
 }
+nav button,
 nav [role=button] {
   margin-right: inherit;
   margin-left: inherit;
-  padding: var(--pico-nav-link-spacing-vertical) var(--pico-nav-link-spacing-horizontal);
+  padding: calc(var(--pico-nav-link-spacing-vertical) - var(--pico-border-width) * 2) var(--pico-nav-link-spacing-horizontal);
 }
 
 aside nav,
