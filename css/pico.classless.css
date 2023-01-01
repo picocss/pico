@@ -26,8 +26,8 @@
   --pico-secondary-hover: #48536b;
   --pico-secondary-underline: rgba(93, 107, 137, 0.5);
   --pico-secondary-underline-hover: var(--pico-secondary-hover);
-  --pico-secondary-background: #5d6b89;
-  --pico-secondary-background-hover: #525f7a;
+  --pico-secondary-background: #525f7a;
+  --pico-secondary-background-hover: #48536b;
   --pico-secondary-border: var(--pico-secondary-background);
   --pico-secondary-border-hover: var(--pico-secondary-background-hover);
   --pico-secondary-focus: rgba(93, 107, 137, 0.25);
@@ -89,7 +89,7 @@
   --pico-range-thumb-hover-color: var(--pico-secondary-background-hover);
   --pico-range-thumb-active-color: var(--pico-primary);
   --pico-accordion-border-color: var(--pico-muted-border-color);
-  --pico-accordion-active-summary-color: var(--pico-primary);
+  --pico-accordion-active-summary-color: var(--pico-primary-hover);
   --pico-accordion-close-summary-color: var(--pico-color);
   --pico-accordion-open-summary-color: var(--pico-muted-color);
   --pico-card-background-color: var(--pico-background-color);
@@ -111,7 +111,7 @@
   --pico-icon-minus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
   --pico-icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   --pico-icon-chevron-button: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  --pico-icon-chevron-button-inverse: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --pico-icon-chevron-button-contrast: var(--pico-icon-chevron-button);
   --pico-icon-date: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
   --pico-icon-time: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
   --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(0, 122, 80)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
@@ -145,8 +145,8 @@
     --pico-primary-hover: #79c0ff;
     --pico-primary-underline: rgba(1, 170, 255, 0.5);
     --pico-primary-underline-hover: var(--pico-primary-hover);
-    --pico-primary-background: #02659a;
-    --pico-primary-background-hover: #0172ad;
+    --pico-primary-background: #0172ad;
+    --pico-primary-background-hover: #017fc0;
     --pico-primary-border: var(--pico-primary-background);
     --pico-primary-border-hover: var(--pico-primary-background-hover);
     --pico-primary-focus: rgba(1, 170, 255, 0.25);
@@ -155,8 +155,8 @@
     --pico-secondary-hover: #b3b9c5;
     --pico-secondary-underline: rgba(150, 158, 175, 0.5);
     --pico-secondary-underline-hover: var(--pico-secondary-hover);
-    --pico-secondary-background: #48536b;
-    --pico-secondary-background-hover: #525f7a;
+    --pico-secondary-background: #525f7a;
+    --pico-secondary-background-hover: #5d6b89;
     --pico-secondary-border: var(--pico-secondary-background);
     --pico-secondary-border-hover: var(--pico-secondary-background-hover);
     --pico-secondary-focus: rgba(144, 158, 190, 0.25);
@@ -218,7 +218,7 @@
     --pico-range-thumb-hover-color: var(--pico-secondary-background-hover);
     --pico-range-thumb-active-color: var(--pico-primary);
     --pico-accordion-border-color: var(--pico-muted-border-color);
-    --pico-accordion-active-summary-color: var(--pico-primary);
+    --pico-accordion-active-summary-color: var(--pico-primary-hover);
     --pico-accordion-close-summary-color: var(--pico-color);
     --pico-accordion-open-summary-color: var(--pico-muted-color);
     --pico-card-background-color: #181c25;
@@ -240,7 +240,7 @@
     --pico-icon-minus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
     --pico-icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     --pico-icon-chevron-button: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    --pico-icon-chevron-button-inverse: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    --pico-icon-chevron-button-contrast: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     --pico-icon-date: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
     --pico-icon-time: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
     --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(23, 158, 113)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
@@ -267,8 +267,8 @@
   --pico-primary-hover: #79c0ff;
   --pico-primary-underline: rgba(1, 170, 255, 0.5);
   --pico-primary-underline-hover: var(--pico-primary-hover);
-  --pico-primary-background: #02659a;
-  --pico-primary-background-hover: #0172ad;
+  --pico-primary-background: #0172ad;
+  --pico-primary-background-hover: #017fc0;
   --pico-primary-border: var(--pico-primary-background);
   --pico-primary-border-hover: var(--pico-primary-background-hover);
   --pico-primary-focus: rgba(1, 170, 255, 0.25);
@@ -277,8 +277,8 @@
   --pico-secondary-hover: #b3b9c5;
   --pico-secondary-underline: rgba(150, 158, 175, 0.5);
   --pico-secondary-underline-hover: var(--pico-secondary-hover);
-  --pico-secondary-background: #48536b;
-  --pico-secondary-background-hover: #525f7a;
+  --pico-secondary-background: #525f7a;
+  --pico-secondary-background-hover: #5d6b89;
   --pico-secondary-border: var(--pico-secondary-background);
   --pico-secondary-border-hover: var(--pico-secondary-background-hover);
   --pico-secondary-focus: rgba(144, 158, 190, 0.25);
@@ -340,7 +340,7 @@
   --pico-range-thumb-hover-color: var(--pico-secondary-background-hover);
   --pico-range-thumb-active-color: var(--pico-primary);
   --pico-accordion-border-color: var(--pico-muted-border-color);
-  --pico-accordion-active-summary-color: var(--pico-primary);
+  --pico-accordion-active-summary-color: var(--pico-primary-hover);
   --pico-accordion-close-summary-color: var(--pico-color);
   --pico-accordion-open-summary-color: var(--pico-muted-color);
   --pico-card-background-color: #181c25;
@@ -362,7 +362,7 @@
   --pico-icon-minus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
   --pico-icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   --pico-icon-chevron-button: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  --pico-icon-chevron-button-inverse: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --pico-icon-chevron-button-contrast: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   --pico-icon-date: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
   --pico-icon-time: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 145, 164)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
   --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(23, 158, 113)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
@@ -727,8 +727,8 @@ a:is([aria-current], :hover, :active, :focus),
   --pico-underline: var(--pico-primary-underline-hover);
   --pico-text-decoration: underline;
 }
-a:focus,
-[role=link]:focus {
+a:focus-visible,
+[role=link]:focus-visible {
   --pico-background-color: var(--pico-primary-focus);
 }
 
@@ -988,6 +988,9 @@ input[type=button],
   line-height: var(--pico-line-height);
   text-align: center;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   transition: background-color var(--pico-transition), border-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition);
 }
 button:is([aria-current], :hover, :active, :focus),
@@ -1030,9 +1033,6 @@ input[type=button],
 :where(fieldset[disabled]) :is(button, input[type=submit], input[type=button], input[type=reset], [role=button]) {
   opacity: 0.5;
   pointer-events: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
 }
 
 /**
@@ -1324,7 +1324,7 @@ textarea[disabled],
 [type=datetime-local],
 [type=month],
 [type=time],
-[type=week])[aria-invalid=false] {
+[type=week])[aria-invalid=false]:not(select) {
   background-image: var(--pico-icon-valid);
 }
 :where(input, select, textarea):not([type=checkbox],
@@ -1333,7 +1333,7 @@ textarea[disabled],
 [type=datetime-local],
 [type=month],
 [type=time],
-[type=week])[aria-invalid=true] {
+[type=week])[aria-invalid=true]:not(select) {
   background-image: var(--pico-icon-invalid);
 }
 :where(input, select, textarea)[aria-invalid=false] {
@@ -1850,8 +1850,11 @@ details summary::after {
 details summary:focus {
   outline: none;
 }
-details summary:focus:not([role=button]) {
+details summary:focus:not([role]) {
   color: var(--pico-accordion-active-summary-color);
+}
+details summary:focus-visible:not([role]) {
+  color: var(--pico-primary);
 }
 details summary[role=button] {
   width: 100%;
@@ -1862,7 +1865,7 @@ details summary[role=button]::after {
   background-image: var(--pico-icon-chevron-button);
 }
 details[open] > summary {
-  margin-bottom: calc(var(--pico-spacing));
+  margin-bottom: var(--pico-spacing);
 }
 details[open] > summary:not([role]):not(:focus) {
   color: var(--pico-accordion-open-summary-color);
@@ -1915,98 +1918,52 @@ article > footer {
  * Dropdown ([role="list"])
  */
 details[role=list],
-li[role=list] {
+nav li:has(button, a):has(li) {
   position: relative;
+  border-bottom: none;
 }
-
-details[role=list] summary + ul,
-li[role=list] > ul {
-  display: flex;
-  z-index: 99;
-  position: absolute;
-  top: auto;
-  right: 0;
-  left: 0;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  border: var(--pico-border-width) solid var(--pico-dropdown-border-color);
-  border-radius: var(--pico-border-radius);
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-  background-color: var(--pico-dropdown-background-color);
-  box-shadow: var(--pico-dropdown-box-shadow);
-  color: var(--pico-dropdown-color);
-  white-space: nowrap;
-}
-details[role=list] summary + ul li,
-li[role=list] > ul li {
-  width: 100%;
-  margin-bottom: 0;
-  padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) var(--pico-form-element-spacing-horizontal);
-  list-style: none;
-}
-details[role=list] summary + ul li:first-of-type,
-li[role=list] > ul li:first-of-type {
-  margin-top: calc(var(--pico-form-element-spacing-vertical) * 0.5);
-}
-details[role=list] summary + ul li:last-of-type,
-li[role=list] > ul li:last-of-type {
-  margin-bottom: calc(var(--pico-form-element-spacing-vertical) * 0.5);
-}
-details[role=list] summary + ul li a,
-li[role=list] > ul li a {
-  display: block;
-  margin: calc(var(--pico-form-element-spacing-vertical) * -0.5) calc(var(--pico-form-element-spacing-horizontal) * -1);
-  padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) var(--pico-form-element-spacing-horizontal);
-  overflow: hidden;
-  color: var(--pico-dropdown-color);
-  text-decoration: none;
-  text-overflow: ellipsis;
-}
-details[role=list] summary + ul li a:hover,
-li[role=list] > ul li a:hover {
-  background-color: var(--pico-dropdown-hover-background-color);
-}
-details[role=list] summary + ul li:has(label):hover,
-li[role=list] > ul li:has(label):hover {
-  background-color: var(--pico-dropdown-hover-background-color);
-}
-details[role=list] summary + ul li:has(label):hover label,
-li[role=list] > ul li:has(label):hover label {
-  cursor: pointer;
-}
-
 details[role=list] summary::after,
-li[role=list] > a::after {
+details[role=list] > button::after,
+details[role=list] > a::after,
+nav li:has(button, a):has(li) summary::after,
+nav li:has(button, a):has(li) > button::after,
+nav li:has(button, a):has(li) > a::after {
   display: block;
   width: 1rem;
   height: calc(1rem * var(--pico-line-height, 1.5));
-  -webkit-margin-start: 0.5rem;
-  margin-inline-start: 0.5rem;
+  -webkit-margin-start: 0.25rem;
+  margin-inline-start: 0.25rem;
   float: right;
-  transform: rotate(0deg);
+  transform: rotate(0deg) translateX(0.2rem);
+  background-image: var(--pico-icon-chevron);
   background-position: right center;
   background-size: 1rem auto;
   background-repeat: no-repeat;
   content: "";
 }
-
-details[role=list] {
-  padding: 0;
-  border-bottom: none;
+details[role=list] summary[role=button]::after,
+details[role=list] > button::after,
+nav li:has(button, a):has(li) summary[role=button]::after,
+nav li:has(button, a):has(li) > button::after {
+  background-image: var(--pico-icon-chevron-button);
 }
-details[role=list] summary {
+
+nav details[role=list] {
   margin-bottom: 0;
 }
+
 details[role=list] summary:not([role]) {
   height: calc(1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 2 + var(--pico-border-width) * 2);
   padding: var(--pico-form-element-spacing-vertical) var(--pico-form-element-spacing-horizontal);
   border: var(--pico-border-width) solid var(--pico-form-element-border-color);
   border-radius: var(--pico-border-radius);
   background-color: var(--pico-form-element-background-color);
+  color: var(--pico-form-element-placeholder-color);
   line-height: inherit;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   transition: background-color var(--pico-transition), border-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition);
 }
 details[role=list] summary:not([role]):active, details[role=list] summary:not([role]):focus {
@@ -2016,82 +1973,145 @@ details[role=list] summary:not([role]):active, details[role=list] summary:not([r
 details[role=list] summary:not([role]):focus {
   box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-form-element-focus-color);
 }
+details[role=list] summary:not([role])[aria-invalid=false] {
+  --pico-form-element-border-color: var(--pico-form-element-valid-border-color);
+  --pico-form-element-active-border-color: var(--pico-form-element-valid-focus-color);
+  --pico-form-element-focus-color: var(--pico-form-element-valid-focus-color);
+}
+details[role=list] summary:not([role])[aria-invalid=true] {
+  --pico-form-element-border-color: var(--pico-form-element-invalid-border-color);
+  --pico-form-element-active-border-color: var(--pico-form-element-invalid-focus-color);
+  --pico-form-element-focus-color: var(--pico-form-element-invalid-focus-color);
+}
+
+nav details[role=list] summary:not([role]) {
+  height: auto;
+  padding: calc(var(--pico-nav-link-spacing-vertical) - var(--pico-border-width) * 2) var(--pico-nav-link-spacing-horizontal);
+}
+
+details[role=list] summary + ul,
+nav li button + ul,
+nav li a + ul {
+  display: flex;
+  z-index: 99;
+  position: absolute;
+  left: 0;
+  flex-direction: column;
+  width: 100%;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  margin: 0;
+  margin-top: var(--pico-outline-width);
+  padding: 0;
+  border: var(--pico-border-width) solid var(--pico-dropdown-border-color);
+  border-radius: var(--pico-border-radius);
+  background-color: var(--pico-dropdown-background-color);
+  box-shadow: var(--pico-dropdown-box-shadow);
+  color: var(--pico-dropdown-color);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity var(--pico-transition), transform 0s ease-in-out 1s;
+}
+details[role=list] summary + ul[dir=rtl],
+nav li button + ul[dir=rtl],
+nav li a + ul[dir=rtl] {
+  right: 0;
+  left: auto;
+}
+details[role=list] summary + ul li,
+nav li button + ul li,
+nav li a + ul li {
+  width: 100%;
+  margin-bottom: 0;
+  padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) var(--pico-form-element-spacing-horizontal);
+  list-style: none;
+}
+details[role=list] summary + ul li:first-of-type,
+nav li button + ul li:first-of-type,
+nav li a + ul li:first-of-type {
+  margin-top: calc(var(--pico-form-element-spacing-vertical) * 0.5);
+}
+details[role=list] summary + ul li:last-of-type,
+nav li button + ul li:last-of-type,
+nav li a + ul li:last-of-type {
+  margin-bottom: calc(var(--pico-form-element-spacing-vertical) * 0.5);
+}
+details[role=list] summary + ul li a,
+nav li button + ul li a,
+nav li a + ul li a {
+  display: block;
+  margin: calc(var(--pico-form-element-spacing-vertical) * -0.5) calc(var(--pico-form-element-spacing-horizontal) * -1);
+  padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) var(--pico-form-element-spacing-horizontal);
+  overflow: hidden;
+  border-radius: 0;
+  color: var(--pico-dropdown-color);
+  text-decoration: none;
+  text-overflow: ellipsis;
+}
+details[role=list] summary + ul li a:hover, details[role=list] summary + ul li a:focus, details[role=list] summary + ul li a:active, details[role=list] summary + ul li a:focus-visible,
+nav li button + ul li a:hover,
+nav li button + ul li a:focus,
+nav li button + ul li a:active,
+nav li button + ul li a:focus-visible,
+nav li a + ul li a:hover,
+nav li a + ul li a:focus,
+nav li a + ul li a:active,
+nav li a + ul li a:focus-visible {
+  background-color: var(--pico-dropdown-hover-background-color);
+}
+details[role=list] summary + ul li:has(label):hover,
+nav li button + ul li:has(label):hover,
+nav li a + ul li:has(label):hover {
+  background-color: var(--pico-dropdown-hover-background-color);
+}
+details[role=list] summary + ul li:has(label):hover label,
+nav li button + ul li:has(label):hover label,
+nav li a + ul li:has(label):hover label {
+  cursor: pointer;
+}
+
+nav li button + ul,
+nav li a + ul {
+  transform: scaleY(0%);
+  transform-origin: top;
+}
+nav li button + ul:first-of-type, nav li button + ul:last-of-type,
+nav li a + ul:first-of-type,
+nav li a + ul:last-of-type {
+  margin-right: var(--pico-nav-link-spacing-horizontal);
+  margin-left: var(--pico-nav-link-spacing-horizontal);
+}
+
 details[role=list][open] summary {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+  margin-bottom: 0;
 }
-details[role=list][open] summary:not([role=button]):active, details[role=list][open] summary:not([role=button]):focus {
-  border-color: var(--pico-form-element-border-color);
+
+details[role=list][open] summary + ul,
+nav li:has(:focus, :focus-within) button + ul,
+nav li:has(:focus, :focus-within) a + ul {
+  transform: scaleY(1);
+  opacity: 1;
+  transition: opacity var(--pico-transition), transform 0s ease-in-out 0s;
 }
-details[role=list][open] summary:focus {
-  box-shadow: none;
+
+@media (any-hover: none) {
+  nav li button:hover + ul,
+  nav li a:hover + ul {
+    transform: scaleY(1);
+    opacity: 1;
+    transition: opacity var(--pico-transition), transform 0s ease-in-out 0s;
+  }
 }
 details[role=list][open] summary::before {
   display: block;
   z-index: 1;
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  width: 100vw;
+  height: 100vh;
+  inset: 0;
   background: none;
   content: "";
   cursor: default;
-}
-
-nav details[role=list] summary,
-nav li[role=list] a {
-  display: flex;
-  direction: ltr;
-}
-
-nav details[role=list] summary + ul,
-nav li[role=list] > ul {
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-  border-radius: var(--pico-border-radius);
-}
-nav details[role=list] summary + ul li a,
-nav li[role=list] > ul li a {
-  border-radius: 0;
-}
-
-nav details[role=list] summary,
-nav details[role=list] summary:not([role]) {
-  height: auto;
-  padding: var(--pico-nav-link-spacing-vertical) var(--pico-form-element-spacing-horizontal);
-}
-nav details[role=list][open] summary {
-  border-radius: var(--pico-border-radius);
-}
-nav details[role=list] summary + ul {
-  margin-top: var(--pico-outline-width);
-  -webkit-margin-start: 0;
-  margin-inline-start: 0;
-}
-nav details[role=list] summary[role=link] {
-  margin-bottom: calc(var(--pico-nav-link-spacing-vertical) * -1);
-  line-height: var(--pico-line-height);
-}
-nav details[role=list] summary[role=link] + ul {
-  margin-top: calc(var(--pico-nav-link-spacing-vertical) + var(--pico-outline-width));
-  -webkit-margin-start: calc(var(--pico-nav-link-spacing-horizontal) * -1);
-  margin-inline-start: calc(var(--pico-nav-link-spacing-horizontal) * -1);
-}
-
-li[role=list]:hover > ul,
-li[role=list] a:active ~ ul,
-li[role=list] a:focus ~ ul {
-  display: flex;
-}
-li[role=list] > ul {
-  display: none;
-  margin-top: calc(var(--pico-nav-link-spacing-vertical) + var(--pico-outline-width));
-  -webkit-margin-start: calc(var(--pico-nav-element-spacing-horizontal) - var(--pico-nav-link-spacing-horizontal));
-  margin-inline-start: calc(var(--pico-nav-element-spacing-horizontal) - var(--pico-nav-link-spacing-horizontal));
-}
-li[role=list] > a::after {
-  background-image: var(--pico-icon-chevron);
 }
 
 /**
@@ -2242,17 +2262,24 @@ nav li {
   margin: 0;
   padding: var(--pico-nav-element-spacing-vertical) var(--pico-nav-element-spacing-horizontal);
 }
-nav li > * {
-  --pico-spacing: 0;
-}
-nav :where(a, [role=link]) {
+nav li :where(a, [role=link]) {
   display: inline-block;
   margin: calc(var(--pico-nav-link-spacing-vertical) * -1) calc(var(--pico-nav-link-spacing-horizontal) * -1);
   padding: var(--pico-nav-link-spacing-vertical) var(--pico-nav-link-spacing-horizontal);
   border-radius: var(--pico-border-radius);
 }
-nav :where(a, [role=link]):not(:hover) {
+nav li :where(a, [role=link]):not(:hover) {
   text-decoration: none;
+}
+nav li button,
+nav li [role=button],
+nav li input:not([type=checkbox], [type=radio], [type=range], [type=file]),
+nav li select {
+  height: auto;
+  margin-right: inherit;
+  margin-bottom: 0;
+  margin-left: inherit;
+  padding: calc(var(--pico-nav-link-spacing-vertical) - var(--pico-border-width) * 2) var(--pico-nav-link-spacing-horizontal);
 }
 nav[aria-label=breadcrumb] {
   align-items: center;
@@ -2270,18 +2297,13 @@ nav[aria-label=breadcrumb] ul li:not(:last-child) ::after {
   content: "/";
   color: var(--pico-muted-color);
   text-align: center;
+  text-decoration: none;
 }
 nav[aria-label=breadcrumb] a[aria-current] {
   background-color: transparent;
   color: inherit;
   text-decoration: none;
   pointer-events: none;
-}
-nav button,
-nav [role=button] {
-  margin-right: inherit;
-  margin-left: inherit;
-  padding: calc(var(--pico-nav-link-spacing-vertical) - var(--pico-border-width) * 2) var(--pico-nav-link-spacing-horizontal);
 }
 
 aside nav,
