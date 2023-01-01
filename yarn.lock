@@ -24,8 +24,8 @@
     fastq "^1.6.0"
 
 "@picocss/colors@github:picocss/colors":
-  version "0.0.1"
-  resolved "https://codeload.github.com/picocss/colors/tar.gz/69ef1d99de1eedb8ae36544dbee10bab8e4c62e2"
+  version "0.0.4"
+  resolved "https://codeload.github.com/picocss/colors/tar.gz/a7f29c899be14b77fde2fb5436cba42b87e454a5"
 
 abbrev@1:
   version "1.1.1"
