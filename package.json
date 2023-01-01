@@ -30,7 +30,7 @@
   "scripts": {
     "✨": "run-s build",
     "build": "run-s start lint \"build:*\" done --silent",
-    "watch": "nodemon -q --watch scss/ --ext scss --exec 'run-s build'",
+    "dev": "nodemon -q --watch scss/ --ext scss --exec 'run-s build'",
     "lint": "run-s \"lint:*\" --silent",
     "lint:prettier": "prettier --write --loglevel silent 'scss/**/*.scss'",
     "lint:sort-scss": "postcss --config scss ./scss/**/*.scss --replace",
