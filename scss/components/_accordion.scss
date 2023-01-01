@@ -63,8 +63,14 @@
       &:focus {
         outline: none;
 
-        &:not([role="button"]) {
+        &:not([role]) {
           color: var(#{$✨}accordion-active-summary-color);
+        }
+      }
+
+      &:focus-visible {
+        &:not([role]) {
+          color: var(#{$✨}primary);
         }
       }
 
@@ -80,11 +86,14 @@
         }
 
         @if $enable-classes {
-          // .contrast
-          &:not(.outline).contrast {
-            // Marker
+          &.outline {
             &::after {
-              background-image: var(#{$✨}icon-chevron-button-inverse);
+              background-image: var(#{$✨}icon-chevron);
+            }
+          }
+          &.contrast:not(.outline) {
+            &::after {
+              background-image: var(#{$✨}icon-chevron-button-contrast);
             }
           }
         }
@@ -94,7 +103,7 @@
     // Open
     &[open] {
       > summary {
-        margin-bottom: calc(var(#{$✨}spacing));
+        margin-bottom: var(#{$✨}spacing);
 
         &:not([role]) {
           &:not(:focus) {
