@@ -52,7 +52,7 @@
         }
       }
 
-      // Regular pacing <header>, <main>, <footer>
+      // Regular vertical spacings for <header>, <main>, <footer>
       @else {
         padding: var(#{$✨}block-spacing-vertical) 0;
       }

@@ -29,7 +29,7 @@
       #{$✨}text-decoration: underline;
     }
 
-    &:focus {
+    &:focus-visible {
       #{$✨}background-color: var(#{$✨}primary-focus);
     }
 
@@ -44,7 +44,7 @@
           #{$✨}underline: var(#{$✨}secondary-underline-hover);
         }
 
-        &:focus {
+        &:focus-visible {
           #{$✨}background-color: var(#{$✨}secondary-focus);
         }
       }
@@ -59,7 +59,7 @@
           #{$✨}underline: var(#{$✨}contrast-underline-hover);
         }
 
-        &:focus {
+        &:focus-visible {
           #{$✨}background-color: var(#{$✨}contrast-focus);
         }
       }
