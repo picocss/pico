@@ -64,6 +64,7 @@
     line-height: var(#{$✨}line-height);
     text-align: center;
     cursor: pointer;
+    user-select: none;
 
     @if $enable-transitions {
       transition: background-color var(#{$✨}transition), border-color var(#{$✨}transition),
@@ -187,6 +188,5 @@
     :is(button, input[type="submit"], input[type="button"], input[type="reset"], [role="button"]) {
     opacity: 0.5;
     pointer-events: none;
-    user-select: none;
   }
 }
