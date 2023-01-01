@@ -252,11 +252,11 @@
         background-repeat: no-repeat;
       }
 
-      &[aria-invalid="false"] {
+      &[aria-invalid="false"]:not(select) {
         background-image: var(#{$✨}icon-valid);
       }
 
-      &[aria-invalid="true"] {
+      &[aria-invalid="true"]:not(select) {
         background-image: var(#{$✨}icon-invalid);
       }
     }
