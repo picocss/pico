@@ -32,8 +32,8 @@
   #{$✨}secondary-hover: #{$slate-650};
   #{$✨}secondary-underline: #{rgba($slate-550, 0.5)};
   #{$✨}secondary-underline-hover: var(#{$✨}secondary-hover);
-  #{$✨}secondary-background: #{$slate-550};
-  #{$✨}secondary-background-hover: #{$slate-600};
+  #{$✨}secondary-background: #{$slate-600};
+  #{$✨}secondary-background-hover: #{$slate-650};
   #{$✨}secondary-border: var(#{$✨}secondary-background);
   #{$✨}secondary-border-hover: var(#{$✨}secondary-background-hover);
   #{$✨}secondary-focus: #{rgba($slate-550, 0.25)};
@@ -151,7 +151,7 @@
   // Accordion (<details>)
   @if map.get($modules, "components/accordion") {
     #{$✨}accordion-border-color: var(#{$✨}muted-border-color);
-    #{$✨}accordion-active-summary-color: var(#{$✨}primary);
+    #{$✨}accordion-active-summary-color: var(#{$✨}primary-hover);
     #{$✨}accordion-close-summary-color: var(#{$✨}color);
     #{$✨}accordion-open-summary-color: var(#{$✨}muted-color);
   }
@@ -208,7 +208,7 @@
   {
     #{$✨}icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     #{$✨}icon-chevron-button: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($white)}' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-    #{$✨}icon-chevron-button-inverse: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($white)}' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    #{$✨}icon-chevron-button-contrast: var(#{$✨}icon-chevron-button);
   }
 
   // Datetime icons
