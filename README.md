@@ -154,6 +154,7 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 ## Documentation
 
 **Getting started**
+
 - [Usage](https://picocss.com/docs/)
 - [Themes](https://picocss.com/docs/themes.html)
 - [Customization](https://picocss.com/docs/customization.html)
@@ -161,17 +162,20 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 - [RTL](https://picocss.com/docs/rtl.html)
 
 **Layout**
+
 - [Containers](https://picocss.com/docs/containers.html)
 - [Grids](https://picocss.com/docs/grid.html)
 - [Horizontal scroller](https://picocss.com/docs/scroller.html)
 
 **Elements**
+
 - [Typography](https://picocss.com/docs/typography.html)
 - [Buttons](https://picocss.com/docs/buttons.html)
 - [Forms](https://picocss.com/docs/forms.html)
 - [Tables](https://picocss.com/docs/tables.html)
 
 **Components**
+
 - [Accordions](https://picocss.com/docs/accordions.html)
 - [Cards](https://picocss.com/docs/cards.html)
 - [Dropdowns](https://picocss.com/docs/dropdowns.html)
@@ -180,6 +184,7 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 - [Progress](https://picocss.com/docs/progress.html)
 
 **Utilities**
+
 - [Loading](https://picocss.com/docs/loading.html)
 - [Tooltips](https://picocss.com/docs/tooltips.html)
 
