@@ -14,7 +14,7 @@ export const themeSwitcher = {
     dark: '<i>Turn off dark mode</i>',
   },
   buttonsTarget: '.theme-switcher',
-  localStorageKey: 'picoPreferedColorScheme',
+  localStorageKey: 'picoPreferredColorScheme',
 
   // Init
   init() {
@@ -32,8 +32,8 @@ export const themeSwitcher = {
     return this._scheme;
   },
 
-  // Prefered color scheme
-  get preferedColorScheme() {
+  // Preferred color scheme
+  get preferredColorScheme() {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   },
 
@@ -57,7 +57,7 @@ export const themeSwitcher = {
   // Set scheme
   set scheme(scheme) {
     if (scheme == 'auto') {
-      this.preferedColorScheme == 'dark' ? this._scheme = 'dark' : this._scheme = 'light';
+      this.preferredColorScheme == 'dark' ? this._scheme = 'dark' : this._scheme = 'light';
     }
     else if (scheme == 'dark' || scheme == 'light') {
       this._scheme = scheme;
