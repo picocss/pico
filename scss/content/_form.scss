@@ -220,7 +220,7 @@ textarea[disabled],
         padding-inline-end: calc(
           var(--form-element-spacing-horizontal) + 1.5rem
         ) !important;
-      } 
+      }
       @else {
         padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
         padding-left: var(--form-element-spacing-horizontal);
@@ -248,7 +248,7 @@ textarea[disabled],
       @if $enable-important {
         --border-color: var(--form-element-valid-active-border-color) !important;
         --box-shadow: 0 0 0 var(--outline-width) var(--form-element-valid-focus-color) !important;
-      } 
+      }
       @else {
         --border-color: var(--form-element-valid-active-border-color);
         --box-shadow: 0 0 0 var(--outline-width) var(--form-element-valid-focus-color);
@@ -263,7 +263,7 @@ textarea[disabled],
       @if $enable-important {
         --border-color: var(--form-element-invalid-active-border-color) !important;
         --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color) !important;
-      } 
+      }
       @else {
         --border-color: var(--form-element-invalid-active-border-color);
         --box-shadow: 0 0 0 var(--outline-width) var(--form-element-invalid-focus-color);
@@ -328,7 +328,13 @@ select {
 }
 
 // Helper
-:where(input, select, textarea) {
+$inputs: "input, select, textarea";
+
+@if ($enable-classes and $enable-grid) {
+  $inputs: $inputs + ", .grid";
+}
+
+:where(#{$inputs}) {
   + small {
     display: block;
     width: 100%;
