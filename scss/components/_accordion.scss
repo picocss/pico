@@ -70,6 +70,8 @@
 
       &:focus-visible {
         &:not([role]) {
+          outline: var(#{$✨}outline-width) solid var(#{$✨}primary-focus);
+          outline-offset: calc(var(#{$✨}spacing, 1rem) * 0.5);
           color: var(#{$✨}primary);
         }
       }

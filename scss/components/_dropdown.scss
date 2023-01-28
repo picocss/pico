@@ -104,6 +104,11 @@
       box-shadow: 0 0 0 var(#{$✨}outline-width) var(#{$✨}form-element-focus-color);
     }
 
+    // Reset focus visible from accordion component
+    &:focus-visible {
+      outline: none;
+    }
+
     // Aria-invalid
     &[aria-invalid="false"] {
       #{$✨}form-element-border-color: var(#{$✨}form-element-valid-border-color);

@@ -55,7 +55,7 @@
       display: block;
       padding: var(#{$✨}spacing);
       background: none;
-      font-size: 14px;
+      font-size: inherit;
       line-height: var(#{$✨}line-height);
     }
   }
