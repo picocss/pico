@@ -1211,7 +1211,7 @@ select:not([multiple], [size]) {
   background-position: center left 0.75rem;
 }
 
-:where(input, select, textarea) + small {
+:where(input, select, textarea, .grid) + small {
   display: block;
   width: 100%;
   margin-top: calc(var(--spacing) * -0.75);
