@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*!
- * Pico.css v1.5.6 (https://picocss.com)
- * Copyright 2019-2022 - Licensed under MIT
+ * Pico.css v1.5.7 (https://picocss.com)
+ * Copyright 2019-2023 - Licensed under MIT
  */
 /**
  * Theme: default
@@ -53,33 +53,33 @@
 
 @media (min-width: 576px) {
   body > header,
-body > main,
-body > footer,
-section {
+  body > main,
+  body > footer,
+  section {
     --block-spacing-vertical: calc(var(--spacing) * 2.5);
   }
 }
 @media (min-width: 768px) {
   body > header,
-body > main,
-body > footer,
-section {
+  body > main,
+  body > footer,
+  section {
     --block-spacing-vertical: calc(var(--spacing) * 3);
   }
 }
 @media (min-width: 992px) {
   body > header,
-body > main,
-body > footer,
-section {
+  body > main,
+  body > footer,
+  section {
     --block-spacing-vertical: calc(var(--spacing) * 3.5);
   }
 }
 @media (min-width: 1200px) {
   body > header,
-body > main,
-body > footer,
-section {
+  body > main,
+  body > footer,
+  section {
     --block-spacing-vertical: calc(var(--spacing) * 4);
   }
 }
@@ -304,7 +304,7 @@ kbd {
 }
 
 @media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme=light]) {
+  :root:not([data-theme]) {
     --background-color: #11191f;
     --color: hsl(205deg, 16%, 77%);
     --h1-color: hsl(205deg, 20%, 94%);
@@ -581,8 +581,8 @@ body > footer {
 }
 @media (min-width: 576px) {
   body > header,
-body > main,
-body > footer {
+  body > main,
+  body > footer {
     max-width: 510px;
     padding-right: 0;
     padding-left: 0;
@@ -590,22 +590,22 @@ body > footer {
 }
 @media (min-width: 768px) {
   body > header,
-body > main,
-body > footer {
+  body > main,
+  body > footer {
     max-width: 700px;
   }
 }
 @media (min-width: 992px) {
   body > header,
-body > main,
-body > footer {
+  body > main,
+  body > footer {
     max-width: 920px;
   }
 }
 @media (min-width: 1200px) {
   body > header,
-body > main,
-body > footer {
+  body > main,
+  body > footer {
     max-width: 1130px;
   }
 }
@@ -2478,8 +2478,8 @@ textarea,
 */
 @media (prefers-reduced-motion: reduce) {
   *:not([aria-busy=true]),
-:not([aria-busy=true])::before,
-:not([aria-busy=true])::after {
+  :not([aria-busy=true])::before,
+  :not([aria-busy=true])::after {
     background-attachment: initial !important;
     animation-duration: 1ms !important;
     animation-delay: -1ms !important;

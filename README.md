@@ -60,10 +60,10 @@ There are 4 ways to get started with pico.css:
 
 **Install from CDN**
 
-Alternatively, you can use [unpkg CDN](https://unpkg.com/@picocss/pico@latest/) to link pico.css.
+Alternatively, you can use [unpkg CDN](https://unpkg.com/@picocss/pico@1.*/) to link pico.css.
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
 ```
 
 **Install with NPM**
@@ -87,13 +87,13 @@ In this version, `header`, `main` and `footer` act as containers.
 Use the default `.classless` version if you need centered viewports:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.classless.min.css">
 ```
 
 Or use the `.fluid.classless` version if you need a fluid container:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.fluid.classless.min.css">
+<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.fluid.classless.min.css">
 ```
 
 Then just write pure HTML, and it should look great:
@@ -104,7 +104,7 @@ Then just write pure HTML, and it should look great:
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.classless.min.css">
     <title>Hello, world!</title>
   </head>
   <body>
@@ -154,6 +154,7 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 ## Documentation
 
 **Getting started**
+
 - [Usage](https://picocss.com/docs/)
 - [Themes](https://picocss.com/docs/themes.html)
 - [Customization](https://picocss.com/docs/customization.html)
@@ -161,17 +162,20 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 - [RTL](https://picocss.com/docs/rtl.html)
 
 **Layout**
+
 - [Containers](https://picocss.com/docs/containers.html)
 - [Grids](https://picocss.com/docs/grid.html)
 - [Horizontal scroller](https://picocss.com/docs/scroller.html)
 
 **Elements**
+
 - [Typography](https://picocss.com/docs/typography.html)
 - [Buttons](https://picocss.com/docs/buttons.html)
 - [Forms](https://picocss.com/docs/forms.html)
 - [Tables](https://picocss.com/docs/tables.html)
 
 **Components**
+
 - [Accordions](https://picocss.com/docs/accordions.html)
 - [Cards](https://picocss.com/docs/cards.html)
 - [Dropdowns](https://picocss.com/docs/dropdowns.html)
@@ -180,10 +184,11 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 - [Progress](https://picocss.com/docs/progress.html)
 
 **Utilities**
+
 - [Loading](https://picocss.com/docs/loading.html)
 - [Tooltips](https://picocss.com/docs/tooltips.html)
 
-## Browser Support
+## Browser support
 
 Pico is designed and tested for the latest stable Chrome, Firefox, Edge, and Safari releases. It does not support any version of IE, including IE 11.
 

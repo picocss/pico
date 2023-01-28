@@ -1,6 +1,6 @@
 /*!
- * Pico.css v1.5.6 (https://picocss.com)
- * Copyright 2019-2022 - Licensed under MIT
+ * Pico.css v1.5.7 (https://picocss.com)
+ * Copyright 2019-2023 - Licensed under MIT
  *
  * Slim version example
  * You can export only the modules you need
@@ -240,7 +240,7 @@ kbd {
 }
 
 @media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme=light]) {
+  :root:not([data-theme]) {
     --background-color: #11191f;
     --color: hsl(205deg, 16%, 77%);
     --h1-color: hsl(205deg, 20%, 94%);
@@ -1211,7 +1211,7 @@ select:not([multiple], [size]) {
   background-position: center left 0.75rem;
 }
 
-:where(input, select, textarea) + small {
+:where(input, select, textarea, .grid) + small {
   display: block;
   width: 100%;
   margin-top: calc(var(--spacing) * -0.75);

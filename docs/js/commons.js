@@ -2,7 +2,7 @@
  * Add some magic to Pico docs
  *
  * Pico.css - https://picocss.com
- * Copyright 2019-2022 - Licensed under MIT
+ * Copyright 2019-2023 - Licensed under MIT
  */
 
 // Imports

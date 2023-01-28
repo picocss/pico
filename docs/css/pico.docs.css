@@ -345,7 +345,7 @@ section > pre {
 }
 @media (min-width: 992px) {
   [data-theme=invalid]:before,
-[data-theme=valid]:before {
+  [data-theme=valid]:before {
     top: var(--spacing);
     right: var(--spacing);
   }
