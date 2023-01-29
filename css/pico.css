@@ -10,6 +10,7 @@
 :root:not([data-theme=dark]) {
   --pico-background-color: #fff;
   --pico-color: #373c44;
+  --pico-text-selection-color: rgba(2, 154, 232, 0.25);
   --pico-muted-color: #646b79;
   --pico-muted-border-color: #e7eaf0;
   --pico-primary: #0172ad;
@@ -20,7 +21,7 @@
   --pico-primary-background-hover: #02659a;
   --pico-primary-border: var(--pico-primary-background);
   --pico-primary-border-hover: var(--pico-primary-background-hover);
-  --pico-primary-focus: rgba(2, 154, 232, 0.25);
+  --pico-primary-focus: rgba(2, 154, 232, 0.5);
   --pico-primary-inverse: #fff;
   --pico-secondary: #5d6b89;
   --pico-secondary-hover: #48536b;
@@ -139,6 +140,7 @@
   :root:not([data-theme]) {
     --pico-background-color: #13171f;
     --pico-color: #c2c7d0;
+    --pico-text-selection-color: rgba(1, 170, 255, 0.1875);
     --pico-muted-color: #7b8495;
     --pico-muted-border-color: #202632;
     --pico-primary: #01aaff;
@@ -149,7 +151,7 @@
     --pico-primary-background-hover: #017fc0;
     --pico-primary-border: var(--pico-primary-background);
     --pico-primary-border-hover: var(--pico-primary-background-hover);
-    --pico-primary-focus: rgba(1, 170, 255, 0.25);
+    --pico-primary-focus: rgba(1, 170, 255, 0.375);
     --pico-primary-inverse: #fff;
     --pico-secondary: #969eaf;
     --pico-secondary-hover: #b3b9c5;
@@ -261,6 +263,7 @@
 [data-theme=dark] {
   --pico-background-color: #13171f;
   --pico-color: #c2c7d0;
+  --pico-text-selection-color: rgba(1, 170, 255, 0.1875);
   --pico-muted-color: #7b8495;
   --pico-muted-border-color: #202632;
   --pico-primary: #01aaff;
@@ -271,7 +274,7 @@
   --pico-primary-background-hover: #017fc0;
   --pico-primary-border: var(--pico-primary-background);
   --pico-primary-border-hover: var(--pico-primary-background-hover);
-  --pico-primary-focus: rgba(1, 170, 255, 0.25);
+  --pico-primary-focus: rgba(1, 170, 255, 0.375);
   --pico-primary-inverse: #fff;
   --pico-secondary: #969eaf;
   --pico-secondary-hover: #b3b9c5;
@@ -753,7 +756,7 @@ a:is([aria-current], :hover, :active, :focus),
 }
 a:focus-visible,
 [role=link]:focus-visible {
-  --pico-background-color: var(--pico-primary-focus);
+  box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
 }
 a.secondary,
 [role=link].secondary {
@@ -765,10 +768,6 @@ a.secondary:is([aria-current], :hover, :active, :focus),
   --pico-color: var(--pico-secondary-hover);
   --pico-underline: var(--pico-secondary-underline-hover);
 }
-a.secondary:focus-visible,
-[role=link].secondary:focus-visible {
-  --pico-background-color: var(--pico-secondary-focus);
-}
 a.contrast,
 [role=link].contrast {
   --pico-color: var(--pico-contrast);
@@ -778,10 +777,6 @@ a.contrast:is([aria-current], :hover, :active, :focus),
 [role=link].contrast:is([aria-current], :hover, :active, :focus) {
   --pico-color: var(--pico-contrast-hover);
   --pico-underline: var(--pico-contrast-underline-hover);
-}
-a.contrast:focus-visible,
-[role=link].contrast:focus-visible {
-  --pico-background-color: var(--pico-contrast-focus);
 }
 
 /**
@@ -952,11 +947,11 @@ del {
 }
 
 ::-moz-selection {
-  background-color: var(--pico-primary-focus);
+  background-color: var(--pico-text-selection-color);
 }
 
 ::selection {
-  background-color: var(--pico-primary-focus);
+  background-color: var(--pico-text-selection-color);
 }
 
 /**
@@ -1209,7 +1204,7 @@ pre > code {
   display: block;
   padding: var(--pico-spacing);
   background: none;
-  font-size: 14px;
+  font-size: inherit;
   line-height: var(--pico-line-height);
 }
 
@@ -1956,6 +1951,8 @@ details summary:focus:not([role]) {
   color: var(--pico-accordion-active-summary-color);
 }
 details summary:focus-visible:not([role]) {
+  outline: var(--pico-outline-width) solid var(--pico-primary-focus);
+  outline-offset: calc(var(--pico-spacing, 1rem) * 0.5);
   color: var(--pico-primary);
 }
 details summary[role=button] {
@@ -2092,6 +2089,9 @@ details[role=list] summary:not([role]):active, details[role=list] summary:not([r
 }
 details[role=list] summary:not([role]):focus {
   box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-form-element-focus-color);
+}
+details[role=list] summary:not([role]):focus-visible {
+  outline: none;
 }
 details[role=list] summary:not([role])[aria-invalid=false] {
   --pico-form-element-border-color: var(--pico-form-element-valid-border-color);

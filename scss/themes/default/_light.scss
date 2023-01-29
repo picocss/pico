@@ -11,6 +11,9 @@
   // Text color
   #{$✨}color: #{$zinc-750};
 
+  // Text selection color
+  #{$✨}text-selection-color: #{rgba($azure-400, 0.25)};
+
   // Muted colors
   #{$✨}muted-color: #{$zinc-550};
   #{$✨}muted-border-color: #{mix($slate-100, $slate-50)};
@@ -24,7 +27,7 @@
   #{$✨}primary-background-hover: #{$azure-600};
   #{$✨}primary-border: var(#{$✨}primary-background);
   #{$✨}primary-border-hover: var(#{$✨}primary-background-hover);
-  #{$✨}primary-focus: #{rgba($azure-400, 0.25)};
+  #{$✨}primary-focus: #{rgba($azure-400, 0.5)};
   #{$✨}primary-inverse: #{$white};
 
   // Secondary colors

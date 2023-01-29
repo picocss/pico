@@ -30,7 +30,7 @@
     }
 
     &:focus-visible {
-      #{$✨}background-color: var(#{$✨}primary-focus);
+      box-shadow: 0 0 0 var(#{$✨}outline-width) var(#{$✨}primary-focus);
     }
 
     @if $enable-classes {
@@ -43,10 +43,6 @@
           #{$✨}color: var(#{$✨}secondary-hover);
           #{$✨}underline: var(#{$✨}secondary-underline-hover);
         }
-
-        &:focus-visible {
-          #{$✨}background-color: var(#{$✨}secondary-focus);
-        }
       }
 
       // Contrast
@@ -57,10 +53,6 @@
         &:is([aria-current], :hover, :active, :focus) {
           #{$✨}color: var(#{$✨}contrast-hover);
           #{$✨}underline: var(#{$✨}contrast-underline-hover);
-        }
-
-        &:focus-visible {
-          #{$✨}background-color: var(#{$✨}contrast-focus);
         }
       }
     }
