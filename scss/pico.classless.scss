@@ -1,5 +1,5 @@
 // Pico classless version
-@use "pico" with (
+@use "index" with (
   $enable-semantic-container: true,
   $enable-classes: false
 );
