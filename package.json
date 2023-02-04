@@ -44,9 +44,6 @@
     "start": "echo '\\033[96m[@picocss/pico] ✨ Start\\033[0m'",
     "done": "echo '\\033[32m[@picocss/pico] ✨ Done\\033[0m'"
   },
-  "dependencies": {
-    "@picocss/colors": "github:picocss/colors"
-  },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "caniuse-lite": "1.0.30001450",

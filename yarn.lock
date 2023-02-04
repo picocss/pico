@@ -23,10 +23,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@picocss/colors@github:picocss/colors":
-  version "0.0.4"
-  resolved "https://codeload.github.com/picocss/colors/tar.gz/a7f29c899be14b77fde2fb5436cba42b87e454a5"
-
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
