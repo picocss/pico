@@ -397,7 +397,7 @@ progress,
   --pico-font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --pico-line-height: 1.5;
   --pico-font-weight: 400;
-  --pico-font-size: 16px;
+  --pico-font-size: 100%;
   --pico-text-underline-offset: 0.1rem;
   --pico-border-radius: 0.25rem;
   --pico-border-width: 1px;
@@ -417,22 +417,22 @@ progress,
 }
 @media (min-width: 576px) {
   :root {
-    --pico-font-size: 17px;
+    --pico-font-size: 106.25%;
   }
 }
 @media (min-width: 768px) {
   :root {
-    --pico-font-size: 18px;
+    --pico-font-size: 112.5%;
   }
 }
 @media (min-width: 992px) {
   :root {
-    --pico-font-size: 19px;
+    --pico-font-size: 118.75%;
   }
 }
 @media (min-width: 1200px) {
   :root {
-    --pico-font-size: 20px;
+    --pico-font-size: 125%;
   }
 }
 
@@ -552,6 +552,11 @@ h5 {
   --pico-typography-spacing-top: 1.6875rem;
 }
 
+h6 {
+  --pico-font-size: 1rem;
+  --pico-typography-spacing-top: 1.5rem;
+}
+
 thead th,
 thead td,
 tfoot th,
@@ -560,7 +565,7 @@ tfoot td {
 }
 
 :not(thead, tfoot) > * > td {
-  --pico-font-size: 0.875em;
+  font-size: 0.875em;
 }
 
 pre,
@@ -774,7 +779,6 @@ ul {
   color: var(--pico-color);
   font-style: normal;
   font-weight: var(--pico-font-weight);
-  font-size: var(--pico-font-size);
 }
 
 h1,
@@ -834,10 +838,6 @@ hgroup > *:last-child {
 
 p {
   margin-bottom: var(--pico-typography-spacing-vertical);
-}
-
-small {
-  font-size: var(--pico-font-size);
 }
 
 :where(dl, ol, ul) {
@@ -1054,7 +1054,6 @@ td {
   border-bottom: var(--pico-border-width) solid var(--pico-table-border-color);
   color: var(--pico-color);
   font-weight: var(--pico-font-weight);
-  font-size: var(--pico-font-size);
   text-align: left;
   text-align: start;
 }
@@ -1429,7 +1428,6 @@ label > :where(input, select, textarea) {
   -webkit-margin-end: 0.375em;
   margin-inline-end: 0.375em;
   border-width: var(--pico-border-width);
-  font-size: inherit;
   vertical-align: middle;
   cursor: pointer;
 }

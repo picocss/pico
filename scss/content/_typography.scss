@@ -50,7 +50,6 @@
     color: var(#{$✨}color);
     font-style: normal;
     font-weight: var(#{$✨}font-weight);
-    font-size: var(#{$✨}font-size);
   }
 
   // Headings
@@ -133,11 +132,6 @@
   // Paragraphs
   p {
     margin-bottom: var(#{$✨}typography-spacing-vertical);
-  }
-
-  // Small
-  small {
-    font-size: var(#{$✨}font-size);
   }
 
   // Lists
