@@ -2188,7 +2188,6 @@ dialog {
   min-width: 100%;
   height: inherit;
   min-height: 100%;
-  padding: var(--pico-spacing);
   border: 0;
   -webkit-backdrop-filter: var(--pico-modal-overlay-backdrop-filter);
   backdrop-filter: var(--pico-modal-overlay-backdrop-filter);
@@ -2196,7 +2195,9 @@ dialog {
   color: var(--pico-color);
 }
 dialog article {
+  width: 100%;
   max-height: calc(100vh - var(--pico-spacing) * 2);
+  margin: var(--pico-spacing);
   overflow: auto;
 }
 @media (min-width: 576px) {
@@ -2226,9 +2227,6 @@ dialog article > footer [role=button] {
 }
 dialog article > footer [role=button]:not(:first-of-type) {
   margin-left: calc(var(--pico-spacing) * 0.5);
-}
-dialog article p:last-of-type {
-  margin: 0;
 }
 dialog:not([open]), dialog[open=false] {
   display: none;
