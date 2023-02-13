@@ -44,28 +44,28 @@ $breakpoints: map.deep-merge(
       (
         breakpoint: 576px,
         viewport: 510px,
-        root-font-size: 17px,
+        root-font-size: 106.25%,
       ),
     // Medium (tablets)
     md:
       (
         breakpoint: 768px,
         viewport: 700px,
-        root-font-size: 18px,
+        root-font-size: 112.5%,
       ),
     // Large (desktops)
     lg:
       (
         breakpoint: 992px,
         viewport: 920px,
-        root-font-size: 19px,
+        root-font-size: 118.75%,
       ),
     // Extra large (large desktops)
     xl:
       (
         breakpoint: 1200px,
         viewport: 1130px,
-        root-font-size: 20px,
+        root-font-size: 125%,
       )
   ),
   $breakpoints

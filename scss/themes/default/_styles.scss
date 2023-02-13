@@ -13,7 +13,7 @@
       "Noto Color Emoji";
     #{$✨}line-height: 1.5;
     #{$✨}font-weight: 400;
-    #{$✨}font-size: 16px;
+    #{$✨}font-size: 100%;
     #{$✨}text-underline-offset: 0.1rem;
 
     // Responsive root font size
@@ -213,6 +213,11 @@
       #{$✨}font-size: 1.125rem;
       #{$✨}typography-spacing-top: 1.6875rem;
     }
+
+    h6 {
+      #{$✨}font-size: 1rem;
+      #{$✨}typography-spacing-top: 1.5rem;
+    }
   }
 
   // Table
@@ -226,7 +231,7 @@
     }
 
     :not(thead, tfoot) > * > td {
-      #{$✨}font-size: 0.875em;
+      font-size: 0.875em;
     }
   }
 
