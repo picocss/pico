@@ -1166,7 +1166,7 @@ table[role=grid] tbody tr:nth-child(odd) {
 /**
  * Code
  */
-pre,
+pre:not(:has(code)),
 code,
 kbd,
 samp {
@@ -1204,7 +1204,6 @@ pre > code {
   display: block;
   padding: var(--pico-spacing);
   background: none;
-  font-size: inherit;
   line-height: var(--pico-line-height);
 }
 

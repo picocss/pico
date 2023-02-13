@@ -13,7 +13,7 @@
 
   // 1. Correct the inheritance and scaling of font size in all browsers
   // 2. Correct the odd `em` font sizing in all browsers
-  pre,
+  pre:not(:has(code)),
   code,
   kbd,
   samp {
@@ -55,7 +55,6 @@
       display: block;
       padding: var(#{$✨}spacing);
       background: none;
-      font-size: inherit;
       line-height: var(#{$✨}line-height);
     }
   }
