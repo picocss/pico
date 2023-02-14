@@ -181,6 +181,7 @@
           transform: translate(-50%, 0.75rem);
           opacity: 0;
         }
+
         to {
           transform: translate(-50%, -0.25rem);
           opacity: 1;
@@ -191,10 +192,12 @@
         from {
           opacity: 0;
         }
+
         50% {
           transform: translate(-50%, -0.25rem);
           opacity: 0;
         }
+
         to {
           transform: translate(-50%, 0rem);
           opacity: 1;
@@ -206,6 +209,7 @@
           transform: translate(-50%, -0.75rem);
           opacity: 0;
         }
+
         to {
           transform: translate(-50%, 0.25rem);
           opacity: 1;
@@ -216,10 +220,12 @@
         from {
           opacity: 0;
         }
+
         50% {
           transform: translate(-50%, -0.5rem);
           opacity: 0;
         }
+
         to {
           transform: translate(-50%, -0.3rem);
           opacity: 1;
@@ -231,6 +237,7 @@
           transform: translate(0.75rem, -50%);
           opacity: 0;
         }
+
         to {
           transform: translate(-0.25rem, -50%);
           opacity: 1;
@@ -241,10 +248,12 @@
         from {
           opacity: 0;
         }
+
         50% {
           transform: translate(0.05rem, -50%);
           opacity: 0;
         }
+
         to {
           transform: translate(0.3rem, -50%);
           opacity: 1;
@@ -256,6 +265,7 @@
           transform: translate(-0.75rem, -50%);
           opacity: 0;
         }
+
         to {
           transform: translate(0.25rem, -50%);
           opacity: 1;
@@ -266,10 +276,12 @@
         from {
           opacity: 0;
         }
+
         50% {
           transform: translate(-0.05rem, -50%);
           opacity: 0;
         }
+
         to {
           transform: translate(-0.3rem, -50%);
           opacity: 1;

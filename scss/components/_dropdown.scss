@@ -51,6 +51,7 @@
             background-image: var(#{$✨}icon-chevron);
           }
         }
+
         &.contrast:not(.outline) {
           &::after {
             background-image: var(#{$✨}icon-chevron-button-contrast);
@@ -245,6 +246,7 @@
     + ul {
       transform: scaleY(1);
       opacity: 1;
+
       @if $enable-transitions {
         transition: opacity var(--pico-transition), transform 0s ease-in-out 0s;
       }
@@ -260,6 +262,7 @@
         + ul {
           transform: scaleY(1);
           opacity: 1;
+
           @if $enable-transitions {
             transition: opacity var(--pico-transition), transform 0s ease-in-out 0s;
           }
