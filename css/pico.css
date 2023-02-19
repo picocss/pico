@@ -873,7 +873,7 @@ hgroup {
 hgroup > * {
   margin-bottom: 0;
 }
-hgroup > *:last-child {
+hgroup > *:not(:first-child):last-child {
   --pico-color: var(--pico-muted-color);
   --pico-font-weight: unset;
   font-size: 1rem;
