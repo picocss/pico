@@ -94,38 +94,18 @@
   }
 
   // Heading group
-  @if $enable-classes == false {
-    hgroup {
-      margin-bottom: var(#{$✨}typography-spacing-vertical);
+  hgroup {
+    margin-bottom: var(#{$✨}typography-spacing-vertical);
 
-      > * {
-        margin-bottom: 0;
-      }
-
-      > *:last-child {
-        #{$✨}color: var(#{$✨}muted-color);
-        #{$✨}font-weight: unset;
-        font-size: 1rem;
-        font-family: unset;
-      }
+    > * {
+      margin-bottom: 0;
     }
-  }
 
-  @if $enable-classes {
-    hgroup,
-    .headings {
-      margin-bottom: var(#{$✨}typography-spacing-vertical);
-
-      > * {
-        margin-bottom: 0;
-      }
-
-      > *:last-child {
-        #{$✨}color: var(#{$✨}muted-color);
-        #{$✨}font-weight: unset;
-        font-size: 1rem;
-        font-family: unset;
-      }
+    > *:last-child {
+      #{$✨}color: var(#{$✨}muted-color);
+      #{$✨}font-weight: unset;
+      font-size: 1rem;
+      font-family: unset;
     }
   }
 
