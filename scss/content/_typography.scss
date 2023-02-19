@@ -101,7 +101,7 @@
       margin-bottom: 0;
     }
 
-    > *:last-child {
+    > *:not(:first-child):last-child {
       #{$✨}color: var(#{$✨}muted-color);
       #{$✨}font-weight: unset;
       font-size: 1rem;
