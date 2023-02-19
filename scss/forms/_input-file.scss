@@ -1,80 +1,39 @@
 @use "sass:map";
 @use "../settings" as *;
 
-@mixin file-selector-button-hover {
-  #{$✨}background-color: var(#{$✨}secondary-background-hover);
-  #{$✨}border-color: var(#{$✨}secondary-border-hover);
-}
-
-@mixin file-selector-button {
-  #{$✨}background-color: var(#{$✨}secondary-background);
-  #{$✨}border-color: var(#{$✨}secondary-border);
-  #{$✨}color: var(#{$✨}secondary-inverse);
-  margin-right: calc(var(#{$✨}spacing) / 2);
-  margin-left: 0;
-  margin-inline-start: 0;
-  margin-inline-end: calc(var(#{$✨}spacing) / 2);
-  padding: calc(var(#{$✨}form-element-spacing-vertical) * 0.5)
-    var(#{$✨}form-element-spacing-horizontal);
-  border: var(#{$✨}border-width) solid var(#{$✨}border-color);
-  border-radius: var(#{$✨}border-radius);
-  outline: none;
-  background-color: var(#{$✨}background-color);
-  box-shadow: var(#{$✨}box-shadow);
-  color: var(#{$✨}color);
-  font-weight: var(#{$✨}font-weight);
-  font-size: 1rem;
-  line-height: var(#{$✨}line-height);
-  text-align: center;
-  cursor: pointer;
-
-  @if $enable-transitions {
-    transition: background-color var(#{$✨}transition), border-color var(#{$✨}transition),
-      color var(#{$✨}transition), box-shadow var(#{$✨}transition);
-  }
-
-  &:is(:hover, :active, :focus) {
-    @include file-selector-button-hover;
-  }
-}
-
 @if map.get($modules, "forms/input-file") {
   /**
    * Input type file
    */
 
-  [type="file"] {
+  // 1. Hack to display the outline on the focused file selector button
+  //    with the forced overflow hidden on the input[type="file"] element.
+  input[type="file"] {
     #{$✨}color: var(#{$✨}muted-color);
-    z-index: 1;
-    position: relative;
+    margin-left: calc(var(#{$✨}outline-width) * -1); // 1
     padding: calc(var(#{$✨}form-element-spacing-vertical) * 0.5) 0;
+    padding-left: var(#{$✨}outline-width); // 1
     border: 0;
     border-radius: 0;
     background: none;
 
     &::file-selector-button {
-      @include file-selector-button;
-    }
-
-    &::-webkit-file-upload-button {
-      @include file-selector-button;
-    }
-
-    &::-ms-browse {
-      @include file-selector-button;
+      margin-right: calc(var(#{$✨}spacing) / 2);
+      padding: calc(var(#{$✨}form-element-spacing-vertical) * 0.5)
+        var(#{$✨}form-element-spacing-horizontal);
     }
 
     &:is(:hover, :active, :focus) {
       &::file-selector-button {
-        @include file-selector-button-hover;
+        #{$✨}background-color: var(#{$✨}secondary-background-hover);
+        #{$✨}border-color: var(#{$✨}secondary-border-hover);
       }
+    }
 
-      &::-webkit-file-upload-button {
-        @include file-selector-button-hover;
-      }
-
-      &::-ms-browse {
-        @include file-selector-button-hover;
+    &:focus {
+      &::file-selector-button {
+        #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+          0 0 0 var(#{$✨}outline-width) var(#{$✨}secondary-focus);
       }
     }
   }

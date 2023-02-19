@@ -47,6 +47,7 @@
   input[type="submit"],
   input[type="reset"],
   input[type="button"],
+  input[type="file"]::file-selector-button,
   [role="button"] {
     #{$✨}background-color: var(#{$✨}primary-background);
     #{$✨}border-color: var(#{$✨}primary-border);
@@ -88,7 +89,8 @@
   @if $enable-classes {
     // Secondary
     :is(button, input[type="submit"], input[type="button"], [role="button"]).secondary,
-    input[type="reset"] {
+    input[type="reset"],
+    input[type="file"]::file-selector-button {
       #{$✨}background-color: var(#{$✨}secondary-background);
       #{$✨}border-color: var(#{$✨}secondary-border);
       #{$✨}color: var(#{$✨}secondary-inverse);
@@ -158,7 +160,8 @@
     }
   } @else {
     // Secondary button without .class
-    input[type="reset"] {
+    input[type="reset"],
+    input[type="file"]::file-selector-button {
       #{$✨}background-color: var(#{$✨}secondary);
       #{$✨}border-color: var(#{$✨}secondary);
       #{$✨}color: var(#{$✨}secondary-inverse);
