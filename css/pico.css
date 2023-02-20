@@ -427,12 +427,12 @@ progress,
     --pico-font-size: 112.5%;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   :root {
     --pico-font-size: 118.75%;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   :root {
     --pico-font-size: 125%;
   }
@@ -454,7 +454,7 @@ progress,
     --pico-block-spacing-vertical: calc(var(--pico-spacing) * 3);
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   body > header,
   body > main,
   body > footer,
@@ -462,7 +462,7 @@ progress,
     --pico-block-spacing-vertical: calc(var(--pico-spacing) * 3.5);
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   body > header,
   body > main,
   body > footer,
@@ -481,12 +481,12 @@ progress,
     --pico-block-spacing-horizontal: calc(var(--pico-spacing) * 1.5);
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   article {
     --pico-block-spacing-horizontal: calc(var(--pico-spacing) * 1.75);
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   article {
     --pico-block-spacing-horizontal: calc(var(--pico-spacing) * 2);
   }
@@ -682,14 +682,14 @@ body > footer {
     max-width: 700px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .container {
-    max-width: 920px;
+    max-width: 950px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   .container {
-    max-width: 1130px;
+    max-width: 1200px;
   }
 }
 
@@ -711,7 +711,7 @@ section {
   grid-template-columns: 1fr;
   margin: 0;
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
   }
@@ -867,10 +867,15 @@ h6 {
   margin-top: var(--pico-typography-spacing-top);
 }
 
+p {
+  margin-bottom: var(--pico-typography-spacing-vertical);
+}
+
 hgroup {
   margin-bottom: var(--pico-typography-spacing-vertical);
 }
 hgroup > * {
+  margin-top: 0;
   margin-bottom: 0;
 }
 hgroup > *:not(:first-child):last-child {
@@ -878,10 +883,6 @@ hgroup > *:not(:first-child):last-child {
   --pico-font-weight: unset;
   font-size: 1rem;
   font-family: unset;
-}
-
-p {
-  margin-bottom: var(--pico-typography-spacing-vertical);
 }
 
 :where(dl, ol, ul) {
