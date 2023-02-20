@@ -104,6 +104,7 @@
               } @else if $key == "xl" {
                 $multiplier: 4;
               }
+
               #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * $multiplier);
             }
           }
@@ -127,6 +128,7 @@
               } @else if $key == "xl" {
                 $multiplier: 2;
               }
+
               #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * $multiplier);
             }
           }
