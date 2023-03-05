@@ -193,26 +193,31 @@
 
     h1 {
       #{$✨}font-size: 2rem;
+      #{$✨}line-height: 1.25;
       #{$✨}typography-spacing-top: 3rem;
     }
 
     h2 {
       #{$✨}font-size: 1.75rem;
+      #{$✨}line-height: 1.3;
       #{$✨}typography-spacing-top: 2.625rem;
     }
 
     h3 {
       #{$✨}font-size: 1.5rem;
+      #{$✨}line-height: 1.35;
       #{$✨}typography-spacing-top: 2.25rem;
     }
 
     h4 {
       #{$✨}font-size: 1.25rem;
+      #{$✨}line-height: 1.4;
       #{$✨}typography-spacing-top: 1.874rem;
     }
 
     h5 {
       #{$✨}font-size: 1.125rem;
+      #{$✨}line-height: 1.45;
       #{$✨}typography-spacing-top: 1.6875rem;
     }
 
