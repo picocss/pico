@@ -83,7 +83,7 @@
         }
 
         &:not(:last-child) {
-          ::after {
+          &::after {
             position: absolute;
             width: calc(var(#{$✨}nav-link-spacing-horizontal) * 2);
             margin-inline-start: calc(var(#{$✨}nav-link-spacing-horizontal) / 2);
