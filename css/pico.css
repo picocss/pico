@@ -531,26 +531,31 @@ h6 {
 
 h1 {
   --pico-font-size: 2rem;
+  --pico-line-height: 1.25;
   --pico-typography-spacing-top: 3rem;
 }
 
 h2 {
   --pico-font-size: 1.75rem;
+  --pico-line-height: 1.3;
   --pico-typography-spacing-top: 2.625rem;
 }
 
 h3 {
   --pico-font-size: 1.5rem;
+  --pico-line-height: 1.35;
   --pico-typography-spacing-top: 2.25rem;
 }
 
 h4 {
   --pico-font-size: 1.25rem;
+  --pico-line-height: 1.4;
   --pico-typography-spacing-top: 1.874rem;
 }
 
 h5 {
   --pico-font-size: 1.125rem;
+  --pico-line-height: 1.45;
   --pico-typography-spacing-top: 1.6875rem;
 }
 
@@ -836,6 +841,7 @@ h6 {
   color: var(--pico-color);
   font-weight: var(--pico-font-weight);
   font-size: var(--pico-font-size);
+  line-height: var(--pico-line-height);
   font-family: var(--pico-font-family);
 }
 
@@ -2384,7 +2390,7 @@ nav[aria-label=breadcrumb] ul li:not(:first-child) {
   -webkit-margin-start: var(--pico-nav-link-spacing-horizontal);
   margin-inline-start: var(--pico-nav-link-spacing-horizontal);
 }
-nav[aria-label=breadcrumb] ul li:not(:last-child) ::after {
+nav[aria-label=breadcrumb] ul li:not(:last-child)::after {
   position: absolute;
   width: calc(var(--pico-nav-link-spacing-horizontal) * 2);
   -webkit-margin-start: calc(var(--pico-nav-link-spacing-horizontal) / 2);
