@@ -105,6 +105,7 @@
   // Form elements
   @if map.get($modules, "forms/basics") {
     #{$✨}form-element-background-color: #{mix($slate-50, $white, 25%)};
+    #{$✨}form-element-selected-background-color: #{$slate-100};
     #{$✨}form-element-border-color: #{$slate-150};
     #{$✨}form-element-color: #{$zinc-850};
     #{$✨}form-element-placeholder-color: var(#{$✨}muted-color);

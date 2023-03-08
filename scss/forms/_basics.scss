@@ -351,6 +351,14 @@
       background-size: 1rem auto;
       background-repeat: no-repeat;
     }
+
+    &[multiple] {
+      option {
+        &:checked {
+          background: var(#{$✨}form-element-selected-background-color);
+        }
+      }
+    }
   }
 
   [dir="rtl"] {
