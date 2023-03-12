@@ -970,10 +970,6 @@ input[type=button] {
   -webkit-appearance: button;
 }
 
-[role=button] {
-  display: inline-block;
-}
-
 button,
 input[type=submit],
 input[type=reset],
