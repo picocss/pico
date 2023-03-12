@@ -32,17 +32,6 @@
   // Pico
   // ––––––––––––––––––––
 
-  button {
-    display: block;
-    margin-bottom: var(#{$✨}spacing);
-  }
-
-  input[type="submit"],
-  input[type="reset"],
-  input[type="button"] {
-    width: 100%;
-  }
-
   button,
   input[type="submit"],
   input[type="reset"],
@@ -64,6 +53,7 @@
     font-size: 1rem;
     line-height: var(#{$✨}line-height);
     text-align: center;
+    text-decoration: none;
     cursor: pointer;
     user-select: none;
 

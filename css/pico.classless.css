@@ -970,17 +970,6 @@ input[type=button] {
   -webkit-appearance: button;
 }
 
-button {
-  display: block;
-  margin-bottom: var(--pico-spacing);
-}
-
-input[type=submit],
-input[type=reset],
-input[type=button] {
-  width: 100%;
-}
-
 button,
 input[type=submit],
 input[type=reset],
@@ -1002,6 +991,7 @@ input[type=file]::file-selector-button,
   font-size: 1rem;
   line-height: var(--pico-line-height);
   text-align: center;
+  text-decoration: none;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
