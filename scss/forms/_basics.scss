@@ -369,12 +369,30 @@
     }
   }
 
+  // Textarea
+  textarea {
+    display: block;
+    resize: vertical;
+
+    &[aria-invalid] {
+      @if $enable-important {
+        #{$✨}icon-height: calc(
+          (1rem * var(#{$✨}line-height)) +
+            (var(#{$✨}form-element-spacing-vertical) * 2) +
+            (var(#{$✨}border-width) * 2)
+        );
+        background-position: top right 0.75rem !important;
+        background-size: 1rem var(#{$✨}icon-height) !important;
+      }
+    }
+  }
+
   // Helper
   :where(input, select, textarea) {
     + small {
       display: block;
       width: 100%;
-      margin-top: calc(var(#{$✨}spacing) * -0.625);
+      margin-top: calc(var(#{$✨}spacing) * -0.75);
       margin-bottom: var(#{$✨}spacing);
       color: var(#{$✨}muted-color);
     }

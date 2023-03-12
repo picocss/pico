@@ -780,8 +780,7 @@ sup {
 address,
 blockquote,
 dl,
-figure,
-form,
+figure:not(figure:has(table)),
 ol,
 p,
 pre,
@@ -1413,10 +1412,20 @@ select[multiple] option:checked {
   background-position: center left 0.75rem;
 }
 
+textarea {
+  display: block;
+  resize: vertical;
+}
+textarea[aria-invalid] {
+  --pico-icon-height: calc(1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 2 + var(--pico-border-width) * 2);
+  background-position: top right 0.75rem !important;
+  background-size: 1rem var(--pico-icon-height) !important;
+}
+
 :where(input, select, textarea) + small {
   display: block;
   width: 100%;
-  margin-top: calc(var(--pico-spacing) * -0.625);
+  margin-top: calc(var(--pico-spacing) * -0.75);
   margin-bottom: var(--pico-spacing);
   color: var(--pico-muted-color);
 }
