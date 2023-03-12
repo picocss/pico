@@ -57,4 +57,10 @@
       }
     }
   }
+
+  a {
+    &[role="button"] {
+      display: inline-block;
+    }
+  }
 }

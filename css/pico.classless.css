@@ -749,6 +749,10 @@ a:focus-visible,
   box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
 }
 
+a[role=button] {
+  display: inline-block;
+}
+
 /**
  * Typography
  */
@@ -964,14 +968,14 @@ button {
 }
 
 button,
-input[type=submit],
+[type=submit],
 input[type=reset],
 input[type=button] {
   -webkit-appearance: button;
 }
 
 button,
-input[type=submit],
+[type=submit],
 input[type=reset],
 input[type=button],
 input[type=file]::file-selector-button,
@@ -999,7 +1003,7 @@ input[type=file]::file-selector-button,
   transition: background-color var(--pico-transition), border-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition);
 }
 button:is([aria-current], :hover, :active, :focus),
-input[type=submit]:is([aria-current], :hover, :active, :focus),
+[type=submit]:is([aria-current], :hover, :active, :focus),
 input[type=reset]:is([aria-current], :hover, :active, :focus),
 input[type=button]:is([aria-current], :hover, :active, :focus),
 input[type=file]::file-selector-button:is([aria-current], :hover, :active, :focus),
@@ -1010,12 +1014,18 @@ input[type=file]::file-selector-button:is([aria-current], :hover, :active, :focu
   --pico-color: var(--pico-primary-inverse);
 }
 button:focus,
-input[type=submit]:focus,
+[type=submit]:focus,
 input[type=reset]:focus,
 input[type=button]:focus,
 input[type=file]::file-selector-button:focus,
 [role=button]:focus {
   --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
+}
+
+[type=submit],
+input[type=reset],
+input[type=button] {
+  margin-bottom: var(--pico-spacing);
 }
 
 input[type=reset],
@@ -1036,11 +1046,11 @@ input[type=file]::file-selector-button:focus {
 }
 
 :where(button,
-input[type=submit],
+[type=submit],
 input[type=reset],
 input[type=button],
 [role=button])[disabled],
-:where(fieldset[disabled]) :is(button, input[type=submit], input[type=button], input[type=reset], [role=button]) {
+:where(fieldset[disabled]) :is(button, [type=submit], input[type=button], input[type=reset], [role=button]) {
   opacity: 0.5;
   pointer-events: none;
 }
@@ -2078,7 +2088,7 @@ details[role=list][open] summary::before {
 }
 
 button[aria-busy=true],
-input[type=submit][aria-busy=true],
+[type=submit][aria-busy=true],
 input[type=button][aria-busy=true],
 input[type=reset][aria-busy=true],
 a[aria-busy=true] {

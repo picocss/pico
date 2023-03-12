@@ -23,7 +23,7 @@
 
   // Correct the inability to style buttons in iOS and Safari
   button,
-  input[type="submit"],
+  [type="submit"],
   input[type="reset"],
   input[type="button"] {
     -webkit-appearance: button;
@@ -33,7 +33,7 @@
   // ––––––––––––––––––––
 
   button,
-  input[type="submit"],
+  [type="submit"],
   input[type="reset"],
   input[type="button"],
   input[type="file"]::file-selector-button,
@@ -75,10 +75,16 @@
     }
   }
 
+  [type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    margin-bottom: var(#{$✨}spacing);
+  }
+
   // .secondary, .contrast & .outline
   @if $enable-classes {
     // Secondary
-    :is(button, input[type="submit"], input[type="button"], [role="button"]).secondary,
+    :is(button, [type="submit"], input[type="button"], [role="button"]).secondary,
     input[type="reset"],
     input[type="file"]::file-selector-button {
       #{$✨}background-color: var(#{$✨}secondary-background);
@@ -99,7 +105,7 @@
     }
 
     // Contrast
-    :is(button, input[type="submit"], input[type="button"], [role="button"]).contrast {
+    :is(button, [type="submit"], input[type="button"], [role="button"]).contrast {
       #{$✨}background-color: var(#{$✨}contrast-background);
       #{$✨}border-color: var(#{$✨}contrast-border);
       #{$✨}color: var(#{$✨}contrast-inverse);
@@ -117,7 +123,7 @@
     }
 
     // Outline (primary)
-    :is(button, input[type="submit"], input[type="button"], [role="button"]).outline,
+    :is(button, [type="submit"], input[type="button"], [role="button"]).outline,
     input[type="reset"].outline {
       #{$✨}background-color: transparent;
       #{$✨}color: var(#{$✨}primary);
@@ -130,7 +136,7 @@
     }
 
     // Outline (secondary)
-    :is(button, input[type="submit"], input[type="button"], [role="button"]).outline.secondary,
+    :is(button, [type="submit"], input[type="button"], [role="button"]).outline.secondary,
     input[type="reset"].outline {
       #{$✨}color: var(#{$✨}secondary);
       #{$✨}border-color: currentColor;
@@ -141,7 +147,7 @@
     }
 
     // Outline (contrast)
-    :is(button, input[type="submit"], input[type="button"], [role="button"]).outline.contrast {
+    :is(button, [type="submit"], input[type="button"], [role="button"]).outline.contrast {
       #{$✨}color: var(#{$✨}contrast);
 
       &:is([aria-current], :hover, :active, :focus) {
@@ -172,13 +178,13 @@
   // Button [disabled]
   :where(
       button,
-      input[type="submit"],
+      [type="submit"],
       input[type="reset"],
       input[type="button"],
       [role="button"]
     )[disabled],
   :where(fieldset[disabled])
-    :is(button, input[type="submit"], input[type="button"], input[type="reset"], [role="button"]) {
+    :is(button, [type="submit"], input[type="button"], input[type="reset"], [role="button"]) {
     opacity: 0.5;
     pointer-events: none;
   }

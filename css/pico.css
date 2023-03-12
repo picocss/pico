@@ -793,6 +793,10 @@ a.contrast:is([aria-current], :hover, :active, :focus),
   --pico-underline: var(--pico-contrast-underline-hover);
 }
 
+a[role=button] {
+  display: inline-block;
+}
+
 /**
  * Typography
  */
@@ -1008,14 +1012,14 @@ button {
 }
 
 button,
-input[type=submit],
+[type=submit],
 input[type=reset],
 input[type=button] {
   -webkit-appearance: button;
 }
 
 button,
-input[type=submit],
+[type=submit],
 input[type=reset],
 input[type=button],
 input[type=file]::file-selector-button,
@@ -1043,7 +1047,7 @@ input[type=file]::file-selector-button,
   transition: background-color var(--pico-transition), border-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition);
 }
 button:is([aria-current], :hover, :active, :focus),
-input[type=submit]:is([aria-current], :hover, :active, :focus),
+[type=submit]:is([aria-current], :hover, :active, :focus),
 input[type=reset]:is([aria-current], :hover, :active, :focus),
 input[type=button]:is([aria-current], :hover, :active, :focus),
 input[type=file]::file-selector-button:is([aria-current], :hover, :active, :focus),
@@ -1054,7 +1058,7 @@ input[type=file]::file-selector-button:is([aria-current], :hover, :active, :focu
   --pico-color: var(--pico-primary-inverse);
 }
 button:focus,
-input[type=submit]:focus,
+[type=submit]:focus,
 input[type=reset]:focus,
 input[type=button]:focus,
 input[type=file]::file-selector-button:focus,
@@ -1062,7 +1066,13 @@ input[type=file]::file-selector-button:focus,
   --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
 }
 
-:is(button, input[type=submit], input[type=button], [role=button]).secondary,
+[type=submit],
+input[type=reset],
+input[type=button] {
+  margin-bottom: var(--pico-spacing);
+}
+
+:is(button, [type=submit], input[type=button], [role=button]).secondary,
 input[type=reset],
 input[type=file]::file-selector-button {
   --pico-background-color: var(--pico-secondary-background);
@@ -1070,68 +1080,68 @@ input[type=file]::file-selector-button {
   --pico-color: var(--pico-secondary-inverse);
   cursor: pointer;
 }
-:is(button, input[type=submit], input[type=button], [role=button]).secondary:is([aria-current], :hover, :active, :focus),
+:is(button, [type=submit], input[type=button], [role=button]).secondary:is([aria-current], :hover, :active, :focus),
 input[type=reset]:is([aria-current], :hover, :active, :focus),
 input[type=file]::file-selector-button:is([aria-current], :hover, :active, :focus) {
   --pico-background-color: var(--pico-secondary-background-hover);
   --pico-border-color: var(--pico-secondary-border-hover);
   --pico-color: var(--pico-secondary-inverse);
 }
-:is(button, input[type=submit], input[type=button], [role=button]).secondary:focus,
+:is(button, [type=submit], input[type=button], [role=button]).secondary:focus,
 input[type=reset]:focus,
 input[type=file]::file-selector-button:focus {
   --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pico-outline-width) var(--pico-secondary-focus);
 }
 
-:is(button, input[type=submit], input[type=button], [role=button]).contrast {
+:is(button, [type=submit], input[type=button], [role=button]).contrast {
   --pico-background-color: var(--pico-contrast-background);
   --pico-border-color: var(--pico-contrast-border);
   --pico-color: var(--pico-contrast-inverse);
 }
-:is(button, input[type=submit], input[type=button], [role=button]).contrast:is([aria-current], :hover, :active, :focus) {
+:is(button, [type=submit], input[type=button], [role=button]).contrast:is([aria-current], :hover, :active, :focus) {
   --pico-background-color: var(--pico-contrast-background-hover);
   --pico-border-color: var(--pico-contrast-border-hover);
   --pico-color: var(--pico-contrast-inverse);
 }
-:is(button, input[type=submit], input[type=button], [role=button]).contrast:focus {
+:is(button, [type=submit], input[type=button], [role=button]).contrast:focus {
   --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pico-outline-width) var(--pico-contrast-focus);
 }
 
-:is(button, input[type=submit], input[type=button], [role=button]).outline,
+:is(button, [type=submit], input[type=button], [role=button]).outline,
 input[type=reset].outline {
   --pico-background-color: transparent;
   --pico-color: var(--pico-primary);
   --pico-border-color: currentColor;
 }
-:is(button, input[type=submit], input[type=button], [role=button]).outline:is([aria-current], :hover, :active, :focus),
+:is(button, [type=submit], input[type=button], [role=button]).outline:is([aria-current], :hover, :active, :focus),
 input[type=reset].outline:is([aria-current], :hover, :active, :focus) {
   --pico-background-color: transparent;
   --pico-color: var(--pico-primary-hover);
 }
 
-:is(button, input[type=submit], input[type=button], [role=button]).outline.secondary,
+:is(button, [type=submit], input[type=button], [role=button]).outline.secondary,
 input[type=reset].outline {
   --pico-color: var(--pico-secondary);
   --pico-border-color: currentColor;
 }
-:is(button, input[type=submit], input[type=button], [role=button]).outline.secondary:is([aria-current], :hover, :active, :focus),
+:is(button, [type=submit], input[type=button], [role=button]).outline.secondary:is([aria-current], :hover, :active, :focus),
 input[type=reset].outline:is([aria-current], :hover, :active, :focus) {
   --pico-color: var(--pico-secondary-hover);
 }
 
-:is(button, input[type=submit], input[type=button], [role=button]).outline.contrast {
+:is(button, [type=submit], input[type=button], [role=button]).outline.contrast {
   --pico-color: var(--pico-contrast);
 }
-:is(button, input[type=submit], input[type=button], [role=button]).outline.contrast:is([aria-current], :hover, :active, :focus) {
+:is(button, [type=submit], input[type=button], [role=button]).outline.contrast:is([aria-current], :hover, :active, :focus) {
   --pico-color: var(--pico-contrast-hover);
 }
 
 :where(button,
-input[type=submit],
+[type=submit],
 input[type=reset],
 input[type=button],
 [role=button])[disabled],
-:where(fieldset[disabled]) :is(button, input[type=submit], input[type=button], input[type=reset], [role=button]) {
+:where(fieldset[disabled]) :is(button, [type=submit], input[type=button], input[type=reset], [role=button]) {
   opacity: 0.5;
   pointer-events: none;
 }
@@ -2187,7 +2197,7 @@ details[role=list][open] summary::before {
 }
 
 button[aria-busy=true],
-input[type=submit][aria-busy=true],
+[type=submit][aria-busy=true],
 input[type=button][aria-busy=true],
 input[type=reset][aria-busy=true],
 a[aria-busy=true] {
