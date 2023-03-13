@@ -61,7 +61,7 @@
   --pico-table-border-color: var(--pico-muted-border-color);
   --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
   --pico-code-background-color: #f3f5f7;
-  --pico-code-color: var(--pico-muted-color);
+  --pico-code-color: #646b79;
   --pico-code-kbd-background-color: var(--pico-color);
   --pico-code-kbd-color: var(--pico-background-color);
   --pico-form-element-background-color: #fbfcfc;
@@ -192,7 +192,7 @@
     --pico-table-border-color: var(--pico-muted-border-color);
     --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
     --pico-code-background-color: #1a1f28;
-    --pico-code-color: var(--pico-muted-color);
+    --pico-code-color: #8891a4;
     --pico-code-kbd-background-color: var(--pico-color);
     --pico-code-kbd-color: var(--pico-background-color);
     --pico-form-element-background-color: #1c212c;
@@ -316,7 +316,7 @@
   --pico-table-border-color: var(--pico-muted-border-color);
   --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
   --pico-code-background-color: #1a1f28;
-  --pico-code-color: var(--pico-muted-color);
+  --pico-code-color: #8891a4;
   --pico-code-kbd-background-color: var(--pico-color);
   --pico-code-kbd-color: var(--pico-background-color);
   --pico-form-element-background-color: #1c212c;
@@ -1204,7 +1204,7 @@ kbd {
 code,
 kbd {
   display: inline-block;
-  padding: 0.375rem 0.5rem;
+  padding: 0.375rem;
 }
 
 pre {

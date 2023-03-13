@@ -97,7 +97,7 @@
   // Code
   @if map.get($modules, "content/code") {
     #{$✨}code-background-color: #{mix($slate-50, $white, 75%)};
-    #{$✨}code-color: var(#{$✨}muted-color);
+    #{$✨}code-color: #{$zinc-550};
     #{$✨}code-kbd-background-color: var(#{$✨}color);
     #{$✨}code-kbd-color: var(#{$✨}background-color);
   }
