@@ -6,6 +6,29 @@
    * Checkboxes, Radios and Switches
    */
 
+  // Labels
+  label {
+    &:has([type="checkbox"], [type="radio"]) {
+      width: fit-content;
+      cursor: pointer;
+    }
+  }
+
+  // Disabled labels
+  label:has([disabled]),
+  [type="checkbox"][disabled] + label,
+  [type="radio"][disabled] + label {
+    opacity: var(#{$✨}form-element-disabled-opacity);
+    pointer-events: none;
+  }
+
+  label:has([disabled]) {
+    [type="checkbox"],
+    [type="radio"] {
+      opacity: initial;
+    }
+  }
+
   [type="checkbox"],
   [type="radio"] {
     -webkit-appearance: none;
@@ -14,10 +37,7 @@
     width: 1.25em;
     height: 1.25em;
     margin-top: -0.125em;
-    margin-right: 0.375em;
-    margin-left: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0.375em;
+    margin-inline-end: 0.5em;
     border-width: var(#{$✨}border-width);
     vertical-align: middle;
     cursor: pointer;
@@ -39,9 +59,12 @@
 
     & ~ label {
       display: inline-block;
-      margin-right: 0.375em;
       margin-bottom: 0;
       cursor: pointer;
+
+      &:not(:last-of-type) {
+        margin-inline-end: 1em;
+      }
     }
   }
 
@@ -73,7 +96,6 @@
   // Switchs
   [type="checkbox"][role="switch"] {
     #{$✨}background-color: var(#{$✨}switch-background-color);
-    #{$✨}border-color: var(#{$✨}switch-background-color);
     #{$✨}color: var(#{$✨}switch-color);
 
     // Config
@@ -89,14 +111,8 @@
     background-color: var(#{$✨}background-color);
     line-height: $switch-height;
 
-    &:focus {
-      #{$✨}background-color: var(#{$✨}switch-background-color);
+    &:not([aria-invalid]) {
       #{$✨}border-color: var(#{$✨}switch-background-color);
-    }
-
-    &:checked {
-      #{$✨}background-color: var(#{$✨}switch-checked-background-color);
-      #{$✨}border-color: var(#{$✨}switch-checked-background-color);
     }
 
     &:before {
@@ -112,29 +128,61 @@
       }
     }
 
+    &:focus {
+      #{$✨}background-color: var(#{$✨}switch-background-color);
+      #{$✨}border-color: var(#{$✨}switch-background-color);
+    }
+
     &:checked {
+      #{$✨}background-color: var(#{$✨}switch-checked-background-color);
+      #{$✨}border-color: var(#{$✨}switch-checked-background-color);
       background-image: none;
 
       &::before {
-        margin-left: calc(#{$switch-width * 0.5} - var(#{$✨}border-width));
         margin-inline-start: calc(#{$switch-width * 0.5} - var(#{$✨}border-width));
       }
+    }
+
+    &[disabled] {
+      #{$✨}background-color: var(#{$✨}border-color);
     }
   }
 
   // Aria-invalid
   [type="checkbox"],
-  [type="checkbox"]:checked,
-  [type="radio"],
-  [type="radio"]:checked,
-  [type="checkbox"][role="switch"],
-  [type="checkbox"][role="switch"]:checked {
+  [type="checkbox"][role="switch"] {
     &[aria-invalid="false"] {
-      #{$✨}border-color: var(#{$✨}form-element-valid-border-color);
+      &:checked,
+      &:checked:active,
+      &:checked:focus {
+        #{$✨}background-color: var(#{$✨}form-element-valid-border-color);
+      }
     }
+    &:checked,
+    &:checked:active,
+    &:checked:focus {
+      &[aria-invalid="true"] {
+        #{$✨}background-color: var(#{$✨}form-element-invalid-border-color);
+      }
+    }
+  }
 
-    &[aria-invalid="true"] {
-      #{$✨}border-color: var(#{$✨}form-element-invalid-border-color);
+  [type="checkbox"],
+  [type="radio"],
+  [type="checkbox"][role="switch"] {
+    &[aria-invalid="false"] {
+      &:checked,
+      &:checked:active,
+      &:checked:focus {
+        #{$✨}border-color: var(#{$✨}form-element-valid-border-color);
+      }
+    }
+    &:checked,
+    &:checked:active,
+    &:checked:focus {
+      &[aria-invalid="true"] {
+        #{$✨}border-color: var(#{$✨}form-element-invalid-border-color);
+      }
     }
   }
 }

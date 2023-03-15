@@ -133,8 +133,12 @@
   label,
   fieldset legend {
     display: block;
-    margin-bottom: calc(var(#{$✨}spacing) * 0.25);
+    margin-bottom: calc(var(#{$✨}spacing) * 0.375);
     font-weight: var(#{$✨}form-label-font-weight, var(#{$✨}font-weight));
+  }
+
+  fieldset legend {
+    margin-bottom: calc(var(#{$✨}spacing) * 0.5);
   }
 
   // Blocks, 100%
@@ -267,18 +271,24 @@
       &:is(:active, :focus) {
         @if $enable-important {
           #{$✨}border-color: var(#{$✨}form-element-valid-active-border-color) !important;
-          #{$✨}box-shadow: 0
-            0
-            0
-            var(#{$✨}outline-width)
-            var(#{$✨}form-element-valid-focus-color) !important;
+
+          &:not([type="checkbox"], [type="radio"]) {
+            #{$✨}box-shadow: 0
+              0
+              0
+              var(#{$✨}outline-width)
+              var(#{$✨}form-element-valid-focus-color) !important;
+          }
         } @else {
           #{$✨}border-color: var(#{$✨}form-element-valid-active-border-color);
-          #{$✨}box-shadow: 0
-            0
-            0
-            var(#{$✨}outline-width)
-            var(#{$✨}form-element-valid-focus-color);
+
+          &:not([type="checkbox"], [type="radio"]) {
+            #{$✨}box-shadow: 0
+              0
+              0
+              var(#{$✨}outline-width)
+              var(#{$✨}form-element-valid-focus-color);
+          }
         }
       }
     }
@@ -289,18 +299,24 @@
       &:is(:active, :focus) {
         @if $enable-important {
           #{$✨}border-color: var(#{$✨}form-element-invalid-active-border-color) !important;
-          #{$✨}box-shadow: 0
-            0
-            0
-            var(#{$✨}outline-width)
-            var(#{$✨}form-element-invalid-focus-color) !important;
+
+          &:not([type="checkbox"], [type="radio"]) {
+            #{$✨}box-shadow: 0
+              0
+              0
+              var(#{$✨}outline-width)
+              var(#{$✨}form-element-invalid-focus-color) !important;
+          }
         } @else {
           #{$✨}border-color: var(#{$✨}form-element-invalid-active-border-color);
-          #{$✨}box-shadow: 0
-            0
-            0
-            var(#{$✨}outline-width)
-            var(#{$✨}form-element-invalid-focus-color);
+
+          &:not([type="checkbox"], [type="radio"]) {
+            #{$✨}box-shadow: 0
+              0
+              0
+              var(#{$✨}outline-width)
+              var(#{$✨}form-element-invalid-focus-color);
+          }
         }
       }
     }
