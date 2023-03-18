@@ -49,6 +49,10 @@
 
     &[value]::-webkit-progress-value {
       background-color: var(#{$✨}progress-color);
+
+      @if $enable-transitions {
+        transition: inline-size var(#{$✨}transition);
+      }
     }
 
     &::-moz-progress-bar {
