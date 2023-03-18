@@ -88,8 +88,7 @@
   --pico-range-active-border-color: #bfc7d9;
   --pico-range-thumb-border-color: var(--pico-background-color);
   --pico-range-thumb-color: var(--pico-secondary-background);
-  --pico-range-thumb-hover-color: var(--pico-secondary-background-hover);
-  --pico-range-thumb-active-color: var(--pico-primary);
+  --pico-range-thumb-active-color: var(--pico-primary-background);
   --pico-accordion-border-color: var(--pico-muted-border-color);
   --pico-accordion-active-summary-color: var(--pico-primary-hover);
   --pico-accordion-close-summary-color: var(--pico-color);
@@ -219,8 +218,7 @@
     --pico-range-active-border-color: #2a3140;
     --pico-range-thumb-border-color: var(--pico-background-color);
     --pico-range-thumb-color: var(--pico-secondary-background);
-    --pico-range-thumb-hover-color: var(--pico-secondary-background-hover);
-    --pico-range-thumb-active-color: var(--pico-primary);
+    --pico-range-thumb-active-color: var(--pico-primary-background);
     --pico-accordion-border-color: var(--pico-muted-border-color);
     --pico-accordion-active-summary-color: var(--pico-primary-hover);
     --pico-accordion-close-summary-color: var(--pico-color);
@@ -343,8 +341,7 @@
   --pico-range-active-border-color: #2a3140;
   --pico-range-thumb-border-color: var(--pico-background-color);
   --pico-range-thumb-color: var(--pico-secondary-background);
-  --pico-range-thumb-hover-color: var(--pico-secondary-background-hover);
-  --pico-range-thumb-active-color: var(--pico-primary);
+  --pico-range-thumb-active-color: var(--pico-primary-background);
   --pico-accordion-border-color: var(--pico-muted-border-color);
   --pico-accordion-active-summary-color: var(--pico-primary-hover);
   --pico-accordion-close-summary-color: var(--pico-color);
@@ -571,11 +568,8 @@ thead th,
 thead td,
 tfoot th,
 tfoot td {
+  --pico-font-weight: 600;
   --pico-border-width: 3px;
-}
-
-:not(thead, tfoot) > * > td {
-  font-size: 0.875em;
 }
 
 pre,
@@ -1159,6 +1153,7 @@ th,
 td {
   padding: calc(var(--pico-spacing) / 2) var(--pico-spacing);
   border-bottom: var(--pico-border-width) solid var(--pico-table-border-color);
+  background-color: var(--pico-background-color);
   color: var(--pico-color);
   font-weight: var(--pico-font-weight);
   text-align: left;
@@ -1171,7 +1166,8 @@ tfoot td {
   border-bottom: 0;
 }
 
-table[role=grid] tbody tr:nth-child(odd) {
+table.striped tbody tr:nth-child(odd) th,
+table.striped tbody tr:nth-child(odd) td {
   background-color: var(--pico-table-row-stripped-background-color);
 }
 
@@ -1420,7 +1416,8 @@ textarea[disabled],
 [type=datetime-local],
 [type=month],
 [type=time],
-[type=week])[aria-invalid] {
+[type=week],
+[type=range])[aria-invalid] {
   padding-right: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem) !important;
   padding-left: var(--pico-form-element-spacing-horizontal);
   -webkit-padding-start: var(--pico-form-element-spacing-horizontal) !important;
@@ -1437,7 +1434,8 @@ textarea[disabled],
 [type=datetime-local],
 [type=month],
 [type=time],
-[type=week])[aria-invalid=false]:not(select) {
+[type=week],
+[type=range])[aria-invalid=false]:not(select) {
   background-image: var(--pico-icon-valid);
 }
 :where(input, select, textarea):not([type=checkbox],
@@ -1446,7 +1444,8 @@ textarea[disabled],
 [type=datetime-local],
 [type=month],
 [type=time],
-[type=week])[aria-invalid=true]:not(select) {
+[type=week],
+[type=range])[aria-invalid=true]:not(select) {
   background-image: var(--pico-icon-invalid);
 }
 :where(input, select, textarea)[aria-invalid=false] {
@@ -1776,7 +1775,7 @@ input[type=file]:focus::file-selector-button {
 }
 [type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 0.25rem;
+  height: 0.375rem;
   border-radius: var(--pico-border-radius);
   background-color: var(--pico-range-border-color);
   -webkit-transition: background-color var(--pico-transition), box-shadow var(--pico-transition);
@@ -1784,7 +1783,7 @@ input[type=file]:focus::file-selector-button {
 }
 [type=range]::-moz-range-track {
   width: 100%;
-  height: 0.25rem;
+  height: 0.375rem;
   border-radius: var(--pico-border-radius);
   background-color: var(--pico-range-border-color);
   -moz-transition: background-color var(--pico-transition), box-shadow var(--pico-transition);
@@ -1792,7 +1791,7 @@ input[type=file]:focus::file-selector-button {
 }
 [type=range]::-ms-track {
   width: 100%;
-  height: 0.25rem;
+  height: 0.375rem;
   border-radius: var(--pico-border-radius);
   background-color: var(--pico-range-border-color);
   -ms-transition: background-color var(--pico-transition), box-shadow var(--pico-transition);
@@ -1802,7 +1801,7 @@ input[type=file]:focus::file-selector-button {
   -webkit-appearance: none;
   width: 1.25rem;
   height: 1.25rem;
-  margin-top: -0.5rem;
+  margin-top: -0.4375rem;
   border: 2px solid var(--pico-range-thumb-border-color);
   border-radius: 50%;
   background-color: var(--pico-range-thumb-color);
@@ -1814,7 +1813,7 @@ input[type=file]:focus::file-selector-button {
   -webkit-appearance: none;
   width: 1.25rem;
   height: 1.25rem;
-  margin-top: -0.5rem;
+  margin-top: -0.4375rem;
   border: 2px solid var(--pico-range-thumb-border-color);
   border-radius: 50%;
   background-color: var(--pico-range-thumb-color);
@@ -1826,7 +1825,7 @@ input[type=file]:focus::file-selector-button {
   -webkit-appearance: none;
   width: 1.25rem;
   height: 1.25rem;
-  margin-top: -0.5rem;
+  margin-top: -0.4375rem;
   border: 2px solid var(--pico-range-thumb-border-color);
   border-radius: 50%;
   background-color: var(--pico-range-thumb-color);
@@ -1834,11 +1833,8 @@ input[type=file]:focus::file-selector-button {
   -ms-transition: background-color var(--pico-transition), transform var(--pico-transition);
   transition: background-color var(--pico-transition), transform var(--pico-transition);
 }
-[type=range]:hover, [type=range]:focus {
+[type=range]:active, [type=range]:focus-within {
   --pico-range-border-color: var(--pico-range-active-border-color);
-  --pico-range-thumb-color: var(--pico-range-thumb-hover-color);
-}
-[type=range]:active {
   --pico-range-thumb-color: var(--pico-range-thumb-active-color);
 }
 [type=range]:active::-webkit-slider-thumb {
