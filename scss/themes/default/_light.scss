@@ -164,7 +164,7 @@
     #{$✨}card-background-color: var(#{$✨}background-color);
     #{$✨}card-border-color: var(#{$✨}muted-border-color);
     #{$✨}card-box-shadow: var(#{$✨}box-shadow);
-    #{$✨}card-sectionning-background-color: #{mix($slate-50, $white, 25%)};
+    #{$✨}card-sectioning-background-color: #{mix($slate-50, $white, 25%)};
   }
 
   // Dropdown (<details role="list">)

@@ -96,7 +96,7 @@
   --pico-card-background-color: var(--pico-background-color);
   --pico-card-border-color: var(--pico-muted-border-color);
   --pico-card-box-shadow: var(--pico-box-shadow);
-  --pico-card-sectionning-background-color: #fbfcfc;
+  --pico-card-sectioning-background-color: #fbfcfc;
   --pico-dropdown-background-color: #fff;
   --pico-dropdown-border-color: #eff1f4;
   --pico-dropdown-box-shadow: var(--pico-box-shadow);
@@ -226,7 +226,7 @@
     --pico-card-background-color: #181c25;
     --pico-card-border-color: var(--pico-card-background-color);
     --pico-card-box-shadow: var(--pico-box-shadow);
-    --pico-card-sectionning-background-color: #1a1f28;
+    --pico-card-sectioning-background-color: #1a1f28;
     --pico-dropdown-background-color: #181c25;
     --pico-dropdown-border-color: #202632;
     --pico-dropdown-box-shadow: var(--pico-box-shadow);
@@ -349,7 +349,7 @@
   --pico-card-background-color: #181c25;
   --pico-card-border-color: var(--pico-card-background-color);
   --pico-card-box-shadow: var(--pico-box-shadow);
-  --pico-card-sectionning-background-color: #1a1f28;
+  --pico-card-sectioning-background-color: #1a1f28;
   --pico-dropdown-background-color: #181c25;
   --pico-dropdown-border-color: #202632;
   --pico-dropdown-box-shadow: var(--pico-box-shadow);
@@ -1883,7 +1883,7 @@ article > footer {
   margin-right: calc(var(--pico-block-spacing-horizontal) * -1);
   margin-left: calc(var(--pico-block-spacing-horizontal) * -1);
   padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
-  background-color: var(--pico-card-sectionning-background-color);
+  background-color: var(--pico-card-sectioning-background-color);
 }
 article > header {
   margin-top: calc(var(--pico-block-spacing-vertical) * -1);
