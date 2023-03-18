@@ -204,12 +204,12 @@
         }
       }
 
+      label {
+        width: 100%;
+      }
+
       &:has(label):hover {
         background-color: var(#{$✨}dropdown-hover-background-color);
-
-        label {
-          cursor: pointer;
-        }
       }
     }
   }

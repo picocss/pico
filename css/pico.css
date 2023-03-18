@@ -2157,15 +2157,15 @@ nav li a + ul li a:active,
 nav li a + ul li a:focus-visible {
   background-color: var(--pico-dropdown-hover-background-color);
 }
+details[role=list] summary + ul li label,
+nav li button + ul li label,
+nav li a + ul li label {
+  width: 100%;
+}
 details[role=list] summary + ul li:has(label):hover,
 nav li button + ul li:has(label):hover,
 nav li a + ul li:has(label):hover {
   background-color: var(--pico-dropdown-hover-background-color);
-}
-details[role=list] summary + ul li:has(label):hover label,
-nav li button + ul li:has(label):hover label,
-nav li a + ul li:has(label):hover label {
-  cursor: pointer;
 }
 
 nav li button + ul,
@@ -2506,6 +2506,8 @@ progress::-webkit-progress-bar {
 }
 progress[value]::-webkit-progress-value {
   background-color: var(--pico-progress-color);
+  -webkit-transition: inline-size var(--pico-transition);
+  transition: inline-size var(--pico-transition);
 }
 progress::-moz-progress-bar {
   background-color: var(--pico-progress-color);
