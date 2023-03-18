@@ -28,6 +28,7 @@
   td {
     padding: calc(var(#{$✨}spacing) / 2) var(#{$✨}spacing);
     border-bottom: var(#{$✨}border-width) solid var(#{$✨}table-border-color);
+    background-color: var(#{$✨}background-color);
     color: var(#{$✨}color);
     font-weight: var(#{$✨}font-weight);
     text-align: left;
@@ -44,10 +45,13 @@
   }
 
   // Striped
-  table {
-    &[role="grid"] {
-      tbody tr:nth-child(odd) {
-        background-color: var(#{$✨}table-row-stripped-background-color);
+  @if enable-classes {
+    table {
+      &.striped {
+        tbody tr:nth-child(odd) th,
+        tbody tr:nth-child(odd) td {
+          background-color: var(#{$✨}table-row-stripped-background-color);
+        }
       }
     }
   }

@@ -233,12 +233,9 @@
     tfoot {
       th,
       td {
+        #{$✨}font-weight: 600;
         #{$✨}border-width: 3px;
       }
-    }
-
-    :not(thead, tfoot) > * > td {
-      font-size: 0.875em;
     }
   }
 
