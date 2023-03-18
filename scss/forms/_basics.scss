@@ -237,7 +237,8 @@
         [type="datetime-local"],
         [type="month"],
         [type="time"],
-        [type="week"]
+        [type="week"],
+        [type="range"]
       ) {
       &[aria-invalid] {
         @if $enable-important {

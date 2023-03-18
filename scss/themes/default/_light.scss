@@ -148,8 +148,7 @@
     #{$✨}range-active-border-color: #{$slate-200};
     #{$✨}range-thumb-border-color: var(#{$✨}background-color);
     #{$✨}range-thumb-color: var(#{$✨}secondary-background);
-    #{$✨}range-thumb-hover-color: var(#{$✨}secondary-background-hover);
-    #{$✨}range-thumb-active-color: var(#{$✨}primary);
+    #{$✨}range-thumb-active-color: var(#{$✨}primary-background);
   }
 
   // Accordion (<details>)

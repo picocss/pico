@@ -2,7 +2,7 @@
 @use "../settings" as *;
 
 // Config
-$height-track: 0.25rem;
+$height-track: 0.375rem;
 $height-thumb: 1.25rem;
 $border-thumb: 2px;
 
@@ -72,15 +72,13 @@ $border-thumb: 2px;
       @include slider-thumb;
     }
 
-    &:hover,
-    &:focus {
+    &:active,
+    &:focus-within {
       #{$✨}range-border-color: var(#{$✨}range-active-border-color);
-      #{$✨}range-thumb-color: var(#{$✨}range-thumb-hover-color);
+      #{$✨}range-thumb-color: var(#{$✨}range-thumb-active-color);
     }
 
     &:active {
-      #{$✨}range-thumb-color: var(#{$✨}range-thumb-active-color);
-
       // Slider Thumb
       &::-webkit-slider-thumb {
         transform: scale(1.25);
