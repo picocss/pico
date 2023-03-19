@@ -7,25 +7,11 @@
    */
 
   // Labels
+  // Not working in Firefox, which doesn't support the `:has()` pseudo-class
   label {
     &:has([type="checkbox"], [type="radio"]) {
       width: fit-content;
       cursor: pointer;
-    }
-  }
-
-  // Disabled labels
-  label:has([disabled]),
-  [type="checkbox"][disabled] + label,
-  [type="radio"][disabled] + label {
-    opacity: var(#{$✨}form-element-disabled-opacity);
-    pointer-events: none;
-  }
-
-  label:has([disabled]) {
-    [type="checkbox"],
-    [type="radio"] {
-      opacity: initial;
     }
   }
 
