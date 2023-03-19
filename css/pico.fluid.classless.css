@@ -2157,6 +2157,11 @@ li[role=list] > a::after {
   background-image: var(--icon-chevron);
 }
 
+label > details[role=list] {
+  margin-top: calc(var(--spacing) * 0.25);
+  margin-bottom: var(--spacing);
+}
+
 /**
  * Loading ([aria-busy=true])
  */
