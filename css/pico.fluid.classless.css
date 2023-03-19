@@ -744,7 +744,6 @@ sup {
 address,
 blockquote,
 dl,
-figure:not(figure:has(table)),
 ol,
 p,
 pre,
@@ -1053,12 +1052,17 @@ table.striped tbody tr:nth-child(odd) td {
 /**
  * Code
  */
-pre:not(:has(code)),
+pre,
 code,
 kbd,
 samp {
   font-size: 0.875em;
   font-family: var(--pico-font-family);
+}
+
+pre code {
+  font-size: inherit;
+  font-family: inherit;
 }
 
 pre {
@@ -1282,11 +1286,16 @@ input:not([type=submit],
 input:not([type=submit], [type=button], [type=reset])[disabled],
 select[disabled],
 textarea[disabled],
+label[aria-disabled=true],
 :where(fieldset[disabled]) :is(input:not([type=submit], [type=button], [type=reset]), select, textarea) {
   --pico-background-color: var(--pico-form-element-disabled-background-color);
   --pico-border-color: var(--pico-form-element-disabled-border-color);
   opacity: var(--pico-form-element-disabled-opacity);
   pointer-events: none;
+}
+
+label[aria-disabled=true] input[disabled] {
+  opacity: 1;
 }
 
 :where(input, select, textarea):not([type=checkbox],
@@ -1424,18 +1433,6 @@ label:has([type=checkbox], [type=radio]) {
   width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
-}
-
-label:has([disabled]),
-[type=checkbox][disabled] + label,
-[type=radio][disabled] + label {
-  opacity: var(--pico-form-element-disabled-opacity);
-  pointer-events: none;
-}
-
-label:has([disabled]) [type=checkbox],
-label:has([disabled]) [type=radio] {
-  opacity: initial;
 }
 
 [type=checkbox],
@@ -1763,10 +1760,6 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search]
 details {
   display: block;
   margin-bottom: var(--pico-spacing);
-}
-details:not([role=list], :has(summary[role=button])) {
-  padding-bottom: var(--pico-spacing);
-  border-bottom: var(--pico-border-width) solid var(--pico-accordion-border-color);
 }
 details summary {
   line-height: 1rem;

@@ -10,11 +10,6 @@
     display: block;
     margin-bottom: var(#{$✨}spacing);
 
-    &:not([role="list"], :has(summary[role="button"])) {
-      padding-bottom: var(#{$✨}spacing);
-      border-bottom: var(#{$✨}border-width) solid var(#{$✨}accordion-border-color);
-    }
-
     summary {
       line-height: 1rem;
       list-style-type: none;
