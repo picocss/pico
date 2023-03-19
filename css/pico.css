@@ -1993,17 +1993,13 @@ article > footer {
 /**
  * Dropdown ([role="list"])
  */
-details[role=list],
-nav li:has(button, a):has(li) {
+details[role=list] {
   position: relative;
   border-bottom: none;
 }
 details[role=list] summary::after,
 details[role=list] > button::after,
-details[role=list] > a::after,
-nav li:has(button, a):has(li) summary::after,
-nav li:has(button, a):has(li) > button::after,
-nav li:has(button, a):has(li) > a::after {
+details[role=list] > a::after {
   display: block;
   width: 1rem;
   height: calc(1rem * var(--pico-line-height, 1.5));
@@ -2018,21 +2014,15 @@ nav li:has(button, a):has(li) > a::after {
   content: "";
 }
 details[role=list] summary[role=button]::after,
-details[role=list] > button::after,
-nav li:has(button, a):has(li) summary[role=button]::after,
-nav li:has(button, a):has(li) > button::after {
+details[role=list] > button::after {
   background-image: var(--pico-icon-chevron-button);
 }
 details[role=list] summary[role=button].outline::after,
-details[role=list] > button.outline::after,
-nav li:has(button, a):has(li) summary[role=button].outline::after,
-nav li:has(button, a):has(li) > button.outline::after {
+details[role=list] > button.outline::after {
   background-image: var(--pico-icon-chevron);
 }
 details[role=list] summary[role=button].contrast:not(.outline)::after,
-details[role=list] > button.contrast:not(.outline)::after,
-nav li:has(button, a):has(li) summary[role=button].contrast:not(.outline)::after,
-nav li:has(button, a):has(li) > button.contrast:not(.outline)::after {
+details[role=list] > button.contrast:not(.outline)::after {
   background-image: var(--pico-icon-chevron-button-contrast);
 }
 
@@ -2080,9 +2070,7 @@ nav details[role=list] summary:not([role]) {
   padding: calc(var(--pico-nav-link-spacing-vertical) - var(--pico-border-width) * 2) var(--pico-nav-link-spacing-horizontal);
 }
 
-details[role=list] summary + ul,
-nav li button + ul,
-nav li a + ul {
+details[role=list] summary + ul {
   display: flex;
   z-index: 99;
   position: absolute;
@@ -2103,33 +2091,23 @@ nav li a + ul {
   opacity: 0;
   transition: opacity var(--pico-transition), transform 0s ease-in-out 1s;
 }
-details[role=list] summary + ul[dir=rtl],
-nav li button + ul[dir=rtl],
-nav li a + ul[dir=rtl] {
+details[role=list] summary + ul[dir=rtl] {
   right: 0;
   left: auto;
 }
-details[role=list] summary + ul li,
-nav li button + ul li,
-nav li a + ul li {
+details[role=list] summary + ul li {
   width: 100%;
   margin-bottom: 0;
   padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) var(--pico-form-element-spacing-horizontal);
   list-style: none;
 }
-details[role=list] summary + ul li:first-of-type,
-nav li button + ul li:first-of-type,
-nav li a + ul li:first-of-type {
+details[role=list] summary + ul li:first-of-type {
   margin-top: calc(var(--pico-form-element-spacing-vertical) * 0.5);
 }
-details[role=list] summary + ul li:last-of-type,
-nav li button + ul li:last-of-type,
-nav li a + ul li:last-of-type {
+details[role=list] summary + ul li:last-of-type {
   margin-bottom: calc(var(--pico-form-element-spacing-vertical) * 0.5);
 }
-details[role=list] summary + ul li a,
-nav li button + ul li a,
-nav li a + ul li a {
+details[role=list] summary + ul li a {
   display: block;
   margin: calc(var(--pico-form-element-spacing-vertical) * -0.5) calc(var(--pico-form-element-spacing-horizontal) * -1);
   padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) var(--pico-form-element-spacing-horizontal);
@@ -2139,60 +2117,26 @@ nav li a + ul li a {
   text-decoration: none;
   text-overflow: ellipsis;
 }
-details[role=list] summary + ul li a:hover, details[role=list] summary + ul li a:focus, details[role=list] summary + ul li a:active, details[role=list] summary + ul li a:focus-visible,
-nav li button + ul li a:hover,
-nav li button + ul li a:focus,
-nav li button + ul li a:active,
-nav li button + ul li a:focus-visible,
-nav li a + ul li a:hover,
-nav li a + ul li a:focus,
-nav li a + ul li a:active,
-nav li a + ul li a:focus-visible {
+details[role=list] summary + ul li a:hover, details[role=list] summary + ul li a:focus, details[role=list] summary + ul li a:active, details[role=list] summary + ul li a:focus-visible {
   background-color: var(--pico-dropdown-hover-background-color);
 }
-details[role=list] summary + ul li label,
-nav li button + ul li label,
-nav li a + ul li label {
+details[role=list] summary + ul li label {
   width: 100%;
 }
-details[role=list] summary + ul li:has(label):hover,
-nav li button + ul li:has(label):hover,
-nav li a + ul li:has(label):hover {
+details[role=list] summary + ul li:has(label):hover {
   background-color: var(--pico-dropdown-hover-background-color);
-}
-
-nav li button + ul,
-nav li a + ul {
-  transform: scaleY(0%);
-  transform-origin: top;
-}
-nav li button + ul:first-of-type, nav li button + ul:last-of-type,
-nav li a + ul:first-of-type,
-nav li a + ul:last-of-type {
-  margin-right: var(--pico-nav-link-spacing-horizontal);
-  margin-left: var(--pico-nav-link-spacing-horizontal);
 }
 
 details[role=list][open] summary {
   margin-bottom: 0;
 }
 
-details[role=list][open] summary + ul,
-nav li:has(:focus, :focus-within) button + ul,
-nav li:has(:focus, :focus-within) a + ul {
+details[role=list][open] summary + ul {
   transform: scaleY(1);
   opacity: 1;
   transition: opacity var(--pico-transition), transform 0s ease-in-out 0s;
 }
 
-@media (any-hover: none) {
-  nav li button:hover + ul,
-  nav li a:hover + ul {
-    transform: scaleY(1);
-    opacity: 1;
-    transition: opacity var(--pico-transition), transform 0s ease-in-out 0s;
-  }
-}
 details[role=list][open] summary::before {
   display: block;
   z-index: 1;

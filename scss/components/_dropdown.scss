@@ -8,12 +8,8 @@
 
   // Container
   // ––––––––––––––––––––
-  // 1. Container type accordion
-  details[role="list"],
-  // 2. Container type nested list
-  nav li:has(button, a):has(li) {
+  details[role="list"] {
     position: relative;
-    // margin-bottom: var(#{$✨}spacing);
     border-bottom: none;
 
     // Marker
@@ -138,10 +134,7 @@
   // Submenu
   // ––––––––––––––––––––
   // 1. Inside container type accordion
-  details[role="list"] summary + ul,
-  // 2. Inside container type nested list
-  nav li button + ul,
-  nav li a + ul {
+  details[role="list"] summary + ul {
     display: flex;
     z-index: 99;
     position: absolute;
@@ -208,24 +201,10 @@
         width: 100%;
       }
 
+      // Not working in Firefox, which doesn't support the `:has()` pseudo-class
       &:has(label):hover {
         background-color: var(#{$✨}dropdown-hover-background-color);
       }
-    }
-  }
-
-  // Submenu inside container
-  // type nested list
-  // ––––––––––––––––––––
-  nav li button + ul,
-  nav li a + ul {
-    transform: scaleY(0%);
-    transform-origin: top;
-
-    &:first-of-type,
-    &:last-of-type {
-      margin-right: var(#{$✨}nav-link-spacing-horizontal);
-      margin-left: var(#{$✨}nav-link-spacing-horizontal);
     }
   }
 
@@ -239,35 +218,13 @@
   // Menu opened
   // ––––––––––––––––––––
   // 1. Inside container type accordion
-  details[role="list"][open] summary,
-  // 2. Inside container type nested list
-  nav li:has(:focus, :focus-within) button,
-  nav li:has(:focus, :focus-within) a {
+  details[role="list"][open] summary {
     + ul {
       transform: scaleY(1);
       opacity: 1;
 
       @if $enable-transitions {
         transition: opacity var(--pico-transition), transform 0s ease-in-out 0s;
-      }
-    }
-  }
-
-  // Menu opened inside container
-  // type nested list on a touch device
-  // ––––––––––––––––––––
-  @media (any-hover: none) {
-    nav li button,
-    nav li a {
-      &:hover {
-        + ul {
-          transform: scaleY(1);
-          opacity: 1;
-
-          @if $enable-transitions {
-            transition: opacity var(--pico-transition), transform 0s ease-in-out 0s;
-          }
-        }
       }
     }
   }
