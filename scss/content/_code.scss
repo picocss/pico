@@ -13,12 +13,17 @@
 
   // 1. Correct the inheritance and scaling of font size in all browsers
   // 2. Correct the odd `em` font sizing in all browsers
-  pre:not(:has(code)),
+  pre,
   code,
   kbd,
   samp {
     font-size: 0.875em; // 2
     font-family: var(#{$✨}font-family); // 1
+  }
+
+  pre code {
+    font-size: inherit;
+    font-family: inherit;
   }
 
   // Prevent overflow of the container in all browsers (opinionated)
