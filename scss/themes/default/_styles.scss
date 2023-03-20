@@ -94,7 +94,7 @@
         @each $key, $values in $breakpoints {
           @if $values {
             @media (min-width: map.get($values, "breakpoint")) {
-              $multiplier: 1;
+              $multiplier: 2;
               @if $key == "sm" {
                 $multiplier: 2.5;
               } @else if $key == "md" {
@@ -103,6 +103,8 @@
                 $multiplier: 3.5;
               } @else if $key == "xl" {
                 $multiplier: 4;
+              } @else if $key == "xxl" {
+                $multiplier: 4.5;
               }
 
               #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * $multiplier);
@@ -127,6 +129,8 @@
                 $multiplier: 1.75;
               } @else if $key == "xl" {
                 $multiplier: 2;
+              } @else if $key == "xxl" {
+                $multiplier: 2.25;
               }
 
               #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * $multiplier);

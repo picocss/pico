@@ -435,6 +435,11 @@ progress,
     --pico-font-size: 125%;
   }
 }
+@media (min-width: 1536px) {
+  :root {
+    --pico-font-size: 131.25%;
+  }
+}
 
 @media (min-width: 576px) {
   body > header,
@@ -468,6 +473,14 @@ progress,
     --pico-block-spacing-vertical: calc(var(--pico-spacing) * 4);
   }
 }
+@media (min-width: 1536px) {
+  body > header,
+  body > main,
+  body > footer,
+  section {
+    --pico-block-spacing-vertical: calc(var(--pico-spacing) * 4.5);
+  }
+}
 
 @media (min-width: 576px) {
   article {
@@ -487,6 +500,11 @@ progress,
 @media (min-width: 1280px) {
   article {
     --pico-block-spacing-horizontal: calc(var(--pico-spacing) * 2);
+  }
+}
+@media (min-width: 1536px) {
+  article {
+    --pico-block-spacing-horizontal: calc(var(--pico-spacing) * 2.25);
   }
 }
 
