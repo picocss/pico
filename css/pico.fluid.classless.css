@@ -103,7 +103,7 @@
   --pico-dropdown-color: var(--pico-color);
   --pico-dropdown-hover-background-color: #eff1f4;
   --pico-loading-spinner-opacity: 0.5;
-  --pico-modal-overlay-background-color: rgba(239, 241, 244, 0.7);
+  --pico-modal-overlay-background-color: rgba(232, 234, 237, 0.75);
   --pico-progress-background-color: #dfe3eb;
   --pico-progress-color: var(--pico-primary-background);
   --pico-tooltip-background-color: var(--pico-contrast-background);
@@ -233,7 +233,7 @@
     --pico-dropdown-color: var(--pico-color);
     --pico-dropdown-hover-background-color: #202632;
     --pico-loading-spinner-opacity: 0.5;
-    --pico-modal-overlay-background-color: rgba(8, 9, 10, 0.85);
+    --pico-modal-overlay-background-color: rgba(8, 9, 10, 0.75);
     --pico-progress-background-color: #202632;
     --pico-progress-color: var(--pico-primary-background);
     --pico-tooltip-background-color: var(--pico-contrast-background);
@@ -356,7 +356,7 @@
   --pico-dropdown-color: var(--pico-color);
   --pico-dropdown-hover-background-color: #202632;
   --pico-loading-spinner-opacity: 0.5;
-  --pico-modal-overlay-background-color: rgba(8, 9, 10, 0.85);
+  --pico-modal-overlay-background-color: rgba(8, 9, 10, 0.75);
   --pico-progress-background-color: #202632;
   --pico-progress-color: var(--pico-primary-background);
   --pico-tooltip-background-color: var(--pico-contrast-background);
@@ -2127,9 +2127,11 @@ dialog article > header .close {
 dialog article > footer {
   text-align: right;
 }
+dialog article > footer button,
 dialog article > footer [role=button] {
   margin-bottom: 0;
 }
+dialog article > footer button:not(:first-of-type),
 dialog article > footer [role=button]:not(:first-of-type) {
   margin-left: calc(var(--pico-spacing) * 0.5);
 }

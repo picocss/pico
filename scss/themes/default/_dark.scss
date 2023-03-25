@@ -183,7 +183,7 @@
 
   // Modal (<dialog>)
   @if map.get($modules, "components/modal") {
-    #{$✨}modal-overlay-background-color: #{rgba(mix($black, $zinc-950), 0.85)};
+    #{$✨}modal-overlay-background-color: #{rgba(mix($black, $zinc-950), 0.75)};
   }
 
   // Progress
