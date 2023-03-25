@@ -87,7 +87,7 @@
             position: absolute;
             width: calc(var(#{$✨}nav-link-spacing-horizontal) * 2);
             margin-inline-start: calc(var(#{$✨}nav-link-spacing-horizontal) / 2);
-            content: "/";
+            content: var(#{$✨}nav-breadcrumb-divider);
             color: var(#{$✨}muted-color);
             text-align: center;
             text-decoration: none;
