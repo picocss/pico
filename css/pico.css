@@ -416,6 +416,7 @@ progress,
   --pico-nav-element-spacing-horizontal: 0.5rem;
   --pico-nav-link-spacing-vertical: 0.5rem;
   --pico-nav-link-spacing-horizontal: 0.5rem;
+  --pico-nav-breadcrumb-divider: ">";
 }
 @media (min-width: 576px) {
   :root {
@@ -2408,7 +2409,7 @@ nav[aria-label=breadcrumb] ul li:not(:last-child)::after {
   width: calc(var(--pico-nav-link-spacing-horizontal) * 2);
   -webkit-margin-start: calc(var(--pico-nav-link-spacing-horizontal) / 2);
   margin-inline-start: calc(var(--pico-nav-link-spacing-horizontal) / 2);
-  content: "/";
+  content: var(--pico-nav-breadcrumb-divider);
   color: var(--pico-muted-color);
   text-align: center;
   text-decoration: none;
@@ -2583,11 +2584,11 @@ progress::-moz-progress-bar {
   opacity: 1;
 }
 @media (hover: hover) and (pointer: fine) {
-  [data-tooltip][data-placement=bottom]:focus::before, [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover [data-tooltip]:focus::before, [data-tooltip][data-placement=bottom]:hover [data-tooltip]:focus::after, [data-tooltip]:hover::before, [data-tooltip]:hover::after {
+  [data-tooltip]:focus::before, [data-tooltip]:focus::after, [data-tooltip]:hover::before, [data-tooltip]:hover::after {
     animation-duration: 0.2s;
     animation-name: tooltip-slide-top;
   }
-  [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover [data-tooltip]:focus::after, [data-tooltip]:hover::after {
+  [data-tooltip]:focus::after, [data-tooltip]:hover::after {
     animation-name: tooltip-caret-slide-top;
   }
   [data-tooltip][data-placement=bottom]:focus::before, [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover::before, [data-tooltip][data-placement=bottom]:hover::after {

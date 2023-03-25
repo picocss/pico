@@ -116,8 +116,8 @@
     @if $enable-transitions {
       // Animations, excluding touch devices
       @media (hover: hover) and (pointer: fine) {
-        &[data-placement="bottom"]:focus,
-        &[data-placement="bottom"]:hover &:focus,
+        // Default (top)
+        &:focus,
         &:hover {
           &::before,
           &::after {
@@ -130,6 +130,7 @@
           }
         }
 
+        // Bottom
         &[data-placement="bottom"] {
           &:focus,
           &:hover {
@@ -145,6 +146,7 @@
           }
         }
 
+        // Left
         &[data-placement="left"] {
           &:focus,
           &:hover {
@@ -160,6 +162,7 @@
           }
         }
 
+        // Right
         &[data-placement="right"] {
           &:focus,
           &:hover {
