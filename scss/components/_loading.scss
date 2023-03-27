@@ -6,25 +6,18 @@
    * Loading ([aria-busy=true])
    */
 
-  // Cursor
-  [aria-busy="true"] {
-    cursor: progress;
-  }
-
   // Everything except form elements
   [aria-busy="true"]:not(input, select, textarea) {
     &::before {
       display: inline-block;
       width: 1em;
       height: 1em;
-      border: 0.1875em solid currentColor;
-      border-radius: 1em;
-      border-right-color: transparent;
+      background-image: var(#{$✨}icon-loading);
+      background-position: right center;
+      background-size: 1rem auto;
+      background-repeat: no-repeat;
       content: "";
-      vertical-align: text-bottom;
       vertical-align: -0.125em; // Visual alignment
-      animation: spinner 0.75s linear infinite;
-      opacity: var(#{$✨}loading-spinner-opacity);
     }
 
     &:not(:empty) {
@@ -36,23 +29,38 @@
     &:empty {
       text-align: center;
     }
+
+    // Primary and secondary buttons
+    &:is(button, [type="submit"], [type="button"], [type="reset"], [role="button"]) {
+      &::before {
+        background-image: var(#{$✨}icon-loading-button);
+      }
+
+      @if $enable-classes {
+        &.outline {
+          &::before {
+            background-image: var(#{$✨}icon-loading);
+          }
+        }
+
+        &.contrast:not(.outline) {
+          &::before {
+            background-image: var(#{$✨}icon-loading-button-contrast);
+          }
+        }
+      }
+    }
   }
 
   // Buttons and links
   button,
   [type="submit"],
-  input[type="button"],
-  input[type="reset"],
+  [type="button"],
+  [type="reset"],
+  [role="button"],
   a {
     &[aria-busy="true"] {
       pointer-events: none;
-    }
-  }
-
-  // Animation: rotate
-  @keyframes spinner {
-    to {
-      transform: rotate(360deg);
     }
   }
 }
