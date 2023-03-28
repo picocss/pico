@@ -2393,123 +2393,61 @@ progress::-moz-progress-bar {
 }
 @media (hover: hover) and (pointer: fine) {
   [data-tooltip]:focus::before, [data-tooltip]:focus::after, [data-tooltip]:hover::before, [data-tooltip]:hover::after {
+    --pico-tooltip-slide-to: translate(-50%, -0.25rem);
+    transform: translate(-50%, 0.75rem);
     animation-duration: 0.2s;
-    animation-name: tooltip-slide-top;
+    animation-fill-mode: forwards;
+    animation-name: tooltip-slide;
+    opacity: 0;
   }
   [data-tooltip]:focus::after, [data-tooltip]:hover::after {
-    animation-name: tooltip-caret-slide-top;
+    --pico-tooltip-caret-slide-to: translate(-50%, 0rem);
+    transform: translate(-50%, -0.25rem);
+    animation-name: tooltip-caret-slide;
   }
   [data-tooltip][data-placement=bottom]:focus::before, [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover::before, [data-tooltip][data-placement=bottom]:hover::after {
-    animation-duration: 0.2s;
-    animation-name: tooltip-slide-bottom;
+    --pico-tooltip-slide-to: translate(-50%, 0.25rem);
+    transform: translate(-50%, -0.75rem);
+    animation-name: tooltip-slide;
   }
   [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover::after {
-    animation-name: tooltip-caret-slide-bottom;
+    --pico-tooltip-caret-slide-to: translate(-50%, -0.3rem);
+    transform: translate(-50%, -0.5rem);
+    animation-name: tooltip-caret-slide;
   }
   [data-tooltip][data-placement=left]:focus::before, [data-tooltip][data-placement=left]:focus::after, [data-tooltip][data-placement=left]:hover::before, [data-tooltip][data-placement=left]:hover::after {
-    animation-duration: 0.2s;
-    animation-name: tooltip-slide-left;
+    --pico-tooltip-slide-to: translate(-0.25rem, -50%);
+    transform: translate(0.75rem, -50%);
+    animation-name: tooltip-slide;
   }
   [data-tooltip][data-placement=left]:focus::after, [data-tooltip][data-placement=left]:hover::after {
-    animation-name: tooltip-caret-slide-left;
+    --pico-tooltip-caret-slide-to: translate(0.3rem, -50%);
+    transform: translate(0.05rem, -50%);
+    animation-name: tooltip-caret-slide;
   }
   [data-tooltip][data-placement=right]:focus::before, [data-tooltip][data-placement=right]:focus::after, [data-tooltip][data-placement=right]:hover::before, [data-tooltip][data-placement=right]:hover::after {
-    animation-duration: 0.2s;
-    animation-name: tooltip-slide-right;
+    --pico-tooltip-slide-to: translate(0.25rem, -50%);
+    transform: translate(-0.75rem, -50%);
+    animation-name: tooltip-slide;
   }
   [data-tooltip][data-placement=right]:focus::after, [data-tooltip][data-placement=right]:hover::after {
-    animation-name: tooltip-caret-slide-right;
-  }
-}
-@keyframes tooltip-slide-top {
-  from {
-    transform: translate(-50%, 0.75rem);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, -0.25rem);
-    opacity: 1;
-  }
-}
-@keyframes tooltip-caret-slide-top {
-  from {
-    opacity: 0;
-  }
-  50% {
-    transform: translate(-50%, -0.25rem);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, 0rem);
-    opacity: 1;
-  }
-}
-@keyframes tooltip-slide-bottom {
-  from {
-    transform: translate(-50%, -0.75rem);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, 0.25rem);
-    opacity: 1;
-  }
-}
-@keyframes tooltip-caret-slide-bottom {
-  from {
-    opacity: 0;
-  }
-  50% {
-    transform: translate(-50%, -0.5rem);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, -0.3rem);
-    opacity: 1;
-  }
-}
-@keyframes tooltip-slide-left {
-  from {
-    transform: translate(0.75rem, -50%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-0.25rem, -50%);
-    opacity: 1;
-  }
-}
-@keyframes tooltip-caret-slide-left {
-  from {
-    opacity: 0;
-  }
-  50% {
-    transform: translate(0.05rem, -50%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(0.3rem, -50%);
-    opacity: 1;
-  }
-}
-@keyframes tooltip-slide-right {
-  from {
-    transform: translate(-0.75rem, -50%);
-    opacity: 0;
-  }
-  to {
-    transform: translate(0.25rem, -50%);
-    opacity: 1;
-  }
-}
-@keyframes tooltip-caret-slide-right {
-  from {
-    opacity: 0;
-  }
-  50% {
+    --pico-tooltip-caret-slide-to: translate(-0.3rem, -50%);
     transform: translate(-0.05rem, -50%);
+    animation-name: tooltip-caret-slide;
+  }
+}
+@keyframes tooltip-slide {
+  to {
+    transform: var(--pico-tooltip-slide-to);
+    opacity: 1;
+  }
+}
+@keyframes tooltip-caret-slide {
+  50% {
     opacity: 0;
   }
   to {
-    transform: translate(-0.3rem, -50%);
+    transform: var(--pico-tooltip-caret-slide-to);
     opacity: 1;
   }
 }
