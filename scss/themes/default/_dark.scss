@@ -199,11 +199,19 @@
   }
 
   // Chevron icons
-  @if map.get($modules, "forms/basics") or
-    map.get($modules, "components/accordion") or
-    map.get($modules, "components/dropdown")
-  {
-    #{$✨}icon-chevron-button-contrast: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($black)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  @if map.get($modules, "components/accordion") or map.get($modules, "components/dropdown") {
+    // Change the icon color to black for accordion and dropdown .contrast buttons
+    @if $enable-classes {
+      details {
+        summary {
+          &[role="button"].contrast:not(.outline) {
+            &::after {
+              filter: brightness(0);
+            }
+          }
+        }
+      }
+    }
   }
 
   // Form validation icons
@@ -214,7 +222,22 @@
 
   // Loading icon (animated)
   @if map.get($modules, "components/loading") {
-    #{$✨}icon-loading-button-contrast: url("data:image/svg+xml,%3Csvg fill='none' height='24' width='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' %3E%3Cstyle%3E g %7B animation: rotate 2s linear infinite; transform-origin: center center; %7D circle %7B stroke-dasharray: 75,100; stroke-dashoffset: -5; animation: dash 1.5s ease-in-out infinite; stroke-linecap: round; %7D @keyframes rotate %7B 0%25 %7B transform: rotate(0deg); %7D 100%25 %7B transform: rotate(360deg); %7D %7D @keyframes dash %7B 0%25 %7B stroke-dasharray: 1,100; stroke-dashoffset: 0; %7D 50%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -17.5; %7D 100%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -62; %7D %7D %3C/style%3E%3Cg%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='#{functions.display-rgb($black)}' stroke-width='4' /%3E%3C/g%3E%3C/svg%3E");
+    // Change the icon color to black for .contrast buttons
+    @if $enable-classes {
+      [aria-busy="true"]:not(input, select, textarea) {
+        &.contrast:is(
+            button,
+            [type="submit"],
+            [type="button"],
+            [type="reset"],
+            [role="button"]
+          ):not(.outline) {
+          &::before {
+            filter: brightness(0);
+          }
+        }
+      }
+    }
   }
 
   // Document

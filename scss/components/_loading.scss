@@ -29,27 +29,6 @@
     &:empty {
       text-align: center;
     }
-
-    // Primary and secondary buttons
-    &:is(button, [type="submit"], [type="button"], [type="reset"], [role="button"]) {
-      &::before {
-        background-image: var(#{$✨}icon-loading-button);
-      }
-
-      @if $enable-classes {
-        &.outline {
-          &::before {
-            background-image: var(#{$✨}icon-loading);
-          }
-        }
-
-        &.contrast:not(.outline) {
-          &::before {
-            background-image: var(#{$✨}icon-loading-button-contrast);
-          }
-        }
-      }
-    }
   }
 
   // Buttons and links

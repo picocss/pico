@@ -33,28 +33,6 @@
         content: "";
       }
     }
-
-    // Marker as button
-    summary[role="button"],
-    > button {
-      &::after {
-        background-image: var(#{$✨}icon-chevron-button);
-      }
-
-      @if $enable-classes {
-        &.outline {
-          &::after {
-            background-image: var(#{$✨}icon-chevron);
-          }
-        }
-
-        &.contrast:not(.outline) {
-          &::after {
-            background-image: var(#{$✨}icon-chevron-button-contrast);
-          }
-        }
-      }
-    }
   }
 
   // Container type accordion

@@ -79,20 +79,6 @@
         // Marker
         &::after {
           height: calc(1rem * var(#{$✨}line-height, 1.5));
-          background-image: var(#{$✨}icon-chevron-button);
-        }
-
-        @if $enable-classes {
-          &.outline {
-            &::after {
-              background-image: var(#{$✨}icon-chevron);
-            }
-          }
-          &.contrast:not(.outline) {
-            &::after {
-              background-image: var(#{$✨}icon-chevron-button-contrast);
-            }
-          }
         }
       }
     }
