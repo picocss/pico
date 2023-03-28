@@ -1,3 +1,8 @@
+@charset "UTF-8";
+/*!
+ * Pico ✨ v2.0.0-alpha1 (https://picocss.com)
+ * Copyright 2019-2023 - Licensed under MIT
+ */
 :root {
   --pico-color-red-950: #1c0d06;
   --pico-color-red-900: #30130a;
