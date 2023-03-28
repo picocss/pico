@@ -2023,14 +2023,14 @@ details[role=list][open] summary::before {
   width: 1em;
   height: 1em;
   background-image: var(--pico-icon-loading);
-  background-position: right center;
   background-size: 1rem auto;
   background-repeat: no-repeat;
   content: "";
   vertical-align: -0.125em;
 }
 [aria-busy=true]:not(input, select, textarea):not(:empty)::before {
-  margin-right: calc(var(--pico-spacing) * 0.5);
+  -webkit-margin-end: calc(var(--pico-spacing) * 0.5);
+  margin-inline-end: calc(var(--pico-spacing) * 0.5);
 }
 [aria-busy=true]:not(input, select, textarea):empty {
   text-align: center;
