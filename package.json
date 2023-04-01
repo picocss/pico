@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
-    "caniuse-lite": "1.0.30001469",
+    "caniuse-lite": "1.0.30001473",
     "clean-css-cli": "^5.6.2",
     "css-declaration-sorter": "^6.4.0",
     "nodemon": "^2.0.22",
