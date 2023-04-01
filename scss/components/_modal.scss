@@ -93,7 +93,7 @@
             transition: opacity var(#{$✨}transition);
           }
 
-          &:is([aria-current], :hover, :active, :focus) {
+          &:is([aria-current], :hover, :active, :focus):not([aria-current="false"]) {
             opacity: 1;
           }
         }
@@ -117,6 +117,7 @@
 
       dialog {
         pointer-events: auto;
+        touch-action: auto;
       }
     }
   }
