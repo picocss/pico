@@ -115,12 +115,7 @@
   }
 
   // Lists
-  :where(dl, ol, ul) {
-    padding-right: 0;
-    padding-left: var(#{$✨}spacing);
-    padding-inline-start: var(#{$✨}spacing);
-    padding-inline-end: 0;
-
+  :where(ol, ul) {
     li {
       margin-bottom: calc(var(#{$✨}typography-spacing-vertical) * 0.25);
     }
@@ -128,11 +123,9 @@
 
   // Margin-top for nested lists
   // 1. Remove the margin on nested lists in Chrome, Edge, IE, and Safari
-  :where(dl, ol, ul) {
-    :is(dl, ol, ul) {
+  :where(dl, ol, ul) :where(dl, ol, ul) {
       margin: 0; // 1
       margin-top: calc(var(#{$✨}typography-spacing-vertical) * 0.25);
-    }
   }
 
   ul li {
