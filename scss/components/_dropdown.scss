@@ -98,20 +98,26 @@
     }
   }
 
-  // Bouton as a select
-  // inside container type accordion
-  // AND inside a nav
+  // Dropdown inside a nav
   // ––––––––––––––––––––
-  nav details[role="list"] summary:not([role]) {
-    // Override height
-    height: auto;
-    padding: calc(var(#{$✨}nav-link-spacing-vertical) - (var(#{$✨}border-width) * 2))
-      var(#{$✨}nav-link-spacing-horizontal);
+  nav details[role="list"] {
+    display: inline;
+    margin: calc(var(#{$✨}nav-element-spacing-vertical) * -1) 0;
+
+    summary:not([role]) {
+      // Override height
+      height: calc((1rem * var(#{$✨}line-height)) + (var(#{$✨}nav-link-spacing-vertical) * 2));
+      padding: calc(var(#{$✨}nav-link-spacing-vertical) - (var(#{$✨}border-width) * 2))
+        var(#{$✨}nav-link-spacing-horizontal);
+
+      &:focus-visible {
+        box-shadow: 0 0 0 var(#{$✨}outline-width) var(#{$✨}primary-focus);
+      }
+    }
   }
 
   // Submenu
   // ––––––––––––––––––––
-  // 1. Inside container type accordion
   details[role="list"] summary + ul {
     display: flex;
     z-index: 99;
@@ -170,7 +176,8 @@
         &:hover,
         &:focus,
         &:active,
-        &:focus-visible {
+        &:focus-visible,
+        &[aria-current]:not([aria-current="false"]) {
           background-color: var(#{$✨}dropdown-hover-background-color);
         }
       }

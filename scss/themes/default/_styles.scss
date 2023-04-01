@@ -361,5 +361,12 @@
         #{$✨}outline-width: 0.0625rem;
       }
     }
+    nav {
+      details[role="list"] {
+        summary:focus-visible {
+          #{$✨}outline-width: 0.1875rem;
+        }
+      }
+    }
   }
 }
