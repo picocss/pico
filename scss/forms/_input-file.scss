@@ -8,7 +8,7 @@
 
   // 1. Hack to display the outline on the focused file selector button
   //    with the forced overflow hidden on the input[type="file"] element.
-  input[type="file"] {
+  [type="file"] {
     #{$✨}color: var(#{$✨}muted-color);
     margin-left: calc(var(#{$✨}outline-width) * -1); // 1
     padding: calc(var(#{$✨}form-element-spacing-vertical) * 0.5) 0;

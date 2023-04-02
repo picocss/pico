@@ -124,8 +124,8 @@
   // Margin-top for nested lists
   // 1. Remove the margin on nested lists in Chrome, Edge, IE, and Safari
   :where(dl, ol, ul) :where(dl, ol, ul) {
-      margin: 0; // 1
-      margin-top: calc(var(#{$✨}typography-spacing-vertical) * 0.25);
+    margin: 0; // 1
+    margin-top: calc(var(#{$✨}typography-spacing-vertical) * 0.25);
   }
 
   ul li {
