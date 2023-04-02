@@ -36,6 +36,7 @@
 @use "components/accordion"; // details, summary
 @use "components/card"; // article
 @use "components/dropdown"; // details[role="list"]
+@use "components/group"; // details[role="list"]
 @use "components/loading"; // aria-busy=true
 @use "components/modal"; // dialog
 @use "components/nav"; // nav
