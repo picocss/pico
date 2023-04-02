@@ -31,7 +31,7 @@
 
     // Borders
     #{$✨}border-radius: 0.25rem;
-    #{$✨}border-width: 1px;
+    #{$✨}border-width: 0.0625rem;
     #{$✨}outline-width: 0.1875rem;
 
     // Transitions
@@ -308,7 +308,7 @@
       th,
       td {
         #{$✨}font-weight: 600;
-        #{$✨}border-width: 3px;
+        #{$✨}border-width: 0.1875rem;
       }
     }
   }
@@ -342,6 +342,10 @@
     #{$✨}outline-width: 0.0625rem;
   }
 
+  [type="search"] {
+    #{$✨}border-radius: 5rem;
+  }
+
   // Checkboxes, Radios and Switches
   @if map.get($modules, "forms/checkbox-radio-switch") {
     [type="checkbox"],
@@ -366,6 +370,55 @@
         summary:focus-visible {
           #{$✨}outline-width: 0.1875rem;
         }
+      }
+    }
+  }
+
+  // Group (role="group")
+  @if map.get($modules, "components/group") {
+    [role="search"] {
+      #{$✨}border-radius: 5rem;
+    }
+
+    [role="search"],
+    [role="group"] {
+      #{$✨}group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+      #{$✨}group-box-shadow-with-button: 0 0 0 var(#{$✨}outline-width) var(#{$✨}primary-focus);
+      #{$✨}group-box-shadow-with-input: 0 0 0 0.0625rem var(#{$✨}form-element-border-color);
+
+      @if $enable-classes {
+        &:has(
+            button.secondary:focus,
+            [type="submit"].secondary:focus,
+            [type="button"].secondary:focus,
+            [role="button"].secondary:focus
+          ) {
+          #{$✨}group-box-shadow-with-button: 0
+            0
+            0
+            var(#{$✨}outline-width)
+            var(#{$✨}secondary-focus);
+        }
+
+        &:has(
+            button.contrast:focus,
+            [type="submit"].contrast:focus,
+            [type="button"].contrast:focus,
+            [role="button"].contrast:focus
+          ) {
+          #{$✨}group-box-shadow-with-button: 0
+            0
+            0
+            var(#{$✨}outline-width)
+            var(#{$✨}contrast-focus);
+        }
+      }
+
+      button,
+      [type="submit"],
+      [type="button"],
+      [role="button"] {
+        #{$✨}form-element-spacing-horizontal: 2rem;
       }
     }
   }
