@@ -63,8 +63,8 @@
     }
 
     &:is([aria-current], :hover, :active, :focus) {
-      #{$✨}background-color: var(#{$✨}primary-background-hover);
-      #{$✨}border-color: var(#{$✨}primary-border-hover);
+      #{$✨}background-color: var(#{$✨}primary-hover-background);
+      #{$✨}border-color: var(#{$✨}primary-hover-border);
       #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
       #{$✨}color: var(#{$✨}primary-inverse);
     }
@@ -93,8 +93,8 @@
       cursor: pointer;
 
       &:is([aria-current], :hover, :active, :focus) {
-        #{$✨}background-color: var(#{$✨}secondary-background-hover);
-        #{$✨}border-color: var(#{$✨}secondary-border-hover);
+        #{$✨}background-color: var(#{$✨}secondary-hover-background);
+        #{$✨}border-color: var(#{$✨}secondary-hover-border);
         #{$✨}color: var(#{$✨}secondary-inverse);
       }
 
@@ -111,8 +111,8 @@
       #{$✨}color: var(#{$✨}contrast-inverse);
 
       &:is([aria-current], :hover, :active, :focus) {
-        #{$✨}background-color: var(#{$✨}contrast-background-hover);
-        #{$✨}border-color: var(#{$✨}contrast-border-hover);
+        #{$✨}background-color: var(#{$✨}contrast-hover-background);
+        #{$✨}border-color: var(#{$✨}contrast-hover-border);
         #{$✨}color: var(#{$✨}contrast-inverse);
       }
 

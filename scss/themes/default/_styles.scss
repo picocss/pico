@@ -383,8 +383,12 @@
     [role="search"],
     [role="group"] {
       #{$✨}group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-      #{$✨}group-box-shadow-with-button: 0 0 0 var(#{$✨}outline-width) var(#{$✨}primary-focus);
-      #{$✨}group-box-shadow-with-input: 0 0 0 0.0625rem var(#{$✨}form-element-border-color);
+      #{$✨}group-box-shadow-focus-with-button: 0
+        0
+        0
+        var(#{$✨}outline-width)
+        var(#{$✨}primary-focus);
+      #{$✨}group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(#{$✨}form-element-border-color);
 
       @if $enable-classes {
         &:has(
@@ -393,7 +397,7 @@
             [type="button"].secondary:focus,
             [role="button"].secondary:focus
           ) {
-          #{$✨}group-box-shadow-with-button: 0
+          #{$✨}group-box-shadow-focus-with-button: 0
             0
             0
             var(#{$✨}outline-width)
@@ -406,7 +410,7 @@
             [type="button"].contrast:focus,
             [role="button"].contrast:focus
           ) {
-          #{$✨}group-box-shadow-with-button: 0
+          #{$✨}group-box-shadow-focus-with-button: 0
             0
             0
             var(#{$✨}outline-width)

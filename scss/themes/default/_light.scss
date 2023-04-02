@@ -20,37 +20,37 @@
 
   // Primary colors
   #{$✨}primary: #{$azure-550};
-  #{$✨}primary-hover: #{$azure-650};
-  #{$✨}primary-underline: #{rgba($azure-550, 0.5)};
-  #{$✨}primary-underline-hover: var(#{$✨}primary-hover);
   #{$✨}primary-background: #{$azure-550};
-  #{$✨}primary-background-hover: #{$azure-600};
   #{$✨}primary-border: var(#{$✨}primary-background);
-  #{$✨}primary-border-hover: var(#{$✨}primary-background-hover);
+  #{$✨}primary-underline: #{rgba($azure-550, 0.5)};
+  #{$✨}primary-hover: #{$azure-650};
+  #{$✨}primary-hover-background: #{$azure-600};
+  #{$✨}primary-hover-border: var(#{$✨}primary-hover-background);
+  #{$✨}primary-hover-underline: var(#{$✨}primary-hover);
   #{$✨}primary-focus: #{rgba($azure-400, 0.5)};
   #{$✨}primary-inverse: #{$white};
 
   // Secondary colors
   #{$✨}secondary: #{$slate-550};
-  #{$✨}secondary-hover: #{$slate-650};
-  #{$✨}secondary-underline: #{rgba($slate-550, 0.5)};
-  #{$✨}secondary-underline-hover: var(#{$✨}secondary-hover);
   #{$✨}secondary-background: #{$slate-600};
-  #{$✨}secondary-background-hover: #{$slate-650};
   #{$✨}secondary-border: var(#{$✨}secondary-background);
-  #{$✨}secondary-border-hover: var(#{$✨}secondary-background-hover);
+  #{$✨}secondary-underline: #{rgba($slate-550, 0.5)};
+  #{$✨}secondary-hover: #{$slate-650};
+  #{$✨}secondary-hover-background: #{$slate-650};
+  #{$✨}secondary-hover-border: var(#{$✨}secondary-hover-background);
+  #{$✨}secondary-hover-underline: var(#{$✨}secondary-hover);
   #{$✨}secondary-focus: #{rgba($slate-550, 0.25)};
   #{$✨}secondary-inverse: #{$white};
 
   // Contrast colors
   #{$✨}contrast: #{$slate-900};
-  #{$✨}contrast-hover: #{$black};
-  #{$✨}contrast-underline: #{rgba($slate-900, 0.5)};
-  #{$✨}contrast-underline-hover: var(#{$✨}secondary-hover);
   #{$✨}contrast-background: #{$slate-900};
-  #{$✨}contrast-background-hover: #{$black};
   #{$✨}contrast-border: var(#{$✨}contrast-background);
-  #{$✨}contrast-border-hover: var(#{$✨}contrast-background-hover);
+  #{$✨}contrast-underline: #{rgba($slate-900, 0.5)};
+  #{$✨}contrast-hover: #{$black};
+  #{$✨}contrast-hover-background: #{$black};
+  #{$✨}contrast-hover-border: var(#{$✨}contrast-hover-background);
+  #{$✨}contrast-hover-underline: var(#{$✨}secondary-hover);
   #{$✨}contrast-focus: #{rgba($slate-550, 0.25)};
   #{$✨}contrast-inverse: #{$white};
 

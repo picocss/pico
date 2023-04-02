@@ -25,7 +25,7 @@
 
     &:is([aria-current], :hover, :active, :focus) {
       #{$✨}color: var(#{$✨}primary-hover);
-      #{$✨}underline: var(#{$✨}primary-underline-hover);
+      #{$✨}underline: var(#{$✨}primary-hover-underline);
       #{$✨}text-decoration: underline;
     }
 
@@ -41,7 +41,7 @@
 
         &:is([aria-current], :hover, :active, :focus) {
           #{$✨}color: var(#{$✨}secondary-hover);
-          #{$✨}underline: var(#{$✨}secondary-underline-hover);
+          #{$✨}underline: var(#{$✨}secondary-hover-underline);
         }
       }
 
@@ -52,7 +52,7 @@
 
         &:is([aria-current], :hover, :active, :focus) {
           #{$✨}color: var(#{$✨}contrast-hover);
-          #{$✨}underline: var(#{$✨}contrast-underline-hover);
+          #{$✨}underline: var(#{$✨}contrast-hover-underline);
         }
       }
     }

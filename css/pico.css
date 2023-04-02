@@ -267,8 +267,8 @@ nav details[role=list] summary:focus-visible {
 [role=search],
 [role=group] {
   --pico-group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  --pico-group-box-shadow-with-button: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
-  --pico-group-box-shadow-with-input: 0 0 0 0.0625rem var(--pico-form-element-border-color);
+  --pico-group-box-shadow-focus-with-button: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
+  --pico-group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(--pico-form-element-border-color);
 }
 [role=search]:has(button.secondary:focus,
 [type=submit].secondary:focus,
@@ -278,7 +278,7 @@ nav details[role=list] summary:focus-visible {
 [type=submit].secondary:focus,
 [type=button].secondary:focus,
 [role=button].secondary:focus) {
-  --pico-group-box-shadow-with-button: 0 0 0 var(--pico-outline-width) var(--pico-secondary-focus);
+  --pico-group-box-shadow-focus-with-button: 0 0 0 var(--pico-outline-width) var(--pico-secondary-focus);
 }
 [role=search]:has(button.contrast:focus,
 [type=submit].contrast:focus,
@@ -288,7 +288,7 @@ nav details[role=list] summary:focus-visible {
 [type=submit].contrast:focus,
 [type=button].contrast:focus,
 [role=button].contrast:focus) {
-  --pico-group-box-shadow-with-button: 0 0 0 var(--pico-outline-width) var(--pico-contrast-focus);
+  --pico-group-box-shadow-focus-with-button: 0 0 0 var(--pico-outline-width) var(--pico-contrast-focus);
 }
 [role=search] button,
 [role=search] [type=submit],
@@ -312,33 +312,33 @@ nav details[role=list] summary:focus-visible {
   --pico-muted-color: #646b79;
   --pico-muted-border-color: #e7eaf0;
   --pico-primary: #0172ad;
-  --pico-primary-hover: #015887;
-  --pico-primary-underline: rgba(1, 114, 173, 0.5);
-  --pico-primary-underline-hover: var(--pico-primary-hover);
   --pico-primary-background: #0172ad;
-  --pico-primary-background-hover: #02659a;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-border-hover: var(--pico-primary-background-hover);
+  --pico-primary-underline: rgba(1, 114, 173, 0.5);
+  --pico-primary-hover: #015887;
+  --pico-primary-hover-background: #02659a;
+  --pico-primary-hover-border: var(--pico-primary-hover-background);
+  --pico-primary-hover-underline: var(--pico-primary-hover);
   --pico-primary-focus: rgba(2, 154, 232, 0.5);
   --pico-primary-inverse: #fff;
   --pico-secondary: #5d6b89;
-  --pico-secondary-hover: #48536b;
-  --pico-secondary-underline: rgba(93, 107, 137, 0.5);
-  --pico-secondary-underline-hover: var(--pico-secondary-hover);
   --pico-secondary-background: #525f7a;
-  --pico-secondary-background-hover: #48536b;
   --pico-secondary-border: var(--pico-secondary-background);
-  --pico-secondary-border-hover: var(--pico-secondary-background-hover);
+  --pico-secondary-underline: rgba(93, 107, 137, 0.5);
+  --pico-secondary-hover: #48536b;
+  --pico-secondary-hover-background: #48536b;
+  --pico-secondary-hover-border: var(--pico-secondary-hover-background);
+  --pico-secondary-hover-underline: var(--pico-secondary-hover);
   --pico-secondary-focus: rgba(93, 107, 137, 0.25);
   --pico-secondary-inverse: #fff;
   --pico-contrast: #181c25;
-  --pico-contrast-hover: #000;
-  --pico-contrast-underline: rgba(24, 28, 37, 0.5);
-  --pico-contrast-underline-hover: var(--pico-secondary-hover);
   --pico-contrast-background: #181c25;
-  --pico-contrast-background-hover: #000;
   --pico-contrast-border: var(--pico-contrast-background);
-  --pico-contrast-border-hover: var(--pico-contrast-background-hover);
+  --pico-contrast-underline: rgba(24, 28, 37, 0.5);
+  --pico-contrast-hover: #000;
+  --pico-contrast-hover-background: #000;
+  --pico-contrast-hover-border: var(--pico-contrast-hover-background);
+  --pico-contrast-hover-underline: var(--pico-secondary-hover);
   --pico-contrast-focus: rgba(93, 107, 137, 0.25);
   --pico-contrast-inverse: #fff;
   --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(104, 120, 153, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(104, 120, 153, 0.024), 0.0625rem 0.125rem 0.75rem rgba(104, 120, 153, 0.03), 0.1125rem 0.225rem 1.35rem rgba(104, 120, 153, 0.036), 0.2085rem 0.417rem 2.502rem rgba(104, 120, 153, 0.04302), 0.5rem 1rem 6rem rgba(104, 120, 153, 0.06), 0 0 0 0.0625rem rgba(104, 120, 153, 0.015);
@@ -433,33 +433,33 @@ nav details[role=list] summary:focus-visible {
     --pico-muted-color: #7b8495;
     --pico-muted-border-color: #202632;
     --pico-primary: #01aaff;
-    --pico-primary-hover: #79c0ff;
-    --pico-primary-underline: rgba(1, 170, 255, 0.5);
-    --pico-primary-underline-hover: var(--pico-primary-hover);
     --pico-primary-background: #0172ad;
-    --pico-primary-background-hover: #017fc0;
     --pico-primary-border: var(--pico-primary-background);
-    --pico-primary-border-hover: var(--pico-primary-background-hover);
+    --pico-primary-underline: rgba(1, 170, 255, 0.5);
+    --pico-primary-hover: #79c0ff;
+    --pico-primary-hover-background: #017fc0;
+    --pico-primary-hover-border: var(--pico-primary-hover-background);
+    --pico-primary-hover-underline: var(--pico-primary-hover);
     --pico-primary-focus: rgba(1, 170, 255, 0.375);
     --pico-primary-inverse: #fff;
     --pico-secondary: #969eaf;
-    --pico-secondary-hover: #b3b9c5;
-    --pico-secondary-underline: rgba(150, 158, 175, 0.5);
-    --pico-secondary-underline-hover: var(--pico-secondary-hover);
     --pico-secondary-background: #525f7a;
-    --pico-secondary-background-hover: #5d6b89;
     --pico-secondary-border: var(--pico-secondary-background);
-    --pico-secondary-border-hover: var(--pico-secondary-background-hover);
+    --pico-secondary-underline: rgba(150, 158, 175, 0.5);
+    --pico-secondary-hover: #b3b9c5;
+    --pico-secondary-hover-background: #5d6b89;
+    --pico-secondary-hover-border: var(--pico-secondary-hover-background);
+    --pico-secondary-hover-underline: var(--pico-secondary-hover);
     --pico-secondary-focus: rgba(144, 158, 190, 0.25);
     --pico-secondary-inverse: #fff;
     --pico-contrast: #dfe3eb;
-    --pico-contrast-hover: #fff;
-    --pico-contrast-underline: rgba(223, 227, 235, 0.5);
-    --pico-contrast-underline-hover: var(--pico-contrast-hover);
     --pico-contrast-background: #eff1f4;
-    --pico-contrast-background-hover: #fff;
     --pico-contrast-border: var(--pico-contrast-background);
-    --pico-contrast-border-hover: var(--pico-contrast-background-hover);
+    --pico-contrast-underline: rgba(223, 227, 235, 0.5);
+    --pico-contrast-hover: #fff;
+    --pico-contrast-hover-background: #fff;
+    --pico-contrast-hover-border: var(--pico-contrast-hover-background);
+    --pico-contrast-hover-underline: var(--pico-contrast-hover);
     --pico-contrast-focus: rgba(207, 213, 226, 0.25);
     --pico-contrast-inverse: #000;
     --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(0, 0, 0, 0.024), 0.0625rem 0.125rem 0.75rem rgba(0, 0, 0, 0.03), 0.1125rem 0.225rem 1.35rem rgba(0, 0, 0, 0.036), 0.2085rem 0.417rem 2.502rem rgba(0, 0, 0, 0.04302), 0.5rem 1rem 6rem rgba(0, 0, 0, 0.06), 0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
@@ -557,33 +557,33 @@ nav details[role=list] summary:focus-visible {
   --pico-muted-color: #7b8495;
   --pico-muted-border-color: #202632;
   --pico-primary: #01aaff;
-  --pico-primary-hover: #79c0ff;
-  --pico-primary-underline: rgba(1, 170, 255, 0.5);
-  --pico-primary-underline-hover: var(--pico-primary-hover);
   --pico-primary-background: #0172ad;
-  --pico-primary-background-hover: #017fc0;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-border-hover: var(--pico-primary-background-hover);
+  --pico-primary-underline: rgba(1, 170, 255, 0.5);
+  --pico-primary-hover: #79c0ff;
+  --pico-primary-hover-background: #017fc0;
+  --pico-primary-hover-border: var(--pico-primary-hover-background);
+  --pico-primary-hover-underline: var(--pico-primary-hover);
   --pico-primary-focus: rgba(1, 170, 255, 0.375);
   --pico-primary-inverse: #fff;
   --pico-secondary: #969eaf;
-  --pico-secondary-hover: #b3b9c5;
-  --pico-secondary-underline: rgba(150, 158, 175, 0.5);
-  --pico-secondary-underline-hover: var(--pico-secondary-hover);
   --pico-secondary-background: #525f7a;
-  --pico-secondary-background-hover: #5d6b89;
   --pico-secondary-border: var(--pico-secondary-background);
-  --pico-secondary-border-hover: var(--pico-secondary-background-hover);
+  --pico-secondary-underline: rgba(150, 158, 175, 0.5);
+  --pico-secondary-hover: #b3b9c5;
+  --pico-secondary-hover-background: #5d6b89;
+  --pico-secondary-hover-border: var(--pico-secondary-hover-background);
+  --pico-secondary-hover-underline: var(--pico-secondary-hover);
   --pico-secondary-focus: rgba(144, 158, 190, 0.25);
   --pico-secondary-inverse: #fff;
   --pico-contrast: #dfe3eb;
-  --pico-contrast-hover: #fff;
-  --pico-contrast-underline: rgba(223, 227, 235, 0.5);
-  --pico-contrast-underline-hover: var(--pico-contrast-hover);
   --pico-contrast-background: #eff1f4;
-  --pico-contrast-background-hover: #fff;
   --pico-contrast-border: var(--pico-contrast-background);
-  --pico-contrast-border-hover: var(--pico-contrast-background-hover);
+  --pico-contrast-underline: rgba(223, 227, 235, 0.5);
+  --pico-contrast-hover: #fff;
+  --pico-contrast-hover-background: #fff;
+  --pico-contrast-hover-border: var(--pico-contrast-hover-background);
+  --pico-contrast-hover-underline: var(--pico-contrast-hover);
   --pico-contrast-focus: rgba(207, 213, 226, 0.25);
   --pico-contrast-inverse: #000;
   --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(0, 0, 0, 0.024), 0.0625rem 0.125rem 0.75rem rgba(0, 0, 0, 0.03), 0.1125rem 0.225rem 1.35rem rgba(0, 0, 0, 0.036), 0.2085rem 0.417rem 2.502rem rgba(0, 0, 0, 0.04302), 0.5rem 1rem 6rem rgba(0, 0, 0, 0.06), 0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
@@ -839,7 +839,7 @@ a,
 a:is([aria-current], :hover, :active, :focus),
 [role=link]:is([aria-current], :hover, :active, :focus) {
   --pico-color: var(--pico-primary-hover);
-  --pico-underline: var(--pico-primary-underline-hover);
+  --pico-underline: var(--pico-primary-hover-underline);
   --pico-text-decoration: underline;
 }
 a:focus-visible,
@@ -854,7 +854,7 @@ a.secondary,
 a.secondary:is([aria-current], :hover, :active, :focus),
 [role=link].secondary:is([aria-current], :hover, :active, :focus) {
   --pico-color: var(--pico-secondary-hover);
-  --pico-underline: var(--pico-secondary-underline-hover);
+  --pico-underline: var(--pico-secondary-hover-underline);
 }
 a.contrast,
 [role=link].contrast {
@@ -864,7 +864,7 @@ a.contrast,
 a.contrast:is([aria-current], :hover, :active, :focus),
 [role=link].contrast:is([aria-current], :hover, :active, :focus) {
   --pico-color: var(--pico-contrast-hover);
-  --pico-underline: var(--pico-contrast-underline-hover);
+  --pico-underline: var(--pico-contrast-hover-underline);
 }
 
 a[role=button] {
@@ -1116,8 +1116,8 @@ button:is([aria-current], :hover, :active, :focus),
 [type=button]:is([aria-current], :hover, :active, :focus),
 [type=file]::file-selector-button:is([aria-current], :hover, :active, :focus),
 [role=button]:is([aria-current], :hover, :active, :focus) {
-  --pico-background-color: var(--pico-primary-background-hover);
-  --pico-border-color: var(--pico-primary-border-hover);
+  --pico-background-color: var(--pico-primary-hover-background);
+  --pico-border-color: var(--pico-primary-hover-border);
   --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
   --pico-color: var(--pico-primary-inverse);
 }
@@ -1147,8 +1147,8 @@ button:focus,
 :is(button, [type=submit], [type=button], [role=button]).secondary:is([aria-current], :hover, :active, :focus),
 [type=reset]:is([aria-current], :hover, :active, :focus),
 [type=file]::file-selector-button:is([aria-current], :hover, :active, :focus) {
-  --pico-background-color: var(--pico-secondary-background-hover);
-  --pico-border-color: var(--pico-secondary-border-hover);
+  --pico-background-color: var(--pico-secondary-hover-background);
+  --pico-border-color: var(--pico-secondary-hover-border);
   --pico-color: var(--pico-secondary-inverse);
 }
 :is(button, [type=submit], [type=button], [role=button]).secondary:focus,
@@ -1163,8 +1163,8 @@ button:focus,
   --pico-color: var(--pico-contrast-inverse);
 }
 :is(button, [type=submit], [type=button], [role=button]).contrast:is([aria-current], :hover, :active, :focus) {
-  --pico-background-color: var(--pico-contrast-background-hover);
-  --pico-border-color: var(--pico-contrast-border-hover);
+  --pico-background-color: var(--pico-contrast-hover-background);
+  --pico-border-color: var(--pico-contrast-hover-border);
   --pico-color: var(--pico-contrast-inverse);
 }
 :is(button, [type=submit], [type=button], [role=button]).contrast:focus {
@@ -1820,8 +1820,8 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) var(--pico-form-element-spacing-horizontal);
 }
 [type=file]:is(:hover, :active, :focus)::file-selector-button {
-  --pico-background-color: var(--pico-secondary-background-hover);
-  --pico-border-color: var(--pico-secondary-border-hover);
+  --pico-background-color: var(--pico-secondary-hover-background);
+  --pico-border-color: var(--pico-secondary-hover-border);
 }
 [type=file]:focus::file-selector-button {
   --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pico-outline-width) var(--pico-secondary-focus);
@@ -2298,11 +2298,11 @@ form[role=search], form[role=group] {
 @supports selector(:has(*)) {
   [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus),
   [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) {
-    --pico-group-box-shadow: var(--pico-group-box-shadow-with-button);
+    --pico-group-box-shadow: var(--pico-group-box-shadow-focus-with-button);
   }
   [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus),
   [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) {
-    --pico-group-box-shadow: var(--pico-group-box-shadow-with-input);
+    --pico-group-box-shadow: var(--pico-group-box-shadow-focus-with-input);
   }
   [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) button,
   [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=submit],
@@ -2313,7 +2313,7 @@ form[role=search], form[role=group] {
   [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=button],
   [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [role=button] {
     --pico-button-box-shadow: 0 0 0 var(--pico-border-width) var(--pico-primary-border);
-    --pico-button-hover-box-shadow: 0 0 0 var(--pico-border-width) var(--pico-primary-border-hover);
+    --pico-button-hover-box-shadow: 0 0 0 var(--pico-border-width) var(--pico-primary-hover-border);
   }
   [role=search] button:focus,
   [role=search] [type=submit]:focus,
