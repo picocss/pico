@@ -56,8 +56,8 @@
     }
 
     @if map.get($modules, "layout/grid") and $enable-classes {
-      #{$✨}grid-spacing-vertical: 0;
-      #{$✨}grid-spacing-horizontal: var(#{$✨}spacing);
+      #{$✨}grid-column-gap: var(#{$✨}spacing);
+      #{$✨}grid-row-gap: var(#{$✨}spacing);
     }
 
     // Spacings for form elements and button

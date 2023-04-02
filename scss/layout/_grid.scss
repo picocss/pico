@@ -8,14 +8,14 @@
    */
 
   .grid {
-    grid-column-gap: var(#{$✨}grid-spacing-horizontal);
-    grid-row-gap: var(#{$✨}grid-spacing-vertical);
+    grid-column-gap: var(#{$✨}grid-column-gap);
+    grid-row-gap: var(#{$✨}grid-row-gap);
     display: grid;
     grid-template-columns: 1fr;
     margin: 0;
 
-    @if map.get($breakpoints, "lg") {
-      @media (min-width: map.get(map.get($breakpoints, "lg"), "breakpoint")) {
+    @if map.get($breakpoints, "md") {
+      @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
         grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
       }
     }
