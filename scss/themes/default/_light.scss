@@ -167,8 +167,8 @@
     #{$✨}card-sectioning-background-color: #{mix($slate-50, $white, 25%)};
   }
 
-  // Dropdown (<details role="list">)
-  @if map.get($modules, "components/dropdown") {
+  // Dropdown (details.dropdown)
+  @if map.get($modules, "components/dropdown") and $enable-classes {
     #{$✨}dropdown-background-color: #{$white};
     #{$✨}dropdown-border-color: #{$slate-50};
     #{$✨}dropdown-box-shadow: var(#{$✨}box-shadow);

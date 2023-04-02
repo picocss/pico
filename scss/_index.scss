@@ -18,7 +18,7 @@
 @use "content/link"; // a, role="link"
 @use "content/typography"; // headings, p, ul, blockquote, ...
 @use "content/embedded"; // audio, canvas, iframe, img, svg, video
-@use "content/button"; // button, [role="button"], type="button", type="submit" ...
+@use "content/button"; // button, role="button", type="button", type="submit" ...
 @use "content/table"; // table, tr, td, ...
 @use "content/code"; // pre, code, ...
 @use "content/miscs"; // hr, template, [hidden], dialog, canvas
@@ -35,8 +35,8 @@
 // Components
 @use "components/accordion"; // details, summary
 @use "components/card"; // article
-@use "components/dropdown"; // details[role="list"]
-@use "components/group"; // details[role="list"]
+@use "components/dropdown"; // details.dropdown
+@use "components/group"; // role="group"
 @use "components/loading"; // aria-busy=true
 @use "components/modal"; // dialog
 @use "components/nav"; // nav

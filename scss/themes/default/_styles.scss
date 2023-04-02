@@ -358,15 +358,15 @@
     }
   }
 
-  // Dropdown (<details role="list">)
-  @if map.get($modules, "components/dropdown") {
-    details[role="list"] {
+  // Dropdown (details.dropdown)
+  @if map.get($modules, "components/dropdown") and $enable-classes {
+    details.dropdown {
       summary:not([role="button"]) {
         #{$✨}outline-width: 0.0625rem;
       }
     }
     nav {
-      details[role="list"] {
+      details.dropdown {
         summary:focus-visible {
           #{$✨}outline-width: 0.1875rem;
         }

@@ -1,14 +1,14 @@
 @use "sass:map";
 @use "../settings" as *;
 
-@if map.get($modules, "components/dropdown") {
+@if map.get($modules, "components/dropdown") and $enable-classes {
   /**
-   * Dropdown ([role="list"])
+   * Dropdown (details.dropdown)
    */
 
   // Container
   // ––––––––––––––––––––
-  details[role="list"] {
+  details.dropdown {
     position: relative;
     border-bottom: none;
 
@@ -38,7 +38,7 @@
   // Container type accordion
   // inside a nav
   // ––––––––––––––––––––
-  nav details[role="list"] {
+  nav details.dropdown {
     // Override height
     margin-bottom: 0;
   }
@@ -46,7 +46,7 @@
   // Bouton as a select
   // inside container type accordion
   // ––––––––––––––––––––
-  details[role="list"] summary:not([role]) {
+  details.dropdown summary:not([role]) {
     height: calc(
       1rem *
         var(#{$✨}line-height) +
@@ -100,7 +100,7 @@
 
   // Dropdown inside a nav
   // ––––––––––––––––––––
-  nav details[role="list"] {
+  nav details.dropdown {
     display: inline;
     margin: calc(var(#{$✨}nav-element-spacing-vertical) * -1) 0;
 
@@ -118,7 +118,7 @@
 
   // Submenu
   // ––––––––––––––––––––
-  details[role="list"] summary + ul {
+  details.dropdown summary + ul {
     display: flex;
     z-index: 99;
     position: absolute;
@@ -196,14 +196,14 @@
   // Button opened
   // inside container type accordion
   // ––––––––––––––––––––
-  details[role="list"][open] summary {
+  details.dropdown[open] summary {
     margin-bottom: 0;
   }
 
   // Menu opened
   // ––––––––––––––––––––
   // 1. Inside container type accordion
-  details[role="list"][open] summary {
+  details.dropdown[open] summary {
     + ul {
       transform: scaleY(1);
       opacity: 1;
@@ -217,7 +217,7 @@
   // Close for dropdown
   // inside container type accordion
   // ––––––––––––––––––––
-  details[role="list"][open] summary {
+  details.dropdown[open] summary {
     &::before {
       display: block;
       z-index: 1;
