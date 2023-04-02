@@ -96,7 +96,7 @@
       }
 
       // Minimal support for aria-current
-      & a[aria-current]:not([aria-current="false"]) {
+      & a[aria-current] {
         background-color: transparent;
         color: inherit;
         text-decoration: none;

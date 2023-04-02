@@ -93,7 +93,7 @@
             transition: opacity var(#{$✨}transition);
           }
 
-          &:is([aria-current], :hover, :active, :focus):not([aria-current="false"]) {
+          &:is([aria-current], :hover, :active, :focus) {
             opacity: 1;
           }
         }
