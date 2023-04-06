@@ -282,7 +282,7 @@ kbd {
     0.2085rem 0.417rem 2.502rem rgba(27, 40, 50, 0.04302),
     0.5rem 1rem 6rem rgba(27, 40, 50, 0.06),
     0 0 0 0.0625rem rgba(27, 40, 50, 0.015);
-  --card-sectionning-background-color: #fbfbfc;
+  --card-sectioning-background-color: #fbfbfc;
   --dropdown-background-color: #fbfbfc;
   --dropdown-border-color: #e1e6eb;
   --dropdown-box-shadow: var(--card-box-shadow);
@@ -389,7 +389,7 @@ kbd {
       0.2085rem 0.417rem 2.502rem rgba(0, 0, 0, 0.04302),
       0.5rem 1rem 6rem rgba(0, 0, 0, 0.06),
       0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
-    --card-sectionning-background-color: #18232c;
+    --card-sectioning-background-color: #18232c;
     --dropdown-background-color: hsl(205deg, 30%, 15%);
     --dropdown-border-color: #24333e;
     --dropdown-box-shadow: var(--card-box-shadow);
@@ -495,7 +495,7 @@ kbd {
     0.2085rem 0.417rem 2.502rem rgba(0, 0, 0, 0.04302),
     0.5rem 1rem 6rem rgba(0, 0, 0, 0.06),
     0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
-  --card-sectionning-background-color: #18232c;
+  --card-sectioning-background-color: #18232c;
   --dropdown-background-color: hsl(205deg, 30%, 15%);
   --dropdown-border-color: #24333e;
   --dropdown-box-shadow: var(--card-box-shadow);
@@ -1882,7 +1882,7 @@ article > footer {
   margin-right: calc(var(--block-spacing-horizontal) * -1);
   margin-left: calc(var(--block-spacing-horizontal) * -1);
   padding: calc(var(--block-spacing-vertical) * 0.66) var(--block-spacing-horizontal);
-  background-color: var(--card-sectionning-background-color);
+  background-color: var(--card-sectioning-background-color);
 }
 article > header {
   margin-top: calc(var(--block-spacing-vertical) * -1);
