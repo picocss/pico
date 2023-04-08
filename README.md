@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h3 align="center">Pico.css</h3>
+<h3 align="center">Pico CSS</h3>
 
 <p align="center">
   <strong>Minimal CSS Framework for semantic HTML</strong><br>
@@ -13,7 +13,7 @@
   <a href="https://picocss.com/docs/">Documentation</a>
 </p>
 
-## Pico.css
+## Pico CSS
 [![Standard gzipped CSS](https://img.badgesize.io/picocss/pico/master/css/pico.min.css?compression=gzip&color=1095c1&label=Standard%20CSS)](https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css)
 [![Classless gzipped CSS](https://img.badgesize.io/picocss/pico/master/css/pico.classless.min.css?compression=gzip&color=1095c1&label=Classless%20CSS)](https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css)
 [![Github release](https://img.shields.io/github/v/release/picocss/pico?color=1095c1&logo=github&logoColor=white)](https://github.com/picocss/pico/releases/latest)
@@ -48,7 +48,7 @@ Shipped with two beautiful color themes, automatically enabled according to the 
 
 ## Usage
 
-There are 4 ways to get started with pico.css:
+There are 4 ways to get started with Pico CSS:
 
 **Install manually**
 
