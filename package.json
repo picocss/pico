@@ -1,6 +1,6 @@
 {
   "name": "@picocss/pico",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "description": "Minimal CSS Framework for semantic HTML",
   "author": "Lucas Larroche",
   "main": "css/pico.min.css",
