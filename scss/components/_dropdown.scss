@@ -206,3 +206,8 @@ li[role="list"] {
     background-image: var(--icon-chevron);
   }
 }
+
+label > details[role="list"] {
+  margin-top: calc(var(--spacing) * .25);
+  margin-bottom: var(--spacing);
+}

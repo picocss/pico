@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h3 align="center">Pico.css</h3>
+<h3 align="center">Pico CSS</h3>
 
 <p align="center">
   <strong>Minimal CSS Framework for semantic HTML</strong><br>
@@ -13,9 +13,9 @@
   <a href="https://picocss.com/docs/">Documentation</a>
 </p>
 
-## Pico.css
-[![Standard gzipped CSS](https://img.badgesize.io/picocss/pico/master/css/pico.min.css?compression=gzip&color=1095c1&label=Standard%20CSS)](https://unpkg.com/@picocss/pico@latest/css/pico.min.css)
-[![Classless gzipped CSS](https://img.badgesize.io/picocss/pico/master/css/pico.classless.min.css?compression=gzip&color=1095c1&label=Classless%20CSS)](https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css)
+## Pico CSS
+[![Standard gzipped CSS](https://img.badgesize.io/picocss/pico/master/css/pico.min.css?compression=gzip&color=1095c1&label=Standard%20CSS)](https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css)
+[![Classless gzipped CSS](https://img.badgesize.io/picocss/pico/master/css/pico.classless.min.css?compression=gzip&color=1095c1&label=Classless%20CSS)](https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css)
 [![Github release](https://img.shields.io/github/v/release/picocss/pico?color=1095c1&logo=github&logoColor=white)](https://github.com/picocss/pico/releases/latest)
 [![npm version](https://img.shields.io/npm/v/@picocss/pico?color=1095c1)](https://www.npmjs.com/package/@picocss/pico)
 [![License](https://img.shields.io/badge/license-MIT-%231095c1)](https://github.com/picocss/pico/blob/master/LICENSE.md)
@@ -48,7 +48,7 @@ Shipped with two beautiful color themes, automatically enabled according to the 
 
 ## Usage
 
-There are 4 ways to get started with pico.css:
+There are 4 ways to get started with Pico CSS:
 
 **Install manually**
 
@@ -60,10 +60,10 @@ There are 4 ways to get started with pico.css:
 
 **Install from CDN**
 
-Alternatively, you can use [unpkg CDN](https://unpkg.com/@picocss/pico@1.*/) to link pico.css.
+Alternatively, you can use [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@picocss/pico) to link pico.css.
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 ```
 
 **Install with NPM**
@@ -87,13 +87,13 @@ In this version, `header`, `main` and `footer` act as containers.
 Use the default `.classless` version if you need centered viewports:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.classless.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css">
 ```
 
 Or use the `.fluid.classless` version if you need a fluid container:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.fluid.classless.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.fluid.classless.min.css">
 ```
 
 Then just write pure HTML, and it should look great:
@@ -104,7 +104,7 @@ Then just write pure HTML, and it should look great:
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.classless.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css">
     <title>Hello, world!</title>
   </head>
   <body>
