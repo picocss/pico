@@ -2,6 +2,8 @@
 @use "../settings" as *;
 
 @if map.get($modules, "forms/basics") {
+  // Helper
+  $helper-previous-tags: "input, select, textarea";
   /**
    * Basics form elements
    */
@@ -408,9 +410,11 @@
       }
     }
   }
+  @if map.get($modules, "layout/grid") and $enable-classes {
+    $helper-previous-tags: $helper-previous-tags + ", .grid";
+  }
 
-  // Helper
-  :where(input, select, textarea) {
+  :where(#{$helper-previous-tags}) {
     + small {
       display: block;
       width: 100%;
