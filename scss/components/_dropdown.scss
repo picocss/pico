@@ -230,4 +230,9 @@
       cursor: default;
     }
   }
+  // Label
+  // ––––––––––––––––––––
+  label > details.dropdown {
+    margin-top: calc(var(#{$✨}spacing) * 0.25);
+  }
 }

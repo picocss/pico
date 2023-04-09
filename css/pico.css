@@ -2204,6 +2204,10 @@ details.dropdown[open] summary::before {
   cursor: default;
 }
 
+label > details.dropdown {
+  margin-top: calc(var(--pico-spacing) * 0.25);
+}
+
 /**
  * Group ([role="group"], [role="search"])
  */
