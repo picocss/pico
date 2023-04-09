@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://picocss.com/">
-    <img src="https://picocss.com/img/logo.svg" width="64" height="64">
+    <img src=".github/logo.svg" width="64" height="64">
   </a>
 </p>
 
@@ -119,7 +119,7 @@ Then just write pure HTML, and it should look great:
 
 Minimalist templates to discover Pico in action:
 
-[![Examples](https://picocss.com/img/examples.jpg)](https://picocss.com/#examples)
+[![Examples](.github/examples.jpg)](https://picocss.com/#examples)
 
 - **[Preview](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-preview)**  
   A starter example with most of the Pico components and styles.
