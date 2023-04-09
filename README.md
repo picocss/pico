@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://picocss.com/">
-    <img src="https://picocss.com/img/logo.svg" width="64" height="64">
+    <img src=".github/logo.svg" width="64" height="64">
   </a>
 </p>
 
@@ -52,7 +52,7 @@ There are 4 ways to get started with Pico CSS:
 
 **Install manually**
 
-[Download Pico](https://github.com/picocss/pico/archive/refs/heads/master.zip) and link `/css/pico.min.css` in the `<head>` of your website.
+[Download Pico](https://github.com/picocss/pico/archive/refs/tags/v1.5.9.zip) and link `/css/pico.min.css` in the `<head>` of your website.
 
 ```html
 <link rel="stylesheet" href="css/pico.min.css">
@@ -119,31 +119,31 @@ Then just write pure HTML, and it should look great:
 
 Minimalist templates to discover Pico in action:
 
-[![Examples](https://picocss.com/img/examples.jpg?v1.3.3)](https://picocss.com/#examples)
+[![Examples](.github/examples.jpg)](https://picocss.com/#examples)
 
-- **[Preview](https://picocss.com/examples/preview/)**  
-  A starter example with all elements and components used in Pico
+- **[Preview](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-preview)**  
+  A starter example with most of the Pico components and styles.
 
-- **[Right-to-left (RTL) preview](https://picocss.com/examples/preview-rtl/)**  
-A starter example in Arabic with all the elements and components used in Pico
+- **[Right-to-left (RTL) preview](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-preview-rtl)**  
+  A starter example in Arabic with most of the Pico components and styles.
 
-- **[Class-less](https://picocss.com/examples/classless/)**  
-  Just a pure semantic HTML markup, without `.classes`
+- **[Classless](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-classless)**  
+  A pure semantic HTML markup, without `.classes`.
 
-- **[Basic template](https://picocss.com/examples/basic-template/)**  
-  A basic custom template for Pico using only CSS custom properties (variables)
+- **[Basic template](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-basic-template)**  
+  A basic custom template for Pico using only CSS custom properties (variables).
 
-- **[Company](https://picocss.com/examples/company/)**  
-  A classic company or blog layout with a sidebar
+- **[Company](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-company)**  
+  A classic company or blog layout with a sidebar.
 
-- **[Google Amp](https://picocss.com/examples/google-amp/)**   
-  A simple layout for Google Amp, with inlined CSS
+- **[Google Amp](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-google-amp)**   
+  A simple layout for Google Amp, with inlined CSS.
 
-- **[Sign in](https://picocss.com/examples/sign-in/)**  
-  A minimalist layout for Login pages
+- **[Sign in](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-sign-in)**  
+A minimalist layout for Login pages.
 
-- **[Pico + Bootstrap grid system](https://picocss.com/examples/bootstrap-grid/)**  
-  Custom CSS build with the Bootstrap grid system to manage complex grid layouts in Pico
+- **[Pico + Bootstrap grid system](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-bootstrap-grid)**  
+  Custom CSS build with the Bootstrap grid system to manage complex grid layouts in Pico.
 
 All examples are open-sourced in [picocss/examples](https://github.com/picocss/examples).
 
