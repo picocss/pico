@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/picocss/pico.git"
   },
+  "publishConfig": {
+    "tag": "next"
+  },
   "keywords": [
     "css",
     "css-framework",
