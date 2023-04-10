@@ -71,6 +71,17 @@
       #{$✨}form-label-font-weight: var(#{$✨}font-weight);
     }
 
+    // Group (role="group")
+    @if map.get($modules, "components/group") {
+      #{$✨}group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+      #{$✨}group-box-shadow-focus-with-button: 0
+        0
+        0
+        var(#{$✨}outline-width)
+        var(#{$✨}primary-focus);
+      #{$✨}group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(#{$✨}form-element-border-color);
+    }
+
     // Modal (<dialog>)
     @if map.get($modules, "components/modal") {
       #{$✨}modal-overlay-backdrop-filter: blur(0.375rem);
@@ -382,14 +393,6 @@
 
     [role="search"],
     [role="group"] {
-      #{$✨}group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-      #{$✨}group-box-shadow-focus-with-button: 0
-        0
-        0
-        var(#{$✨}outline-width)
-        var(#{$✨}primary-focus);
-      #{$✨}group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(#{$✨}form-element-border-color);
-
       @if $enable-classes {
         &:has(
             button.secondary:focus,

@@ -24,6 +24,9 @@
   --pico-grid-row-gap: var(--pico-spacing);
   --pico-form-element-spacing-vertical: 0.75rem;
   --pico-form-element-spacing-horizontal: 1rem;
+  --pico-group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --pico-group-box-shadow-focus-with-button: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
+  --pico-group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(--pico-form-element-border-color);
   --pico-modal-overlay-backdrop-filter: blur(0.375rem);
   --pico-nav-element-spacing-vertical: 1rem;
   --pico-nav-element-spacing-horizontal: 0.5rem;
@@ -264,12 +267,6 @@ nav details.dropdown summary:focus-visible {
   --pico-border-radius: 5rem;
 }
 
-[role=search],
-[role=group] {
-  --pico-group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  --pico-group-box-shadow-focus-with-button: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
-  --pico-group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(--pico-form-element-border-color);
-}
 [role=search]:has(button.secondary:focus,
 [type=submit].secondary:focus,
 [type=button].secondary:focus,
