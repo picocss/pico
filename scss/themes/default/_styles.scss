@@ -10,9 +10,13 @@
 
   :root {
     // Typography
-    #{$✨}font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell",
-      "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    #{$✨}font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
       "Noto Color Emoji";
+    #{$✨}font-family-sans-serif: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+      var(#{$✨}font-family-emoji);
+    #{$✨}font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+      "Liberation Mono", monospace, var(#{$✨}font-family-emoji);
+    #{$✨}font-family: var(#{$✨}font-family-sans-serif);
     #{$✨}line-height: 1.5;
     #{$✨}font-weight: 400;
     #{$✨}font-size: 100%;
@@ -330,9 +334,7 @@
     code,
     kbd,
     samp {
-      #{$✨}font-family: "Menlo", "Consolas", "Roboto Mono", "Ubuntu Monospace", "Noto Mono",
-        "Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji",
-        "Segoe UI Symbol", "Noto Color Emoji";
+      #{$✨}font-family: var(#{$✨}font-family-monospace);
     }
 
     kbd {
