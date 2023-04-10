@@ -1,5 +1,5 @@
 <p align="center" style="padding: 1rem;">
-  <a href="https://picocss.com/">
+  <a href="https://v2.picocss.com/">
     <img src=".github/logo.svg" width="auto" height="60">
   </a>
 </p>
