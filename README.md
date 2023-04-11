@@ -46,7 +46,7 @@ There are 4 ways to get started with pico.css:
 
 **Install manually**
 
-[Download Pico](https://github.com/picocss/pico/archive/refs/heads/master.zip) and link `/css/pico.min.css` in the `<head>` of your website.
+[Download Pico](https://github.com/picocss/pico/archive/refs/heads/v2.zip) and link `/css/pico.min.css` in the `<head>` of your website.
 
 ```html
 <link rel="stylesheet" href="css/pico.min.css" />
@@ -54,7 +54,7 @@ There are 4 ways to get started with pico.css:
 
 **Install from CDN**
 
-Alternatively, you can use [unpkg CDN](https://unpkg.com/@picocss/pico@latest/) to link pico.css.
+Alternatively, you can use [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@picocss/pico) to link pico.css.
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
@@ -107,7 +107,7 @@ Then just write pure HTML, and it should look great:
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/@picocss/pico@latest/css/pico.classless.min.css"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
     />
     <title>Hello, world!</title>
   </head>
