@@ -71,6 +71,20 @@ input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
   text-align: right;
 }
 
+// Calendar icons are hidden in Firefox
+@if $enable-important {
+  @-moz-document url-prefix() {
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="time"],
+    [type="week"] {
+      padding-right: var(--form-element-spacing-horizontal) !important;
+      background-image: none !important;
+    }
+  }
+}
+
 // File
 [type="file"] {
   --color: var(--muted-color);

@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS v1.5.9 (https://picocss.com)
+ * Pico CSS v1.5.10 (https://picocss.com)
  * Copyright 2019-2023 - Licensed under MIT
  */
 /**
@@ -1462,6 +1462,16 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   text-align: right;
 }
 
+@-moz-document url-prefix() {
+  [type=date],
+  [type=datetime-local],
+  [type=month],
+  [type=time],
+  [type=week] {
+    padding-right: var(--form-element-spacing-horizontal) !important;
+    background-image: none !important;
+  }
+}
 [type=file] {
   --color: var(--muted-color);
   padding: calc(var(--form-element-spacing-vertical) * 0.5) 0;
@@ -2366,7 +2376,7 @@ label > details[role=list] {
   cursor: progress;
 }
 
-[aria-busy=true]:not(input, select, textarea)::before {
+[aria-busy=true]:not(input, select, textarea, html)::before {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2379,7 +2389,7 @@ label > details[role=list] {
   animation: spinner 0.75s linear infinite;
   opacity: var(--loading-spinner-opacity);
 }
-[aria-busy=true]:not(input, select, textarea):not(:empty)::before {
+[aria-busy=true]:not(input, select, textarea, html):not(:empty)::before {
   margin-right: calc(var(--spacing) * 0.5);
   margin-left: 0;
   -webkit-margin-start: 0;
@@ -2387,7 +2397,7 @@ label > details[role=list] {
   -webkit-margin-end: calc(var(--spacing) * 0.5);
   margin-inline-end: calc(var(--spacing) * 0.5);
 }
-[aria-busy=true]:not(input, select, textarea):empty {
+[aria-busy=true]:not(input, select, textarea, html):empty {
   text-align: center;
 }
 
