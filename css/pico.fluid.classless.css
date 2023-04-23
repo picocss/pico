@@ -1610,6 +1610,16 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   opacity: 0;
 }
 
+@-moz-document url-prefix() {
+  [type=date],
+  [type=datetime-local],
+  [type=month],
+  [type=time],
+  [type=week] {
+    padding-right: var(--pico-form-element-spacing-horizontal) !important;
+    background-image: none !important;
+  }
+}
 [dir=rtl] :is([type=date], [type=datetime-local], [type=month], [type=time], [type=week]) {
   text-align: right;
 }

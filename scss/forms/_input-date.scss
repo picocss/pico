@@ -38,6 +38,20 @@
     }
   }
 
+  // Calendar icons are hidden in Firefox
+  @if $enable-important {
+    @-moz-document url-prefix() {
+      [type="date"],
+      [type="datetime-local"],
+      [type="month"],
+      [type="time"],
+      [type="week"] {
+        padding-right: var(#{$✨}form-element-spacing-horizontal) !important;
+        background-image: none !important;
+      }
+    }
+  }
+
   [dir="rtl"]
     :is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
     text-align: right;
