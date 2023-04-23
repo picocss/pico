@@ -1987,7 +1987,7 @@ form[role=search], form[role=group] {
 /**
  * Loading ([aria-busy=true])
  */
-[aria-busy=true]:not(input, select, textarea)::before {
+[aria-busy=true]:not(input, select, textarea, html)::before {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1997,11 +1997,11 @@ form[role=search], form[role=group] {
   content: "";
   vertical-align: -0.125em;
 }
-[aria-busy=true]:not(input, select, textarea):not(:empty)::before {
+[aria-busy=true]:not(input, select, textarea, html):not(:empty)::before {
   -webkit-margin-end: calc(var(--pico-spacing) * 0.5);
   margin-inline-end: calc(var(--pico-spacing) * 0.5);
 }
-[aria-busy=true]:not(input, select, textarea):empty {
+[aria-busy=true]:not(input, select, textarea, html):empty {
   text-align: center;
 }
 
