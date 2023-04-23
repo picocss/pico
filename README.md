@@ -57,7 +57,7 @@ There are 4 ways to get started with pico.css:
 Alternatively, you can use [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@picocss/pico) to link pico.css.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.min.css" />
 ```
 
 **Install with NPM**
@@ -85,7 +85,7 @@ In this version, `header`, `main` and `footer` act as containers.
 Use the default `.classless` version if you need centered viewports:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.classless.min.css" />
 ```
 
 Or use the `.fluid.classless` version if you need a fluid container:
@@ -93,7 +93,7 @@ Or use the `.fluid.classless` version if you need a fluid container:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.min.css"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.fluid.classless.min.css"
 />
 ```
 
@@ -107,7 +107,7 @@ Then just write pure HTML, and it should look great:
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.classless.min.css"
     />
     <title>Hello, world!</title>
   </head>
