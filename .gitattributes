@@ -1,0 +1,7 @@
+/.github          export-ignore
+/docs             export-ignore
+/scss             export-ignore
+package.json      export-ignore
+package-lock.json export-ignore
+yarn.lock         export-ignore
+README.md         export-ignore
