@@ -1865,11 +1865,11 @@ nav ul {
 }
 nav ol:first-of-type,
 nav ul:first-of-type {
-  margin-left: calc(var(--nav-element-spacing-horizontal) * -1);
+  margin-left: max(var(--nav-element-spacing-horizontal), -1 * var(--nav-element-spacing-horizontal));
 }
 nav ol:last-of-type,
 nav ul:last-of-type {
-  margin-right: calc(var(--nav-element-spacing-horizontal) * -1);
+  margin-right: max(var(--nav-element-spacing-horizontal), -1 * var(--nav-element-spacing-horizontal));
 }
 nav li {
   display: inline-block;
@@ -1881,7 +1881,7 @@ nav li > * {
 }
 nav :where(a, [role=link]) {
   display: inline-block;
-  margin: calc(var(--nav-link-spacing-vertical) * -1) calc(var(--nav-link-spacing-horizontal) * -1);
+  margin: max(var(--nav-element-spacing-vertical), -1 * var(--nav-element-spacing-vertical)) max(var(--nav-element-spacing-horizontal), -1 * var(--nav-element-spacing-horizontal));
   padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
   border-radius: var(--border-radius);
   text-decoration: none;
