@@ -7,9 +7,12 @@
  * Styles
  */
 :root {
-  --pico-font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --pico-font-family-sans-serif: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, var(--pico-font-family-emoji);
-  --pico-font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--pico-font-family-emoji);
+  --pico-font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --pico-font-family-sans-serif: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    var(--pico-font-family-emoji);
+  --pico-font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace, var(--pico-font-family-emoji);
   --pico-font-family: var(--pico-font-family-sans-serif);
   --pico-line-height: 1.5;
   --pico-font-weight: 400;
@@ -28,7 +31,8 @@
   --pico-form-element-spacing-vertical: 0.75rem;
   --pico-form-element-spacing-horizontal: 1rem;
   --pico-group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-  --pico-group-box-shadow-focus-with-button: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
+  --pico-group-box-shadow-focus-with-button: 0 0 0 var(--pico-outline-width)
+    var(--pico-primary-focus);
   --pico-group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(--pico-form-element-border-color);
   --pico-modal-overlay-backdrop-filter: blur(0.375rem);
   --pico-nav-element-spacing-vertical: 1rem;
@@ -70,10 +74,17 @@
     --pico-font-size: 131.25%;
   }
 }
-:root details summary[role=button]:not(.outline)::after {
+:root details summary[role="button"]:not(.outline)::after {
   filter: brightness(0) invert(1);
 }
-:root [aria-busy=true]:not(input, select, textarea):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
+:root
+  [aria-busy="true"]:not(input, select, textarea):is(
+    button,
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [role="button"]
+  ):not(.outline)::before {
   filter: brightness(0) invert(1);
 }
 
@@ -164,7 +175,8 @@ dialog > article {
 a {
   --pico-text-decoration: underline;
 }
-a.secondary, a.contrast {
+a.secondary,
+a.contrast {
   --pico-text-decoration: underline;
 }
 
@@ -235,30 +247,32 @@ kbd {
   --pico-font-weight: bolder;
 }
 
-input:not([type=submit],
-[type=button],
-[type=reset],
-[type=checkbox],
-[type=radio],
-[type=file]),
+input:not(
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [type="checkbox"],
+    [type="radio"],
+    [type="file"]
+  ),
 :where(select, textarea) {
   --pico-outline-width: 0.0625rem;
 }
 
-[type=search] {
+[type="search"] {
   --pico-border-radius: 5rem;
 }
 
-[type=checkbox],
-[type=radio] {
+[type="checkbox"],
+[type="radio"] {
   --pico-border-width: 0.125rem;
 }
 
-[type=checkbox][role=switch] {
+[type="checkbox"][role="switch"] {
   --pico-border-width: 0.1875rem;
 }
 
-details.dropdown summary:not([role=button]) {
+details.dropdown summary:not([role="button"]) {
   --pico-outline-width: 0.0625rem;
 }
 
@@ -266,46 +280,56 @@ nav details.dropdown summary:focus-visible {
   --pico-outline-width: 0.1875rem;
 }
 
-[role=search] {
+[role="search"] {
   --pico-border-radius: 5rem;
 }
 
-[role=search]:has(button.secondary:focus,
-[type=submit].secondary:focus,
-[type=button].secondary:focus,
-[role=button].secondary:focus),
-[role=group]:has(button.secondary:focus,
-[type=submit].secondary:focus,
-[type=button].secondary:focus,
-[role=button].secondary:focus) {
-  --pico-group-box-shadow-focus-with-button: 0 0 0 var(--pico-outline-width) var(--pico-secondary-focus);
+[role="search"]:has(
+    button.secondary:focus,
+    [type="submit"].secondary:focus,
+    [type="button"].secondary:focus,
+    [role="button"].secondary:focus
+  ),
+[role="group"]:has(
+    button.secondary:focus,
+    [type="submit"].secondary:focus,
+    [type="button"].secondary:focus,
+    [role="button"].secondary:focus
+  ) {
+  --pico-group-box-shadow-focus-with-button: 0 0 0 var(--pico-outline-width)
+    var(--pico-secondary-focus);
 }
-[role=search]:has(button.contrast:focus,
-[type=submit].contrast:focus,
-[type=button].contrast:focus,
-[role=button].contrast:focus),
-[role=group]:has(button.contrast:focus,
-[type=submit].contrast:focus,
-[type=button].contrast:focus,
-[role=button].contrast:focus) {
-  --pico-group-box-shadow-focus-with-button: 0 0 0 var(--pico-outline-width) var(--pico-contrast-focus);
+[role="search"]:has(
+    button.contrast:focus,
+    [type="submit"].contrast:focus,
+    [type="button"].contrast:focus,
+    [role="button"].contrast:focus
+  ),
+[role="group"]:has(
+    button.contrast:focus,
+    [type="submit"].contrast:focus,
+    [type="button"].contrast:focus,
+    [role="button"].contrast:focus
+  ) {
+  --pico-group-box-shadow-focus-with-button: 0 0 0 var(--pico-outline-width)
+    var(--pico-contrast-focus);
 }
-[role=search] button,
-[role=search] [type=submit],
-[role=search] [type=button],
-[role=search] [role=button],
-[role=group] button,
-[role=group] [type=submit],
-[role=group] [type=button],
-[role=group] [role=button] {
+[role="search"] button,
+[role="search"] [type="submit"],
+[role="search"] [type="button"],
+[role="search"] [role="button"],
+[role="group"] button,
+[role="group"] [type="submit"],
+[role="group"] [type="button"],
+[role="group"] [role="button"] {
   --pico-form-element-spacing-horizontal: 2rem;
 }
 
 /**
  * Color schemes
  */
-[data-theme=light],
-:root:not([data-theme=dark]) {
+[data-theme="light"],
+:root:not([data-theme="dark"]) {
   --pico-background-color: #fff;
   --pico-color: #373c44;
   --pico-text-selection-color: rgba(2, 154, 232, 0.25);
@@ -341,7 +365,12 @@ nav details.dropdown summary:focus-visible {
   --pico-contrast-hover-underline: var(--pico-secondary-hover);
   --pico-contrast-focus: rgba(93, 107, 137, 0.25);
   --pico-contrast-inverse: #fff;
-  --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(104, 120, 153, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(104, 120, 153, 0.024), 0.0625rem 0.125rem 0.75rem rgba(104, 120, 153, 0.03), 0.1125rem 0.225rem 1.35rem rgba(104, 120, 153, 0.036), 0.2085rem 0.417rem 2.502rem rgba(104, 120, 153, 0.04302), 0.5rem 1rem 6rem rgba(104, 120, 153, 0.06), 0 0 0 0.0625rem rgba(104, 120, 153, 0.015);
+  --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(104, 120, 153, 0.01698),
+    0.0335rem 0.067rem 0.402rem rgba(104, 120, 153, 0.024),
+    0.0625rem 0.125rem 0.75rem rgba(104, 120, 153, 0.03),
+    0.1125rem 0.225rem 1.35rem rgba(104, 120, 153, 0.036),
+    0.2085rem 0.417rem 2.502rem rgba(104, 120, 153, 0.04302),
+    0.5rem 1rem 6rem rgba(104, 120, 153, 0.06), 0 0 0 0.0625rem rgba(104, 120, 153, 0.015);
   --pico-h1-color: #2d3138;
   --pico-h2-color: #373c44;
   --pico-h3-color: #424751;
@@ -410,18 +439,24 @@ nav details.dropdown summary:focus-visible {
   --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(136, 57, 53)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
   color-scheme: light;
 }
-[data-theme=light] input:is([type=submit],
-[type=button],
-[type=reset],
-[type=checkbox],
-[type=radio],
-[type=file]),
-:root:not([data-theme=dark]) input:is([type=submit],
-[type=button],
-[type=reset],
-[type=checkbox],
-[type=radio],
-[type=file]) {
+[data-theme="light"]
+  input:is(
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [type="checkbox"],
+    [type="radio"],
+    [type="file"]
+  ),
+:root:not([data-theme="dark"])
+  input:is(
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [type="checkbox"],
+    [type="radio"],
+    [type="file"]
+  ) {
   --pico-form-element-focus-color: var(--pico-primary-focus);
 }
 
@@ -462,7 +497,12 @@ nav details.dropdown summary:focus-visible {
     --pico-contrast-hover-underline: var(--pico-contrast-hover);
     --pico-contrast-focus: rgba(207, 213, 226, 0.25);
     --pico-contrast-inverse: #000;
-    --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(0, 0, 0, 0.024), 0.0625rem 0.125rem 0.75rem rgba(0, 0, 0, 0.03), 0.1125rem 0.225rem 1.35rem rgba(0, 0, 0, 0.036), 0.2085rem 0.417rem 2.502rem rgba(0, 0, 0, 0.04302), 0.5rem 1rem 6rem rgba(0, 0, 0, 0.06), 0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
+    --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
+      0.0335rem 0.067rem 0.402rem rgba(0, 0, 0, 0.024),
+      0.0625rem 0.125rem 0.75rem rgba(0, 0, 0, 0.03),
+      0.1125rem 0.225rem 1.35rem rgba(0, 0, 0, 0.036),
+      0.2085rem 0.417rem 2.502rem rgba(0, 0, 0, 0.04302), 0.5rem 1rem 6rem rgba(0, 0, 0, 0.06),
+      0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
     --pico-h1-color: #f0f1f3;
     --pico-h2-color: #e0e3e7;
     --pico-h3-color: #c2c7d0;
@@ -531,26 +571,32 @@ nav details.dropdown summary:focus-visible {
     --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(206, 126, 123)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
     color-scheme: dark;
   }
-  :root:not([data-theme]) input:is([type=submit],
-  [type=button],
-  [type=reset],
-  [type=checkbox],
-  [type=radio],
-  [type=file]) {
+  :root:not([data-theme])
+    input:is(
+      [type="submit"],
+      [type="button"],
+      [type="reset"],
+      [type="checkbox"],
+      [type="radio"],
+      [type="file"]
+    ) {
     --pico-form-element-focus-color: var(--pico-primary-focus);
   }
-  :root:not([data-theme]) details summary[role=button].contrast:not(.outline)::after {
+  :root:not([data-theme]) details summary[role="button"].contrast:not(.outline)::after {
     filter: brightness(0);
   }
-  :root:not([data-theme]) [aria-busy=true]:not(input, select, textarea).contrast:is(button,
-  [type=submit],
-  [type=button],
-  [type=reset],
-  [role=button]):not(.outline)::before {
+  :root:not([data-theme])
+    [aria-busy="true"]:not(input, select, textarea).contrast:is(
+      button,
+      [type="submit"],
+      [type="button"],
+      [type="reset"],
+      [role="button"]
+    ):not(.outline)::before {
     filter: brightness(0);
   }
 }
-[data-theme=dark] {
+[data-theme="dark"] {
   --pico-background-color: #13171f;
   --pico-color: #c2c7d0;
   --pico-text-selection-color: rgba(1, 170, 255, 0.1875);
@@ -586,7 +632,11 @@ nav details.dropdown summary:focus-visible {
   --pico-contrast-hover-underline: var(--pico-contrast-hover);
   --pico-contrast-focus: rgba(207, 213, 226, 0.25);
   --pico-contrast-inverse: #000;
-  --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(0, 0, 0, 0.024), 0.0625rem 0.125rem 0.75rem rgba(0, 0, 0, 0.03), 0.1125rem 0.225rem 1.35rem rgba(0, 0, 0, 0.036), 0.2085rem 0.417rem 2.502rem rgba(0, 0, 0, 0.04302), 0.5rem 1rem 6rem rgba(0, 0, 0, 0.06), 0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
+  --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
+    0.0335rem 0.067rem 0.402rem rgba(0, 0, 0, 0.024), 0.0625rem 0.125rem 0.75rem rgba(0, 0, 0, 0.03),
+    0.1125rem 0.225rem 1.35rem rgba(0, 0, 0, 0.036),
+    0.2085rem 0.417rem 2.502rem rgba(0, 0, 0, 0.04302), 0.5rem 1rem 6rem rgba(0, 0, 0, 0.06),
+    0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
   --pico-h1-color: #f0f1f3;
   --pico-h2-color: #e0e3e7;
   --pico-h3-color: #c2c7d0;
@@ -655,29 +705,35 @@ nav details.dropdown summary:focus-visible {
   --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(206, 126, 123)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
   color-scheme: dark;
 }
-[data-theme=dark] input:is([type=submit],
-[type=button],
-[type=reset],
-[type=checkbox],
-[type=radio],
-[type=file]) {
+[data-theme="dark"]
+  input:is(
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [type="checkbox"],
+    [type="radio"],
+    [type="file"]
+  ) {
   --pico-form-element-focus-color: var(--pico-primary-focus);
 }
-[data-theme=dark] details summary[role=button].contrast:not(.outline)::after {
+[data-theme="dark"] details summary[role="button"].contrast:not(.outline)::after {
   filter: brightness(0);
 }
-[data-theme=dark] [aria-busy=true]:not(input, select, textarea).contrast:is(button,
-[type=submit],
-[type=button],
-[type=reset],
-[role=button]):not(.outline)::before {
+[data-theme="dark"]
+  [aria-busy="true"]:not(input, select, textarea).contrast:is(
+    button,
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [role="button"]
+  ):not(.outline)::before {
   filter: brightness(0);
 }
 
 progress,
-[type=checkbox],
-[type=radio],
-[type=range] {
+[type="checkbox"],
+[type="radio"],
+[type="range"] {
   accent-color: var(--pico-primary);
 }
 
@@ -821,7 +877,7 @@ figure figcaption {
  * Link
  */
 a,
-[role=link] {
+[role="link"] {
   --pico-color: var(--pico-primary);
   --pico-background-color: transparent;
   --pico-underline: var(--pico-primary-underline);
@@ -832,42 +888,46 @@ a,
   text-decoration: var(--pico-text-decoration);
   text-decoration-color: var(--pico-underline);
   text-underline-offset: 0.125em;
-  transition: background-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition), -webkit-text-decoration var(--pico-transition);
-  transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition);
-  transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition), -webkit-text-decoration var(--pico-transition);
+  transition: background-color var(--pico-transition), color var(--pico-transition),
+    box-shadow var(--pico-transition), -webkit-text-decoration var(--pico-transition);
+  transition: background-color var(--pico-transition), color var(--pico-transition),
+    text-decoration var(--pico-transition), box-shadow var(--pico-transition);
+  transition: background-color var(--pico-transition), color var(--pico-transition),
+    text-decoration var(--pico-transition), box-shadow var(--pico-transition),
+    -webkit-text-decoration var(--pico-transition);
 }
-a:is([aria-current], :hover, :active, :focus),
-[role=link]:is([aria-current], :hover, :active, :focus) {
+a:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus),
+[role="link"]:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
   --pico-color: var(--pico-primary-hover);
   --pico-underline: var(--pico-primary-hover-underline);
   --pico-text-decoration: underline;
 }
 a:focus-visible,
-[role=link]:focus-visible {
+[role="link"]:focus-visible {
   box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
 }
 a.secondary,
-[role=link].secondary {
+[role="link"].secondary {
   --pico-color: var(--pico-secondary);
   --pico-underline: var(--pico-secondary-underline);
 }
-a.secondary:is([aria-current], :hover, :active, :focus),
-[role=link].secondary:is([aria-current], :hover, :active, :focus) {
+a.secondary:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus),
+[role="link"].secondary:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
   --pico-color: var(--pico-secondary-hover);
   --pico-underline: var(--pico-secondary-hover-underline);
 }
 a.contrast,
-[role=link].contrast {
+[role="link"].contrast {
   --pico-color: var(--pico-contrast);
   --pico-underline: var(--pico-contrast-underline);
 }
-a.contrast:is([aria-current], :hover, :active, :focus),
-[role=link].contrast:is([aria-current], :hover, :active, :focus) {
+a.contrast:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus),
+[role="link"].contrast:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
   --pico-color: var(--pico-contrast-hover);
   --pico-underline: var(--pico-contrast-hover-underline);
 }
 
-a[role=button] {
+a[role="button"] {
   display: inline-block;
 }
 
@@ -949,7 +1009,8 @@ h6 {
   --pico-color: var(--pico-h6-color);
 }
 
-:where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) ~ :is(h1, h2, h3, h4, h5, h6) {
+:where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul)
+  ~ :is(h1, h2, h3, h4, h5, h6) {
   margin-top: var(--pico-typography-spacing-top);
 }
 
@@ -1076,18 +1137,18 @@ button {
 }
 
 button,
-[type=submit],
-[type=reset],
-[type=button] {
+[type="submit"],
+[type="reset"],
+[type="button"] {
   -webkit-appearance: button;
 }
 
 button,
-[type=submit],
-[type=reset],
-[type=button],
-[type=file]::file-selector-button,
-[role=button] {
+[type="submit"],
+[type="reset"],
+[type="button"],
+[type="file"]::file-selector-button,
+[role="button"] {
   --pico-background-color: var(--pico-primary-background);
   --pico-border-color: var(--pico-primary-border);
   --pico-color: var(--pico-primary-inverse);
@@ -1108,100 +1169,140 @@ button,
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  transition: background-color var(--pico-transition), border-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition);
+  transition: background-color var(--pico-transition), border-color var(--pico-transition),
+    color var(--pico-transition), box-shadow var(--pico-transition);
 }
-button:is([aria-current], :hover, :active, :focus),
-[type=submit]:is([aria-current], :hover, :active, :focus),
-[type=reset]:is([aria-current], :hover, :active, :focus),
-[type=button]:is([aria-current], :hover, :active, :focus),
-[type=file]::file-selector-button:is([aria-current], :hover, :active, :focus),
-[role=button]:is([aria-current], :hover, :active, :focus) {
+button:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus),
+[type="submit"]:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus),
+[type="reset"]:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus),
+[type="button"]:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus),
+[type="file"]::file-selector-button:is(
+    [aria-current]:not([aria-current="false"]),
+    :hover,
+    :active,
+    :focus
+  ),
+[role="button"]:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
   --pico-background-color: var(--pico-primary-hover-background);
   --pico-border-color: var(--pico-primary-hover-border);
   --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
   --pico-color: var(--pico-primary-inverse);
 }
 button:focus,
-[type=submit]:focus,
-[type=reset]:focus,
-[type=button]:focus,
-[type=file]::file-selector-button:focus,
-[role=button]:focus {
-  --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
+[type="submit"]:focus,
+[type="reset"]:focus,
+[type="button"]:focus,
+[type="file"]::file-selector-button:focus,
+[role="button"]:focus {
+  --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+    0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
 }
 
-[type=submit],
-[type=reset],
-[type=button] {
+[type="submit"],
+[type="reset"],
+[type="button"] {
   margin-bottom: var(--pico-spacing);
 }
 
-:is(button, [type=submit], [type=button], [role=button]).secondary,
-[type=reset],
-[type=file]::file-selector-button {
+:is(button, [type="submit"], [type="button"], [role="button"]).secondary,
+[type="reset"],
+[type="file"]::file-selector-button {
   --pico-background-color: var(--pico-secondary-background);
   --pico-border-color: var(--pico-secondary-border);
   --pico-color: var(--pico-secondary-inverse);
   cursor: pointer;
 }
-:is(button, [type=submit], [type=button], [role=button]).secondary:is([aria-current], :hover, :active, :focus),
-[type=reset]:is([aria-current], :hover, :active, :focus),
-[type=file]::file-selector-button:is([aria-current], :hover, :active, :focus) {
+:is(button, [type="submit"], [type="button"], [role="button"]).secondary:is(
+    [aria-current]:not([aria-current="false"]),
+    :hover,
+    :active,
+    :focus
+  ),
+[type="reset"]:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus),
+[type="file"]::file-selector-button:is(
+    [aria-current]:not([aria-current="false"]),
+    :hover,
+    :active,
+    :focus
+  ) {
   --pico-background-color: var(--pico-secondary-hover-background);
   --pico-border-color: var(--pico-secondary-hover-border);
   --pico-color: var(--pico-secondary-inverse);
 }
-:is(button, [type=submit], [type=button], [role=button]).secondary:focus,
-[type=reset]:focus,
-[type=file]::file-selector-button:focus {
-  --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pico-outline-width) var(--pico-secondary-focus);
+:is(button, [type="submit"], [type="button"], [role="button"]).secondary:focus,
+[type="reset"]:focus,
+[type="file"]::file-selector-button:focus {
+  --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+    0 0 0 var(--pico-outline-width) var(--pico-secondary-focus);
 }
 
-:is(button, [type=submit], [type=button], [role=button]).contrast {
+:is(button, [type="submit"], [type="button"], [role="button"]).contrast {
   --pico-background-color: var(--pico-contrast-background);
   --pico-border-color: var(--pico-contrast-border);
   --pico-color: var(--pico-contrast-inverse);
 }
-:is(button, [type=submit], [type=button], [role=button]).contrast:is([aria-current], :hover, :active, :focus) {
+:is(button, [type="submit"], [type="button"], [role="button"]).contrast:is(
+    [aria-current]:not([aria-current="false"]),
+    :hover,
+    :active,
+    :focus
+  ) {
   --pico-background-color: var(--pico-contrast-hover-background);
   --pico-border-color: var(--pico-contrast-hover-border);
   --pico-color: var(--pico-contrast-inverse);
 }
-:is(button, [type=submit], [type=button], [role=button]).contrast:focus {
-  --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pico-outline-width) var(--pico-contrast-focus);
+:is(button, [type="submit"], [type="button"], [role="button"]).contrast:focus {
+  --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+    0 0 0 var(--pico-outline-width) var(--pico-contrast-focus);
 }
 
-:is(button, [type=submit], [type=button], [role=button]).outline,
-[type=reset].outline {
+:is(button, [type="submit"], [type="button"], [role="button"]).outline,
+[type="reset"].outline {
   --pico-background-color: transparent;
   --pico-color: var(--pico-primary);
   --pico-border-color: currentColor;
 }
-:is(button, [type=submit], [type=button], [role=button]).outline:is([aria-current], :hover, :active, :focus),
-[type=reset].outline:is([aria-current], :hover, :active, :focus) {
+:is(button, [type="submit"], [type="button"], [role="button"]).outline:is(
+    [aria-current]:not([aria-current="false"]),
+    :hover,
+    :active,
+    :focus
+  ),
+[type="reset"].outline:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
   --pico-background-color: transparent;
   --pico-color: var(--pico-primary-hover);
 }
 
-:is(button, [type=submit], [type=button], [role=button]).outline.secondary,
-[type=reset].outline {
+:is(button, [type="submit"], [type="button"], [role="button"]).outline.secondary,
+[type="reset"].outline {
   --pico-color: var(--pico-secondary);
   --pico-border-color: currentColor;
 }
-:is(button, [type=submit], [type=button], [role=button]).outline.secondary:is([aria-current], :hover, :active, :focus),
-[type=reset].outline:is([aria-current], :hover, :active, :focus) {
+:is(button, [type="submit"], [type="button"], [role="button"]).outline.secondary:is(
+    [aria-current]:not([aria-current="false"]),
+    :hover,
+    :active,
+    :focus
+  ),
+[type="reset"].outline:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
   --pico-color: var(--pico-secondary-hover);
 }
 
-:is(button, [type=submit], [type=button], [role=button]).outline.contrast {
+:is(button, [type="submit"], [type="button"], [role="button"]).outline.contrast {
   --pico-color: var(--pico-contrast);
 }
-:is(button, [type=submit], [type=button], [role=button]).outline.contrast:is([aria-current], :hover, :active, :focus) {
+:is(button, [type="submit"], [type="button"], [role="button"]).outline.contrast:is(
+    [aria-current]:not([aria-current="false"]),
+    :hover,
+    :active,
+    :focus
+  ) {
   --pico-color: var(--pico-contrast-hover);
 }
 
-:where(button, [type=submit], [type=reset], [type=button], [role=button])[disabled],
-:where(fieldset[disabled]) :is(button, [type=submit], [type=button], [type=reset], [role=button]) {
+:where(button, [type="submit"], [type="reset"], [type="button"], [role="button"])[disabled],
+:where(fieldset[disabled])
+  :is(button, [type="submit"], [type="button"], [type="reset"], [role="button"]) {
   opacity: 0.5;
   pointer-events: none;
 }
@@ -1346,8 +1447,8 @@ textarea {
   overflow: auto;
 }
 
-[type=checkbox],
-[type=radio] {
+[type="checkbox"],
+[type="radio"] {
   padding: 0;
 }
 
@@ -1356,12 +1457,12 @@ textarea {
   height: auto;
 }
 
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield;
   outline-offset: -2px;
 }
 
-[type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -1387,14 +1488,17 @@ textarea {
   display: none;
 }
 
-[type=file],
-[type=range] {
+[type="file"],
+[type="range"] {
   padding: 0;
   border-width: 0;
 }
 
-input:not([type=checkbox], [type=radio], [type=range]) {
-  height: calc(1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 2 + var(--pico-border-width) * 2);
+input:not([type="checkbox"], [type="radio"], [type="range"]) {
+  height: calc(
+    1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 2 +
+      var(--pico-border-width) * 2
+  );
 }
 
 fieldset {
@@ -1415,13 +1519,13 @@ fieldset legend {
   margin-bottom: calc(var(--pico-spacing) * 0.5);
 }
 
-input:not([type=checkbox], [type=radio]),
+input:not([type="checkbox"], [type="radio"]),
 select,
 textarea {
   width: 100%;
 }
 
-input:not([type=checkbox], [type=radio], [type=range], [type=file]),
+input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
 select,
 textarea {
   -webkit-appearance: none;
@@ -1444,57 +1548,68 @@ textarea {
   box-shadow: var(--pico-box-shadow);
   color: var(--pico-color);
   font-weight: var(--pico-font-weight);
-  transition: background-color var(--pico-transition), border-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition);
+  transition: background-color var(--pico-transition), border-color var(--pico-transition),
+    color var(--pico-transition), box-shadow var(--pico-transition);
 }
 
-input:not([type=submit],
-[type=button],
-[type=reset],
-[type=checkbox],
-[type=radio],
-[readonly]):is(:active, :focus),
+input:not(
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [type="checkbox"],
+    [type="radio"],
+    [readonly]
+  ):is(:active, :focus),
 :where(select, textarea):is(:active, :focus) {
   --pico-background-color: var(--pico-form-element-active-background-color);
 }
 
-input:not([type=submit], [type=button], [type=reset], [role=switch], [readonly]):is(:active, :focus),
+input:not([type="submit"], [type="button"], [type="reset"], [role="switch"], [readonly]):is(
+    :active,
+    :focus
+  ),
 :where(select, textarea):is(:active, :focus) {
   --pico-border-color: var(--pico-form-element-active-border-color);
 }
 
-input:not([type=submit],
-[type=button],
-[type=reset],
-[type=range],
-[type=file],
-[readonly]):focus,
+input:not(
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [type="range"],
+    [type="file"],
+    [readonly]
+  ):focus,
 :where(select, textarea):focus {
   --pico-box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-form-element-focus-color);
 }
 
-input:not([type=submit], [type=button], [type=reset])[disabled],
+input:not([type="submit"], [type="button"], [type="reset"])[disabled],
 select[disabled],
 textarea[disabled],
-label[aria-disabled=true],
-:where(fieldset[disabled]) :is(input:not([type=submit], [type=button], [type=reset]), select, textarea) {
+label[aria-disabled="true"],
+:where(fieldset[disabled])
+  :is(input:not([type="submit"], [type="button"], [type="reset"]), select, textarea) {
   --pico-background-color: var(--pico-form-element-disabled-background-color);
   --pico-border-color: var(--pico-form-element-disabled-border-color);
   opacity: var(--pico-form-element-disabled-opacity);
   pointer-events: none;
 }
 
-label[aria-disabled=true] input[disabled] {
+label[aria-disabled="true"] input[disabled] {
   opacity: 1;
 }
 
-:where(input, select, textarea):not([type=checkbox],
-[type=radio],
-[type=date],
-[type=datetime-local],
-[type=month],
-[type=time],
-[type=week],
-[type=range])[aria-invalid] {
+:where(input, select, textarea):not(
+    [type="checkbox"],
+    [type="radio"],
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="time"],
+    [type="week"],
+    [type="range"]
+  )[aria-invalid] {
   padding-right: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem) !important;
   padding-left: var(--pico-form-element-spacing-horizontal);
   -webkit-padding-start: var(--pico-form-element-spacing-horizontal) !important;
@@ -1505,46 +1620,61 @@ label[aria-disabled=true] input[disabled] {
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
-:where(input, select, textarea):not([type=checkbox],
-[type=radio],
-[type=date],
-[type=datetime-local],
-[type=month],
-[type=time],
-[type=week],
-[type=range])[aria-invalid=false]:not(select) {
+:where(input, select, textarea):not(
+    [type="checkbox"],
+    [type="radio"],
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="time"],
+    [type="week"],
+    [type="range"]
+  )[aria-invalid="false"]:not(select) {
   background-image: var(--pico-icon-valid);
 }
-:where(input, select, textarea):not([type=checkbox],
-[type=radio],
-[type=date],
-[type=datetime-local],
-[type=month],
-[type=time],
-[type=week],
-[type=range])[aria-invalid=true]:not(select) {
+:where(input, select, textarea):not(
+    [type="checkbox"],
+    [type="radio"],
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="time"],
+    [type="week"],
+    [type="range"]
+  )[aria-invalid="true"]:not(select) {
   background-image: var(--pico-icon-invalid);
 }
-:where(input, select, textarea)[aria-invalid=false] {
+:where(input, select, textarea)[aria-invalid="false"] {
   --pico-border-color: var(--pico-form-element-valid-border-color);
 }
-:where(input, select, textarea)[aria-invalid=false]:is(:active, :focus) {
+:where(input, select, textarea)[aria-invalid="false"]:is(:active, :focus) {
   --pico-border-color: var(--pico-form-element-valid-active-border-color) !important;
 }
-:where(input, select, textarea)[aria-invalid=false]:is(:active, :focus):not([type=checkbox], [type=radio]) {
+:where(input, select, textarea)[aria-invalid="false"]:is(:active, :focus):not(
+    [type="checkbox"],
+    [type="radio"]
+  ) {
   --pico-box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-form-element-valid-focus-color) !important;
 }
-:where(input, select, textarea)[aria-invalid=true] {
+:where(input, select, textarea)[aria-invalid="true"] {
   --pico-border-color: var(--pico-form-element-invalid-border-color);
 }
-:where(input, select, textarea)[aria-invalid=true]:is(:active, :focus) {
+:where(input, select, textarea)[aria-invalid="true"]:is(:active, :focus) {
   --pico-border-color: var(--pico-form-element-invalid-active-border-color) !important;
 }
-:where(input, select, textarea)[aria-invalid=true]:is(:active, :focus):not([type=checkbox], [type=radio]) {
+:where(input, select, textarea)[aria-invalid="true"]:is(:active, :focus):not(
+    [type="checkbox"],
+    [type="radio"]
+  ) {
   --pico-box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-form-element-invalid-focus-color) !important;
 }
 
-[dir=rtl] :where(input, select, textarea):not([type=checkbox], [type=radio]):is([aria-invalid], [aria-invalid=true], [aria-invalid=false]) {
+[dir="rtl"]
+  :where(input, select, textarea):not([type="checkbox"], [type="radio"]):is(
+    [aria-invalid],
+    [aria-invalid="true"],
+    [aria-invalid="false"]
+  ) {
   background-position: center left 0.75rem;
 }
 
@@ -1557,7 +1687,7 @@ select:invalid {
   opacity: 1;
 }
 
-input:not([type=checkbox], [type=radio]),
+input:not([type="checkbox"], [type="radio"]),
 select,
 textarea {
   margin-bottom: var(--pico-spacing);
@@ -1583,7 +1713,7 @@ select[multiple] option:checked {
   background: var(--pico-form-element-selected-background-color);
 }
 
-[dir=rtl] select:not([multiple], [size]) {
+[dir="rtl"] select:not([multiple], [size]) {
   background-position: center left 0.75rem;
 }
 
@@ -1592,7 +1722,10 @@ textarea {
   resize: vertical;
 }
 textarea[aria-invalid] {
-  --pico-icon-height: calc(1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 2 + var(--pico-border-width) * 2);
+  --pico-icon-height: calc(
+    1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 2 +
+      var(--pico-border-width) * 2
+  );
   background-position: top right 0.75rem !important;
   background-size: 1rem var(--pico-icon-height) !important;
 }
@@ -1604,10 +1737,10 @@ textarea[aria-invalid] {
   margin-bottom: var(--pico-spacing);
   color: var(--pico-muted-color);
 }
-:where(input, select, textarea, .grid)[aria-invalid=false] + small {
+:where(input, select, textarea, .grid)[aria-invalid="false"] + small {
   color: var(--pico-ins-color);
 }
-:where(input, select, textarea, .grid)[aria-invalid=true] + small {
+:where(input, select, textarea, .grid)[aria-invalid="true"] + small {
   color: var(--pico-del-color);
 }
 
@@ -1618,14 +1751,14 @@ label > :where(input, select, textarea) {
 /**
  * Checkboxes, Radios and Switches
  */
-label:has([type=checkbox], [type=radio]) {
+label:has([type="checkbox"], [type="radio"]) {
   width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
 }
 
-[type=checkbox],
-[type=radio] {
+[type="checkbox"],
+[type="radio"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1638,14 +1771,16 @@ label:has([type=checkbox], [type=radio]) {
   vertical-align: middle;
   cursor: pointer;
 }
-[type=checkbox]::-ms-check,
-[type=radio]::-ms-check {
+[type="checkbox"]::-ms-check,
+[type="radio"]::-ms-check {
   display: none;
 }
-[type=checkbox]:checked, [type=checkbox]:checked:active, [type=checkbox]:checked:focus,
-[type=radio]:checked,
-[type=radio]:checked:active,
-[type=radio]:checked:focus {
+[type="checkbox"]:checked,
+[type="checkbox"]:checked:active,
+[type="checkbox"]:checked:focus,
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
   --pico-background-color: var(--pico-primary-background);
   --pico-border-color: var(--pico-primary-border);
   background-image: var(--pico-icon-checkbox);
@@ -1653,19 +1788,19 @@ label:has([type=checkbox], [type=radio]) {
   background-size: 0.75em auto;
   background-repeat: no-repeat;
 }
-[type=checkbox] ~ label,
-[type=radio] ~ label {
+[type="checkbox"] ~ label,
+[type="radio"] ~ label {
   display: inline-block;
   margin-bottom: 0;
   cursor: pointer;
 }
-[type=checkbox] ~ label:not(:last-of-type),
-[type=radio] ~ label:not(:last-of-type) {
+[type="checkbox"] ~ label:not(:last-of-type),
+[type="radio"] ~ label:not(:last-of-type) {
   -webkit-margin-end: 1em;
   margin-inline-end: 1em;
 }
 
-[type=checkbox]:indeterminate {
+[type="checkbox"]:indeterminate {
   --pico-background-color: var(--pico-primary-background);
   --pico-border-color: var(--pico-primary-border);
   background-image: var(--pico-icon-minus);
@@ -1674,16 +1809,18 @@ label:has([type=checkbox], [type=radio]) {
   background-repeat: no-repeat;
 }
 
-[type=radio] {
+[type="radio"] {
   border-radius: 50%;
 }
-[type=radio]:checked, [type=radio]:checked:active, [type=radio]:checked:focus {
+[type="radio"]:checked,
+[type="radio"]:checked:active,
+[type="radio"]:checked:focus {
   --pico-background-color: var(--pico-primary-inverse);
   border-width: 0.35em;
   background-image: none;
 }
 
-[type=checkbox][role=switch] {
+[type="checkbox"][role="switch"] {
   --pico-background-color: var(--pico-switch-background-color);
   --pico-color: var(--pico-switch-color);
   width: 2.25em;
@@ -1693,10 +1830,10 @@ label:has([type=checkbox], [type=radio]) {
   background-color: var(--pico-background-color);
   line-height: 1.25em;
 }
-[type=checkbox][role=switch]:not([aria-invalid]) {
+[type="checkbox"][role="switch"]:not([aria-invalid]) {
   --pico-border-color: var(--pico-switch-background-color);
 }
-[type=checkbox][role=switch]:before {
+[type="checkbox"][role="switch"]:before {
   display: block;
   width: calc(1.25em - (var(--pico-border-width) * 2));
   height: 100%;
@@ -1705,69 +1842,77 @@ label:has([type=checkbox], [type=radio]) {
   content: "";
   transition: margin 0.1s ease-in-out;
 }
-[type=checkbox][role=switch]:focus {
+[type="checkbox"][role="switch"]:focus {
   --pico-background-color: var(--pico-switch-background-color);
   --pico-border-color: var(--pico-switch-background-color);
 }
-[type=checkbox][role=switch]:checked {
+[type="checkbox"][role="switch"]:checked {
   --pico-background-color: var(--pico-switch-checked-background-color);
   --pico-border-color: var(--pico-switch-checked-background-color);
   background-image: none;
 }
-[type=checkbox][role=switch]:checked::before {
+[type="checkbox"][role="switch"]:checked::before {
   -webkit-margin-start: calc(1.125em - var(--pico-border-width));
   margin-inline-start: calc(1.125em - var(--pico-border-width));
 }
-[type=checkbox][role=switch][disabled] {
+[type="checkbox"][role="switch"][disabled] {
   --pico-background-color: var(--pico-border-color);
 }
 
-[type=checkbox][aria-invalid=false]:checked, [type=checkbox][aria-invalid=false]:checked:active, [type=checkbox][aria-invalid=false]:checked:focus,
-[type=checkbox][role=switch][aria-invalid=false]:checked,
-[type=checkbox][role=switch][aria-invalid=false]:checked:active,
-[type=checkbox][role=switch][aria-invalid=false]:checked:focus {
+[type="checkbox"][aria-invalid="false"]:checked,
+[type="checkbox"][aria-invalid="false"]:checked:active,
+[type="checkbox"][aria-invalid="false"]:checked:focus,
+[type="checkbox"][role="switch"][aria-invalid="false"]:checked,
+[type="checkbox"][role="switch"][aria-invalid="false"]:checked:active,
+[type="checkbox"][role="switch"][aria-invalid="false"]:checked:focus {
   --pico-background-color: var(--pico-form-element-valid-border-color);
 }
-[type=checkbox]:checked[aria-invalid=true], [type=checkbox]:checked:active[aria-invalid=true], [type=checkbox]:checked:focus[aria-invalid=true],
-[type=checkbox][role=switch]:checked[aria-invalid=true],
-[type=checkbox][role=switch]:checked:active[aria-invalid=true],
-[type=checkbox][role=switch]:checked:focus[aria-invalid=true] {
+[type="checkbox"]:checked[aria-invalid="true"],
+[type="checkbox"]:checked:active[aria-invalid="true"],
+[type="checkbox"]:checked:focus[aria-invalid="true"],
+[type="checkbox"][role="switch"]:checked[aria-invalid="true"],
+[type="checkbox"][role="switch"]:checked:active[aria-invalid="true"],
+[type="checkbox"][role="switch"]:checked:focus[aria-invalid="true"] {
   --pico-background-color: var(--pico-form-element-invalid-border-color);
 }
 
-[type=checkbox][aria-invalid=false]:checked, [type=checkbox][aria-invalid=false]:checked:active, [type=checkbox][aria-invalid=false]:checked:focus,
-[type=radio][aria-invalid=false]:checked,
-[type=radio][aria-invalid=false]:checked:active,
-[type=radio][aria-invalid=false]:checked:focus,
-[type=checkbox][role=switch][aria-invalid=false]:checked,
-[type=checkbox][role=switch][aria-invalid=false]:checked:active,
-[type=checkbox][role=switch][aria-invalid=false]:checked:focus {
+[type="checkbox"][aria-invalid="false"]:checked,
+[type="checkbox"][aria-invalid="false"]:checked:active,
+[type="checkbox"][aria-invalid="false"]:checked:focus,
+[type="radio"][aria-invalid="false"]:checked,
+[type="radio"][aria-invalid="false"]:checked:active,
+[type="radio"][aria-invalid="false"]:checked:focus,
+[type="checkbox"][role="switch"][aria-invalid="false"]:checked,
+[type="checkbox"][role="switch"][aria-invalid="false"]:checked:active,
+[type="checkbox"][role="switch"][aria-invalid="false"]:checked:focus {
   --pico-border-color: var(--pico-form-element-valid-border-color);
 }
-[type=checkbox]:checked[aria-invalid=true], [type=checkbox]:checked:active[aria-invalid=true], [type=checkbox]:checked:focus[aria-invalid=true],
-[type=radio]:checked[aria-invalid=true],
-[type=radio]:checked:active[aria-invalid=true],
-[type=radio]:checked:focus[aria-invalid=true],
-[type=checkbox][role=switch]:checked[aria-invalid=true],
-[type=checkbox][role=switch]:checked:active[aria-invalid=true],
-[type=checkbox][role=switch]:checked:focus[aria-invalid=true] {
+[type="checkbox"]:checked[aria-invalid="true"],
+[type="checkbox"]:checked:active[aria-invalid="true"],
+[type="checkbox"]:checked:focus[aria-invalid="true"],
+[type="radio"]:checked[aria-invalid="true"],
+[type="radio"]:checked:active[aria-invalid="true"],
+[type="radio"]:checked:focus[aria-invalid="true"],
+[type="checkbox"][role="switch"]:checked[aria-invalid="true"],
+[type="checkbox"][role="switch"]:checked:active[aria-invalid="true"],
+[type="checkbox"][role="switch"]:checked:focus[aria-invalid="true"] {
   --pico-border-color: var(--pico-form-element-invalid-border-color);
 }
 
 /**
  * Input type color
  */
-[type=color]::-webkit-color-swatch-wrapper {
+[type="color"]::-webkit-color-swatch-wrapper {
   padding: 0;
 }
-[type=color]::-moz-focus-inner {
+[type="color"]::-moz-focus-inner {
   padding: 0;
 }
-[type=color]::-webkit-color-swatch {
+[type="color"]::-webkit-color-swatch {
   border: 0;
   border-radius: calc(var(--pico-border-radius) * 0.5);
 }
-[type=color]::-moz-color-swatch {
+[type="color"]::-moz-color-swatch {
   border: 0;
   border-radius: calc(var(--pico-border-radius) * 0.5);
 }
@@ -1775,7 +1920,13 @@ label:has([type=checkbox], [type=radio]) {
 /**
  * Input type datetime
  */
-input:not([type=checkbox], [type=radio], [type=range], [type=file]):is([type=date], [type=datetime-local], [type=month], [type=time], [type=week]) {
+input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]):is(
+    [type="date"],
+    [type="datetime-local"],
+    [type="month"],
+    [type="time"],
+    [type="week"]
+  ) {
   --pico-icon-position: 0.75rem;
   --pico-icon-width: 1rem;
   padding-right: calc(var(--pico-icon-width) + var(--pico-icon-position));
@@ -1784,15 +1935,15 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file]):is([type=dat
   background-size: var(--pico-icon-width) auto;
   background-repeat: no-repeat;
 }
-input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
+input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"])[type="time"] {
   background-image: var(--pico-icon-time);
 }
 
-[type=date]::-webkit-calendar-picker-indicator,
-[type=datetime-local]::-webkit-calendar-picker-indicator,
-[type=month]::-webkit-calendar-picker-indicator,
-[type=time]::-webkit-calendar-picker-indicator,
-[type=week]::-webkit-calendar-picker-indicator {
+[type="date"]::-webkit-calendar-picker-indicator,
+[type="datetime-local"]::-webkit-calendar-picker-indicator,
+[type="month"]::-webkit-calendar-picker-indicator,
+[type="time"]::-webkit-calendar-picker-indicator,
+[type="week"]::-webkit-calendar-picker-indicator {
   width: var(--pico-icon-width);
   margin-right: calc(var(--pico-icon-width) * -1);
   margin-left: var(--pico-icon-position);
@@ -1800,23 +1951,24 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
 }
 
 @-moz-document url-prefix() {
-  [type=date],
-  [type=datetime-local],
-  [type=month],
-  [type=time],
-  [type=week] {
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="time"],
+  [type="week"] {
     padding-right: var(--pico-form-element-spacing-horizontal) !important;
     background-image: none !important;
   }
 }
-[dir=rtl] :is([type=date], [type=datetime-local], [type=month], [type=time], [type=week]) {
+[dir="rtl"]
+  :is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
   text-align: right;
 }
 
 /**
  * Input type file
  */
-[type=file] {
+[type="file"] {
   --pico-color: var(--pico-muted-color);
   margin-left: calc(var(--pico-outline-width) * -1);
   padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) 0;
@@ -1825,22 +1977,24 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   border-radius: 0;
   background: none;
 }
-[type=file]::file-selector-button {
+[type="file"]::file-selector-button {
   margin-right: calc(var(--pico-spacing) / 2);
-  padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) var(--pico-form-element-spacing-horizontal);
+  padding: calc(var(--pico-form-element-spacing-vertical) * 0.5)
+    var(--pico-form-element-spacing-horizontal);
 }
-[type=file]:is(:hover, :active, :focus)::file-selector-button {
+[type="file"]:is(:hover, :active, :focus)::file-selector-button {
   --pico-background-color: var(--pico-secondary-hover-background);
   --pico-border-color: var(--pico-secondary-hover-border);
 }
-[type=file]:focus::file-selector-button {
-  --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pico-outline-width) var(--pico-secondary-focus);
+[type="file"]:focus::file-selector-button {
+  --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+    0 0 0 var(--pico-outline-width) var(--pico-secondary-focus);
 }
 
 /**
  * Input type range
  */
-[type=range] {
+[type="range"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1848,7 +2002,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   height: 1.25rem;
   background: none;
 }
-[type=range]::-webkit-slider-runnable-track {
+[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 0.375rem;
   border-radius: var(--pico-border-radius);
@@ -1856,7 +2010,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   -webkit-transition: background-color var(--pico-transition), box-shadow var(--pico-transition);
   transition: background-color var(--pico-transition), box-shadow var(--pico-transition);
 }
-[type=range]::-moz-range-track {
+[type="range"]::-moz-range-track {
   width: 100%;
   height: 0.375rem;
   border-radius: var(--pico-border-radius);
@@ -1864,7 +2018,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   -moz-transition: background-color var(--pico-transition), box-shadow var(--pico-transition);
   transition: background-color var(--pico-transition), box-shadow var(--pico-transition);
 }
-[type=range]::-ms-track {
+[type="range"]::-ms-track {
   width: 100%;
   height: 0.375rem;
   border-radius: var(--pico-border-radius);
@@ -1872,7 +2026,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   -ms-transition: background-color var(--pico-transition), box-shadow var(--pico-transition);
   transition: background-color var(--pico-transition), box-shadow var(--pico-transition);
 }
-[type=range]::-webkit-slider-thumb {
+[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 1.25rem;
   height: 1.25rem;
@@ -1884,7 +2038,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   -webkit-transition: background-color var(--pico-transition), transform var(--pico-transition);
   transition: background-color var(--pico-transition), transform var(--pico-transition);
 }
-[type=range]::-moz-range-thumb {
+[type="range"]::-moz-range-thumb {
   -webkit-appearance: none;
   width: 1.25rem;
   height: 1.25rem;
@@ -1896,7 +2050,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   -moz-transition: background-color var(--pico-transition), transform var(--pico-transition);
   transition: background-color var(--pico-transition), transform var(--pico-transition);
 }
-[type=range]::-ms-thumb {
+[type="range"]::-ms-thumb {
   -webkit-appearance: none;
   width: 1.25rem;
   height: 1.25rem;
@@ -1908,24 +2062,25 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   -ms-transition: background-color var(--pico-transition), transform var(--pico-transition);
   transition: background-color var(--pico-transition), transform var(--pico-transition);
 }
-[type=range]:active, [type=range]:focus-within {
+[type="range"]:active,
+[type="range"]:focus-within {
   --pico-range-border-color: var(--pico-range-active-border-color);
   --pico-range-thumb-color: var(--pico-range-thumb-active-color);
 }
-[type=range]:active::-webkit-slider-thumb {
+[type="range"]:active::-webkit-slider-thumb {
   transform: scale(1.25);
 }
-[type=range]:active::-moz-range-thumb {
+[type="range"]:active::-moz-range-thumb {
   transform: scale(1.25);
 }
-[type=range]:active::-ms-thumb {
+[type="range"]:active::-ms-thumb {
   transform: scale(1.25);
 }
 
 /**
  * Input type search
  */
-input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search] {
+input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"])[type="search"] {
   -webkit-padding-start: calc(var(--pico-form-element-spacing-horizontal) + 1.75rem);
   padding-inline-start: calc(var(--pico-form-element-spacing-horizontal) + 1.75rem);
   background-image: var(--pico-icon-search);
@@ -1933,22 +2088,49 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search]
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
-input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search][aria-invalid] {
+input:not(
+    [type="checkbox"],
+    [type="radio"],
+    [type="range"],
+    [type="file"]
+  )[type="search"][aria-invalid] {
   -webkit-padding-start: calc(var(--pico-form-element-spacing-horizontal) + 1.75rem) !important;
   padding-inline-start: calc(var(--pico-form-element-spacing-horizontal) + 1.75rem) !important;
   background-position: center left 1.125rem, center right 0.75rem;
 }
-input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search][aria-invalid=false] {
+input:not(
+    [type="checkbox"],
+    [type="radio"],
+    [type="range"],
+    [type="file"]
+  )[type="search"][aria-invalid="false"] {
   background-image: var(--pico-icon-search), var(--pico-icon-valid);
 }
-input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search][aria-invalid=true] {
+input:not(
+    [type="checkbox"],
+    [type="radio"],
+    [type="range"],
+    [type="file"]
+  )[type="search"][aria-invalid="true"] {
   background-image: var(--pico-icon-search), var(--pico-icon-invalid);
 }
 
-[dir=rtl] :where(input):not([type=checkbox], [type=radio], [type=range], [type=file])[type=search] {
+[dir="rtl"]
+  :where(input):not(
+    [type="checkbox"],
+    [type="radio"],
+    [type="range"],
+    [type="file"]
+  )[type="search"] {
   background-position: center right 1.125rem;
 }
-[dir=rtl] :where(input):not([type=checkbox], [type=radio], [type=range], [type=file])[type=search][aria-invalid] {
+[dir="rtl"]
+  :where(input):not(
+    [type="checkbox"],
+    [type="radio"],
+    [type="range"],
+    [type="file"]
+  )[type="search"][aria-invalid] {
   background-position: center right 1.125rem, center left 0.75rem;
 }
 
@@ -2003,11 +2185,11 @@ details summary:focus-visible:not([role]) {
   outline-offset: calc(var(--pico-spacing, 1rem) * 0.5);
   color: var(--pico-primary);
 }
-details summary[role=button] {
+details summary[role="button"] {
   width: 100%;
   text-align: left;
 }
-details summary[role=button]::after {
+details summary[role="button"]::after {
   height: calc(1rem * var(--pico-line-height, 1.5));
 }
 details[open] > summary {
@@ -2020,10 +2202,10 @@ details[open] > summary::after {
   transform: rotate(0);
 }
 
-[dir=rtl] details summary {
+[dir="rtl"] details summary {
   text-align: right;
 }
-[dir=rtl] details summary::after {
+[dir="rtl"] details summary::after {
   float: left;
   background-position: left center;
 }
@@ -2089,7 +2271,10 @@ nav details.dropdown {
 }
 
 details.dropdown summary:not([role]) {
-  height: calc(1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 2 + var(--pico-border-width) * 2);
+  height: calc(
+    1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 2 +
+      var(--pico-border-width) * 2
+  );
   padding: var(--pico-form-element-spacing-vertical) var(--pico-form-element-spacing-horizontal);
   border: var(--pico-border-width) solid var(--pico-form-element-border-color);
   border-radius: var(--pico-border-radius);
@@ -2100,9 +2285,11 @@ details.dropdown summary:not([role]) {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  transition: background-color var(--pico-transition), border-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition);
+  transition: background-color var(--pico-transition), border-color var(--pico-transition),
+    color var(--pico-transition), box-shadow var(--pico-transition);
 }
-details.dropdown summary:not([role]):active, details.dropdown summary:not([role]):focus {
+details.dropdown summary:not([role]):active,
+details.dropdown summary:not([role]):focus {
   border-color: var(--pico-form-element-active-border-color);
   background-color: var(--pico-form-element-active-background-color);
 }
@@ -2112,12 +2299,12 @@ details.dropdown summary:not([role]):focus {
 details.dropdown summary:not([role]):focus-visible {
   outline: none;
 }
-details.dropdown summary:not([role])[aria-invalid=false] {
+details.dropdown summary:not([role])[aria-invalid="false"] {
   --pico-form-element-border-color: var(--pico-form-element-valid-border-color);
   --pico-form-element-active-border-color: var(--pico-form-element-valid-focus-color);
   --pico-form-element-focus-color: var(--pico-form-element-valid-focus-color);
 }
-details.dropdown summary:not([role])[aria-invalid=true] {
+details.dropdown summary:not([role])[aria-invalid="true"] {
   --pico-form-element-border-color: var(--pico-form-element-invalid-border-color);
   --pico-form-element-active-border-color: var(--pico-form-element-invalid-focus-color);
   --pico-form-element-focus-color: var(--pico-form-element-invalid-focus-color);
@@ -2129,7 +2316,8 @@ nav details.dropdown {
 }
 nav details.dropdown summary:not([role]) {
   height: calc(1rem * var(--pico-line-height) + var(--pico-nav-link-spacing-vertical) * 2);
-  padding: calc(var(--pico-nav-link-spacing-vertical) - var(--pico-border-width) * 2) var(--pico-nav-link-spacing-horizontal);
+  padding: calc(var(--pico-nav-link-spacing-vertical) - var(--pico-border-width) * 2)
+    var(--pico-nav-link-spacing-horizontal);
 }
 nav details.dropdown summary:not([role]):focus-visible {
   box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
@@ -2156,14 +2344,15 @@ details.dropdown summary + ul {
   opacity: 0;
   transition: opacity var(--pico-transition), transform 0s ease-in-out 1s;
 }
-details.dropdown summary + ul[dir=rtl] {
+details.dropdown summary + ul[dir="rtl"] {
   right: 0;
   left: auto;
 }
 details.dropdown summary + ul li {
   width: 100%;
   margin-bottom: 0;
-  padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) var(--pico-form-element-spacing-horizontal);
+  padding: calc(var(--pico-form-element-spacing-vertical) * 0.5)
+    var(--pico-form-element-spacing-horizontal);
   list-style: none;
 }
 details.dropdown summary + ul li:first-of-type {
@@ -2174,15 +2363,21 @@ details.dropdown summary + ul li:last-of-type {
 }
 details.dropdown summary + ul li a {
   display: block;
-  margin: calc(var(--pico-form-element-spacing-vertical) * -0.5) calc(var(--pico-form-element-spacing-horizontal) * -1);
-  padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) var(--pico-form-element-spacing-horizontal);
+  margin: calc(var(--pico-form-element-spacing-vertical) * -0.5)
+    calc(var(--pico-form-element-spacing-horizontal) * -1);
+  padding: calc(var(--pico-form-element-spacing-vertical) * 0.5)
+    var(--pico-form-element-spacing-horizontal);
   overflow: hidden;
   border-radius: 0;
   color: var(--pico-dropdown-color);
   text-decoration: none;
   text-overflow: ellipsis;
 }
-details.dropdown summary + ul li a:hover, details.dropdown summary + ul li a:focus, details.dropdown summary + ul li a:active, details.dropdown summary + ul li a:focus-visible, details.dropdown summary + ul li a[aria-current] {
+details.dropdown summary + ul li a:hover,
+details.dropdown summary + ul li a:focus,
+details.dropdown summary + ul li a:active,
+details.dropdown summary + ul li a:focus-visible,
+details.dropdown summary + ul li a[aria-current]:not([aria-current="false"]) {
   background-color: var(--pico-dropdown-hover-background-color);
 }
 details.dropdown summary + ul li label {
@@ -2221,21 +2416,22 @@ label > details.dropdown {
 /**
  * Group ([role="group"], [role="search"])
  */
-form[role=search], form[role=group] {
+form[role="search"],
+form[role="group"] {
   width: 100%;
 }
 
-[role=search] > *:first-child {
+[role="search"] > *:first-child {
   border-top-left-radius: 5rem;
   border-bottom-left-radius: 5rem;
 }
-[role=search] > *:last-child {
+[role="search"] > *:last-child {
   border-top-right-radius: 5rem;
   border-bottom-right-radius: 5rem;
 }
 
-[role=search],
-[role=group] {
+[role="search"],
+[role="group"] {
   display: inline-flex;
   position: relative;
   margin-bottom: var(--pico-spacing);
@@ -2244,99 +2440,115 @@ form[role=search], form[role=group] {
   vertical-align: middle;
   transition: box-shadow var(--pico-transition);
 }
-[role=search] > *,
-[role=search] input:not([type=checkbox], [type=radio]),
-[role=search] select,
-[role=group] > *,
-[role=group] input:not([type=checkbox], [type=radio]),
-[role=group] select {
+[role="search"] > *,
+[role="search"] input:not([type="checkbox"], [type="radio"]),
+[role="search"] select,
+[role="group"] > *,
+[role="group"] input:not([type="checkbox"], [type="radio"]),
+[role="group"] select {
   position: relative;
   flex: 1 1 auto;
   margin-bottom: 0;
 }
-[role=search] > *:not(:first-child),
-[role=search] input:not([type=checkbox], [type=radio]):not(:first-child),
-[role=search] select:not(:first-child),
-[role=group] > *:not(:first-child),
-[role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
-[role=group] select:not(:first-child) {
+[role="search"] > *:not(:first-child),
+[role="search"] input:not([type="checkbox"], [type="radio"]):not(:first-child),
+[role="search"] select:not(:first-child),
+[role="group"] > *:not(:first-child),
+[role="group"] input:not([type="checkbox"], [type="radio"]):not(:first-child),
+[role="group"] select:not(:first-child) {
   margin-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-[role=search] > *:not(:last-child),
-[role=search] input:not([type=checkbox], [type=radio]):not(:last-child),
-[role=search] select:not(:last-child),
-[role=group] > *:not(:last-child),
-[role=group] input:not([type=checkbox], [type=radio]):not(:last-child),
-[role=group] select:not(:last-child) {
+[role="search"] > *:not(:last-child),
+[role="search"] input:not([type="checkbox"], [type="radio"]):not(:last-child),
+[role="search"] select:not(:last-child),
+[role="group"] > *:not(:last-child),
+[role="group"] input:not([type="checkbox"], [type="radio"]):not(:last-child),
+[role="group"] select:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-[role=search] > *:focus,
-[role=search] input:not([type=checkbox], [type=radio]):focus,
-[role=search] select:focus,
-[role=group] > *:focus,
-[role=group] input:not([type=checkbox], [type=radio]):focus,
-[role=group] select:focus {
+[role="search"] > *:focus,
+[role="search"] input:not([type="checkbox"], [type="radio"]):focus,
+[role="search"] select:focus,
+[role="group"] > *:focus,
+[role="group"] input:not([type="checkbox"], [type="radio"]):focus,
+[role="group"] select:focus {
   z-index: 2;
 }
-[role=search] button:not(:first-child),
-[role=search] [type=submit]:not(:first-child),
-[role=search] [type=reset]:not(:first-child),
-[role=search] [type=button]:not(:first-child),
-[role=search] [role=button]:not(:first-child),
-[role=search] input:not([type=checkbox], [type=radio]):not(:first-child),
-[role=search] select:not(:first-child),
-[role=group] button:not(:first-child),
-[role=group] [type=submit]:not(:first-child),
-[role=group] [type=reset]:not(:first-child),
-[role=group] [type=button]:not(:first-child),
-[role=group] [role=button]:not(:first-child),
-[role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
-[role=group] select:not(:first-child) {
+[role="search"] button:not(:first-child),
+[role="search"] [type="submit"]:not(:first-child),
+[role="search"] [type="reset"]:not(:first-child),
+[role="search"] [type="button"]:not(:first-child),
+[role="search"] [role="button"]:not(:first-child),
+[role="search"] input:not([type="checkbox"], [type="radio"]):not(:first-child),
+[role="search"] select:not(:first-child),
+[role="group"] button:not(:first-child),
+[role="group"] [type="submit"]:not(:first-child),
+[role="group"] [type="reset"]:not(:first-child),
+[role="group"] [type="button"]:not(:first-child),
+[role="group"] [role="button"]:not(:first-child),
+[role="group"] input:not([type="checkbox"], [type="radio"]):not(:first-child),
+[role="group"] select:not(:first-child) {
   margin-left: calc(var(--pico-border-width) * -1);
 }
-[role=search] button,
-[role=search] [type=submit],
-[role=search] [type=reset],
-[role=search] [type=button],
-[role=search] [role=button],
-[role=group] button,
-[role=group] [type=submit],
-[role=group] [type=reset],
-[role=group] [type=button],
-[role=group] [role=button] {
+[role="search"] button,
+[role="search"] [type="submit"],
+[role="search"] [type="reset"],
+[role="search"] [type="button"],
+[role="search"] [role="button"],
+[role="group"] button,
+[role="group"] [type="submit"],
+[role="group"] [type="reset"],
+[role="group"] [type="button"],
+[role="group"] [role="button"] {
   width: auto;
 }
 @supports selector(:has(*)) {
-  [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus),
-  [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) {
+  [role="search"]:has(
+      button:focus,
+      [type="submit"]:focus,
+      [type="button"]:focus,
+      [role="button"]:focus
+    ),
+  [role="group"]:has(
+      button:focus,
+      [type="submit"]:focus,
+      [type="button"]:focus,
+      [role="button"]:focus
+    ) {
     --pico-group-box-shadow: var(--pico-group-box-shadow-focus-with-button);
   }
-  [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus),
-  [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) {
+  [role="search"]:has(input:not([type="submit"], [type="button"]):focus, select:focus),
+  [role="group"]:has(input:not([type="submit"], [type="button"]):focus, select:focus) {
     --pico-group-box-shadow: var(--pico-group-box-shadow-focus-with-input);
   }
-  [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) button,
-  [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=submit],
-  [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=button],
-  [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) [role=button],
-  [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) button,
-  [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=submit],
-  [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=button],
-  [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [role=button] {
+  [role="search"]:has(input:not([type="submit"], [type="button"]):focus, select:focus) button,
+  [role="search"]:has(input:not([type="submit"], [type="button"]):focus, select:focus)
+    [type="submit"],
+  [role="search"]:has(input:not([type="submit"], [type="button"]):focus, select:focus)
+    [type="button"],
+  [role="search"]:has(input:not([type="submit"], [type="button"]):focus, select:focus)
+    [role="button"],
+  [role="group"]:has(input:not([type="submit"], [type="button"]):focus, select:focus) button,
+  [role="group"]:has(input:not([type="submit"], [type="button"]):focus, select:focus)
+    [type="submit"],
+  [role="group"]:has(input:not([type="submit"], [type="button"]):focus, select:focus)
+    [type="button"],
+  [role="group"]:has(input:not([type="submit"], [type="button"]):focus, select:focus)
+    [role="button"] {
     --pico-button-box-shadow: 0 0 0 var(--pico-border-width) var(--pico-primary-border);
     --pico-button-hover-box-shadow: 0 0 0 var(--pico-border-width) var(--pico-primary-hover-border);
   }
-  [role=search] button:focus,
-  [role=search] [type=submit]:focus,
-  [role=search] [type=button]:focus,
-  [role=search] [role=button]:focus,
-  [role=group] button:focus,
-  [role=group] [type=submit]:focus,
-  [role=group] [type=button]:focus,
-  [role=group] [role=button]:focus {
+  [role="search"] button:focus,
+  [role="search"] [type="submit"]:focus,
+  [role="search"] [type="button"]:focus,
+  [role="search"] [role="button"]:focus,
+  [role="group"] button:focus,
+  [role="group"] [type="submit"]:focus,
+  [role="group"] [type="button"]:focus,
+  [role="group"] [role="button"]:focus {
     box-shadow: none;
   }
 }
@@ -2344,7 +2556,7 @@ form[role=search], form[role=group] {
 /**
  * Loading ([aria-busy=true])
  */
-[aria-busy=true]:not(input, select, textarea, html)::before {
+[aria-busy="true"]:not(input, select, textarea, html)::before {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -2354,20 +2566,20 @@ form[role=search], form[role=group] {
   content: "";
   vertical-align: -0.125em;
 }
-[aria-busy=true]:not(input, select, textarea, html):not(:empty)::before {
+[aria-busy="true"]:not(input, select, textarea, html):not(:empty)::before {
   -webkit-margin-end: calc(var(--pico-spacing) * 0.5);
   margin-inline-end: calc(var(--pico-spacing) * 0.5);
 }
-[aria-busy=true]:not(input, select, textarea, html):empty {
+[aria-busy="true"]:not(input, select, textarea, html):empty {
   text-align: center;
 }
 
-button[aria-busy=true],
-[type=submit][aria-busy=true],
-[type=button][aria-busy=true],
-[type=reset][aria-busy=true],
-[role=button][aria-busy=true],
-a[aria-busy=true] {
+button[aria-busy="true"],
+[type="submit"][aria-busy="true"],
+[type="button"][aria-busy="true"],
+[type="reset"][aria-busy="true"],
+[role="button"][aria-busy="true"],
+a[aria-busy="true"] {
   pointer-events: none;
 }
 
@@ -2427,11 +2639,11 @@ dialog article > footer {
   text-align: right;
 }
 dialog article > footer button,
-dialog article > footer [role=button] {
+dialog article > footer [role="button"] {
   margin-bottom: 0;
 }
 dialog article > footer button:not(:first-of-type),
-dialog article > footer [role=button]:not(:first-of-type) {
+dialog article > footer [role="button"]:not(:first-of-type) {
   margin-left: calc(var(--pico-spacing) * 0.5);
 }
 dialog article .close {
@@ -2448,10 +2660,11 @@ dialog article .close {
   opacity: 0.5;
   transition: opacity var(--pico-transition);
 }
-dialog article .close:is([aria-current], :hover, :active, :focus) {
+dialog article .close:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
   opacity: 1;
 }
-dialog:not([open]), dialog[open=false] {
+dialog:not([open]),
+dialog[open="false"] {
   display: none;
 }
 
@@ -2536,34 +2749,36 @@ nav li {
   margin: 0;
   padding: var(--pico-nav-element-spacing-vertical) var(--pico-nav-element-spacing-horizontal);
 }
-nav li :where(a, [role=link]) {
+nav li :where(a, [role="link"]) {
   display: inline-block;
-  margin: calc(var(--pico-nav-link-spacing-vertical) * -1) calc(var(--pico-nav-link-spacing-horizontal) * -1);
+  margin: calc(var(--pico-nav-link-spacing-vertical) * -1)
+    calc(var(--pico-nav-link-spacing-horizontal) * -1);
   padding: var(--pico-nav-link-spacing-vertical) var(--pico-nav-link-spacing-horizontal);
   border-radius: var(--pico-border-radius);
 }
-nav li :where(a, [role=link]):not(:hover) {
+nav li :where(a, [role="link"]):not(:hover) {
   text-decoration: none;
 }
 nav li button,
-nav li [role=button],
-nav li input:not([type=checkbox], [type=radio], [type=range], [type=file]),
+nav li [role="button"],
+nav li input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
 nav li select {
   height: auto;
   margin-right: inherit;
   margin-bottom: 0;
   margin-left: inherit;
-  padding: calc(var(--pico-nav-link-spacing-vertical) - var(--pico-border-width) * 2) var(--pico-nav-link-spacing-horizontal);
+  padding: calc(var(--pico-nav-link-spacing-vertical) - var(--pico-border-width) * 2)
+    var(--pico-nav-link-spacing-horizontal);
 }
-nav[aria-label=breadcrumb] {
+nav[aria-label="breadcrumb"] {
   align-items: center;
   justify-content: start;
 }
-nav[aria-label=breadcrumb] ul li:not(:first-child) {
+nav[aria-label="breadcrumb"] ul li:not(:first-child) {
   -webkit-margin-start: var(--pico-nav-link-spacing-horizontal);
   margin-inline-start: var(--pico-nav-link-spacing-horizontal);
 }
-nav[aria-label=breadcrumb] ul li:not(:last-child)::after {
+nav[aria-label="breadcrumb"] ul li:not(:last-child)::after {
   position: absolute;
   width: calc(var(--pico-nav-link-spacing-horizontal) * 2);
   -webkit-margin-start: calc(var(--pico-nav-link-spacing-horizontal) / 2);
@@ -2573,7 +2788,7 @@ nav[aria-label=breadcrumb] ul li:not(:last-child)::after {
   text-align: center;
   text-decoration: none;
 }
-nav[aria-label=breadcrumb] a[aria-current] {
+nav[aria-label="breadcrumb"] a[aria-current]:not([aria-current="false"]) {
   background-color: transparent;
   color: inherit;
   text-decoration: none;
@@ -2587,16 +2802,17 @@ aside li {
   display: block;
 }
 aside li {
-  padding: calc(var(--pico-nav-element-spacing-vertical) * 0.5) var(--pico-nav-element-spacing-horizontal);
+  padding: calc(var(--pico-nav-element-spacing-vertical) * 0.5)
+    var(--pico-nav-element-spacing-horizontal);
 }
 aside li a {
   display: block;
 }
-aside li [role=button] {
+aside li [role="button"] {
   margin: inherit;
 }
 
-[dir=rtl] nav[aria-label=breadcrumb] ul li:not(:last-child) ::after {
+[dir="rtl"] nav[aria-label="breadcrumb"] ul li:not(:last-child) ::after {
   content: "\\";
 }
 
@@ -2636,7 +2852,13 @@ progress::-moz-progress-bar {
 }
 @media (prefers-reduced-motion: no-preference) {
   progress:indeterminate {
-    background: var(--pico-progress-background-color) linear-gradient(to right, var(--pico-progress-color) 30%, var(--pico-progress-background-color) 30%) top left/150% 150% no-repeat;
+    background: var(--pico-progress-background-color)
+      linear-gradient(
+        to right,
+        var(--pico-progress-color) 30%,
+        var(--pico-progress-background-color) 30%
+      )
+      top left/150% 150% no-repeat;
     animation: progress-indeterminate 1s linear infinite;
   }
   progress:indeterminate[value]::-webkit-progress-value {
@@ -2648,7 +2870,7 @@ progress::-moz-progress-bar {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  [dir=rtl] progress:indeterminate {
+  [dir="rtl"] progress:indeterminate {
     animation-direction: reverse;
   }
 }
@@ -2672,7 +2894,10 @@ progress::-moz-progress-bar {
   text-decoration: none;
   cursor: help;
 }
-[data-tooltip][data-placement=top]::before, [data-tooltip][data-placement=top]::after, [data-tooltip]::before, [data-tooltip]::after {
+[data-tooltip][data-placement="top"]::before,
+[data-tooltip][data-placement="top"]::after,
+[data-tooltip]::before,
+[data-tooltip]::after {
   display: block;
   z-index: 99;
   position: absolute;
@@ -2694,7 +2919,8 @@ progress::-moz-progress-bar {
   opacity: 0;
   pointer-events: none;
 }
-[data-tooltip][data-placement=top]::after, [data-tooltip]::after {
+[data-tooltip][data-placement="top"]::after,
+[data-tooltip]::after {
   padding: 0;
   transform: translate(-50%, 0rem);
   border-top: 0.3rem solid;
@@ -2705,45 +2931,54 @@ progress::-moz-progress-bar {
   content: "";
   color: var(--pico-tooltip-background-color);
 }
-[data-tooltip][data-placement=bottom]::before, [data-tooltip][data-placement=bottom]::after {
+[data-tooltip][data-placement="bottom"]::before,
+[data-tooltip][data-placement="bottom"]::after {
   top: 100%;
   bottom: auto;
   transform: translate(-50%, 0.25rem);
 }
-[data-tooltip][data-placement=bottom]:after {
+[data-tooltip][data-placement="bottom"]:after {
   transform: translate(-50%, -0.3rem);
   border: 0.3rem solid transparent;
   border-bottom: 0.3rem solid;
 }
-[data-tooltip][data-placement=left]::before, [data-tooltip][data-placement=left]::after {
+[data-tooltip][data-placement="left"]::before,
+[data-tooltip][data-placement="left"]::after {
   top: 50%;
   right: 100%;
   bottom: auto;
   left: auto;
   transform: translate(-0.25rem, -50%);
 }
-[data-tooltip][data-placement=left]:after {
+[data-tooltip][data-placement="left"]:after {
   transform: translate(0.3rem, -50%);
   border: 0.3rem solid transparent;
   border-left: 0.3rem solid;
 }
-[data-tooltip][data-placement=right]::before, [data-tooltip][data-placement=right]::after {
+[data-tooltip][data-placement="right"]::before,
+[data-tooltip][data-placement="right"]::after {
   top: 50%;
   right: auto;
   bottom: auto;
   left: 100%;
   transform: translate(0.25rem, -50%);
 }
-[data-tooltip][data-placement=right]:after {
+[data-tooltip][data-placement="right"]:after {
   transform: translate(-0.3rem, -50%);
   border: 0.3rem solid transparent;
   border-right: 0.3rem solid;
 }
-[data-tooltip]:focus::before, [data-tooltip]:focus::after, [data-tooltip]:hover::before, [data-tooltip]:hover::after {
+[data-tooltip]:focus::before,
+[data-tooltip]:focus::after,
+[data-tooltip]:hover::before,
+[data-tooltip]:hover::after {
   opacity: 1;
 }
 @media (hover: hover) and (pointer: fine) {
-  [data-tooltip]:focus::before, [data-tooltip]:focus::after, [data-tooltip]:hover::before, [data-tooltip]:hover::after {
+  [data-tooltip]:focus::before,
+  [data-tooltip]:focus::after,
+  [data-tooltip]:hover::before,
+  [data-tooltip]:hover::after {
     --pico-tooltip-slide-to: translate(-50%, -0.25rem);
     transform: translate(-50%, 0.75rem);
     animation-duration: 0.2s;
@@ -2751,37 +2986,50 @@ progress::-moz-progress-bar {
     animation-name: tooltip-slide;
     opacity: 0;
   }
-  [data-tooltip]:focus::after, [data-tooltip]:hover::after {
+  [data-tooltip]:focus::after,
+  [data-tooltip]:hover::after {
     --pico-tooltip-caret-slide-to: translate(-50%, 0rem);
     transform: translate(-50%, -0.25rem);
     animation-name: tooltip-caret-slide;
   }
-  [data-tooltip][data-placement=bottom]:focus::before, [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover::before, [data-tooltip][data-placement=bottom]:hover::after {
+  [data-tooltip][data-placement="bottom"]:focus::before,
+  [data-tooltip][data-placement="bottom"]:focus::after,
+  [data-tooltip][data-placement="bottom"]:hover::before,
+  [data-tooltip][data-placement="bottom"]:hover::after {
     --pico-tooltip-slide-to: translate(-50%, 0.25rem);
     transform: translate(-50%, -0.75rem);
     animation-name: tooltip-slide;
   }
-  [data-tooltip][data-placement=bottom]:focus::after, [data-tooltip][data-placement=bottom]:hover::after {
+  [data-tooltip][data-placement="bottom"]:focus::after,
+  [data-tooltip][data-placement="bottom"]:hover::after {
     --pico-tooltip-caret-slide-to: translate(-50%, -0.3rem);
     transform: translate(-50%, -0.5rem);
     animation-name: tooltip-caret-slide;
   }
-  [data-tooltip][data-placement=left]:focus::before, [data-tooltip][data-placement=left]:focus::after, [data-tooltip][data-placement=left]:hover::before, [data-tooltip][data-placement=left]:hover::after {
+  [data-tooltip][data-placement="left"]:focus::before,
+  [data-tooltip][data-placement="left"]:focus::after,
+  [data-tooltip][data-placement="left"]:hover::before,
+  [data-tooltip][data-placement="left"]:hover::after {
     --pico-tooltip-slide-to: translate(-0.25rem, -50%);
     transform: translate(0.75rem, -50%);
     animation-name: tooltip-slide;
   }
-  [data-tooltip][data-placement=left]:focus::after, [data-tooltip][data-placement=left]:hover::after {
+  [data-tooltip][data-placement="left"]:focus::after,
+  [data-tooltip][data-placement="left"]:hover::after {
     --pico-tooltip-caret-slide-to: translate(0.3rem, -50%);
     transform: translate(0.05rem, -50%);
     animation-name: tooltip-caret-slide;
   }
-  [data-tooltip][data-placement=right]:focus::before, [data-tooltip][data-placement=right]:focus::after, [data-tooltip][data-placement=right]:hover::before, [data-tooltip][data-placement=right]:hover::after {
+  [data-tooltip][data-placement="right"]:focus::before,
+  [data-tooltip][data-placement="right"]:focus::after,
+  [data-tooltip][data-placement="right"]:hover::before,
+  [data-tooltip][data-placement="right"]:hover::after {
     --pico-tooltip-slide-to: translate(0.25rem, -50%);
     transform: translate(-0.75rem, -50%);
     animation-name: tooltip-slide;
   }
-  [data-tooltip][data-placement=right]:focus::after, [data-tooltip][data-placement=right]:hover::after {
+  [data-tooltip][data-placement="right"]:focus::after,
+  [data-tooltip][data-placement="right"]:hover::after {
     --pico-tooltip-caret-slide-to: translate(-0.3rem, -50%);
     transform: translate(-0.05rem, -50%);
     animation-name: tooltip-caret-slide;
@@ -2810,16 +3058,16 @@ progress::-moz-progress-bar {
   cursor: pointer;
 }
 
-[aria-disabled=true],
+[aria-disabled="true"],
 [disabled] {
   cursor: not-allowed;
 }
 
-[aria-hidden=false][hidden] {
+[aria-hidden="false"][hidden] {
   display: initial;
 }
 
-[aria-hidden=false][hidden]:not(:focus) {
+[aria-hidden="false"][hidden]:not(:focus) {
   clip: rect(0, 0, 0, 0);
   position: absolute;
 }
@@ -2836,7 +3084,7 @@ textarea,
   -ms-touch-action: manipulation;
 }
 
-[dir=rtl] {
+[dir="rtl"] {
   direction: rtl;
 }
 
@@ -2844,9 +3092,9 @@ textarea,
  * Reduce Motion Features
  */
 @media (prefers-reduced-motion: reduce) {
-  *:not([aria-busy=true]),
-  :not([aria-busy=true])::before,
-  :not([aria-busy=true])::after {
+  *:not([aria-busy="true"]),
+  :not([aria-busy="true"])::before,
+  :not([aria-busy="true"])::after {
     background-attachment: initial !important;
     animation-duration: 1ms !important;
     animation-delay: -1ms !important;

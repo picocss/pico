@@ -177,7 +177,7 @@
         &:focus,
         &:active,
         &:focus-visible,
-        &[aria-current] {
+        &[aria-current]:not([aria-current="false"]) {
           background-color: var(#{$✨}dropdown-hover-background-color);
         }
       }

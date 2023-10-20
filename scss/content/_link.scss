@@ -23,7 +23,7 @@
         text-decoration var(#{$✨}transition), box-shadow var(#{$✨}transition);
     }
 
-    &:is([aria-current], :hover, :active, :focus) {
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       #{$✨}color: var(#{$✨}primary-hover);
       #{$✨}underline: var(#{$✨}primary-hover-underline);
       #{$✨}text-decoration: underline;
@@ -39,7 +39,7 @@
         #{$✨}color: var(#{$✨}secondary);
         #{$✨}underline: var(#{$✨}secondary-underline);
 
-        &:is([aria-current], :hover, :active, :focus) {
+        &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
           #{$✨}color: var(#{$✨}secondary-hover);
           #{$✨}underline: var(#{$✨}secondary-hover-underline);
         }
@@ -50,7 +50,7 @@
         #{$✨}color: var(#{$✨}contrast);
         #{$✨}underline: var(#{$✨}contrast-underline);
 
-        &:is([aria-current], :hover, :active, :focus) {
+        &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
           #{$✨}color: var(#{$✨}contrast-hover);
           #{$✨}underline: var(#{$✨}contrast-hover-underline);
         }
