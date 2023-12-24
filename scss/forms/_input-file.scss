@@ -32,7 +32,8 @@
 
     &:focus {
       &::file-selector-button {
-        #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+        #{$✨}box-shadow:
+          var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
           0 0 0 var(#{$✨}outline-width) var(#{$✨}secondary-focus);
       }
     }

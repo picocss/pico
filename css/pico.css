@@ -997,9 +997,7 @@ blockquote {
   padding: var(--pico-spacing);
   border-right: none;
   border-left: 0.25rem solid var(--pico-blockquote-border-color);
-  -webkit-border-start: 0.25rem solid var(--pico-blockquote-border-color);
   border-inline-start: 0.25rem solid var(--pico-blockquote-border-color);
-  -webkit-border-end: none;
   border-inline-end: none;
 }
 blockquote footer {
@@ -1497,9 +1495,7 @@ label[aria-disabled=true] input[disabled] {
 [type=range])[aria-invalid] {
   padding-right: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem) !important;
   padding-left: var(--pico-form-element-spacing-horizontal);
-  -webkit-padding-start: var(--pico-form-element-spacing-horizontal) !important;
   padding-inline-start: var(--pico-form-element-spacing-horizontal) !important;
-  -webkit-padding-end: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem) !important;
   padding-inline-end: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem) !important;
   background-position: center right 0.75rem;
   background-size: 1rem auto;
@@ -1570,9 +1566,7 @@ select::-ms-expand {
 select:not([multiple], [size]) {
   padding-right: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem);
   padding-left: var(--pico-form-element-spacing-horizontal);
-  -webkit-padding-start: var(--pico-form-element-spacing-horizontal);
   padding-inline-start: var(--pico-form-element-spacing-horizontal);
-  -webkit-padding-end: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem);
   padding-inline-end: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem);
   background-image: var(--pico-icon-chevron);
   background-position: center right 0.75rem;
@@ -1632,7 +1626,6 @@ label:has([type=checkbox], [type=radio]) {
   width: 1.25em;
   height: 1.25em;
   margin-top: -0.125em;
-  -webkit-margin-end: 0.5em;
   margin-inline-end: 0.5em;
   border-width: var(--pico-border-width);
   vertical-align: middle;
@@ -1661,7 +1654,6 @@ label:has([type=checkbox], [type=radio]) {
 }
 [type=checkbox] ~ label:not(:last-of-type),
 [type=radio] ~ label:not(:last-of-type) {
-  -webkit-margin-end: 1em;
   margin-inline-end: 1em;
 }
 
@@ -1698,7 +1690,7 @@ label:has([type=checkbox], [type=radio]) {
 }
 [type=checkbox][role=switch]:before {
   display: block;
-  width: calc(1.25em - (var(--pico-border-width) * 2));
+  width: calc(1.25em - var(--pico-border-width) * 2);
   height: 100%;
   border-radius: 50%;
   background-color: var(--pico-color);
@@ -1715,7 +1707,6 @@ label:has([type=checkbox], [type=radio]) {
   background-image: none;
 }
 [type=checkbox][role=switch]:checked::before {
-  -webkit-margin-start: calc(1.125em - var(--pico-border-width));
   margin-inline-start: calc(1.125em - var(--pico-border-width));
 }
 [type=checkbox][role=switch][disabled] {
@@ -1926,7 +1917,6 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
  * Input type search
  */
 input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search] {
-  -webkit-padding-start: calc(var(--pico-form-element-spacing-horizontal) + 1.75rem);
   padding-inline-start: calc(var(--pico-form-element-spacing-horizontal) + 1.75rem);
   background-image: var(--pico-icon-search);
   background-position: center left 1.125rem;
@@ -1934,7 +1924,6 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search]
   background-repeat: no-repeat;
 }
 input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search][aria-invalid] {
-  -webkit-padding-start: calc(var(--pico-form-element-spacing-horizontal) + 1.75rem) !important;
   padding-inline-start: calc(var(--pico-form-element-spacing-horizontal) + 1.75rem) !important;
   background-position: center left 1.125rem, center right 0.75rem;
 }
@@ -1981,7 +1970,6 @@ details summary::after {
   display: block;
   width: 1rem;
   height: 1rem;
-  -webkit-margin-start: calc(var(--pico-spacing, 1rem) * 0.5);
   margin-inline-start: calc(var(--pico-spacing, 1rem) * 0.5);
   float: right;
   transform: rotate(-90deg);
@@ -2073,7 +2061,6 @@ details.dropdown > a::after {
   display: block;
   width: 1rem;
   height: calc(1rem * var(--pico-line-height, 1.5));
-  -webkit-margin-start: 0.25rem;
   margin-inline-start: 0.25rem;
   float: right;
   transform: rotate(0deg) translateX(0.2rem);
@@ -2355,7 +2342,6 @@ form[role=search], form[role=group] {
   vertical-align: -0.125em;
 }
 [aria-busy=true]:not(input, select, textarea, html):not(:empty)::before {
-  -webkit-margin-end: calc(var(--pico-spacing) * 0.5);
   margin-inline-end: calc(var(--pico-spacing) * 0.5);
 }
 [aria-busy=true]:not(input, select, textarea, html):empty {
@@ -2560,13 +2546,11 @@ nav[aria-label=breadcrumb] {
   justify-content: start;
 }
 nav[aria-label=breadcrumb] ul li:not(:first-child) {
-  -webkit-margin-start: var(--pico-nav-link-spacing-horizontal);
   margin-inline-start: var(--pico-nav-link-spacing-horizontal);
 }
 nav[aria-label=breadcrumb] ul li:not(:last-child)::after {
   position: absolute;
   width: calc(var(--pico-nav-link-spacing-horizontal) * 2);
-  -webkit-margin-start: calc(var(--pico-nav-link-spacing-horizontal) / 2);
   margin-inline-start: calc(var(--pico-nav-link-spacing-horizontal) / 2);
   content: var(--pico-nav-breadcrumb-divider);
   color: var(--pico-muted-color);

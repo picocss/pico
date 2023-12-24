@@ -23,7 +23,9 @@
         } @else {
           padding-inline-start: calc(var(#{$✨}form-element-spacing-horizontal) + 1.75rem);
         }
-        background-position: center left 1.125rem, center right 0.75rem;
+        background-position:
+          center left 1.125rem,
+          center right 0.75rem;
       }
 
       &[aria-invalid="false"] {
@@ -43,7 +45,9 @@
           background-position: center right 1.125rem;
 
           &[aria-invalid] {
-            background-position: center right 1.125rem, center left 0.75rem;
+            background-position:
+              center right 1.125rem,
+              center left 0.75rem;
           }
         }
       }
