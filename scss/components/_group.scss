@@ -84,6 +84,11 @@
       // Group box shadow when a button is focused
       &:has(button:focus, [type="submit"]:focus, [type="button"]:focus, [role="button"]:focus) {
         #{$✨}group-box-shadow: var(#{$✨}group-box-shadow-focus-with-button);
+
+        input:not([type="checkbox"], [type="radio"]),
+        select {
+          border-color: transparent;
+        }
       }
 
       // Group box shadow when an input is focused
