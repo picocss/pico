@@ -145,6 +145,7 @@
 
   // Blocks, 100%
   input:not([type="checkbox"], [type="radio"]),
+  button[type="submit"],
   select,
   textarea {
     width: 100%;
