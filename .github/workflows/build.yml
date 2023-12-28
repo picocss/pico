@@ -1,0 +1,30 @@
+name: build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+      - uses: tj-actions/verify-changed-files@v16
+        id: changed-files
+        with:
+          fail-if-changed: true
+      - name: List changed files
+        if: always()
+        env:
+          FILES_CHANGED: |-
+            ${{ steps.changed-files.outputs.changed_files }}
+        run: |
+          echo "Files changed:"
+          for file in ${FILES_CHANGED}
+          do
+            echo "- ${file}"
+          done
