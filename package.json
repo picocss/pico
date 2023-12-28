@@ -63,9 +63,6 @@
     "node": ">=18.19.0"
   },
   "browserslist": [
-    ">= 0.5%",
-    "last 2 major versions",
-    "not dead",
-    "not ie > 0"
+    "defaults"
   ]
 }
