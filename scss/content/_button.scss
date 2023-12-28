@@ -65,7 +65,7 @@
         box-shadow var(#{$✨}transition);
     }
 
-    &:is([aria-current], :hover, :active, :focus) {
+    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
       #{$✨}background-color: var(#{$✨}primary-hover-background);
       #{$✨}border-color: var(#{$✨}primary-hover-border);
       #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
@@ -96,7 +96,7 @@
       #{$✨}color: var(#{$✨}secondary-inverse);
       cursor: pointer;
 
-      &:is([aria-current], :hover, :active, :focus) {
+      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         #{$✨}background-color: var(#{$✨}secondary-hover-background);
         #{$✨}border-color: var(#{$✨}secondary-hover-border);
         #{$✨}color: var(#{$✨}secondary-inverse);
@@ -115,7 +115,7 @@
       #{$✨}border-color: var(#{$✨}contrast-border);
       #{$✨}color: var(#{$✨}contrast-inverse);
 
-      &:is([aria-current], :hover, :active, :focus) {
+      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         #{$✨}background-color: var(#{$✨}contrast-hover-background);
         #{$✨}border-color: var(#{$✨}contrast-hover-border);
         #{$✨}color: var(#{$✨}contrast-inverse);
@@ -135,7 +135,7 @@
       #{$✨}color: var(#{$✨}primary);
       #{$✨}border-color: currentColor;
 
-      &:is([aria-current], :hover, :active, :focus) {
+      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         #{$✨}background-color: transparent;
         #{$✨}color: var(#{$✨}primary-hover);
       }
@@ -147,7 +147,7 @@
       #{$✨}color: var(#{$✨}secondary);
       #{$✨}border-color: currentColor;
 
-      &:is([aria-current], :hover, :active, :focus) {
+      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         #{$✨}color: var(#{$✨}secondary-hover);
       }
     }
@@ -156,7 +156,7 @@
     :is(button, [type="submit"], [type="button"], [role="button"]).outline.contrast {
       #{$✨}color: var(#{$✨}contrast);
 
-      &:is([aria-current], :hover, :active, :focus) {
+      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         #{$✨}color: var(#{$✨}contrast-hover);
       }
     }
@@ -169,7 +169,7 @@
       #{$✨}color: var(#{$✨}secondary-inverse);
       cursor: pointer;
 
-      &:is([aria-current], :hover, :active, :focus) {
+      &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         #{$✨}background-color: var(#{$✨}secondary-hover);
         #{$✨}border-color: var(#{$✨}secondary-hover);
       }
