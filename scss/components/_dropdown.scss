@@ -240,7 +240,7 @@
 
       @if $enable-transitions {
         transition:
-          opacity var(--pico-transition),
+          opacity var(#{$css-var-prefix}transition),
           transform 0s ease-in-out 0s;
       }
     }
