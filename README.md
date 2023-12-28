@@ -80,7 +80,7 @@ composer require picocss/pico
 
 ## Class-less version
 
-Pico provides a `.classless` version ([example](https://picocss.com/examples/classless)).
+Pico provides a `.classless` version ([example](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-classless)).
 
 In this version, `header`, `main` and `footer` act as containers.
 
