@@ -2240,6 +2240,7 @@ li[role=list] > a::after {
   margin-inline-start: 0.5rem;
   float: right;
   transform: rotate(0deg);
+  background-image: var(--icon-chevron);
   background-position: right center;
   background-size: 1rem auto;
   background-repeat: no-repeat;
