@@ -1539,7 +1539,7 @@ label:has([type=checkbox], [type=radio]) {
 }
 [type=checkbox][role=switch]:before {
   display: block;
-  width: calc(1.25em - var(--pico-border-width) * 2);
+  width: calc(1.25em - (var(--pico-border-width) * 2));
   height: 100%;
   border-radius: 50%;
   background-color: var(--pico-color);
