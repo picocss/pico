@@ -9,7 +9,7 @@
 // Swatch
 @mixin color-swatch {
   border: 0;
-  border-radius: calc(var(#{$✨}border-radius) * 0.5);
+  border-radius: calc(var(#{$css-var-prefix}border-radius) * 0.5);
 }
 
 @if map.get($modules, "forms/input-color") {

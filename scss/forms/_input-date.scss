@@ -9,18 +9,18 @@
   // :not() are needed to add Specificity and avoid !important on padding
   input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
     &:is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
-      #{$✨}icon-position: 0.75rem;
-      #{$✨}icon-width: 1rem;
-      padding-right: calc(var(#{$✨}icon-width) + var(#{$✨}icon-position));
-      background-image: var(#{$✨}icon-date);
-      background-position: center right var(#{$✨}icon-position);
-      background-size: var(#{$✨}icon-width) auto;
+      #{$css-var-prefix}icon-position: 0.75rem;
+      #{$css-var-prefix}icon-width: 1rem;
+      padding-right: calc(var(#{$css-var-prefix}icon-width) + var(#{$css-var-prefix}icon-position));
+      background-image: var(#{$css-var-prefix}icon-date);
+      background-position: center right var(#{$css-var-prefix}icon-position);
+      background-size: var(#{$css-var-prefix}icon-width) auto;
       background-repeat: no-repeat;
     }
 
     // Time
     &[type="time"] {
-      background-image: var(#{$✨}icon-time);
+      background-image: var(#{$css-var-prefix}icon-time);
     }
   }
 
@@ -31,9 +31,9 @@
   [type="time"],
   [type="week"] {
     &::-webkit-calendar-picker-indicator {
-      width: var(#{$✨}icon-width);
-      margin-right: calc(var(#{$✨}icon-width) * -1);
-      margin-left: var(#{$✨}icon-position);
+      width: var(#{$css-var-prefix}icon-width);
+      margin-right: calc(var(#{$css-var-prefix}icon-width) * -1);
+      margin-left: var(#{$css-var-prefix}icon-position);
       opacity: 0;
     }
   }
@@ -46,7 +46,7 @@
       [type="month"],
       [type="time"],
       [type="week"] {
-        padding-right: var(#{$✨}form-element-spacing-horizontal) !important;
+        padding-right: var(#{$css-var-prefix}form-element-spacing-horizontal) !important;
         background-image: none !important;
       }
     }

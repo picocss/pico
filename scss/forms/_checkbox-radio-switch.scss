@@ -24,7 +24,7 @@
     height: 1.25em;
     margin-top: -0.125em;
     margin-inline-end: 0.5em;
-    border-width: var(#{$✨}border-width);
+    border-width: var(#{$css-var-prefix}border-width);
     vertical-align: middle;
     cursor: pointer;
 
@@ -35,9 +35,9 @@
     &:checked,
     &:checked:active,
     &:checked:focus {
-      #{$✨}background-color: var(#{$✨}primary-background);
-      #{$✨}border-color: var(#{$✨}primary-border);
-      background-image: var(#{$✨}icon-checkbox);
+      #{$css-var-prefix}background-color: var(#{$css-var-prefix}primary-background);
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}primary-border);
+      background-image: var(#{$css-var-prefix}icon-checkbox);
       background-position: center;
       background-size: 0.75em auto;
       background-repeat: no-repeat;
@@ -57,9 +57,9 @@
   // Checkboxes
   [type="checkbox"] {
     &:indeterminate {
-      #{$✨}background-color: var(#{$✨}primary-background);
-      #{$✨}border-color: var(#{$✨}primary-border);
-      background-image: var(#{$✨}icon-minus);
+      #{$css-var-prefix}background-color: var(#{$css-var-prefix}primary-background);
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}primary-border);
+      background-image: var(#{$css-var-prefix}icon-minus);
       background-position: center;
       background-size: 0.75em auto;
       background-repeat: no-repeat;
@@ -73,7 +73,7 @@
     &:checked,
     &:checked:active,
     &:checked:focus {
-      #{$✨}background-color: var(#{$✨}primary-inverse);
+      #{$css-var-prefix}background-color: var(#{$css-var-prefix}primary-inverse);
       border-width: 0.35em;
       background-image: none;
     }
@@ -81,8 +81,8 @@
 
   // Switchs
   [type="checkbox"][role="switch"] {
-    #{$✨}background-color: var(#{$✨}switch-background-color);
-    #{$✨}color: var(#{$✨}switch-color);
+    #{$css-var-prefix}background-color: var(#{$css-var-prefix}switch-background-color);
+    #{$css-var-prefix}color: var(#{$css-var-prefix}switch-color);
 
     // Config
     $switch-height: 1.25em;
@@ -92,21 +92,21 @@
     // Styles
     width: $switch-width;
     height: $switch-height;
-    border: var(#{$✨}border-width) solid var(#{$✨}border-color);
+    border: var(#{$css-var-prefix}border-width) solid var(#{$css-var-prefix}border-color);
     border-radius: $switch-height;
-    background-color: var(#{$✨}background-color);
+    background-color: var(#{$css-var-prefix}background-color);
     line-height: $switch-height;
 
     &:not([aria-invalid]) {
-      #{$✨}border-color: var(#{$✨}switch-background-color);
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}switch-background-color);
     }
 
     &:before {
       display: block;
-      width: calc(#{$switch-height} - (var(#{$✨}border-width) * 2));
+      width: calc(#{$switch-height} - (var(#{$css-var-prefix}border-width) * 2));
       height: 100%;
       border-radius: 50%;
-      background-color: var(#{$✨}color);
+      background-color: var(#{$css-var-prefix}color);
       content: "";
 
       @if $enable-transitions {
@@ -115,22 +115,22 @@
     }
 
     &:focus {
-      #{$✨}background-color: var(#{$✨}switch-background-color);
-      #{$✨}border-color: var(#{$✨}switch-background-color);
+      #{$css-var-prefix}background-color: var(#{$css-var-prefix}switch-background-color);
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}switch-background-color);
     }
 
     &:checked {
-      #{$✨}background-color: var(#{$✨}switch-checked-background-color);
-      #{$✨}border-color: var(#{$✨}switch-checked-background-color);
+      #{$css-var-prefix}background-color: var(#{$css-var-prefix}switch-checked-background-color);
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}switch-checked-background-color);
       background-image: none;
 
       &::before {
-        margin-inline-start: calc(#{$switch-width * 0.5} - var(#{$✨}border-width));
+        margin-inline-start: calc(#{$switch-width * 0.5} - var(#{$css-var-prefix}border-width));
       }
     }
 
     &[disabled] {
-      #{$✨}background-color: var(#{$✨}border-color);
+      #{$css-var-prefix}background-color: var(#{$css-var-prefix}border-color);
     }
   }
 
@@ -141,14 +141,16 @@
       &:checked,
       &:checked:active,
       &:checked:focus {
-        #{$✨}background-color: var(#{$✨}form-element-valid-border-color);
+        #{$css-var-prefix}background-color: var(#{$css-var-prefix}form-element-valid-border-color);
       }
     }
     &:checked,
     &:checked:active,
     &:checked:focus {
       &[aria-invalid="true"] {
-        #{$✨}background-color: var(#{$✨}form-element-invalid-border-color);
+        #{$css-var-prefix}background-color: var(
+          #{$css-var-prefix}form-element-invalid-border-color
+        );
       }
     }
   }
@@ -160,14 +162,14 @@
       &:checked,
       &:checked:active,
       &:checked:focus {
-        #{$✨}border-color: var(#{$✨}form-element-valid-border-color);
+        #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-valid-border-color);
       }
     }
     &:checked,
     &:checked:active,
     &:checked:focus {
       &[aria-invalid="true"] {
-        #{$✨}border-color: var(#{$✨}form-element-invalid-border-color);
+        #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-invalid-border-color);
       }
     }
   }

@@ -38,20 +38,21 @@
   [type="button"],
   [type="file"]::file-selector-button,
   [role="button"] {
-    #{$✨}background-color: var(#{$✨}primary-background);
-    #{$✨}border-color: var(#{$✨}primary-border);
-    #{$✨}color: var(#{$✨}primary-inverse);
-    #{$✨}box-shadow: var(#{$✨}button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
-    padding: var(#{$✨}form-element-spacing-vertical) var(#{$✨}form-element-spacing-horizontal);
-    border: var(#{$✨}border-width) solid var(#{$✨}border-color);
-    border-radius: var(#{$✨}border-radius);
+    #{$css-var-prefix}background-color: var(#{$css-var-prefix}primary-background);
+    #{$css-var-prefix}border-color: var(#{$css-var-prefix}primary-border);
+    #{$css-var-prefix}color: var(#{$css-var-prefix}primary-inverse);
+    #{$css-var-prefix}box-shadow: var(#{$css-var-prefix}button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+    padding: var(#{$css-var-prefix}form-element-spacing-vertical)
+      var(#{$css-var-prefix}form-element-spacing-horizontal);
+    border: var(#{$css-var-prefix}border-width) solid var(#{$css-var-prefix}border-color);
+    border-radius: var(#{$css-var-prefix}border-radius);
     outline: none;
-    background-color: var(#{$✨}background-color);
-    box-shadow: var(#{$✨}box-shadow);
-    color: var(#{$✨}color);
-    font-weight: var(#{$✨}font-weight);
+    background-color: var(#{$css-var-prefix}background-color);
+    box-shadow: var(#{$css-var-prefix}box-shadow);
+    color: var(#{$css-var-prefix}color);
+    font-weight: var(#{$css-var-prefix}font-weight);
     font-size: 1rem;
-    line-height: var(#{$✨}line-height);
+    line-height: var(#{$css-var-prefix}line-height);
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -59,30 +60,33 @@
 
     @if $enable-transitions {
       transition:
-        background-color var(#{$✨}transition),
-        border-color var(#{$✨}transition),
-        color var(#{$✨}transition),
-        box-shadow var(#{$✨}transition);
+        background-color var(#{$css-var-prefix}transition),
+        border-color var(#{$css-var-prefix}transition),
+        color var(#{$css-var-prefix}transition),
+        box-shadow var(#{$css-var-prefix}transition);
     }
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-      #{$✨}background-color: var(#{$✨}primary-hover-background);
-      #{$✨}border-color: var(#{$✨}primary-hover-border);
-      #{$✨}box-shadow: var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
-      #{$✨}color: var(#{$✨}primary-inverse);
+      #{$css-var-prefix}background-color: var(#{$css-var-prefix}primary-hover-background);
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}primary-hover-border);
+      #{$css-var-prefix}box-shadow: var(
+        #{$css-var-prefix}button-hover-box-shadow,
+        0 0 0 rgba(0, 0, 0, 0)
+      );
+      #{$css-var-prefix}color: var(#{$css-var-prefix}primary-inverse);
     }
 
     &:focus {
-      #{$✨}box-shadow:
-        var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-        0 0 0 var(#{$✨}outline-width) var(#{$✨}primary-focus);
+      #{$css-var-prefix}box-shadow:
+        var(#{$css-var-prefix}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+        0 0 0 var(#{$css-var-prefix}outline-width) var(#{$css-var-prefix}primary-focus);
     }
   }
 
   [type="submit"],
   [type="reset"],
   [type="button"] {
-    margin-bottom: var(#{$✨}spacing);
+    margin-bottom: var(#{$css-var-prefix}spacing);
   }
 
   // .secondary, .contrast & .outline
@@ -91,93 +95,93 @@
     :is(button, [type="submit"], [type="button"], [role="button"]).secondary,
     [type="reset"],
     [type="file"]::file-selector-button {
-      #{$✨}background-color: var(#{$✨}secondary-background);
-      #{$✨}border-color: var(#{$✨}secondary-border);
-      #{$✨}color: var(#{$✨}secondary-inverse);
+      #{$css-var-prefix}background-color: var(#{$css-var-prefix}secondary-background);
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}secondary-border);
+      #{$css-var-prefix}color: var(#{$css-var-prefix}secondary-inverse);
       cursor: pointer;
 
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        #{$✨}background-color: var(#{$✨}secondary-hover-background);
-        #{$✨}border-color: var(#{$✨}secondary-hover-border);
-        #{$✨}color: var(#{$✨}secondary-inverse);
+        #{$css-var-prefix}background-color: var(#{$css-var-prefix}secondary-hover-background);
+        #{$css-var-prefix}border-color: var(#{$css-var-prefix}secondary-hover-border);
+        #{$css-var-prefix}color: var(#{$css-var-prefix}secondary-inverse);
       }
 
       &:focus {
-        #{$✨}box-shadow:
-          var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-          0 0 0 var(#{$✨}outline-width) var(#{$✨}secondary-focus);
+        #{$css-var-prefix}box-shadow:
+          var(#{$css-var-prefix}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+          0 0 0 var(#{$css-var-prefix}outline-width) var(#{$css-var-prefix}secondary-focus);
       }
     }
 
     // Contrast
     :is(button, [type="submit"], [type="button"], [role="button"]).contrast {
-      #{$✨}background-color: var(#{$✨}contrast-background);
-      #{$✨}border-color: var(#{$✨}contrast-border);
-      #{$✨}color: var(#{$✨}contrast-inverse);
+      #{$css-var-prefix}background-color: var(#{$css-var-prefix}contrast-background);
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}contrast-border);
+      #{$css-var-prefix}color: var(#{$css-var-prefix}contrast-inverse);
 
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        #{$✨}background-color: var(#{$✨}contrast-hover-background);
-        #{$✨}border-color: var(#{$✨}contrast-hover-border);
-        #{$✨}color: var(#{$✨}contrast-inverse);
+        #{$css-var-prefix}background-color: var(#{$css-var-prefix}contrast-hover-background);
+        #{$css-var-prefix}border-color: var(#{$css-var-prefix}contrast-hover-border);
+        #{$css-var-prefix}color: var(#{$css-var-prefix}contrast-inverse);
       }
 
       &:focus {
-        #{$✨}box-shadow:
-          var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-          0 0 0 var(#{$✨}outline-width) var(#{$✨}contrast-focus);
+        #{$css-var-prefix}box-shadow:
+          var(#{$css-var-prefix}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+          0 0 0 var(#{$css-var-prefix}outline-width) var(#{$css-var-prefix}contrast-focus);
       }
     }
 
     // Outline (primary)
     :is(button, [type="submit"], [type="button"], [role="button"]).outline,
     [type="reset"].outline {
-      #{$✨}background-color: transparent;
-      #{$✨}color: var(#{$✨}primary);
-      #{$✨}border-color: currentColor;
+      #{$css-var-prefix}background-color: transparent;
+      #{$css-var-prefix}color: var(#{$css-var-prefix}primary);
+      #{$css-var-prefix}border-color: currentColor;
 
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        #{$✨}background-color: transparent;
-        #{$✨}color: var(#{$✨}primary-hover);
+        #{$css-var-prefix}background-color: transparent;
+        #{$css-var-prefix}color: var(#{$css-var-prefix}primary-hover);
       }
     }
 
     // Outline (secondary)
     :is(button, [type="submit"], [type="button"], [role="button"]).outline.secondary,
     [type="reset"].outline {
-      #{$✨}color: var(#{$✨}secondary);
-      #{$✨}border-color: currentColor;
+      #{$css-var-prefix}color: var(#{$css-var-prefix}secondary);
+      #{$css-var-prefix}border-color: currentColor;
 
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        #{$✨}color: var(#{$✨}secondary-hover);
+        #{$css-var-prefix}color: var(#{$css-var-prefix}secondary-hover);
       }
     }
 
     // Outline (contrast)
     :is(button, [type="submit"], [type="button"], [role="button"]).outline.contrast {
-      #{$✨}color: var(#{$✨}contrast);
+      #{$css-var-prefix}color: var(#{$css-var-prefix}contrast);
 
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        #{$✨}color: var(#{$✨}contrast-hover);
+        #{$css-var-prefix}color: var(#{$css-var-prefix}contrast-hover);
       }
     }
   } @else {
     // Secondary button without .class
     [type="reset"],
     [type="file"]::file-selector-button {
-      #{$✨}background-color: var(#{$✨}secondary);
-      #{$✨}border-color: var(#{$✨}secondary);
-      #{$✨}color: var(#{$✨}secondary-inverse);
+      #{$css-var-prefix}background-color: var(#{$css-var-prefix}secondary);
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}secondary);
+      #{$css-var-prefix}color: var(#{$css-var-prefix}secondary-inverse);
       cursor: pointer;
 
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        #{$✨}background-color: var(#{$✨}secondary-hover);
-        #{$✨}border-color: var(#{$✨}secondary-hover);
+        #{$css-var-prefix}background-color: var(#{$css-var-prefix}secondary-hover);
+        #{$css-var-prefix}border-color: var(#{$css-var-prefix}secondary-hover);
       }
 
       &:focus {
-        #{$✨}box-shadow:
-          var(#{$✨}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
-          0 0 0 var(#{$✨}outline-width) var(#{$✨}secondary-focus);
+        #{$css-var-prefix}box-shadow:
+          var(#{$css-var-prefix}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
+          0 0 0 var(#{$css-var-prefix}outline-width) var(#{$css-var-prefix}secondary-focus);
       }
     }
   }

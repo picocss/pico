@@ -14,7 +14,7 @@
       display: inline-block;
       width: 1em;
       height: 1em;
-      background-image: var(#{$✨}icon-loading);
+      background-image: var(#{$css-var-prefix}icon-loading);
       background-size: 1rem auto;
       background-repeat: no-repeat;
       content: "";
@@ -23,7 +23,7 @@
 
     &:not(:empty) {
       &::before {
-        margin-inline-end: calc(var(#{$✨}spacing) * 0.5);
+        margin-inline-end: calc(var(#{$css-var-prefix}spacing) * 0.5);
       }
     }
 

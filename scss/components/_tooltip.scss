@@ -27,12 +27,12 @@
       padding: 0.25rem 0.5rem;
       overflow: hidden;
       transform: translate(-50%, -0.25rem);
-      border-radius: var(#{$✨}border-radius);
-      background: var(#{$✨}tooltip-background-color);
+      border-radius: var(#{$css-var-prefix}border-radius);
+      background: var(#{$css-var-prefix}tooltip-background-color);
       content: attr(data-tooltip);
-      color: var(#{$✨}tooltip-color);
+      color: var(#{$css-var-prefix}tooltip-color);
       font-style: normal;
-      font-weight: var(#{$✨}font-weight);
+      font-weight: var(#{$css-var-prefix}font-weight);
       font-size: 0.875rem;
       text-decoration: none;
       text-overflow: ellipsis;
@@ -52,7 +52,7 @@
       border-radius: 0;
       background-color: transparent;
       content: "";
-      color: var(#{$✨}tooltip-background-color);
+      color: var(#{$css-var-prefix}tooltip-background-color);
     }
 
     &[data-placement="bottom"] {
@@ -121,7 +121,7 @@
         &:hover {
           &::before,
           &::after {
-            #{$✨}tooltip-slide-to: translate(-50%, -0.25rem);
+            #{$css-var-prefix}tooltip-slide-to: translate(-50%, -0.25rem);
             transform: translate(-50%, 0.75rem);
             animation-duration: 0.2s;
             animation-fill-mode: forwards;
@@ -130,7 +130,7 @@
           }
 
           &::after {
-            #{$✨}tooltip-caret-slide-to: translate(-50%, 0rem);
+            #{$css-var-prefix}tooltip-caret-slide-to: translate(-50%, 0rem);
             transform: translate(-50%, -0.25rem);
             animation-name: tooltip-caret-slide;
           }
@@ -142,13 +142,13 @@
           &:hover {
             &::before,
             &::after {
-              #{$✨}tooltip-slide-to: translate(-50%, 0.25rem);
+              #{$css-var-prefix}tooltip-slide-to: translate(-50%, 0.25rem);
               transform: translate(-50%, -0.75rem);
               animation-name: tooltip-slide;
             }
 
             &::after {
-              #{$✨}tooltip-caret-slide-to: translate(-50%, -0.3rem);
+              #{$css-var-prefix}tooltip-caret-slide-to: translate(-50%, -0.3rem);
               transform: translate(-50%, -0.5rem);
               animation-name: tooltip-caret-slide;
             }
@@ -161,13 +161,13 @@
           &:hover {
             &::before,
             &::after {
-              #{$✨}tooltip-slide-to: translate(-0.25rem, -50%);
+              #{$css-var-prefix}tooltip-slide-to: translate(-0.25rem, -50%);
               transform: translate(0.75rem, -50%);
               animation-name: tooltip-slide;
             }
 
             &::after {
-              #{$✨}tooltip-caret-slide-to: translate(0.3rem, -50%);
+              #{$css-var-prefix}tooltip-caret-slide-to: translate(0.3rem, -50%);
               transform: translate(0.05rem, -50%);
               animation-name: tooltip-caret-slide;
             }
@@ -180,13 +180,13 @@
           &:hover {
             &::before,
             &::after {
-              #{$✨}tooltip-slide-to: translate(0.25rem, -50%);
+              #{$css-var-prefix}tooltip-slide-to: translate(0.25rem, -50%);
               transform: translate(-0.75rem, -50%);
               animation-name: tooltip-slide;
             }
 
             &::after {
-              #{$✨}tooltip-caret-slide-to: translate(-0.3rem, -50%);
+              #{$css-var-prefix}tooltip-caret-slide-to: translate(-0.3rem, -50%);
               transform: translate(-0.05rem, -50%);
               animation-name: tooltip-caret-slide;
             }
@@ -196,7 +196,7 @@
 
       @keyframes tooltip-slide {
         to {
-          transform: var(#{$✨}tooltip-slide-to);
+          transform: var(#{$css-var-prefix}tooltip-slide-to);
           opacity: 1;
         }
       }
@@ -206,7 +206,7 @@
           opacity: 0;
         }
         to {
-          transform: var(#{$✨}tooltip-caret-slide-to);
+          transform: var(#{$css-var-prefix}tooltip-caret-slide-to);
           opacity: 1;
         }
       }

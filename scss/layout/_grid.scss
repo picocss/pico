@@ -8,8 +8,8 @@
    */
 
   .grid {
-    grid-column-gap: var(#{$✨}grid-column-gap);
-    grid-row-gap: var(#{$✨}grid-row-gap);
+    grid-column-gap: var(#{$css-var-prefix}grid-column-gap);
+    grid-row-gap: var(#{$css-var-prefix}grid-row-gap);
     display: grid;
     grid-template-columns: 1fr;
     margin: 0;

@@ -20,7 +20,7 @@
           // Main color
           @if $shade == "main" and map.get(settings.$palette, "enable-main-color") {
             @if $enable-css-vars {
-              $color-value: var(--#{$css-var-family-name});
+              $color-value: var(#{$css-var-family-name});
             } @else {
               $color-value: utils.display-color($color-value);
             }
@@ -35,7 +35,7 @@
             map.get(settings.$palette, "enable-shades")
           {
             @if $enable-css-vars {
-              $color-value: var(--#{$css-var-family-name}-#{$shade});
+              $color-value: var(#{$css-var-family-name}-#{$shade});
             } @else {
               $color-value: utils.display-color($color-value);
             }

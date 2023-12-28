@@ -8,7 +8,7 @@
 
   details {
     display: block;
-    margin-bottom: var(#{$✨}spacing);
+    margin-bottom: var(#{$css-var-prefix}spacing);
 
     summary {
       line-height: 1rem;
@@ -16,11 +16,11 @@
       cursor: pointer;
 
       &:not([role]) {
-        color: var(#{$✨}accordion-close-summary-color);
+        color: var(#{$css-var-prefix}accordion-close-summary-color);
       }
 
       @if $enable-transitions {
-        transition: color var(#{$✨}transition);
+        transition: color var(#{$css-var-prefix}transition);
       }
 
       // Reset marker
@@ -41,17 +41,17 @@
         display: block;
         width: 1rem;
         height: 1rem;
-        margin-inline-start: calc(var(#{$✨}spacing, 1rem) * 0.5);
+        margin-inline-start: calc(var(#{$css-var-prefix}spacing, 1rem) * 0.5);
         float: right;
         transform: rotate(-90deg);
-        background-image: var(#{$✨}icon-chevron);
+        background-image: var(#{$css-var-prefix}icon-chevron);
         background-position: right center;
         background-size: 1rem auto;
         background-repeat: no-repeat;
         content: "";
 
         @if $enable-transitions {
-          transition: transform var(#{$✨}transition);
+          transition: transform var(#{$css-var-prefix}transition);
         }
       }
 
@@ -59,15 +59,15 @@
         outline: none;
 
         &:not([role]) {
-          color: var(#{$✨}accordion-active-summary-color);
+          color: var(#{$css-var-prefix}accordion-active-summary-color);
         }
       }
 
       &:focus-visible {
         &:not([role]) {
-          outline: var(#{$✨}outline-width) solid var(#{$✨}primary-focus);
-          outline-offset: calc(var(#{$✨}spacing, 1rem) * 0.5);
-          color: var(#{$✨}primary);
+          outline: var(#{$css-var-prefix}outline-width) solid var(#{$css-var-prefix}primary-focus);
+          outline-offset: calc(var(#{$css-var-prefix}spacing, 1rem) * 0.5);
+          color: var(#{$css-var-prefix}primary);
         }
       }
 
@@ -78,7 +78,7 @@
 
         // Marker
         &::after {
-          height: calc(1rem * var(#{$✨}line-height, 1.5));
+          height: calc(1rem * var(#{$css-var-prefix}line-height, 1.5));
         }
       }
     }
@@ -86,11 +86,11 @@
     // Open
     &[open] {
       > summary {
-        margin-bottom: var(#{$✨}spacing);
+        margin-bottom: var(#{$css-var-prefix}spacing);
 
         &:not([role]) {
           &:not(:focus) {
-            color: var(#{$✨}accordion-open-summary-color);
+            color: var(#{$css-var-prefix}accordion-open-summary-color);
           }
         }
 

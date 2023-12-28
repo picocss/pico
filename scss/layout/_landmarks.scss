@@ -34,7 +34,8 @@
         width: 100%;
         margin-right: auto;
         margin-left: auto;
-        padding: var(#{$✨}block-spacing-vertical) var(#{$✨}block-spacing-horizontal);
+        padding: var(#{$css-var-prefix}block-spacing-vertical)
+          var(#{$css-var-prefix}block-spacing-horizontal);
 
         @if $enable-viewport {
           @each $key, $values in $breakpoints {
@@ -54,7 +55,7 @@
 
       // Regular vertical spacings for <header>, <main>, <footer>
       @else {
-        padding: var(#{$✨}block-spacing-vertical) 0;
+        padding: var(#{$css-var-prefix}block-spacing-vertical) 0;
       }
     }
   }

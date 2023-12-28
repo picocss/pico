@@ -20,13 +20,13 @@
       &::after {
         display: block;
         width: 1rem;
-        height: calc(1rem * var(#{$✨}line-height, 1.5));
+        height: calc(1rem * var(#{$css-var-prefix}line-height, 1.5));
         margin-inline-start: 0.25rem;
         float: right;
         // TODO: find out why we need this magic number (0.2 rem)
         // for the marker to be aligned with the regular select
         transform: rotate(0deg) translateX(0.2rem);
-        background-image: var(#{$✨}icon-chevron);
+        background-image: var(#{$css-var-prefix}icon-chevron);
         background-position: right center;
         background-size: 1rem auto;
         background-repeat: no-repeat;
@@ -49,37 +49,44 @@
   details.dropdown summary:not([role]) {
     height: calc(
       1rem *
-        var(#{$✨}line-height) +
-        var(#{$✨}form-element-spacing-vertical) *
+        var(#{$css-var-prefix}line-height) +
+        var(#{$css-var-prefix}form-element-spacing-vertical) *
         2 +
-        var(#{$✨}border-width) *
+        var(#{$css-var-prefix}border-width) *
         2
     );
-    padding: var(#{$✨}form-element-spacing-vertical) var(#{$✨}form-element-spacing-horizontal);
-    border: var(#{$✨}border-width) solid var(#{$✨}form-element-border-color);
-    border-radius: var(#{$✨}border-radius);
-    background-color: var(#{$✨}form-element-background-color);
-    color: var(#{$✨}form-element-placeholder-color);
+    padding: var(#{$css-var-prefix}form-element-spacing-vertical)
+      var(#{$css-var-prefix}form-element-spacing-horizontal);
+    border: var(#{$css-var-prefix}border-width)
+      solid
+      var(#{$css-var-prefix}form-element-border-color);
+    border-radius: var(#{$css-var-prefix}border-radius);
+    background-color: var(#{$css-var-prefix}form-element-background-color);
+    color: var(#{$css-var-prefix}form-element-placeholder-color);
     line-height: inherit;
     cursor: pointer;
     user-select: none;
 
     @if $enable-transitions {
       transition:
-        background-color var(#{$✨}transition),
-        border-color var(#{$✨}transition),
-        color var(#{$✨}transition),
-        box-shadow var(#{$✨}transition);
+        background-color var(#{$css-var-prefix}transition),
+        border-color var(#{$css-var-prefix}transition),
+        color var(#{$css-var-prefix}transition),
+        box-shadow var(#{$css-var-prefix}transition);
     }
 
     &:active,
     &:focus {
-      border-color: var(#{$✨}form-element-active-border-color);
-      background-color: var(#{$✨}form-element-active-background-color);
+      border-color: var(#{$css-var-prefix}form-element-active-border-color);
+      background-color: var(#{$css-var-prefix}form-element-active-background-color);
     }
 
     &:focus {
-      box-shadow: 0 0 0 var(#{$✨}outline-width) var(#{$✨}form-element-focus-color);
+      box-shadow: 0
+        0
+        0
+        var(#{$css-var-prefix}outline-width)
+        var(#{$css-var-prefix}form-element-focus-color);
     }
 
     // Reset focus visible from accordion component
@@ -89,15 +96,27 @@
 
     // Aria-invalid
     &[aria-invalid="false"] {
-      #{$✨}form-element-border-color: var(#{$✨}form-element-valid-border-color);
-      #{$✨}form-element-active-border-color: var(#{$✨}form-element-valid-focus-color);
-      #{$✨}form-element-focus-color: var(#{$✨}form-element-valid-focus-color);
+      #{$css-var-prefix}form-element-border-color: var(
+        #{$css-var-prefix}form-element-valid-border-color
+      );
+      #{$css-var-prefix}form-element-active-border-color: var(
+        #{$css-var-prefix}form-element-valid-focus-color
+      );
+      #{$css-var-prefix}form-element-focus-color: var(
+        #{$css-var-prefix}form-element-valid-focus-color
+      );
     }
 
     &[aria-invalid="true"] {
-      #{$✨}form-element-border-color: var(#{$✨}form-element-invalid-border-color);
-      #{$✨}form-element-active-border-color: var(#{$✨}form-element-invalid-focus-color);
-      #{$✨}form-element-focus-color: var(#{$✨}form-element-invalid-focus-color);
+      #{$css-var-prefix}form-element-border-color: var(
+        #{$css-var-prefix}form-element-invalid-border-color
+      );
+      #{$css-var-prefix}form-element-active-border-color: var(
+        #{$css-var-prefix}form-element-invalid-focus-color
+      );
+      #{$css-var-prefix}form-element-focus-color: var(
+        #{$css-var-prefix}form-element-invalid-focus-color
+      );
     }
   }
 
@@ -105,16 +124,22 @@
   // ––––––––––––––––––––
   nav details.dropdown {
     display: inline;
-    margin: calc(var(#{$✨}nav-element-spacing-vertical) * -1) 0;
+    margin: calc(var(#{$css-var-prefix}nav-element-spacing-vertical) * -1) 0;
 
     summary:not([role]) {
       // Override height
-      height: calc((1rem * var(#{$✨}line-height)) + (var(#{$✨}nav-link-spacing-vertical) * 2));
-      padding: calc(var(#{$✨}nav-link-spacing-vertical) - (var(#{$✨}border-width) * 2))
-        var(#{$✨}nav-link-spacing-horizontal);
+      height: calc(
+        (1rem * var(#{$css-var-prefix}line-height)) +
+          (var(#{$css-var-prefix}nav-link-spacing-vertical) * 2)
+      );
+      padding: calc(
+          var(#{$css-var-prefix}nav-link-spacing-vertical) -
+            (var(#{$css-var-prefix}border-width) * 2)
+        )
+        var(#{$css-var-prefix}nav-link-spacing-horizontal);
 
       &:focus-visible {
-        box-shadow: 0 0 0 var(#{$✨}outline-width) var(#{$✨}primary-focus);
+        box-shadow: 0 0 0 var(#{$css-var-prefix}outline-width) var(#{$css-var-prefix}primary-focus);
       }
     }
   }
@@ -130,19 +155,19 @@
     width: 100%;
     min-width: fit-content;
     margin: 0;
-    margin-top: var(#{$✨}outline-width);
+    margin-top: var(#{$css-var-prefix}outline-width);
     padding: 0;
-    border: var(#{$✨}border-width) solid var(#{$✨}dropdown-border-color);
-    border-radius: var(#{$✨}border-radius);
-    background-color: var(#{$✨}dropdown-background-color);
-    box-shadow: var(#{$✨}dropdown-box-shadow);
-    color: var(#{$✨}dropdown-color);
+    border: var(#{$css-var-prefix}border-width) solid var(#{$css-var-prefix}dropdown-border-color);
+    border-radius: var(#{$css-var-prefix}border-radius);
+    background-color: var(#{$css-var-prefix}dropdown-background-color);
+    box-shadow: var(#{$css-var-prefix}dropdown-box-shadow);
+    color: var(#{$css-var-prefix}dropdown-color);
     white-space: nowrap;
     opacity: 0;
 
     @if $enable-transitions {
       transition:
-        opacity var(--pico-transition),
+        opacity var(#{$css-var-prefix}transition),
         transform 0s ease-in-out 1s;
     }
 
@@ -154,27 +179,27 @@
     li {
       width: 100%;
       margin-bottom: 0;
-      padding: calc(var(#{$✨}form-element-spacing-vertical) * 0.5)
-        var(#{$✨}form-element-spacing-horizontal);
+      padding: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5)
+        var(#{$css-var-prefix}form-element-spacing-horizontal);
       list-style: none;
 
       &:first-of-type {
-        margin-top: calc(var(#{$✨}form-element-spacing-vertical) * 0.5);
+        margin-top: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
       }
 
       &:last-of-type {
-        margin-bottom: calc(var(#{$✨}form-element-spacing-vertical) * 0.5);
+        margin-bottom: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
       }
 
       a {
         display: block;
-        margin: calc(var(#{$✨}form-element-spacing-vertical) * -0.5)
-          calc(var(#{$✨}form-element-spacing-horizontal) * -1);
-        padding: calc(var(#{$✨}form-element-spacing-vertical) * 0.5)
-          var(#{$✨}form-element-spacing-horizontal);
+        margin: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * -0.5)
+          calc(var(#{$css-var-prefix}form-element-spacing-horizontal) * -1);
+        padding: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5)
+          var(#{$css-var-prefix}form-element-spacing-horizontal);
         overflow: hidden;
         border-radius: 0;
-        color: var(#{$✨}dropdown-color);
+        color: var(#{$css-var-prefix}dropdown-color);
         text-decoration: none;
         text-overflow: ellipsis;
 
@@ -183,7 +208,7 @@
         &:active,
         &:focus-visible,
         &[aria-current]:not([aria-current="false"]) {
-          background-color: var(#{$✨}dropdown-hover-background-color);
+          background-color: var(#{$css-var-prefix}dropdown-hover-background-color);
         }
       }
 
@@ -193,7 +218,7 @@
 
       // Not working in Firefox, which doesn't support the `:has()` pseudo-class
       &:has(label):hover {
-        background-color: var(#{$✨}dropdown-hover-background-color);
+        background-color: var(#{$css-var-prefix}dropdown-hover-background-color);
       }
     }
   }
@@ -240,6 +265,6 @@
   // Label
   // ––––––––––––––––––––
   label > details.dropdown {
-    margin-top: calc(var(#{$✨}spacing) * 0.25);
+    margin-top: calc(var(#{$css-var-prefix}spacing) * 0.25);
   }
 }

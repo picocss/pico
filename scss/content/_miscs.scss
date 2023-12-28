@@ -15,9 +15,9 @@
   // 2. Add the correct box sizing in Firefox
   hr {
     height: 0; // 2
-    margin: var(#{$✨}typography-spacing-vertical) 0;
+    margin: var(#{$css-var-prefix}typography-spacing-vertical) 0;
     border: 0;
-    border-top: 1px solid var(#{$✨}muted-border-color);
+    border-top: 1px solid var(#{$css-var-prefix}muted-border-color);
     color: inherit; // 1
   }
 

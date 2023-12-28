@@ -12,13 +12,13 @@ $css-var-color-prefix: #{settings.$css-var-prefix}#{$color-property-name};
   @if map.get(settings.$utilities, "color-for-background-colors") {
     @if utils.foreground-brightness($background-color) == "light" {
       @if $enable-css-vars {
-        color: var(--#{$css-var-color-prefix}-light);
+        color: var(#{$css-var-color-prefix}-light);
       } @else {
         color: utils.display-color(map.get(settings.$palette, "light-color"));
       }
     } @else {
       @if $enable-css-vars {
-        color: var(--#{$css-var-color-prefix}-dark);
+        color: var(#{$css-var-color-prefix}-dark);
       } @else {
         color: utils.display-color(map.get(settings.$palette, "dark-color"));
       }
@@ -40,7 +40,7 @@ $css-var-color-prefix: #{settings.$css-var-prefix}#{$color-property-name};
           @if $shade == "main" and map.get(settings.$palette, "enable-main-color") {
             $value: $color-value;
             @if $enable-css-vars {
-              $value: var(--#{$css-var-family-name});
+              $value: var(#{$css-var-family-name});
             } @else {
               $value: utils.display-color($color-value);
             }
@@ -57,7 +57,7 @@ $css-var-color-prefix: #{settings.$css-var-prefix}#{$color-property-name};
           {
             $value: $color-value;
             @if $enable-css-vars {
-              $value: var(--#{$css-var-family-name}-#{$shade});
+              $value: var(#{$css-var-family-name}-#{$shade});
             } @else {
               $value: utils.display-color($color-value);
             }
