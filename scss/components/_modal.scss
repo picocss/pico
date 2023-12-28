@@ -59,10 +59,12 @@
           margin-bottom: 0;
         }
 
-        .close {
-          margin: 0;
-          margin-left: var(#{$css-var-prefix}spacing);
-          float: right;
+        @if $enable-classes {
+          .close {
+            margin: 0;
+            margin-left: var(#{$css-var-prefix}spacing);
+            float: right;
+          }
         }
       }
 

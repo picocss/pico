@@ -2108,11 +2108,6 @@ dialog article > footer {
 dialog article > header > * {
   margin-bottom: 0;
 }
-dialog article > header .close {
-  margin: 0;
-  margin-left: var(--pico-spacing);
-  float: right;
-}
 dialog article > footer {
   text-align: right;
 }
