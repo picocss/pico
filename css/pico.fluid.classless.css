@@ -2155,13 +2155,15 @@ nav[aria-label=breadcrumb] ul li a {
   margin-inline-start: calc(var(--pico-nav-link-spacing-horizontal) * -1);
 }
 nav[aria-label=breadcrumb] ul li:not(:last-child)::after {
+  display: inline-block;
   position: absolute;
-  width: calc(var(--pico-nav-link-spacing-horizontal) * 2);
-  padding: 0 calc(var(--pico-nav-link-spacing-horizontal) / 2);
+  width: calc(var(--pico-nav-link-spacing-horizontal) * 4);
+  margin: 0 calc(var(--pico-nav-link-spacing-horizontal) * -1);
   content: var(--pico-nav-breadcrumb-divider);
   color: var(--pico-muted-color);
   text-align: center;
   text-decoration: none;
+  white-space: nowrap;
 }
 nav[aria-label=breadcrumb] a[aria-current] {
   background-color: transparent;

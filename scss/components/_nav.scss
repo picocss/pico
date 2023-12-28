@@ -89,6 +89,7 @@
 
         &:not(:last-child) {
           &::after {
+            display: inline-block;
             position: absolute;
             width: calc(var(#{$✨}nav-link-spacing-horizontal) * 4);
             margin: 0 calc(var(#{$✨}nav-link-spacing-horizontal) * -1);
@@ -96,7 +97,6 @@
             color: var(#{$✨}muted-color);
             text-align: center;
             text-decoration: none;
-            display: inline-block;
             white-space: nowrap;
           }
         }
