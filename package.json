@@ -34,7 +34,7 @@
     "build": "run-s start lint \"build:*\" done --silent",
     "dev": "nodemon -q --watch scss/ --ext scss --exec 'run-s build'",
     "lint": "run-s \"lint:*\" --silent",
-    "lint:prettier": "prettier --write --loglevel silent 'scss/**/*.scss'",
+    "lint:prettier": "prettier --write --log-level silent 'scss/**/*.scss'",
     "lint:sort-scss": "postcss --config scss ./scss/**/*.scss --replace",
     "build:css": "sass --load-path=node_modules/@picocss/colors/scss --style expanded --source-map --embed-sources --no-error-css scss/:css/",
     "build:autoprefix": "postcss --config css --replace css/*.css !css/*.min.css",
