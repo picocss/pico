@@ -145,6 +145,7 @@
 
   // Blocks, 100%
   input:not([type="checkbox"], [type="radio"]),
+  button[type="submit"],
   select,
   textarea {
     width: 100%;
@@ -175,8 +176,11 @@
     font-weight: var(#{$✨}font-weight);
 
     @if $enable-transitions {
-      transition: background-color var(#{$✨}transition), border-color var(#{$✨}transition),
-        color var(#{$✨}transition), box-shadow var(#{$✨}transition);
+      transition:
+        background-color var(#{$✨}transition),
+        border-color var(#{$✨}transition),
+        color var(#{$✨}transition),
+        box-shadow var(#{$✨}transition);
     }
   }
 

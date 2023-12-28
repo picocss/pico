@@ -19,8 +19,11 @@
     text-underline-offset: 0.125em;
 
     @if $enable-transitions {
-      transition: background-color var(#{$✨}transition), color var(#{$✨}transition),
-        text-decoration var(#{$✨}transition), box-shadow var(#{$✨}transition);
+      transition:
+        background-color var(#{$✨}transition),
+        color var(#{$✨}transition),
+        text-decoration var(#{$✨}transition),
+        box-shadow var(#{$✨}transition);
     }
 
     &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {

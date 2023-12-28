@@ -36,7 +36,7 @@
     // Borders
     #{$✨}border-radius: 0.25rem;
     #{$✨}border-width: 0.0625rem;
-    #{$✨}outline-width: 0.1875rem;
+    #{$✨}outline-width: 0.125rem;
 
     // Transitions
     #{$✨}transition: 0.2s ease-in-out;
@@ -381,7 +381,7 @@
     nav {
       details.dropdown {
         summary:focus-visible {
-          #{$✨}outline-width: 0.1875rem;
+          #{$✨}outline-width: 0.125rem;
         }
       }
     }

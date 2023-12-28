@@ -8,6 +8,8 @@
 
   // Everything except form elements
   [aria-busy="true"]:not(input, select, textarea, html) {
+    white-space: nowrap;
+
     &::before {
       display: inline-block;
       width: 1em;
