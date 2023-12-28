@@ -2150,10 +2150,14 @@ nav[aria-label=breadcrumb] {
 nav[aria-label=breadcrumb] ul li:not(:first-child) {
   margin-inline-start: var(--pico-nav-link-spacing-horizontal);
 }
+nav[aria-label=breadcrumb] ul li a {
+  margin: calc(var(--pico-nav-link-spacing-vertical) * -1) 0;
+  margin-inline-start: calc(var(--pico-nav-link-spacing-horizontal) * -1);
+}
 nav[aria-label=breadcrumb] ul li:not(:last-child)::after {
   position: absolute;
   width: calc(var(--pico-nav-link-spacing-horizontal) * 2);
-  margin-inline-start: calc(var(--pico-nav-link-spacing-horizontal) / 2);
+  padding: 0 calc(var(--pico-nav-link-spacing-horizontal) / 2);
   content: var(--pico-nav-breadcrumb-divider);
   color: var(--pico-muted-color);
   text-align: center;
