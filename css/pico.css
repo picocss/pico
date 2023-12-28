@@ -836,8 +836,8 @@ a,
   transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition);
   transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition), -webkit-text-decoration var(--pico-transition);
 }
-a:is([aria-current], :hover, :active, :focus),
-[role=link]:is([aria-current], :hover, :active, :focus) {
+a:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[role=link]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   --pico-color: var(--pico-primary-hover);
   --pico-underline: var(--pico-primary-hover-underline);
   --pico-text-decoration: underline;
@@ -851,8 +851,8 @@ a.secondary,
   --pico-color: var(--pico-secondary);
   --pico-underline: var(--pico-secondary-underline);
 }
-a.secondary:is([aria-current], :hover, :active, :focus),
-[role=link].secondary:is([aria-current], :hover, :active, :focus) {
+a.secondary:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[role=link].secondary:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   --pico-color: var(--pico-secondary-hover);
   --pico-underline: var(--pico-secondary-hover-underline);
 }
@@ -861,8 +861,8 @@ a.contrast,
   --pico-color: var(--pico-contrast);
   --pico-underline: var(--pico-contrast-underline);
 }
-a.contrast:is([aria-current], :hover, :active, :focus),
-[role=link].contrast:is([aria-current], :hover, :active, :focus) {
+a.contrast:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[role=link].contrast:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   --pico-color: var(--pico-contrast-hover);
   --pico-underline: var(--pico-contrast-hover-underline);
 }
@@ -1108,12 +1108,12 @@ button,
   user-select: none;
   transition: background-color var(--pico-transition), border-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition);
 }
-button:is([aria-current], :hover, :active, :focus),
-[type=submit]:is([aria-current], :hover, :active, :focus),
-[type=reset]:is([aria-current], :hover, :active, :focus),
-[type=button]:is([aria-current], :hover, :active, :focus),
-[type=file]::file-selector-button:is([aria-current], :hover, :active, :focus),
-[role=button]:is([aria-current], :hover, :active, :focus) {
+button:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[type=submit]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[type=reset]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[type=button]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[type=file]::file-selector-button:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[role=button]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   --pico-background-color: var(--pico-primary-hover-background);
   --pico-border-color: var(--pico-primary-hover-border);
   --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
@@ -1142,9 +1142,9 @@ button:focus,
   --pico-color: var(--pico-secondary-inverse);
   cursor: pointer;
 }
-:is(button, [type=submit], [type=button], [role=button]).secondary:is([aria-current], :hover, :active, :focus),
-[type=reset]:is([aria-current], :hover, :active, :focus),
-[type=file]::file-selector-button:is([aria-current], :hover, :active, :focus) {
+:is(button, [type=submit], [type=button], [role=button]).secondary:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[type=reset]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[type=file]::file-selector-button:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   --pico-background-color: var(--pico-secondary-hover-background);
   --pico-border-color: var(--pico-secondary-hover-border);
   --pico-color: var(--pico-secondary-inverse);
@@ -1160,7 +1160,7 @@ button:focus,
   --pico-border-color: var(--pico-contrast-border);
   --pico-color: var(--pico-contrast-inverse);
 }
-:is(button, [type=submit], [type=button], [role=button]).contrast:is([aria-current], :hover, :active, :focus) {
+:is(button, [type=submit], [type=button], [role=button]).contrast:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   --pico-background-color: var(--pico-contrast-hover-background);
   --pico-border-color: var(--pico-contrast-hover-border);
   --pico-color: var(--pico-contrast-inverse);
@@ -1175,8 +1175,8 @@ button:focus,
   --pico-color: var(--pico-primary);
   --pico-border-color: currentColor;
 }
-:is(button, [type=submit], [type=button], [role=button]).outline:is([aria-current], :hover, :active, :focus),
-[type=reset].outline:is([aria-current], :hover, :active, :focus) {
+:is(button, [type=submit], [type=button], [role=button]).outline:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[type=reset].outline:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   --pico-background-color: transparent;
   --pico-color: var(--pico-primary-hover);
 }
@@ -1186,15 +1186,15 @@ button:focus,
   --pico-color: var(--pico-secondary);
   --pico-border-color: currentColor;
 }
-:is(button, [type=submit], [type=button], [role=button]).outline.secondary:is([aria-current], :hover, :active, :focus),
-[type=reset].outline:is([aria-current], :hover, :active, :focus) {
+:is(button, [type=submit], [type=button], [role=button]).outline.secondary:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[type=reset].outline:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   --pico-color: var(--pico-secondary-hover);
 }
 
 :is(button, [type=submit], [type=button], [role=button]).outline.contrast {
   --pico-color: var(--pico-contrast);
 }
-:is(button, [type=submit], [type=button], [role=button]).outline.contrast:is([aria-current], :hover, :active, :focus) {
+:is(button, [type=submit], [type=button], [role=button]).outline.contrast:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   --pico-color: var(--pico-contrast-hover);
 }
 
@@ -2170,7 +2170,7 @@ details.dropdown summary + ul li a {
   text-decoration: none;
   text-overflow: ellipsis;
 }
-details.dropdown summary + ul li a:hover, details.dropdown summary + ul li a:focus, details.dropdown summary + ul li a:active, details.dropdown summary + ul li a:focus-visible, details.dropdown summary + ul li a[aria-current] {
+details.dropdown summary + ul li a:hover, details.dropdown summary + ul li a:focus, details.dropdown summary + ul li a:active, details.dropdown summary + ul li a:focus-visible, details.dropdown summary + ul li a[aria-current]:not([aria-current=false]) {
   background-color: var(--pico-dropdown-hover-background-color);
 }
 details.dropdown summary + ul li label {
@@ -2444,7 +2444,7 @@ dialog article .close {
   opacity: 0.5;
   transition: opacity var(--pico-transition);
 }
-dialog article .close:is([aria-current], :hover, :active, :focus) {
+dialog article .close:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   opacity: 1;
 }
 dialog:not([open]), dialog[open=false] {
@@ -2573,7 +2573,7 @@ nav[aria-label=breadcrumb] ul li:not(:last-child)::after {
   text-decoration: none;
   white-space: nowrap;
 }
-nav[aria-label=breadcrumb] a[aria-current] {
+nav[aria-label=breadcrumb] a[aria-current]:not([aria-current=false]) {
   background-color: transparent;
   color: inherit;
   text-decoration: none;
