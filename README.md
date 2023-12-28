@@ -9,7 +9,7 @@
 <p align="center">
   <strong>Minimal CSS Framework for semantic HTML</strong><br>
   Elegant styles for all native HTML elements without <code>.classes</code> and dark mode automatically enabled.<br><br>
-  <a href="https://picocss.com/#examples">Examples</a> ·
+  <a href="https://github.com/picocss/examples">Examples</a> ·
   <a href="https://picocss.com/docs/">Documentation</a>
 </p>
 
@@ -119,7 +119,7 @@ Then just write pure HTML, and it should look great:
 
 Minimalist templates to discover Pico in action:
 
-[![Examples](.github/examples.jpg)](https://picocss.com/#examples)
+[![Examples](.github/examples.jpg)](https://github.com/picocss/examples)
 
 - **[Preview](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-preview)**  
   A starter example with most of the Pico components and styles.
