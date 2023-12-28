@@ -2108,6 +2108,11 @@ dialog article > footer {
 dialog article > header > * {
   margin-bottom: 0;
 }
+dialog article > header a[rel=prev] {
+  margin: 0;
+  margin-left: var(--pico-spacing);
+  float: right;
+}
 dialog article > footer {
   text-align: right;
 }
@@ -2118,6 +2123,23 @@ dialog article > footer [role=button] {
 dialog article > footer button:not(:first-of-type),
 dialog article > footer [role=button]:not(:first-of-type) {
   margin-left: calc(var(--pico-spacing) * 0.5);
+}
+dialog article a[rel=prev] {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  margin-top: calc(var(--pico-spacing) * -1);
+  margin-bottom: var(--pico-spacing);
+  margin-left: auto;
+  background-image: var(--pico-icon-close);
+  background-position: center;
+  background-size: auto 1rem;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity var(--pico-transition);
+}
+dialog article a[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+  opacity: 1;
 }
 dialog:not([open]), dialog[open=false] {
   display: none;
