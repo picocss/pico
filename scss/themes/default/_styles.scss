@@ -10,43 +10,43 @@
 
   :root {
     // Typography
-    #{$✨}font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    #{$css-var-prefix}font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
       "Noto Color Emoji";
-    #{$✨}font-family-sans-serif: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-      var(#{$✨}font-family-emoji);
-    #{$✨}font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
-      "Liberation Mono", monospace, var(#{$✨}font-family-emoji);
-    #{$✨}font-family: var(#{$✨}font-family-sans-serif);
-    #{$✨}line-height: 1.5;
-    #{$✨}font-weight: 400;
-    #{$✨}font-size: 100%;
-    #{$✨}text-underline-offset: 0.1rem;
+    #{$css-var-prefix}font-family-sans-serif: system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+      sans-serif, var(#{$css-var-prefix}font-family-emoji);
+    #{$css-var-prefix}font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+      Consolas, "Liberation Mono", monospace, var(#{$css-var-prefix}font-family-emoji);
+    #{$css-var-prefix}font-family: var(#{$css-var-prefix}font-family-sans-serif);
+    #{$css-var-prefix}line-height: 1.5;
+    #{$css-var-prefix}font-weight: 400;
+    #{$css-var-prefix}font-size: 100%;
+    #{$css-var-prefix}text-underline-offset: 0.1rem;
 
     // Responsive root font size
     @if $enable-responsive-typography {
       @each $key, $values in $breakpoints {
         @if $values {
           @media (min-width: map.get($values, "breakpoint")) {
-            #{$✨}font-size: map.get($values, "root-font-size");
+            #{$css-var-prefix}font-size: map.get($values, "root-font-size");
           }
         }
       }
     }
 
     // Borders
-    #{$✨}border-radius: 0.25rem;
-    #{$✨}border-width: 0.0625rem;
-    #{$✨}outline-width: 0.125rem;
+    #{$css-var-prefix}border-radius: 0.25rem;
+    #{$css-var-prefix}border-width: 0.0625rem;
+    #{$css-var-prefix}outline-width: 0.125rem;
 
     // Transitions
-    #{$✨}transition: 0.2s ease-in-out;
+    #{$css-var-prefix}transition: 0.2s ease-in-out;
 
     // Spacings
-    #{$✨}spacing: 1rem;
+    #{$css-var-prefix}spacing: 1rem;
 
     // Spacings for typography elements
     @if map.get($modules, "content/typography") {
-      #{$✨}typography-spacing-vertical: 1rem;
+      #{$css-var-prefix}typography-spacing-vertical: 1rem;
     }
 
     // Spacings for body > header, body > main, body > footer, section, article
@@ -55,55 +55,59 @@
       map.get($modules, "components/card") or
       map.get($modules, "components/modal")
     {
-      #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 2);
-      #{$✨}block-spacing-horizontal: var(#{$✨}spacing);
+      #{$css-var-prefix}block-spacing-vertical: calc(var(#{$css-var-prefix}spacing) * 2);
+      #{$css-var-prefix}block-spacing-horizontal: var(#{$css-var-prefix}spacing);
     }
 
     @if map.get($modules, "layout/grid") and $enable-classes {
-      #{$✨}grid-column-gap: var(#{$✨}spacing);
-      #{$✨}grid-row-gap: var(#{$✨}spacing);
+      #{$css-var-prefix}grid-column-gap: var(#{$css-var-prefix}spacing);
+      #{$css-var-prefix}grid-row-gap: var(#{$css-var-prefix}spacing);
     }
 
     // Spacings for form elements and button
     @if map.get($modules, "content/button") or map.get($modules, "forms/basic") {
-      #{$✨}form-element-spacing-vertical: 0.75rem;
-      #{$✨}form-element-spacing-horizontal: 1rem;
+      #{$css-var-prefix}form-element-spacing-vertical: 0.75rem;
+      #{$css-var-prefix}form-element-spacing-horizontal: 1rem;
     }
 
     // Font weight for form labels & fieldsets legend
     @if map.get($modules, "forms/basic") {
-      #{$✨}form-label-font-weight: var(#{$✨}font-weight);
+      #{$css-var-prefix}form-label-font-weight: var(#{$css-var-prefix}font-weight);
     }
 
     // Group (role="group")
     @if map.get($modules, "components/group") {
-      #{$✨}group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-      #{$✨}group-box-shadow-focus-with-button: 0
+      #{$css-var-prefix}group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+      #{$css-var-prefix}group-box-shadow-focus-with-button: 0
         0
         0
-        var(#{$✨}outline-width)
-        var(#{$✨}primary-focus);
-      #{$✨}group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(#{$✨}form-element-border-color);
+        var(#{$css-var-prefix}outline-width)
+        var(#{$css-var-prefix}primary-focus);
+      #{$css-var-prefix}group-box-shadow-focus-with-input: 0
+        0
+        0
+        0.0625rem
+        var(#{$css-var-prefix}form-element-border-color);
     }
 
     // Modal (<dialog>)
     @if map.get($modules, "components/modal") {
-      #{$✨}modal-overlay-backdrop-filter: blur(0.375rem);
+      #{$css-var-prefix}modal-overlay-backdrop-filter: blur(0.375rem);
     }
 
     // Spacings for nav component
     @if map.get($modules, "components/nav") {
-      #{$✨}nav-element-spacing-vertical: 1rem;
-      #{$✨}nav-element-spacing-horizontal: 0.5rem;
-      #{$✨}nav-link-spacing-vertical: 0.5rem;
-      #{$✨}nav-link-spacing-horizontal: 0.5rem;
-      #{$✨}nav-breadcrumb-divider: ">";
+      #{$css-var-prefix}nav-element-spacing-vertical: 1rem;
+      #{$css-var-prefix}nav-element-spacing-horizontal: 0.5rem;
+      #{$css-var-prefix}nav-link-spacing-vertical: 0.5rem;
+      #{$css-var-prefix}nav-link-spacing-horizontal: 0.5rem;
+      #{$css-var-prefix}nav-breadcrumb-divider: ">";
     }
 
     // Checkboxes icons
     @if map.get($modules, "forms/checkbox-radio-switch") {
-      #{$✨}icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($white)}' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-      #{$✨}icon-minus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($white)}' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
+      #{$css-var-prefix}icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($white)}' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+      #{$css-var-prefix}icon-minus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($white)}' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
     }
 
     // Chevron icons
@@ -111,7 +115,7 @@
       map.get($modules, "components/accordion") or
       map.get($modules, "components/dropdown")
     {
-      #{$✨}icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      #{$css-var-prefix}icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     }
 
     // Chevron icons
@@ -134,24 +138,24 @@
 
     // Datetime icons
     @if map.get($modules, "forms/input-date") {
-      #{$✨}icon-date: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
-      #{$✨}icon-time: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
+      #{$css-var-prefix}icon-date: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+      #{$css-var-prefix}icon-time: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
     }
 
     // Search icon
     @if map.get($modules, "forms/input-search") {
-      #{$✨}icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+      #{$css-var-prefix}icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
     }
 
     // Close icon
     @if map.get($modules, "components/modal") {
-      #{$✨}icon-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
+      #{$css-var-prefix}icon-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
     }
 
     // Loading icon (animated)
     @if map.get($modules, "components/loading") {
       // Inspired by https://codepen.io/aleksander351/pen/KzgKPo
-      #{$✨}icon-loading: url("data:image/svg+xml,%3Csvg fill='none' height='24' width='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' %3E%3Cstyle%3E g %7B animation: rotate 2s linear infinite; transform-origin: center center; %7D circle %7B stroke-dasharray: 75,100; stroke-dashoffset: -5; animation: dash 1.5s ease-in-out infinite; stroke-linecap: round; %7D @keyframes rotate %7B 0%25 %7B transform: rotate(0deg); %7D 100%25 %7B transform: rotate(360deg); %7D %7D @keyframes dash %7B 0%25 %7B stroke-dasharray: 1,100; stroke-dashoffset: 0; %7D 50%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -17.5; %7D 100%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -62; %7D %7D %3C/style%3E%3Cg%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='4' /%3E%3C/g%3E%3C/svg%3E");
+      #{$css-var-prefix}icon-loading: url("data:image/svg+xml,%3Csvg fill='none' height='24' width='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' %3E%3Cstyle%3E g %7B animation: rotate 2s linear infinite; transform-origin: center center; %7D circle %7B stroke-dasharray: 75,100; stroke-dashoffset: -5; animation: dash 1.5s ease-in-out infinite; stroke-linecap: round; %7D @keyframes rotate %7B 0%25 %7B transform: rotate(0deg); %7D 100%25 %7B transform: rotate(360deg); %7D %7D @keyframes dash %7B 0%25 %7B stroke-dasharray: 1,100; stroke-dashoffset: 0; %7D 50%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -17.5; %7D 100%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -62; %7D %7D %3C/style%3E%3Cg%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='4' /%3E%3C/g%3E%3C/svg%3E");
 
       // Change the icon color to white for buttons
       [aria-busy="true"]:not(input, select, textarea) {
@@ -192,7 +196,9 @@
                 $multiplier: 4.5;
               }
 
-              #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * $multiplier);
+              #{$css-var-prefix}block-spacing-vertical: calc(
+                var(#{$css-var-prefix}spacing) * $multiplier
+              );
             }
           }
         }
@@ -218,7 +224,9 @@
                 $multiplier: 2.25;
               }
 
-              #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * $multiplier);
+              #{$css-var-prefix}block-spacing-horizontal: calc(
+                var(#{$css-var-prefix}spacing) * $multiplier
+              );
             }
           }
         }
@@ -228,20 +236,20 @@
     // Modal
     @if map.get($modules, "components/modal") {
       dialog > article {
-        #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 2);
-        #{$✨}block-spacing-horizontal: var(#{$✨}spacing);
+        #{$css-var-prefix}block-spacing-vertical: calc(var(#{$css-var-prefix}spacing) * 2);
+        #{$css-var-prefix}block-spacing-horizontal: var(#{$css-var-prefix}spacing);
 
         @if map.get($breakpoints, "sm") {
           @media (min-width: map.get(map.get($breakpoints, "sm"), "breakpoint")) {
-            #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 2.5);
-            #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * 1.25);
+            #{$css-var-prefix}block-spacing-vertical: calc(var(#{$css-var-prefix}spacing) * 2.5);
+            #{$css-var-prefix}block-spacing-horizontal: calc(var(#{$css-var-prefix}spacing) * 1.25);
           }
         }
 
         @if map.get($breakpoints, "md") {
           @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
-            #{$✨}block-spacing-vertical: calc(var(#{$✨}spacing) * 3);
-            #{$✨}block-spacing-horizontal: calc(var(#{$✨}spacing) * 1.5);
+            #{$css-var-prefix}block-spacing-vertical: calc(var(#{$css-var-prefix}spacing) * 3);
+            #{$css-var-prefix}block-spacing-horizontal: calc(var(#{$css-var-prefix}spacing) * 1.5);
           }
         }
       }
@@ -251,13 +259,13 @@
   // Link
   @if map.get($modules, "content/link") {
     a {
-      #{$✨}text-decoration: underline;
+      #{$css-var-prefix}text-decoration: underline;
 
       // Secondary & Contrast
       @if enable-classes {
         &.secondary,
         &.contrast {
-          #{$✨}text-decoration: underline;
+          #{$css-var-prefix}text-decoration: underline;
         }
       }
     }
@@ -267,7 +275,7 @@
   @if map.get($modules, "content/typography") {
     // Small
     small {
-      #{$✨}font-size: 0.875em;
+      #{$css-var-prefix}font-size: 0.875em;
     }
 
     // Headings
@@ -277,42 +285,42 @@
     h4,
     h5,
     h6 {
-      #{$✨}font-weight: 700;
+      #{$css-var-prefix}font-weight: 700;
     }
 
     h1 {
-      #{$✨}font-size: 2rem;
-      #{$✨}line-height: 1.25;
-      #{$✨}typography-spacing-top: 3rem;
+      #{$css-var-prefix}font-size: 2rem;
+      #{$css-var-prefix}line-height: 1.25;
+      #{$css-var-prefix}typography-spacing-top: 3rem;
     }
 
     h2 {
-      #{$✨}font-size: 1.75rem;
-      #{$✨}line-height: 1.3;
-      #{$✨}typography-spacing-top: 2.625rem;
+      #{$css-var-prefix}font-size: 1.75rem;
+      #{$css-var-prefix}line-height: 1.3;
+      #{$css-var-prefix}typography-spacing-top: 2.625rem;
     }
 
     h3 {
-      #{$✨}font-size: 1.5rem;
-      #{$✨}line-height: 1.35;
-      #{$✨}typography-spacing-top: 2.25rem;
+      #{$css-var-prefix}font-size: 1.5rem;
+      #{$css-var-prefix}line-height: 1.35;
+      #{$css-var-prefix}typography-spacing-top: 2.25rem;
     }
 
     h4 {
-      #{$✨}font-size: 1.25rem;
-      #{$✨}line-height: 1.4;
-      #{$✨}typography-spacing-top: 1.874rem;
+      #{$css-var-prefix}font-size: 1.25rem;
+      #{$css-var-prefix}line-height: 1.4;
+      #{$css-var-prefix}typography-spacing-top: 1.874rem;
     }
 
     h5 {
-      #{$✨}font-size: 1.125rem;
-      #{$✨}line-height: 1.45;
-      #{$✨}typography-spacing-top: 1.6875rem;
+      #{$css-var-prefix}font-size: 1.125rem;
+      #{$css-var-prefix}line-height: 1.45;
+      #{$css-var-prefix}typography-spacing-top: 1.6875rem;
     }
 
     h6 {
-      #{$✨}font-size: 1rem;
-      #{$✨}typography-spacing-top: 1.5rem;
+      #{$css-var-prefix}font-size: 1rem;
+      #{$css-var-prefix}typography-spacing-top: 1.5rem;
     }
   }
 
@@ -322,8 +330,8 @@
     tfoot {
       th,
       td {
-        #{$✨}font-weight: 600;
-        #{$✨}border-width: 0.1875rem;
+        #{$css-var-prefix}font-weight: 600;
+        #{$css-var-prefix}border-width: 0.1875rem;
       }
     }
   }
@@ -334,11 +342,11 @@
     code,
     kbd,
     samp {
-      #{$✨}font-family: var(#{$✨}font-family-monospace);
+      #{$css-var-prefix}font-family: var(#{$css-var-prefix}font-family-monospace);
     }
 
     kbd {
-      #{$✨}font-weight: bolder;
+      #{$css-var-prefix}font-weight: bolder;
     }
   }
 
@@ -352,22 +360,22 @@
       [type="file"]
     ),
   :where(select, textarea) {
-    #{$✨}outline-width: 0.0625rem;
+    #{$css-var-prefix}outline-width: 0.0625rem;
   }
 
   [type="search"] {
-    #{$✨}border-radius: 5rem;
+    #{$css-var-prefix}border-radius: 5rem;
   }
 
   // Checkboxes, Radios and Switches
   @if map.get($modules, "forms/checkbox-radio-switch") {
     [type="checkbox"],
     [type="radio"] {
-      #{$✨}border-width: 0.125rem;
+      #{$css-var-prefix}border-width: 0.125rem;
     }
 
     [type="checkbox"][role="switch"] {
-      #{$✨}border-width: 0.1875rem;
+      #{$css-var-prefix}border-width: 0.1875rem;
     }
   }
 
@@ -375,13 +383,13 @@
   @if map.get($modules, "components/dropdown") and $enable-classes {
     details.dropdown {
       summary:not([role="button"]) {
-        #{$✨}outline-width: 0.0625rem;
+        #{$css-var-prefix}outline-width: 0.0625rem;
       }
     }
     nav {
       details.dropdown {
         summary:focus-visible {
-          #{$✨}outline-width: 0.125rem;
+          #{$css-var-prefix}outline-width: 0.125rem;
         }
       }
     }
@@ -390,7 +398,7 @@
   // Group (role="group")
   @if map.get($modules, "components/group") {
     [role="search"] {
-      #{$✨}border-radius: 5rem;
+      #{$css-var-prefix}border-radius: 5rem;
     }
 
     [role="search"],
@@ -402,11 +410,11 @@
             [type="button"].secondary:focus,
             [role="button"].secondary:focus
           ) {
-          #{$✨}group-box-shadow-focus-with-button: 0
+          #{$css-var-prefix}group-box-shadow-focus-with-button: 0
             0
             0
-            var(#{$✨}outline-width)
-            var(#{$✨}secondary-focus);
+            var(#{$css-var-prefix}outline-width)
+            var(#{$css-var-prefix}secondary-focus);
         }
 
         &:has(
@@ -415,11 +423,11 @@
             [type="button"].contrast:focus,
             [role="button"].contrast:focus
           ) {
-          #{$✨}group-box-shadow-focus-with-button: 0
+          #{$css-var-prefix}group-box-shadow-focus-with-button: 0
             0
             0
-            var(#{$✨}outline-width)
-            var(#{$✨}contrast-focus);
+            var(#{$css-var-prefix}outline-width)
+            var(#{$css-var-prefix}contrast-focus);
         }
       }
 
@@ -427,7 +435,7 @@
       [type="submit"],
       [type="button"],
       [role="button"] {
-        #{$✨}form-element-spacing-horizontal: 2rem;
+        #{$css-var-prefix}form-element-spacing-horizontal: 2rem;
       }
     }
   }

@@ -4,7 +4,7 @@
 // ––––––––––––––––––––
 
 // Prefix for CSS variables
-$css-var-prefix: "pico-" !default;
+$css-var-prefix: "--pico-" !default; // Must start with "--"
 
 // Define the root element used to target <header>, <main>, <footer>
 // with $enable-semantic-container and $enable-responsive-spacings
@@ -137,6 +137,3 @@ $modules: map.merge(
   ),
   $modules
 );
-
-// Shortcut for CSS vars prefix
-$✨: --#{$css-var-prefix};

@@ -21,7 +21,7 @@
   textarea {
     margin: 0; // 2
     font-size: 1rem; // 1
-    line-height: var(#{$✨}line-height); // 1
+    line-height: var(#{$css-var-prefix}line-height); // 1
     font-family: inherit; // 1
     letter-spacing: inherit; // 2
   }
@@ -117,16 +117,16 @@
   // Force height for alternatives input types
   input:not([type="checkbox"], [type="radio"], [type="range"]) {
     height: calc(
-      (1rem * var(#{$✨}line-height)) +
-        (var(#{$✨}form-element-spacing-vertical) * 2) +
-        (var(#{$✨}border-width) * 2)
+      (1rem * var(#{$css-var-prefix}line-height)) +
+        (var(#{$css-var-prefix}form-element-spacing-vertical) * 2) +
+        (var(#{$css-var-prefix}border-width) * 2)
     );
   }
 
   // Fieldset
   fieldset {
     margin: 0;
-    margin-bottom: var(#{$✨}spacing);
+    margin-bottom: var(#{$css-var-prefix}spacing);
     padding: 0;
     border: 0;
   }
@@ -135,12 +135,12 @@
   label,
   fieldset legend {
     display: block;
-    margin-bottom: calc(var(#{$✨}spacing) * 0.375);
-    font-weight: var(#{$✨}form-label-font-weight, var(#{$✨}font-weight));
+    margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.375);
+    font-weight: var(#{$css-var-prefix}form-label-font-weight, var(#{$css-var-prefix}font-weight));
   }
 
   fieldset legend {
-    margin-bottom: calc(var(#{$✨}spacing) * 0.5);
+    margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.5);
   }
 
   // Blocks, 100%
@@ -156,31 +156,32 @@
   select,
   textarea {
     appearance: none;
-    padding: var(#{$✨}form-element-spacing-vertical) var(#{$✨}form-element-spacing-horizontal);
+    padding: var(#{$css-var-prefix}form-element-spacing-vertical)
+      var(#{$css-var-prefix}form-element-spacing-horizontal);
   }
 
   // Commons styles
   input,
   select,
   textarea {
-    #{$✨}background-color: var(#{$✨}form-element-background-color);
-    #{$✨}border-color: var(#{$✨}form-element-border-color);
-    #{$✨}color: var(#{$✨}form-element-color);
-    #{$✨}box-shadow: none;
-    border: var(#{$✨}border-width) solid var(#{$✨}border-color);
-    border-radius: var(#{$✨}border-radius);
+    #{$css-var-prefix}background-color: var(#{$css-var-prefix}form-element-background-color);
+    #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-border-color);
+    #{$css-var-prefix}color: var(#{$css-var-prefix}form-element-color);
+    #{$css-var-prefix}box-shadow: none;
+    border: var(#{$css-var-prefix}border-width) solid var(#{$css-var-prefix}border-color);
+    border-radius: var(#{$css-var-prefix}border-radius);
     outline: none;
-    background-color: var(#{$✨}background-color);
-    box-shadow: var(#{$✨}box-shadow);
-    color: var(#{$✨}color);
-    font-weight: var(#{$✨}font-weight);
+    background-color: var(#{$css-var-prefix}background-color);
+    box-shadow: var(#{$css-var-prefix}box-shadow);
+    color: var(#{$css-var-prefix}color);
+    font-weight: var(#{$css-var-prefix}font-weight);
 
     @if $enable-transitions {
       transition:
-        background-color var(#{$✨}transition),
-        border-color var(#{$✨}transition),
-        color var(#{$✨}transition),
-        box-shadow var(#{$✨}transition);
+        background-color var(#{$css-var-prefix}transition),
+        border-color var(#{$css-var-prefix}transition),
+        color var(#{$css-var-prefix}transition),
+        box-shadow var(#{$css-var-prefix}transition);
     }
   }
 
@@ -195,7 +196,9 @@
     ),
   :where(select, textarea) {
     &:is(:active, :focus) {
-      #{$✨}background-color: var(#{$✨}form-element-active-background-color);
+      #{$css-var-prefix}background-color: var(
+        #{$css-var-prefix}form-element-active-background-color
+      );
     }
   }
 
@@ -203,7 +206,7 @@
   input:not([type="submit"], [type="button"], [type="reset"], [role="switch"], [readonly]),
   :where(select, textarea) {
     &:is(:active, :focus) {
-      #{$✨}border-color: var(#{$✨}form-element-active-border-color);
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-active-border-color);
     }
   }
 
@@ -218,7 +221,11 @@
     ),
   :where(select, textarea) {
     &:focus {
-      #{$✨}box-shadow: 0 0 0 var(#{$✨}outline-width) var(#{$✨}form-element-focus-color);
+      #{$css-var-prefix}box-shadow: 0
+        0
+        0
+        var(#{$css-var-prefix}outline-width)
+        var(#{$css-var-prefix}form-element-focus-color);
     }
   }
 
@@ -229,9 +236,11 @@
   label[aria-disabled="true"],
   :where(fieldset[disabled])
     :is(input:not([type="submit"], [type="button"], [type="reset"]), select, textarea) {
-    #{$✨}background-color: var(#{$✨}form-element-disabled-background-color);
-    #{$✨}border-color: var(#{$✨}form-element-disabled-border-color);
-    opacity: var(#{$✨}form-element-disabled-opacity);
+    #{$css-var-prefix}background-color: var(
+      #{$css-var-prefix}form-element-disabled-background-color
+    );
+    #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-disabled-border-color);
+    opacity: var(#{$css-var-prefix}form-element-disabled-opacity);
     pointer-events: none;
   }
 
@@ -253,15 +262,19 @@
       ) {
       &[aria-invalid] {
         @if $enable-important {
-          padding-right: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem) !important;
-          padding-left: var(#{$✨}form-element-spacing-horizontal);
-          padding-inline-start: var(#{$✨}form-element-spacing-horizontal) !important;
-          padding-inline-end: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem) !important;
+          padding-right: calc(
+            var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem
+          ) !important;
+          padding-left: var(#{$css-var-prefix}form-element-spacing-horizontal);
+          padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal) !important;
+          padding-inline-end: calc(
+            var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem
+          ) !important;
         } @else {
-          padding-right: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem);
-          padding-left: var(#{$✨}form-element-spacing-horizontal);
-          padding-inline-start: var(#{$✨}form-element-spacing-horizontal);
-          padding-inline-end: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem);
+          padding-right: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
+          padding-left: var(#{$css-var-prefix}form-element-spacing-horizontal);
+          padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal);
+          padding-inline-end: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
         }
         background-position: center right 0.75rem;
         background-size: 1rem auto;
@@ -269,65 +282,73 @@
       }
 
       &[aria-invalid="false"]:not(select) {
-        background-image: var(#{$✨}icon-valid);
+        background-image: var(#{$css-var-prefix}icon-valid);
       }
 
       &[aria-invalid="true"]:not(select) {
-        background-image: var(#{$✨}icon-invalid);
+        background-image: var(#{$css-var-prefix}icon-invalid);
       }
     }
 
     &[aria-invalid="false"] {
-      #{$✨}border-color: var(#{$✨}form-element-valid-border-color);
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-valid-border-color);
 
       &:is(:active, :focus) {
         @if $enable-important {
-          #{$✨}border-color: var(#{$✨}form-element-valid-active-border-color) !important;
+          #{$css-var-prefix}border-color: var(
+            #{$css-var-prefix}form-element-valid-active-border-color
+          ) !important;
 
           &:not([type="checkbox"], [type="radio"]) {
-            #{$✨}box-shadow: 0
+            #{$css-var-prefix}box-shadow: 0
               0
               0
-              var(#{$✨}outline-width)
-              var(#{$✨}form-element-valid-focus-color) !important;
+              var(#{$css-var-prefix}outline-width)
+              var(#{$css-var-prefix}form-element-valid-focus-color) !important;
           }
         } @else {
-          #{$✨}border-color: var(#{$✨}form-element-valid-active-border-color);
+          #{$css-var-prefix}border-color: var(
+            #{$css-var-prefix}form-element-valid-active-border-color
+          );
 
           &:not([type="checkbox"], [type="radio"]) {
-            #{$✨}box-shadow: 0
+            #{$css-var-prefix}box-shadow: 0
               0
               0
-              var(#{$✨}outline-width)
-              var(#{$✨}form-element-valid-focus-color);
+              var(#{$css-var-prefix}outline-width)
+              var(#{$css-var-prefix}form-element-valid-focus-color);
           }
         }
       }
     }
 
     &[aria-invalid="true"] {
-      #{$✨}border-color: var(#{$✨}form-element-invalid-border-color);
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-invalid-border-color);
 
       &:is(:active, :focus) {
         @if $enable-important {
-          #{$✨}border-color: var(#{$✨}form-element-invalid-active-border-color) !important;
+          #{$css-var-prefix}border-color: var(
+            #{$css-var-prefix}form-element-invalid-active-border-color
+          ) !important;
 
           &:not([type="checkbox"], [type="radio"]) {
-            #{$✨}box-shadow: 0
+            #{$css-var-prefix}box-shadow: 0
               0
               0
-              var(#{$✨}outline-width)
-              var(#{$✨}form-element-invalid-focus-color) !important;
+              var(#{$css-var-prefix}outline-width)
+              var(#{$css-var-prefix}form-element-invalid-focus-color) !important;
           }
         } @else {
-          #{$✨}border-color: var(#{$✨}form-element-invalid-active-border-color);
+          #{$css-var-prefix}border-color: var(
+            #{$css-var-prefix}form-element-invalid-active-border-color
+          );
 
           &:not([type="checkbox"], [type="radio"]) {
-            #{$✨}box-shadow: 0
+            #{$css-var-prefix}box-shadow: 0
               0
               0
-              var(#{$✨}outline-width)
-              var(#{$✨}form-element-invalid-focus-color);
+              var(#{$css-var-prefix}outline-width)
+              var(#{$css-var-prefix}form-element-invalid-focus-color);
           }
         }
       }
@@ -350,7 +371,7 @@
   textarea::placeholder,
   textarea::-webkit-input-placeholder,
   select:invalid {
-    color: var(#{$✨}form-element-placeholder-color);
+    color: var(#{$css-var-prefix}form-element-placeholder-color);
     opacity: 1;
   }
 
@@ -358,7 +379,7 @@
   input:not([type="checkbox"], [type="radio"]),
   select,
   textarea {
-    margin-bottom: var(#{$✨}spacing);
+    margin-bottom: var(#{$css-var-prefix}spacing);
   }
 
   // Select
@@ -370,11 +391,11 @@
     }
 
     &:not([multiple], [size]) {
-      padding-right: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem);
-      padding-left: var(#{$✨}form-element-spacing-horizontal);
-      padding-inline-start: var(#{$✨}form-element-spacing-horizontal);
-      padding-inline-end: calc(var(#{$✨}form-element-spacing-horizontal) + 1.5rem);
-      background-image: var(#{$✨}icon-chevron);
+      padding-right: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
+      padding-left: var(#{$css-var-prefix}form-element-spacing-horizontal);
+      padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal);
+      padding-inline-end: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
+      background-image: var(#{$css-var-prefix}icon-chevron);
       background-position: center right 0.75rem;
       background-size: 1rem auto;
       background-repeat: no-repeat;
@@ -383,7 +404,7 @@
     &[multiple] {
       option {
         &:checked {
-          background: var(#{$✨}form-element-selected-background-color);
+          background: var(#{$css-var-prefix}form-element-selected-background-color);
         }
       }
     }
@@ -404,13 +425,13 @@
 
     &[aria-invalid] {
       @if $enable-important {
-        #{$✨}icon-height: calc(
-          (1rem * var(#{$✨}line-height)) +
-            (var(#{$✨}form-element-spacing-vertical) * 2) +
-            (var(#{$✨}border-width) * 2)
+        #{$css-var-prefix}icon-height: calc(
+          (1rem * var(#{$css-var-prefix}line-height)) +
+            (var(#{$css-var-prefix}form-element-spacing-vertical) * 2) +
+            (var(#{$css-var-prefix}border-width) * 2)
         );
         background-position: top right 0.75rem !important;
-        background-size: 1rem var(#{$✨}icon-height) !important;
+        background-size: 1rem var(#{$css-var-prefix}icon-height) !important;
       }
     }
   }
@@ -422,18 +443,18 @@
     + small {
       display: block;
       width: 100%;
-      margin-top: calc(var(#{$✨}spacing) * -0.75);
-      margin-bottom: var(#{$✨}spacing);
-      color: var(#{$✨}muted-color);
+      margin-top: calc(var(#{$css-var-prefix}spacing) * -0.75);
+      margin-bottom: var(#{$css-var-prefix}spacing);
+      color: var(#{$css-var-prefix}muted-color);
     }
     &[aria-invalid="false"] {
       + small {
-        color: var(#{$✨}ins-color);
+        color: var(#{$css-var-prefix}ins-color);
       }
     }
     &[aria-invalid="true"] {
       + small {
-        color: var(#{$✨}del-color);
+        color: var(#{$css-var-prefix}del-color);
       }
     }
   }
@@ -441,7 +462,7 @@
   // Styles for Input inside a label
   label {
     > :where(input, select, textarea) {
-      margin-top: calc(var(#{$✨}spacing) * 0.25);
+      margin-top: calc(var(#{$css-var-prefix}spacing) * 0.25);
     }
   }
 }

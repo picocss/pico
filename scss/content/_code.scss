@@ -18,7 +18,7 @@
   kbd,
   samp {
     font-size: 0.875em; // 2
-    font-family: var(#{$✨}font-family); // 1
+    font-family: var(#{$css-var-prefix}font-family); // 1
   }
 
   pre code {
@@ -38,10 +38,10 @@
   pre,
   code,
   kbd {
-    border-radius: var(#{$✨}border-radius);
-    background: var(#{$✨}code-background-color);
-    color: var(#{$✨}code-color);
-    font-weight: var(#{$✨}font-weight);
+    border-radius: var(#{$css-var-prefix}border-radius);
+    background: var(#{$css-var-prefix}code-background-color);
+    color: var(#{$css-var-prefix}code-color);
+    font-weight: var(#{$css-var-prefix}font-weight);
     line-height: initial;
   }
 
@@ -53,21 +53,21 @@
 
   pre {
     display: block;
-    margin-bottom: var(#{$✨}spacing);
+    margin-bottom: var(#{$css-var-prefix}spacing);
     overflow-x: auto;
 
     > code {
       display: block;
-      padding: var(#{$✨}spacing);
+      padding: var(#{$css-var-prefix}spacing);
       background: none;
-      line-height: var(#{$✨}line-height);
+      line-height: var(#{$css-var-prefix}line-height);
     }
   }
 
   // kbd
   kbd {
-    background-color: var(#{$✨}code-kbd-background-color);
-    color: var(#{$✨}code-kbd-color);
+    background-color: var(#{$css-var-prefix}code-kbd-background-color);
+    color: var(#{$css-var-prefix}code-kbd-color);
     vertical-align: baseline;
   }
 }

@@ -39,13 +39,13 @@
     -webkit-tap-highlight-color: transparent; // 5
     -webkit-text-size-adjust: 100%; // 6
     text-size-adjust: 100%; // 6
-    background-color: var(#{$✨}background-color);
-    color: var(#{$✨}color);
-    font-weight: var(#{$✨}font-weight);
-    font-size: var(#{$✨}font-size);
-    line-height: var(#{$✨}line-height); // 2
-    font-family: var(#{$✨}font-family);
-    text-underline-offset: var(#{$✨}text-underline-offset);
+    background-color: var(#{$css-var-prefix}background-color);
+    color: var(#{$css-var-prefix}color);
+    font-weight: var(#{$css-var-prefix}font-weight);
+    font-size: var(#{$css-var-prefix}font-size);
+    line-height: var(#{$css-var-prefix}line-height); // 2
+    font-family: var(#{$css-var-prefix}font-family);
+    text-underline-offset: var(#{$css-var-prefix}text-underline-offset);
     text-rendering: optimizeLegibility;
     overflow-wrap: break-word; // 3
     cursor: default; // 1

@@ -26,11 +26,13 @@
   // Cells
   th,
   td {
-    padding: calc(var(#{$✨}spacing) / 2) var(#{$✨}spacing);
-    border-bottom: var(#{$✨}border-width) solid var(#{$✨}table-border-color);
-    background-color: var(#{$✨}background-color);
-    color: var(#{$✨}color);
-    font-weight: var(#{$✨}font-weight);
+    padding: calc(var(#{$css-var-prefix}spacing) / 2) var(#{$css-var-prefix}spacing);
+    border-bottom: var(#{$css-var-prefix}border-width)
+      solid
+      var(#{$css-var-prefix}table-border-color);
+    background-color: var(#{$css-var-prefix}background-color);
+    color: var(#{$css-var-prefix}color);
+    font-weight: var(#{$css-var-prefix}font-weight);
     text-align: left;
     text-align: start;
   }
@@ -39,7 +41,9 @@
   tfoot {
     th,
     td {
-      border-top: var(#{$✨}border-width) solid var(#{$✨}table-border-color);
+      border-top: var(#{$css-var-prefix}border-width)
+        solid
+        var(#{$css-var-prefix}table-border-color);
       border-bottom: 0;
     }
   }
@@ -50,7 +54,7 @@
       &.striped {
         tbody tr:nth-child(odd) th,
         tbody tr:nth-child(odd) td {
-          background-color: var(#{$✨}table-row-stripped-background-color);
+          background-color: var(#{$css-var-prefix}table-row-stripped-background-color);
         }
       }
     }

@@ -44,10 +44,10 @@
   table,
   ul {
     margin-top: 0;
-    margin-bottom: var(#{$✨}typography-spacing-vertical);
-    color: var(#{$✨}color);
+    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
+    color: var(#{$css-var-prefix}color);
     font-style: normal;
-    font-weight: var(#{$✨}font-weight);
+    font-weight: var(#{$css-var-prefix}font-weight);
   }
 
   // Headings
@@ -58,48 +58,48 @@
   h5,
   h6 {
     margin-top: 0;
-    margin-bottom: var(#{$✨}typography-spacing-vertical);
-    color: var(#{$✨}color);
-    font-weight: var(#{$✨}font-weight);
-    font-size: var(#{$✨}font-size);
-    line-height: var(#{$✨}line-height);
-    font-family: var(#{$✨}font-family);
+    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
+    color: var(#{$css-var-prefix}color);
+    font-weight: var(#{$css-var-prefix}font-weight);
+    font-size: var(#{$css-var-prefix}font-size);
+    line-height: var(#{$css-var-prefix}line-height);
+    font-family: var(#{$css-var-prefix}font-family);
   }
 
   h1 {
-    #{$✨}color: var(#{$✨}h1-color);
+    #{$css-var-prefix}color: var(#{$css-var-prefix}h1-color);
   }
   h2 {
-    #{$✨}color: var(#{$✨}h2-color);
+    #{$css-var-prefix}color: var(#{$css-var-prefix}h2-color);
   }
   h3 {
-    #{$✨}color: var(#{$✨}h3-color);
+    #{$css-var-prefix}color: var(#{$css-var-prefix}h3-color);
   }
   h4 {
-    #{$✨}color: var(#{$✨}h4-color);
+    #{$css-var-prefix}color: var(#{$css-var-prefix}h4-color);
   }
   h5 {
-    #{$✨}color: var(#{$✨}h5-color);
+    #{$css-var-prefix}color: var(#{$css-var-prefix}h5-color);
   }
   h6 {
-    #{$✨}color: var(#{$✨}h6-color);
+    #{$css-var-prefix}color: var(#{$css-var-prefix}h6-color);
   }
 
   // Margin-top for headings after a block
   :where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) {
     ~ :is(h1, h2, h3, h4, h5, h6) {
-      margin-top: var(#{$✨}typography-spacing-top);
+      margin-top: var(#{$css-var-prefix}typography-spacing-top);
     }
   }
 
   // Paragraphs
   p {
-    margin-bottom: var(#{$✨}typography-spacing-vertical);
+    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
   }
 
   // Heading group
   hgroup {
-    margin-bottom: var(#{$✨}typography-spacing-vertical);
+    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
 
     > * {
       margin-top: 0;
@@ -107,8 +107,8 @@
     }
 
     > *:not(:first-child):last-child {
-      #{$✨}color: var(#{$✨}muted-color);
-      #{$✨}font-weight: unset;
+      #{$css-var-prefix}color: var(#{$css-var-prefix}muted-color);
+      #{$css-var-prefix}font-weight: unset;
       font-size: 1rem;
       font-family: unset;
     }
@@ -117,7 +117,7 @@
   // Lists
   :where(ol, ul) {
     li {
-      margin-bottom: calc(var(#{$✨}typography-spacing-vertical) * 0.25);
+      margin-bottom: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.25);
     }
   }
 
@@ -125,7 +125,7 @@
   // 1. Remove the margin on nested lists in Chrome, Edge, IE, and Safari
   :where(dl, ol, ul) :where(dl, ol, ul) {
     margin: 0; // 1
-    margin-top: calc(var(#{$✨}typography-spacing-vertical) * 0.25);
+    margin-top: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.25);
   }
 
   ul li {
@@ -135,24 +135,24 @@
   // Highlighted text
   mark {
     padding: 0.125rem 0.25rem;
-    background-color: var(#{$✨}mark-background-color);
-    color: var(#{$✨}mark-color);
+    background-color: var(#{$css-var-prefix}mark-background-color);
+    color: var(#{$css-var-prefix}mark-color);
     vertical-align: baseline;
   }
 
   // Blockquote
   blockquote {
     display: block;
-    margin: var(#{$✨}typography-spacing-vertical) 0;
-    padding: var(#{$✨}spacing);
+    margin: var(#{$css-var-prefix}typography-spacing-vertical) 0;
+    padding: var(#{$css-var-prefix}spacing);
     border-right: none;
-    border-left: 0.25rem solid var(#{$✨}blockquote-border-color);
-    border-inline-start: 0.25rem solid var(#{$✨}blockquote-border-color);
+    border-left: 0.25rem solid var(#{$css-var-prefix}blockquote-border-color);
+    border-inline-start: 0.25rem solid var(#{$css-var-prefix}blockquote-border-color);
     border-inline-end: none;
 
     footer {
-      margin-top: calc(var(#{$✨}typography-spacing-vertical) * 0.5);
-      color: var(#{$✨}blockquote-footer-color);
+      margin-top: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.5);
+      color: var(#{$css-var-prefix}blockquote-footer-color);
     }
   }
 
@@ -166,17 +166,17 @@
 
   // Ins
   ins {
-    color: var(#{$✨}ins-color);
+    color: var(#{$css-var-prefix}ins-color);
     text-decoration: none;
   }
 
   // del
   del {
-    color: var(#{$✨}del-color);
+    color: var(#{$css-var-prefix}del-color);
   }
 
   // selection
   ::selection {
-    background-color: var(#{$✨}text-selection-color);
+    background-color: var(#{$css-var-prefix}text-selection-color);
   }
 }
