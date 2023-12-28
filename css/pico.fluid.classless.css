@@ -2068,6 +2068,9 @@ dialog article > header,
 dialog article > footer {
   padding: calc(var(--pico-block-spacing-vertical) * 0.5) var(--pico-block-spacing-horizontal);
 }
+dialog article > header > * {
+  margin-bottom: 0;
+}
 dialog article > header .close {
   margin: 0;
   margin-left: var(--pico-spacing);

@@ -55,6 +55,10 @@
       }
 
       > header {
+        > * {
+          margin-bottom: 0;
+        }
+
         .close {
           margin: 0;
           margin-left: var(#{$css-var-prefix}spacing);
