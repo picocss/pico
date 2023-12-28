@@ -82,11 +82,15 @@
           margin-inline-start: var(#{$✨}nav-link-spacing-horizontal);
         }
 
+        a {
+          margin: calc(var(#{$✨}nav-link-spacing-vertical) * -1) 0;
+          margin-inline-start: calc(var(#{$✨}nav-link-spacing-horizontal) * -1);
+        }
+
         &:not(:last-child) {
           &::after {
             position: absolute;
-            width: calc(var(#{$✨}nav-link-spacing-horizontal) * 2);
-            margin-inline-start: calc(var(#{$✨}nav-link-spacing-horizontal) / 2);
+            padding: 0 calc(var(#{$✨}nav-link-spacing-horizontal) / 2);
             content: var(#{$✨}nav-breadcrumb-divider);
             color: var(#{$✨}muted-color);
             text-align: center;
