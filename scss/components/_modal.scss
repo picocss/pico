@@ -28,6 +28,7 @@ dialog {
 
   // Content
   article {
+    $close-selector: if($enable-classes, ".close", "a[rel='prev']");
     max-height: calc(100vh - var(--spacing) * 2);
     overflow: auto;
 
@@ -50,7 +51,7 @@ dialog {
     }
 
     > header {
-      .close {
+      #{$close-selector} {
         margin: 0;
         margin-left: var(--spacing);
         float: right;
@@ -76,27 +77,25 @@ dialog {
     }
 
     // Close icon
-    @if $enable-classes {
-      .close {
-        display: block;
-        width: 1rem;
-        height: 1rem;
-        margin-top: calc(var(--block-spacing-vertical) * -0.5);
-        margin-bottom: var(--typography-spacing-vertical);
-        margin-left: auto;
-        background-image: var(--icon-close);
-        background-position: center;
-        background-size: auto 1rem;
-        background-repeat: no-repeat;
-        opacity: 0.5;
+    #{$close-selector} {
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      margin-top: calc(var(--block-spacing-vertical) * -0.5);
+      margin-bottom: var(--typography-spacing-vertical);
+      margin-left: auto;
+      background-image: var(--icon-close);
+      background-position: center;
+      background-size: auto 1rem;
+      background-repeat: no-repeat;
+      opacity: 0.5;
 
-        @if $enable-transitions {
-          transition: opacity var(--transition);
-        }
+      @if $enable-transitions {
+        transition: opacity var(--transition);
+      }
 
-        &:is([aria-current], :hover, :active, :focus) {
-          opacity: 1;
-        }
+      &:is([aria-current], :hover, :active, :focus) {
+        opacity: 1;
       }
     }
   }
