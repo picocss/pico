@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS v1.5.10 (https://picocss.com)
+ * Pico CSS v1.5.11 (https://picocss.com)
  * Copyright 2019-2023 - Licensed under MIT
  */
 /**
@@ -733,9 +733,7 @@ small {
 :where(dl, ol, ul) {
   padding-right: 0;
   padding-left: var(--spacing);
-  -webkit-padding-start: var(--spacing);
   padding-inline-start: var(--spacing);
-  -webkit-padding-end: 0;
   padding-inline-end: 0;
 }
 :where(dl, ol, ul) li {
@@ -764,9 +762,7 @@ blockquote {
   padding: var(--spacing);
   border-right: none;
   border-left: 0.25rem solid var(--blockquote-border-color);
-  -webkit-border-start: 0.25rem solid var(--blockquote-border-color);
   border-inline-start: 0.25rem solid var(--blockquote-border-color);
-  -webkit-border-end: none;
   border-inline-end: none;
 }
 blockquote footer {
@@ -1083,9 +1079,7 @@ textarea[disabled],
 :where(input, select, textarea):not([type=checkbox], [type=radio], [type=date], [type=datetime-local], [type=month], [type=time], [type=week])[aria-invalid] {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   padding-left: var(--form-element-spacing-horizontal);
-  -webkit-padding-start: var(--form-element-spacing-horizontal) !important;
   padding-inline-start: var(--form-element-spacing-horizontal) !important;
-  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem) !important;
   background-position: center right 0.75rem;
   background-size: 1rem auto;
@@ -1138,9 +1132,7 @@ select::-ms-expand {
 select:not([multiple], [size]) {
   padding-right: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   padding-left: var(--form-element-spacing-horizontal);
-  -webkit-padding-start: var(--form-element-spacing-horizontal);
   padding-inline-start: var(--form-element-spacing-horizontal);
-  -webkit-padding-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   padding-inline-end: calc(var(--form-element-spacing-horizontal) + 1.5rem);
   background-image: var(--icon-chevron);
   background-position: center right 0.75rem;
@@ -1178,9 +1170,7 @@ label > :where(input, select, textarea) {
   margin-top: -0.125em;
   margin-right: 0.375em;
   margin-left: 0;
-  -webkit-margin-start: 0;
   margin-inline-start: 0;
-  -webkit-margin-end: 0.375em;
   margin-inline-end: 0.375em;
   border-width: var(--border-width);
   font-size: inherit;
@@ -1261,7 +1251,6 @@ label > :where(input, select, textarea) {
 }
 [type=checkbox][role=switch]:checked::before {
   margin-left: calc(1.125em - var(--border-width));
-  -webkit-margin-start: calc(1.125em - var(--border-width));
   margin-inline-start: calc(1.125em - var(--border-width));
 }
 
@@ -1352,9 +1341,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   --color: var(--secondary-inverse);
   margin-right: calc(var(--spacing) / 2);
   margin-left: 0;
-  -webkit-margin-start: 0;
   margin-inline-start: 0;
-  -webkit-margin-end: calc(var(--spacing) / 2);
   margin-inline-end: calc(var(--spacing) / 2);
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
@@ -1380,9 +1367,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   --color: var(--secondary-inverse);
   margin-right: calc(var(--spacing) / 2);
   margin-left: 0;
-  -webkit-margin-start: 0;
   margin-inline-start: 0;
-  -webkit-margin-end: calc(var(--spacing) / 2);
   margin-inline-end: calc(var(--spacing) / 2);
   padding: calc(var(--form-element-spacing-vertical) * 0.5) calc(var(--form-element-spacing-horizontal) * 0.5);
   border: var(--border-width) solid var(--border-color);
@@ -1517,7 +1502,6 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
 }
 
 input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search] {
-  -webkit-padding-start: calc(var(--form-element-spacing-horizontal) + 1.75rem);
   padding-inline-start: calc(var(--form-element-spacing-horizontal) + 1.75rem);
   border-radius: 5rem;
   background-image: var(--icon-search);
@@ -1526,7 +1510,6 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search]
   background-repeat: no-repeat;
 }
 input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search][aria-invalid] {
-  -webkit-padding-start: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
   padding-inline-start: calc(var(--form-element-spacing-horizontal) + 1.75rem) !important;
   background-position: center left 1.125rem, center right 0.75rem;
 }
@@ -1698,7 +1681,6 @@ details summary::after {
   display: block;
   width: 1rem;
   height: 1rem;
-  -webkit-margin-start: calc(var(--spacing, 1rem) * 0.5);
   margin-inline-start: calc(var(--spacing, 1rem) * 0.5);
   float: right;
   transform: rotate(-90deg);
@@ -1819,7 +1801,7 @@ dialog article > header,
 dialog article > footer {
   padding: calc(var(--block-spacing-vertical) * 0.5) var(--block-spacing-horizontal);
 }
-dialog article > header .close {
+dialog article > header a[rel=prev] {
   margin: 0;
   margin-left: var(--spacing);
   float: right;
@@ -1835,6 +1817,23 @@ dialog article > footer [role=button]:not(:first-of-type) {
 }
 dialog article p:last-of-type {
   margin: 0;
+}
+dialog article a[rel=prev] {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  margin-top: calc(var(--block-spacing-vertical) * -0.5);
+  margin-bottom: var(--typography-spacing-vertical);
+  margin-left: auto;
+  background-image: var(--icon-close);
+  background-position: center;
+  background-size: auto 1rem;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+dialog article a[rel=prev]:is([aria-current], :hover, :active, :focus) {
+  opacity: 1;
 }
 dialog:not([open]), dialog[open=false] {
   display: none;
@@ -1894,13 +1893,11 @@ nav[aria-label=breadcrumb] {
   justify-content: start;
 }
 nav[aria-label=breadcrumb] ul li:not(:first-child) {
-  -webkit-margin-start: var(--nav-link-spacing-horizontal);
   margin-inline-start: var(--nav-link-spacing-horizontal);
 }
 nav[aria-label=breadcrumb] ul li:not(:last-child) ::after {
   position: absolute;
   width: calc(var(--nav-link-spacing-horizontal) * 2);
-  -webkit-margin-start: calc(var(--nav-link-spacing-horizontal) / 2);
   margin-inline-start: calc(var(--nav-link-spacing-horizontal) / 2);
   content: "/";
   color: var(--muted-color);
@@ -2060,10 +2057,10 @@ li[role=list] > a::after {
   display: block;
   width: 1rem;
   height: calc(1rem * var(--line-height, 1.5));
-  -webkit-margin-start: 0.5rem;
   margin-inline-start: 0.5rem;
   float: right;
   transform: rotate(0deg);
+  background-image: var(--icon-chevron);
   background-position: right center;
   background-size: 1rem auto;
   background-repeat: no-repeat;
@@ -2139,7 +2136,6 @@ nav details[role=list][open] summary {
 }
 nav details[role=list] summary + ul {
   margin-top: var(--outline-width);
-  -webkit-margin-start: 0;
   margin-inline-start: 0;
 }
 nav details[role=list] summary[role=link] {
@@ -2148,7 +2144,6 @@ nav details[role=list] summary[role=link] {
 }
 nav details[role=list] summary[role=link] + ul {
   margin-top: calc(var(--nav-link-spacing-vertical) + var(--outline-width));
-  -webkit-margin-start: calc(var(--nav-link-spacing-horizontal) * -1);
   margin-inline-start: calc(var(--nav-link-spacing-horizontal) * -1);
 }
 
@@ -2160,7 +2155,6 @@ li[role=list] a:focus ~ ul {
 li[role=list] > ul {
   display: none;
   margin-top: calc(var(--nav-link-spacing-vertical) + var(--outline-width));
-  -webkit-margin-start: calc(var(--nav-element-spacing-horizontal) - var(--nav-link-spacing-horizontal));
   margin-inline-start: calc(var(--nav-element-spacing-horizontal) - var(--nav-link-spacing-horizontal));
 }
 li[role=list] > a::after {
@@ -2195,9 +2189,7 @@ label > details[role=list] {
 [aria-busy=true]:not(input, select, textarea, html):not(:empty)::before {
   margin-right: calc(var(--spacing) * 0.5);
   margin-left: 0;
-  -webkit-margin-start: 0;
   margin-inline-start: 0;
-  -webkit-margin-end: calc(var(--spacing) * 0.5);
   margin-inline-end: calc(var(--spacing) * 0.5);
 }
 [aria-busy=true]:not(input, select, textarea, html):empty {

@@ -9,7 +9,7 @@
 <p align="center">
   <strong>Minimal CSS Framework for semantic HTML</strong><br>
   Elegant styles for all native HTML elements without <code>.classes</code> and dark mode automatically enabled.<br><br>
-  <a href="https://picocss.com/#examples">Examples</a> ·
+  <a href="https://github.com/picocss/examples">Examples</a> ·
   <a href="https://picocss.com/docs/">Documentation</a>
 </p>
 
@@ -52,7 +52,7 @@ There are 4 ways to get started with Pico CSS:
 
 **Install manually**
 
-[Download Pico](https://github.com/picocss/pico/archive/refs/tags/v1.5.10.zip) and link `/css/pico.min.css` in the `<head>` of your website.
+[Download Pico](https://github.com/picocss/pico/archive/refs/tags/v1.5.11.zip) and link `/css/pico.min.css` in the `<head>` of your website.
 
 ```html
 <link rel="stylesheet" href="css/pico.min.css">
@@ -80,7 +80,7 @@ composer require picocss/pico
 
 ## Class-less version
 
-Pico provides a `.classless` version ([example](https://picocss.com/examples/classless)).
+Pico provides a `.classless` version ([example](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-classless)).
 
 In this version, `header`, `main` and `footer` act as containers.
 
@@ -119,7 +119,7 @@ Then just write pure HTML, and it should look great:
 
 Minimalist templates to discover Pico in action:
 
-[![Examples](.github/examples.jpg)](https://picocss.com/#examples)
+[![Examples](.github/examples.jpg)](https://github.com/picocss/examples)
 
 - **[Preview](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-preview)**  
   A starter example with most of the Pico components and styles.
