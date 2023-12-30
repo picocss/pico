@@ -290,36 +290,37 @@
 
     h1 {
       #{$css-var-prefix}font-size: 2rem;
-      #{$css-var-prefix}line-height: 1.25;
+      #{$css-var-prefix}line-height: 1.125;
       #{$css-var-prefix}typography-spacing-top: 3rem;
     }
 
     h2 {
       #{$css-var-prefix}font-size: 1.75rem;
-      #{$css-var-prefix}line-height: 1.3;
+      #{$css-var-prefix}line-height: 1.15;
       #{$css-var-prefix}typography-spacing-top: 2.625rem;
     }
 
     h3 {
       #{$css-var-prefix}font-size: 1.5rem;
-      #{$css-var-prefix}line-height: 1.35;
+      #{$css-var-prefix}line-height: 1.175;
       #{$css-var-prefix}typography-spacing-top: 2.25rem;
     }
 
     h4 {
       #{$css-var-prefix}font-size: 1.25rem;
-      #{$css-var-prefix}line-height: 1.4;
+      #{$css-var-prefix}line-height: 1.2;
       #{$css-var-prefix}typography-spacing-top: 1.874rem;
     }
 
     h5 {
       #{$css-var-prefix}font-size: 1.125rem;
-      #{$css-var-prefix}line-height: 1.45;
+      #{$css-var-prefix}line-height: 1.225;
       #{$css-var-prefix}typography-spacing-top: 1.6875rem;
     }
 
     h6 {
       #{$css-var-prefix}font-size: 1rem;
+      #{$css-var-prefix}line-height: 1.25;
       #{$css-var-prefix}typography-spacing-top: 1.5rem;
     }
   }
