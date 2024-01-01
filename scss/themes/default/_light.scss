@@ -55,7 +55,7 @@
   #{$css-var-prefix}contrast-inverse: #{$white};
 
   // Box shadow
-  #{$css-var-prefix}box-shadow: box-shadow.shadow($slate-500);
+  #{$css-var-prefix}box-shadow: box-shadow.shadow($slate-400);
 
   // Typography
   @if map.get($modules, "content/typography") {
