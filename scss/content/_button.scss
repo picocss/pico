@@ -66,7 +66,8 @@
         box-shadow var(#{$css-var-prefix}transition);
     }
 
-    &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+    &:is([aria-current]:not([aria-current="false"])),
+    &:is(:hover, :active, :focus) {
       #{$css-var-prefix}background-color: var(#{$css-var-prefix}primary-hover-background);
       #{$css-var-prefix}border-color: var(#{$css-var-prefix}primary-hover-border);
       #{$css-var-prefix}box-shadow: var(
@@ -76,7 +77,8 @@
       #{$css-var-prefix}color: var(#{$css-var-prefix}primary-inverse);
     }
 
-    &:focus {
+    &:focus,
+    &:is([aria-current]:not([aria-current="false"])):focus {
       #{$css-var-prefix}box-shadow:
         var(#{$css-var-prefix}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
         0 0 0 var(#{$css-var-prefix}outline-width) var(#{$css-var-prefix}primary-focus);
@@ -106,7 +108,8 @@
         #{$css-var-prefix}color: var(#{$css-var-prefix}secondary-inverse);
       }
 
-      &:focus {
+      &:focus,
+      &:is([aria-current]:not([aria-current="false"])):focus {
         #{$css-var-prefix}box-shadow:
           var(#{$css-var-prefix}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
           0 0 0 var(#{$css-var-prefix}outline-width) var(#{$css-var-prefix}secondary-focus);
@@ -125,7 +128,8 @@
         #{$css-var-prefix}color: var(#{$css-var-prefix}contrast-inverse);
       }
 
-      &:focus {
+      &:focus,
+      &:is([aria-current]:not([aria-current="false"])):focus {
         #{$css-var-prefix}box-shadow:
           var(#{$css-var-prefix}button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)),
           0 0 0 var(#{$css-var-prefix}outline-width) var(#{$css-var-prefix}contrast-focus);
