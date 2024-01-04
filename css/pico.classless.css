@@ -736,7 +736,7 @@ figure figcaption {
 /**
  * Link
  */
-a:not([role=button]),
+:where(a:not([role=button])),
 [role=link] {
   --pico-color: var(--pico-primary);
   --pico-background-color: transparent;
@@ -752,13 +752,13 @@ a:not([role=button]),
   transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition);
   transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition), -webkit-text-decoration var(--pico-transition);
 }
-a:not([role=button]):is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+:where(a:not([role=button])):is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
 [role=link]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   --pico-color: var(--pico-primary-hover);
   --pico-underline: var(--pico-primary-hover-underline);
   --pico-text-decoration: underline;
 }
-a:not([role=button]):focus-visible,
+:where(a:not([role=button])):focus-visible,
 [role=link]:focus-visible {
   box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
 }

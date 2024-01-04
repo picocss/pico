@@ -6,7 +6,7 @@
    * Link
    */
 
-  a:not([role="button"]),
+  :where(a:not([role="button"])),
   [role="link"] {
     #{$css-var-prefix}color: var(#{$css-var-prefix}primary);
     #{$css-var-prefix}background-color: transparent;
