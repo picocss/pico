@@ -1108,23 +1108,33 @@ button,
   user-select: none;
   transition: background-color var(--pico-transition), border-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition);
 }
-button:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
-[type=submit]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
-[type=reset]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
-[type=button]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
-[type=file]::file-selector-button:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
-[role=button]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+button:is([aria-current]:not([aria-current=false])), button:is(:hover, :active, :focus),
+[type=submit]:is([aria-current]:not([aria-current=false])),
+[type=submit]:is(:hover, :active, :focus),
+[type=reset]:is([aria-current]:not([aria-current=false])),
+[type=reset]:is(:hover, :active, :focus),
+[type=button]:is([aria-current]:not([aria-current=false])),
+[type=button]:is(:hover, :active, :focus),
+[type=file]::file-selector-button:is([aria-current]:not([aria-current=false])),
+[type=file]::file-selector-button:is(:hover, :active, :focus),
+[role=button]:is([aria-current]:not([aria-current=false])),
+[role=button]:is(:hover, :active, :focus) {
   --pico-background-color: var(--pico-primary-hover-background);
   --pico-border-color: var(--pico-primary-hover-border);
   --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
   --pico-color: var(--pico-primary-inverse);
 }
-button:focus,
+button:focus, button:is([aria-current]:not([aria-current=false])):focus,
 [type=submit]:focus,
+[type=submit]:is([aria-current]:not([aria-current=false])):focus,
 [type=reset]:focus,
+[type=reset]:is([aria-current]:not([aria-current=false])):focus,
 [type=button]:focus,
+[type=button]:is([aria-current]:not([aria-current=false])):focus,
 [type=file]::file-selector-button:focus,
-[role=button]:focus {
+[type=file]::file-selector-button:is([aria-current]:not([aria-current=false])):focus,
+[role=button]:focus,
+[role=button]:is([aria-current]:not([aria-current=false])):focus {
   --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
 }
 
@@ -1149,9 +1159,11 @@ button:focus,
   --pico-border-color: var(--pico-secondary-hover-border);
   --pico-color: var(--pico-secondary-inverse);
 }
-:is(button, [type=submit], [type=button], [role=button]).secondary:focus,
+:is(button, [type=submit], [type=button], [role=button]).secondary:focus, :is(button, [type=submit], [type=button], [role=button]).secondary:is([aria-current]:not([aria-current=false])):focus,
 [type=reset]:focus,
-[type=file]::file-selector-button:focus {
+[type=reset]:is([aria-current]:not([aria-current=false])):focus,
+[type=file]::file-selector-button:focus,
+[type=file]::file-selector-button:is([aria-current]:not([aria-current=false])):focus {
   --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pico-outline-width) var(--pico-secondary-focus);
 }
 
@@ -1165,7 +1177,7 @@ button:focus,
   --pico-border-color: var(--pico-contrast-hover-border);
   --pico-color: var(--pico-contrast-inverse);
 }
-:is(button, [type=submit], [type=button], [role=button]).contrast:focus {
+:is(button, [type=submit], [type=button], [role=button]).contrast:focus, :is(button, [type=submit], [type=button], [role=button]).contrast:is([aria-current]:not([aria-current=false])):focus {
   --pico-box-shadow: var(--pico-button-hover-box-shadow, 0 0 0 rgba(0, 0, 0, 0)), 0 0 0 var(--pico-outline-width) var(--pico-contrast-focus);
 }
 
