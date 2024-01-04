@@ -1300,12 +1300,12 @@ input:not([type=submit],
 [type=checkbox],
 [type=radio],
 [readonly]):is(:active, :focus),
-:where(select, textarea):is(:active, :focus) {
+:where(select, textarea):not([readonly]):is(:active, :focus) {
   --pico-background-color: var(--pico-form-element-active-background-color);
 }
 
 input:not([type=submit], [type=button], [type=reset], [role=switch], [readonly]):is(:active, :focus),
-:where(select, textarea):is(:active, :focus) {
+:where(select, textarea):not([readonly]):is(:active, :focus) {
   --pico-border-color: var(--pico-form-element-active-border-color);
 }
 
@@ -1315,7 +1315,7 @@ input:not([type=submit],
 [type=range],
 [type=file],
 [readonly]):focus,
-:where(select, textarea):focus {
+:where(select, textarea):not([readonly]):focus {
   --pico-box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-form-element-focus-color);
 }
 

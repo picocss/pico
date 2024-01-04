@@ -194,7 +194,7 @@
       [type="radio"],
       [readonly]
     ),
-  :where(select, textarea) {
+  :where(select, textarea):not([readonly]) {
     &:is(:active, :focus) {
       #{$css-var-prefix}background-color: var(
         #{$css-var-prefix}form-element-active-background-color
@@ -204,7 +204,7 @@
 
   // Active & Focus
   input:not([type="submit"], [type="button"], [type="reset"], [role="switch"], [readonly]),
-  :where(select, textarea) {
+  :where(select, textarea):not([readonly]) {
     &:is(:active, :focus) {
       #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-active-border-color);
     }
@@ -219,7 +219,7 @@
       [type="file"],
       [readonly]
     ),
-  :where(select, textarea) {
+  :where(select, textarea):not([readonly]) {
     &:focus {
       #{$css-var-prefix}box-shadow: 0
         0
