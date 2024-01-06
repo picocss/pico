@@ -3,6 +3,7 @@
 @use "../../settings" as *;
 @use "../../utils/box-shadow";
 @use "../../utils/functions";
+@use "theme-colors";
 
 // Default: Dark theme
 @mixin theme {
@@ -12,23 +13,23 @@
   #{$css-var-prefix}color: #{$zinc-200};
 
   // Text selection color
-  #{$css-var-prefix}text-selection-color: #{rgba($azure-350, 0.1875)};
+  #{$css-var-prefix}text-selection-color: theme-colors.get("text-selection-color", "dark");
 
   // Muted colors
   #{$css-var-prefix}muted-color: #{$zinc-450};
   #{$css-var-prefix}muted-border-color: #{$slate-850};
 
   // Primary colors
-  #{$css-var-prefix}primary: #{$azure-350};
-  #{$css-var-prefix}primary-background: #{$azure-550};
+  #{$css-var-prefix}primary: theme-colors.get("primary", "dark");
+  #{$css-var-prefix}primary-background: theme-colors.get("primary-background", "dark");
   #{$css-var-prefix}primary-border: var(#{$css-var-prefix}primary-background);
-  #{$css-var-prefix}primary-underline: #{rgba($azure-350, 0.5)};
-  #{$css-var-prefix}primary-hover: #{$azure-250};
-  #{$css-var-prefix}primary-hover-background: #{$azure-500};
+  #{$css-var-prefix}primary-underline: theme-colors.get("primary-underline", "dark");
+  #{$css-var-prefix}primary-hover: theme-colors.get("primary-hover", "dark");
+  #{$css-var-prefix}primary-hover-background: theme-colors.get("primary-hover-background", "dark");
   #{$css-var-prefix}primary-hover-border: var(#{$css-var-prefix}primary-hover-background);
   #{$css-var-prefix}primary-hover-underline: var(#{$css-var-prefix}primary-hover);
-  #{$css-var-prefix}primary-focus: #{rgba($azure-350, 0.375)};
-  #{$css-var-prefix}primary-inverse: #{$white};
+  #{$css-var-prefix}primary-focus: theme-colors.get("primary-focus", "dark");
+  #{$css-var-prefix}primary-inverse: theme-colors.get("primary-inverse", "dark");
 
   // Secondary colors
   #{$css-var-prefix}secondary: #{$zinc-350};
