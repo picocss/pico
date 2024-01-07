@@ -1407,6 +1407,7 @@ input:not([type=checkbox], [type=radio], [type=range]) {
 }
 
 fieldset {
+  width: 100%;
   margin: 0;
   margin-bottom: var(--pico-spacing);
   padding: 0;
