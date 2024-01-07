@@ -793,7 +793,6 @@ section {
   grid-row-gap: var(--pico-grid-row-gap);
   display: grid;
   grid-template-columns: 1fr;
-  margin: 0;
 }
 @media (min-width: 768px) {
   .grid {

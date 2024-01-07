@@ -12,7 +12,6 @@
     grid-row-gap: var(#{$css-var-prefix}grid-row-gap);
     display: grid;
     grid-template-columns: 1fr;
-    margin: 0;
 
     @if map.get($breakpoints, "md") {
       @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
