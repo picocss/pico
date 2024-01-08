@@ -1228,6 +1228,7 @@ label,
 fieldset legend {
   display: block;
   margin-bottom: calc(var(--pico-spacing) * 0.375);
+  color: var(--pico-color);
   font-weight: var(--pico-form-label-font-weight, var(--pico-font-weight));
 }
 

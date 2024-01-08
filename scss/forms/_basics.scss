@@ -137,6 +137,7 @@
   fieldset legend {
     display: block;
     margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.375);
+    color: var(#{$css-var-prefix}color);
     font-weight: var(#{$css-var-prefix}form-label-font-weight, var(#{$css-var-prefix}font-weight));
   }
 
