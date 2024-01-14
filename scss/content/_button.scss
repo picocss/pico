@@ -176,14 +176,15 @@
     // Secondary button without .class
     [type="reset"],
     [type="file"]::file-selector-button {
-      #{$css-var-prefix}background-color: var(#{$css-var-prefix}secondary);
-      #{$css-var-prefix}border-color: var(#{$css-var-prefix}secondary);
+      #{$css-var-prefix}background-color: var(#{$css-var-prefix}secondary-background);
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}secondary-border);
       #{$css-var-prefix}color: var(#{$css-var-prefix}secondary-inverse);
       cursor: pointer;
 
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
-        #{$css-var-prefix}background-color: var(#{$css-var-prefix}secondary-hover);
-        #{$css-var-prefix}border-color: var(#{$css-var-prefix}secondary-hover);
+        #{$css-var-prefix}background-color: var(#{$css-var-prefix}secondary-hover-background);
+        #{$css-var-prefix}border-color: var(#{$css-var-prefix}secondary-hover-border);
+        #{$css-var-prefix}color: var(#{$css-var-prefix}secondary-inverse);
       }
 
       &:focus {

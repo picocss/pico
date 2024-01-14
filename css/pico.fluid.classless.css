@@ -992,15 +992,16 @@ button:focus, button:is([aria-current]:not([aria-current=false])):focus,
 
 [type=reset],
 [type=file]::file-selector-button {
-  --pico-background-color: var(--pico-secondary);
-  --pico-border-color: var(--pico-secondary);
+  --pico-background-color: var(--pico-secondary-background);
+  --pico-border-color: var(--pico-secondary-border);
   --pico-color: var(--pico-secondary-inverse);
   cursor: pointer;
 }
 [type=reset]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
 [type=file]::file-selector-button:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
-  --pico-background-color: var(--pico-secondary-hover);
-  --pico-border-color: var(--pico-secondary-hover);
+  --pico-background-color: var(--pico-secondary-hover-background);
+  --pico-border-color: var(--pico-secondary-hover-border);
+  --pico-color: var(--pico-secondary-inverse);
 }
 [type=reset]:focus,
 [type=file]::file-selector-button:focus {
