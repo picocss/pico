@@ -50,12 +50,6 @@
         }
       }
 
-      > header,
-      > footer {
-        padding: calc(var(#{$css-var-prefix}block-spacing-vertical) * 0.5)
-          var(#{$css-var-prefix}block-spacing-horizontal);
-      }
-
       > header {
         > * {
           margin-bottom: 0;

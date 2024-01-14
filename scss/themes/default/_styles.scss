@@ -55,7 +55,7 @@
       map.get($modules, "components/card") or
       map.get($modules, "components/modal")
     {
-      #{$css-var-prefix}block-spacing-vertical: calc(var(#{$css-var-prefix}spacing) * 2);
+      #{$css-var-prefix}block-spacing-vertical: var(#{$css-var-prefix}spacing);
       #{$css-var-prefix}block-spacing-horizontal: var(#{$css-var-prefix}spacing);
     }
 
@@ -231,28 +231,6 @@
                 var(#{$css-var-prefix}spacing) * $multiplier
               );
             }
-          }
-        }
-      }
-    }
-
-    // Modal
-    @if map.get($modules, "components/modal") {
-      dialog > article {
-        #{$css-var-prefix}block-spacing-vertical: calc(var(#{$css-var-prefix}spacing) * 2);
-        #{$css-var-prefix}block-spacing-horizontal: var(#{$css-var-prefix}spacing);
-
-        @if map.get($breakpoints, "sm") {
-          @media (min-width: map.get(map.get($breakpoints, "sm"), "breakpoint")) {
-            #{$css-var-prefix}block-spacing-vertical: calc(var(#{$css-var-prefix}spacing) * 2.5);
-            #{$css-var-prefix}block-spacing-horizontal: calc(var(#{$css-var-prefix}spacing) * 1.25);
-          }
-        }
-
-        @if map.get($breakpoints, "md") {
-          @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
-            #{$css-var-prefix}block-spacing-vertical: calc(var(#{$css-var-prefix}spacing) * 3);
-            #{$css-var-prefix}block-spacing-horizontal: calc(var(#{$css-var-prefix}spacing) * 1.5);
           }
         }
       }

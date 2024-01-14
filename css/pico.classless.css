@@ -21,7 +21,7 @@
   --pico-transition: 0.2s ease-in-out;
   --pico-spacing: 1rem;
   --pico-typography-spacing-vertical: 1rem;
-  --pico-block-spacing-vertical: calc(var(--pico-spacing) * 2);
+  --pico-block-spacing-vertical: var(--pico-spacing);
   --pico-block-spacing-horizontal: var(--pico-spacing);
   --pico-form-element-spacing-vertical: 0.75rem;
   --pico-form-element-spacing-horizontal: 1rem;
@@ -144,23 +144,6 @@
   article {
     --pico-block-spacing-vertical: calc(var(--pico-spacing) * 2.25);
     --pico-block-spacing-horizontal: calc(var(--pico-spacing) * 2.25);
-  }
-}
-
-dialog > article {
-  --pico-block-spacing-vertical: calc(var(--pico-spacing) * 2);
-  --pico-block-spacing-horizontal: var(--pico-spacing);
-}
-@media (min-width: 576px) {
-  dialog > article {
-    --pico-block-spacing-vertical: calc(var(--pico-spacing) * 2.5);
-    --pico-block-spacing-horizontal: calc(var(--pico-spacing) * 1.25);
-  }
-}
-@media (min-width: 768px) {
-  dialog > article {
-    --pico-block-spacing-vertical: calc(var(--pico-spacing) * 3);
-    --pico-block-spacing-horizontal: calc(var(--pico-spacing) * 1.5);
   }
 }
 
@@ -2118,10 +2101,6 @@ dialog article {
   dialog article {
     max-width: 700px;
   }
-}
-dialog article > header,
-dialog article > footer {
-  padding: calc(var(--pico-block-spacing-vertical) * 0.5) var(--pico-block-spacing-horizontal);
 }
 dialog article > header > * {
   margin-bottom: 0;
