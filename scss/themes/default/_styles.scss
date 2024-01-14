@@ -224,6 +224,9 @@
                 $multiplier: 2.25;
               }
 
+              #{$css-var-prefix}block-spacing-vertical: calc(
+                var(#{$css-var-prefix}spacing) * $multiplier
+              );
               #{$css-var-prefix}block-spacing-horizontal: calc(
                 var(#{$css-var-prefix}spacing) * $multiplier
               );
