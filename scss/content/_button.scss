@@ -141,11 +141,12 @@
     [type="reset"].outline {
       #{$css-var-prefix}background-color: transparent;
       #{$css-var-prefix}color: var(#{$css-var-prefix}primary);
-      #{$css-var-prefix}border-color: currentColor;
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}primary);
 
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         #{$css-var-prefix}background-color: transparent;
         #{$css-var-prefix}color: var(#{$css-var-prefix}primary-hover);
+        #{$css-var-prefix}border-color: var(#{$css-var-prefix}primary-hover);
       }
     }
 
@@ -153,19 +154,22 @@
     :is(button, [type="submit"], [type="button"], [role="button"]).outline.secondary,
     [type="reset"].outline {
       #{$css-var-prefix}color: var(#{$css-var-prefix}secondary);
-      #{$css-var-prefix}border-color: currentColor;
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}secondary);
 
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         #{$css-var-prefix}color: var(#{$css-var-prefix}secondary-hover);
+        #{$css-var-prefix}border-color: var(#{$css-var-prefix}secondary-hover);
       }
     }
 
     // Outline (contrast)
     :is(button, [type="submit"], [type="button"], [role="button"]).outline.contrast {
       #{$css-var-prefix}color: var(#{$css-var-prefix}contrast);
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}contrast);
 
       &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
         #{$css-var-prefix}color: var(#{$css-var-prefix}contrast-hover);
+        #{$css-var-prefix}border-color: var(#{$css-var-prefix}contrast-hover);
       }
     }
   } @else {

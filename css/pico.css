@@ -1189,29 +1189,33 @@ button:focus, button:is([aria-current]:not([aria-current=false])):focus,
 [type=reset].outline {
   --pico-background-color: transparent;
   --pico-color: var(--pico-primary);
-  --pico-border-color: currentColor;
+  --pico-border-color: var(--pico-primary);
 }
 :is(button, [type=submit], [type=button], [role=button]).outline:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
 [type=reset].outline:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   --pico-background-color: transparent;
   --pico-color: var(--pico-primary-hover);
+  --pico-border-color: var(--pico-primary-hover);
 }
 
 :is(button, [type=submit], [type=button], [role=button]).outline.secondary,
 [type=reset].outline {
   --pico-color: var(--pico-secondary);
-  --pico-border-color: currentColor;
+  --pico-border-color: var(--pico-secondary);
 }
 :is(button, [type=submit], [type=button], [role=button]).outline.secondary:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
 [type=reset].outline:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   --pico-color: var(--pico-secondary-hover);
+  --pico-border-color: var(--pico-secondary-hover);
 }
 
 :is(button, [type=submit], [type=button], [role=button]).outline.contrast {
   --pico-color: var(--pico-contrast);
+  --pico-border-color: var(--pico-contrast);
 }
 :is(button, [type=submit], [type=button], [role=button]).outline.contrast:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   --pico-color: var(--pico-contrast-hover);
+  --pico-border-color: var(--pico-contrast-hover);
 }
 
 :where(button, [type=submit], [type=reset], [type=button], [role=button])[disabled],
