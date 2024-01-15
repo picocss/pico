@@ -243,7 +243,7 @@
       #{$css-var-prefix}text-decoration: underline;
 
       // Secondary & Contrast
-      @if enable-classes {
+      @if $enable-classes {
         &.secondary,
         &.contrast {
           #{$css-var-prefix}text-decoration: underline;

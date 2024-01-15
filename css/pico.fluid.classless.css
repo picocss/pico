@@ -150,9 +150,6 @@
 a {
   --pico-text-decoration: underline;
 }
-a.secondary, a.contrast {
-  --pico-text-decoration: underline;
-}
 
 small {
   --pico-font-size: 0.875em;
