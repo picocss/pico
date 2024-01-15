@@ -3,7 +3,7 @@
 
 @if map.get($modules, "forms/basics") {
   // Helper
-  $helper-previous-tags: "input, select, textarea";
+  $helper-previous-tags: "input, select, textarea, fieldset";
   /**
    * Basics form elements
    */
