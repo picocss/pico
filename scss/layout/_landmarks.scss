@@ -51,11 +51,11 @@
             }
           }
         }
+      }
 
-        // Regular vertical spacings for <header>, <main>, <footer>
-        @else {
-          padding-block: var(#{$css-var-prefix}block-spacing-vertical);
-        }
+      // Regular vertical spacings for <header>, <main>, <footer>
+      @else {
+        padding-block: var(#{$css-var-prefix}block-spacing-vertical);
       }
     }
   }
