@@ -658,6 +658,7 @@ body > footer {
   margin-right: auto;
   margin-left: auto;
   padding: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
+  padding-block: var(--pico-block-spacing-vertical);
 }
 
 /**
