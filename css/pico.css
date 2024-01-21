@@ -719,12 +719,6 @@ main {
   display: block;
 }
 
-body > header,
-body > main,
-body > footer {
-  padding: var(--pico-block-spacing-vertical) 0;
-}
-
 /**
  * Container
  */
