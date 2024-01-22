@@ -20,6 +20,10 @@ $enable-semantic-container: false !default;
 // Fluid layout if disabled
 $enable-viewport: true !default;
 
+// Enable responsive spacings for <header>, <main>, <footer>, <section>, <article>
+// Fixed spacings if disabled
+$enable-responsive-spacings: false !default;
+
 // Enable responsive typography
 // Fixed root element size (rem) if disabled
 $enable-responsive-typography: true !default;
