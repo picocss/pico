@@ -17,7 +17,7 @@
    * Input type color
    */
 
-  [type="color"] {
+  #{$parent-selector} [type="color"] {
     &::-webkit-color-swatch-wrapper {
       @include color-wrapper;
     }

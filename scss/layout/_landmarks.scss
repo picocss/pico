@@ -24,7 +24,7 @@
 
   // Pico
   // ––––––––––––––––––––
-  #{$semantic-root-element} {
+  #{$parent-selector} #{$semantic-root-element} {
     > header,
     > main,
     > footer {

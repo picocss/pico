@@ -18,12 +18,12 @@
   // Pico
   // ––––––––––––––––––––
 
-  nav,
-  nav ul {
+  #{$parent-selector} nav,
+  #{$parent-selector} nav ul {
     display: flex;
   }
 
-  nav {
+  #{$parent-selector} nav {
     justify-content: space-between;
 
     ol,
@@ -118,7 +118,7 @@
   }
 
   // Vertical Nav
-  aside {
+  #{$parent-selector} aside {
     nav,
     ol,
     ul,
@@ -143,7 +143,7 @@
 
   // Breadcrumb RTL
   [dir="rtl"] {
-    nav {
+    #{$parent-selector} nav {
       &[aria-label="breadcrumb"] {
         & ul li {
           &:not(:last-child) {

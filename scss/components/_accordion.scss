@@ -6,7 +6,7 @@
    * Accordion (<details>)
    */
 
-  details {
+  #{$parent-selector} details {
     display: block;
     margin-bottom: var(#{$css-var-prefix}spacing);
 
@@ -102,7 +102,7 @@
   }
 
   [dir="rtl"] {
-    details {
+    #{$parent-selector} details {
       summary {
         text-align: right;
 

@@ -15,10 +15,10 @@
 
   // 1. Change the font styles in all browsers
   // 2. Remove the margin in Firefox and Safari
-  input,
-  optgroup,
-  select,
-  textarea {
+  #{$parent-selector} input,
+  #{$parent-selector} optgroup,
+  #{$parent-selector} select,
+  #{$parent-selector} textarea {
     margin: 0; // 2
     font-size: 1rem; // 1
     line-height: var(#{$css-var-prefix}line-height); // 1
@@ -27,12 +27,12 @@
   }
 
   // Show the overflow in IE.
-  input {
+  #{$parent-selector} input {
     overflow: visible;
   }
 
   // Remove the inheritance of text transform in Edge, Firefox, and IE
-  select {
+  #{$parent-selector} select {
     text-transform: none;
   }
 
@@ -40,7 +40,7 @@
   // 2. Correct the color inheritance from `fieldset` elements in IE
   // 3. Remove the padding so developers are not caught out when they zero out
   // `fieldset` elements in all browsers
-  legend {
+  #{$parent-selector} legend {
     max-width: 100%; // 1
     padding: 0; // 3
     color: inherit; // 2
@@ -48,65 +48,65 @@
   }
 
   // 1. Remove the default vertical scrollbar in IE
-  textarea {
+  #{$parent-selector} textarea {
     overflow: auto; // 1
   }
 
   // Remove the padding in IE 10
-  [type="checkbox"],
-  [type="radio"] {
+  #{$parent-selector} [type="checkbox"],
+  #{$parent-selector} [type="radio"] {
     padding: 0;
   }
 
   // Correct the cursor style of increment and decrement buttons in Safari
-  ::-webkit-inner-spin-button,
-  ::-webkit-outer-spin-button {
+  #{$parent-selector} ::-webkit-inner-spin-button,
+  #{$parent-selector} ::-webkit-outer-spin-button {
     height: auto;
   }
 
   // 1. Correct the odd appearance in Chrome and Safari
   // 2. Correct the outline style in Safari
-  [type="search"] {
+  #{$parent-selector} [type="search"] {
     -webkit-appearance: textfield; // 1
     outline-offset: -2px; // 2
   }
 
   // Remove the inner padding in Chrome and Safari on macOS
-  [type="search"]::-webkit-search-decoration {
+  #{$parent-selector} [type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
   }
 
   // 1. Correct the inability to style clickable types in iOS and Safari
   // 2. Change font properties to `inherit` in Safari
-  ::-webkit-file-upload-button {
+  #{$parent-selector} ::-webkit-file-upload-button {
     -webkit-appearance: button; // 1
     font: inherit; // 2
   }
 
   // Remove the inner border and padding of focus outlines in Firefox
-  ::-moz-focus-inner {
+  #{$parent-selector} ::-moz-focus-inner {
     padding: 0;
     border-style: none;
   }
 
   //  Remove the focus outline in Firefox
-  :-moz-focusring {
+  #{$parent-selector} :-moz-focusring {
     outline: none;
   }
 
   // Remove the additional :invalid styles in Firefox
-  :-moz-ui-invalid {
+  #{$parent-selector} :-moz-ui-invalid {
     box-shadow: none;
   }
 
   // Change the inconsistent appearance in IE (opinionated)
-  ::-ms-expand {
+  #{$parent-selector} ::-ms-expand {
     display: none;
   }
 
   // Remove the border and padding in all browsers (opinionated)
-  [type="file"],
-  [type="range"] {
+  #{$parent-selector} [type="file"],
+  #{$parent-selector} [type="range"] {
     padding: 0;
     border-width: 0;
   }
@@ -115,7 +115,7 @@
   // ––––––––––––––––––––
 
   // Force height for alternatives input types
-  input:not([type="checkbox"], [type="radio"], [type="range"]) {
+  #{$parent-selector} input:not([type="checkbox"], [type="radio"], [type="range"]) {
     height: calc(
       (1rem * var(#{$css-var-prefix}line-height)) +
         (var(#{$css-var-prefix}form-element-spacing-vertical) * 2) +
@@ -124,7 +124,7 @@
   }
 
   // Fieldset
-  fieldset {
+  #{$parent-selector} fieldset {
     width: 100%;
     margin: 0;
     margin-bottom: var(#{$css-var-prefix}spacing);
@@ -133,39 +133,39 @@
   }
 
   // Label & legend
-  label,
-  fieldset legend {
+  #{$parent-selector} label,
+  #{$parent-selector} fieldset legend {
     display: block;
     margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.375);
     color: var(#{$css-var-prefix}color);
     font-weight: var(#{$css-var-prefix}form-label-font-weight, var(#{$css-var-prefix}font-weight));
   }
 
-  fieldset legend {
+  #{$parent-selector} fieldset legend {
     margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.5);
   }
 
   // Blocks, 100%
-  input:not([type="checkbox"], [type="radio"]),
-  button[type="submit"],
-  select,
-  textarea {
+  #{$parent-selector} input:not([type="checkbox"], [type="radio"]),
+  #{$parent-selector} button[type="submit"],
+  #{$parent-selector} select,
+  #{$parent-selector} textarea {
     width: 100%;
   }
 
   // Reset appearance (Not Checkboxes, Radios, Range and File)
-  input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
-  select,
-  textarea {
+  #{$parent-selector} input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
+  #{$parent-selector} select,
+  #{$parent-selector} textarea {
     appearance: none;
     padding: var(#{$css-var-prefix}form-element-spacing-vertical)
       var(#{$css-var-prefix}form-element-spacing-horizontal);
   }
 
   // Commons styles
-  input,
-  select,
-  textarea {
+  #{$parent-selector} input,
+  #{$parent-selector} select,
+  #{$parent-selector} textarea {
     #{$css-var-prefix}background-color: var(#{$css-var-prefix}form-element-background-color);
     #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-border-color);
     #{$css-var-prefix}color: var(#{$css-var-prefix}form-element-color);
@@ -188,7 +188,8 @@
   }
 
   // Active & Focus
-  input:not(
+  #{$parent-selector}
+    input:not(
       [type="submit"],
       [type="button"],
       [type="reset"],
@@ -196,7 +197,7 @@
       [type="radio"],
       [readonly]
     ),
-  :where(select, textarea):not([readonly]) {
+  #{$parent-selector} :where(select, textarea):not([readonly]) {
     &:is(:active, :focus) {
       #{$css-var-prefix}background-color: var(
         #{$css-var-prefix}form-element-active-background-color
@@ -205,15 +206,17 @@
   }
 
   // Active & Focus
-  input:not([type="submit"], [type="button"], [type="reset"], [role="switch"], [readonly]),
-  :where(select, textarea):not([readonly]) {
+  #{$parent-selector}
+    input:not([type="submit"], [type="button"], [type="reset"], [role="switch"], [readonly]),
+  #{$parent-selector} :where(select, textarea):not([readonly]) {
     &:is(:active, :focus) {
       #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-active-border-color);
     }
   }
 
   // Focus
-  input:not(
+  #{$parent-selector}
+    input:not(
       [type="submit"],
       [type="button"],
       [type="reset"],
@@ -221,7 +224,7 @@
       [type="file"],
       [readonly]
     ),
-  :where(select, textarea):not([readonly]) {
+  #{$parent-selector} :where(select, textarea):not([readonly]) {
     &:focus {
       #{$css-var-prefix}box-shadow: 0
         0
@@ -232,22 +235,23 @@
   }
 
   // Disabled
-  input:not([type="submit"], [type="button"], [type="reset"])[disabled],
-  select[disabled],
-  textarea[disabled],
-  label[aria-disabled="true"],
-  :where(fieldset[disabled])
+  #{$parent-selector} input:not([type="submit"], [type="button"], [type="reset"])[disabled],
+  #{$parent-selector} select[disabled],
+  #{$parent-selector} textarea[disabled],
+  #{$parent-selector} label[aria-disabled="true"],
+  #{$parent-selector}
+    :where(fieldset[disabled])
     :is(input:not([type="submit"], [type="button"], [type="reset"]), select, textarea) {
     opacity: var(#{$css-var-prefix}form-element-disabled-opacity);
     pointer-events: none;
   }
 
-  label[aria-disabled="true"] input[disabled] {
+  #{$parent-selector} label[aria-disabled="true"] input[disabled] {
     opacity: 1;
   }
 
   // Aria-invalid
-  :where(input, select, textarea) {
+  #{$parent-selector} :where(input, select, textarea) {
     &:not(
         [type="checkbox"],
         [type="radio"],
@@ -354,7 +358,7 @@
   }
 
   [dir="rtl"] {
-    :where(input, select, textarea) {
+    #{$parent-selector} :where(input, select, textarea) {
       &:not([type="checkbox"], [type="radio"]) {
         &:is([aria-invalid], [aria-invalid="true"], [aria-invalid="false"]) {
           background-position: center left 0.75rem;
@@ -364,24 +368,24 @@
   }
 
   // Placeholder
-  input::placeholder,
-  input::-webkit-input-placeholder,
-  textarea::placeholder,
-  textarea::-webkit-input-placeholder,
-  select:invalid {
+  #{$parent-selector} input::placeholder,
+  #{$parent-selector} input::-webkit-input-placeholder,
+  #{$parent-selector} textarea::placeholder,
+  #{$parent-selector} textarea::-webkit-input-placeholder,
+  #{$parent-selector} select:invalid {
     color: var(#{$css-var-prefix}form-element-placeholder-color);
     opacity: 1;
   }
 
   // Margin bottom (Not Checkboxes and Radios)
-  input:not([type="checkbox"], [type="radio"]),
-  select,
-  textarea {
+  #{$parent-selector} input:not([type="checkbox"], [type="radio"]),
+  #{$parent-selector} select,
+  #{$parent-selector} textarea {
     margin-bottom: var(#{$css-var-prefix}spacing);
   }
 
   // Select
-  select {
+  #{$parent-selector} select {
     // Unstyle the caret on `<select>`s in IE10+.
     &::-ms-expand {
       border: 0;
@@ -409,7 +413,7 @@
   }
 
   [dir="rtl"] {
-    select {
+    #{$parent-selector} select {
       &:not([multiple], [size]) {
         background-position: center left 0.75rem;
       }
@@ -417,7 +421,7 @@
   }
 
   // Textarea
-  textarea {
+  #{$parent-selector} textarea {
     display: block;
     resize: vertical;
 
@@ -437,7 +441,7 @@
     $helper-previous-tags: $helper-previous-tags + ", .grid";
   }
 
-  :where(#{$helper-previous-tags}) {
+  #{$parent-selector} :where(#{$helper-previous-tags}) {
     + small {
       display: block;
       width: 100%;
@@ -458,7 +462,7 @@
   }
 
   // Styles for Input inside a label
-  label {
+  #{$parent-selector} label {
     > :where(input, select, textarea) {
       margin-top: calc(var(#{$css-var-prefix}spacing) * 0.25);
     }

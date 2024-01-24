@@ -8,7 +8,7 @@
 
   // Container
   // ––––––––––––––––––––
-  details.dropdown {
+  #{$parent-selector} details.dropdown {
     position: relative;
     border-bottom: none;
 
@@ -38,7 +38,7 @@
   // Container type accordion
   // inside a nav
   // ––––––––––––––––––––
-  nav details.dropdown {
+  #{$parent-selector} nav details.dropdown {
     // Override height
     margin-bottom: 0;
   }
@@ -46,7 +46,7 @@
   // Bouton as a select
   // inside container type accordion
   // ––––––––––––––––––––
-  details.dropdown summary:not([role]) {
+  #{$parent-selector} details.dropdown summary:not([role]) {
     height: calc(
       1rem *
         var(#{$css-var-prefix}line-height) +
@@ -122,7 +122,7 @@
 
   // Dropdown inside a nav
   // ––––––––––––––––––––
-  nav details.dropdown {
+  #{$parent-selector} nav details.dropdown {
     display: inline;
     margin: calc(var(#{$css-var-prefix}nav-element-spacing-vertical) * -1) 0;
 
@@ -146,7 +146,7 @@
 
   // Submenu
   // ––––––––––––––––––––
-  details.dropdown summary + ul {
+  #{$parent-selector} details.dropdown summary + ul {
     display: flex;
     z-index: 99;
     position: absolute;
@@ -226,14 +226,14 @@
   // Button opened
   // inside container type accordion
   // ––––––––––––––––––––
-  details.dropdown[open] summary {
+  #{$parent-selector} details.dropdown[open] summary {
     margin-bottom: 0;
   }
 
   // Menu opened
   // ––––––––––––––––––––
   // 1. Inside container type accordion
-  details.dropdown[open] summary {
+  #{$parent-selector} details.dropdown[open] summary {
     + ul {
       transform: scaleY(1);
       opacity: 1;
@@ -249,7 +249,7 @@
   // Close for dropdown
   // inside container type accordion
   // ––––––––––––––––––––
-  details.dropdown[open] summary {
+  #{$parent-selector} details.dropdown[open] summary {
     &::before {
       display: block;
       z-index: 1;
@@ -264,7 +264,7 @@
   }
   // Label
   // ––––––––––––––––––––
-  label > details.dropdown {
+  #{$parent-selector} label > details.dropdown {
     margin-top: calc(var(#{$css-var-prefix}spacing) * 0.25);
   }
 }

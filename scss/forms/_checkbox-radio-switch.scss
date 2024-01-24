@@ -8,15 +8,15 @@
 
   // Labels
   // Not working in Firefox, which doesn't support the `:has()` pseudo-class
-  label {
+  #{$parent-selector} label {
     &:has([type="checkbox"], [type="radio"]) {
       width: fit-content;
       cursor: pointer;
     }
   }
 
-  [type="checkbox"],
-  [type="radio"] {
+  #{$parent-selector} [type="checkbox"],
+  #{$parent-selector} [type="radio"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -55,7 +55,7 @@
   }
 
   // Checkboxes
-  [type="checkbox"] {
+  #{$parent-selector} [type="checkbox"] {
     &:indeterminate {
       #{$css-var-prefix}background-color: var(#{$css-var-prefix}primary-background);
       #{$css-var-prefix}border-color: var(#{$css-var-prefix}primary-border);
@@ -67,7 +67,7 @@
   }
 
   // Radios
-  [type="radio"] {
+  #{$parent-selector} [type="radio"] {
     border-radius: 50%;
 
     &:checked,
@@ -80,7 +80,7 @@
   }
 
   // Switchs
-  [type="checkbox"][role="switch"] {
+  #{$parent-selector} [type="checkbox"][role="switch"] {
     #{$css-var-prefix}background-color: var(#{$css-var-prefix}switch-background-color);
     #{$css-var-prefix}color: var(#{$css-var-prefix}switch-color);
 
@@ -135,8 +135,8 @@
   }
 
   // Aria-invalid
-  [type="checkbox"],
-  [type="checkbox"][role="switch"] {
+  #{$parent-selector} [type="checkbox"],
+  #{$parent-selector} [type="checkbox"][role="switch"] {
     &[aria-invalid="false"] {
       &:checked,
       &:checked:active,
@@ -155,9 +155,9 @@
     }
   }
 
-  [type="checkbox"],
-  [type="radio"],
-  [type="checkbox"][role="switch"] {
+  #{$parent-selector} [type="checkbox"],
+  #{$parent-selector} [type="radio"],
+  #{$parent-selector} [type="checkbox"][role="switch"] {
     &[aria-invalid="false"] {
       &:checked,
       &:checked:active,

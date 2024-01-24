@@ -6,14 +6,14 @@
    * Group ([role="group"], [role="search"])
    */
 
-  form {
+  #{$parent-selector} form {
     &[role="search"],
     &[role="group"] {
       width: 100%;
     }
   }
 
-  [role="search"] {
+  #{$parent-selector} [role="search"] {
     > * {
       &:first-child {
         border-top-left-radius: 5rem;
@@ -27,8 +27,8 @@
     }
   }
 
-  [role="search"],
-  [role="group"] {
+  #{$parent-selector} [role="search"],
+  #{$parent-selector} [role="group"] {
     display: inline-flex;
     position: relative;
     margin-bottom: var(#{$css-var-prefix}spacing);

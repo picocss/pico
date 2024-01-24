@@ -15,9 +15,9 @@
   // 3. Remove timed scrolling behaviors when motion is reduced (opinionated)
   // 4. Remove transitions when motion is reduced (opinionated)
   @media (prefers-reduced-motion: reduce) {
-    *:not([aria-busy="true"]),
-    :not([aria-busy="true"])::before,
-    :not([aria-busy="true"])::after {
+    #{$parent-selector} *:not([aria-busy="true"]),
+    #{$parent-selector} :not([aria-busy="true"])::before,
+    #{$parent-selector} :not([aria-busy="true"])::after {
       background-attachment: initial !important; // 2
       animation-duration: 1ms !important; // 1
       animation-delay: -1ms !important; // 1
