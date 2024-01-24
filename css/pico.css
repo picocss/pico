@@ -70,12 +70,6 @@
     --pico-font-size: 131.25%;
   }
 }
-:root details summary[role=button]:not(.outline)::after {
-  filter: brightness(0) invert(1);
-}
-:root [aria-busy=true]:not(input, select, textarea):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
-  filter: brightness(0) invert(1);
-}
 
 a {
   --pico-text-decoration: underline;
@@ -216,6 +210,14 @@ nav details.dropdown summary:focus-visible {
 [role=group] [type=button],
 [role=group] [role=button] {
   --pico-form-element-spacing-horizontal: 2rem;
+}
+
+details summary[role=button]:not(.outline)::after {
+  filter: brightness(0) invert(1);
+}
+
+[aria-busy=true]:not(input, select, textarea):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
+  filter: brightness(0) invert(1);
 }
 
 /**
@@ -2781,5 +2783,3 @@ textarea,
     transition-duration: 0s !important;
   }
 }
-
-/*# sourceMappingURL=pico.css.map */
