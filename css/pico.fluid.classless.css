@@ -254,8 +254,6 @@ input:not([type=submit],
   --pico-form-element-active-background-color: #fff;
   --pico-form-element-active-border-color: var(--pico-primary-border);
   --pico-form-element-focus-color: var(--pico-primary-border);
-  --pico-form-element-disabled-background-color: var(--pico-form-element-background-color);
-  --pico-form-element-disabled-border-color: var(--pico-form-element-border-color);
   --pico-form-element-disabled-opacity: 0.5;
   --pico-form-element-invalid-border-color: #b86a6b;
   --pico-form-element-invalid-active-border-color: #c84f48;
@@ -370,8 +368,6 @@ input:not([type=submit],
     --pico-form-element-active-background-color: #1a1f28;
     --pico-form-element-active-border-color: var(--pico-primary-border);
     --pico-form-element-focus-color: var(--pico-primary-border);
-    --pico-form-element-disabled-background-color: var(--pico-form-element-background-color);
-    --pico-form-element-disabled-border-color: var(--pico-form-element-border-color);
     --pico-form-element-disabled-opacity: 0.5;
     --pico-form-element-invalid-border-color: #964a50;
     --pico-form-element-invalid-active-border-color: #b7403b;
@@ -479,8 +475,6 @@ input:not([type=submit],
   --pico-form-element-active-background-color: #1a1f28;
   --pico-form-element-active-border-color: var(--pico-primary-border);
   --pico-form-element-focus-color: var(--pico-primary-border);
-  --pico-form-element-disabled-background-color: var(--pico-form-element-background-color);
-  --pico-form-element-disabled-border-color: var(--pico-form-element-border-color);
   --pico-form-element-disabled-opacity: 0.5;
   --pico-form-element-invalid-border-color: #964a50;
   --pico-form-element-invalid-active-border-color: #b7403b;
@@ -1213,8 +1207,6 @@ select[disabled],
 textarea[disabled],
 label[aria-disabled=true],
 :where(fieldset[disabled]) :is(input:not([type=submit], [type=button], [type=reset]), select, textarea) {
-  --pico-background-color: var(--pico-form-element-disabled-background-color);
-  --pico-border-color: var(--pico-form-element-disabled-border-color);
   opacity: var(--pico-form-element-disabled-opacity);
   pointer-events: none;
 }

@@ -113,12 +113,6 @@
     #{$css-var-prefix}form-element-active-background-color: #{$white};
     #{$css-var-prefix}form-element-active-border-color: var(#{$css-var-prefix}primary-border);
     #{$css-var-prefix}form-element-focus-color: var(#{$css-var-prefix}primary-border);
-    #{$css-var-prefix}form-element-disabled-background-color: var(
-      #{$css-var-prefix}form-element-background-color
-    );
-    #{$css-var-prefix}form-element-disabled-border-color: var(
-      #{$css-var-prefix}form-element-border-color
-    );
     #{$css-var-prefix}form-element-disabled-opacity: 0.5;
     #{$css-var-prefix}form-element-invalid-border-color: #{mix($red-500, $zinc-350)};
     #{$css-var-prefix}form-element-invalid-active-border-color: #{mix($red-500, $zinc-350, 75%)};

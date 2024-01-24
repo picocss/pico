@@ -238,10 +238,6 @@
   label[aria-disabled="true"],
   :where(fieldset[disabled])
     :is(input:not([type="submit"], [type="button"], [type="reset"]), select, textarea) {
-    #{$css-var-prefix}background-color: var(
-      #{$css-var-prefix}form-element-disabled-background-color
-    );
-    #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-disabled-border-color);
     opacity: var(#{$css-var-prefix}form-element-disabled-opacity);
     pointer-events: none;
   }
