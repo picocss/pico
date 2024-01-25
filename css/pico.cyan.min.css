@@ -297,7 +297,7 @@ details summary[role=button]:not(.outline)::after {
   --pico-form-element-valid-active-border-color: #279977;
   --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
   --pico-switch-background-color: #bfc7d9;
-  --pico-switch-color: var(--pico-primary-inverse);
+  --pico-switch-color: #fff;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-range-border-color: #dfe3eb;
   --pico-range-active-border-color: #bfc7d9;
@@ -416,7 +416,7 @@ details summary[role=button]:not(.outline)::after {
     --pico-form-element-valid-active-border-color: #16896a;
     --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
     --pico-switch-background-color: #333c4e;
-    --pico-switch-color: var(--pico-primary-inverse);
+    --pico-switch-color: #fff;
     --pico-switch-checked-background-color: var(--pico-primary-background);
     --pico-range-border-color: #202632;
     --pico-range-active-border-color: #2a3140;
@@ -538,7 +538,7 @@ details summary[role=button]:not(.outline)::after {
   --pico-form-element-valid-active-border-color: #16896a;
   --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
   --pico-switch-background-color: #333c4e;
-  --pico-switch-color: var(--pico-primary-inverse);
+  --pico-switch-color: #fff;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-range-border-color: #202632;
   --pico-range-active-border-color: #2a3140;
@@ -2018,6 +2018,9 @@ details.dropdown summary:not([role])[aria-invalid=true] {
 nav details.dropdown {
   display: inline;
   margin: calc(var(--pico-nav-element-spacing-vertical) * -1) 0;
+}
+nav details.dropdown summary::after {
+  transform: rotate(0deg) translateX(0rem);
 }
 nav details.dropdown summary:not([role]) {
   height: calc(1rem * var(--pico-line-height) + var(--pico-nav-link-spacing-vertical) * 2);

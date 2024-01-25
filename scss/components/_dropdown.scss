@@ -126,20 +126,30 @@
     display: inline;
     margin: calc(var(#{$css-var-prefix}nav-element-spacing-vertical) * -1) 0;
 
-    summary:not([role]) {
-      // Override height
-      height: calc(
-        (1rem * var(#{$css-var-prefix}line-height)) +
-          (var(#{$css-var-prefix}nav-link-spacing-vertical) * 2)
-      );
-      padding: calc(
-          var(#{$css-var-prefix}nav-link-spacing-vertical) -
-            (var(#{$css-var-prefix}border-width) * 2)
-        )
-        var(#{$css-var-prefix}nav-link-spacing-horizontal);
+    summary {
+      &::after {
+        transform: rotate(0deg) translateX(0rem);
+      }
 
-      &:focus-visible {
-        box-shadow: 0 0 0 var(#{$css-var-prefix}outline-width) var(#{$css-var-prefix}primary-focus);
+      &:not([role]) {
+        // Override height
+        height: calc(
+          (1rem * var(#{$css-var-prefix}line-height)) +
+            (var(#{$css-var-prefix}nav-link-spacing-vertical) * 2)
+        );
+        padding: calc(
+            var(#{$css-var-prefix}nav-link-spacing-vertical) -
+              (var(#{$css-var-prefix}border-width) * 2)
+          )
+          var(#{$css-var-prefix}nav-link-spacing-horizontal);
+
+        &:focus-visible {
+          box-shadow: 0
+            0
+            0
+            var(#{$css-var-prefix}outline-width)
+            var(#{$css-var-prefix}primary-focus);
+        }
       }
     }
   }

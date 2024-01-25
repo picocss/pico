@@ -141,7 +141,7 @@
   // Switch (input[type="checkbox"][role="switch"])
   @if map.get($modules, "forms/checkbox-radio-switch") {
     #{$css-var-prefix}switch-background-color: #{$slate-200};
-    #{$css-var-prefix}switch-color: var(#{$css-var-prefix}primary-inverse);
+    #{$css-var-prefix}switch-color: #{$white};
     #{$css-var-prefix}switch-checked-background-color: var(#{$css-var-prefix}primary-background);
   }
 

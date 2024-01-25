@@ -2,6 +2,7 @@
 @use "../../colors" as *;
 @use "../../settings" as *;
 @use "../../utils/functions";
+@use "theme-colors";
 
 @if map.get($modules, "themes/default") {
   /**
@@ -419,7 +420,11 @@
       }
       #{$selector} {
         &::before {
-          filter: brightness(0) invert(1);
+          @if theme-colors.get("primary-inverse", "dark") == $white {
+            filter: brightness(0) invert(1);
+          } @else {
+            filter: brightness(0) invert(0);
+          }
         }
       }
     }
