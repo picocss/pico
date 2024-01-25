@@ -4,7 +4,6 @@ const fs = require("fs");
 
 const themeColors = [
   "amber",
-  // "azure",
   "blue",
   "cyan",
   "fuchsia",
@@ -28,18 +27,29 @@ const themeColors = [
 const tempScssFoldername = path.join(__dirname, "../.pico");
 const cssFoldername = path.join(__dirname, "../css");
 
-// Ceeate the temp folder if it doesn't exist
-if (!fs.existsSync(tempScssFoldername)) {
-  fs.mkdirSync(tempScssFoldername);
-}
+// Create a folder if it doesn't exist
+const createFolderIfNotExists = (foldername) => {
+  if (!fs.existsSync(foldername)) {
+    fs.mkdirSync(foldername);
+  }
+};
 
-// Delete all files in the temp folder
-fs.readdirSync(tempScssFoldername).forEach((file) => {
-  fs.unlinkSync(path.join(tempScssFoldername, file));
-});
+// Empty a folder
+const emptyFolder = (foldername) => {
+  // Delete all files in the temp folder
+  fs.readdirSync(foldername).forEach((file) => {
+    fs.unlinkSync(path.join(foldername, file));
+  });
+};
+
+// Create the temp folder if it doesn't exist
+createFolderIfNotExists(tempScssFoldername);
+
+// Empty the temp folder
+emptyFolder(tempScssFoldername);
 
 // Loop through the theme colors
-themeColors.forEach((themeColor) => {
+themeColors.forEach((themeColor, colorIndex) => {
   // All the versions to generate
   const versions = [
     {
@@ -93,8 +103,21 @@ themeColors.forEach((themeColor) => {
     },
   ];
 
+  const displayAsciiProgress = ({length, index, color}) => {
+    const progress = Math.round((index / length) * 100);
+    const bar = "■".repeat(progress / 10);
+    const empty = "□".repeat(10 - progress / 10);
+    process.stdout.write(`[@picocss/pico] ✨ ${bar}${empty} ${color}\r`);
+  };
+
   // Loop through the versions
   versions.forEach((version) => {
+    displayAsciiProgress({
+      length: themeColors.length,
+      index: colorIndex,
+      color: themeColor.charAt(0).toUpperCase() + themeColor.slice(1),
+    });
+
     // Create the file
     fs.writeFileSync(
       path.join(tempScssFoldername, `${version.name}.${themeColor}.scss`),
@@ -109,5 +132,12 @@ themeColors.forEach((themeColor) => {
 
     // Write the file
     fs.writeFileSync(path.join(cssFoldername, `${version.name}.${themeColor}.min.css`), result.css);
+
+    // Clear the console
+    process.stdout.clearLine();
+    process.stdout.cursorTo(0);
   });
 });
+
+// Empty the temp folder
+emptyFolder(tempScssFoldername);
