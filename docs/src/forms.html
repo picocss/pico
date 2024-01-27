@@ -1,11 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    ${require('./_head.html')
-      title=`Forms`
-      description=`All form elements are fully responsive in pure semantic HTML, allowing forms to scale gracefully across devices and viewports.`
-      canonical=`forms.html`
-    }
+    ${require('./_head.html') title=`Forms` description=`All form elements are
+    fully responsive in pure semantic HTML, allowing forms to scale gracefully
+    across devices and viewports.` canonical=`forms.html` }
   </head>
 
   <body>
@@ -18,30 +16,62 @@
         <section id="forms">
           <hgroup>
             <h1>Forms</h1>
-            <h2>All form elements are fully responsive in pure semantic HTML, allowing forms to scale gracefully across devices and viewports.</h2>
+            <h2>
+              All form elements are fully responsive in pure semantic HTML,
+              allowing forms to scale gracefully across devices and viewports.
+            </h2>
           </hgroup>
-          <p>Inputs are <code><i>width</i>: <u>100%</u>;</code> by default. You can use <code>.grid</code> inside a form.</p>
-          <p>All native form elements are fully customizable and themeable with CSS variables.</p>
+          <p>
+            Inputs are <code><i>width</i>: <u>100%</u>;</code> by default. You
+            can use <code>.grid</code> inside a form.
+          </p>
+          <p>
+            All native form elements are fully customizable and themeable with
+            CSS variables.
+          </p>
           <article aria-label="Form example">
             <form>
               <div class="grid">
                 <label for="firstname">
                   First name
-                  <input type="text" id="firstname" name="firstname" placeholder="First name" required>
+                  <input
+                    type="text"
+                    id="firstname"
+                    name="firstname"
+                    placeholder="First name"
+                    required
+                  />
                 </label>
                 <label for="lastname">
                   Last name
-                  <input type="text" id="lastname" name="lastname" placeholder="Last name" required>
+                  <input
+                    type="text"
+                    id="lastname"
+                    name="lastname"
+                    placeholder="Last name"
+                    required
+                  />
                 </label>
               </div>
               <label for="email">Email address</label>
-              <input type="email" id="email" name="email" placeholder="Email address" required>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email address"
+                required
+              />
               <small>We'll never share your email with anyone else.</small>
-              <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Submit</button>
+              <button
+                type="submit"
+                aria-label="Example button"
+                onclick="event.preventDefault()"
+              >
+                Submit
+              </button>
             </form>
             <footer class="code">
-
-<pre><code>&lt;<b>form</b>&gt;
+              <pre><code>&lt;<b>form</b>&gt;
 
   <em>&lt;!-- Grid --&gt;</em>
   &lt;<b>div</b> <i>class</i>=<u>"grid"</u>&gt;
@@ -68,28 +98,52 @@
   &lt;<b>button</b> <i>type</i>=<u>"submit"</u>&gt;Submit&lt;/<b>button</b>&gt;
 
 &lt;/<b>form</b>&gt;</code></pre>
-
             </footer>
           </article>
           <p>Disabled and validation states:</p>
           <article aria-label="Validation states examples">
             <form class="grid">
-              <input type="text" placeholder="Valid" aria-label="Valid" aria-invalid="false">
-              <input type="text" placeholder="Invalid" aria-label="Invalid"  aria-invalid="true">
-              <input type="text" placeholder="Disabled" aria-label="Disabled" disabled>
-              <input type="text" value="Readonly" aria-label="Readonly" readonly>
+              <input
+                type="text"
+                placeholder="Valid"
+                aria-label="Valid"
+                aria-invalid="false"
+              />
+              <input
+                type="text"
+                placeholder="Invalid"
+                aria-label="Invalid"
+                aria-invalid="true"
+              />
+              <input
+                type="text"
+                placeholder="Disabled"
+                aria-label="Disabled"
+                disabled
+              />
+              <input
+                type="text"
+                value="Readonly"
+                aria-label="Readonly"
+                readonly
+              />
             </form>
             <footer class="code">
-
-<pre><code>&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Valid"</u> <i>aria-invalid</i>=<u>"false"</u>&gt;
+              <pre><code>&lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Valid"</u> <i>aria-invalid</i>=<u>"false"</u>&gt;
 &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Invalid"</u> <i>aria-invalid</i>=<u>"true"</u>&gt;
 &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>placeholder</i>=<u>"Disabled"</u> <i>disabled</i>&gt;
 &lt;<b>input</b> <i>type</i>=<u>"text"</u> <i>value</i>=<u>"Readonly"</u> <i>readonly</i>&gt;</code></pre>
-
             </footer>
           </article>
-          <p><code>&lt;<b>fieldset</b>&gt;</code> is unstyled and acts as a container for radios and checkboxes, providing a consistent <code><i>margin-bottom</i></code> for the set.</p>
-          <p><code><i>role</i>=<u>"switch"</u></code> on a <code><i>type</i>=<u>"checkbox"</u></code> enable a custom switch.</p>
+          <p>
+            <code>&lt;<b>fieldset</b>&gt;</code> is unstyled and acts as a
+            container for radios and checkboxes, providing a consistent
+            <code><i>margin-bottom</i></code> for the set.
+          </p>
+          <p>
+            <code><i>role</i>=<u>"switch"</u></code> on a
+            <code><i>type</i>=<u>"checkbox"</u></code> enable a custom switch.
+          </p>
           <article aria-label="Select, radios, checkboxes, switch examples">
             <label for="fruit">Fruit</label>
             <select id="fruit" required>
@@ -103,45 +157,74 @@
             <fieldset>
               <legend>Size</legend>
               <label for="small">
-                <input type="radio" id="small" name="size" value="small" checked>
+                <input
+                  type="radio"
+                  id="small"
+                  name="size"
+                  value="small"
+                  checked
+                />
                 Small
               </label>
               <label for="medium">
-                <input type="radio" id="medium" name="size" value="medium">
+                <input type="radio" id="medium" name="size" value="medium" />
                 Medium
               </label>
               <label for="large">
-                <input type="radio" id="large" name="size" value="large">
+                <input type="radio" id="large" name="size" value="large" />
                 Large
               </label>
               <label for="extralarge">
-                <input type="radio" id="extralarge" name="size" value="extralarge" disabled>
+                <input
+                  type="radio"
+                  id="extralarge"
+                  name="size"
+                  value="extralarge"
+                  disabled
+                />
                 Extra Large
               </label>
             </fieldset>
             <fieldset>
               <label for="terms">
-                <input type="checkbox" id="terms" name="terms">
+                <input type="checkbox" id="terms" name="terms" />
                 I agree to the Terms and Conditions
               </label>
               <label for="terms_sharing">
-                <input type="checkbox" id="terms_sharing" name="terms_sharing" disabled checked>
+                <input
+                  type="checkbox"
+                  id="terms_sharing"
+                  name="terms_sharing"
+                  disabled
+                  checked
+                />
                 I agree to share my information with partners
               </label>
             </fieldset>
             <fieldset>
               <label for="switch">
-                <input type="checkbox" id="switch" name="switch" role="switch">
+                <input
+                  type="checkbox"
+                  id="switch"
+                  name="switch"
+                  role="switch"
+                />
                 Publish on my profile
               </label>
               <label for="switch_disabled">
-                <input type="checkbox" id="switch_disabled" name="switch_disabled" role="switch" disabled checked>
+                <input
+                  type="checkbox"
+                  id="switch_disabled"
+                  name="switch_disabled"
+                  role="switch"
+                  disabled
+                  checked
+                />
                 User must change password at next logon
               </label>
             </fieldset>
             <footer class="code">
-
-<pre><code><em>&lt;!-- Select --&gt;</em>
+              <pre><code><em>&lt;!-- Select --&gt;</em>
 &lt;<b>label</b> <i>for</i>=<u>"fruit"</u>&gt;Fruit&lt;/<b>label</b>&gt;
 &lt;<b>select</b> <i>id</i>=<u>"fruit"</u> <i>required</i>&gt;
   &lt;<b>option</b> <i>value</i>=<u>""</u> <i>selected</i>&gt;Select a fruit…&lt;/<b>option</b>&gt;
@@ -192,49 +275,76 @@
     User must change password at next logon
   &lt;/<b>label</b>&gt;
 &lt;/<b>fieldset</b>&gt;</code></pre>
-
             </footer>
           </article>
-          <p>You can change a checkbox to an indeterminate state by setting the <code><i>indeterminate</i></code> property to <code><u>true</u></code></p>
+          <p>
+            You can change a checkbox to an indeterminate state by setting the
+            <code><i>indeterminate</i></code> property to
+            <code><u>true</u></code>
+          </p>
           <article aria-label="Indeterminate checkbox example">
             <label for="indeterminate-checkbox">
-              <input type="checkbox" id="indeterminate-checkbox" name="indeterminate-checkbox">
+              <input
+                type="checkbox"
+                id="indeterminate-checkbox"
+                name="indeterminate-checkbox"
+              />
               Select all
             </label>
-            <script>document.getElementById('indeterminate-checkbox').indeterminate = true;</script>
+            <script>
+              document.getElementById(
+                "indeterminate-checkbox"
+              ).indeterminate = true
+            </script>
             <footer class="code">
-
-<pre><code>&lt;<b>script</b>&gt;
+              <pre><code>&lt;<b>script</b>&gt;
   <i>document</i>.<b>getElementById</b>(<u>'indeterminate-checkbox'</u>).<i>indeterminate</i> = <u>true</u>;
 &lt;/<b>script</b>&gt;</code></pre>
-
             </footer>
           </article>
 
           <p>Others input types:</p>
-          <article aria-label="Search, file browser, range slider, date, time, color examples">
-            <input type="search" id="search" name="search" placeholder="Search">
-            <label for="file">File browser
-              <input type="file" id="file" name="file">
+          <article
+            aria-label="Search, file browser, range slider, date, time, color examples"
+          >
+            <input
+              type="search"
+              id="search"
+              name="search"
+              placeholder="Search"
+            />
+            <label for="file"
+              >File browser
+              <input type="file" id="file" name="file" />
             </label>
-            <label for="range">Range slider
-              <input type="range" min="0" max="100" value="50" id="range" name="range">
+            <label for="range"
+              >Range slider
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                id="range"
+                name="range"
+              />
             </label>
-            <label for="date">Date
-              <input type="date" id="date" name="date">
+            <label for="date"
+              >Date
+              <input type="date" id="date" name="date" />
             </label>
-            <label for="time">Time
-              <input type="time" id="time" name="time">
+            <label for="time"
+              >Time
+              <input type="time" id="time" name="time" />
             </label>
-            <label for="color">Color
-              <input type="color" id="color" name="color" value="#0eaaaa">
+            <label for="color"
+              >Color
+              <input type="color" id="color" name="color" value="#0eaaaa" />
             </label>
             <footer class="code">
-
-<pre><code><em>&lt;!-- Search --&gt;</em>
+              <pre><code><em>&lt;!-- Search --&gt;</em>
 &lt;<b>input</b> <i>type</i>=<u>"search"</u> <i>id</i>=<u>"search"</u> <i>name</i>=<u>"search"</u> <i>placeholder</i>=<u>"Search"</u>&gt;
 
-&lt;!-- File browser --&gt;</em>
+<em>&lt;!-- File browser --&gt;</em>
 &lt;<b>label</b> <i>for</i>=<u>"file"</u>&gt;File browser
   &lt;<b>input</b> <i>type</i>=<u>"file"</u> <i>id</i>=<u>"file"</u> <i>name</i>=<u>"file"</u>&gt;
 &lt;/<b>label</b>&gt;
@@ -258,13 +368,11 @@
 &lt;<b>label</b> <i>for</i>=<u>"color"</u>&gt;Color
   &lt;<b>input</b> <i>type</i>=<u>"color"</u> <i>id</i>=<u>"color"</u> <i>name</i>=<u>"color"</u> <i>value</i>=<u>"#0eaaaa"</u>>
 &lt;/<b>label</b>&gt;</code></pre>
-
             </footer>
           </article>
         </section>
 
         ${require('./_footer.html')}
-
       </div>
     </main>
     <script src="js/commons.min.js"></script>

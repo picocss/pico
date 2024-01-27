@@ -6,11 +6,10 @@
  */
 
 export const toggleNavigation = {
-  
   // Config
-  _state: 'closed-on-mobile',
-  toggleLink: document.getElementById('toggle-docs-navigation'),
-  nav: document.querySelector('main > aside > nav'),
+  _state: "closed-on-mobile",
+  toggleLink: document.getElementById("toggle-docs-navigation"),
+  nav: document.querySelector("main > aside > nav"),
 
   // Init
   init() {
@@ -18,25 +17,29 @@ export const toggleNavigation = {
   },
 
   onToggleClick() {
-    this.toggleLink.addEventListener('click', event => {
-      event.preventDefault();
-      this.state == 'closed-on-mobile' 
-        ? this.state = 'open' 
-        : this.state = 'closed-on-mobile';
-      this.nav.removeAttribute('class');
-      this.nav.classList.add(this.state);
-    }, false);
+    this.toggleLink.addEventListener(
+      "click",
+      event => {
+        event.preventDefault()
+        this.state == "closed-on-mobile"
+          ? (this.state = "open")
+          : (this.state = "closed-on-mobile")
+        this.nav.removeAttribute("class")
+        this.nav.classList.add(this.state)
+      },
+      false
+    )
   },
 
   // Get state
   get state() {
-    return this._state;
+    return this._state
   },
 
   // Set state
   set state(state) {
-    this._state = state;
+    this._state = state
   },
-};
+}
 
-export default toggleNavigation;
+export default toggleNavigation

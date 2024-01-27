@@ -6,16 +6,16 @@
  */
 
 // Imports
-import themeSwitcher from './src/theme-switcher.js';
-import toggleNavigation from './src/toggle-navigation';
+import themeSwitcher from "./src/theme-switcher.js"
+import toggleNavigation from "./src/toggle-navigation"
 
 // Theme switcher
 themeSwitcher.addButton({
-  tag: 'BUTTON',
-  class: 'contrast switcher theme-switcher',
-  target: 'body',
-});
-themeSwitcher.init();
+  tag: "BUTTON",
+  class: "contrast switcher theme-switcher",
+  target: "body",
+})
+themeSwitcher.init()
 
 // Toggle navigation
-toggleNavigation.init();
+toggleNavigation.init()

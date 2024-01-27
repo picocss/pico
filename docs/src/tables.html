@@ -1,19 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    ${require('./_head.html') 
-      title=`Tables`
-      description=`Default styles for tables without .classes`
-      canonical=`tables.html`
-    }
+    ${require('./_head.html') title=`Tables` description=`Default styles for
+    tables without .classes` canonical=`tables.html` }
   </head>
 
   <body>
     ${require('./_nav.html')}
-    
+
     <main class="container" id="docs">
       ${require('./_sidebar.html') active=`tables-link`}
-      
+
       <div role="document">
         <section id="tables">
           <hgroup>
@@ -71,7 +68,7 @@
             </table>
           </figure>
 
-<pre><code>&lt;<b>table</b>&gt;
+          <pre><code>&lt;<b>table</b>&gt;
   &lt;<b>thead</b>&gt;
     &lt;<b>tr</b>&gt;
       &lt;<b>th</b> <i>scope</i>=<u>"col"</u>&gt;#&lt;/<b>th</b>&gt;
@@ -120,7 +117,9 @@
   &lt;/<b>tfoot</b>&gt;
 &lt;/<b>table</b>&gt;</code></pre>
 
-          <p><code><i>role</i>=<u>"grid"</u></code> enable striped rows.</p>
+          <p>
+            <code><i>role</i>=<u>"grid"</u></code> enable striped rows.
+          </p>
           <figure>
             <table role="grid">
               <thead>
@@ -162,14 +161,12 @@
             </table>
           </figure>
 
-<pre><code>&lt;<b>table</b> <i>role</i>=<u>"grid"</u>&gt;
+          <pre><code>&lt;<b>table</b> <i>role</i>=<u>"grid"</u>&gt;
   <em>…</em>
 &lt;/<b>table</b>&gt;</code></pre>
-
         </section>
 
         ${require('./_footer.html')}
-        
       </div>
     </main>
     <script src="js/commons.min.js"></script>

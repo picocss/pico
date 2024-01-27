@@ -6,9 +6,9 @@
  */
 
 // Imports
-import materialDesignColors from './src/material-design-colors.js';
-import colorPicker from './src/color-picker.js';
+import materialDesignColors from "./src/material-design-colors.js"
+import colorPicker from "./src/color-picker.js"
 
 // Color Picker
-colorPicker.colors = materialDesignColors;
-colorPicker.init();
+colorPicker.colors = materialDesignColors
+colorPicker.init()
