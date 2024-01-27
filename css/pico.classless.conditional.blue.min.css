@@ -1798,23 +1798,11 @@ main {
 /**
  * Group ([role="group"], [role="search"])
  */
-.pico form[role=search], .pico form[role=group] {
-  width: 100%;
-}
-
-.pico [role=search] > *:first-child {
-  border-top-left-radius: 5rem;
-  border-bottom-left-radius: 5rem;
-}
-.pico [role=search] > *:last-child {
-  border-top-right-radius: 5rem;
-  border-bottom-right-radius: 5rem;
-}
-
 .pico [role=search],
 .pico [role=group] {
   display: inline-flex;
   position: relative;
+  width: 100%;
   margin-bottom: var(--pico-spacing);
   border-radius: var(--pico-border-radius);
   box-shadow: var(--pico-group-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
@@ -1914,14 +1902,25 @@ main {
   }
   .pico [role=search] button:focus,
   .pico [role=search] [type=submit]:focus,
+  .pico [role=search] [type=reset]:focus,
   .pico [role=search] [type=button]:focus,
   .pico [role=search] [role=button]:focus,
   .pico [role=group] button:focus,
   .pico [role=group] [type=submit]:focus,
+  .pico [role=group] [type=reset]:focus,
   .pico [role=group] [type=button]:focus,
   .pico [role=group] [role=button]:focus {
     box-shadow: none;
   }
+}
+
+.pico [role=search] > *:first-child {
+  border-top-left-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+}
+.pico [role=search] > *:last-child {
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
 }
 
 /**

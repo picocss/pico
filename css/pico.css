@@ -2145,23 +2145,11 @@ label > details.dropdown {
 /**
  * Group ([role="group"], [role="search"])
  */
-form[role=search], form[role=group] {
-  width: 100%;
-}
-
-[role=search] > *:first-child {
-  border-top-left-radius: 5rem;
-  border-bottom-left-radius: 5rem;
-}
-[role=search] > *:last-child {
-  border-top-right-radius: 5rem;
-  border-bottom-right-radius: 5rem;
-}
-
 [role=search],
 [role=group] {
   display: inline-flex;
   position: relative;
+  width: 100%;
   margin-bottom: var(--pico-spacing);
   border-radius: var(--pico-border-radius);
   box-shadow: var(--pico-group-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
@@ -2261,14 +2249,25 @@ form[role=search], form[role=group] {
   }
   [role=search] button:focus,
   [role=search] [type=submit]:focus,
+  [role=search] [type=reset]:focus,
   [role=search] [type=button]:focus,
   [role=search] [role=button]:focus,
   [role=group] button:focus,
   [role=group] [type=submit]:focus,
+  [role=group] [type=reset]:focus,
   [role=group] [type=button]:focus,
   [role=group] [role=button]:focus {
     box-shadow: none;
   }
+}
+
+[role=search] > *:first-child {
+  border-top-left-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+}
+[role=search] > *:last-child {
+  border-top-right-radius: 5rem;
+  border-bottom-right-radius: 5rem;
 }
 
 /**
