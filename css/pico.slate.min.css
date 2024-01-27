@@ -1193,6 +1193,19 @@ kbd {
 }
 
 /**
+ * Figure
+ */
+figure {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+figure figcaption {
+  padding: calc(var(--pico-spacing) * 0.5) 0;
+  color: var(--pico-muted-color);
+}
+
+/**
  * Miscs
  */
 hr {
