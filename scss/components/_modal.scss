@@ -10,7 +10,7 @@
     #{$css-var-prefix}scrollbar-width: 0px;
   }
 
-  dialog {
+  #{$parent-selector} dialog {
     display: flex;
     z-index: 999;
     position: fixed;

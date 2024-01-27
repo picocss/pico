@@ -13,21 +13,21 @@
 
   // 1. Correct the inheritance and scaling of font size in all browsers
   // 2. Correct the odd `em` font sizing in all browsers
-  pre,
-  code,
-  kbd,
-  samp {
+  #{$parent-selector} pre,
+  #{$parent-selector} code,
+  #{$parent-selector} kbd,
+  #{$parent-selector} samp {
     font-size: 0.875em; // 2
     font-family: var(#{$css-var-prefix}font-family); // 1
   }
 
-  pre code {
+  #{$parent-selector} pre code {
     font-size: inherit;
     font-family: inherit;
   }
 
   // Prevent overflow of the container in all browsers (opinionated)
-  pre {
+  #{$parent-selector} pre {
     -ms-overflow-style: scrollbar;
     overflow: auto;
   }
@@ -35,9 +35,9 @@
   // Pico
   // ––––––––––––––––––––
 
-  pre,
-  code,
-  kbd {
+  #{$parent-selector} pre,
+  #{$parent-selector} code,
+  #{$parent-selector} kbd {
     border-radius: var(#{$css-var-prefix}border-radius);
     background: var(#{$css-var-prefix}code-background-color);
     color: var(#{$css-var-prefix}code-color);
@@ -45,13 +45,13 @@
     line-height: initial;
   }
 
-  code,
-  kbd {
+  #{$parent-selector} code,
+  #{$parent-selector} kbd {
     display: inline-block;
     padding: 0.375rem;
   }
 
-  pre {
+  #{$parent-selector} pre {
     display: block;
     margin-bottom: var(#{$css-var-prefix}spacing);
     overflow-x: auto;
@@ -65,7 +65,7 @@
   }
 
   // kbd
-  kbd {
+  #{$parent-selector} kbd {
     background-color: var(#{$css-var-prefix}code-kbd-background-color);
     color: var(#{$css-var-prefix}code-kbd-color);
     vertical-align: baseline;

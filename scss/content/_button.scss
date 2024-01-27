@@ -14,7 +14,7 @@
   // 1. Change the font styles in all browsers
   // 2. Remove the margin on controls in Safari
   // 3. Show the overflow in Edge
-  button {
+  #{$parent-selector} button {
     margin: 0; // 2
     overflow: visible; // 3
     font-family: inherit; // 1
@@ -22,22 +22,22 @@
   }
 
   // Correct the inability to style buttons in iOS and Safari
-  button,
-  [type="submit"],
-  [type="reset"],
-  [type="button"] {
+  #{$parent-selector} button,
+  #{$parent-selector} [type="submit"],
+  #{$parent-selector} [type="reset"],
+  #{$parent-selector} [type="button"] {
     -webkit-appearance: button;
   }
 
   // Pico
   // ––––––––––––––––––––
 
-  button,
-  [type="submit"],
-  [type="reset"],
-  [type="button"],
-  [type="file"]::file-selector-button,
-  [role="button"] {
+  #{$parent-selector} button,
+  #{$parent-selector} [type="submit"],
+  #{$parent-selector} [type="reset"],
+  #{$parent-selector} [type="button"],
+  #{$parent-selector} [type="file"]::file-selector-button,
+  #{$parent-selector} [role="button"] {
     #{$css-var-prefix}background-color: var(#{$css-var-prefix}primary-background);
     #{$css-var-prefix}border-color: var(#{$css-var-prefix}primary-border);
     #{$css-var-prefix}color: var(#{$css-var-prefix}primary-inverse);
@@ -85,18 +85,18 @@
     }
   }
 
-  [type="submit"],
-  [type="reset"],
-  [type="button"] {
+  #{$parent-selector} [type="submit"],
+  #{$parent-selector} [type="reset"],
+  #{$parent-selector} [type="button"] {
     margin-bottom: var(#{$css-var-prefix}spacing);
   }
 
   // .secondary, .contrast & .outline
   @if $enable-classes {
     // Secondary
-    :is(button, [type="submit"], [type="button"], [role="button"]).secondary,
-    [type="reset"],
-    [type="file"]::file-selector-button {
+    #{$parent-selector} :is(button, [type="submit"], [type="button"], [role="button"]).secondary,
+    #{$parent-selector} [type="reset"],
+    #{$parent-selector} [type="file"]::file-selector-button {
       #{$css-var-prefix}background-color: var(#{$css-var-prefix}secondary-background);
       #{$css-var-prefix}border-color: var(#{$css-var-prefix}secondary-border);
       #{$css-var-prefix}color: var(#{$css-var-prefix}secondary-inverse);
@@ -117,7 +117,7 @@
     }
 
     // Contrast
-    :is(button, [type="submit"], [type="button"], [role="button"]).contrast {
+    #{$parent-selector} :is(button, [type="submit"], [type="button"], [role="button"]).contrast {
       #{$css-var-prefix}background-color: var(#{$css-var-prefix}contrast-background);
       #{$css-var-prefix}border-color: var(#{$css-var-prefix}contrast-border);
       #{$css-var-prefix}color: var(#{$css-var-prefix}contrast-inverse);
@@ -137,7 +137,7 @@
     }
 
     // Outline (primary)
-    :is(button, [type="submit"], [type="button"], [role="button"]).outline,
+    #{$parent-selector} :is(button, [type="submit"], [type="button"], [role="button"]).outline,
     [type="reset"].outline {
       #{$css-var-prefix}background-color: transparent;
       #{$css-var-prefix}color: var(#{$css-var-prefix}primary);
@@ -151,7 +151,8 @@
     }
 
     // Outline (secondary)
-    :is(button, [type="submit"], [type="button"], [role="button"]).outline.secondary,
+    #{$parent-selector}
+      :is(button, [type="submit"], [type="button"], [role="button"]).outline.secondary,
     [type="reset"].outline {
       #{$css-var-prefix}color: var(#{$css-var-prefix}secondary);
       #{$css-var-prefix}border-color: var(#{$css-var-prefix}secondary);
@@ -163,7 +164,8 @@
     }
 
     // Outline (contrast)
-    :is(button, [type="submit"], [type="button"], [role="button"]).outline.contrast {
+    #{$parent-selector}
+      :is(button, [type="submit"], [type="button"], [role="button"]).outline.contrast {
       #{$css-var-prefix}color: var(#{$css-var-prefix}contrast);
       #{$css-var-prefix}border-color: var(#{$css-var-prefix}contrast);
 
@@ -174,8 +176,8 @@
     }
   } @else {
     // Secondary button without .class
-    [type="reset"],
-    [type="file"]::file-selector-button {
+    #{$parent-selector} [type="reset"],
+    #{$parent-selector} [type="file"]::file-selector-button {
       #{$css-var-prefix}background-color: var(#{$css-var-prefix}secondary-background);
       #{$css-var-prefix}border-color: var(#{$css-var-prefix}secondary-border);
       #{$css-var-prefix}color: var(#{$css-var-prefix}secondary-inverse);
@@ -196,8 +198,10 @@
   }
 
   // Button [disabled]
-  :where(button, [type="submit"], [type="reset"], [type="button"], [role="button"])[disabled],
-  :where(fieldset[disabled])
+  #{$parent-selector}
+    :where(button, [type="submit"], [type="reset"], [type="button"], [role="button"])[disabled],
+  #{$parent-selector}
+    :where(fieldset[disabled])
     :is(button, [type="submit"], [type="button"], [type="reset"], [role="button"]) {
     opacity: 0.5;
     pointer-events: none;

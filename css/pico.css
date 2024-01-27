@@ -70,12 +70,6 @@
     --pico-font-size: 131.25%;
   }
 }
-:root details summary[role=button]:not(.outline)::after {
-  filter: brightness(0) invert(1);
-}
-:root [aria-busy=true]:not(input, select, textarea):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
-  filter: brightness(0) invert(1);
-}
 
 a {
   --pico-text-decoration: underline;
@@ -218,6 +212,14 @@ nav details.dropdown summary:focus-visible {
   --pico-form-element-spacing-horizontal: 2rem;
 }
 
+details summary[role=button]:not(.outline)::after {
+  filter: brightness(0) invert(1);
+}
+
+[aria-busy=true]:not(input, select, textarea):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
+  filter: brightness(0) invert(1);
+}
+
 /**
  * Color schemes
  */
@@ -295,7 +297,7 @@ nav details.dropdown summary:focus-visible {
   --pico-form-element-valid-active-border-color: #279977;
   --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
   --pico-switch-background-color: #bfc7d9;
-  --pico-switch-color: var(--pico-primary-inverse);
+  --pico-switch-color: #fff;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-range-border-color: #dfe3eb;
   --pico-range-active-border-color: #bfc7d9;
@@ -414,7 +416,7 @@ nav details.dropdown summary:focus-visible {
     --pico-form-element-valid-active-border-color: #16896a;
     --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
     --pico-switch-background-color: #333c4e;
-    --pico-switch-color: var(--pico-primary-inverse);
+    --pico-switch-color: #fff;
     --pico-switch-checked-background-color: var(--pico-primary-background);
     --pico-range-border-color: #202632;
     --pico-range-active-border-color: #2a3140;
@@ -536,7 +538,7 @@ nav details.dropdown summary:focus-visible {
   --pico-form-element-valid-active-border-color: #16896a;
   --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
   --pico-switch-background-color: #333c4e;
-  --pico-switch-color: var(--pico-primary-inverse);
+  --pico-switch-color: #fff;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-range-border-color: #202632;
   --pico-range-active-border-color: #2a3140;
@@ -2040,6 +2042,9 @@ nav details.dropdown {
   display: inline;
   margin: calc(var(--pico-nav-element-spacing-vertical) * -1) 0;
 }
+nav details.dropdown summary::after {
+  transform: rotate(0deg) translateX(0rem);
+}
 nav details.dropdown summary:not([role]) {
   height: calc(1rem * var(--pico-line-height) + var(--pico-nav-link-spacing-vertical) * 2);
   padding: calc(var(--pico-nav-link-spacing-vertical) - var(--pico-border-width) * 2) var(--pico-nav-link-spacing-horizontal);
@@ -2781,5 +2786,3 @@ textarea,
     transition-duration: 0s !important;
   }
 }
-
-/*# sourceMappingURL=pico.css.map */

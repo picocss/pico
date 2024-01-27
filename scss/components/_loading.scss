@@ -7,7 +7,7 @@
    */
 
   // Everything except form elements
-  [aria-busy="true"]:not(input, select, textarea, html) {
+  #{$parent-selector} [aria-busy="true"]:not(input, select, textarea, html) {
     white-space: nowrap;
 
     &::before {
@@ -33,12 +33,12 @@
   }
 
   // Buttons and links
-  button,
-  [type="submit"],
-  [type="button"],
-  [type="reset"],
-  [role="button"],
-  a {
+  #{$parent-selector} button,
+  #{$parent-selector} [type="submit"],
+  #{$parent-selector} [type="button"],
+  #{$parent-selector} [type="reset"],
+  #{$parent-selector} [role="button"],
+  #{$parent-selector} a {
     &[aria-busy="true"] {
       pointer-events: none;
     }

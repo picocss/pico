@@ -12,42 +12,42 @@
   // ––––––––––––––––––––
 
   // Change the alignment on media elements in all browsers (opinionated)
-  :where(audio, canvas, iframe, img, svg, video) {
+  #{$parent-selector} :where(audio, canvas, iframe, img, svg, video) {
     vertical-align: middle;
   }
 
   // Add the correct display in IE 9-
-  audio,
-  video {
+  #{$parent-selector} audio,
+  #{$parent-selector} video {
     display: inline-block;
   }
 
   // Add the correct display in iOS 4-7
-  audio:not([controls]) {
+  #{$parent-selector} audio:not([controls]) {
     display: none;
     height: 0;
   }
 
   // Remove the border on iframes in all browsers (opinionated)
-  :where(iframe) {
+  #{$parent-selector} :where(iframe) {
     border-style: none;
   }
 
   // 1. Remove the border on images inside links in IE 10.
   // 2. Responsive by default
-  img {
+  #{$parent-selector} img {
     max-width: 100%; // 2
     height: auto; // 2
     border-style: none; // 1
   }
 
   // Change the fill color to match the text color in all browsers (opinionated)
-  :where(svg:not([fill])) {
+  #{$parent-selector} :where(svg:not([fill])) {
     fill: currentColor;
   }
 
   // Hide the overflow in IE
-  svg:not(:root) {
+  #{$parent-selector} svg:not(:root) {
     overflow: hidden;
   }
 }

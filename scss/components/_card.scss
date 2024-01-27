@@ -6,7 +6,7 @@
    * Card (<article>)
    */
 
-  article {
+  #{$parent-selector} article {
     margin-bottom: var(#{$css-var-prefix}block-spacing-vertical);
     padding: var(#{$css-var-prefix}block-spacing-vertical)
       var(#{$css-var-prefix}block-spacing-horizontal);

@@ -6,7 +6,7 @@
    * Tooltip ([data-tooltip])
    */
 
-  [data-tooltip] {
+  #{$parent-selector} [data-tooltip] {
     position: relative;
 
     &:not(a, button, input) {

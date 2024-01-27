@@ -141,7 +141,7 @@
   // Switch (input[type="checkbox"][role="switch"])
   @if map.get($modules, "forms/checkbox-radio-switch") {
     #{$css-var-prefix}switch-background-color: #{$slate-750};
-    #{$css-var-prefix}switch-color: var(#{$css-var-prefix}primary-inverse);
+    #{$css-var-prefix}switch-color: #{$white};
     #{$css-var-prefix}switch-checked-background-color: var(#{$css-var-prefix}primary-background);
   }
 
@@ -205,7 +205,7 @@
   @if map.get($modules, "components/accordion") or map.get($modules, "components/dropdown") {
     // Change the icon color to black for accordion and dropdown .contrast buttons
     @if $enable-classes {
-      details {
+      #{$parent-selector} details {
         summary {
           &[role="button"].contrast:not(.outline) {
             &::after {
@@ -227,7 +227,7 @@
   @if map.get($modules, "components/loading") {
     // Change the icon color to black for .contrast buttons
     @if $enable-classes {
-      [aria-busy="true"]:not(input, select, textarea) {
+      #{$parent-selector} [aria-busy="true"]:not(input, select, textarea) {
         &.contrast:is(
             button,
             [type="submit"],

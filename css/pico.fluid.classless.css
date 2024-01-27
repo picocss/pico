@@ -68,12 +68,6 @@
     --pico-font-size: 131.25%;
   }
 }
-:root details summary[role=button]::after {
-  filter: brightness(0) invert(1);
-}
-:root [aria-busy=true]:not(input, select, textarea):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
-  filter: brightness(0) invert(1);
-}
 
 a {
   --pico-text-decoration: underline;
@@ -185,6 +179,14 @@ input:not([type=submit],
   --pico-form-element-spacing-horizontal: 2rem;
 }
 
+details summary[role=button]::after {
+  filter: brightness(0) invert(1);
+}
+
+[aria-busy=true]:not(input, select, textarea):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
+  filter: brightness(0) invert(1);
+}
+
 /**
  * Color schemes
  */
@@ -262,7 +264,7 @@ input:not([type=submit],
   --pico-form-element-valid-active-border-color: #279977;
   --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
   --pico-switch-background-color: #bfc7d9;
-  --pico-switch-color: var(--pico-primary-inverse);
+  --pico-switch-color: #fff;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-range-border-color: #dfe3eb;
   --pico-range-active-border-color: #bfc7d9;
@@ -376,7 +378,7 @@ input:not([type=submit],
     --pico-form-element-valid-active-border-color: #16896a;
     --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
     --pico-switch-background-color: #333c4e;
-    --pico-switch-color: var(--pico-primary-inverse);
+    --pico-switch-color: #fff;
     --pico-switch-checked-background-color: var(--pico-primary-background);
     --pico-range-border-color: #202632;
     --pico-range-active-border-color: #2a3140;
@@ -483,7 +485,7 @@ input:not([type=submit],
   --pico-form-element-valid-active-border-color: #16896a;
   --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
   --pico-switch-background-color: #333c4e;
-  --pico-switch-color: var(--pico-primary-inverse);
+  --pico-switch-color: #fff;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-range-border-color: #202632;
   --pico-range-active-border-color: #2a3140;
@@ -2383,5 +2385,3 @@ textarea,
     transition-duration: 0s !important;
   }
 }
-
-/*# sourceMappingURL=pico.fluid.classless.css.map */

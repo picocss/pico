@@ -7,7 +7,7 @@
    */
 
   // Wrapper to make allow any content to be scrolled horizontally
-  figure {
+  #{$parent-selector} figure {
     display: block;
     margin: 0;
     padding: 0;

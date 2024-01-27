@@ -12,37 +12,37 @@
   // ––––––––––––––––––––
 
   // Add the correct font weight in Chrome, Edge, and Safari
-  b,
-  strong {
+  #{$parent-selector} b,
+  #{$parent-selector} strong {
     font-weight: bolder;
   }
 
   // Prevent `sub` and `sup` elements from affecting the line height in all browsers
-  sub,
-  sup {
+  #{$parent-selector} sub,
+  #{$parent-selector} sup {
     position: relative;
     font-size: 0.75em;
     line-height: 0;
     vertical-align: baseline;
   }
-  sub {
+  #{$parent-selector} sub {
     bottom: -0.25em;
   }
-  sup {
+  #{$parent-selector} sup {
     top: -0.5em;
   }
 
   // Pico
   // ––––––––––––––––––––
 
-  address,
-  blockquote,
-  dl,
-  ol,
-  p,
-  pre,
-  table,
-  ul {
+  #{$parent-selector} address,
+  #{$parent-selector} blockquote,
+  #{$parent-selector} dl,
+  #{$parent-selector} ol,
+  #{$parent-selector} p,
+  #{$parent-selector} pre,
+  #{$parent-selector} table,
+  #{$parent-selector} ul {
     margin-top: 0;
     margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
     color: var(#{$css-var-prefix}color);
@@ -51,12 +51,12 @@
   }
 
   // Headings
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  #{$parent-selector} h1,
+  #{$parent-selector} h2,
+  #{$parent-selector} h3,
+  #{$parent-selector} h4,
+  #{$parent-selector} h5,
+  #{$parent-selector} h6 {
     margin-top: 0;
     margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
     color: var(#{$css-var-prefix}color);
@@ -66,39 +66,40 @@
     font-family: var(#{$css-var-prefix}font-family);
   }
 
-  h1 {
+  #{$parent-selector} h1 {
     #{$css-var-prefix}color: var(#{$css-var-prefix}h1-color);
   }
-  h2 {
+  #{$parent-selector} h2 {
     #{$css-var-prefix}color: var(#{$css-var-prefix}h2-color);
   }
-  h3 {
+  #{$parent-selector} h3 {
     #{$css-var-prefix}color: var(#{$css-var-prefix}h3-color);
   }
-  h4 {
+  #{$parent-selector} h4 {
     #{$css-var-prefix}color: var(#{$css-var-prefix}h4-color);
   }
-  h5 {
+  #{$parent-selector} h5 {
     #{$css-var-prefix}color: var(#{$css-var-prefix}h5-color);
   }
-  h6 {
+  #{$parent-selector} h6 {
     #{$css-var-prefix}color: var(#{$css-var-prefix}h6-color);
   }
 
   // Margin-top for headings after a block
-  :where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) {
+  #{$parent-selector}
+    :where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) {
     ~ :is(h1, h2, h3, h4, h5, h6) {
       margin-top: var(#{$css-var-prefix}typography-spacing-top);
     }
   }
 
   // Paragraphs
-  p {
+  #{$parent-selector} p {
     margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
   }
 
   // Heading group
-  hgroup {
+  #{$parent-selector} hgroup {
     margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
 
     > * {
@@ -114,7 +115,7 @@
   }
 
   // Lists
-  :where(ol, ul) {
+  #{$parent-selector} :where(ol, ul) {
     li {
       margin-bottom: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.25);
     }
@@ -122,17 +123,17 @@
 
   // Margin-top for nested lists
   // 1. Remove the margin on nested lists in Chrome, Edge, IE, and Safari
-  :where(dl, ol, ul) :where(dl, ol, ul) {
+  #{$parent-selector} :where(dl, ol, ul) :where(dl, ol, ul) {
     margin: 0; // 1
     margin-top: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.25);
   }
 
-  ul li {
+  #{$parent-selector} ul li {
     list-style: square;
   }
 
   // Highlighted text
-  mark {
+  #{$parent-selector} mark {
     padding: 0.125rem 0.25rem;
     background-color: var(#{$css-var-prefix}mark-background-color);
     color: var(#{$css-var-prefix}mark-color);
@@ -140,7 +141,7 @@
   }
 
   // Blockquote
-  blockquote {
+  #{$parent-selector} blockquote {
     display: block;
     margin: var(#{$css-var-prefix}typography-spacing-vertical) 0;
     padding: var(#{$css-var-prefix}spacing);
@@ -157,25 +158,25 @@
 
   // Abbreviations
   // 1. Remove underline decoration in Chrome, Edge, IE, Opera, and Safari
-  abbr[title] {
+  #{$parent-selector} abbr[title] {
     border-bottom: 1px dotted;
     text-decoration: none; // 1
     cursor: help;
   }
 
   // Ins
-  ins {
+  #{$parent-selector} ins {
     color: var(#{$css-var-prefix}ins-color);
     text-decoration: none;
   }
 
   // del
-  del {
+  #{$parent-selector} del {
     color: var(#{$css-var-prefix}del-color);
   }
 
   // selection
-  ::selection {
+  #{$parent-selector} ::selection {
     background-color: var(#{$css-var-prefix}text-selection-color);
   }
 }

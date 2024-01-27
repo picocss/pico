@@ -13,7 +13,7 @@
 
   // 1. Correct the inheritance of border color in Firefox
   // 2. Add the correct box sizing in Firefox
-  hr {
+  #{$parent-selector} hr {
     height: 0; // 2
     margin: var(#{$css-var-prefix}typography-spacing-vertical) 0;
     border: 0;
@@ -22,8 +22,8 @@
   }
 
   // Add the correct display in IE 10+
-  [hidden],
-  template {
+  #{$parent-selector} [hidden],
+  #{$parent-selector} template {
     @if $enable-important {
       display: none !important;
     } @else {
@@ -32,7 +32,7 @@
   }
 
   // Add the correct display in IE 9-
-  canvas {
+  #{$parent-selector} canvas {
     display: inline-block;
   }
 }

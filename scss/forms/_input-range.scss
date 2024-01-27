@@ -43,7 +43,7 @@ $border-thumb: 2px;
    * Input type range
    */
 
-  [type="range"] {
+  #{$parent-selector} [type="range"] {
     // Styles
     -webkit-appearance: none;
     -moz-appearance: none;

@@ -14,44 +14,44 @@
   // Accessibility
 
   // Change the cursor on control elements in all browsers (opinionated)
-  [aria-controls] {
+  #{$parent-selector} [aria-controls] {
     cursor: pointer;
   }
 
   // Change the cursor on disabled, not-editable, or otherwise inoperable elements in all browsers (opinionated)
-  [aria-disabled="true"],
-  [disabled] {
+  #{$parent-selector} [aria-disabled="true"],
+  #{$parent-selector} [disabled] {
     cursor: not-allowed;
   }
 
   // Change the display on visually hidden accessible elements in all browsers (opinionated)
-  [aria-hidden="false"][hidden] {
+  #{$parent-selector} [aria-hidden="false"][hidden] {
     display: initial;
   }
 
-  [aria-hidden="false"][hidden]:not(:focus) {
+  #{$parent-selector} [aria-hidden="false"][hidden]:not(:focus) {
     clip: rect(0, 0, 0, 0);
     position: absolute;
   }
 
   // User interaction
   // Remove the tapping delay in IE 10
-  a,
-  area,
-  button,
-  input,
-  label,
-  select,
-  summary,
-  textarea,
-  [tabindex] {
+  #{$parent-selector} a,
+  #{$parent-selector} area,
+  #{$parent-selector} button,
+  #{$parent-selector} input,
+  #{$parent-selector} label,
+  #{$parent-selector} select,
+  #{$parent-selector} summary,
+  #{$parent-selector} textarea,
+  #{$parent-selector} [tabindex] {
     -ms-touch-action: manipulation;
   }
 
   // Pico
   // ––––––––––––––––––––
 
-  [dir="rtl"] {
+  #{$parent-selector} [dir="rtl"] {
     direction: rtl;
   }
 }

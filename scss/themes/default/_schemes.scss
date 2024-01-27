@@ -30,10 +30,10 @@
     @include dark.theme;
   }
 
-  progress,
-  [type="checkbox"],
-  [type="radio"],
-  [type="range"] {
+  #{$parent-selector} progress,
+  #{$parent-selector} [type="checkbox"],
+  #{$parent-selector} [type="radio"],
+  #{$parent-selector} [type="range"] {
     accent-color: var(#{$css-var-prefix}primary);
   }
 }

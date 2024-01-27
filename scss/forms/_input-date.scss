@@ -7,7 +7,7 @@
    */
 
   // :not() are needed to add Specificity and avoid !important on padding
-  input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
+  #{$parent-selector} input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
     &:is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
       #{$css-var-prefix}icon-position: 0.75rem;
       #{$css-var-prefix}icon-width: 1rem;
@@ -25,11 +25,11 @@
   }
 
   // Calendar picker
-  [type="date"],
-  [type="datetime-local"],
-  [type="month"],
-  [type="time"],
-  [type="week"] {
+  #{$parent-selector} [type="date"],
+  #{$parent-selector} [type="datetime-local"],
+  #{$parent-selector} [type="month"],
+  #{$parent-selector} [type="time"],
+  #{$parent-selector} [type="week"] {
     &::-webkit-calendar-picker-indicator {
       width: var(#{$css-var-prefix}icon-width);
       margin-right: calc(var(#{$css-var-prefix}icon-width) * -1);
@@ -41,11 +41,11 @@
   // Calendar icons are hidden in Firefox
   @if $enable-important {
     @-moz-document url-prefix() {
-      [type="date"],
-      [type="datetime-local"],
-      [type="month"],
-      [type="time"],
-      [type="week"] {
+      #{$parent-selector} [type="date"],
+      #{$parent-selector} [type="datetime-local"],
+      #{$parent-selector} [type="month"],
+      #{$parent-selector} [type="time"],
+      #{$parent-selector} [type="week"] {
         padding-right: var(#{$css-var-prefix}form-element-spacing-horizontal) !important;
         background-image: none !important;
       }
@@ -53,6 +53,7 @@
   }
 
   [dir="rtl"]
+    #{$parent-selector}
     :is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
     text-align: right;
   }

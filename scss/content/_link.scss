@@ -6,8 +6,8 @@
    * Link
    */
 
-  :where(a:not([role="button"])),
-  [role="link"] {
+  #{$parent-selector} :where(a:not([role="button"])),
+  #{$parent-selector} [role="link"] {
     #{$css-var-prefix}color: var(#{$css-var-prefix}primary);
     #{$css-var-prefix}background-color: transparent;
     #{$css-var-prefix}underline: var(#{$css-var-prefix}primary-underline);
@@ -61,7 +61,7 @@
     }
   }
 
-  a {
+  #{$parent-selector} a {
     &[role="button"] {
       display: inline-block;
     }
