@@ -14,6 +14,7 @@
 </p>
 
 ## Pico CSS
+
 [![Standard gzipped CSS](https://img.badgesize.io/picocss/pico/master/css/pico.min.css?compression=gzip&color=1095c1&label=Standard%20CSS)](https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css)
 [![Classless gzipped CSS](https://img.badgesize.io/picocss/pico/master/css/pico.classless.min.css?compression=gzip&color=1095c1&label=Classless%20CSS)](https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css)
 [![Github release](https://img.shields.io/github/v/release/picocss/pico?color=1095c1&logo=github&logoColor=white)](https://github.com/picocss/pico/releases/latest)
@@ -55,7 +56,7 @@ There are 4 ways to get started with Pico CSS:
 [Download Pico](https://github.com/picocss/pico/archive/refs/tags/v1.5.11.zip) and link `/css/pico.min.css` in the `<head>` of your website.
 
 ```html
-<link rel="stylesheet" href="css/pico.min.css">
+<link rel="stylesheet" href="css/pico.min.css" />
 ```
 
 **Install from CDN**
@@ -63,7 +64,10 @@ There are 4 ways to get started with Pico CSS:
 Alternatively, you can use [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@picocss/pico) to link pico.css.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+/>
 ```
 
 **Install with NPM**
@@ -87,24 +91,33 @@ In this version, `header`, `main` and `footer` act as containers.
 Use the default `.classless` version if you need centered viewports:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
+/>
 ```
 
 Or use the `.fluid.classless` version if you need a fluid container:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.fluid.classless.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.fluid.classless.min.css"
+/>
 ```
 
 Then just write pure HTML, and it should look great:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.classless.min.css"
+    />
     <title>Hello, world!</title>
   </head>
   <body>
@@ -136,11 +149,11 @@ Minimalist templates to discover Pico in action:
 - **[Company](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-company)**  
   A classic company or blog layout with a sidebar.
 
-- **[Google Amp](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-google-amp)**   
+- **[Google Amp](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-google-amp)**  
   A simple layout for Google Amp, with inlined CSS.
 
 - **[Sign in](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-sign-in)**  
-A minimalist layout for Login pages.
+  A minimalist layout for Login pages.
 
 - **[Pico + Bootstrap grid system](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-bootstrap-grid)**  
   Custom CSS build with the Bootstrap grid system to manage complex grid layouts in Pico.
@@ -203,10 +216,12 @@ Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LIC
 **Relevant third-party tools and resources we depend on:**
 
 Website and docs:
+
 - [TypeIt](https://typeitjs.com/): JavaScript animated typing utility (Licensed [GPL-3.0](https://github.com/alexmacarthur/typeit/blob/master/LICENSE))
 - [Font Awesome](https://fontawesome.com/): Icons (Licensed [CC BY 4.0](https://fontawesome.com/license/free))
 
 Pico Library:
+
 - [Feather](https://feathericons.com/) Icons (Licensed [MIT](https://github.com/feathericons/feather/blob/master/LICENSE))
 - [Normalize.css](https://necolas.github.io/normalize.css/): CSS reset (Licensed [MIT](https://github.com/necolas/normalize.css/blob/master/LICENSE.md))
 - [Sanitize.css](https://csstools.github.io/sanitize.css/): Cross-browser default styling (Licensed [CC0 1.0 Universal](https://github.com/csstools/sanitize.css/blob/main/LICENSE.md))
