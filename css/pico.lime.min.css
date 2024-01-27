@@ -713,6 +713,13 @@ section {
 }
 
 /**
+ * Overflow auto
+ */
+.overflow-auto {
+  overflow: auto;
+}
+
+/**
  * Link
  */
 :where(a:not([role=button])),

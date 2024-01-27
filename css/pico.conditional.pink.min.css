@@ -713,6 +713,13 @@ main {
 }
 
 /**
+ * Overflow auto
+ */
+.pico .overflow-auto {
+  overflow: auto;
+}
+
+/**
  * Link
  */
 .pico :where(a:not([role=button])),
