@@ -1,64 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    ${require('./_head.html') 
-      title=`Themes` 
-      description=`Pico is shipped with 2 consistent themes: Light & Dark. The Light theme is used by default. The Dark theme is automatically enabled if the user has dark mode enabled ('prefers-color-scheme: dark').`
-      canonical=`themes.html`
-    }
+    ${require('./_head.html') title=`Themes` description=`Pico is shipped with 2
+    consistent themes: Light & Dark. The Light theme is used by default. The
+    Dark theme is automatically enabled if the user has dark mode enabled
+    ('prefers-color-scheme: dark').` canonical=`themes.html` }
   </head>
 
   <body>
     ${require('./_nav.html')}
-    
+
     <main class="container" id="docs">
       ${require('./_sidebar.html') active=`themes-link`}
-      
+
       <div role="document">
         <section id="themes">
           <hgroup>
             <h1>Themes</h1>
             <h2>Pico is shipped with 2 consistent themes: Light & Dark.</h2>
           </hgroup>
-          <p>The Light theme is used by default. The Dark theme is automatically enabled if the user has dark mode enabled <code><i>prefers-color-scheme</i>: <u>dark</u></code></p>
+          <p>
+            The Light theme is used by default. The Dark theme is automatically
+            enabled if the user has dark mode enabled
+            <code><i>prefers-color-scheme</i>: <u>dark</u></code>
+          </p>
           <article aria-label="Theme switcher">
             <button class="contrast theme-switcher">…</button>
           </article>
-          <p>Themes can be forced on document level <code>&lt;<b>html</b> <i>data-theme</i>=<u>"light"</u>&gt;</code> or on any HTML element <code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;</code></p>
+          <p>
+            Color schemes can be defined for the entire document using
+            <code>&lt;<b>html</b> <i>data-theme</i>=<u>"light"</u>&gt;</code> or
+            for specific HTML elements, such as
+            <code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;</code>.
+          </p>
+          <p>
+            Color schemes at the HTML tag level work great for elements such as
+            <code>a</code>, <code>button</code>, <code>table</code>,
+            <code>input</code>, <code>textarea</code>, <code>select</code>,
+            <code>article</code>, <code>dialog</code>, <code>progress</code>.
+          </p>
+          <p>
+            CSS variables specific to the color scheme are assigned to every
+            HTML tag. However, to maintain transparent backgrounds and ensure
+            colors are inherited from the parent tag, we have not enforced
+            specific background and color settings across all HTML tags.
+          </p>
+          <p>
+            For some other HTML tags, you might need to explicitly specify
+            <code>background-color</code> and <code>color</code>.
+          </p>
           <article data-theme="light" aria-label="Forced light theme example">
             <h3>Light theme</h3>
             <form class="grid">
-              <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required>
-              <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
-              <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login</button>
+              <input
+                type="text"
+                name="login"
+                placeholder="Login"
+                aria-label="Login"
+                autocomplete="nickname"
+                required
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                aria-label="Password"
+                autocomplete="current-password"
+                required
+              />
+              <button
+                type="submit"
+                aria-label="Example button"
+                onclick="event.preventDefault()"
+              >
+                Login
+              </button>
             </form>
             <footer class="code">
-
-<pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"light"</u>&gt;
+              <pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"light"</u>&gt;
   …
 &lt;/<b>article</b>&gt;</code></pre>
-
             </footer>
           </article>
           <article data-theme="dark" aria-label="Forced dark theme example">
             <h3>Dark theme</h3>
             <form class="grid">
-              <input type="text" name="login" placeholder="Login" aria-label="Login" autocomplete="nickname" required>
-              <input type="password" name="password" placeholder="Password" aria-label="Password" autocomplete="current-password" required>
-              <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login</button>
+              <input
+                type="text"
+                name="login"
+                placeholder="Login"
+                aria-label="Login"
+                autocomplete="nickname"
+                required
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                aria-label="Password"
+                autocomplete="current-password"
+                required
+              />
+              <button
+                type="submit"
+                aria-label="Example button"
+                onclick="event.preventDefault()"
+              >
+                Login
+              </button>
             </form>
             <footer class="code">
-
-<pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;
+              <pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;
   …
 &lt;/<b>article</b>&gt;</code></pre>
-
             </footer>
           </article>
         </section>
 
         ${require('./_footer.html')}
-
       </div>
     </main>
     <script src="js/commons.min.js"></script>
