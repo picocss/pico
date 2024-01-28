@@ -107,6 +107,7 @@
       height: 100%;
       border-radius: 50%;
       background-color: var(#{$css-var-prefix}color);
+      box-shadow: var(#{$css-var-prefix}switch-thumb-box-shadow);
       content: "";
 
       @if $enable-transitions {

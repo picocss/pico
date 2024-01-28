@@ -1631,6 +1631,7 @@ label:has([type=checkbox], [type=radio]) {
   height: 100%;
   border-radius: 50%;
   background-color: var(--pico-color);
+  box-shadow: var(--pico-switch-thumb-box-shadow);
   content: "";
   transition: margin 0.1s ease-in-out;
 }
