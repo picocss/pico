@@ -2057,6 +2057,7 @@ main {
 
 .pico nav {
   justify-content: space-between;
+  overflow: visible;
 }
 .pico nav ol,
 .pico nav ul {

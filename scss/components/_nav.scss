@@ -25,6 +25,7 @@
 
   #{$parent-selector} nav {
     justify-content: space-between;
+    overflow: visible;
 
     ol,
     ul {

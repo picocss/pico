@@ -2042,6 +2042,7 @@ nav ul {
 
 nav {
   justify-content: space-between;
+  overflow: visible;
 }
 nav ol,
 nav ul {
