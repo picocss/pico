@@ -5,11 +5,11 @@
 </p>
 
 <p align="center">
-  <strong>Minimal CSS Framework for semantic HTML</strong>
+ <strong>A minimalist and lightweight starter kit that prioritizes semantic syntax, making every HTML element responsive and elegant by default.</strong>
 </p>
 
 <p align="center">
- Pico CSS is a minimalist and lightweight starter kit that prioritizes semantic HTML, making every HTML tag responsive and elegant by default.
+ Write HTML, Add Pico CSS, and Voilà!
 </p>
 
 <p align="center">
@@ -18,21 +18,27 @@
 
 # Pico.css
 
-**Class-light and semantic**  
-Pico uses simple native HTML tags as much as possible. Less than 10 .classes are used in Pico.
+**Class-light and Semantic**  
+Thriving on simplicity, Pico directly styles your HTML tags, using fewer than 10 `.classes`` overall. It also comes with a class-less version for wild HTML purists.
 
-**Great styles with just one CSS file**  
-No dependencies, package manager, external files, or JavaScript.
+**Great Styles with Just CSS**  
+No extra baggage needed. Pico works seamlessly without dependencies, package managers, external files, or JavaScript, achieving elegant and straightforward styles with pure HTML markup.
 
-**Responsive everything**  
-Elegant and consistent adaptive spacings and typography on all devices.
+**Responsive Everything**  
+Effortless elegance on every device. Pico natively scales font sizes and spacings with screen widths, resulting in a consistent and elegant look across devices. No extra classes or configuration needed.
 
-**Light or Dark mode**  
-Shipped with two beautiful color themes, automatically enabled according to the user preference.
+**Light or Dark Mode**  
+Pico comes with two accessible, neutral color schemes out of the box: light and dark. The best part? It automatically adapts to users' `prefers-color-scheme``, all without the use of JavaScript.
+
+**Easy Customization**  
+Customize Pico with over 130 CSS variables, or dive deeper by using SASS. Switch between 20 handcrafted color themes and compose with 30+ modular components to tailor the UI to your brand's look and feel.
+
+**Optimized Performance**  
+Speed meets elegance. Unlike bulky and overcomplicated frameworks that demand extensive class overrides and JavaScript, Pico keeps your HTML lean, decreases memory usage by avoiding excessive CSS specificity, and reduces loaded files.
 
 # Table of contents
 
-- [Usage](#usage)
+- [Quick start](#quick-start)
 - [Class-less version](#class-less-version)
 - [Limitations](#limitations)
 - [Documentation](#documentation)
@@ -40,7 +46,7 @@ Shipped with two beautiful color themes, automatically enabled according to the 
 - [Contributing](#contributing)
 - [Copyright and license](#copyright-and-license)
 
-# Usage
+# Quick start
 
 There are 4 ways to get started with pico.css:
 
@@ -52,7 +58,7 @@ There are 4 ways to get started with pico.css:
 <link rel="stylesheet" href="css/pico.min.css" />
 ```
 
-**Install from CDN**
+**Usage from CDN**
 
 Alternatively, you can use [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@picocss/pico) to link pico.css.
 
@@ -85,7 +91,10 @@ In this version, `header`, `main` and `footer` act as containers.
 Use the default `.classless` version if you need centered viewports:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.classless.min.css" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.classless.min.css"
+/>
 ```
 
 Or use the `.fluid.classless` version if you need a fluid container:
@@ -100,11 +109,12 @@ Or use the `.fluid.classless` version if you need a fluid container:
 Then just write pure HTML, and it should look great:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@next/css/pico.classless.min.css"
@@ -128,6 +138,7 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 **Getting started**
 
 - [Quick start](https://v2.picocss.com/docs)
+- [Version picker `New`](https://v2.picocss.com/docs/version-picker)
 - [Color schemes](https://v2.picocss.com/docs/color-schemes)
 - [Class-less version](https://v2.picocss.com/docs/classless)
 - [RTL](https://v2.picocss.com/docs/rtl)
@@ -135,16 +146,15 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 **Customization**
 
 - [CSS Variables](https://v2.picocss.com/docs/css-variables)
-- [Theme generator](https://v2.picocss.com/docs/theme-generator)
 - [Sass](https://v2.picocss.com/docs/sass)
-- [Colors New](https://v2.picocss.com/docs/colors)
+- [Colors `New`](https://v2.picocss.com/docs/colors)
 
 **Layout**
 
 - [Container](https://v2.picocss.com/docs/container)
 - [Landmarks & section](https://v2.picocss.com/docs/landmarks-section)
 - [Grid](https://v2.picocss.com/docs/grid)
-- [Horizontal scroller](https://v2.picocss.com/docs/scroller)
+- [Overflow auto `New`](https://v2.picocss.com/docs/overflow-auto)
 
 **Content**
 
@@ -169,7 +179,7 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 - [Accordion](https://v2.picocss.com/docs/accordion)
 - [Card](https://v2.picocss.com/docs/card)
 - [Dropdown](https://v2.picocss.com/docs/dropdown)
-- [Group New](https://v2.picocss.com/docs/group)
+- [Group `New`](https://v2.picocss.com/docs/group)
 - [Loading](https://v2.picocss.com/docs/loading)
 - [Modal](https://v2.picocss.com/docs/modal)
 - [Nav](https://v2.picocss.com/docs/nav)
