@@ -131,7 +131,7 @@ themeColors.forEach((themeColor, colorIndex) => {
     );
 
     // Write the file
-    fs.writeFileSync(path.join(cssFoldername, `${version.name}.${themeColor}.min.css`), result.css);
+    fs.writeFileSync(path.join(cssFoldername, `${version.name}.${themeColor}.css`), result.css);
 
     // Clear the console
     process.stdout.clearLine();
