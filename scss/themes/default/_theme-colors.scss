@@ -13,6 +13,7 @@ $color-mappings: (
       "primary-hover-background": $amber-150,
       "primary-focus": rgba($amber-350, 0.375),
       "primary-inverse": $black,
+      "switch-thumb-box-shadow": 0 0 0.5rem rgba($black, 0.25),
     ),
     "light": (
       "text-selection-color": rgba($amber-400, 0.25),
@@ -23,6 +24,7 @@ $color-mappings: (
       "primary-hover-background": $amber-250,
       "primary-focus": rgba($amber-400, 0.5),
       "primary-inverse": $black,
+      "switch-thumb-box-shadow": 0 0 0.5rem rgba($black, 0.25),
     ),
   ),
   "azure": (
@@ -35,6 +37,7 @@ $color-mappings: (
       "primary-hover-background": $azure-500,
       "primary-focus": rgba($azure-350, 0.375),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
     "light": (
       "text-selection-color": rgba($azure-400, 0.25),
@@ -45,6 +48,7 @@ $color-mappings: (
       "primary-hover-background": $azure-600,
       "primary-focus": rgba($azure-400, 0.5),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
   ),
   "blue": (
@@ -57,6 +61,7 @@ $color-mappings: (
       "primary-hover-background": $blue-500,
       "primary-focus": rgba($blue-350, 0.375),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
     "light": (
       "text-selection-color": rgba($blue-400, 0.25),
@@ -67,6 +72,7 @@ $color-mappings: (
       "primary-hover-background": $blue-600,
       "primary-focus": rgba($blue-400, 0.5),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
   ),
   "cyan": (
@@ -79,6 +85,7 @@ $color-mappings: (
       "primary-hover-background": $cyan-500,
       "primary-focus": rgba($cyan-350, 0.375),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
     "light": (
       "text-selection-color": rgba($cyan-400, 0.25),
@@ -89,6 +96,7 @@ $color-mappings: (
       "primary-hover-background": $cyan-600,
       "primary-focus": rgba($cyan-400, 0.5),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
   ),
   "fuchsia": (
@@ -101,6 +109,7 @@ $color-mappings: (
       "primary-hover-background": $fuchsia-500,
       "primary-focus": rgba($fuchsia-350, 0.375),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
     "light": (
       "text-selection-color": rgba($fuchsia-400, 0.25),
@@ -111,6 +120,7 @@ $color-mappings: (
       "primary-hover-background": $fuchsia-600,
       "primary-focus": rgba($fuchsia-400, 0.5),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
   ),
   "green": (
@@ -123,6 +133,7 @@ $color-mappings: (
       "primary-hover-background": $green-450,
       "primary-focus": rgba($green-350, 0.375),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
     "light": (
       "text-selection-color": rgba($green-400, 0.25),
@@ -133,6 +144,7 @@ $color-mappings: (
       "primary-hover-background": $green-550,
       "primary-focus": rgba($green-400, 0.5),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
   ),
   "grey": (
@@ -145,6 +157,7 @@ $color-mappings: (
       "primary-hover-background": $grey-250,
       "primary-focus": rgba($grey-350, 0.375),
       "primary-inverse": $black,
+      "switch-thumb-box-shadow": 0 0 0.5rem rgba($black, 0.25),
     ),
     "light": (
       "text-selection-color": rgba($grey-400, 0.25),
@@ -155,6 +168,7 @@ $color-mappings: (
       "primary-hover-background": $grey-350,
       "primary-focus": rgba($grey-400, 0.5),
       "primary-inverse": $black,
+      "switch-thumb-box-shadow": 0 0 0.5rem rgba($black, 0.25),
     ),
   ),
   "indigo": (
@@ -167,6 +181,7 @@ $color-mappings: (
       "primary-hover-background": $indigo-550,
       "primary-focus": rgba($indigo-350, 0.375),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
     "light": (
       "text-selection-color": rgba($indigo-400, 0.25),
@@ -177,6 +192,7 @@ $color-mappings: (
       "primary-hover-background": $indigo-650,
       "primary-focus": rgba($indigo-400, 0.5),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
   ),
   "jade": (
@@ -189,6 +205,7 @@ $color-mappings: (
       "primary-hover-background": $jade-500,
       "primary-focus": rgba($jade-350, 0.375),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
     "light": (
       "text-selection-color": rgba($jade-400, 0.25),
@@ -199,6 +216,7 @@ $color-mappings: (
       "primary-hover-background": $jade-600,
       "primary-focus": rgba($jade-400, 0.5),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
   ),
   "lime": (
@@ -211,6 +229,7 @@ $color-mappings: (
       "primary-hover-background": $lime-150,
       "primary-focus": rgba($lime-350, 0.375),
       "primary-inverse": $black,
+      "switch-thumb-box-shadow": 0 0 0.5rem rgba($black, 0.25),
     ),
     "light": (
       "text-selection-color": rgba($lime-400, 0.25),
@@ -221,6 +240,7 @@ $color-mappings: (
       "primary-hover-background": $lime-250,
       "primary-focus": rgba($lime-400, 0.5),
       "primary-inverse": $black,
+      "switch-thumb-box-shadow": 0 0 0.5rem rgba($black, 0.25),
     ),
   ),
   "orange": (
@@ -233,6 +253,7 @@ $color-mappings: (
       "primary-hover-background": $orange-450,
       "primary-focus": rgba($orange-350, 0.375),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
     "light": (
       "text-selection-color": rgba($orange-400, 0.25),
@@ -243,6 +264,7 @@ $color-mappings: (
       "primary-hover-background": $orange-550,
       "primary-focus": rgba($orange-400, 0.5),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
   ),
   "pink": (
@@ -255,6 +277,7 @@ $color-mappings: (
       "primary-hover-background": $pink-450,
       "primary-focus": rgba($pink-350, 0.375),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
     "light": (
       "text-selection-color": rgba($pink-400, 0.25),
@@ -265,6 +288,7 @@ $color-mappings: (
       "primary-hover-background": $pink-550,
       "primary-focus": rgba($pink-400, 0.5),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
   ),
   "pumpkin": (
@@ -277,6 +301,7 @@ $color-mappings: (
       "primary-hover-background": $pumpkin-250,
       "primary-focus": rgba($pumpkin-350, 0.375),
       "primary-inverse": $black,
+      "switch-thumb-box-shadow": 0 0 0.5rem rgba($black, 0.25),
     ),
     "light": (
       "text-selection-color": rgba($pumpkin-400, 0.25),
@@ -287,6 +312,7 @@ $color-mappings: (
       "primary-hover-background": $pumpkin-350,
       "primary-focus": rgba($pumpkin-400, 0.5),
       "primary-inverse": $black,
+      "switch-thumb-box-shadow": 0 0 0.5rem rgba($black, 0.25),
     ),
   ),
   "purple": (
@@ -299,6 +325,7 @@ $color-mappings: (
       "primary-hover-background": $purple-550,
       "primary-focus": rgba($purple-350, 0.375),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
     "light": (
       "text-selection-color": rgba($purple-400, 0.25),
@@ -309,6 +336,7 @@ $color-mappings: (
       "primary-hover-background": $purple-650,
       "primary-focus": rgba($purple-400, 0.5),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
   ),
   "red": (
@@ -321,6 +349,7 @@ $color-mappings: (
       "primary-hover-background": $red-500,
       "primary-focus": rgba($red-350, 0.375),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
     "light": (
       "text-selection-color": rgba($red-400, 0.25),
@@ -331,6 +360,7 @@ $color-mappings: (
       "primary-hover-background": $red-600,
       "primary-focus": rgba($red-400, 0.5),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
   ),
   "sand": (
@@ -343,6 +373,7 @@ $color-mappings: (
       "primary-hover-background": $sand-150,
       "primary-focus": rgba($sand-350, 0.375),
       "primary-inverse": $black,
+      "switch-thumb-box-shadow": 0 0 0.5rem rgba($black, 0.25),
     ),
     "light": (
       "text-selection-color": rgba($sand-400, 0.25),
@@ -353,6 +384,7 @@ $color-mappings: (
       "primary-hover-background": $sand-250,
       "primary-focus": rgba($sand-400, 0.5),
       "primary-inverse": $black,
+      "switch-thumb-box-shadow": 0 0 0.5rem rgba($black, 0.25),
     ),
   ),
   "slate": (
@@ -365,6 +397,7 @@ $color-mappings: (
       "primary-hover-background": $slate-550,
       "primary-focus": rgba($slate-350, 0.375),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
     "light": (
       "text-selection-color": rgba($slate-400, 0.25),
@@ -375,6 +408,7 @@ $color-mappings: (
       "primary-hover-background": $slate-650,
       "primary-focus": rgba($slate-400, 0.5),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
   ),
   "violet": (
@@ -387,6 +421,7 @@ $color-mappings: (
       "primary-hover-background": $violet-550,
       "primary-focus": rgba($violet-350, 0.375),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
     "light": (
       "text-selection-color": rgba($violet-400, 0.25),
@@ -397,6 +432,7 @@ $color-mappings: (
       "primary-hover-background": $violet-650,
       "primary-focus": rgba($violet-400, 0.5),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
   ),
   "yellow": (
@@ -409,6 +445,7 @@ $color-mappings: (
       "primary-hover-background": mix($yellow-100, $yellow-50),
       "primary-focus": rgba($yellow-350, 0.375),
       "primary-inverse": $black,
+      "switch-thumb-box-shadow": 0 0 0.5rem rgba($black, 0.25),
     ),
     "light": (
       "text-selection-color": rgba($yellow-400, 0.25),
@@ -419,6 +456,7 @@ $color-mappings: (
       "primary-hover-background": $yellow-150,
       "primary-focus": rgba($yellow-400, 0.5),
       "primary-inverse": $black,
+      "switch-thumb-box-shadow": 0 0 0.5rem rgba($black, 0.25),
     ),
   ),
   "zinc": (
@@ -431,6 +469,7 @@ $color-mappings: (
       "primary-hover-background": $zinc-500,
       "primary-focus": rgba($zinc-350, 0.375),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
     "light": (
       "text-selection-color": rgba($zinc-400, 0.25),
@@ -441,6 +480,7 @@ $color-mappings: (
       "primary-hover-background": $zinc-600,
       "primary-focus": rgba($zinc-400, 0.5),
       "primary-inverse": $white,
+      "switch-thumb-box-shadow": 0 0 0 rgba(0, 0, 0, 0),
     ),
   ),
 );

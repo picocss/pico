@@ -264,8 +264,9 @@ details summary[role=button]::after {
   --pico-form-element-valid-active-border-color: #279977;
   --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
   --pico-switch-background-color: #bfc7d9;
-  --pico-switch-color: #fff;
   --pico-switch-checked-background-color: var(--pico-primary-background);
+  --pico-switch-color: #fff;
+  --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
   --pico-range-border-color: #dfe3eb;
   --pico-range-active-border-color: #bfc7d9;
   --pico-range-thumb-border-color: var(--pico-background-color);
@@ -378,8 +379,9 @@ details summary[role=button]::after {
     --pico-form-element-valid-active-border-color: #16896a;
     --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
     --pico-switch-background-color: #333c4e;
-    --pico-switch-color: #fff;
     --pico-switch-checked-background-color: var(--pico-primary-background);
+    --pico-switch-color: #fff;
+    --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
     --pico-range-border-color: #202632;
     --pico-range-active-border-color: #2a3140;
     --pico-range-thumb-border-color: var(--pico-background-color);
@@ -485,8 +487,9 @@ details summary[role=button]::after {
   --pico-form-element-valid-active-border-color: #16896a;
   --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
   --pico-switch-background-color: #333c4e;
-  --pico-switch-color: #fff;
   --pico-switch-checked-background-color: var(--pico-primary-background);
+  --pico-switch-color: #fff;
+  --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
   --pico-range-border-color: #202632;
   --pico-range-active-border-color: #2a3140;
   --pico-range-thumb-border-color: var(--pico-background-color);

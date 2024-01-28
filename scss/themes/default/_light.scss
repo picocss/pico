@@ -141,8 +141,9 @@
   // Switch (input[type="checkbox"][role="switch"])
   @if map.get($modules, "forms/checkbox-radio-switch") {
     #{$css-var-prefix}switch-background-color: #{$slate-200};
-    #{$css-var-prefix}switch-color: #{$white};
     #{$css-var-prefix}switch-checked-background-color: var(#{$css-var-prefix}primary-background);
+    #{$css-var-prefix}switch-color: #{$white};
+    #{$css-var-prefix}switch-thumb-box-shadow: theme-colors.get("switch-thumb-box-shadow", "light");
   }
 
   // Range (input[type="range"])
