@@ -1,4 +1,0 @@
-// Display color as RGB
-@function display-rgb($color) {
-  @return unquote("rgb(" + red($color) + ", " + green($color) + ", " + blue($color) + ")");
-}

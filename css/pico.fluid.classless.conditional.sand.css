@@ -595,40 +595,6 @@ main {
 }
 
 /**
- * Link
- */
-.pico :where(a:not([role=button])),
-.pico [role=link] {
-  --pico-color: var(--pico-primary);
-  --pico-background-color: transparent;
-  --pico-underline: var(--pico-primary-underline);
-  outline: none;
-  background-color: var(--pico-background-color);
-  color: var(--pico-color);
-  -webkit-text-decoration: var(--pico-text-decoration);
-  text-decoration: var(--pico-text-decoration);
-  text-decoration-color: var(--pico-underline);
-  text-underline-offset: 0.125em;
-  transition: background-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition), -webkit-text-decoration var(--pico-transition);
-  transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition);
-  transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition), -webkit-text-decoration var(--pico-transition);
-}
-.pico :where(a:not([role=button])):is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
-.pico [role=link]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
-  --pico-color: var(--pico-primary-hover);
-  --pico-underline: var(--pico-primary-hover-underline);
-  --pico-text-decoration: underline;
-}
-.pico :where(a:not([role=button])):focus-visible,
-.pico [role=link]:focus-visible {
-  box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
-}
-
-.pico a[role=button] {
-  display: inline-block;
-}
-
-/**
  * Typography
  */
 .pico b,
@@ -785,38 +751,37 @@ main {
 }
 
 /**
- * Embedded content
+ * Link
  */
-.pico :where(audio, canvas, iframe, img, svg, video) {
-  vertical-align: middle;
+.pico :where(a:not([role=button])),
+.pico [role=link] {
+  --pico-color: var(--pico-primary);
+  --pico-background-color: transparent;
+  --pico-underline: var(--pico-primary-underline);
+  outline: none;
+  background-color: var(--pico-background-color);
+  color: var(--pico-color);
+  -webkit-text-decoration: var(--pico-text-decoration);
+  text-decoration: var(--pico-text-decoration);
+  text-decoration-color: var(--pico-underline);
+  text-underline-offset: 0.125em;
+  transition: background-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition), -webkit-text-decoration var(--pico-transition);
+  transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition);
+  transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition), -webkit-text-decoration var(--pico-transition);
+}
+.pico :where(a:not([role=button])):is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+.pico [role=link]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+  --pico-color: var(--pico-primary-hover);
+  --pico-underline: var(--pico-primary-hover-underline);
+  --pico-text-decoration: underline;
+}
+.pico :where(a:not([role=button])):focus-visible,
+.pico [role=link]:focus-visible {
+  box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
 }
 
-.pico audio,
-.pico video {
+.pico a[role=button] {
   display: inline-block;
-}
-
-.pico audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-.pico :where(iframe) {
-  border-style: none;
-}
-
-.pico img {
-  max-width: 100%;
-  height: auto;
-  border-style: none;
-}
-
-.pico :where(svg:not([fill])) {
-  fill: currentColor;
-}
-
-.pico svg:not(:root) {
-  overflow: hidden;
 }
 
 /**
@@ -954,6 +919,41 @@ main {
 .pico table.striped tbody tr:nth-child(odd) th,
 .pico table.striped tbody tr:nth-child(odd) td {
   background-color: var(--pico-table-row-stripped-background-color);
+}
+
+/**
+ * Embedded content
+ */
+.pico :where(audio, canvas, iframe, img, svg, video) {
+  vertical-align: middle;
+}
+
+.pico audio,
+.pico video {
+  display: inline-block;
+}
+
+.pico audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+.pico :where(iframe) {
+  border-style: none;
+}
+
+.pico img {
+  max-width: 100%;
+  height: auto;
+  border-style: none;
+}
+
+.pico :where(svg:not([fill])) {
+  fill: currentColor;
+}
+
+.pico svg:not(:root) {
+  overflow: hidden;
 }
 
 /**

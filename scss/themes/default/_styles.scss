@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "../../colors" as *;
 @use "../../settings" as *;
-@use "../../utils/functions";
+@use "../../helpers/functions";
 @use "theme-colors";
 
 @if map.get($modules, "themes/default") {

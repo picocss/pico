@@ -1,7 +1,14 @@
+// Display color as RGB
+@function display-rgb($color) {
+  @return unquote("rgb(" + red($color) + ", " + green($color) + ", " + blue($color) + ")");
+}
+
+// Generate a shadow layer
 @function shadow-layer($elevation, $blur, $opacity, $color) {
   @return #{($elevation * 0.5)} #{$elevation} #{$blur} #{rgba($color, $opacity)};
 }
 
+// Generate a shadow with 7 layers
 @function shadow($color) {
   $box-shadow-elevation: 1rem;
   $box-shadow-blur-strengh: 6rem;

@@ -1,8 +1,7 @@
 @use "sass:map";
 @use "../../colors" as *;
 @use "../../settings" as *;
-@use "../../utils/box-shadow";
-@use "../../utils/functions";
+@use "../../helpers/functions";
 @use "theme-colors";
 
 // Default: Light theme
@@ -56,7 +55,7 @@
   #{$css-var-prefix}contrast-inverse: #{$white};
 
   // Box shadow
-  #{$css-var-prefix}box-shadow: box-shadow.shadow($slate-400);
+  #{$css-var-prefix}box-shadow: functions.shadow($slate-400);
 
   // Typography
   @if map.get($modules, "content/typography") {

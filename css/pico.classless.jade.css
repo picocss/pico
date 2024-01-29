@@ -632,40 +632,6 @@ section {
 }
 
 /**
- * Link
- */
-:where(a:not([role=button])),
-[role=link] {
-  --pico-color: var(--pico-primary);
-  --pico-background-color: transparent;
-  --pico-underline: var(--pico-primary-underline);
-  outline: none;
-  background-color: var(--pico-background-color);
-  color: var(--pico-color);
-  -webkit-text-decoration: var(--pico-text-decoration);
-  text-decoration: var(--pico-text-decoration);
-  text-decoration-color: var(--pico-underline);
-  text-underline-offset: 0.125em;
-  transition: background-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition), -webkit-text-decoration var(--pico-transition);
-  transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition);
-  transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition), -webkit-text-decoration var(--pico-transition);
-}
-:where(a:not([role=button])):is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
-[role=link]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
-  --pico-color: var(--pico-primary-hover);
-  --pico-underline: var(--pico-primary-hover-underline);
-  --pico-text-decoration: underline;
-}
-:where(a:not([role=button])):focus-visible,
-[role=link]:focus-visible {
-  box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
-}
-
-a[role=button] {
-  display: inline-block;
-}
-
-/**
  * Typography
  */
 b,
@@ -822,38 +788,37 @@ del {
 }
 
 /**
- * Embedded content
+ * Link
  */
-:where(audio, canvas, iframe, img, svg, video) {
-  vertical-align: middle;
+:where(a:not([role=button])),
+[role=link] {
+  --pico-color: var(--pico-primary);
+  --pico-background-color: transparent;
+  --pico-underline: var(--pico-primary-underline);
+  outline: none;
+  background-color: var(--pico-background-color);
+  color: var(--pico-color);
+  -webkit-text-decoration: var(--pico-text-decoration);
+  text-decoration: var(--pico-text-decoration);
+  text-decoration-color: var(--pico-underline);
+  text-underline-offset: 0.125em;
+  transition: background-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition), -webkit-text-decoration var(--pico-transition);
+  transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition);
+  transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition), -webkit-text-decoration var(--pico-transition);
+}
+:where(a:not([role=button])):is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+[role=link]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+  --pico-color: var(--pico-primary-hover);
+  --pico-underline: var(--pico-primary-hover-underline);
+  --pico-text-decoration: underline;
+}
+:where(a:not([role=button])):focus-visible,
+[role=link]:focus-visible {
+  box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
 }
 
-audio,
-video {
+a[role=button] {
   display: inline-block;
-}
-
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-:where(iframe) {
-  border-style: none;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  border-style: none;
-}
-
-:where(svg:not([fill])) {
-  fill: currentColor;
-}
-
-svg:not(:root) {
-  overflow: hidden;
 }
 
 /**
@@ -991,6 +956,41 @@ tfoot td {
 table.striped tbody tr:nth-child(odd) th,
 table.striped tbody tr:nth-child(odd) td {
   background-color: var(--pico-table-row-stripped-background-color);
+}
+
+/**
+ * Embedded content
+ */
+:where(audio, canvas, iframe, img, svg, video) {
+  vertical-align: middle;
+}
+
+audio,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+:where(iframe) {
+  border-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-style: none;
+}
+
+:where(svg:not([fill])) {
+  fill: currentColor;
+}
+
+svg:not(:root) {
+  overflow: hidden;
 }
 
 /**
