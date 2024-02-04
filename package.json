@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",
-    "caniuse-lite": "1.0.30001581",
+    "caniuse-lite": "1.0.30001583",
     "clean-css-cli": "^5.6.3",
     "css-declaration-sorter": "^7.1.1",
     "nodemon": "^3.0.3",
@@ -58,7 +58,7 @@
     "postcss": "^8.4.33",
     "postcss-cli": "^11.0.0",
     "postcss-scss": "^4.0.9",
-    "prettier": "^3.2.4",
+    "prettier": "^3.2.5",
     "sass": "^1.70.0"
   },
   "engines": {
