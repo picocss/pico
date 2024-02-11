@@ -1,0 +1,39 @@
+@use "sass:map";
+@use "../../settings" as *;
+
+@use "light";
+@use "dark";
+
+@if map.get($modules, "themes/default") {
+  /**
+   * Color schemes
+   */
+
+  // Light color scheme (Default)
+  // Can be forced with data-theme="light"
+  [data-theme="light"],
+  :root:not([data-theme="dark"]) {
+    @include light.theme;
+  }
+
+  // Dark color scheme (Auto)
+  // Automatically enabled if user has Dark mode enabled
+  @media only screen and (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      @include dark.theme;
+    }
+  }
+
+  // Dark color scheme (Forced)
+  // Enabled if forced with data-theme="dark"
+  [data-theme="dark"] {
+    @include dark.theme;
+  }
+
+  #{$parent-selector} progress,
+  #{$parent-selector} [type="checkbox"],
+  #{$parent-selector} [type="radio"],
+  #{$parent-selector} [type="range"] {
+    accent-color: var(#{$css-var-prefix}primary);
+  }
+}

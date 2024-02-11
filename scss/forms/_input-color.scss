@@ -1,0 +1,37 @@
+@use "sass:map";
+@use "../settings" as *;
+
+// Wrapper
+@mixin color-wrapper {
+  padding: 0;
+}
+
+// Swatch
+@mixin color-swatch {
+  border: 0;
+  border-radius: calc(var(#{$css-var-prefix}border-radius) * 0.5);
+}
+
+@if map.get($modules, "forms/input-color") {
+  /**
+   * Input type color
+   */
+
+  #{$parent-selector} [type="color"] {
+    &::-webkit-color-swatch-wrapper {
+      @include color-wrapper;
+    }
+
+    &::-moz-focus-inner {
+      @include color-wrapper;
+    }
+
+    &::-webkit-color-swatch {
+      @include color-swatch;
+    }
+
+    &::-moz-color-swatch {
+      @include color-swatch;
+    }
+  }
+}

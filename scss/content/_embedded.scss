@@ -1,48 +1,53 @@
-/**
- * Embedded content
- */
+@use "sass:map";
+@use "../settings" as *;
 
-// Reboot based on :
-// - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
-// - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
-// ––––––––––––––––––––
+@if map.get($modules, "content/embedded") {
+  /**
+   * Embedded content
+   */
 
-// Change the alignment on media elements in all browsers (opinionated)
-:where(audio, canvas, iframe, img, svg, video) {
-  vertical-align: middle;
-}
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
 
-// Add the correct display in IE 9-
-audio,
-video {
-  display: inline-block;
-}
+  // Change the alignment on media elements in all browsers (opinionated)
+  #{$parent-selector} :where(audio, canvas, iframe, img, svg, video) {
+    vertical-align: middle;
+  }
 
-// Add the correct display in iOS 4-7
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
+  // Add the correct display in IE 9-
+  #{$parent-selector} audio,
+  #{$parent-selector} video {
+    display: inline-block;
+  }
 
-// Remove the border on iframes in all browsers (opinionated)
-:where(iframe) {
-  border-style: none;
-}
+  // Add the correct display in iOS 4-7
+  #{$parent-selector} audio:not([controls]) {
+    display: none;
+    height: 0;
+  }
 
-// 1. Remove the border on images inside links in IE 10.
-// 2. Responsive by default
-img {
-  max-width: 100%; // 2
-  height: auto; // 2
-  border-style: none; // 1
-}
+  // Remove the border on iframes in all browsers (opinionated)
+  #{$parent-selector} :where(iframe) {
+    border-style: none;
+  }
 
-// Change the fill color to match the text color in all browsers (opinionated)
-:where(svg:not([fill])) {
-  fill: currentColor;
-}
+  // 1. Remove the border on images inside links in IE 10.
+  // 2. Responsive by default
+  #{$parent-selector} img {
+    max-width: 100%; // 2
+    height: auto; // 2
+    border-style: none; // 1
+  }
 
-// Hide the overflow in IE
-svg:not(:root) {
-  overflow: hidden;
+  // Change the fill color to match the text color in all browsers (opinionated)
+  #{$parent-selector} :where(svg:not([fill])) {
+    fill: currentColor;
+  }
+
+  // Hide the overflow in IE
+  #{$parent-selector} svg:not(:root) {
+    overflow: hidden;
+  }
 }

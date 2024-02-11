@@ -1,0 +1,53 @@
+@use "sass:map";
+@use "../../colors";
+@use "settings";
+@use "utils";
+
+@mixin css-vars {
+  $enable-css-vars: map.get(settings.$utilities, "css-vars");
+  $color-property-name: map.get(settings.$properties, "color");
+  $css-var-color-prefix: #{settings.$css-var-prefix}#{$color-property-name};
+
+  @if $enable-css-vars {
+    :root {
+      // Loop through color families
+      @each $family, $colors in colors.$colors {
+        @if index(map.get(settings.$palette, "color-families"), $family) {
+          $css-var-family-name: #{$css-var-color-prefix}-#{$family};
+
+          // Loop through colors
+          @each $shade, $color-value in $colors {
+            // Main color
+            @if $shade == "main" and map.get(settings.$palette, "enable-main-color") {
+              #{$css-var-family-name}: #{utils.display-color($color-value)};
+            }
+
+            // Shades
+            @else if
+              index(map.get(settings.$palette, "shades"), $shade) and
+              map.get(settings.$palette, "enable-shades")
+            {
+              #{$css-var-family-name}-#{$shade}: #{utils.display-color($color-value)};
+            }
+          }
+        }
+      }
+
+      // Black & white
+      @if map.get(settings.$palette, "enable-black-and-white") {
+        #{$css-var-color-prefix}-black: #{utils.display-color(colors.$black)};
+        #{$css-var-color-prefix}-white: #{utils.display-color(colors.$white)};
+      }
+
+      // Text color variables
+      @if map.get(settings.$utilities, "color-for-background-colors") {
+        #{$css-var-color-prefix}-light: #{utils.display-color(
+            map.get(settings.$palette, "light-color")
+          )};
+        #{$css-var-color-prefix}-dark: #{utils.display-color(
+            map.get(settings.$palette, "dark-color")
+          )};
+      }
+    }
+  }
+}

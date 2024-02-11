@@ -1,41 +1,32 @@
-@if ($enable-class-container and $enable-classes) {
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "layout/container") and $enable-classes {
   /**
- * Container
- */
+   * Container
+   */
 
   .container,
   .container-fluid {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding-right: var(--spacing);
-    padding-left: var(--spacing);
+    padding-right: var(#{$css-var-prefix}spacing);
+    padding-left: var(#{$css-var-prefix}spacing);
   }
 
   .container {
-    @if map-get($breakpoints, "sm") {
-      @media (min-width: map-get($breakpoints, "sm")) {
-        max-width: map-get($viewports, "sm");
-        padding-right: 0;
-        padding-left: 0;
-      }
-    }
-
-    @if map-get($breakpoints, "md") {
-      @media (min-width: map-get($breakpoints, "md")) {
-        max-width: map-get($viewports, "md");
-      }
-    }
-
-    @if map-get($breakpoints, "lg") {
-      @media (min-width: map-get($breakpoints, "lg")) {
-        max-width: map-get($viewports, "lg");
-      }
-    }
-
-    @if map-get($breakpoints, "xl") {
-      @media (min-width: map-get($breakpoints, "xl")) {
-        max-width: map-get($viewports, "xl");
+    $first-breakpoint: true;
+    @each $key, $values in $breakpoints {
+      @if $values {
+        @media (min-width: map.get($values, "breakpoint")) {
+          max-width: map.get($values, "viewport");
+          @if $first-breakpoint {
+            $first-breakpoint: false;
+            padding-right: 0;
+            padding-left: 0;
+          }
+        }
       }
     }
   }

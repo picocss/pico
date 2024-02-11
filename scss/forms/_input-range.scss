@@ -1,0 +1,100 @@
+@use "sass:map";
+@use "../settings" as *;
+
+// Config
+$height-track: 0.375rem;
+$height-thumb: 1.25rem;
+$border-thumb: 2px;
+
+// Slider Track
+@mixin slider-track {
+  width: 100%;
+  height: $height-track;
+  border-radius: var(#{$css-var-prefix}border-radius);
+  background-color: var(#{$css-var-prefix}range-border-color);
+
+  @if $enable-transitions {
+    transition:
+      background-color var(#{$css-var-prefix}transition),
+      box-shadow var(#{$css-var-prefix}transition);
+  }
+}
+
+// Slider Thumb
+@mixin slider-thumb {
+  -webkit-appearance: none;
+  width: $height-thumb;
+  height: $height-thumb;
+  margin-top: #{(-($height-thumb * 0.5) + ($height-track * 0.5))};
+  border: $border-thumb solid var(#{$css-var-prefix}range-thumb-border-color);
+  border-radius: 50%;
+  background-color: var(#{$css-var-prefix}range-thumb-color);
+  cursor: pointer;
+
+  @if $enable-transitions {
+    transition:
+      background-color var(#{$css-var-prefix}transition),
+      transform var(#{$css-var-prefix}transition);
+  }
+}
+
+@if map.get($modules, "forms/input-range") {
+  /**
+   * Input type range
+   */
+
+  #{$parent-selector} [type="range"] {
+    // Styles
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: $height-thumb;
+    background: none;
+
+    &::-webkit-slider-runnable-track {
+      @include slider-track;
+    }
+
+    &::-moz-range-track {
+      @include slider-track;
+    }
+
+    &::-ms-track {
+      @include slider-track;
+    }
+
+    &::-webkit-slider-thumb {
+      @include slider-thumb;
+    }
+
+    &::-moz-range-thumb {
+      @include slider-thumb;
+    }
+
+    &::-ms-thumb {
+      @include slider-thumb;
+    }
+
+    &:active,
+    &:focus-within {
+      #{$css-var-prefix}range-border-color: var(#{$css-var-prefix}range-active-border-color);
+      #{$css-var-prefix}range-thumb-color: var(#{$css-var-prefix}range-thumb-active-color);
+    }
+
+    &:active {
+      // Slider Thumb
+      &::-webkit-slider-thumb {
+        transform: scale(1.25);
+      }
+
+      &::-moz-range-thumb {
+        transform: scale(1.25);
+      }
+
+      &::-ms-thumb {
+        transform: scale(1.25);
+      }
+    }
+  }
+}

@@ -1,138 +1,156 @@
-/**
- * Nav
- */
+@use "sass:map";
+@use "../settings" as *;
 
-// Reboot based on :
-// - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+@if map.get($modules, "components/nav") {
+  /**
+   * Nav
+   */
 
-// Prevent VoiceOver from ignoring list semantics in Safari (opinionated)
-:where(nav li)::before {
-  float: left;
-  content: "\200B";
-}
+  // Reboot based on :
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
 
-// Pico
-// ––––––––––––––––––––
-
-// Horizontal Nav
-nav,
-nav ul {
-  display: flex;
-}
-
-nav {
-  justify-content: space-between;
-
-  ol,
-  ul {
-    align-items: center;
-    margin-bottom: 0;
-    padding: 0;
-    list-style: none;
-
-    &:first-of-type {
-      margin-left: calc(var(--nav-element-spacing-horizontal) * -1);
-    }
-    &:last-of-type {
-      margin-right: calc(var(--nav-element-spacing-horizontal) * -1);
-    }
+  // Prevent VoiceOver from ignoring list semantics in Safari (opinionated)
+  :where(nav li)::before {
+    float: left;
+    content: "\200B";
   }
 
-  li {
-    display: inline-block;
-    margin: 0;
-    padding: var(--nav-element-spacing-vertical)
-      var(--nav-element-spacing-horizontal);
+  // Pico
+  // ––––––––––––––––––––
 
-    // Minimal support for buttons and forms elements
-    > * {
-      --spacing: 0;
-    }
+  #{$parent-selector} nav,
+  #{$parent-selector} nav ul {
+    display: flex;
   }
 
-  :where(a, [role="link"]) {
-    display: inline-block;
-    margin: calc(var(--nav-link-spacing-vertical) * -1)
-      calc(var(--nav-link-spacing-horizontal) * -1);
-    padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
-    border-radius: var(--border-radius);
-    text-decoration: none;
+  #{$parent-selector} nav {
+    justify-content: space-between;
+    overflow: visible;
 
-    &:is([aria-current], :hover, :active, :focus) {
-      text-decoration: none;
-    }
-  }
+    ol,
+    ul {
+      align-items: center;
+      margin-bottom: 0;
+      padding: 0;
+      list-style: none;
 
-  // Breadcrumb
-  &[aria-label="breadcrumb"] {
-    align-items: center;
-    justify-content: start;
-
-    & ul li {
-      &:not(:first-child) {
-        margin-inline-start: var(--nav-link-spacing-horizontal);
+      &:first-of-type {
+        margin-left: calc(var(#{$css-var-prefix}nav-element-spacing-horizontal) * -1);
       }
+      &:last-of-type {
+        margin-right: calc(var(#{$css-var-prefix}nav-element-spacing-horizontal) * -1);
+      }
+    }
 
-      &:not(:last-child) {
-        ::after {
-          position: absolute;
-          width: calc(var(--nav-link-spacing-horizontal) * 2);
-          margin-inline-start: calc(var(--nav-link-spacing-horizontal) / 2);
-          content: "/";
-          color: var(--muted-color);
-          text-align: center;
+    li {
+      display: inline-block;
+      margin: 0;
+      padding: var(#{$css-var-prefix}nav-element-spacing-vertical)
+        var(#{$css-var-prefix}nav-element-spacing-horizontal);
+
+      :where(a, [role="link"]) {
+        display: inline-block;
+        margin: calc(var(#{$css-var-prefix}nav-link-spacing-vertical) * -1)
+          calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * -1);
+        padding: var(#{$css-var-prefix}nav-link-spacing-vertical)
+          var(#{$css-var-prefix}nav-link-spacing-horizontal);
+        border-radius: var(#{$css-var-prefix}border-radius);
+
+        &:not(:hover) {
+          text-decoration: none;
         }
       }
+
+      // Minimal support for buttons and forms elements
+      button,
+      [role="button"],
+      input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
+      select {
+        height: auto;
+        margin-right: inherit;
+        margin-bottom: 0;
+        margin-left: inherit;
+        padding: calc(
+            var(#{$css-var-prefix}nav-link-spacing-vertical) -
+              (var(#{$css-var-prefix}border-width) * 2)
+          )
+          var(#{$css-var-prefix}nav-link-spacing-horizontal);
+      }
     }
 
-    & a[aria-current] {
-      background-color: transparent;
-      color: inherit;
-      text-decoration: none;
-      pointer-events: none;
+    // Breadcrumb
+    &[aria-label="breadcrumb"] {
+      align-items: center;
+      justify-content: start;
+
+      & ul li {
+        &:not(:first-child) {
+          margin-inline-start: var(#{$css-var-prefix}nav-link-spacing-horizontal);
+        }
+
+        a {
+          margin: calc(var(#{$css-var-prefix}nav-link-spacing-vertical) * -1) 0;
+          margin-inline-start: calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * -1);
+        }
+
+        &:not(:last-child) {
+          &::after {
+            display: inline-block;
+            position: absolute;
+            width: calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * 4);
+            margin: 0 calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * -1);
+            content: var(#{$css-var-prefix}nav-breadcrumb-divider);
+            color: var(#{$css-var-prefix}muted-color);
+            text-align: center;
+            text-decoration: none;
+            white-space: nowrap;
+          }
+        }
+      }
+
+      // Minimal support for aria-current
+      & a[aria-current]:not([aria-current="false"]) {
+        background-color: transparent;
+        color: inherit;
+        text-decoration: none;
+        pointer-events: none;
+      }
     }
   }
 
-  // Minimal support for role="button"
-  [role="button"] {
-    margin-right: inherit;
-    margin-left: inherit;
-    padding: var(--nav-link-spacing-vertical) var(--nav-link-spacing-horizontal);
-  }
-}
-
-// Vertical Nav
-aside {
-  nav,
-  ol,
-  ul,
-  li {
-    display: block;
-  }
-
-  li {
-    padding: calc(var(--nav-element-spacing-vertical) * 0.5)
-      var(--nav-element-spacing-horizontal);
-
-    a {
+  // Vertical Nav
+  #{$parent-selector} aside {
+    nav,
+    ol,
+    ul,
+    li {
       display: block;
     }
 
-    // Minimal support for links as buttons
-    [role="button"] {
-      margin: inherit;
+    li {
+      padding: calc(var(#{$css-var-prefix}nav-element-spacing-vertical) * 0.5)
+        var(#{$css-var-prefix}nav-element-spacing-horizontal);
+
+      a {
+        display: block;
+      }
+
+      // Minimal support for links as buttons
+      [role="button"] {
+        margin: inherit;
+      }
     }
   }
-}
 
-// Breadcrumb RTL
-[dir="rtl"] {
-  nav {
-    &[aria-label="breadcrumb"] {
-      & ul li {
-        &:not(:last-child) {
-          ::after {
-            content: "\\";
+  // Breadcrumb RTL
+  [dir="rtl"] {
+    #{$parent-selector} nav {
+      &[aria-label="breadcrumb"] {
+        & ul li {
+          &:not(:last-child) {
+            ::after {
+              content: "\\";
+            }
           }
         }
       }

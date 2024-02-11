@@ -1,91 +1,73 @@
-/**
- * Code
- */
+@use "sass:map";
+@use "../settings" as *;
 
-// Reboot based on :
-// - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
-// - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
-// ––––––––––––––––––––
+@if map.get($modules, "content/code") {
+  /**
+   * Code
+   */
 
-// 1. Correct the inheritance and scaling of font size in all browsers
-// 2. Correct the odd `em` font sizing in all browsers
-pre,
-code,
-kbd,
-samp {
-  font-size: 0.875em; // 2
-  font-family: var(--font-family); // 1
-}
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
 
-// Prevent overflow of the container in all browsers (opinionated)
-pre {
-  -ms-overflow-style: scrollbar;
-  overflow: auto;
-}
+  // 1. Correct the inheritance and scaling of font size in all browsers
+  // 2. Correct the odd `em` font sizing in all browsers
+  #{$parent-selector} pre,
+  #{$parent-selector} code,
+  #{$parent-selector} kbd,
+  #{$parent-selector} samp {
+    font-size: 0.875em; // 2
+    font-family: var(#{$css-var-prefix}font-family); // 1
+  }
 
-// Pico
-// ––––––––––––––––––––
+  #{$parent-selector} pre code {
+    font-size: inherit;
+    font-family: inherit;
+  }
 
-pre,
-code,
-kbd {
-  border-radius: var(--border-radius);
-  background: var(--code-background-color);
-  color: var(--code-color);
-  font-weight: var(--font-weight);
-  line-height: initial;
-}
+  // Prevent overflow of the container in all browsers (opinionated)
+  #{$parent-selector} pre {
+    -ms-overflow-style: scrollbar;
+    overflow: auto;
+  }
 
-code,
-kbd {
-  display: inline-block;
-  padding: 0.375rem 0.5rem;
-}
+  // Pico
+  // ––––––––––––––––––––
 
-pre {
-  display: block;
-  margin-bottom: var(--spacing);
-  overflow-x: auto;
+  #{$parent-selector} pre,
+  #{$parent-selector} code,
+  #{$parent-selector} kbd {
+    border-radius: var(#{$css-var-prefix}border-radius);
+    background: var(#{$css-var-prefix}code-background-color);
+    color: var(#{$css-var-prefix}code-color);
+    font-weight: var(#{$css-var-prefix}font-weight);
+    line-height: initial;
+  }
 
-  > code {
+  #{$parent-selector} code,
+  #{$parent-selector} kbd {
+    display: inline-block;
+    padding: 0.375rem;
+  }
+
+  #{$parent-selector} pre {
     display: block;
-    padding: var(--spacing);
-    background: none;
-    font-size: 14px;
-    line-height: var(--line-height);
-  }
-}
+    margin-bottom: var(#{$css-var-prefix}spacing);
+    overflow-x: auto;
 
-// Code Syntax
-code {
-  // Tags
-  b {
-    color: var(--code-tag-color);
-    font-weight: var(--font-weight);
+    > code {
+      display: block;
+      padding: var(#{$css-var-prefix}spacing);
+      background: none;
+      line-height: var(#{$css-var-prefix}line-height);
+    }
   }
 
-  // Properties
-  i {
-    color: var(--code-property-color);
-    font-style: normal;
+  // kbd
+  #{$parent-selector} kbd {
+    background-color: var(#{$css-var-prefix}code-kbd-background-color);
+    color: var(#{$css-var-prefix}code-kbd-color);
+    vertical-align: baseline;
   }
-
-  // Values
-  u {
-    color: var(--code-value-color);
-    text-decoration: none;
-  }
-
-  // Comments
-  em {
-    color: var(--code-comment-color);
-    font-style: normal;
-  }
-}
-
-// kbd
-kbd {
-  background-color: var(--code-kbd-background-color);
-  color: var(--code-kbd-color);
-  vertical-align: baseline;
 }

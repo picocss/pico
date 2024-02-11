@@ -1,0 +1,120 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "components/group") {
+  /**
+   * Group ([role="group"], [role="search"])
+   */
+
+  #{$parent-selector} [role="search"],
+  #{$parent-selector} [role="group"] {
+    display: inline-flex;
+    position: relative;
+    width: 100%;
+    margin-bottom: var(#{$css-var-prefix}spacing);
+    border-radius: var(#{$css-var-prefix}border-radius);
+    box-shadow: var(#{$css-var-prefix}group-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+    vertical-align: middle;
+    transition: box-shadow var(#{$css-var-prefix}transition);
+
+    > *,
+    input:not([type="checkbox"], [type="radio"]),
+    select {
+      position: relative;
+      flex: 1 1 auto;
+      margin-bottom: 0;
+
+      &:not(:first-child) {
+        margin-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      &:not(:last-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &:focus {
+        z-index: 2;
+      }
+    }
+
+    button,
+    [type="submit"],
+    [type="reset"],
+    [type="button"],
+    [role="button"],
+    input:not([type="checkbox"], [type="radio"]),
+    select {
+      &:not(:first-child) {
+        margin-left: calc(var(#{$css-var-prefix}border-width) * -1);
+      }
+    }
+
+    button,
+    [type="submit"],
+    [type="reset"],
+    [type="button"],
+    [role="button"] {
+      width: auto;
+    }
+
+    @supports selector(:has(*)) {
+      // Group box shadow when a button is focused
+      &:has(button:focus, [type="submit"]:focus, [type="button"]:focus, [role="button"]:focus) {
+        #{$css-var-prefix}group-box-shadow: var(
+          #{$css-var-prefix}group-box-shadow-focus-with-button
+        );
+
+        input:not([type="checkbox"], [type="radio"]),
+        select {
+          border-color: transparent;
+        }
+      }
+
+      // Group box shadow when an input is focused
+      &:has(input:not([type="submit"], [type="button"]):focus, select:focus) {
+        #{$css-var-prefix}group-box-shadow: var(
+          #{$css-var-prefix}group-box-shadow-focus-with-input
+        );
+
+        // Adapt box shadow for buttons
+        button,
+        [type="submit"],
+        [type="button"],
+        [role="button"] {
+          #{$css-var-prefix}button-box-shadow: 0 0 0 var(#{$css-var-prefix}border-width)
+            var(#{$css-var-prefix}primary-border);
+          #{$css-var-prefix}button-hover-box-shadow: 0 0 0 var(#{$css-var-prefix}border-width)
+            var(#{$css-var-prefix}primary-hover-border);
+        }
+      }
+
+      // Remove button box shadow if we have a group box shadow
+      button,
+      [type="submit"],
+      [type="reset"],
+      [type="button"],
+      [role="button"] {
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
+  #{$parent-selector} [role="search"] {
+    > * {
+      &:first-child {
+        border-top-left-radius: 5rem;
+        border-bottom-left-radius: 5rem;
+      }
+
+      &:last-child {
+        border-top-right-radius: 5rem;
+        border-bottom-right-radius: 5rem;
+      }
+    }
+  }
+}

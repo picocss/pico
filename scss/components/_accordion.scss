@@ -1,115 +1,115 @@
-/**
- * Accordion (<details>)
- */
+@use "sass:map";
+@use "../settings" as *;
 
-details {
-  display: block;
-  margin-bottom: var(--spacing);
-  padding-bottom: var(--spacing);
-  border-bottom: var(--border-width) solid var(--accordion-border-color);
+@if map.get($modules, "components/accordion") {
+  /**
+   * Accordion (<details>)
+   */
 
-  summary {
-    line-height: 1rem;
-    list-style-type: none;
-    cursor: pointer;
+  #{$parent-selector} details {
+    display: block;
+    margin-bottom: var(#{$css-var-prefix}spacing);
 
-    &:not([role]) {
-      color: var(--accordion-close-summary-color);
-    }
-
-    @if $enable-transitions {
-      transition: color var(--transition);
-    }
-
-    // Reset marker
-    &::-webkit-details-marker {
-      display: none;
-    }
-
-    &::marker {
-      display: none;
-    }
-
-    &::-moz-list-bullet {
+    summary {
+      line-height: 1rem;
       list-style-type: none;
-    }
+      cursor: pointer;
 
-    // Marker
-    &::after {
-      display: block;
-      width: 1rem;
-      height: 1rem;
-      margin-inline-start: calc(var(--spacing, 1rem) * 0.5);
-      float: right;
-      transform: rotate(-90deg);
-      background-image: var(--icon-chevron);
-      background-position: right center;
-      background-size: 1rem auto;
-      background-repeat: no-repeat;
-      content: "";
+      &:not([role]) {
+        color: var(#{$css-var-prefix}accordion-close-summary-color);
+      }
 
       @if $enable-transitions {
-        transition: transform var(--transition);
+        transition: color var(#{$css-var-prefix}transition);
       }
-    }
 
-    &:focus {
-      outline: none;
-
-      &:not([role="button"]) {
-        color: var(--accordion-active-summary-color);
+      // Reset marker
+      &::-webkit-details-marker {
+        display: none;
       }
-    }
 
-    // Type button
-    &[role="button"] {
-      width: 100%;
-      text-align: left;
+      &::marker {
+        display: none;
+      }
+
+      &::-moz-list-bullet {
+        list-style-type: none;
+      }
 
       // Marker
       &::after {
-        height: calc(1rem * var(--line-height, 1.5));
-        background-image: var(--icon-chevron-button);
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        margin-inline-start: calc(var(#{$css-var-prefix}spacing, 1rem) * 0.5);
+        float: right;
+        transform: rotate(-90deg);
+        background-image: var(#{$css-var-prefix}icon-chevron);
+        background-position: right center;
+        background-size: 1rem auto;
+        background-repeat: no-repeat;
+        content: "";
+
+        @if $enable-transitions {
+          transition: transform var(#{$css-var-prefix}transition);
+        }
       }
 
-      @if $enable-classes {
-        // .contrast
-        &:not(.outline).contrast {
-          // Marker
-          &::after {
-            background-image: var(--icon-chevron-button-inverse);
+      &:focus {
+        outline: none;
+
+        &:not([role]) {
+          color: var(#{$css-var-prefix}accordion-active-summary-color);
+        }
+      }
+
+      &:focus-visible {
+        &:not([role]) {
+          outline: var(#{$css-var-prefix}outline-width) solid var(#{$css-var-prefix}primary-focus);
+          outline-offset: calc(var(#{$css-var-prefix}spacing, 1rem) * 0.5);
+          color: var(#{$css-var-prefix}primary);
+        }
+      }
+
+      // Type button
+      &[role="button"] {
+        width: 100%;
+        text-align: left;
+
+        // Marker
+        &::after {
+          height: calc(1rem * var(#{$css-var-prefix}line-height, 1.5));
+        }
+      }
+    }
+
+    // Open
+    &[open] {
+      > summary {
+        margin-bottom: var(#{$css-var-prefix}spacing);
+
+        &:not([role]) {
+          &:not(:focus) {
+            color: var(#{$css-var-prefix}accordion-open-summary-color);
           }
         }
-      }
-    }
-  }
 
-  // Open
-  &[open] {
-    > summary {
-      margin-bottom: calc(var(--spacing));
-
-      &:not([role]) {
-        &:not(:focus) {
-          color: var(--accordion-open-summary-color);
+        &::after {
+          transform: rotate(0);
         }
       }
-
-      &::after {
-        transform: rotate(0);
-      }
     }
   }
-}
 
-[dir="rtl"] {
-  details {
-    summary {
-      text-align: right;
+  [dir="rtl"] {
+    #{$parent-selector} details {
+      summary {
+        text-align: right;
 
-      &::after {
-        float: left;
-        background-position: left center;
+        &::after {
+          float: left;
+          background-position: left center;
+        }
       }
     }
   }

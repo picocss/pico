@@ -1,4 +1,0 @@
-// Output color in RGB format
-@function to-rgb($color) {
-  @return unquote("rgb(#{red($color)}, #{green($color)}, #{blue($color)})");
-}

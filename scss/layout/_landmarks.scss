@@ -1,0 +1,62 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "layout/landmarks") {
+  /**
+   * Landmarks
+   */
+
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // 1. Remove the margin in all browsers (opinionated)
+  body {
+    width: 100%;
+    margin: 0; // 1
+  }
+
+  // Render the `main` element consistently in IE
+  main {
+    display: block;
+  }
+
+  // Pico
+  // ––––––––––––––––––––
+  #{$parent-selector} #{$semantic-root-element} {
+    > header,
+    > main,
+    > footer {
+      // <header>, <main>, <footer> as containers
+      @if $enable-semantic-container {
+        $first-breakpoint: true;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding: var(#{$css-var-prefix}block-spacing-vertical)
+          var(#{$css-var-prefix}block-spacing-horizontal);
+
+        @if $enable-viewport {
+          @each $key, $values in $breakpoints {
+            @if $values {
+              @media (min-width: map.get($values, "breakpoint")) {
+                max-width: map.get($values, "viewport");
+                @if $first-breakpoint {
+                  $first-breakpoint: false;
+                  padding-right: 0;
+                  padding-left: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // Regular vertical spacings for <header>, <main>, <footer>
+      @else {
+        padding-block: var(#{$css-var-prefix}block-spacing-vertical);
+      }
+    }
+  }
+}

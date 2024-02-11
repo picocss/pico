@@ -1,0 +1,73 @@
+@use "sass:map";
+@use "../../colors";
+@use "settings";
+@use "utils";
+
+$enable-css-vars: map.get(settings.$utilities, "css-vars");
+$background-color-property-name: map.get(settings.$properties, "background-color");
+$color-property-name: map.get(settings.$properties, "color");
+$css-var-color-prefix: #{settings.$css-var-prefix}#{$color-property-name};
+
+@mixin foreground-color($background-color) {
+  @if map.get(settings.$utilities, "color-for-background-colors") {
+    @if utils.foreground-brightness($background-color) == "light" {
+      @if $enable-css-vars {
+        color: var(#{$css-var-color-prefix}-light);
+      } @else {
+        color: utils.display-color(map.get(settings.$palette, "light-color"));
+      }
+    } @else {
+      @if $enable-css-vars {
+        color: var(#{$css-var-color-prefix}-dark);
+      } @else {
+        color: utils.display-color(map.get(settings.$palette, "dark-color"));
+      }
+    }
+  }
+}
+
+@mixin background-colors {
+  @if map.get(settings.$utilities, "background-colors") {
+    // Loop through color families
+    @each $family, $colors in colors.$colors {
+      @if index(map.get(settings.$palette, "color-families"), $family) {
+        $css-var-family-name: #{$css-var-color-prefix}-#{$family};
+        $class-family-name: #{$background-color-property-name}-#{$family};
+
+        // Loop through colors
+        @each $shade, $color-value in $colors {
+          // Main color
+          @if $shade == "main" and map.get(settings.$palette, "enable-main-color") {
+            $value: $color-value;
+            @if $enable-css-vars {
+              $value: var(#{$css-var-family-name});
+            } @else {
+              $value: utils.display-color($color-value);
+            }
+            .#{settings.$css-class-prefix}#{$class-family-name} {
+              background-color: $value;
+              @include foreground-color($color-value);
+            }
+          }
+
+          // Shades
+          @else if
+            index(map.get(settings.$palette, "shades"), $shade) and
+            map.get(settings.$palette, "enable-shades")
+          {
+            $value: $color-value;
+            @if $enable-css-vars {
+              $value: var(#{$css-var-family-name}-#{$shade});
+            } @else {
+              $value: utils.display-color($color-value);
+            }
+            .#{settings.$css-class-prefix}#{$class-family-name}-#{$shade} {
+              background-color: $value;
+              @include foreground-color($color-value);
+            }
+          }
+        }
+      }
+    }
+  }
+}

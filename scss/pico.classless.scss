@@ -1,13 +1,5 @@
-// Config
-// --------------------
-
-// Enable <header>, <main>, <footer> inside $semantic-root-element as containers
-$enable-semantic-container: true;
-
-// Enable .classes
-$enable-classes: false;
-
-// Pico Lib
-// --------------------
-
-@import "pico";
+// Pico classless version
+@use "index" with (
+  $enable-semantic-container: true,
+  $enable-classes: false
+);
