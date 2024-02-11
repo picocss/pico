@@ -10,7 +10,7 @@
   <strong>Minimal CSS Framework for semantic HTML</strong><br>
   Elegant styles for all native HTML elements without <code>.classes</code> and dark mode automatically enabled.<br><br>
   <a href="https://github.com/picocss/examples">Examples</a> ·
-  <a href="https://picocss.com/docs/">Documentation</a>
+  <a href="https://picocss.com/docs/v1/">Documentation</a>
 </p>
 
 ## Pico CSS
@@ -168,38 +168,38 @@ Pico can be used without custom CSS for quick or small projects. However, it’s
 
 **Getting started**
 
-- [Usage](https://picocss.com/docs/)
-- [Themes](https://picocss.com/docs/themes.html)
-- [Customization](https://picocss.com/docs/customization.html)
-- [Class-less version](https://picocss.com/docs/classless.html)
-- [RTL](https://picocss.com/docs/rtl.html)
+- [Usage](https://picocss.com/docs/v1/)
+- [Themes](https://picocss.com/docs/v1/themes.html)
+- [Customization](https://picocss.com/docs/v1/customization.html)
+- [Class-less version](https://picocss.com/docs/v1/classless.html)
+- [RTL](https://picocss.com/docs/v1/rtl.html)
 
 **Layout**
 
-- [Containers](https://picocss.com/docs/containers.html)
-- [Grids](https://picocss.com/docs/grid.html)
-- [Horizontal scroller](https://picocss.com/docs/scroller.html)
+- [Containers](https://picocss.com/docs/v1/containers.html)
+- [Grids](https://picocss.com/docs/v1/grid.html)
+- [Horizontal scroller](https://picocss.com/docs/v1/scroller.html)
 
 **Elements**
 
-- [Typography](https://picocss.com/docs/typography.html)
-- [Buttons](https://picocss.com/docs/buttons.html)
-- [Forms](https://picocss.com/docs/forms.html)
-- [Tables](https://picocss.com/docs/tables.html)
+- [Typography](https://picocss.com/docs/v1/typography.html)
+- [Buttons](https://picocss.com/docs/v1/buttons.html)
+- [Forms](https://picocss.com/docs/v1/forms.html)
+- [Tables](https://picocss.com/docs/v1/tables.html)
 
 **Components**
 
-- [Accordions](https://picocss.com/docs/accordions.html)
-- [Cards](https://picocss.com/docs/cards.html)
-- [Dropdowns](https://picocss.com/docs/dropdowns.html)
-- [Modal](https://picocss.com/docs/modal.html)
-- [Navs](https://picocss.com/docs/navs.html)
-- [Progress](https://picocss.com/docs/progress.html)
+- [Accordions](https://picocss.com/docs/v1/accordions.html)
+- [Cards](https://picocss.com/docs/v1/cards.html)
+- [Dropdowns](https://picocss.com/docs/v1/dropdowns.html)
+- [Modal](https://picocss.com/docs/v1/modal.html)
+- [Navs](https://picocss.com/docs/v1/navs.html)
+- [Progress](https://picocss.com/docs/v1/progress.html)
 
 **Utilities**
 
-- [Loading](https://picocss.com/docs/loading.html)
-- [Tooltips](https://picocss.com/docs/tooltips.html)
+- [Loading](https://picocss.com/docs/v1/loading.html)
+- [Tooltips](https://picocss.com/docs/v1/tooltips.html)
 
 ## Browser support
 
