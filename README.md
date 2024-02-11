@@ -95,7 +95,7 @@ composer require picocss/pico
 
 ## Class-less version
 
-Pico provides a `.classless` version ([example](https://picocss.com/examples)).
+Pico provides a `.classless` version.
 
 In this version, `<header>`, `<main>`, and `<footer>` inside `<body>` act as containers to define a centered or a fluid viewport.
 
