@@ -1,17 +1,18 @@
 <svg height="458" viewBox="0 0 1064 458" width="1064" xmlns="http://www.w3.org/2000/svg">
   <style>
     :root {
-      --pico-logo-small-sparkles: #ffbf00;
-      --pico-logo-big-sparkle: #ff9500;
+      --pico-logo-wordmark: #fff;
+      --pico-logo-small-sparkles: #ff9500;
+      --pico-logo-big-sparkle: #ffbf00;
+    }
+    .pico-logo-wordmark {
+      fill: var(--pico-logo-wordmark);
     }
     .pico-logo-small-sparkles {
       fill: var(--pico-logo-small-sparkles);
     }
     .pico-logo-big-sparkle {
       fill: var(--pico-logo-big-sparkle);
-    }
-    .pico-logo-wordmark {
-      fill: currentColor
     }
   </style>
   <path d="m993.708 161.083c-1.475.567-2.641 1.733-3.208 3.208l-21.822 56.738c-1.836 4.774-8.59 4.774-10.426 0l-21.823-56.738c-.567-1.475-1.733-2.641-3.208-3.208l-56.738-21.823c-4.774-1.836-4.774-8.59 0-10.426l56.738-21.822c1.475-.567 2.641-1.733 3.208-3.208l21.823-56.7383c1.836-4.7737 8.59-4.7737 10.426 0l21.822 56.7383c.567 1.475 1.733 2.641 3.208 3.208l56.742 21.822c4.77 1.836 4.77 8.59 0 10.426z" class="pico-logo-big-sparkle" />
