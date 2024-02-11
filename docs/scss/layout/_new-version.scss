@@ -3,4 +3,12 @@ body > .new-version {
   background-color: var(--primary);
   color: var(--primary-inverse);
   text-align: center;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

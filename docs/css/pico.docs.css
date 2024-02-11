@@ -52,6 +52,12 @@ body > .new-version {
   color: var(--primary-inverse);
   text-align: center;
 }
+body > .new-version a {
+  text-decoration: none;
+}
+body > .new-version a:hover {
+  text-decoration: underline;
+}
 
 /**
  * Docs: Main (Grid)
