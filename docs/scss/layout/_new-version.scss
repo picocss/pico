@@ -1,0 +1,6 @@
+body > .new-version {
+  padding: calc(var(--spacing) * 0.5) var(--spacing);
+  background-color: var(--primary);
+  color: var(--primary-inverse);
+  text-align: center;
+}

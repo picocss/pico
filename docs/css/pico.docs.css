@@ -46,6 +46,13 @@ html {
   scroll-behavior: smooth;
 }
 
+body > .new-version {
+  padding: calc(var(--spacing) * 0.5) var(--spacing);
+  background-color: var(--primary);
+  color: var(--primary-inverse);
+  text-align: center;
+}
+
 /**
  * Docs: Main (Grid)
  */
@@ -403,7 +410,7 @@ body > nav {
   --nav-link-spacing-vertical: 1rem;
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   z-index: 99;
-  position: fixed;
+  position: sticky;
   top: 0;
   right: 0;
   left: 0;

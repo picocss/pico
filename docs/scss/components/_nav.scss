@@ -7,7 +7,7 @@ body > nav {
 
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   z-index: 99;
-  position: fixed;
+  position: sticky;
   top: 0;
   right: 0;
   left: 0;
