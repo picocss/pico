@@ -1,5 +1,5 @@
 <a href="https://picocss.com/">
-  <img src="https://picocss.com/logo.svg" width="auto" height="60">
+  <img src=".github/logo.svg" width="auto" height="60">
 </a>
 
 ## Minimal CSS Framework for Semantic HTML
@@ -95,7 +95,7 @@ composer require picocss/pico
 
 ## Class-less version
 
-Pico provides a `.classless` version ([example](https://picocss.com/examples)).
+Pico provides a `.classless` version.
 
 In this version, `<header>`, `<main>`, and `<footer>` inside `<body>` act as containers to define a centered or a fluid viewport.
 
