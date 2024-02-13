@@ -1990,7 +1990,7 @@ main {
 .pico dialog article > header > * {
   margin-bottom: 0;
 }
-.pico dialog article > header a[rel=prev] {
+.pico dialog article > header :is(a, button)[rel=prev] {
   margin: 0;
   margin-left: var(--pico-spacing);
   float: right;
@@ -2006,21 +2006,23 @@ main {
 .pico dialog article > footer [role=button]:not(:first-of-type) {
   margin-left: calc(var(--pico-spacing) * 0.5);
 }
-.pico dialog article a[rel=prev] {
+.pico dialog article :is(a, button)[rel=prev] {
   display: block;
   width: 1rem;
   height: 1rem;
   margin-top: calc(var(--pico-spacing) * -1);
   margin-bottom: var(--pico-spacing);
   margin-left: auto;
+  border: none;
   background-image: var(--pico-icon-close);
   background-position: center;
   background-size: auto 1rem;
   background-repeat: no-repeat;
+  background-color: transparent;
   opacity: 0.5;
   transition: opacity var(--pico-transition);
 }
-.pico dialog article a[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+.pico dialog article :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   opacity: 1;
 }
 .pico dialog:not([open]), .pico dialog[open=false] {
