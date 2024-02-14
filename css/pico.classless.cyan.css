@@ -1691,7 +1691,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
 input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search] {
   padding-inline-start: calc(var(--pico-form-element-spacing-horizontal) + 1.75rem);
   background-image: var(--pico-icon-search);
-  background-position: center left 1.125rem;
+  background-position: center left calc(var(--pico-form-element-spacing-horizontal) + 0.125rem);
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
