@@ -560,7 +560,6 @@ progress,
   text-underline-offset: var(--pico-text-underline-offset);
   text-rendering: optimizeLegibility;
   overflow-wrap: break-word;
-  cursor: default;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
