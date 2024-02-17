@@ -1974,6 +1974,7 @@ dialog article {
   width: 100%;
   max-height: calc(100vh - var(--pico-spacing) * 2);
   margin: var(--pico-spacing);
+  padding: 0;
   overflow: auto;
 }
 @media (min-width: 576px) {

@@ -40,6 +40,7 @@
       width: 100%;
       max-height: calc(100vh - var(#{$css-var-prefix}spacing) * 2);
       margin: var(#{$css-var-prefix}spacing);
+      padding: 0;
       overflow: auto;
 
       @if map.get($breakpoints, "sm") {
