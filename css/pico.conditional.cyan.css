@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.0.0 (https://picocss.com)
+ * Pico CSS ✨ v2.0.1 (https://picocss.com)
  * Copyright 2019-2024 - Licensed under MIT
  */
 /**
@@ -628,7 +628,6 @@ nav details.dropdown summary:focus-visible {
   text-underline-offset: var(--pico-text-underline-offset);
   text-rendering: optimizeLegibility;
   overflow-wrap: break-word;
-  cursor: default;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
@@ -1857,7 +1856,7 @@ main {
 .pico input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search] {
   padding-inline-start: calc(var(--pico-form-element-spacing-horizontal) + 1.75rem);
   background-image: var(--pico-icon-search);
-  background-position: center left 1.125rem;
+  background-position: center left calc(var(--pico-form-element-spacing-horizontal) + 0.125rem);
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
@@ -2353,7 +2352,7 @@ main {
 .pico dialog article > header > * {
   margin-bottom: 0;
 }
-.pico dialog article > header .close, .pico dialog article > header a[rel=prev] {
+.pico dialog article > header .close, .pico dialog article > header :is(a, button)[rel=prev] {
   margin: 0;
   margin-left: var(--pico-spacing);
   float: right;
@@ -2369,21 +2368,23 @@ main {
 .pico dialog article > footer [role=button]:not(:first-of-type) {
   margin-left: calc(var(--pico-spacing) * 0.5);
 }
-.pico dialog article .close, .pico dialog article a[rel=prev] {
+.pico dialog article .close, .pico dialog article :is(a, button)[rel=prev] {
   display: block;
   width: 1rem;
   height: 1rem;
   margin-top: calc(var(--pico-spacing) * -1);
   margin-bottom: var(--pico-spacing);
   margin-left: auto;
+  border: none;
   background-image: var(--pico-icon-close);
   background-position: center;
   background-size: auto 1rem;
   background-repeat: no-repeat;
+  background-color: transparent;
   opacity: 0.5;
   transition: opacity var(--pico-transition);
 }
-.pico dialog article .close:is([aria-current]:not([aria-current=false]), :hover, :active, :focus), .pico dialog article a[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+.pico dialog article .close:is([aria-current]:not([aria-current=false]), :hover, :active, :focus), .pico dialog article :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   opacity: 1;
 }
 .pico dialog:not([open]), .pico dialog[open=false] {

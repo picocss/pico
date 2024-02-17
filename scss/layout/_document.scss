@@ -29,26 +29,24 @@
     vertical-align: inherit; // 2
   }
 
-  // 1. Use the default cursor in all browsers (opinionated)
-  // 2. Change the line height in all browsers (opinionated)
-  // 3. Breaks words to prevent overflow in all browsers (opinionated)
-  // 4. Use a 4-space tab width in all browsers (opinionated)
-  // 5. Remove the grey highlight on links in iOS (opinionated)
-  // 6. Prevent adjustments of font size after orientation changes in iOS
+  // 1. Change the line height in all browsers (opinionated)
+  // 2. Breaks words to prevent overflow in all browsers (opinionated)
+  // 3. Use a 4-space tab width in all browsers (opinionated)
+  // 4. Remove the grey highlight on links in iOS (opinionated)
+  // 5. Prevent adjustments of font size after orientation changes in iOS
   :where(:root) {
-    -webkit-tap-highlight-color: transparent; // 5
-    -webkit-text-size-adjust: 100%; // 6
-    text-size-adjust: 100%; // 6
+    -webkit-tap-highlight-color: transparent; // 4
+    -webkit-text-size-adjust: 100%; // 5
+    text-size-adjust: 100%; // 5
     background-color: var(#{$css-var-prefix}background-color);
     color: var(#{$css-var-prefix}color);
     font-weight: var(#{$css-var-prefix}font-weight);
     font-size: var(#{$css-var-prefix}font-size);
-    line-height: var(#{$css-var-prefix}line-height); // 2
+    line-height: var(#{$css-var-prefix}line-height); // 1
     font-family: var(#{$css-var-prefix}font-family);
     text-underline-offset: var(#{$css-var-prefix}text-underline-offset);
     text-rendering: optimizeLegibility;
-    overflow-wrap: break-word; // 3
-    cursor: default; // 1
-    tab-size: 4; // 4
+    overflow-wrap: break-word; // 2
+    tab-size: 4; // 3
   }
 }
