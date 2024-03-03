@@ -126,7 +126,9 @@
       background-image: none;
 
       &::before {
-        margin-inline-start: calc(#{$switch-width * 0.5} - var(#{$css-var-prefix}border-width));
+        margin-inline-start: calc(
+          #{$switch-width} - #{$switch-height} / 2 - var(#{$css-var-prefix}border-width) * 3
+        );
       }
     }
 
