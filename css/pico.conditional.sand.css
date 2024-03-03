@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.0.3 (https://picocss.com)
+ * Pico CSS ✨ v2.0.4 (https://picocss.com)
  * Copyright 2019-2024 - Licensed under MIT
  */
 /**
@@ -707,6 +707,16 @@ main {
   grid-row-gap: var(--pico-grid-row-gap);
   display: grid;
   grid-template-columns: 1fr;
+}
+@media (max-width: calc(768px - 1px)) {
+  .grid input:not([type=checkbox], [type=radio]),
+  .grid select,
+  .grid textarea,
+  .grid fieldset,
+  .grid fieldset legend,
+  .grid label {
+    margin-bottom: 0;
+  }
 }
 @media (min-width: 768px) {
   .grid {
@@ -1511,6 +1521,7 @@ main {
 }
 .pico select[multiple] option:checked {
   background: var(--pico-form-element-selected-background-color);
+  color: var(--pico-form-element-color);
 }
 
 [dir=rtl] .pico select:not([multiple], [size]) {
@@ -1644,7 +1655,7 @@ main {
   background-image: none;
 }
 .pico [type=checkbox][role=switch]:checked::before {
-  margin-inline-start: calc(1.125em - var(--pico-border-width));
+  margin-inline-start: calc(2.25em - 1.25em / 2 - var(--pico-border-width) * 3);
 }
 .pico [type=checkbox][role=switch][disabled] {
   --pico-background-color: var(--pico-border-color);
@@ -2284,7 +2295,7 @@ main {
   width: 1em;
   height: 1em;
   background-image: var(--pico-icon-loading);
-  background-size: 1rem auto;
+  background-size: 1em auto;
   background-repeat: no-repeat;
   content: "";
   vertical-align: -0.125em;

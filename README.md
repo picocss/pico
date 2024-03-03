@@ -25,8 +25,8 @@ Pico v2.0 features better accessibility, easier customization with SASS, a compl
 
 [Read more](https://picocss.com/docs/v2)
 
-
 ## A Superpowered HTML Reset
+
 With just the right amount of everything, Pico is great starting point for a clean and lightweight design system.
 
 - Class-light and Semantic

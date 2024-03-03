@@ -13,6 +13,20 @@
     display: grid;
     grid-template-columns: 1fr;
 
+    // Reset margin bottom for form elements on small screens
+    @if map.get($modules, "forms/basics") {
+      @media (max-width: calc(#{map.get(map.get($breakpoints, "md"), "breakpoint")} - 1px)) {
+        input:not([type="checkbox"], [type="radio"]),
+        select,
+        textarea,
+        fieldset,
+        fieldset legend,
+        label {
+          margin-bottom: 0;
+        }
+      }
+    }
+
     @if map.get($breakpoints, "md") {
       @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
         grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
