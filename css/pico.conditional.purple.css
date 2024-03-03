@@ -1637,7 +1637,7 @@ main {
 }
 .pico [type=checkbox][role=switch]:before {
   display: block;
-  width: calc(1.25em - (var(--pico-border-width) * 2));
+  width: calc(1.25em - var(--pico-border-width) * 2);
   height: 100%;
   border-radius: 50%;
   background-color: var(--pico-color);
@@ -1655,9 +1655,7 @@ main {
   background-image: none;
 }
 .pico [type=checkbox][role=switch]:checked::before {
-  margin-inline-start: calc(
-          2.25em - 1.25em / 2 - var(--pico-border-width) * 3
-        );
+  margin-inline-start: calc(2.25em - 1.25em / 2 - var(--pico-border-width) * 3);
 }
 .pico [type=checkbox][role=switch][disabled] {
   --pico-background-color: var(--pico-border-color);
