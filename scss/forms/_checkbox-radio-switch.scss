@@ -103,7 +103,7 @@
 
     &:before {
       display: block;
-      width: calc(#{$switch-height} - (var(#{$css-var-prefix}border-width) * 2));
+      aspect-ratio: 1;
       height: 100%;
       border-radius: 50%;
       background-color: var(#{$css-var-prefix}color);
@@ -126,9 +126,7 @@
       background-image: none;
 
       &::before {
-        margin-inline-start: calc(
-          #{$switch-width} - #{$switch-height} / 2 - var(#{$css-var-prefix}border-width) * 3
-        );
+        margin-inline-start: calc(#{$switch-width} - #{$switch-height});
       }
     }
 
