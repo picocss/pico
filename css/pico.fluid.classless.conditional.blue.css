@@ -1308,6 +1308,7 @@ main {
 }
 .pico select[multiple] option:checked {
   background: var(--pico-form-element-selected-background-color);
+  color: var(--pico-form-element-color);
 }
 
 [dir=rtl] .pico select:not([multiple], [size]) {
@@ -1441,7 +1442,7 @@ main {
   background-image: none;
 }
 .pico [type=checkbox][role=switch]:checked::before {
-  margin-inline-start: calc(2.25em - 1.25em / 2 - var(--pico-border-width) * 3);
+  margin-inline-start: calc(1.125em - var(--pico-border-width));
 }
 .pico [type=checkbox][role=switch][disabled] {
   --pico-background-color: var(--pico-border-color);
