@@ -2078,6 +2078,7 @@ main {
 }
 .pico nav li button,
 .pico nav li [role=button],
+.pico nav li [type=button],
 .pico nav li input:not([type=checkbox], [type=radio], [type=range], [type=file]),
 .pico nav li select {
   height: auto;

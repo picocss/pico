@@ -2078,6 +2078,7 @@ nav li :where(a, [role=link]):not(:hover) {
 }
 nav li button,
 nav li [role=button],
+nav li [type=button],
 nav li input:not([type=checkbox], [type=radio], [type=range], [type=file]),
 nav li select {
   height: auto;

@@ -64,6 +64,7 @@
       // Minimal support for buttons and forms elements
       button,
       [role="button"],
+      [type="button"],
       input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
       select {
         height: auto;
