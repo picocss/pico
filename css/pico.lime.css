@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.0.4 (https://picocss.com)
+ * Pico CSS ✨ v2.0.5 (https://picocss.com)
  * Copyright 2019-2024 - Licensed under MIT
  */
 /**
@@ -707,16 +707,6 @@ section {
   grid-row-gap: var(--pico-grid-row-gap);
   display: grid;
   grid-template-columns: 1fr;
-}
-@media (max-width: calc(768px - 1px)) {
-  .grid input:not([type=checkbox], [type=radio]),
-  .grid select,
-  .grid textarea,
-  .grid fieldset,
-  .grid fieldset legend,
-  .grid label {
-    margin-bottom: 0;
-  }
 }
 @media (min-width: 768px) {
   .grid {
@@ -2496,6 +2486,7 @@ nav li :where(a, [role=link]):not(:hover) {
 }
 nav li button,
 nav li [role=button],
+nav li [type=button],
 nav li input:not([type=checkbox], [type=radio], [type=range], [type=file]),
 nav li select {
   height: auto;
