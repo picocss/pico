@@ -407,7 +407,6 @@
       option {
         &:checked {
           background: var(#{$css-var-prefix}form-element-selected-background-color);
-          color: var(#{$css-var-prefix}form-element-color);
         }
       }
     }
