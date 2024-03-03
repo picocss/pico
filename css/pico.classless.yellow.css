@@ -1345,7 +1345,6 @@ select:not([multiple], [size]) {
 }
 select[multiple] option:checked {
   background: var(--pico-form-element-selected-background-color);
-  color: var(--pico-form-element-color);
 }
 
 [dir=rtl] select:not([multiple], [size]) {
