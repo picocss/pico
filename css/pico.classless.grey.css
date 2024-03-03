@@ -1345,6 +1345,7 @@ select:not([multiple], [size]) {
 }
 select[multiple] option:checked {
   background: var(--pico-form-element-selected-background-color);
+  color: var(--pico-form-element-color);
 }
 
 [dir=rtl] select:not([multiple], [size]) {
@@ -1460,7 +1461,7 @@ label:has([type=checkbox], [type=radio]) {
 }
 [type=checkbox][role=switch]:before {
   display: block;
-  width: calc(1.25em - var(--pico-border-width) * 2);
+  width: calc(1.25em - (var(--pico-border-width) * 2));
   height: 100%;
   border-radius: 50%;
   background-color: var(--pico-color);
@@ -1478,7 +1479,9 @@ label:has([type=checkbox], [type=radio]) {
   background-image: none;
 }
 [type=checkbox][role=switch]:checked::before {
-  margin-inline-start: calc(1.125em - var(--pico-border-width));
+  margin-inline-start: calc(
+          2.25em - 1.25em / 2 - var(--pico-border-width) * 3
+        );
 }
 [type=checkbox][role=switch][disabled] {
   --pico-background-color: var(--pico-border-color);
