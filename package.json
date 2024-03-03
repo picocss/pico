@@ -66,5 +66,8 @@
   },
   "browserslist": [
     "defaults"
-  ]
+  ],
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  }
 }

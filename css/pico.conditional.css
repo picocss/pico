@@ -617,7 +617,6 @@ nav details.dropdown summary:focus-visible {
 :where(:root) {
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
   background-color: var(--pico-background-color);
   color: var(--pico-color);
@@ -628,8 +627,6 @@ nav details.dropdown summary:focus-visible {
   text-underline-offset: var(--pico-text-underline-offset);
   text-rendering: optimizeLegibility;
   overflow-wrap: break-word;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
   tab-size: 4;
 }
 
@@ -882,10 +879,6 @@ main {
   color: var(--pico-del-color);
 }
 
-.pico ::-moz-selection {
-  background-color: var(--pico-text-selection-color);
-}
-
 .pico ::selection {
   background-color: var(--pico-text-selection-color);
 }
@@ -901,13 +894,10 @@ main {
   outline: none;
   background-color: var(--pico-background-color);
   color: var(--pico-color);
-  -webkit-text-decoration: var(--pico-text-decoration);
   text-decoration: var(--pico-text-decoration);
   text-decoration-color: var(--pico-underline);
   text-underline-offset: 0.125em;
-  transition: background-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition), -webkit-text-decoration var(--pico-transition);
   transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition);
-  transition: background-color var(--pico-transition), color var(--pico-transition), text-decoration var(--pico-transition), box-shadow var(--pico-transition), -webkit-text-decoration var(--pico-transition);
 }
 .pico :where(a:not([role=button])):is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
 .pico [role=link]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
@@ -984,8 +974,6 @@ main {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
   user-select: none;
   transition: background-color var(--pico-transition), border-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition);
 }
@@ -1370,8 +1358,6 @@ main {
 .pico input:not([type=checkbox], [type=radio], [type=range], [type=file]),
 .pico select,
 .pico textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   padding: var(--pico-form-element-spacing-vertical) var(--pico-form-element-spacing-horizontal);
 }
@@ -1560,7 +1546,6 @@ main {
  * Checkboxes, Radios and Switches
  */
 .pico label:has([type=checkbox], [type=radio]) {
-  width: -moz-fit-content;
   width: fit-content;
   cursor: pointer;
 }
@@ -1792,7 +1777,6 @@ main {
   height: 0.375rem;
   border-radius: var(--pico-border-radius);
   background-color: var(--pico-range-border-color);
-  -webkit-transition: background-color var(--pico-transition), box-shadow var(--pico-transition);
   transition: background-color var(--pico-transition), box-shadow var(--pico-transition);
 }
 .pico [type=range]::-moz-range-track {
@@ -1800,7 +1784,6 @@ main {
   height: 0.375rem;
   border-radius: var(--pico-border-radius);
   background-color: var(--pico-range-border-color);
-  -moz-transition: background-color var(--pico-transition), box-shadow var(--pico-transition);
   transition: background-color var(--pico-transition), box-shadow var(--pico-transition);
 }
 .pico [type=range]::-ms-track {
@@ -1808,7 +1791,6 @@ main {
   height: 0.375rem;
   border-radius: var(--pico-border-radius);
   background-color: var(--pico-range-border-color);
-  -ms-transition: background-color var(--pico-transition), box-shadow var(--pico-transition);
   transition: background-color var(--pico-transition), box-shadow var(--pico-transition);
 }
 .pico [type=range]::-webkit-slider-thumb {
@@ -1820,7 +1802,6 @@ main {
   border-radius: 50%;
   background-color: var(--pico-range-thumb-color);
   cursor: pointer;
-  -webkit-transition: background-color var(--pico-transition), transform var(--pico-transition);
   transition: background-color var(--pico-transition), transform var(--pico-transition);
 }
 .pico [type=range]::-moz-range-thumb {
@@ -1832,7 +1813,6 @@ main {
   border-radius: 50%;
   background-color: var(--pico-range-thumb-color);
   cursor: pointer;
-  -moz-transition: background-color var(--pico-transition), transform var(--pico-transition);
   transition: background-color var(--pico-transition), transform var(--pico-transition);
 }
 .pico [type=range]::-ms-thumb {
@@ -1844,7 +1824,6 @@ main {
   border-radius: 50%;
   background-color: var(--pico-range-thumb-color);
   cursor: pointer;
-  -ms-transition: background-color var(--pico-transition), transform var(--pico-transition);
   transition: background-color var(--pico-transition), transform var(--pico-transition);
 }
 .pico [type=range]:active, .pico [type=range]:focus-within {
@@ -2032,8 +2011,6 @@ main {
   color: var(--pico-form-element-placeholder-color);
   line-height: inherit;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
   user-select: none;
   transition: background-color var(--pico-transition), border-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition);
 }
@@ -2080,7 +2057,6 @@ main {
   left: 0;
   flex-direction: column;
   width: 100%;
-  min-width: -moz-fit-content;
   min-width: fit-content;
   margin: 0;
   margin-top: var(--pico-outline-width);
@@ -2339,7 +2315,6 @@ main {
   min-height: 100%;
   padding: 0;
   border: 0;
-  -webkit-backdrop-filter: var(--pico-modal-overlay-backdrop-filter);
   backdrop-filter: var(--pico-modal-overlay-backdrop-filter);
   background-color: var(--pico-modal-overlay-background-color);
   color: var(--pico-color);
@@ -2437,7 +2412,6 @@ main {
 
 @keyframes modal-overlay {
   from {
-    -webkit-backdrop-filter: none;
     backdrop-filter: none;
     background-color: transparent;
   }
@@ -2496,6 +2470,7 @@ main {
 }
 .pico nav li button,
 .pico nav li [role=button],
+.pico nav li [type=button],
 .pico nav li input:not([type=checkbox], [type=radio], [type=range], [type=file]),
 .pico nav li select {
   height: auto;
@@ -2581,7 +2556,6 @@ main {
 }
 .pico progress[value]::-webkit-progress-value {
   background-color: var(--pico-progress-color);
-  -webkit-transition: inline-size var(--pico-transition);
   transition: inline-size var(--pico-transition);
 }
 .pico progress::-moz-progress-bar {
