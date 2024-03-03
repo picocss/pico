@@ -708,16 +708,6 @@ main {
   display: grid;
   grid-template-columns: 1fr;
 }
-@media (max-width: calc(768px - 1px)) {
-  .grid input:not([type=checkbox], [type=radio]),
-  .grid select,
-  .grid textarea,
-  .grid fieldset,
-  .grid fieldset legend,
-  .grid label {
-    margin-bottom: 0;
-  }
-}
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
