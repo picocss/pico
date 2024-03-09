@@ -61,9 +61,6 @@
     "prettier": "^3.2.5",
     "sass": "^1.71.1"
   },
-  "engines": {
-    "node": ">=18.19.0"
-  },
   "browserslist": [
     "defaults"
   ]
