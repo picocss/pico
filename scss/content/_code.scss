@@ -49,6 +49,7 @@
   #{$parent-selector} kbd {
     display: inline-block;
     padding: 0.375rem;
+    max-width: 100%;
   }
 
   #{$parent-selector} pre {
