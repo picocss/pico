@@ -11,7 +11,7 @@
   }
 
   #{$parent-selector} dialog {
-    display: flex;
+    display: grid;
     z-index: 999;
     position: fixed;
     top: 0;
@@ -24,11 +24,15 @@
     min-width: 100%;
     height: inherit;
     min-height: 100%;
-    padding: 0;
+    padding: var(#{$css-var-prefix}spacing);
     border: 0;
     backdrop-filter: var(#{$css-var-prefix}modal-overlay-backdrop-filter);
     background-color: var(#{$css-var-prefix}modal-overlay-background-color);
     color: var(#{$css-var-prefix}color);
+    opacity: 1;
+    @if $enable-transitions {
+      transition: all var(#{$css-var-prefix}transition) allow-discrete;
+    }
 
     // Content
     article {
@@ -38,9 +42,6 @@
         ":is(a, button)[rel=prev]"
       );
       width: 100%;
-      max-height: calc(100vh - var(#{$css-var-prefix}spacing) * 2);
-      margin: var(#{$css-var-prefix}spacing);
-      overflow: auto;
 
       @if map.get($breakpoints, "sm") {
         @media (min-width: map.get(map.get($breakpoints, "sm"), "breakpoint")) {
@@ -80,6 +81,11 @@
         }
       }
 
+      @if $enable-transitions {
+        transform: scale(1);
+        transition: transform var(#{$css-var-prefix}transition);
+      }
+
       // Close icon
       #{$close-selector} {
         display: block;
@@ -109,7 +115,12 @@
     // Closed state
     &:not([open]),
     &[open="false"] {
-      display: none;
+      visibility: hidden;
+      opacity: 0;
+
+      & article {
+        transform: scale(0.7);
+      }
     }
   }
 
@@ -128,7 +139,13 @@
     }
   }
 
+  // Prevent scrolling body when modal is open
+  body:has(dialog[open]) {
+    overflow: hidden;
+  }
+
   // Animations
+  // 2024-02-20. We should deprecate this when 3.0 hits, and support no-JS CSS transitions instead
   @if $enable-classes and $enable-transitions {
     $animation-duration: 0.2s;
 
