@@ -2314,7 +2314,7 @@ a[aria-busy=true] {
 }
 
 dialog {
-  display: flex;
+  display: grid;
   z-index: 999;
   position: fixed;
   top: 0;
@@ -2327,18 +2327,19 @@ dialog {
   min-width: 100%;
   height: inherit;
   min-height: 100%;
-  padding: 0;
+  padding: var(--pico-spacing);
   border: 0;
   -webkit-backdrop-filter: var(--pico-modal-overlay-backdrop-filter);
   backdrop-filter: var(--pico-modal-overlay-backdrop-filter);
   background-color: var(--pico-modal-overlay-background-color);
   color: var(--pico-color);
+  opacity: 1;
+  transition: all var(--pico-transition) allow-discrete;
 }
 dialog article {
   width: 100%;
-  max-height: calc(100vh - var(--pico-spacing) * 2);
-  margin: var(--pico-spacing);
-  overflow: auto;
+  transform: scale(1);
+  transition: transform var(--pico-transition);
 }
 @media (min-width: 576px) {
   dialog article {
@@ -2390,7 +2391,11 @@ dialog article .close:is([aria-current]:not([aria-current=false]), :hover, :acti
   opacity: 1;
 }
 dialog:not([open]), dialog[open=false] {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+dialog:not([open]) article, dialog[open=false] article {
+  transform: scale(0.7);
 }
 
 .modal-is-open {
@@ -2402,6 +2407,10 @@ dialog:not([open]), dialog[open=false] {
 .modal-is-open dialog {
   pointer-events: auto;
   touch-action: auto;
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
 }
 
 :where(.modal-is-opening, .modal-is-closing) dialog,

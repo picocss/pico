@@ -1988,7 +1988,7 @@ main {
 }
 
 .pico dialog {
-  display: flex;
+  display: grid;
   z-index: 999;
   position: fixed;
   top: 0;
@@ -2001,18 +2001,19 @@ main {
   min-width: 100%;
   height: inherit;
   min-height: 100%;
-  padding: 0;
+  padding: var(--pico-spacing);
   border: 0;
   -webkit-backdrop-filter: var(--pico-modal-overlay-backdrop-filter);
   backdrop-filter: var(--pico-modal-overlay-backdrop-filter);
   background-color: var(--pico-modal-overlay-background-color);
   color: var(--pico-color);
+  opacity: 1;
+  transition: all var(--pico-transition) allow-discrete;
 }
 .pico dialog article {
   width: 100%;
-  max-height: calc(100vh - var(--pico-spacing) * 2);
-  margin: var(--pico-spacing);
-  overflow: auto;
+  transform: scale(1);
+  transition: transform var(--pico-transition);
 }
 @media (min-width: 576px) {
   .pico dialog article {
@@ -2064,7 +2065,15 @@ main {
   opacity: 1;
 }
 .pico dialog:not([open]), .pico dialog[open=false] {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+.pico dialog:not([open]) article, .pico dialog[open=false] article {
+  transform: scale(0.7);
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
 }
 
 /**
