@@ -2340,6 +2340,46 @@ main {
 }
 
 /**
+ * Notification (<dialog>)
+ */
+dialog[role=alert] {
+  position: fixed;
+  top: unset;
+  right: var(--pico-spacing);
+  bottom: var(--pico-spacing);
+  left: unset;
+  width: auto;
+  min-width: unset;
+  height: auto;
+  min-height: unset;
+  padding: var(--pico-form-element-spacing-vertical) var(--pico-form-element-spacing-horizontal);
+  border: var(--pico-border-width) solid var(--pico-border-color);
+  border-radius: var(--pico-border-radius);
+  -webkit-backdrop-filter: var(--pico-modal-overlay-backdrop-filter);
+  backdrop-filter: var(--pico-modal-overlay-backdrop-filter);
+  background-color: var(--pico-primary-background);
+  box-shadow: var(--pico-box-shadow);
+  color: var(--pico-primary-inverse);
+  font-weight: var(--pico-font-weight);
+  font-size: var(--pico-font-size);
+  line-height: var(--pico-line-height);
+  opacity: 0;
+  transition: opacity var(--pico-transition);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+dialog[data-backdrop=false][role=alert]::backdrop {
+  display: none;
+}
+
+dialog[role=alert][open] {
+  opacity: 1;
+  transition: opacity var(--pico-transition);
+}
+
+/**
  * Accessibility & User interaction
  */
 .pico [aria-controls] {
