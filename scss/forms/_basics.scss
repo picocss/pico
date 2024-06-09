@@ -264,17 +264,11 @@
       ) {
       &[aria-invalid] {
         @if $enable-important {
-          padding-right: calc(
-            var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem
-          ) !important;
-          padding-left: var(#{$css-var-prefix}form-element-spacing-horizontal);
           padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal) !important;
           padding-inline-end: calc(
             var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem
           ) !important;
         } @else {
-          padding-right: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
-          padding-left: var(#{$css-var-prefix}form-element-spacing-horizontal);
           padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal);
           padding-inline-end: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
         }
@@ -393,8 +387,6 @@
     }
 
     &:not([multiple], [size]) {
-      padding-right: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
-      padding-left: var(#{$css-var-prefix}form-element-spacing-horizontal);
       padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal);
       padding-inline-end: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
       background-image: var(#{$css-var-prefix}icon-chevron);

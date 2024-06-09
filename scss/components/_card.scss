@@ -16,8 +16,8 @@
 
     > header,
     > footer {
-      margin-right: calc(var(#{$css-var-prefix}block-spacing-horizontal) * -1);
-      margin-left: calc(var(#{$css-var-prefix}block-spacing-horizontal) * -1);
+      margin-inline-start: calc(var(#{$css-var-prefix}block-spacing-horizontal) * -1);
+      margin-inline-end: calc(var(#{$css-var-prefix}block-spacing-horizontal) * -1);
       padding: calc(var(#{$css-var-prefix}block-spacing-vertical) * 0.66)
         var(#{$css-var-prefix}block-spacing-horizontal);
       background-color: var(#{$css-var-prefix}card-sectioning-background-color);
@@ -29,8 +29,8 @@
       border-bottom: var(#{$css-var-prefix}border-width)
         solid
         var(#{$css-var-prefix}card-border-color);
-      border-top-right-radius: var(#{$css-var-prefix}border-radius);
-      border-top-left-radius: var(#{$css-var-prefix}border-radius);
+      border-start-start-radius: var(#{$css-var-prefix}border-radius);
+      border-start-end-radius: var(#{$css-var-prefix}border-radius);
     }
 
     > footer {

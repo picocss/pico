@@ -61,21 +61,21 @@
 
         #{$close-selector} {
           margin: 0;
-          margin-left: var(#{$css-var-prefix}spacing);
+          margin-inline-start: var(#{$css-var-prefix}spacing);
           padding: 0;
-          float: right;
+          float: inline-end;
         }
       }
 
       > footer {
-        text-align: right;
+        text-align: end;
 
         button,
         [role="button"] {
           margin-bottom: 0;
 
           &:not(:first-of-type) {
-            margin-left: calc(var(#{$css-var-prefix}spacing) * 0.5);
+            margin-inline-start: calc(var(#{$css-var-prefix}spacing) * 0.5);
           }
         }
       }
@@ -116,7 +116,7 @@
   // Utilities
   @if $enable-classes {
     .modal-is-open {
-      padding-right: var(#{$css-var-prefix}scrollbar-width, 0px);
+      padding-inline-end: var(#{$css-var-prefix}scrollbar-width, 0px);
       overflow: hidden;
       pointer-events: none;
       touch-action: none;

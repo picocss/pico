@@ -42,7 +42,7 @@
         width: 1rem;
         height: 1rem;
         margin-inline-start: calc(var(#{$css-var-prefix}spacing, 1rem) * 0.5);
-        float: right;
+        float: inline-end;
         transform: rotate(-90deg);
         background-image: var(#{$css-var-prefix}icon-chevron);
         background-position: right center;
@@ -74,7 +74,7 @@
       // Type button
       &[role="button"] {
         width: 100%;
-        text-align: left;
+        text-align: start;
 
         // Marker
         &::after {
@@ -104,10 +104,9 @@
   [dir="rtl"] {
     #{$parent-selector} details {
       summary {
-        text-align: right;
+        text-align: start;
 
         &::after {
-          float: left;
           background-position: left center;
         }
       }

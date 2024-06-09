@@ -47,9 +47,8 @@
       padding: 0;
       transform: translate(-50%, 0rem);
       border-top: 0.3rem solid;
-      border-right: 0.3rem solid transparent;
-      border-left: 0.3rem solid transparent;
       border-radius: 0;
+      border-inline: 0.3rem solid transparent;
       background-color: transparent;
       content: "";
       color: var(#{$css-var-prefix}tooltip-background-color);
@@ -100,7 +99,7 @@
       &:after {
         transform: translate(-0.3rem, -50%);
         border: 0.3rem solid transparent;
-        border-right: 0.3rem solid;
+        border-inline-end: 0.3rem solid;
       }
     }
 

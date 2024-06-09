@@ -22,7 +22,7 @@
         width: 1rem;
         height: calc(1rem * var(#{$css-var-prefix}line-height, 1.5));
         margin-inline-start: 0.25rem;
-        float: right;
+        float: inline-start;
         // TODO: find out why we need this magic number (0.2 rem)
         // for the marker to be aligned with the regular select
         transform: rotate(0deg) translateX(0.2rem);
