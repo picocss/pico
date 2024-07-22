@@ -229,6 +229,15 @@ Pico CSS can be used without custom CSS for quick or small projects. However, it
 
 Pico CSS is designed and tested for the latest stable Chrome, Firefox, Edge, and Safari releases. It does not support any version of IE, including IE 11.
 
+The following chart lists support for Pico CSS in major desktop and mobile browsers, based on non-exhaustive testing of the Pico CSS preview page at https://4mrnhq.csb.app/. Tests were performed using [LambdaTest's Real Time browser testing](https://www.lambdatest.com/online-browser-testing) platform. The preview page was chosen because it covers most Pico CSS features. If a browser version successfully loads all of the elements on the preview page with the correct styling, then it is marked as supported.
+
+|             | Chrome            | Firefox           | Microsoft Edge    | Internet Explorer | Opera             | Safari            |
+| ----------- | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- | ----------------- |
+| **Mac**     | Supported (>= 89) | Supported (>= 84) | Supported (>= 89) | -                 | Supported (>= 75) | Supported (>= 14) |
+| **Windows** | Supported (>= 89) | Supported (>= 84) | Supported (>= 89) | Not Supported     | Supported (>= 75) | -                 |
+
+Other browsers which use the WebKit, Blink, or Gecko rendering engines and were released in 2022 or later, including Android versions of Chrome and Firefox, should load Pico CSS correctly in most cases, however no support is provided for older and alternative browsers. On iOS, the earliest version of WebKit compatible with Pico CSS is found in iOS 14.5.
+
 ## Contributing
 
 If you are interested in contributing to Pico CSS, please read our [contributing guidelines](https://github.com/picocss/pico/blob/master/.github/CONTRIBUTING.md).
