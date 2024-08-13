@@ -1528,17 +1528,17 @@ textarea[aria-invalid] {
   background-size: 1rem var(--pico-icon-height) !important;
 }
 
-:where(input, select, textarea, fieldset, .grid) + small {
+:where(input, select, textarea, fieldset, .grid, .dropdown) + small {
   display: block;
   width: 100%;
   margin-top: calc(var(--pico-spacing) * -0.75);
   margin-bottom: var(--pico-spacing);
   color: var(--pico-muted-color);
 }
-:where(input, select, textarea, fieldset, .grid)[aria-invalid=false] + small {
+:where(input, select, textarea, fieldset, .grid, .dropdown)[aria-invalid=false] + small {
   color: var(--pico-ins-color);
 }
-:where(input, select, textarea, fieldset, .grid)[aria-invalid=true] + small {
+:where(input, select, textarea, fieldset, .grid, .dropdown)[aria-invalid=true] + small {
   color: var(--pico-del-color);
 }
 
