@@ -6,6 +6,7 @@
 
 // Default: Light theme
 @mixin theme {
+  color-scheme: light;
   #{$css-var-prefix}background-color: #{$white};
 
   // Text color
@@ -123,18 +124,6 @@
     #{$css-var-prefix}form-element-valid-focus-color: var(
       #{$css-var-prefix}form-element-valid-active-border-color
     );
-
-    // Focus for buttons, radio and select
-    input:is(
-        [type="submit"],
-        [type="button"],
-        [type="reset"],
-        [type="checkbox"],
-        [type="radio"],
-        [type="file"]
-      ) {
-      #{$css-var-prefix}form-element-focus-color: var(#{$css-var-prefix}primary-focus);
-    }
   }
 
   // Switch (input[type="checkbox"][role="switch"])
@@ -207,6 +196,17 @@
     #{$css-var-prefix}icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb(mix($red-500, $zinc-350, 75%))}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
   }
 
-  // Document
-  color-scheme: light;
+  // Focus for buttons, radio and select
+  @if map.get($modules, "forms/basics") {
+    input:is(
+        [type="submit"],
+        [type="button"],
+        [type="reset"],
+        [type="checkbox"],
+        [type="radio"],
+        [type="file"]
+      ) {
+      #{$css-var-prefix}form-element-focus-color: var(#{$css-var-prefix}primary-focus);
+    }
+  }
 }
