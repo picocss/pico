@@ -15,10 +15,6 @@
       list-style-type: none;
       cursor: pointer;
 
-      &:not([role]) {
-        color: var(#{$css-var-prefix}accordion-close-summary-color);
-      }
-
       @if $enable-transitions {
         transition: color var(#{$css-var-prefix}transition);
       }
@@ -69,6 +65,10 @@
           outline-offset: calc(var(#{$css-var-prefix}spacing, 1rem) * 0.5);
           color: var(#{$css-var-prefix}primary);
         }
+      }
+
+      &:not([role]) {
+        color: var(#{$css-var-prefix}accordion-close-summary-color);
       }
 
       // Type button
