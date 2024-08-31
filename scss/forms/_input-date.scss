@@ -57,6 +57,6 @@
   [dir="rtl"]
     #{$parent-selector}
     :is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
-    text-align: right;
+    text-align: end;
   }
 }
