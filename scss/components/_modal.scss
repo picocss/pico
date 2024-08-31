@@ -85,9 +85,9 @@
         display: block;
         width: 1rem;
         height: 1rem;
+        margin-inline-start: auto;
         margin-block-start: calc(var(#{$css-var-prefix}spacing) * -1);
         margin-block-end: var(#{$css-var-prefix}spacing);
-        margin-inline-start: auto;
         border: none;
         background-image: var(#{$css-var-prefix}icon-close);
         background-position: center;

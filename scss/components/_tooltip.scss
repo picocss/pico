@@ -46,10 +46,10 @@
     &::after {
       padding: 0;
       transform: translate(-50%, 0rem);
-      border-block-start: 0.3rem solid;
-      border-inline-end: 0.3rem solid transparent;
-      border-inline-start: 0.3rem solid transparent;
       border-radius: 0;
+      border-inline-start: 0.3rem solid transparent;
+      border-inline-end: 0.3rem solid transparent;
+      border-block-start: 0.3rem solid;
       background-color: transparent;
       content: "";
       color: var(#{$css-var-prefix}tooltip-background-color);

@@ -32,8 +32,8 @@
       @if $enable-semantic-container {
         $first-breakpoint: true;
         width: 100%;
-        margin-inline-end: auto;
         margin-inline-start: auto;
+        margin-inline-end: auto;
         padding: var(#{$css-var-prefix}block-spacing-vertical)
           var(#{$css-var-prefix}block-spacing-horizontal);
 
@@ -44,8 +44,8 @@
                 max-width: map.get($values, "viewport");
                 @if $first-breakpoint {
                   $first-breakpoint: false;
-                  padding-inline-end: 0;
                   padding-inline-start: 0;
+                  padding-inline-end: 0;
                 }
               }
             }

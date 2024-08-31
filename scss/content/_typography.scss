@@ -145,9 +145,9 @@
     display: block;
     margin: var(#{$css-var-prefix}typography-spacing-vertical) 0;
     padding: var(#{$css-var-prefix}spacing);
+    border-inline-start: 0.25rem solid var(#{$css-var-prefix}blockquote-border-color);
+    border-inline-start: 0.25rem solid var(#{$css-var-prefix}blockquote-border-color);
     border-inline-end: none;
-    border-inline-start: 0.25rem solid var(#{$css-var-prefix}blockquote-border-color);
-    border-inline-start: 0.25rem solid var(#{$css-var-prefix}blockquote-border-color);
     border-inline-end: none;
 
     footer {
