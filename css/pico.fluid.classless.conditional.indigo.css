@@ -905,7 +905,7 @@ main {
   background-color: var(--pico-background-color);
   color: var(--pico-color);
   font-weight: var(--pico-font-weight);
-  text-align: left;
+  text-align: start;
   text-align: start;
 }
 
@@ -1536,7 +1536,7 @@ main {
   }
 }
 [dir=rtl] .pico :is([type=date], [type=datetime-local], [type=month], [type=time], [type=week]) {
-  text-align: right;
+  text-align: end;
 }
 
 /**
@@ -1728,7 +1728,7 @@ main {
 }
 .pico details summary[role=button] {
   width: 100%;
-  text-align: left;
+  text-align: start;
 }
 .pico details summary[role=button]::after {
   height: calc(1rem * var(--pico-line-height, 1.5));
@@ -1744,7 +1744,7 @@ main {
 }
 
 [dir=rtl] .pico details summary {
-  text-align: right;
+  text-align: end;
 }
 [dir=rtl] .pico details summary::after {
   float: left;
@@ -1997,7 +1997,7 @@ main {
   float: right;
 }
 .pico dialog article > footer {
-  text-align: right;
+  text-align: end;
 }
 .pico dialog article > footer button,
 .pico dialog article > footer [role=button] {

@@ -1108,7 +1108,7 @@ td {
   background-color: var(--pico-background-color);
   color: var(--pico-color);
   font-weight: var(--pico-font-weight);
-  text-align: left;
+  text-align: start;
   text-align: start;
 }
 
@@ -1739,7 +1739,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
   }
 }
 [dir=rtl] :is([type=date], [type=datetime-local], [type=month], [type=time], [type=week]) {
-  text-align: right;
+  text-align: end;
 }
 
 /**
@@ -1931,7 +1931,7 @@ details summary:focus-visible:not([role]) {
 }
 details summary[role=button] {
   width: 100%;
-  text-align: left;
+  text-align: start;
 }
 details summary[role=button]::after {
   height: calc(1rem * var(--pico-line-height, 1.5));
@@ -1947,7 +1947,7 @@ details[open] > summary::after {
 }
 
 [dir=rtl] details summary {
-  text-align: right;
+  text-align: end;
 }
 [dir=rtl] details summary::after {
   float: left;
@@ -2360,7 +2360,7 @@ dialog article > header .close, dialog article > header :is(a, button)[rel=prev]
   float: right;
 }
 dialog article > footer {
-  text-align: right;
+  text-align: end;
 }
 dialog article > footer button,
 dialog article > footer [role=button] {
