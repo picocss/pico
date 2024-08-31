@@ -8,7 +8,7 @@
 
   #{$parent-selector} details {
     display: block;
-    margin-bottom: var(#{$css-var-prefix}spacing);
+    margin-block-end: var(#{$css-var-prefix}spacing);
 
     summary {
       line-height: 1rem;
@@ -74,7 +74,7 @@
       // Type button
       &[role="button"] {
         width: 100%;
-        text-align: left;
+        text-align: start;
 
         // Marker
         &::after {
@@ -86,7 +86,7 @@
     // Open
     &[open] {
       > summary {
-        margin-bottom: var(#{$css-var-prefix}spacing);
+        margin-block-end: var(#{$css-var-prefix}spacing);
 
         &:not([role]) {
           &:not(:focus) {
@@ -104,7 +104,7 @@
   [dir="rtl"] {
     #{$parent-selector} details {
       summary {
-        text-align: right;
+        text-align: end;
 
         &::after {
           float: left;

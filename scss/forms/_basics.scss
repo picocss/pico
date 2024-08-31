@@ -127,7 +127,7 @@
   #{$parent-selector} fieldset {
     width: 100%;
     margin: 0;
-    margin-bottom: var(#{$css-var-prefix}spacing);
+    margin-block-end: var(#{$css-var-prefix}spacing);
     padding: 0;
     border: 0;
   }
@@ -136,13 +136,13 @@
   #{$parent-selector} label,
   #{$parent-selector} fieldset legend {
     display: block;
-    margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.375);
+    margin-block-end: calc(var(#{$css-var-prefix}spacing) * 0.375);
     color: var(#{$css-var-prefix}color);
     font-weight: var(#{$css-var-prefix}form-label-font-weight, var(#{$css-var-prefix}font-weight));
   }
 
   #{$parent-selector} fieldset legend {
-    margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.5);
+    margin-block-end: calc(var(#{$css-var-prefix}spacing) * 0.5);
   }
 
   // Blocks, 100%
@@ -264,18 +264,18 @@
       ) {
       &[aria-invalid] {
         @if $enable-important {
-          padding-right: calc(
-            var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem
-          ) !important;
-          padding-left: var(#{$css-var-prefix}form-element-spacing-horizontal);
+          padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal);
           padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal) !important;
           padding-inline-end: calc(
             var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem
           ) !important;
+          padding-inline-end: calc(
+            var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem
+          ) !important;
         } @else {
-          padding-right: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
-          padding-left: var(#{$css-var-prefix}form-element-spacing-horizontal);
           padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal);
+          padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal);
+          padding-inline-end: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
           padding-inline-end: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
         }
         background-position: center right 0.75rem;
@@ -381,7 +381,7 @@
   #{$parent-selector} input:not([type="checkbox"], [type="radio"]),
   #{$parent-selector} select,
   #{$parent-selector} textarea {
-    margin-bottom: var(#{$css-var-prefix}spacing);
+    margin-block-end: var(#{$css-var-prefix}spacing);
   }
 
   // Select
@@ -393,9 +393,9 @@
     }
 
     &:not([multiple], [size]) {
-      padding-right: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
-      padding-left: var(#{$css-var-prefix}form-element-spacing-horizontal);
       padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal);
+      padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal);
+      padding-inline-end: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
       padding-inline-end: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
       background-image: var(#{$css-var-prefix}icon-chevron);
       background-position: center right 0.75rem;
@@ -446,8 +446,8 @@
     + small {
       display: block;
       width: 100%;
-      margin-top: calc(var(#{$css-var-prefix}spacing) * -0.75);
-      margin-bottom: var(#{$css-var-prefix}spacing);
+      margin-block-start: calc(var(#{$css-var-prefix}spacing) * -0.75);
+      margin-block-end: var(#{$css-var-prefix}spacing);
       color: var(#{$css-var-prefix}muted-color);
     }
     &[aria-invalid="false"] {
@@ -465,7 +465,7 @@
   // Styles for Input inside a label
   #{$parent-selector} label {
     > :where(input, select, textarea) {
-      margin-top: calc(var(#{$css-var-prefix}spacing) * 0.25);
+      margin-block-start: calc(var(#{$css-var-prefix}spacing) * 0.25);
     }
   }
 }

@@ -581,8 +581,8 @@ main {
 .pico body > main,
 .pico body > footer {
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
   padding: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
 }
 
@@ -590,7 +590,7 @@ main {
  * Section
  */
 .pico section {
-  margin-bottom: var(--pico-block-spacing-vertical);
+  margin-block-end: var(--pico-block-spacing-vertical);
 }
 
 /**
@@ -625,8 +625,8 @@ main {
 .pico pre,
 .pico table,
 .pico ul {
-  margin-top: 0;
-  margin-bottom: var(--pico-typography-spacing-vertical);
+  margin-block-start: 0;
+  margin-block-end: var(--pico-typography-spacing-vertical);
   color: var(--pico-color);
   font-style: normal;
   font-weight: var(--pico-font-weight);
@@ -638,8 +638,8 @@ main {
 .pico h4,
 .pico h5,
 .pico h6 {
-  margin-top: 0;
-  margin-bottom: var(--pico-typography-spacing-vertical);
+  margin-block-start: 0;
+  margin-block-end: var(--pico-typography-spacing-vertical);
   color: var(--pico-color);
   font-weight: var(--pico-font-weight);
   font-size: var(--pico-font-size);
@@ -672,19 +672,19 @@ main {
 }
 
 .pico :where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) ~ :is(h1, h2, h3, h4, h5, h6) {
-  margin-top: var(--pico-typography-spacing-top);
+  margin-block-start: var(--pico-typography-spacing-top);
 }
 
 .pico p {
-  margin-bottom: var(--pico-typography-spacing-vertical);
+  margin-block-end: var(--pico-typography-spacing-vertical);
 }
 
 .pico hgroup {
-  margin-bottom: var(--pico-typography-spacing-vertical);
+  margin-block-end: var(--pico-typography-spacing-vertical);
 }
 .pico hgroup > * {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 .pico hgroup > *:not(:first-child):last-child {
   --pico-color: var(--pico-muted-color);
@@ -693,12 +693,12 @@ main {
 }
 
 .pico :where(ol, ul) li {
-  margin-bottom: calc(var(--pico-typography-spacing-vertical) * 0.25);
+  margin-block-end: calc(var(--pico-typography-spacing-vertical) * 0.25);
 }
 
 .pico :where(dl, ol, ul) :where(dl, ol, ul) {
   margin: 0;
-  margin-top: calc(var(--pico-typography-spacing-vertical) * 0.25);
+  margin-block-start: calc(var(--pico-typography-spacing-vertical) * 0.25);
 }
 
 .pico ul li {
@@ -716,18 +716,18 @@ main {
   display: block;
   margin: var(--pico-typography-spacing-vertical) 0;
   padding: var(--pico-spacing);
-  border-right: none;
-  border-left: 0.25rem solid var(--pico-blockquote-border-color);
   border-inline-start: 0.25rem solid var(--pico-blockquote-border-color);
+  border-inline-start: 0.25rem solid var(--pico-blockquote-border-color);
+  border-inline-end: none;
   border-inline-end: none;
 }
 .pico blockquote footer {
-  margin-top: calc(var(--pico-typography-spacing-vertical) * 0.5);
+  margin-block-start: calc(var(--pico-typography-spacing-vertical) * 0.5);
   color: var(--pico-blockquote-footer-color);
 }
 
 .pico abbr[title] {
-  border-bottom: 1px dotted;
+  border-block-end: 1px dotted;
   text-decoration: none;
   cursor: help;
 }
@@ -861,7 +861,7 @@ main {
 .pico [type=submit],
 .pico [type=reset],
 .pico [type=button] {
-  margin-bottom: var(--pico-spacing);
+  margin-block-end: var(--pico-spacing);
 }
 
 .pico [type=reset],
@@ -901,18 +901,18 @@ main {
 .pico th,
 .pico td {
   padding: calc(var(--pico-spacing) / 2) var(--pico-spacing);
-  border-bottom: var(--pico-border-width) solid var(--pico-table-border-color);
+  border-block-end: var(--pico-border-width) solid var(--pico-table-border-color);
   background-color: var(--pico-background-color);
   color: var(--pico-color);
   font-weight: var(--pico-font-weight);
-  text-align: left;
+  text-align: start;
   text-align: start;
 }
 
 .pico tfoot th,
 .pico tfoot td {
-  border-top: var(--pico-border-width) solid var(--pico-table-border-color);
-  border-bottom: 0;
+  border-block-start: var(--pico-border-width) solid var(--pico-table-border-color);
+  border-block-end: 0;
 }
 
 .pico table.striped tbody tr:nth-child(odd) th,
@@ -994,7 +994,7 @@ main {
 
 .pico pre {
   display: block;
-  margin-bottom: var(--pico-spacing);
+  margin-block-end: var(--pico-spacing);
   overflow-x: auto;
 }
 .pico pre > code {
@@ -1030,7 +1030,7 @@ main {
   height: 0;
   margin: var(--pico-typography-spacing-vertical) 0;
   border: 0;
-  border-top: 1px solid var(--pico-muted-border-color);
+  border-block-start: 1px solid var(--pico-muted-border-color);
   color: inherit;
 }
 
@@ -1130,7 +1130,7 @@ main {
 .pico fieldset {
   width: 100%;
   margin: 0;
-  margin-bottom: var(--pico-spacing);
+  margin-block-end: var(--pico-spacing);
   padding: 0;
   border: 0;
 }
@@ -1138,13 +1138,13 @@ main {
 .pico label,
 .pico fieldset legend {
   display: block;
-  margin-bottom: calc(var(--pico-spacing) * 0.375);
+  margin-block-end: calc(var(--pico-spacing) * 0.375);
   color: var(--pico-color);
   font-weight: var(--pico-form-label-font-weight, var(--pico-font-weight));
 }
 
 .pico fieldset legend {
-  margin-bottom: calc(var(--pico-spacing) * 0.5);
+  margin-block-end: calc(var(--pico-spacing) * 0.5);
 }
 
 .pico input:not([type=checkbox], [type=radio]),
@@ -1226,9 +1226,9 @@ main {
 [type=time],
 [type=week],
 [type=range])[aria-invalid] {
-  padding-right: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem) !important;
-  padding-left: var(--pico-form-element-spacing-horizontal);
+  padding-inline-start: var(--pico-form-element-spacing-horizontal);
   padding-inline-start: var(--pico-form-element-spacing-horizontal) !important;
+  padding-inline-end: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem) !important;
   padding-inline-end: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem) !important;
   background-position: center right 0.75rem;
   background-size: 1rem auto;
@@ -1289,7 +1289,7 @@ main {
 .pico input:not([type=checkbox], [type=radio]),
 .pico select,
 .pico textarea {
-  margin-bottom: var(--pico-spacing);
+  margin-block-end: var(--pico-spacing);
 }
 
 .pico select::-ms-expand {
@@ -1297,9 +1297,9 @@ main {
   background-color: transparent;
 }
 .pico select:not([multiple], [size]) {
-  padding-right: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem);
-  padding-left: var(--pico-form-element-spacing-horizontal);
   padding-inline-start: var(--pico-form-element-spacing-horizontal);
+  padding-inline-start: var(--pico-form-element-spacing-horizontal);
+  padding-inline-end: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem);
   padding-inline-end: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem);
   background-image: var(--pico-icon-chevron);
   background-position: center right 0.75rem;
@@ -1328,8 +1328,8 @@ main {
 .pico :where(input, select, textarea, fieldset) + small {
   display: block;
   width: 100%;
-  margin-top: calc(var(--pico-spacing) * -0.75);
-  margin-bottom: var(--pico-spacing);
+  margin-block-start: calc(var(--pico-spacing) * -0.75);
+  margin-block-end: var(--pico-spacing);
   color: var(--pico-muted-color);
 }
 .pico :where(input, select, textarea, fieldset)[aria-invalid=false] + small {
@@ -1340,7 +1340,7 @@ main {
 }
 
 .pico label > :where(input, select, textarea) {
-  margin-top: calc(var(--pico-spacing) * 0.25);
+  margin-block-start: calc(var(--pico-spacing) * 0.25);
 }
 
 /**
@@ -1359,8 +1359,8 @@ main {
   appearance: none;
   width: 1.25em;
   height: 1.25em;
-  margin-top: -0.125em;
   margin-inline-end: 0.5em;
+  margin-block-start: -0.125em;
   border-width: var(--pico-border-width);
   vertical-align: middle;
   cursor: pointer;
@@ -1383,7 +1383,7 @@ main {
 .pico [type=checkbox] ~ label,
 .pico [type=radio] ~ label {
   display: inline-block;
-  margin-bottom: 0;
+  margin-block-end: 0;
   cursor: pointer;
 }
 .pico [type=checkbox] ~ label:not(:last-of-type),
@@ -1504,7 +1504,7 @@ main {
 .pico input:not([type=checkbox], [type=radio], [type=range], [type=file]):is([type=date], [type=datetime-local], [type=month], [type=time], [type=week]) {
   --pico-icon-position: 0.75rem;
   --pico-icon-width: 1rem;
-  padding-right: calc(var(--pico-icon-width) + var(--pico-icon-position));
+  padding-inline-end: calc(var(--pico-icon-width) + var(--pico-icon-position));
   background-image: var(--pico-icon-date);
   background-position: center right var(--pico-icon-position);
   background-size: var(--pico-icon-width) auto;
@@ -1520,8 +1520,8 @@ main {
 .pico [type=time]::-webkit-calendar-picker-indicator,
 .pico [type=week]::-webkit-calendar-picker-indicator {
   width: var(--pico-icon-width);
-  margin-right: calc(var(--pico-icon-width) * -1);
-  margin-left: var(--pico-icon-position);
+  margin-inline-start: var(--pico-icon-position);
+  margin-inline-end: calc(var(--pico-icon-width) * -1);
   opacity: 0;
 }
 
@@ -1531,12 +1531,12 @@ main {
   .pico [type=month],
   .pico [type=time],
   .pico [type=week] {
-    padding-right: var(--pico-form-element-spacing-horizontal) !important;
+    padding-inline-end: var(--pico-form-element-spacing-horizontal) !important;
     background-image: none !important;
   }
 }
 [dir=rtl] .pico :is([type=date], [type=datetime-local], [type=month], [type=time], [type=week]) {
-  text-align: right;
+  text-align: end;
 }
 
 /**
@@ -1544,15 +1544,15 @@ main {
  */
 .pico [type=file] {
   --pico-color: var(--pico-muted-color);
-  margin-left: calc(var(--pico-outline-width) * -1);
+  margin-inline-start: calc(var(--pico-outline-width) * -1);
   padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) 0;
-  padding-left: var(--pico-outline-width);
+  padding-inline-start: var(--pico-outline-width);
   border: 0;
   border-radius: 0;
   background: none;
 }
 .pico [type=file]::file-selector-button {
-  margin-right: calc(var(--pico-spacing) / 2);
+  margin-inline-end: calc(var(--pico-spacing) / 2);
   padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) var(--pico-form-element-spacing-horizontal);
 }
 .pico [type=file]:is(:hover, :active, :focus)::file-selector-button {
@@ -1602,7 +1602,7 @@ main {
   -webkit-appearance: none;
   width: 1.25rem;
   height: 1.25rem;
-  margin-top: -0.4375rem;
+  margin-block-start: -0.4375rem;
   border: 2px solid var(--pico-range-thumb-border-color);
   border-radius: 50%;
   background-color: var(--pico-range-thumb-color);
@@ -1614,7 +1614,7 @@ main {
   -webkit-appearance: none;
   width: 1.25rem;
   height: 1.25rem;
-  margin-top: -0.4375rem;
+  margin-block-start: -0.4375rem;
   border: 2px solid var(--pico-range-thumb-border-color);
   border-radius: 50%;
   background-color: var(--pico-range-thumb-color);
@@ -1626,7 +1626,7 @@ main {
   -webkit-appearance: none;
   width: 1.25rem;
   height: 1.25rem;
-  margin-top: -0.4375rem;
+  margin-block-start: -0.4375rem;
   border: 2px solid var(--pico-range-thumb-border-color);
   border-radius: 50%;
   background-color: var(--pico-range-thumb-color);
@@ -1681,7 +1681,7 @@ main {
  */
 .pico details {
   display: block;
-  margin-bottom: var(--pico-spacing);
+  margin-block-end: var(--pico-spacing);
 }
 .pico details summary {
   line-height: 1rem;
@@ -1728,13 +1728,13 @@ main {
 }
 .pico details summary[role=button] {
   width: 100%;
-  text-align: left;
+  text-align: start;
 }
 .pico details summary[role=button]::after {
   height: calc(1rem * var(--pico-line-height, 1.5));
 }
 .pico details[open] > summary {
-  margin-bottom: var(--pico-spacing);
+  margin-block-end: var(--pico-spacing);
 }
 .pico details[open] > summary:not([role]):not(:focus) {
   color: var(--pico-accordion-open-summary-color);
@@ -1744,7 +1744,7 @@ main {
 }
 
 [dir=rtl] .pico details summary {
-  text-align: right;
+  text-align: end;
 }
 [dir=rtl] .pico details summary::after {
   float: left;
@@ -1755,7 +1755,7 @@ main {
  * Card (<article>)
  */
 .pico article {
-  margin-bottom: var(--pico-block-spacing-vertical);
+  margin-block-end: var(--pico-block-spacing-vertical);
   padding: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
   border-radius: var(--pico-border-radius);
   background: var(--pico-card-background-color);
@@ -1763,24 +1763,24 @@ main {
 }
 .pico article > header,
 .pico article > footer {
-  margin-right: calc(var(--pico-block-spacing-horizontal) * -1);
-  margin-left: calc(var(--pico-block-spacing-horizontal) * -1);
+  margin-inline-start: calc(var(--pico-block-spacing-horizontal) * -1);
+  margin-inline-end: calc(var(--pico-block-spacing-horizontal) * -1);
   padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
   background-color: var(--pico-card-sectioning-background-color);
 }
 .pico article > header {
-  margin-top: calc(var(--pico-block-spacing-vertical) * -1);
-  margin-bottom: var(--pico-block-spacing-vertical);
-  border-bottom: var(--pico-border-width) solid var(--pico-card-border-color);
-  border-top-right-radius: var(--pico-border-radius);
-  border-top-left-radius: var(--pico-border-radius);
+  margin-block-start: calc(var(--pico-block-spacing-vertical) * -1);
+  margin-block-end: var(--pico-block-spacing-vertical);
+  border-block-end: var(--pico-border-width) solid var(--pico-card-border-color);
+  border-start-start-radius: var(--pico-border-radius);
+  border-end-start-radius: var(--pico-border-radius);
 }
 .pico article > footer {
-  margin-top: var(--pico-block-spacing-vertical);
-  margin-bottom: calc(var(--pico-block-spacing-vertical) * -1);
-  border-top: var(--pico-border-width) solid var(--pico-card-border-color);
-  border-bottom-right-radius: var(--pico-border-radius);
-  border-bottom-left-radius: var(--pico-border-radius);
+  margin-block-start: var(--pico-block-spacing-vertical);
+  margin-block-end: calc(var(--pico-block-spacing-vertical) * -1);
+  border-block-start: var(--pico-border-width) solid var(--pico-card-border-color);
+  border-start-end-radius: var(--pico-border-radius);
+  border-end-end-radius: var(--pico-border-radius);
 }
 
 /**
@@ -1791,7 +1791,7 @@ main {
   display: inline-flex;
   position: relative;
   width: 100%;
-  margin-bottom: var(--pico-spacing);
+  margin-block-end: var(--pico-spacing);
   border-radius: var(--pico-border-radius);
   box-shadow: var(--pico-group-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
   vertical-align: middle;
@@ -1805,7 +1805,7 @@ main {
 .pico [role=group] select {
   position: relative;
   flex: 1 1 auto;
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 .pico [role=search] > *:not(:first-child),
 .pico [role=search] input:not([type=checkbox], [type=radio]):not(:first-child),
@@ -1813,9 +1813,9 @@ main {
 .pico [role=group] > *:not(:first-child),
 .pico [role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
 .pico [role=group] select:not(:first-child) {
-  margin-left: 0;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+  margin-inline-start: 0;
+  border-start-start-radius: 0;
+  border-start-end-radius: 0;
 }
 .pico [role=search] > *:not(:last-child),
 .pico [role=search] input:not([type=checkbox], [type=radio]):not(:last-child),
@@ -1823,8 +1823,8 @@ main {
 .pico [role=group] > *:not(:last-child),
 .pico [role=group] input:not([type=checkbox], [type=radio]):not(:last-child),
 .pico [role=group] select:not(:last-child) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+  border-end-start-radius: 0;
+  border-end-end-radius: 0;
 }
 .pico [role=search] > *:focus,
 .pico [role=search] input:not([type=checkbox], [type=radio]):focus,
@@ -1848,7 +1848,7 @@ main {
 .pico [role=group] [role=button]:not(:first-child),
 .pico [role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
 .pico [role=group] select:not(:first-child) {
-  margin-left: calc(var(--pico-border-width) * -1);
+  margin-inline-start: calc(var(--pico-border-width) * -1);
 }
 .pico [role=search] button,
 .pico [role=search] [type=submit],
@@ -1903,12 +1903,12 @@ main {
 }
 
 .pico [role=search] > *:first-child {
-  border-top-left-radius: 5rem;
-  border-bottom-left-radius: 5rem;
+  border-start-start-radius: 5rem;
+  border-start-end-radius: 5rem;
 }
 .pico [role=search] > *:last-child {
-  border-top-right-radius: 5rem;
-  border-bottom-right-radius: 5rem;
+  border-end-start-radius: 5rem;
+  border-end-end-radius: 5rem;
 }
 
 /**
@@ -1988,32 +1988,32 @@ main {
   }
 }
 .pico dialog article > header > * {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 .pico dialog article > header :is(a, button)[rel=prev] {
   margin: 0;
-  margin-left: var(--pico-spacing);
+  margin-inline-start: var(--pico-spacing);
   padding: 0;
   float: right;
 }
 .pico dialog article > footer {
-  text-align: right;
+  text-align: end;
 }
 .pico dialog article > footer button,
 .pico dialog article > footer [role=button] {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 .pico dialog article > footer button:not(:first-of-type),
 .pico dialog article > footer [role=button]:not(:first-of-type) {
-  margin-left: calc(var(--pico-spacing) * 0.5);
+  margin-inline-start: calc(var(--pico-spacing) * 0.5);
 }
 .pico dialog article :is(a, button)[rel=prev] {
   display: block;
   width: 1rem;
   height: 1rem;
-  margin-top: calc(var(--pico-spacing) * -1);
-  margin-bottom: var(--pico-spacing);
-  margin-left: auto;
+  margin-inline-start: auto;
+  margin-block-start: calc(var(--pico-spacing) * -1);
+  margin-block-end: var(--pico-spacing);
   border: none;
   background-image: var(--pico-icon-close);
   background-position: center;
@@ -2050,17 +2050,17 @@ main {
 .pico nav ol,
 .pico nav ul {
   align-items: center;
-  margin-bottom: 0;
+  margin-block-end: 0;
   padding: 0;
   list-style: none;
 }
 .pico nav ol:first-of-type,
 .pico nav ul:first-of-type {
-  margin-left: calc(var(--pico-nav-element-spacing-horizontal) * -1);
+  margin-inline-start: calc(var(--pico-nav-element-spacing-horizontal) * -1);
 }
 .pico nav ol:last-of-type,
 .pico nav ul:last-of-type {
-  margin-right: calc(var(--pico-nav-element-spacing-horizontal) * -1);
+  margin-inline-end: calc(var(--pico-nav-element-spacing-horizontal) * -1);
 }
 .pico nav li {
   display: inline-block;
@@ -2082,9 +2082,9 @@ main {
 .pico nav li input:not([type=checkbox], [type=radio], [type=range], [type=file]),
 .pico nav li select {
   height: auto;
-  margin-right: inherit;
-  margin-bottom: 0;
-  margin-left: inherit;
+  margin-inline-start: inherit;
+  margin-inline-end: inherit;
+  margin-block-end: 0;
   padding: calc(var(--pico-nav-link-spacing-vertical) - var(--pico-border-width) * 2) var(--pico-nav-link-spacing-horizontal);
 }
 .pico nav[aria-label=breadcrumb] {
@@ -2151,7 +2151,7 @@ main {
   appearance: none;
   width: 100%;
   height: 0.5rem;
-  margin-bottom: calc(var(--pico-spacing) * 0.5);
+  margin-block-end: calc(var(--pico-spacing) * 0.5);
   overflow: hidden;
   border: 0;
   border-radius: var(--pico-border-radius);
@@ -2204,7 +2204,7 @@ main {
   position: relative;
 }
 .pico [data-tooltip]:not(a, button, input) {
-  border-bottom: 1px dotted;
+  border-block-end: 1px dotted;
   text-decoration: none;
   cursor: help;
 }
@@ -2233,10 +2233,10 @@ main {
 .pico [data-tooltip][data-placement=top]::after, .pico [data-tooltip]::after {
   padding: 0;
   transform: translate(-50%, 0rem);
-  border-top: 0.3rem solid;
-  border-right: 0.3rem solid transparent;
-  border-left: 0.3rem solid transparent;
   border-radius: 0;
+  border-inline-start: 0.3rem solid transparent;
+  border-inline-end: 0.3rem solid transparent;
+  border-block-start: 0.3rem solid;
   background-color: transparent;
   content: "";
   color: var(--pico-tooltip-background-color);
@@ -2249,7 +2249,7 @@ main {
 .pico [data-tooltip][data-placement=bottom]:after {
   transform: translate(-50%, -0.3rem);
   border: 0.3rem solid transparent;
-  border-bottom: 0.3rem solid;
+  border-block-end: 0.3rem solid;
 }
 .pico [data-tooltip][data-placement=left]::before, .pico [data-tooltip][data-placement=left]::after {
   top: 50%;
@@ -2261,7 +2261,7 @@ main {
 .pico [data-tooltip][data-placement=left]:after {
   transform: translate(0.3rem, -50%);
   border: 0.3rem solid transparent;
-  border-left: 0.3rem solid;
+  border-inline-start: 0.3rem solid;
 }
 .pico [data-tooltip][data-placement=right]::before, .pico [data-tooltip][data-placement=right]::after {
   top: 50%;
@@ -2273,7 +2273,7 @@ main {
 .pico [data-tooltip][data-placement=right]:after {
   transform: translate(-0.3rem, -50%);
   border: 0.3rem solid transparent;
-  border-right: 0.3rem solid;
+  border-inline-end: 0.3rem solid;
 }
 .pico [data-tooltip]:focus::before, .pico [data-tooltip]:focus::after, .pico [data-tooltip]:hover::before, .pico [data-tooltip]:hover::after {
   opacity: 1;

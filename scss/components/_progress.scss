@@ -31,7 +31,7 @@
     appearance: none;
     width: 100%;
     height: 0.5rem;
-    margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.5);
+    margin-block-end: calc(var(#{$css-var-prefix}spacing) * 0.5);
     overflow: hidden;
 
     // Remove Firefox and Opera border

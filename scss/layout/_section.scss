@@ -7,6 +7,6 @@
    */
 
   #{$parent-selector} section {
-    margin-bottom: var(#{$css-var-prefix}block-spacing-vertical);
+    margin-block-end: var(#{$css-var-prefix}block-spacing-vertical);
   }
 }

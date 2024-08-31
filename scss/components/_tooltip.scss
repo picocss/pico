@@ -10,7 +10,7 @@
     position: relative;
 
     &:not(a, button, input) {
-      border-bottom: 1px dotted;
+      border-block-end: 1px dotted;
       text-decoration: none;
       cursor: help;
     }
@@ -46,10 +46,10 @@
     &::after {
       padding: 0;
       transform: translate(-50%, 0rem);
-      border-top: 0.3rem solid;
-      border-right: 0.3rem solid transparent;
-      border-left: 0.3rem solid transparent;
       border-radius: 0;
+      border-inline-start: 0.3rem solid transparent;
+      border-inline-end: 0.3rem solid transparent;
+      border-block-start: 0.3rem solid;
       background-color: transparent;
       content: "";
       color: var(#{$css-var-prefix}tooltip-background-color);
@@ -66,7 +66,7 @@
       &:after {
         transform: translate(-50%, -0.3rem);
         border: 0.3rem solid transparent;
-        border-bottom: 0.3rem solid;
+        border-block-end: 0.3rem solid;
       }
     }
 
@@ -83,7 +83,7 @@
       &:after {
         transform: translate(0.3rem, -50%);
         border: 0.3rem solid transparent;
-        border-left: 0.3rem solid;
+        border-inline-start: 0.3rem solid;
       }
     }
 
@@ -100,7 +100,7 @@
       &:after {
         transform: translate(-0.3rem, -50%);
         border: 0.3rem solid transparent;
-        border-right: 0.3rem solid;
+        border-inline-end: 0.3rem solid;
       }
     }
 

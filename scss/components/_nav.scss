@@ -30,15 +30,15 @@
     ol,
     ul {
       align-items: center;
-      margin-bottom: 0;
+      margin-block-end: 0;
       padding: 0;
       list-style: none;
 
       &:first-of-type {
-        margin-left: calc(var(#{$css-var-prefix}nav-element-spacing-horizontal) * -1);
+        margin-inline-start: calc(var(#{$css-var-prefix}nav-element-spacing-horizontal) * -1);
       }
       &:last-of-type {
-        margin-right: calc(var(#{$css-var-prefix}nav-element-spacing-horizontal) * -1);
+        margin-inline-end: calc(var(#{$css-var-prefix}nav-element-spacing-horizontal) * -1);
       }
     }
 
@@ -68,9 +68,9 @@
       input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
       select {
         height: auto;
-        margin-right: inherit;
-        margin-bottom: 0;
-        margin-left: inherit;
+        margin-inline-start: inherit;
+        margin-inline-end: inherit;
+        margin-block-end: 0;
         padding: calc(
             var(#{$css-var-prefix}nav-link-spacing-vertical) -
               (var(#{$css-var-prefix}border-width) * 2)
