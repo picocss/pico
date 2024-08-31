@@ -25,7 +25,7 @@ $border-thumb: 2px;
   -webkit-appearance: none;
   width: $height-thumb;
   height: $height-thumb;
-  margin-top: #{(-($height-thumb * 0.5) + ($height-track * 0.5))};
+  margin-block-start: #{(-($height-thumb * 0.5) + ($height-track * 0.5))};
   border: $border-thumb solid var(#{$css-var-prefix}range-thumb-border-color);
   border-radius: 50%;
   background-color: var(#{$css-var-prefix}range-thumb-color);

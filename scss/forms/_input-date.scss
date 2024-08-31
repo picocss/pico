@@ -11,7 +11,7 @@
     &:is([type="date"], [type="datetime-local"], [type="month"], [type="time"], [type="week"]) {
       #{$css-var-prefix}icon-position: 0.75rem;
       #{$css-var-prefix}icon-width: 1rem;
-      padding-right: calc(var(#{$css-var-prefix}icon-width) + var(#{$css-var-prefix}icon-position));
+      padding-inline-end: calc(var(#{$css-var-prefix}icon-width) + var(#{$css-var-prefix}icon-position));
       background-image: var(#{$css-var-prefix}icon-date);
       background-position: center right var(#{$css-var-prefix}icon-position);
       background-size: var(#{$css-var-prefix}icon-width) auto;
@@ -32,8 +32,8 @@
   #{$parent-selector} [type="week"] {
     &::-webkit-calendar-picker-indicator {
       width: var(#{$css-var-prefix}icon-width);
-      margin-right: calc(var(#{$css-var-prefix}icon-width) * -1);
-      margin-left: var(#{$css-var-prefix}icon-position);
+      margin-inline-end: calc(var(#{$css-var-prefix}icon-width) * -1);
+      margin-inline-start: var(#{$css-var-prefix}icon-position);
       opacity: 0;
     }
   }
@@ -46,7 +46,7 @@
       #{$parent-selector} [type="month"],
       #{$parent-selector} [type="time"],
       #{$parent-selector} [type="week"] {
-        padding-right: var(#{$css-var-prefix}form-element-spacing-horizontal) !important;
+        padding-inline-end: var(#{$css-var-prefix}form-element-spacing-horizontal) !important;
         background-image: none !important;
       }
     }

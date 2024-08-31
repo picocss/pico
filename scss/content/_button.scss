@@ -88,7 +88,7 @@
   #{$parent-selector} [type="submit"],
   #{$parent-selector} [type="reset"],
   #{$parent-selector} [type="button"] {
-    margin-bottom: var(#{$css-var-prefix}spacing);
+    margin-block-end: var(#{$css-var-prefix}spacing);
   }
 
   // .secondary, .contrast & .outline

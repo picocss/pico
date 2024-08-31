@@ -8,7 +8,7 @@
 
   #{$parent-selector} details {
     display: block;
-    margin-bottom: var(#{$css-var-prefix}spacing);
+    margin-block-end: var(#{$css-var-prefix}spacing);
 
     summary {
       line-height: 1rem;
@@ -86,7 +86,7 @@
     // Open
     &[open] {
       > summary {
-        margin-bottom: var(#{$css-var-prefix}spacing);
+        margin-block-end: var(#{$css-var-prefix}spacing);
 
         &:not([role]) {
           &:not(:focus) {

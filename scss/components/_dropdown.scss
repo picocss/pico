@@ -10,7 +10,7 @@
   // ––––––––––––––––––––
   #{$parent-selector} details.dropdown {
     position: relative;
-    border-bottom: none;
+    border-block-end: none;
 
     // Marker
     // ––––––––––––––––––––
@@ -40,7 +40,7 @@
   // ––––––––––––––––––––
   #{$parent-selector} nav details.dropdown {
     // Override height
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
 
   // Bouton as a select
@@ -165,7 +165,7 @@
     width: 100%;
     min-width: fit-content;
     margin: 0;
-    margin-top: var(#{$css-var-prefix}outline-width);
+    margin-block-start: var(#{$css-var-prefix}outline-width);
     padding: 0;
     border: var(#{$css-var-prefix}border-width) solid var(#{$css-var-prefix}dropdown-border-color);
     border-radius: var(#{$css-var-prefix}border-radius);
@@ -188,17 +188,17 @@
 
     li {
       width: 100%;
-      margin-bottom: 0;
+      margin-block-end: 0;
       padding: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5)
         var(#{$css-var-prefix}form-element-spacing-horizontal);
       list-style: none;
 
       &:first-of-type {
-        margin-top: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
+        margin-block-start: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
       }
 
       &:last-of-type {
-        margin-bottom: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
+        margin-block-end: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
       }
 
       a {
@@ -237,7 +237,7 @@
   // inside container type accordion
   // ––––––––––––––––––––
   #{$parent-selector} details.dropdown[open] summary {
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
 
   // Menu opened
@@ -275,6 +275,6 @@
   // Label
   // ––––––––––––––––––––
   #{$parent-selector} label > details.dropdown {
-    margin-top: calc(var(#{$css-var-prefix}spacing) * 0.25);
+    margin-block-start: calc(var(#{$css-var-prefix}spacing) * 0.25);
   }
 }

@@ -27,7 +27,7 @@
   #{$parent-selector} th,
   #{$parent-selector} td {
     padding: calc(var(#{$css-var-prefix}spacing) / 2) var(#{$css-var-prefix}spacing);
-    border-bottom: var(#{$css-var-prefix}border-width)
+    border-block-end: var(#{$css-var-prefix}border-width)
       solid
       var(#{$css-var-prefix}table-border-color);
     background-color: var(#{$css-var-prefix}background-color);
@@ -41,10 +41,10 @@
   #{$parent-selector} tfoot {
     th,
     td {
-      border-top: var(#{$css-var-prefix}border-width)
+      border-block-start: var(#{$css-var-prefix}border-width)
         solid
         var(#{$css-var-prefix}table-border-color);
-      border-bottom: 0;
+      border-block-end: 0;
     }
   }
 

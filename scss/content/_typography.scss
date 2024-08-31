@@ -43,8 +43,8 @@
   #{$parent-selector} pre,
   #{$parent-selector} table,
   #{$parent-selector} ul {
-    margin-top: 0;
-    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
+    margin-block-start: 0;
+    margin-block-end: var(#{$css-var-prefix}typography-spacing-vertical);
     color: var(#{$css-var-prefix}color);
     font-style: normal;
     font-weight: var(#{$css-var-prefix}font-weight);
@@ -57,8 +57,8 @@
   #{$parent-selector} h4,
   #{$parent-selector} h5,
   #{$parent-selector} h6 {
-    margin-top: 0;
-    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
+    margin-block-start: 0;
+    margin-block-end: var(#{$css-var-prefix}typography-spacing-vertical);
     color: var(#{$css-var-prefix}color);
     font-weight: var(#{$css-var-prefix}font-weight);
     font-size: var(#{$css-var-prefix}font-size);
@@ -89,22 +89,22 @@
   #{$parent-selector}
     :where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) {
     ~ :is(h1, h2, h3, h4, h5, h6) {
-      margin-top: var(#{$css-var-prefix}typography-spacing-top);
+      margin-block-start: var(#{$css-var-prefix}typography-spacing-top);
     }
   }
 
   // Paragraphs
   #{$parent-selector} p {
-    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
+    margin-block-end: var(#{$css-var-prefix}typography-spacing-vertical);
   }
 
   // Heading group
   #{$parent-selector} hgroup {
-    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
+    margin-block-end: var(#{$css-var-prefix}typography-spacing-vertical);
 
     > * {
-      margin-top: 0;
-      margin-bottom: 0;
+      margin-block-start: 0;
+      margin-block-end: 0;
     }
 
     > *:not(:first-child):last-child {
@@ -117,7 +117,7 @@
   // Lists
   #{$parent-selector} :where(ol, ul) {
     li {
-      margin-bottom: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.25);
+      margin-block-end: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.25);
     }
   }
 
@@ -125,7 +125,7 @@
   // 1. Remove the margin on nested lists in Chrome, Edge, IE, and Safari
   #{$parent-selector} :where(dl, ol, ul) :where(dl, ol, ul) {
     margin: 0; // 1
-    margin-top: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.25);
+    margin-block-start: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.25);
   }
 
   #{$parent-selector} ul li {
@@ -145,13 +145,13 @@
     display: block;
     margin: var(#{$css-var-prefix}typography-spacing-vertical) 0;
     padding: var(#{$css-var-prefix}spacing);
-    border-right: none;
-    border-left: 0.25rem solid var(#{$css-var-prefix}blockquote-border-color);
+    border-inline-end: none;
+    border-inline-start: 0.25rem solid var(#{$css-var-prefix}blockquote-border-color);
     border-inline-start: 0.25rem solid var(#{$css-var-prefix}blockquote-border-color);
     border-inline-end: none;
 
     footer {
-      margin-top: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.5);
+      margin-block-start: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.5);
       color: var(#{$css-var-prefix}blockquote-footer-color);
     }
   }
@@ -159,7 +159,7 @@
   // Abbreviations
   // 1. Remove underline decoration in Chrome, Edge, IE, Opera, and Safari
   #{$parent-selector} abbr[title] {
-    border-bottom: 1px dotted;
+    border-block-end: 1px dotted;
     text-decoration: none; // 1
     cursor: help;
   }

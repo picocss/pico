@@ -22,7 +22,7 @@
     appearance: none;
     width: 1.25em;
     height: 1.25em;
-    margin-top: -0.125em;
+    margin-block-start: -0.125em;
     margin-inline-end: 0.5em;
     border-width: var(#{$css-var-prefix}border-width);
     vertical-align: middle;
@@ -45,7 +45,7 @@
 
     & ~ label {
       display: inline-block;
-      margin-bottom: 0;
+      margin-block-end: 0;
       cursor: pointer;
 
       &:not(:last-of-type) {

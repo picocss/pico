@@ -17,7 +17,7 @@
     height: 0; // 2
     margin: var(#{$css-var-prefix}typography-spacing-vertical) 0;
     border: 0;
-    border-top: 1px solid var(#{$css-var-prefix}muted-border-color);
+    border-block-start: 1px solid var(#{$css-var-prefix}muted-border-color);
     color: inherit; // 1
   }
 
