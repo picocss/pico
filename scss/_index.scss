@@ -43,6 +43,7 @@
 @use "components/nav"; // nav
 @use "components/progress"; // progress
 @use "components/tooltip"; // data-tooltip
+@use "components/notification"; // dialog[role="alert"]
 
 // Utilities
 @use "utilities/accessibility"; // -ms-touch-action, aria-*
