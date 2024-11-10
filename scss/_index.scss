@@ -12,6 +12,7 @@
 @use "layout/section"; // section
 @use "layout/container"; // .container, .container-fluid
 @use "layout/grid"; // .grid
+@use "layout/row"; // .row, .row-fluid, .offset-*, .span-*
 @use "layout/overflow-auto"; // .overflow-auto
 
 // Content

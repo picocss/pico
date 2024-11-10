@@ -4,7 +4,7 @@
 // ––––––––––––––––––––
 
 // Theme color
-$theme-color: "azure" !default; // amber, azure, blue, cyan, fuchsia, green, grey, indigo, jade, lime, orange, pink, pumpkin, purple, red, sand, slate, violet, yellow, zinc
+$theme-color: "lime" !default; // amber, azure, blue, cyan, fuchsia, green, grey, indigo, jade, lime, orange, pink, pumpkin, purple, red, sand, slate, violet, yellow, zinc
 
 // Prefix for CSS variables
 $css-var-prefix: "--pico-" !default; // Must start with "--"
@@ -42,6 +42,8 @@ $enable-important: true !default;
 // If defined, all HTML tags are wrapped with this selector
 // :root is not wrapped
 $parent-selector: "" !default;
+
+$row-columns: 12 !default;
 
 // Breakpoints, viewports and root font size
 $breakpoints: () !default;
@@ -108,6 +110,7 @@ $modules: map.merge(
     "layout/container": true,
     "layout/section": true,
     "layout/grid": true,
+    "layout/row": true,
     "layout/overflow-auto": true,
 
     // Content
