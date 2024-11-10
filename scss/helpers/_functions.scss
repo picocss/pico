@@ -1,6 +1,13 @@
+@use "sass:color";
+@use "sass:string";
+
 // Display color as RGB
 @function display-rgb($color) {
-  @return unquote("rgb(" + red($color) + ", " + green($color) + ", " + blue($color) + ")");
+  @return string.unquote(
+    "rgb(" + color.channel($color, "red", $space: rgb) + ", " +
+      color.channel($color, "green", $space: rgb) + ", " +
+      color.channel($color, "blue", $space: rgb) + ")"
+  );
 }
 
 // Generate a shadow layer
