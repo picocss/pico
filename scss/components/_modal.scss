@@ -30,6 +30,11 @@
     background-color: var(#{$css-var-prefix}modal-overlay-background-color);
     color: var(#{$css-var-prefix}color);
 
+    @if $enable-transitions {
+      transform: scale(1);
+      transition: transform var(#{$css-var-prefix}transition);
+    }
+
     // Content
     > article {
       $close-selector: if(
@@ -75,11 +80,6 @@
             margin-left: calc(var(#{$css-var-prefix}spacing) * 0.5);
           }
         }
-      }
-
-      @if $enable-transitions {
-        transform: scale(1);
-        transition: transform var(#{$css-var-prefix}transition);
       }
 
       // Close icon

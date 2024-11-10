@@ -24,18 +24,14 @@
     #{$css-var-prefix}font-size: 100%;
     #{$css-var-prefix}text-underline-offset: 0.1rem;
 
-    & {
-      // Borders
-      #{$css-var-prefix}border-radius: 0.25rem;
-      #{$css-var-prefix}border-width: 0.0625rem;
-      #{$css-var-prefix}outline-width: 0.125rem;
+    #{$css-var-prefix}border-radius: 0.25rem;
+    #{$css-var-prefix}border-width: 0.0625rem;
+    #{$css-var-prefix}outline-width: 0.125rem;
+    // Transitions
+    #{$css-var-prefix}transition: 0.2s ease-in-out;
 
-      // Transitions
-      #{$css-var-prefix}transition: 0.2s ease-in-out;
-
-      // Spacings
-      #{$css-var-prefix}spacing: 1rem;
-    }
+    // Spacings
+    #{$css-var-prefix}spacing: 1rem;
 
     // Spacings for typography elements
     @if map.get($modules, "content/typography") {

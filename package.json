@@ -34,7 +34,7 @@
     "build": "run-s start lint \"build:*\" done --silent",
     "dev": "nodemon -q --watch scss/ --ext scss --exec 'run-s build'",
     "lint": "run-s \"lint:*\" --silent",
-    "lint:prettier": "prettier --write --log-level silent 'scss/**/*.scss'",
+    "lint:prettier": "prettier --write --log-level silent \"scss/**/*.scss\"",
     "lint:sort-scss": "postcss --config scss ./scss/**/*.scss --replace",
     "build:css": "sass --no-source-map --style expanded --no-error-css scss/:css/",
     "build:themes": "node scripts/build-themes",
