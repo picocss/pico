@@ -79,7 +79,7 @@
     }
   }
 
-  // Switchs
+  // Switches
   #{$parent-selector} [type="checkbox"][role="switch"] {
     #{$css-var-prefix}background-color: var(#{$css-var-prefix}switch-background-color);
     #{$css-var-prefix}color: var(#{$css-var-prefix}switch-color);
