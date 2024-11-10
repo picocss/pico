@@ -30,3 +30,4 @@ Thumbs.db
 
 # Pico
 .pico
+package-lock.json

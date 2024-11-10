@@ -438,8 +438,13 @@
       }
     }
   }
+
   @if map.get($modules, "layout/grid") and $enable-classes {
     $helper-previous-tags: $helper-previous-tags + ", .grid";
+  }
+
+  @if map.get($modules, "components/dropdown") and $enable-classes {
+    $helper-previous-tags: $helper-previous-tags + ", .dropdown";
   }
 
   #{$parent-selector} :where(#{$helper-previous-tags}) {
