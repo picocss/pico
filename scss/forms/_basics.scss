@@ -115,7 +115,7 @@
   // ––––––––––––––––––––
 
   // Force height for alternatives input types
-  #{$parent-selector} input:not([type="checkbox"], [type="radio"], [type="range"]) {
+  #{$parent-selector} input:not([type="checkbox"], [type="radio"], [type="range"], [type="date"]) {
     height: calc(
       (1rem * var(#{$css-var-prefix}line-height)) +
         (var(#{$css-var-prefix}form-element-spacing-vertical) * 2) +
