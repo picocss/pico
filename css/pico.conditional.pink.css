@@ -725,6 +725,26 @@ main {
   grid-template-columns: repeat(12, 1fr);
   gap: var(--pico-grid-row-gap) var(--pico-grid-column-gap);
 }
+.row-fluid.align-center,
+.row.align-center {
+  align-items: center;
+}
+.row-fluid.align-start,
+.row.align-start {
+  align-items: start;
+}
+.row-fluid.align-end,
+.row.align-end {
+  align-items: end;
+}
+.row-fluid > [class*=col] > *,
+.row-fluid > [class|=col] > *,
+.row-fluid > [class~=col] > *,
+.row > [class*=col] > *,
+.row > [class|=col] > *,
+.row > [class~=col] > * {
+  margin: calc(var(--pico-block-spacing-vertical) * 0.5) auto;
+}
 
 .row {
   max-width: 1200px;
@@ -828,7 +848,7 @@ main {
   grid-column-start: 12;
 }
 
-@media (max-width: 510px) {
+@media (min-width: 510px) {
   .col-sm-1 {
     grid-column-end: span 1;
   }
@@ -902,7 +922,7 @@ main {
     grid-column-start: 12;
   }
 }
-@media (max-width: 700px) {
+@media (min-width: 700px) {
   .col-md-1 {
     grid-column-end: span 1;
   }
@@ -976,7 +996,7 @@ main {
     grid-column-start: 12;
   }
 }
-@media (max-width: 950px) {
+@media (min-width: 950px) {
   .col-lg-1 {
     grid-column-end: span 1;
   }
@@ -1050,7 +1070,7 @@ main {
     grid-column-start: 12;
   }
 }
-@media (max-width: 1200px) {
+@media (min-width: 1200px) {
   .col-xl-1 {
     grid-column-end: span 1;
   }
@@ -1124,7 +1144,7 @@ main {
     grid-column-start: 12;
   }
 }
-@media (max-width: 1450px) {
+@media (min-width: 1450px) {
   .col-xxl-1 {
     grid-column-end: span 1;
   }
@@ -1742,7 +1762,8 @@ main {
 .pico input,
 .pico optgroup,
 .pico select,
-.pico textarea {
+.pico textarea,
+.pico [role=group] > label {
   margin: 0;
   font-size: 1rem;
   line-height: var(--pico-line-height);
@@ -1816,7 +1837,8 @@ main {
   border-width: 0;
 }
 
-.pico input:not([type=checkbox], [type=radio], [type=range], [type=date]) {
+.pico input:not([type=checkbox], [type=radio], [type=range], [type=date]),
+.pico [role=group] > label {
   height: calc(1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 2 + var(--pico-border-width) * 2);
 }
 
@@ -1849,7 +1871,8 @@ main {
 
 .pico input:not([type=checkbox], [type=radio], [type=range], [type=file]),
 .pico select,
-.pico textarea {
+.pico textarea,
+.pico [role=group] > label {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1858,7 +1881,8 @@ main {
 
 .pico input,
 .pico select,
-.pico textarea {
+.pico textarea,
+.pico [role=group] > label {
   --pico-background-color: var(--pico-form-element-background-color);
   --pico-border-color: var(--pico-form-element-border-color);
   --pico-color: var(--pico-form-element-color);
@@ -1899,6 +1923,7 @@ main {
 }
 
 .pico input:not([type=submit], [type=button], [type=reset])[disabled],
+.pico [role=group] > label,
 .pico select[disabled],
 .pico textarea[disabled],
 .pico label[aria-disabled=true],
@@ -1907,7 +1932,8 @@ main {
   pointer-events: none;
 }
 
-.pico label[aria-disabled=true] input[disabled] {
+.pico label[aria-disabled=true] input[disabled],
+.pico [role=group] > label {
   opacity: 1;
 }
 
@@ -1974,14 +2000,16 @@ main {
 .pico input::-webkit-input-placeholder,
 .pico textarea::placeholder,
 .pico textarea::-webkit-input-placeholder,
-.pico select:invalid {
+.pico select:invalid,
+.pico [role=group] > label {
   color: var(--pico-form-element-placeholder-color);
   opacity: 1;
 }
 
 .pico input:not([type=checkbox], [type=radio]),
 .pico select,
-.pico textarea {
+.pico textarea,
+.pico [role=group] > label {
   margin-bottom: var(--pico-spacing);
 }
 
@@ -2376,6 +2404,12 @@ main {
   display: block;
   margin-bottom: var(--pico-spacing);
 }
+.pico details:not([open]) summary ~ * {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height var(--pico-transition), opacity var(--pico-transition);
+}
 .pico details summary {
   line-height: 1rem;
   list-style-type: none;
@@ -2434,6 +2468,11 @@ main {
 }
 .pico details[open] > summary::after {
   transform: rotate(0);
+}
+.pico details[open] > summary ~ * {
+  max-height: 100; /* Initial max height for content */
+  opacity: 1;
+  transition: max-height var(--pico-transition), opacity var(--pico-transition);
 }
 
 [dir=rtl] .pico details summary {
@@ -2650,12 +2689,19 @@ main {
   vertical-align: middle;
   transition: box-shadow var(--pico-transition);
 }
+.pico [role=search] > label,
+.pico [role=group] > label {
+  background-color: var(--pico-secondary-background);
+  color: var(--pico-secondary-inverse);
+}
 .pico [role=search] > *,
 .pico [role=search] input:not([type=checkbox], [type=radio]),
 .pico [role=search] select,
+.pico [role=search] label,
 .pico [role=group] > *,
 .pico [role=group] input:not([type=checkbox], [type=radio]),
-.pico [role=group] select {
+.pico [role=group] select,
+.pico [role=group] label {
   position: relative;
   flex: 1 1 auto;
   margin-bottom: 0;
@@ -2663,9 +2709,11 @@ main {
 .pico [role=search] > *:not(:first-child),
 .pico [role=search] input:not([type=checkbox], [type=radio]):not(:first-child),
 .pico [role=search] select:not(:first-child),
+.pico [role=search] label:not(:first-child),
 .pico [role=group] > *:not(:first-child),
 .pico [role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
-.pico [role=group] select:not(:first-child) {
+.pico [role=group] select:not(:first-child),
+.pico [role=group] label:not(:first-child) {
   margin-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -2673,18 +2721,22 @@ main {
 .pico [role=search] > *:not(:last-child),
 .pico [role=search] input:not([type=checkbox], [type=radio]):not(:last-child),
 .pico [role=search] select:not(:last-child),
+.pico [role=search] label:not(:last-child),
 .pico [role=group] > *:not(:last-child),
 .pico [role=group] input:not([type=checkbox], [type=radio]):not(:last-child),
-.pico [role=group] select:not(:last-child) {
+.pico [role=group] select:not(:last-child),
+.pico [role=group] label:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 .pico [role=search] > *:focus,
 .pico [role=search] input:not([type=checkbox], [type=radio]):focus,
 .pico [role=search] select:focus,
+.pico [role=search] label:focus,
 .pico [role=group] > *:focus,
 .pico [role=group] input:not([type=checkbox], [type=radio]):focus,
-.pico [role=group] select:focus {
+.pico [role=group] select:focus,
+.pico [role=group] label:focus {
   z-index: 2;
 }
 .pico [role=search] button:not(:first-child),
@@ -2694,13 +2746,15 @@ main {
 .pico [role=search] [role=button]:not(:first-child),
 .pico [role=search] input:not([type=checkbox], [type=radio]):not(:first-child),
 .pico [role=search] select:not(:first-child),
+.pico [role=search] label:not(:first-child),
 .pico [role=group] button:not(:first-child),
 .pico [role=group] [type=submit]:not(:first-child),
 .pico [role=group] [type=reset]:not(:first-child),
 .pico [role=group] [type=button]:not(:first-child),
 .pico [role=group] [role=button]:not(:first-child),
 .pico [role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
-.pico [role=group] select:not(:first-child) {
+.pico [role=group] select:not(:first-child),
+.pico [role=group] label:not(:first-child) {
   margin-left: calc(var(--pico-border-width) * -1);
 }
 .pico [role=search] button,
@@ -2708,11 +2762,13 @@ main {
 .pico [role=search] [type=reset],
 .pico [role=search] [type=button],
 .pico [role=search] [role=button],
+.pico [role=search] label,
 .pico [role=group] button,
 .pico [role=group] [type=submit],
 .pico [role=group] [type=reset],
 .pico [role=group] [type=button],
-.pico [role=group] [role=button] {
+.pico [role=group] [role=button],
+.pico [role=group] label {
   width: auto;
 }
 @supports selector(:has(*)) {
@@ -2722,8 +2778,10 @@ main {
   }
   .pico [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) input:not([type=checkbox], [type=radio]),
   .pico [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) select,
+  .pico [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) label,
   .pico [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) input:not([type=checkbox], [type=radio]),
-  .pico [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) select {
+  .pico [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) select,
+  .pico [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) label {
     border-color: transparent;
   }
   .pico [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus),
@@ -2734,10 +2792,12 @@ main {
   .pico [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=submit],
   .pico [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=button],
   .pico [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) [role=button],
+  .pico [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) label,
   .pico [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) button,
   .pico [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=submit],
   .pico [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=button],
-  .pico [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [role=button] {
+  .pico [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [role=button],
+  .pico [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) label {
     --pico-button-box-shadow: 0 0 0 var(--pico-border-width) var(--pico-primary-border);
     --pico-button-hover-box-shadow: 0 0 0 var(--pico-border-width) var(--pico-primary-hover-border);
   }
@@ -2746,11 +2806,13 @@ main {
   .pico [role=search] [type=reset]:focus,
   .pico [role=search] [type=button]:focus,
   .pico [role=search] [role=button]:focus,
+  .pico [role=search] label:focus,
   .pico [role=group] button:focus,
   .pico [role=group] [type=submit]:focus,
   .pico [role=group] [type=reset]:focus,
   .pico [role=group] [type=button]:focus,
-  .pico [role=group] [role=button]:focus {
+  .pico [role=group] [role=button]:focus,
+  .pico [role=group] label:focus {
     box-shadow: none;
   }
 }

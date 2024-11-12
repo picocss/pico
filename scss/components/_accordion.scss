@@ -10,6 +10,15 @@
     display: block;
     margin-bottom: var(#{$css-var-prefix}spacing);
 
+    &:not([open]) summary ~ * {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition:
+        max-height var(#{$css-var-prefix}transition),
+        opacity var(#{$css-var-prefix}transition);
+    }
+
     summary {
       line-height: 1rem;
       list-style-type: none;
@@ -82,7 +91,9 @@
         }
       }
     }
-
+    //!
+    //!
+    //!
     // Open
     &[open] {
       > summary {
@@ -96,6 +107,14 @@
 
         &::after {
           transform: rotate(0);
+        }
+
+        ~ * {
+          max-height: 100; /* Initial max height for content */
+          opacity: 1;
+          transition:
+            max-height var(#{$css-var-prefix}transition),
+            opacity var(#{$css-var-prefix}transition);
         }
       }
     }
