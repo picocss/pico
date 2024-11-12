@@ -11,6 +11,11 @@
   // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
   // ––––––––––––––––––––
 
+  // add smooth scrolling
+  html {
+    scroll-behavior: smooth;
+  }
+
   // 1. Remove the margin in all browsers (opinionated)
   body {
     width: 100%;

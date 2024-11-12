@@ -31,6 +31,15 @@
         var(#{$css-var-prefix}card-border-color);
       border-top-right-radius: var(#{$css-var-prefix}border-radius);
       border-top-left-radius: var(#{$css-var-prefix}border-radius);
+
+      > h1,
+      > h2,
+      > h3,
+      > h4,
+      > h5,
+      > h6 {
+        margin-bottom: 0;
+      }
     }
 
     > footer {

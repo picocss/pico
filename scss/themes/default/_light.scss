@@ -218,4 +218,18 @@
       #{$css-var-prefix}form-element-focus-color: var(#{$css-var-prefix}primary-focus);
     }
   }
+
+  // Timeline
+  @if map.get($modules, "components/timeline") {
+    #{$css-var-prefix}timeline-line-color: var(#{$css-var-prefix}primary-background);
+    #{$css-var-prefix}timeline-dot-background-color: var(#{$css-var-prefix}primary-inverse);
+    #{$css-var-prefix}timeline-dot-border-color: var(#{$css-var-prefix}primary-background);
+    @if map.get($modules, "components/card") {
+      #{$css-var-prefix}timeline-arrow-color: var(
+        #{$css-var-prefix}card-sectioning-background-color
+      );
+    } @else {
+      #{$css-var-prefix}timeline-arrow-color: #{color.mix($slate-50, $white, 25%)};
+    }
+  }
 }

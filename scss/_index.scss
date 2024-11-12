@@ -46,6 +46,8 @@
 @use "components/tooltip"; // data-tooltip
 @use "components/notification"; // dialog[role="alert"]
 
+@use "components/timeline"; // addition, kind of out of scope but wanted to add
+
 // Utilities
 @use "utilities/accessibility"; // -ms-touch-action, aria-*
 @use "utilities/reduce-motion"; // prefers-reduced-motion

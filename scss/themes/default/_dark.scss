@@ -167,7 +167,7 @@
   // Card (<article>)
   @if map.get($modules, "components/card") {
     #{$css-var-prefix}card-background-color: #{$slate-900};
-    #{$css-var-prefix}card-border-color: var(#{$css-var-prefix}card-background-color);
+    #{$css-var-prefix}card-border-color: var(#{$css-var-prefix}muted-border-color);
     #{$css-var-prefix}card-box-shadow: var(#{$css-var-prefix}box-shadow);
     #{$css-var-prefix}card-sectioning-background-color: #{color.mix($slate-900, $slate-850, 75%)};
   }
@@ -184,6 +184,23 @@
   // Loading ([aria-busy=true])
   @if map.get($modules, "components/loading") {
     #{$css-var-prefix}loading-spinner-opacity: 0.5;
+    // Loading icon (animated)
+    // Change the icon color to black for .contrast buttons
+    @if $enable-classes {
+      #{$parent-selector} [aria-busy="true"]:not(input, select, textarea) {
+        &.contrast:is(
+            button,
+            [type="submit"],
+            [type="button"],
+            [type="reset"],
+            [role="button"]
+          ):not(.outline) {
+          &::before {
+            filter: brightness(0);
+          }
+        }
+      }
+    }
   }
 
   // Modal (<dialog>)
@@ -239,23 +256,17 @@
     }
   }
 
-  // Loading icon (animated)
-  @if map.get($modules, "components/loading") {
-    // Change the icon color to black for .contrast buttons
-    @if $enable-classes {
-      #{$parent-selector} [aria-busy="true"]:not(input, select, textarea) {
-        &.contrast:is(
-            button,
-            [type="submit"],
-            [type="button"],
-            [type="reset"],
-            [role="button"]
-          ):not(.outline) {
-          &::before {
-            filter: brightness(0);
-          }
-        }
-      }
+  // Timeline
+  @if map.get($modules, "components/timeline") {
+    #{$css-var-prefix}timeline-line-color: var(#{$css-var-prefix}primary-background);
+    #{$css-var-prefix}timeline-dot-background-color: var(#{$css-var-prefix}primary-inverse);
+    #{$css-var-prefix}timeline-dot-border-color: var(#{$css-var-prefix}primary-background);
+    @if map.get($modules, "components/card") {
+      #{$css-var-prefix}timeline-arrow-color: var(
+        #{$css-var-prefix}card-sectioning-background-color
+      );
+    } @else {
+      #{$css-var-prefix}timeline-arrow-color: #{color.mix($slate-900, $slate-850, 75%)};
     }
   }
 }

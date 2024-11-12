@@ -32,10 +32,10 @@
   "scripts": {
     "✨": "run-s build",
     "build": "run-s start lint \"build:*\" done --silent",
-    "build-dev": "run-s start lint \"build-dev:*\" done --silent",
+    "build-dev": "run-s start lint \"build-dev:*\" done",
     "dev": "nodemon -q --watch scss/ --ext scss --exec \"run-s build-dev\"",
-    "lint": "run-s \"lint:*\" --silent",
-    "lint:prettier": "prettier --write --log-level silent \"scss/**/*.scss\"",
+    "lint": "run-s \"lint:*\"",
+    "lint:prettier": "prettier --write --log-level error \"scss/**/*.scss\"",
     "lint:sort-scss": "postcss --config scss ./scss/**/*.scss --replace",
     "build-dev:css": "sass --no-source-map --style expanded --no-error-css scss/:css/",
     "build:css": "sass --no-source-map --style expanded --no-error-css scss/:css/",
@@ -57,14 +57,14 @@
     "autoprefixer": "^10.4",
     "caniuse-lite": "^1.0",
     "clean-css-cli": "^5.6",
-    "css-declaration-sorter": "^7.1",
+    "css-declaration-sorter": "^7.2",
     "nodemon": "^3.1",
     "npm-run-all": "^4.1",
     "postcss": "^8.4",
     "postcss-cli": "^11.0",
     "postcss-scss": "^4.0",
-    "prettier": "^3.2",
-    "sass": "^1.71"
+    "prettier": "^3.3",
+    "sass": "^1.80"
   },
   "engines": {
     "node": ">=20"

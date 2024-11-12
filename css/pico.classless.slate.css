@@ -289,6 +289,10 @@ details summary[role=button]::after {
   --pico-tooltip-color: var(--pico-contrast-inverse);
   --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(76, 154.5, 137.5)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(200.25, 79.25, 72.25)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+  --pico-timeline-line-color: var(--pico-primary-background);
+  --pico-timeline-dot-background-color: var(--pico-primary-inverse);
+  --pico-timeline-dot-border-color: var(--pico-primary-background);
+  --pico-timeline-arrow-color: var(--pico-card-sectioning-background-color);
 }
 [data-theme=light] input:is([type=submit],
 [type=button],
@@ -393,7 +397,7 @@ details summary[role=button]::after {
     --pico-accordion-close-summary-color: var(--pico-color);
     --pico-accordion-open-summary-color: var(--pico-muted-color);
     --pico-card-background-color: #181c25;
-    --pico-card-border-color: var(--pico-card-background-color);
+    --pico-card-border-color: var(--pico-muted-border-color);
     --pico-card-box-shadow: var(--pico-box-shadow);
     --pico-card-sectioning-background-color: rgb(26, 30.5, 40.25);
     --pico-loading-spinner-opacity: 0.5;
@@ -404,6 +408,10 @@ details summary[role=button]::after {
     --pico-tooltip-color: var(--pico-contrast-inverse);
     --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(42, 123, 111)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
     --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(149.5, 74, 80)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+    --pico-timeline-line-color: var(--pico-primary-background);
+    --pico-timeline-dot-background-color: var(--pico-primary-inverse);
+    --pico-timeline-dot-border-color: var(--pico-primary-background);
+    --pico-timeline-arrow-color: var(--pico-card-sectioning-background-color);
   }
   :root:not([data-theme]) input:is([type=submit],
   [type=button],
@@ -501,7 +509,7 @@ details summary[role=button]::after {
   --pico-accordion-close-summary-color: var(--pico-color);
   --pico-accordion-open-summary-color: var(--pico-muted-color);
   --pico-card-background-color: #181c25;
-  --pico-card-border-color: var(--pico-card-background-color);
+  --pico-card-border-color: var(--pico-muted-border-color);
   --pico-card-box-shadow: var(--pico-box-shadow);
   --pico-card-sectioning-background-color: rgb(26, 30.5, 40.25);
   --pico-loading-spinner-opacity: 0.5;
@@ -512,6 +520,10 @@ details summary[role=button]::after {
   --pico-tooltip-color: var(--pico-contrast-inverse);
   --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(42, 123, 111)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(149.5, 74, 80)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+  --pico-timeline-line-color: var(--pico-primary-background);
+  --pico-timeline-dot-background-color: var(--pico-primary-inverse);
+  --pico-timeline-dot-border-color: var(--pico-primary-background);
+  --pico-timeline-arrow-color: var(--pico-card-sectioning-background-color);
 }
 [data-theme=dark] input:is([type=submit],
 [type=button],
@@ -568,6 +580,10 @@ progress,
 /**
  * Landmarks
  */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   margin: 0;
@@ -2330,6 +2346,14 @@ article > header {
   border-top-right-radius: var(--pico-border-radius);
   border-top-left-radius: var(--pico-border-radius);
 }
+article > header > h1,
+article > header > h2,
+article > header > h3,
+article > header > h4,
+article > header > h5,
+article > header > h6 {
+  margin-bottom: 0;
+}
 article > footer {
   margin-top: var(--pico-block-spacing-vertical);
   margin-bottom: calc(var(--pico-block-spacing-vertical) * -1);
@@ -2970,6 +2994,95 @@ dialog[role=alert][open] {
   transition: opacity var(--pico-transition);
 }
 
+.timeline {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.timeline::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 6px;
+  margin-left: -3px;
+  background-color: var(--pico-timeline-line-color);
+  content: "";
+}
+.timeline > .point {
+  position: relative;
+  width: 50%;
+  padding: 10px 25px;
+  background-color: inherit;
+}
+.timeline > .point::after {
+  z-index: 1;
+  position: absolute;
+  top: 13px;
+  right: -13px;
+  width: 25px;
+  height: 25px;
+  border: 4px solid var(--pico-timeline-dot-border-color);
+  border-radius: 50%;
+  background-color: var(--pico-timeline-dot-background-color);
+  content: "";
+}
+.timeline > .point.left {
+  left: 0;
+}
+.timeline > .point.left::before {
+  z-index: 1;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border: medium solid var(--pico-timeline-arrow-color);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--pico-timeline-arrow-color);
+  content: " ";
+}
+.timeline > .point.right {
+  left: 50%;
+}
+.timeline > .point.right::before {
+  z-index: 1;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 0;
+  height: 0;
+  border: medium solid var(--pico-timeline-arrow-color);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--pico-timeline-arrow-color) transparent transparent;
+  content: " ";
+}
+.timeline > .point.right::after {
+  left: -13px;
+}
+
+@media screen and (max-width: 600px) {
+  .timeline::after {
+    left: 13px;
+  }
+  .timeline > .point {
+    width: 100%;
+    padding-right: 25px;
+    padding-left: 40px;
+  }
+  .timeline > .point.right {
+    left: 0;
+  }
+  .timeline > .point::after, .timeline > .point.left::after, .timeline > .point.right::after {
+    left: 0;
+  }
+  .timeline > .point.left::before, .timeline > .point.right::before {
+    top: 16px;
+    left: 30px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--pico-timeline-arrow-color) transparent transparent;
+  }
+}
 /**
  * Accessibility & User interaction
  */

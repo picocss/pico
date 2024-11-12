@@ -39,7 +39,8 @@
 							<li><a href="#row-breakpoints">Row Breakpoints</a></li>
 							<li><a href="#modal">Modals</a></li>
 							<li><a href="#notifications">Notifications</a></li>
-							<li><a href="#accordions">Accordions</a></li>
+							<li><a href="#accordions">Accorddions</a></li>
+							<li><a href="#timeline">Timeline</a></li>
 						</ul>
 					</nav>
 				</aside>
@@ -50,11 +51,26 @@
 			<!-- Group -->
 			<article id="group">
 				<header><h2>Group</h2></header>
-				<fieldset role="group">
-					<label for="email">Email:</label>
-					<input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
-					<input type="submit" value="Subscribe" />
-				</fieldset>
+				<form action="javascript:void(0);">
+					<fieldset role="group">
+						<label for="email">Email:</label>
+						<input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
+						<input type="submit" value="Subscribe" />
+					</fieldset>
+				</form>
+
+				<form action="javascript:void(0);">
+					<fieldset role="group">
+						<label for="ex-browser">Browser:</label>
+						<select id="ex-browser" name="ex-browser">
+							<option value="Firefox">Firefox</option>
+							<option value="Chrome">Chrome</option>
+							<option value="Opera">Opera</option>
+							<option value="Safari">Safari</option>
+						</select>
+						<input type="submit" value="Save" />
+					</fieldset>
+				</form>
 			</article>
 			<!-- ./ Group -->
 			<hr>
@@ -216,7 +232,48 @@
 				</details>
 			</article>
 			<!-- ./ Accordions -->
-
+			<hr>
+			<article id="timeline" style="background-color: transparent;">
+				<header>
+					<h2>Timeline</h2>
+					<br>
+					<details>
+						<summary>View Custom CSS</summary>
+						<div style="background-color: var(--pico-muted-border-color); padding: .5rem;">
+							--pico-timeline-line-color: var(--pico-primary-background);<br>
+							--pico-timeline-dot-background-color: var(--pico-primary-inverse);<br>
+							--pico-timeline-dot-border-color: var(--pico-primary-background);<br>
+    					--pico-timeline-arrow-color: var(--pico-card-sectioning-background-color);
+						</div>
+					</details>
+				</header>
+				<div class="timeline">
+				  <section class="point left">
+				    <article>
+				      <header><h3>2017</h3></header>
+				      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+				    </article>
+				  </section>
+				  <section class="point right">
+				    <article>
+				      <header><h3>2016</h3></header>
+				      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+				    </article>
+				  </section>
+				  <section class="point left">
+				    <article>
+				      <header><h3>2015</h3></header>
+				      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+				    </article>
+				  </section>
+				  <section class="point right">
+				    <article>
+				      <header><h3>2012</h3></header>
+				      <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+				    </article>
+				  </section>
+				</div>
+			</article>
 		</main>
 	</div>
 </div>
@@ -225,7 +282,7 @@
 <footer class="container">
 	<small>
 		Built with <a href="https://picocss.com">Pico</a> •
-		<a href="https://github.com/picocss/examples/blob/master/v2-html/index.html">
+		<a href="https://github.com/Yohn/PicoCSS">
 			Source code
 		</a>
 	</small>
