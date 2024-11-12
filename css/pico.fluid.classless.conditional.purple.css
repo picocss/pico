@@ -2201,12 +2201,6 @@ main {
   display: block;
   margin-bottom: var(--pico-spacing);
 }
-.pico details:not([open]) summary ~ * {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height var(--pico-transition), opacity var(--pico-transition);
-}
 .pico details summary {
   line-height: 1rem;
   list-style-type: none;
@@ -2265,11 +2259,6 @@ main {
 }
 .pico details[open] > summary::after {
   transform: rotate(0);
-}
-.pico details[open] > summary ~ * {
-  max-height: 100; /* Initial max height for content */
-  opacity: 1;
-  transition: max-height var(--pico-transition), opacity var(--pico-transition);
 }
 
 [dir=rtl] .pico details summary {
@@ -2899,8 +2888,8 @@ body:has(dialog[open]) {
 }
 
 /**
- * Notification (<dialog>)
- */
+* Notification (<dialog>)
+*/
 dialog[role=alert] {
   position: fixed;
   top: unset;
@@ -2927,6 +2916,12 @@ dialog[role=alert] {
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
+}
+dialog[role=alert] > * {
+  color: var(--pico-primary-inverse);
+  font-weight: var(--pico-font-weight);
+  font-size: var(--pico-font-size);
+  line-height: var(--pico-line-height);
 }
 
 dialog[data-backdrop=false][role=alert]::backdrop {

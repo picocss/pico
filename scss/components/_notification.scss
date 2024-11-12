@@ -3,8 +3,8 @@
 
 @if map.get($modules, "components/notification") {
   /**
-   * Notification (<dialog>)
-   */
+	 * Notification (<dialog>)
+	 */
 
   dialog[role="alert"] {
     position: fixed;
@@ -30,6 +30,14 @@
     opacity: 0;
     transition: opacity var(#{$css-var-prefix}transition);
     user-select: none;
+
+    //> p, > h1, > h2, > h3, > h4, > h5, > h6 {
+    > * {
+      color: var(#{$css-var-prefix}primary-inverse);
+      font-weight: var(#{$css-var-prefix}font-weight);
+      font-size: var(#{$css-var-prefix}font-size);
+      line-height: var(#{$css-var-prefix}line-height);
+    }
   }
 
   dialog[data-backdrop="false"][role="alert"]::backdrop {

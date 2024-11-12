@@ -11,373 +11,215 @@
 	<link rel="stylesheet" href="./../css/pico.colors.min.css" />
 </head>
 <body>
-<!-- Header -->
-<header class="container">
-	<hgroup>
-<h1>Pico</h1>
-<p>A pure HTML example, without dependencies.</p>
-<p>Demo page from <a href="https://picocss.com/docs/modal#utilities">picocss.com model docs</a></p>
-	</hgroup>
-	<nav>
-<ul>
-	<li>
-		<details class="dropdown">
-			<summary role="button" class="secondary">Theme</summary>
-			<ul>
-				<li><a href="#" data-theme-switcher="auto">Auto</a></li>
-				<li><a href="#" data-theme-switcher="light">Light</a></li>
-				<li><a href="#" data-theme-switcher="dark">Dark</a></li>
-			</ul>
-		</details>
-	</li>
-</ul>
-	</nav>
-</header>
-<!-- ./ Header -->
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="col-12 col-md-3 col-lg-2">
+			<!-- Header -->
+			<header>
+				<hgroup>
+					<h1>Pico</h1>
+					<p>A Pico CSS + example with addition to the standard Pico CSS library.</p>
+					<p>Demo page from <a href="https://picocss.com/docs/modal#utilities">picocss.com model docs</a></p>
+				</hgroup>
+				<details class="dropdown">
+					<summary role="button" class="secondary">Theme</summary>
+					<ul>
+						<li><a href="#" data-theme-switcher="auto">Auto</a></li>
+						<li><a href="#" data-theme-switcher="light">Light</a></li>
+						<li><a href="#" data-theme-switcher="dark">Dark</a></li>
+					</ul>
+				</details>
+				<aside>
+					<nav>
+						<ul>
+							<li><a href="#group">Group</a></li>
+							<li><a href="#rows">Row</a></li>
+							<li><a href="#row-offsets">Row Offset</a></li>
+							<li><a href="#row-alignments">Row Alignments</a></li>
+							<li><a href="#row-breakpoints">Row Breakpoints</a></li>
+							<li><a href="#modal">Modals</a></li>
+							<li><a href="#notifications">Notifications</a></li>
+							<li><a href="#accordions">Accordions</a></li>
+						</ul>
+					</nav>
+				</aside>
+			</header>
+			<!-- /Header -->
+		</div>
+		<main class="col-12 col-md-9 col-lg-10">
+			<!-- Group -->
+			<article id="group">
+				<header><h2>Group</h2></header>
+				<fieldset role="group">
+					<label for="email">Email:</label>
+					<input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
+					<input type="submit" value="Subscribe" />
+				</fieldset>
+			</article>
+			<!-- ./ Group -->
+			<hr>
+			<!-- rows -->
+			<article id="rows">
+				<header><h2>Rows</h2></header>
+				<p>
+					Similar to <a href="https://getbootstrap.com/docs/5.3/layout/columns/" target="_blank">Bootstrap 5.3.3</a>, with the responsive <code>.col-*COL#*</code>, <code>.col-*BREAKPOINT*-*COL#*</code>, <code>.offset-*COL#*</code>, <code>.offset-*BREAKPOINT*-*COL#*</code>.
+				</p>
+				<p>
+					<code>.row</code> has a max width set to the viewport of your <code>xl</code> viewport (1300px by default)</p>
+					<code>.row-fluid</code> max width is 100%.
+				</p>
+				<div class="row-fluid">
+					<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
+					<div class="col-6"><article class="pico-background-lime-750">col-6</article></div>
+					<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
+				</div>
+				<div class="row-fluid">
+					<div class="col-3 offset-1"><article class="pico-background-lime-750">col-3	offset-1</article></div>
+					<div class="col-2"><article class="pico-background-lime-750">col-2</article></div>
+					<div class="col-2"><article class="pico-background-lime-750">col-2</article></div>
+					<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
+				</div>
+				<div class="row-fluid">
+					<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
+					<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
+					<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
+					<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
+				</div>
 
-<!-- Main -->
-<main class="container">
-	<!-- Preview -->
-	<section id="preview">
-		<h2>Preview</h2>
-		<p>
-			Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet suscipit sapien. Nulla
-			iaculis eros a elit pharetra egestas.
-		</p>
-		<form>
-			<div class="grid">
-				<input type="text" name="firstname" placeholder="First name" aria-label="First name" required/>
-				<input type="email" name="email" placeholder="Email address" aria-label="Email address" autocomplete="email" required/>
-				<button type="submit">Subscribe</button>
-			</div>
-			<fieldset>
-				<label for="terms">
-					<input type="checkbox" role="switch" id="terms" name="terms" />
-					I agree to the
-					<a href="#" onclick="event.preventDefault()">Privacy Policy</a>
-				</label>
-			</fieldset>
-		</form>
-	</section>
-	<!-- ./ Preview -->
-	<!-- row -->
-	<section id="row-example">
-		<h2>Rows</h2>
-		<p>
-			Similar to <a href="https://getbootstrap.com/docs/5.3/layout/columns/" target="_blank">Bootstrap 5.3.3</a>, with the responsive <code>.col-*COL#*</code>, <code>.col-*BREAKPOINT*-*COL#*</code>, <code>.offset-*COL#*</code>, <code>.offset-*BREAKPOINT*-*COL#*</code>, you can have a responsive grid system with offsets as well to easy customization.
-		</p>
-		<div class="row pico-background-lime-950">
-			<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
-			<div class="col-6"><article class="pico-background-lime-750">col-6</article></div>
-			<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
-		</div>
-		<div class="row">
-			<div class="col-3 offset-1"><article class="pico-background-lime-750">col-3	offset-1</article></div>
-			<div class="col-2"><article class="pico-background-lime-750">col-2</article></div>
-			<div class="col-2"><article class="pico-background-lime-750">col-2</article></div>
-			<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
-		</div>
-		<div class="row">
-			<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
-			<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
-			<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
-			<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
-		</div>
+				<div class="row-fluid">
+					<div class="col-2"><article class="pico-background-lime-750">col-2</article></div>
+					<div class="col-8"><article class="pico-background-lime-750">col-8</article></div>
+					<div class="col-2"><article class="pico-background-lime-750">col-2</article></div>
+				</div>
 
-		<div class="row">
-			<div class="col-2"><article class="pico-background-lime-750">col-2</article></div>
-			<div class="col-8"><article class="pico-background-lime-750">col-8</article></div>
-			<div class="col-2"><article class="pico-background-lime-750">col-2</article></div>
-		</div>
+				<div class="row-fluid">
+					<div class="col-5"><article class="pico-background-lime-750">col-5</article></div>
+					<div class="col-7"><article class="pico-background-lime-750">col-7</article></div>
+				</div>
 
-		<div class="row">
-			<div class="col-5"><article class="pico-background-lime-750">col-5</article></div>
-			<div class="col-7"><article class="pico-background-lime-750">col-7</article></div>
-		</div>
-
-		<div class="row">
-			<div class="col-9"><article class="pico-background-lime-750">col-9</article></div>
-			<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
-		</div>
-
-		<div class="row">
-			<div class="col-12">
-				<h2>Columns with offsets defined by breakpoints</h2>
+				<div class="row-fluid">
+					<div class="col-9"><article class="pico-background-lime-750">col-9</article></div>
+					<div class="col-3"><article class="pico-background-lime-750">col-3</article></div>
+				</div>
+			</article>
+			<!-- /rows -->
+			<hr>
+			<!-- offset -->
+			<article id="row-offsets">
+				<header><h2>Columns with offsets defined by breakpoints</h2></header>
 				<p>When defining multiple <code>.col-*-*</code> on the same element, the order your put the classes on the element matter.</p>
-				<p>Breakpoints available: <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>, <code>xxl</code></p>
-			</div>
-		</div>
 
-		<div class="row">
-			<div class="col-2 col-md-4"><article class="pico-background-lime-750">col-2, col-md-4</article></div>
-			<div class="col-4 offset-8 col-md-6 offset-md-6"><article class="pico-background-lime-750">col-4, offset-8, col-md-6, offset-md-6</article></div>
-		</div>
+				<div class="row-fluid">
+					<div class="col-2 col-md-4"><article class="pico-background-lime-750">col-2, col-md-4</article></div>
+					<div class="col-4 offset-8 col-md-6 offset-md-6"><article class="pico-background-lime-750">col-4, offset-8, col-md-6, offset-md-6</article></div>
+				</div>
 
-		<div class="row">
-			<div class="col-5 offset-1 col-md-11"><article class="pico-background-lime-550">col-5, offset-1, col-md-11</article></div>
-			<div class="col-2 col-md-6"><article class="pico-background-lime-550">col-2, col-md-6</article></div>
-			<div class="col-3 offset-9 col-md-6 offset-md-6"><article class="pico-background-lime-550">col-3, offset-9, col-md-6, offset-md-6</article></div>
-		</div>
+				<div class="row-fluid">
+					<div class="col-5 offset-1 col-md-11"><article class="pico-background-lime-550">col-5, offset-1, col-md-11</article></div>
+					<div class="col-2 col-md-6"><article class="pico-background-lime-550">col-2, col-md-6</article></div>
+					<div class="col-3 offset-9 col-md-6 offset-md-6"><article class="pico-background-lime-550">col-3, offset-9, col-md-6, offset-md-6</article></div>
+				</div>
 
-		<div class="row align-center">
-			<div class="col-3 col-md-12 col-lg-6"><article class="pico-background-lime-850">col-3 col-md-12 col-lg-6</article></div>
-			<div class="col-3 col-md-12 col-lg-6"><article class="pico-background-lime-850">col-3 col-md-12 col-lg-6</article></div>
-			<div class="col-4 col-md-6 col-lg-3"><article class="pico-background-lime-850">col-4 col-md-6 col-lg-3</article></div>
-			<div class="col-6 offset-6 col-md-3 offset-md-9 col-lg-2 offset-lg-10"><article class="pico-background-lime-850">col-6 offset-6 col-md-3 offset-md-9 col-lg-2 offset-lg-10</article></div>
-		</div>
+				<div class="row-fluid align-center">
+					<div class="col-3 col-md-12 col-lg-6"><article class="pico-background-lime-850">col-3 col-md-12 col-lg-6</article></div>
+					<div class="col-3 col-md-12 col-lg-6"><article class="pico-background-lime-850">col-3 col-md-12 col-lg-6</article></div>
+					<div class="col-4 col-md-6 col-lg-3"><article class="pico-background-lime-850">col-4 col-md-6 col-lg-3</article></div>
+					<div class="col-6 offset-6 col-md-3 offset-md-9 col-lg-2 offset-lg-10"><article class="pico-background-lime-850">col-6 offset-6 col-md-3 offset-md-9 col-lg-2 offset-lg-10</article></div>
+				</div>
+			</article>
+			<!-- /row-offsets -->
+			<hr>
+			<!-- row-alignments -->
+			<article id="row-alignments">
+				<header><h2>Alignment</h2></header>
+				<p>
+					You can add <code>.align-start</code> (default), <code>.align-center</code> or <code>.align-end</code> to your <code>.row</code> or <code>.row-fluid</code> element to align the containing elements to the top, middle, or bottom.</p>
 
-		<div class="row">
-			<div class="col-12">
-				<h2>Alignment</h2>
-				<p>You can add <code>.align-start</code></p>
-			</div>
-		</div>
+				<div class="row-fluid align-center" id="row-align-example">
+					<div class="col-4"><article class="pico-background-lime-850">col-4</article></div>
+					<div class="col-4">
+						<article class="pico-background-lime-850">
+							<input type="button" class="change-row-align" data-align="start" value=".align-start">
+							<input type="button" class="change-row-align" data-align="center" value=".align-center">
+							<input type="button" class="change-row-align" data-align="end" value=".align-end">
+						</article>
+					</div>
+					<div class="col-4"><article class="pico-background-lime-850">col-4</article></div>
+				</div>
+			</article>
+			<!-- /row-alignments -->
+			<hr>
+			<!-- row-breakpoints -->
+			<article id="row-breakpoints">
+				<header><h2><code> -md- </code> Breakpoints</h2></header>
+				<div class="row-fluid">
+					<div class="col-12 col-md-4"><article class="pico-background-lime-650">col-12, col-md-4</article></div>
+					<div class="col-12 col-md-4"><article class="pico-background-lime-650">col-12, col-md-4</article></div>
+					<div class="col-12 col-md-4"><article class="pico-background-lime-650">col-12, col-md-4</article></div>
+				</div>
+			</article>
+			<!-- ./ row-breakpoints -->
+			<hr>
+			<!-- Modal -->
+			<article id="modal">
+				<header><h2>Modal</h2></header>
+				<button class="contrast" data-target="modal-example" onclick="toggleModal(event)">
+					Launch demo modal
+				</button>
+			</article>
+			<!-- ./ Modal -->
+			<hr>
+			<!-- notifications -->
+			<article id="notifications">
+				<header><h2>Notificaton</h2></header>
+				<button onclick="showNotification('Accessible short notice.')">
+					Short Notificaton
+				</button>
 
-		<div class="row align-center">
-			<div class="col-4"><article class="pico-background-lime-850">col-4</article></div>
-			<div class="col-4">
-				<article class="pico-background-lime-850">
-					<input type="button" class="change-row-align" data-align="start" value="Start">
-					<input type="button" class="change-row-align" data-align="start" value="Center">
-					<input type="button" class="change-row-align" data-align="start" value="End">
-				</article>
-			</div>
-			<div class="col-4"><article class="pico-background-lime-850">col-4</article></div>
-		</div>
+				<button onclick="showNotification({ html: `
+					<section>
+						<h2>Many news!</h2>
+						<p>This is fantastic!</p>
+						<button onclick='closeNotification()'>OK</button>
+					</section>
+				`, delay: 60 * 1000 })">
+					Big Notificaton
+				</button>
 
-		<div class="row">
-			<div class="col-12">
-				<h2><code> -md- </code> Breakpoints</h2>
-			</div>
-		</div>
+				<!-- accessible dialog based notification element -->
+				<dialog role="alert" data-backdrop="false"></dialog>
+			</article>
+			<!-- /notifications -->
+			<hr>
+			<!-- Accordions -->
+			<article id="accordions">
+				<header><h2>Accordions</h2></header>
+				<details name="example-accordion">
+					<summary>Accordion 1</summary>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque urna diam,
+						tincidunt nec porta sed, auctor id velit. Etiam venenatis nisl ut orci consequat, vitae
+						tempus quam commodo. Nulla non mauris ipsum. Aliquam eu posuere orci. Nulla convallis
+						lectus rutrum quam hendrerit, in facilisis elit sollicitudin. Mauris pulvinar pulvinar
+						mi, dictum tristique elit auctor quis. Maecenas ac ipsum ultrices, porta turpis sit
+						amet, congue turpis.
+					</p>
+				</details>
+				<details name="example-accordion" open>
+					<summary>Accordion 2</summary>
+					<ul>
+						<li>Vestibulum id elit quis massa interdum sodales.</li>
+						<li>Nunc quis eros vel odio pretium tincidunt nec quis neque.</li>
+						<li>Quisque sed eros non eros ornare elementum.</li>
+						<li>Cras sed libero aliquet, porta dolor quis, dapibus ipsum.</li>
+					</ul>
+				</details>
+			</article>
+			<!-- ./ Accordions -->
 
-		<div class="row">
-			<div class="col-12 col-md-4"><article class="pico-background-lime-650">col-12, col-md-4</article></div>
-			<div class="col-12 col-md-4"><article class="pico-background-lime-650">col-12, col-md-4</article></div>
-			<div class="col-12 col-md-4"><article class="pico-background-lime-650">col-12, col-md-4</article></div>
-		</div>
-	</section>
-	<!-- ./ grid-container -->
-
-	<!-- Buttons-->
-	<section id="buttons">
-		<h2>Buttons</h2>
-		<p class="grid">
-			<button>Primary</button>
-			<button class="secondary">Secondary</button>
-			<button class="contrast">Contrast</button>
-		</p>
-		<p class="grid">
-			<button class="outline">Primary outline</button>
-			<button class="outline secondary">Secondary outline</button>
-			<button class="outline contrast">Contrast outline</button>
-		</p>
-	</section>
-	<!-- ./ Buttons -->
-
-	<!-- Form elements-->
-	<section id="form">
-		<form>
-			<h2>Form elements</h2>
-
-			<!-- Search -->
-			<label for="search">Search</label>
-			<input type="search" id="search" name="search" placeholder="Search" />
-
-			<!-- Text -->
-			<label for="text">Text</label>
-			<input type="text" id="text" name="text" placeholder="Text" />
-			<small>Curabitur consequat lacus at lacus porta finibus.</small>
-
-			<!-- Select -->
-			<label for="select">Select</label>
-			<select id="select" name="select" required>
-				<option value="" selected>Select…</option>
-				<option>…</option>
-			</select>
-
-			<!-- File browser -->
-			<label for="file"
-				>File browser
-				<input type="file" id="file" name="file" />
-			</label>
-
-			<!-- Range slider control -->
-			<label for="range"
-				>Range slider
-				<input type="range" min="0" max="100" value="50" id="range" name="range" />
-			</label>
-
-			<!-- States -->
-			<div class="grid">
-				<label for="valid">
-					Valid
-					<input type="text" id="valid" name="valid" placeholder="Valid" aria-invalid="false" />
-				</label>
-				<label for="invalid">
-					Invalid
-					<input
-						type="text"
-						id="invalid"
-						name="invalid"
-						placeholder="Invalid"
-						aria-invalid="true"
-					/>
-				</label>
-				<label for="disabled">
-					Disabled
-					<input type="text" id="disabled" name="disabled" placeholder="Disabled" disabled />
-				</label>
-			</div>
-
-			<div class="grid">
-				<!-- Date-->
-				<label for="date"
-					>Date
-					<input type="date" id="date" name="date" />
-				</label>
-
-				<!-- Time-->
-				<label for="time"
-					>Time
-					<input type="time" id="time" name="time" />
-				</label>
-
-				<!-- Color-->
-				<label for="color"
-					>Color
-					<input type="color" id="color" name="color" value="#0eaaaa" />
-				</label>
-			</div>
-
-			<div class="grid">
-				<!-- Checkboxes -->
-				<fieldset>
-					<legend><strong>Checkboxes</strong></legend>
-					<label for="checkbox-1">
-						<input type="checkbox" id="checkbox-1" name="checkbox-1" checked />
-						Checkbox
-					</label>
-					<label for="checkbox-2">
-						<input type="checkbox" id="checkbox-2" name="checkbox-2" />
-						Checkbox
-					</label>
-				</fieldset>
-
-				<!-- Radio buttons -->
-				<fieldset>
-					<legend><strong>Radio buttons</strong></legend>
-					<label for="radio-1">
-						<input type="radio" id="radio-1" name="radio" value="radio-1" checked />
-						Radio button
-					</label>
-					<label for="radio-2">
-						<input type="radio" id="radio-2" name="radio" value="radio-2" />
-						Radio button
-					</label>
-				</fieldset>
-
-				<!-- Switch -->
-				<fieldset>
-					<legend><strong>Switches</strong></legend>
-					<label for="switch-1">
-						<input type="checkbox" id="switch-1" name="switch-1" role="switch" checked />
-						Switch
-					</label>
-					<label for="switch-2">
-						<input type="checkbox" id="switch-2" name="switch-2" role="switch" />
-						Switch
-					</label>
-				</fieldset>
-			</div>
-
-			<!-- Buttons -->
-			<input type="reset" value="Reset" onclick="event.preventDefault()" />
-			<input type="submit" value="Submit" onclick="event.preventDefault()" />
-		</form>
-	</section>
-	<!-- ./ Form elements-->
-
-	<!-- Modal -->
-	<section id="modal">
-		<h2>Modal</h2>
-		<button class="contrast" data-target="modal-example" onclick="toggleModal(event)">
-			Launch demo modal
-		</button>
-	</section>
-	<!-- ./ Modal -->
-	<hr>
-	<!-- Accordions -->
-	<section id="accordions">
-		<h2>Accordions</h2>
-		<details>
-			<summary>Accordion 1</summary>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque urna diam,
-				tincidunt nec porta sed, auctor id velit. Etiam venenatis nisl ut orci consequat, vitae
-				tempus quam commodo. Nulla non mauris ipsum. Aliquam eu posuere orci. Nulla convallis
-				lectus rutrum quam hendrerit, in facilisis elit sollicitudin. Mauris pulvinar pulvinar
-				mi, dictum tristique elit auctor quis. Maecenas ac ipsum ultrices, porta turpis sit
-				amet, congue turpis.
-			</p>
-		</details>
-		<details open>
-			<summary>Accordion 2</summary>
-			<ul>
-				<li>Vestibulum id elit quis massa interdum sodales.</li>
-				<li>Nunc quis eros vel odio pretium tincidunt nec quis neque.</li>
-				<li>Quisque sed eros non eros ornare elementum.</li>
-				<li>Cras sed libero aliquet, porta dolor quis, dapibus ipsum.</li>
-			</ul>
-		</details>
-	</section>
-	<!-- ./ Accordions -->
-	<hr>
-	<!-- Article-->
-	<article id="article">
-		<h2>Article</h2>
-		<p>
-			Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor. Sed ultricies dolor non
-			ante vulputate hendrerit. Vivamus sit amet suscipit sapien. Nulla iaculis eros a elit
-			pharetra egestas. Nunc placerat facilisis cursus. Sed vestibulum metus eget dolor pharetra
-			rutrum.
-		</p>
-		<footer>
-			<small>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small>
-		</footer>
-	</article>
-	<!-- ./ Article-->
-
-	<!-- Group -->
-	<section id="group">
-		<h2>Group</h2>
-		<form>
-			<fieldset role="group">
-				<label for="email">Email:</label>
-				<input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
-				<input type="submit" value="Subscribe" />
-			</fieldset>
-		</form>
-	</section>
-	<!-- ./ Group -->
-
-	<!-- Progress -- >
-	<section id="progress">
-		<h2>Progress bar</h2>
-		<progress id="progress-1" value="25" max="100"></progress>
-		<progress id="progress-2"></progress>
-	</section>
-	< !-- ./ Progress -->
-
-	<!-- Loading -- >
-	<section id="loading">
-		<h2>Loading</h2>
-		<article aria-busy="true"></article>
-		<button aria-busy="true">Please wait…</button>
-	</section>
-	< !-- ./ Loading -->
-</main>
-<!-- ./ Main -->
+		</main>
+	</div>
+</div>
 
 <!-- Footer -->
 <footer class="container">
@@ -394,12 +236,7 @@
 <dialog id="modal-example">
 	<article>
 		<header>
-			<button
-				aria-label="Close"
-				rel="prev"
-				data-target="modal-example"
-				onclick="toggleModal(event)"
-			></button>
+			<button aria-label="Close" rel="prev" data-target="modal-example" onclick="toggleModal(event)"></button>
 			<h3>Confirm your action!</h3>
 		</header>
 		<p>
@@ -421,22 +258,26 @@
 
 <!-- Modal -->
 <script src="js/modal.js"></script>
+<!-- alert notifications -->
+ <script src="js/notifications.js"></script>
+ <script src="js/accordion.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 	const alignButtons = document.querySelectorAll(".change-row-align");
+	const alignRow = document.getElementById("row-align-example");
 	alignButtons.forEach((button) => {
 		button.addEventListener("click", () => {
 			let dir = button.getAttribute('data-align');
-			let row = button.closest('.row');
+			console.log(dir)
 			if(dir == 'start'){
-				row.classList.remove('align-center', 'align-end');
-				row.classList.add('align-start');
+				alignRow.classList.remove('align-center', 'align-end');
+				alignRow.classList.add('align-start');
 			} else if(dir == 'center'){
-				row.classList.remove('align-start', 'align-end');
-				row.classList.add('align-center');
+				alignRow.classList.remove('align-start', 'align-end');
+				alignRow.classList.add('align-center');
 			} else {
-				row.classList.remove('align-start', 'align-center');
-				row.classList.add('align-end');
+				alignRow.classList.remove('align-start', 'align-center');
+				alignRow.classList.add('align-end');
 			}
 		});
 	});
