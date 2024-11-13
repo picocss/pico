@@ -86,15 +86,14 @@ class FileValidator {
 			imagePreview.src = URL.createObjectURL(file);
 			imagePreview.style.maxWidth = "50px";
 			imagePreview.style.maxHeight = "50px";
-			imagePreview.style.marginRight = "10px";
 			imagePreview.onload = () => URL.revokeObjectURL(imagePreview.src); // Release memory
 			listItem.prepend(imagePreview);
 		}
 
 		// Add a remove button
 		const removeButton = document.createElement("button");
-		removeButton.textContent = "🗙";
-		removeButton.className = "outline btn-file-rm";
+		removeButton.textContent = " ";
+		removeButton.className = "btn-file-rm";
 		removeButton.addEventListener("click", () => this.removeFile(file, listItem));
 
 		listItem.append(removeButton);

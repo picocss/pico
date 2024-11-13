@@ -20,6 +20,7 @@
   --pico-outline-width: 0.125rem;
   --pico-transition: 0.2s ease-in-out;
   --pico-spacing: 1rem;
+  --pico-icon-red-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(183.25, 63.5, 59)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
   --pico-typography-spacing-vertical: 1rem;
   --pico-block-spacing-vertical: var(--pico-spacing);
   --pico-block-spacing-horizontal: var(--pico-spacing);
@@ -2371,27 +2372,42 @@ input[type=file]:user-invalid::file-selector-button {
   background-color: var(--pico-form-element-invalid-border-color);
 }
 
-.btn-file-rm {
-  margin-left: 10px;
-  padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) calc(var(--pico-form-element-spacing-horizontal) * 0.5);
-  border-color: var(--pico-form-element-invalid-border-color);
-  color: var(--pico-form-element-invalid-border-color);
-}
-
 /* File list when selected from the file input */
 .file-list {
-  margin-left: 0;
-  padding-right: 0;
   padding-left: 0;
 }
 .file-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   list-style-type: none;
+  text-align: center;
 }
 .file-list li:nth-child(2n) {
   background-color: #1b1b1b;
 }
 .file-list li:hover {
   background-color: var(--pico-muted-border-color);
+}
+.file-list li .btn-file-rm {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 10px;
+  padding: 0;
+  padding-top: calc(var(--pico-spacing) * 0.25);
+  border: none;
+  background-image: var(--pico-icon-red-close);
+  background-position: center;
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  color: var(--pico-element-invalid-border-color);
+  opacity: 0.5;
+  transition: opacity var(--pico-transition);
+}
+.file-list li .btn-file-rm:hover {
+  opacity: 1;
 }
 
 /**
