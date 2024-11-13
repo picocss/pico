@@ -32,6 +32,7 @@
 				<aside>
 					<nav>
 						<ul>
+							<li><a href="#validation">Validation</a></li>
 							<li><a href="#group">Group</a></li>
 							<li><a href="#rows">Row</a></li>
 							<li><a href="#row-offsets">Row Offset</a></li>
@@ -48,6 +49,58 @@
 			<!-- /Header -->
 		</div>
 		<main class="col-12 col-md-9 col-lg-10">
+			<!-- Validation -->
+			<form action="javascript:void(0);">
+				<article id="group">
+					<header><h2>Validation</h2></header>
+					<p>
+						Form :user-valid and :user-invalid
+					</p>
+					<input placeholder="name" type="text" name="test" minlength="4" maxlength="30" pattern="[a-z]{4,30}" required>
+					<small data-valid="this is good!" data-invalid="Min of 4 characters, max of 39, only a-z no caps."></small>
+
+					<input placeholder="Url" type="url" name="test" required>
+					<small data-valid="this is good!" data-invalid="Must be a url."></small>
+
+					<input placeholder="Email" type="email" name="test" required>
+					<small data-valid="this is good!" data-invalid="Must be a valid email."></small>
+
+					<select name="favorite-cuisine" required>
+						<option selected disabled value="">Select your favorite cuisine...</option>
+						<option>Italian</option>
+						<option>Japanese</option>
+						<option>Indian</option>
+						<option>Thai</option>
+						<option>French</option>
+					</select>
+					<small data-valid="this is good!" data-invalid="Error.."></small>
+
+					<input type="date" name="date" required>
+					<small data-valid="this is good!" data-invalid="Error.."></small>
+
+					<input type="datetime-local" name="datetime-local" required>
+					<small data-valid="this is good!" data-invalid="Error.."></small>
+
+					<input type="month" name="month" min="2018-03" max="2024-12" placeholder="2024-12" step="1" pattern="[0-9]{4}-[0-9]{2}" required>
+					<small data-valid="this is good!" data-invalid="Format: YYYY-MM"></small>
+
+					<input type="time" name="time" required>
+					<small data-valid="this is good!" data-invalid="Error.."></small>
+
+					<header>Check JS for FileValidator class</header>
+					<input type="file" data-max-size="1048576" accept=".jpg,.svg,.png,.gif,.webp" id="checkFile" multiple />
+					<small data-invalid="Only .jpg,.svg,.png,.gif,.webp image types allowed" data-valid="Good!"></small>
+
+					<textarea minlength="5" placeholder="its always valid?" required></textarea>
+					<small data-valid="this is good!" data-invalid="Min of 5 characters!"></small>
+					<br>
+					<label><input type="checkbox" name="english" required />English </label>
+					<footer>
+						<input type="submit" value="submit" class="btn btn-primary">
+					</footer>
+				</article>
+			</form>
+			<!-- /Validation -->
 			<!-- Group -->
 			<article id="group">
 				<header><h2>Group</h2></header>
@@ -317,9 +370,13 @@
 <script src="js/modal.js"></script>
 <!-- alert notifications -->
  <script src="js/notifications.js"></script>
+ <script src="js/FileValidator.js"></script>
  <script src="js/accordion.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+ const checkFile = document.getElementById("checkFile");
+ new FileValidator(checkFile);
+
 	const alignButtons = document.querySelectorAll(".change-row-align");
 	const alignRow = document.getElementById("row-align-example");
 	alignButtons.forEach((button) => {

@@ -33,6 +33,7 @@
 @use "forms/input-file"; // type="file"
 @use "forms/input-range"; // type="range"
 @use "forms/input-search"; // type="search"
+@use "forms/validation"; // validation for all form elements except select[multiple],select[size], input:not([type="button"], [type="reset"], [type="image"], [type="submit"], [type="checkbox"], [type="radio"]
 
 // Components
 @use "components/accordion"; // details, summary

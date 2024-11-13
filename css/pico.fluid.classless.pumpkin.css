@@ -2210,6 +2210,153 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search]
   background-position: center right 1.125rem, center left 0.75rem;
 }
 
+input:user-valid:not([type=button],
+[type=reset],
+[type=image],
+[type=submit],
+[type=checkbox],
+[type=radio]),
+input:user-invalid:not([type=button],
+[type=reset],
+[type=image],
+[type=submit],
+[type=checkbox],
+[type=radio]) {
+  padding-right: calc(1.5em + 0.75rem);
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  background-repeat: no-repeat;
+}
+
+select:user-valid:not([multiple], [size]),
+select:user-invalid:not([multiple], [size]) {
+  padding-right: calc(1.5em + 0.75rem);
+  padding-right: 4.2rem;
+  background-position: right 0.75rem center, center right 2.25rem;
+  background-repeat: no-repeat;
+}
+
+select:user-invalid:not([multiple], [size]) {
+  background-image: var(--pico-icon-chevron), var(--pico-icon-invalid);
+}
+
+select:user-valid:not([multiple], [size]) {
+  background-image: var(--pico-icon-chevron), var(--pico-icon-valid);
+}
+
+textarea:user-valid,
+textarea:user-invalid {
+  padding-right: calc(1.5em + 0.75rem);
+  background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  background-repeat: no-repeat;
+}
+
+input:user-invalid:not([type=button],
+[type=reset],
+[type=image],
+[type=submit],
+[type=checkbox],
+[type=radio]),
+select:user-invalid,
+textarea:user-invalid {
+  border-color: var(--pico-form-element-invalid-border-color);
+  background-image: var(--pico-icon-invalid);
+}
+
+input:user-valid:not([type=button],
+[type=reset],
+[type=image],
+[type=submit],
+[type=checkbox],
+[type=radio]),
+select:user-valid,
+textarea:user-valid {
+  border-color: var(--pico-form-element-valid-border-color);
+  background-image: var(--pico-icon-valid);
+}
+
+input:required:user-invalid:is([type=checkbox]) {
+  border-color: var(--pico-form-element-invalid-border-color);
+}
+
+/********** To include a message after the element with info ************/
+input:user-valid:not([type=button],
+[type=reset],
+[type=image],
+[type=submit],
+[type=checkbox],
+[type=radio]) + small[data-valid]::after,
+select:user-valid:not([multiple], [size]) + small[data-valid]::after,
+textarea:user-valid + small[data-valid]::after {
+  content: attr(data-valid);
+  color: var(--pico-form-element-valid-border-color);
+}
+
+textarea:user-invalid + small[data-invalid]::after,
+select:user-invalid:not([multiple], [size]) + small[data-invalid]::after,
+input:user-invalid:not([type=button],
+[type=reset],
+[type=image],
+[type=submit],
+[type=checkbox],
+[type=radio]) + [data-invalid]::after,
+input[type=file]:user-invalid + ul + [data-invalid]::after {
+  content: attr(data-invalid);
+  color: var(--pico-form-element-invalid-border-color);
+}
+
+input:user-valid:not([type=button],
+[type=reset],
+[type=image],
+[type=submit],
+[type=checkbox],
+[type=radio]) + [data-valid]::after,
+input:user-invalid:not([type=button],
+[type=reset],
+[type=image],
+[type=submit],
+[type=checkbox],
+[type=radio]) + [data-invalid]::after,
+textarea:user-valid + [data-valid]::after,
+input[type=file]:user-invalid + [data-invalid]::after,
+input[type=file]:user-invalid + ul + [data-invalid]::after {
+  display: block;
+}
+
+input[type=file]:user-invalid + ul + [data-invalid]::after {
+  position: relative;
+  top: -2rem;
+}
+
+input[type=file]:user-invalid::file-selector-button {
+  border-color: var(--pico-form-element-invalid-border-color);
+  background-color: var(--pico-form-element-invalid-border-color);
+}
+
+.btn-file-rm {
+  margin-left: 10px;
+  padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) calc(var(--pico-form-element-spacing-horizontal) * 0.5);
+  border-color: var(--pico-form-element-invalid-border-color);
+  color: var(--pico-form-element-invalid-border-color);
+}
+
+/* File list when selected from the file input */
+.file-list {
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+.file-list li {
+  list-style-type: none;
+}
+.file-list li:nth-child(2n) {
+  background-color: #1b1b1b;
+}
+.file-list li:hover {
+  background-color: var(--pico-muted-border-color);
+}
+
 /**
  * Accordion (<details>)
  */
