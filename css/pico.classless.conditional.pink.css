@@ -859,7 +859,6 @@ main {
   line-height: var(--pico-line-height);
   text-align: center;
   text-decoration: none;
-  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
