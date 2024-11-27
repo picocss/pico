@@ -49,6 +49,12 @@
 			<!-- /Header -->
 		</div>
 		<main class="col-12 col-md-9 col-lg-10">
+			<article>
+				<header><h2>Yohns PicoCSS Fork</h2></header>
+				<p>I've merged some open pull requests from the <a href="https://github.com/picocss/pico">original Pico</a> repository, and then added a few more enhancements that I either needed for a project (timeline) or wanted to make the building process of websites easier (<code>:user-valid</code> "validation", using <code>&lt;label&gt;</code> within groups, <code>.row</code> &amp; <code>.row-fluid</code> and the <code>.col-*</code> classes like Bootstrap, <code>.align-*</code> and more.) The demo docs here is the main enhanced that have been added to the <a href="https://picocss.com/">Pico CSS 2.0.6</a> branch, for more docs, refer to the original <a href="https://picocss.com/docs">Pico CSS docs</a>.</p>
+				<p>Some of the demos on this page do require <a href="https://github.com/Yohn/PicoCSS/tree/main/docs/js">Vanilla JavaScript Files</a> to work the same as the preview here. I may get a build script going to compile the javascript plugins / components later. Let me know if this feature would help you.</p>
+				<footer>If this fork has helped you, please <a href="https://github.com/Yohn/PicoCSS">Like</a> this fork!</footer>
+			</article>
 			<!-- Validation -->
 			<form action="javascript:void(0);">
 				<article id="group">
@@ -364,18 +370,18 @@
 <!-- ./ Modal example -->
 
 <!-- Minimal theme switcher -->
-<script src="js/minimal-theme-switcher.js"></script>
+<script src="js/MinimalThemeSwitcher.js"></script>
 
 <!-- Modal -->
-<script src="js/modal.js"></script>
+<script src="js/Modal.js"></script>
 <!-- alert notifications -->
- <script src="js/notifications.js"></script>
+ <script src="js/Notifications.js"></script>
  <script src="js/FileValidator.js"></script>
- <script src="js/accordion.js"></script>
+ <script src="js/Accordion.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
- const checkFile = document.getElementById("checkFile");
- new FileValidator(checkFile);
+	const checkFile = document.getElementById("checkFile");
+	new FileValidator(checkFile);
 
 	const alignButtons = document.querySelectorAll(".change-row-align");
 	const alignRow = document.getElementById("row-align-example");
@@ -396,8 +402,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 });
-
-
 </script>
 	</body>
 </html>

@@ -1,14 +1,23 @@
 {
-  "name": "@picocss/pico",
-  "version": "2.0.6",
-  "description": "Minimal CSS Framework for semantic HTML",
-  "author": "Lucas Larroche",
+  "name": "@yohns/picocss",
+  "version": "2.1.0",
+  "description": "Minimal CSS Framework for semantic HTML, updated with enhanced capabilities.",
+  "authors": [
+    {
+      "name": "Lucas Larroche",
+      "website": "https://github.com/picocss/pico"
+    },
+    {
+      "name": "John Brittaines",
+      "website": "https://github.com/Yohn/PicoCSS"
+    }
+  ],
   "main": "css/pico.min.css",
   "homepage": "https://picocss.com",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/picocss/pico.git"
+    "url": "git+https://github.com/Yohn/PicoCSS.git"
   },
   "publishConfig": {
     "tag": "next"
@@ -27,7 +36,7 @@
     "semantic"
   ],
   "bugs": {
-    "url": "https://github.com/picocss/pico/issues"
+    "url": "https://github.com/Yohn/PicoCSS/issues"
   },
   "scripts": {
     "✨": "run-s build",
@@ -45,13 +54,13 @@
     "build:autoprefix": "postcss --config css --replace css/*.css !css/*.min.css",
     "build-dev:minify": "cleancss -O1 --with-rebase --batch --batch-suffix .min css/*.css !css/*.min.css",
     "build:minify": "cleancss -O1 --with-rebase --batch --batch-suffix .min css/*.css !css/*.min.css",
-    "prelint": "echo '[@picocss/pico] ✨ Lint'",
-    "prebuild:css": "echo '[@picocss/pico] ✨ Compile'",
-    "prebuild:themes": "echo '[@picocss/pico] ✨ Compile themes'",
-    "prebuild:autoprefix": "echo '[@picocss/pico] ✨ Autoprefix'",
-    "prebuild:minify": "echo '[@picocss/pico] ✨ Minify'",
-    "start": "echo '\\033[96m[@picocss/pico] ✨ Start\\033[0m'",
-    "done": "echo '\\033[32m[@picocss/pico] ✨ Done\\033[0m'"
+    "prelint": "echo '[@Yohn/PicoCSS] ✨ Lint'",
+    "prebuild:css": "echo '[@Yohn/PicoCSS] ✨ Compile'",
+    "prebuild:themes": "echo '[@Yohn/PicoCSS] ✨ Compile themes'",
+    "prebuild:autoprefix": "echo '[@Yohn/PicoCSS] ✨ Autoprefix'",
+    "prebuild:minify": "echo '[@Yohn/PicoCSS] ✨ Minify'",
+    "start": "echo '\\033[96m[@Yohn/PicoCSS] ✨ Start\\033[0m'",
+    "done": "echo '\\033[32m[@Yohn/PicoCSS] ✨ Done\\033[0m'"
   },
   "devDependencies": {
     "autoprefixer": "^10.4",

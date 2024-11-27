@@ -13,6 +13,11 @@
 [![License](https://img.shields.io/badge/license-MIT-%230172ad)](https://github.com/picocss/pico/blob/master/LICENSE.md)
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/picocss.svg?style=social&label=Follow%20%40picocss)](https://twitter.com/picocss)
 
+## Yohns Updated Version
+I'm not sure if the original [Pico CSS](https://github.com/picocss/pico) repository is abandoned or not, but I really liked what they had to offer, and wanted to help not let this awesomely simple and easy to use front end framework disappear, so I merged as many of open pull requests that fixed some issues, and / or enhanced the project that were available at the time. I'll try to help keep it viable and do some bug fixes if any arise, and would alway appreciate anyone elses help to continue keeping this alive!
+
+You can see the new features I, and many others have created pull requests for by going to [Yohns Pico CSS](https://yohn.github.io/PicoCSS). This page just has the demos of most of the features I have merged, or added to the project.
+
 ## Minimal CSS Framework for Semantic HTML
 
 A minimalist and lightweight starter kit that prioritizes semantic syntax, making every HTML element responsive and elegant by default.
@@ -38,13 +43,22 @@ With just the right amount of everything, Pico is great starting point for a cle
 
 ## Table of contents
 
-- [Quick start](#quick-start)
-- [Class-less version](#class-less-version)
-- [Limitations](#limitations)
-- [Documentation](#documentation)
-- [Browser Support](#browser-support)
-- [Contributing](#contributing)
-- [Copyright and license](#copyright-and-license)
+1. [Yohns Updated Version](#yohns-updated-version)
+2. [Minimal CSS Framework for Semantic HTML](#minimal-css-framework-for-semantic-html)
+3. [What’s new in v2?](#whats-new-in-v2)
+4. [A Superpowered HTML Reset](#a-superpowered-html-reset)
+5. [Table of contents](#table-of-contents)
+6. [Quick start](#quick-start)
+   1. [Install manually](#install-manually)
+   2. [Usage from CDN](#usage-from-cdn)
+   3. [Install with NPM](#install-with-npm)
+   4. [Starter HTML template](#starter-html-template)
+7. [Class-less version](#class-less-version)
+8. [Limitations](#limitations)
+9. [Documentation](#documentation)
+10. [Browser Support](#browser-support)
+11. [Contributing](#contributing)
+12. [Copyright and license](#copyright-and-license)
 
 ## Quick start
 
@@ -63,20 +77,20 @@ There are 4 ways to get started with pico.css:
 Alternatively, you can use [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@picocss/pico) to link pico.css.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.0/css/pico.min.css" />
 ```
 
 ### Install with NPM
 
 ```shell
-npm install @picocss/pico
+npm i @yohns/picocss
 ```
-
+<!--
 Or
 
 ```shell
 yarn add @picocss/pico
-```
+```-->
 
 Then, import Pico into your SCSS file with [@use](https://sass-lang.com/documentation/at-rules/use):
 
@@ -84,11 +98,11 @@ Then, import Pico into your SCSS file with [@use](https://sass-lang.com/document
 @use "pico";
 ```
 
-### Install with Composer
+<!--### Install with Composer
 
 ```shell
 composer require picocss/pico
-```
+```-->
 
 ### Starter HTML template
 
@@ -121,7 +135,7 @@ Use the default `.classless` version if you need centered viewports:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
+  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.0/css/pico.classless.min.css"
 />
 ```
 
@@ -130,7 +144,7 @@ Or use the `.fluid.classless` version if you need a fluid container:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.min.css"
+  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.0/css/pico.fluid.classless.min.css"
 />
 ```
 
@@ -145,7 +159,7 @@ Then just write pure HTML, and it should look great:
     <meta name="color-scheme" content="light dark" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
+      href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.0/css/pico.classless.min.css"
     />
     <title>Hello, world!</title>
   </head>
