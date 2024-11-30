@@ -9,7 +9,7 @@
   #{$parent-selector} [data-tooltip] {
     position: relative;
 
-    &:not(a, button, input, [role="button"]) {
+    &:not(:has(a, button, input, [role="button"])):not(a, button, input, [role="button"]) {
       border-bottom: 1px dotted;
       text-decoration: none;
       cursor: help;
@@ -19,7 +19,7 @@
     &[data-placement="top"]::after,
     &::before,
     &::after {
-      display: block;
+      display: inline-block;
       z-index: 99;
       position: absolute;
       bottom: 100%;
@@ -36,7 +36,7 @@
       font-size: 0.875rem;
       text-decoration: none;
       text-overflow: ellipsis;
-      white-space: nowrap;
+      white-space: pre;
       opacity: 0;
       pointer-events: none;
     }

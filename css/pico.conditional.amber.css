@@ -3346,13 +3346,13 @@ body:has(dialog[open]) {
 .pico [data-tooltip] {
   position: relative;
 }
-.pico [data-tooltip]:not(a, button, input, [role=button]) {
+.pico [data-tooltip]:not(:has(a, button, input, [role=button])):not(a, button, input, [role=button]) {
   border-bottom: 1px dotted;
   text-decoration: none;
   cursor: help;
 }
 .pico [data-tooltip][data-placement=top]::before, .pico [data-tooltip][data-placement=top]::after, .pico [data-tooltip]::before, .pico [data-tooltip]::after {
-  display: block;
+  display: inline-block;
   z-index: 99;
   position: absolute;
   bottom: 100%;
@@ -3369,7 +3369,7 @@ body:has(dialog[open]) {
   font-size: 0.875rem;
   text-decoration: none;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: pre;
   opacity: 0;
   pointer-events: none;
 }

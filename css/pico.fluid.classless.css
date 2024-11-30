@@ -2938,13 +2938,13 @@ progress::-moz-progress-bar {
 [data-tooltip] {
   position: relative;
 }
-[data-tooltip]:not(a, button, input, [role=button]) {
+[data-tooltip]:not(:has(a, button, input, [role=button])):not(a, button, input, [role=button]) {
   border-bottom: 1px dotted;
   text-decoration: none;
   cursor: help;
 }
 [data-tooltip][data-placement=top]::before, [data-tooltip][data-placement=top]::after, [data-tooltip]::before, [data-tooltip]::after {
-  display: block;
+  display: inline-block;
   z-index: 99;
   position: absolute;
   bottom: 100%;
@@ -2961,7 +2961,7 @@ progress::-moz-progress-bar {
   font-size: 0.875rem;
   text-decoration: none;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: pre;
   opacity: 0;
   pointer-events: none;
 }
