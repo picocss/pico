@@ -6,7 +6,8 @@
    * Modal (<dialog>)
    */
 
-  :root {
+  :root,
+  :host {
     #{$css-var-prefix}scrollbar-width: 0px;
   }
 

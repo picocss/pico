@@ -10,7 +10,8 @@
   $css-var-color-prefix: #{settings.$css-var-prefix}#{$color-property-name};
 
   @if $enable-css-vars {
-    :root {
+    :root,
+    :host {
       // Loop through color families
       @each $family, $colors in colors.$colors {
         @if list.index(map.get(settings.$palette, "color-families"), $family) {
