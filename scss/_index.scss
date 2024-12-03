@@ -37,7 +37,7 @@
 
 // Components
 @use "components/accordion"; // details, summary
-@use "components/card"; // article
+@use "components/card"; // article, role="article"
 @use "components/dropdown"; // details.dropdown
 @use "components/group"; // role="group"
 @use "components/loading"; // aria-busy=true
