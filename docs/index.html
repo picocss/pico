@@ -6,6 +6,23 @@
 	<meta name="color-scheme" content="light dark" />
 	<title>Preview • Pico CSS</title>
 	<meta name="description" content="A pure HTML example, without dependencies." />
+	<!-- Backwards compatability -->
+	<link rel="icon" sizes="16x16 24x24 32x32 64x64" href="favicon.ico">
+	<!-- All other browsers -->
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<!-- Google Search and Android Chrome -->
+	<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+	<!-- iPhone -->
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="favicon-180x180.png">
+	<!-- iPad Retina -->
+	<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="favicon-167x167.png">
+	<!-- Other iPads -->
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="favicon-152x152.png">
+	<!-- Web application manifest -->
+	<link rel="manifest" href="manifest.json">
+
 	<!-- Pico.css -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.1/css/pico.min.css" />
 	<!--<link rel="stylesheet" href="/css/pico.min.css" />-->
@@ -69,7 +86,8 @@
 			<article>
 				<header><h2>Yohns PicoCSS Fork</h2></header>
 				<p>I've merged some open pull requests from the <a href="https://github.com/picocss/pico">original Pico</a> repository, and then added a few more enhancements that I either needed for a project (timeline) or wanted to make the building process of websites easier (<code>:user-valid</code> "validation", using <code>&lt;label&gt;</code> within groups, <code>.row</code> &amp; <code>.row-fluid</code> and the <code>.col-*</code> classes like Bootstrap, <code>.align-*</code> and more.) The demo docs here is the main enhanced that have been added to the <a href="https://picocss.com/">Pico CSS 2.0.6</a> branch, for more docs, refer to the original <a href="https://picocss.com/docs">Pico CSS docs</a>.</p>
-				<p>Some of the demos on this page do require <a href="https://github.com/Yohn/PicoCSS/tree/main/docs/js">Vanilla JavaScript Files</a> to work the same as the preview here. I may get a build script going to compile the javascript plugins / components later. Let me know if this feature would help you.</p>
+				<hr>
+				<p><code>(OPTIONAL)</code> Some of the demos on this page do require <a href="https://github.com/Yohn/PicoCSS/tree/main/docs/js">Vanilla JavaScript Files</a> to work the same as the preview here. I may get a build script going to compile the javascript plugins / components later. Let me know if this feature would help you.</p>
 				<footer>If this fork has helped you, please <a href="https://github.com/Yohn/PicoCSS">Like</a> this fork!</footer>
 			</article>
 			<!-- Tooltip -->
