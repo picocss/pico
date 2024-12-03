@@ -1,6 +1,6 @@
 {
   "name": "@yohns/picocss",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Minimal CSS Framework for semantic HTML, updated with enhanced capabilities.",
   "authors": [
     {
@@ -8,7 +8,7 @@
       "website": "https://github.com/picocss/pico"
     },
     {
-      "name": "John Brittaines",
+      "name": "John Brittain III",
       "website": "https://github.com/Yohn/PicoCSS"
     }
   ],

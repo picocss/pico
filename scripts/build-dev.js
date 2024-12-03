@@ -134,9 +134,11 @@ themeColors.forEach((themeColor, colorIndex) => {
 		// Write the file
 		fs.writeFileSync(path.join(cssFoldername, `${version.name}.${themeColor}.css`), result.css);
 
-		// Clear the console
-		process.stdout.clearLine();
-		process.stdout.cursorTo(0);
+		// Clear the console - only if running in a TTY
+		if (process.stdout.isTTY) {
+			process.stdout.clearLine();
+			process.stdout.cursorTo(0);
+		}
 	});
 });
 
