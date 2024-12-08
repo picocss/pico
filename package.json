@@ -1,6 +1,6 @@
 {
   "name": "@yohns/picocss",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Minimal CSS Framework for semantic HTML, updated with enhanced capabilities.",
   "authors": [
     {
@@ -54,26 +54,27 @@
     "build:autoprefix": "postcss --config css --replace css/*.css !css/*.min.css",
     "build-dev:minify": "cleancss -O1 --with-rebase --batch --batch-suffix .min css/*.css !css/*.min.css",
     "build:minify": "cleancss -O1 --with-rebase --batch --batch-suffix .min css/*.css !css/*.min.css",
-    "prelint": "echo '[@Yohn/PicoCSS] ✨ Lint'",
-    "prebuild:css": "echo '[@Yohn/PicoCSS] ✨ Compile'",
-    "prebuild:themes": "echo '[@Yohn/PicoCSS] ✨ Compile themes'",
-    "prebuild:autoprefix": "echo '[@Yohn/PicoCSS] ✨ Autoprefix'",
-    "prebuild:minify": "echo '[@Yohn/PicoCSS] ✨ Minify'",
-    "start": "echo '\\033[96m[@Yohn/PicoCSS] ✨ Start\\033[0m'",
-    "done": "echo '\\033[32m[@Yohn/PicoCSS] ✨ Done\\033[0m'"
+    "build:postbuild": "node scripts/copy-docs-css-files",
+    "prelint": "echo '[@Yohns/PicoCSS] ✨ Lint'",
+    "prebuild:css": "echo '[@Yohns/PicoCSS] ✨ Compile'",
+    "prebuild:themes": "echo '[@Yohns/PicoCSS] ✨ Compile themes'",
+    "prebuild:autoprefix": "echo '[@Yohns/PicoCSS] ✨ Autoprefix'",
+    "prebuild:minify": "echo '[@Yohns/PicoCSS] ✨ Minify'",
+    "start": "echo '\\033[96m[@Yohns/PicoCSS] ✨ Start\\033[0m'",
+    "done": "echo '\\033[32m[@Yohns/PicoCSS] ✨ Done\\033[0m'"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4",
-    "caniuse-lite": "^1.0",
-    "clean-css-cli": "^5.6",
-    "css-declaration-sorter": "^7.2",
-    "nodemon": "^3.1",
-    "npm-run-all": "^4.1",
-    "postcss": "^8.4",
-    "postcss-cli": "^11.0",
-    "postcss-scss": "^4.0",
-    "prettier": "^3.3",
-    "sass": "^1.80"
+    "autoprefixer": "^10.4.20",
+    "caniuse-lite": "^1.0.30001687",
+    "clean-css-cli": "^5.6.3",
+    "css-declaration-sorter": "^7.2.0",
+    "nodemon": "^3.1.7",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "postcss-scss": "^4.0.9",
+    "prettier": "^3.4.2",
+    "sass": "^1.82.0"
   },
   "engines": {
     "node": ">=20"

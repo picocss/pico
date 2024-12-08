@@ -1,16 +1,16 @@
 <p>
   <a href="https://picocss.com" target="_blank">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/picocss/pico/HEAD/.github/logo-dark.svg">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/picocss/pico/HEAD/.github/logo-light.svg">
-      <img alt="Pico CSS" src="https://raw.githubusercontent.com/picocss/pico/HEAD/.github/logo-light.svg" width="auto" height="60">
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Yohn/PicoCSS/HEAD/.github/logo-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Yohn/PicoCSS/HEAD/.github/logo-light.svg">
+      <img alt="Pico CSS" src="https://raw.githubusercontent.com/Yohn/PicoCSS/HEAD/.github/logo-light.svg" width="auto" height="60">
     </picture>
   </a>
 </p>
 
-[![Github release](https://img.shields.io/github/v/release/picocss/pico?color=0172ad&logo=github&logoColor=white)](https://github.com/picocss/pico/releases/latest)
-[![npm version](https://img.shields.io/npm/v/@picocss/pico?color=0172ad)](https://www.npmjs.com/package/@picocss/pico)
-[![License](https://img.shields.io/badge/license-MIT-%230172ad)](https://github.com/picocss/pico/blob/master/LICENSE.md)
+[![Github release](https://img.shields.io/github/v/release/Yohn/PicoCSS?color=0172ad&logo=github&logoColor=white)](https://github.com/Yohn/PicoCSS/releases/latest)
+[![npm version](https://img.shields.io/npm/v/@yohns/picocss?color=0172ad)](https://www.npmjs.com/package/@yohns/picocss)
+[![License](https://img.shields.io/badge/license-MIT-%230172ad)](https://github.com/Yohn/PicoCSS/blob/master/LICENSE.md)
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/picocss.svg?style=social&label=Follow%20%40picocss)](https://twitter.com/picocss)
 
 ## Yohns Updated Version
@@ -66,7 +66,7 @@ There are 4 ways to get started with pico.css:
 
 ### Install manually
 
-[Download Pico](https://github.com/picocss/pico/archive/refs/heads/main.zip) and link `/css/pico.min.css` in the `<head>` of your website.
+[Download Pico](https://github.com/Yohn/PicoCSS/archive/refs/heads/main.zip) and link `/css/pico.min.css` in the `<head>` of your website.
 
 ```html
 <link rel="stylesheet" href="css/pico.min.css" />
@@ -74,10 +74,10 @@ There are 4 ways to get started with pico.css:
 
 ### Usage from CDN
 
-Alternatively, you can use [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@picocss/pico) to link pico.css.
+Alternatively, you can use [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@yohns/picocss) to link pico.css.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.0/css/pico.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.3/css/pico.min.css" />
 ```
 
 ### Install with NPM
@@ -135,7 +135,7 @@ Use the default `.classless` version if you need centered viewports:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.0/css/pico.classless.min.css"
+  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.3/css/pico.classless.min.css"
 />
 ```
 
@@ -144,7 +144,7 @@ Or use the `.fluid.classless` version if you need a fluid container:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.0/css/pico.fluid.classless.min.css"
+  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.3/css/pico.fluid.classless.min.css"
 />
 ```
 
@@ -159,7 +159,7 @@ Then just write pure HTML, and it should look great:
     <meta name="color-scheme" content="light dark" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.0/css/pico.classless.min.css"
+      href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.3/css/pico.classless.min.css"
     />
     <title>Hello, world!</title>
   </head>
@@ -181,6 +181,7 @@ Pico CSS can be used without custom CSS for quick or small projects. However, it
 
 **Getting started**
 
+- [Yohns Pico CSS Additions](https://yohn.github.io/PicoCSS/)
 - [Quick start](https://picocss.com/docs)
 - [Version picker `New`](https://picocss.com/docs/version-picker)
 - [Color schemes](https://picocss.com/docs/color-schemes)
@@ -245,8 +246,8 @@ Pico CSS is designed and tested for the latest stable Chrome, Firefox, Edge, and
 
 ## Contributing
 
-If you are interested in contributing to Pico CSS, please read our [contributing guidelines](https://github.com/picocss/pico/blob/master/.github/CONTRIBUTING.md).
+If you are interested in contributing to Pico CSS, please read our [contributing guidelines](https://github.com/Yohn/PicoCSS/blob/master/.github/CONTRIBUTING.md).
 
 ## Copyright and license
 
-Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LICENSE.md).
+Licensed under the [MIT License](https://github.com/Yohn/PicoCSS/blob/master/LICENSE.md).

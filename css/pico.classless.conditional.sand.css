@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.0.6 (https://picocss.com)
+ * Pico CSS ✨ v2.1.3 (https://github.com/Yohn/PicoCSS)
  * Copyright 2019-2024 - Licensed under MIT
  */
 /**
@@ -25,8 +25,8 @@
   --pico-typography-spacing-vertical: 1rem;
   --pico-block-spacing-vertical: var(--pico-spacing);
   --pico-block-spacing-horizontal: var(--pico-spacing);
-  --pico-form-element-spacing-vertical: 0.75rem;
-  --pico-form-element-spacing-horizontal: 1rem;
+  --pico-form-element-spacing-vertical: calc(var(--pico-spacing) * 0.5);
+  --pico-form-element-spacing-horizontal: calc(var(--pico-spacing) * 0.75);
   --pico-group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-group-box-shadow-focus-with-button: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
   --pico-group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(--pico-form-element-border-color);
@@ -190,7 +190,7 @@ input:not([type=submit],
   filter: brightness(0) invert(1);
 }
 
-.pico [aria-busy=true]:not(input, select, textarea):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
+.pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
   filter: brightness(0) invert(0);
 }
 
@@ -419,8 +419,8 @@ input:not([type=submit],
     --pico-modal-overlay-background-color: rgba(7.5, 8.5, 10, 0.75);
     --pico-progress-background-color: #202632;
     --pico-progress-color: var(--pico-primary-background);
-    --pico-tooltip-background-color: var(--pico-contrast-background);
-    --pico-tooltip-color: var(--pico-contrast-inverse);
+    --pico-tooltip-background-color: var(--pico-contrast-inverse);
+    --pico-tooltip-color: var(--pico-contrast-background);
     --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(42, 123, 111)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
     --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(149.5, 74, 80)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
     --pico-timeline-line-color: var(--pico-primary-background);
@@ -537,8 +537,8 @@ input:not([type=submit],
   --pico-modal-overlay-background-color: rgba(7.5, 8.5, 10, 0.75);
   --pico-progress-background-color: #202632;
   --pico-progress-color: var(--pico-primary-background);
-  --pico-tooltip-background-color: var(--pico-contrast-background);
-  --pico-tooltip-color: var(--pico-contrast-inverse);
+  --pico-tooltip-background-color: var(--pico-contrast-inverse);
+  --pico-tooltip-color: var(--pico-contrast-background);
   --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(42, 123, 111)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
   --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(149.5, 74, 80)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
   --pico-timeline-line-color: var(--pico-primary-background);
@@ -669,515 +669,6 @@ main {
 }
 
 /* Source inspired by https://github.com/sophie-thomas/CSS-Grid/blob/main/assets/scss/grid.scss */
-/*--- CSS Grid ---*/
-.row-fluid,
-.row {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: var(--pico-grid-row-gap) var(--pico-grid-column-gap);
-}
-.row-fluid.align-center,
-.row.align-center {
-  align-items: center;
-}
-.row-fluid.align-start,
-.row.align-start {
-  align-items: start;
-}
-.row-fluid.align-end,
-.row.align-end {
-  align-items: end;
-}
-.row-fluid > [class*=col] > *,
-.row-fluid > [class|=col] > *,
-.row-fluid > [class~=col] > *,
-.row > [class*=col] > *,
-.row > [class|=col] > *,
-.row > [class~=col] > * {
-  margin: calc(var(--pico-block-spacing-vertical) * 0.5) auto;
-}
-
-.row {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Defining columns spans and offsets */
-.col-1 {
-  grid-column-end: span 1;
-}
-
-.col-2 {
-  grid-column-end: span 2;
-}
-
-.col-3 {
-  grid-column-end: span 3;
-}
-
-.col-4 {
-  grid-column-end: span 4;
-}
-
-.col-5 {
-  grid-column-end: span 5;
-}
-
-.col-6 {
-  grid-column-end: span 6;
-}
-
-.col-7 {
-  grid-column-end: span 7;
-}
-
-.col-8 {
-  grid-column-end: span 8;
-}
-
-.col-9 {
-  grid-column-end: span 9;
-}
-
-.col-10 {
-  grid-column-end: span 10;
-}
-
-.col-11 {
-  grid-column-end: span 11;
-}
-
-.col-12 {
-  grid-column-end: span 12;
-}
-
-.offset-0 {
-  grid-column-start: 1;
-}
-
-.offset-1 {
-  grid-column-start: 2;
-}
-
-.offset-2 {
-  grid-column-start: 3;
-}
-
-.offset-3 {
-  grid-column-start: 4;
-}
-
-.offset-4 {
-  grid-column-start: 5;
-}
-
-.offset-5 {
-  grid-column-start: 6;
-}
-
-.offset-6 {
-  grid-column-start: 7;
-}
-
-.offset-7 {
-  grid-column-start: 8;
-}
-
-.offset-8 {
-  grid-column-start: 9;
-}
-
-.offset-9 {
-  grid-column-start: 10;
-}
-
-.offset-10 {
-  grid-column-start: 11;
-}
-
-.offset-11 {
-  grid-column-start: 12;
-}
-
-@media (min-width: 510px) {
-  .col-sm-1 {
-    grid-column-end: span 1;
-  }
-  .col-sm-2 {
-    grid-column-end: span 2;
-  }
-  .col-sm-3 {
-    grid-column-end: span 3;
-  }
-  .col-sm-4 {
-    grid-column-end: span 4;
-  }
-  .col-sm-5 {
-    grid-column-end: span 5;
-  }
-  .col-sm-6 {
-    grid-column-end: span 6;
-  }
-  .col-sm-7 {
-    grid-column-end: span 7;
-  }
-  .col-sm-8 {
-    grid-column-end: span 8;
-  }
-  .col-sm-9 {
-    grid-column-end: span 9;
-  }
-  .col-sm-10 {
-    grid-column-end: span 10;
-  }
-  .col-sm-11 {
-    grid-column-end: span 11;
-  }
-  .col-sm-12 {
-    grid-column-end: span 12;
-  }
-  .offset-sm-0 {
-    grid-column-start: 1;
-  }
-  .offset-sm-1 {
-    grid-column-start: 2;
-  }
-  .offset-sm-2 {
-    grid-column-start: 3;
-  }
-  .offset-sm-3 {
-    grid-column-start: 4;
-  }
-  .offset-sm-4 {
-    grid-column-start: 5;
-  }
-  .offset-sm-5 {
-    grid-column-start: 6;
-  }
-  .offset-sm-6 {
-    grid-column-start: 7;
-  }
-  .offset-sm-7 {
-    grid-column-start: 8;
-  }
-  .offset-sm-8 {
-    grid-column-start: 9;
-  }
-  .offset-sm-9 {
-    grid-column-start: 10;
-  }
-  .offset-sm-10 {
-    grid-column-start: 11;
-  }
-  .offset-sm-11 {
-    grid-column-start: 12;
-  }
-}
-@media (min-width: 700px) {
-  .col-md-1 {
-    grid-column-end: span 1;
-  }
-  .col-md-2 {
-    grid-column-end: span 2;
-  }
-  .col-md-3 {
-    grid-column-end: span 3;
-  }
-  .col-md-4 {
-    grid-column-end: span 4;
-  }
-  .col-md-5 {
-    grid-column-end: span 5;
-  }
-  .col-md-6 {
-    grid-column-end: span 6;
-  }
-  .col-md-7 {
-    grid-column-end: span 7;
-  }
-  .col-md-8 {
-    grid-column-end: span 8;
-  }
-  .col-md-9 {
-    grid-column-end: span 9;
-  }
-  .col-md-10 {
-    grid-column-end: span 10;
-  }
-  .col-md-11 {
-    grid-column-end: span 11;
-  }
-  .col-md-12 {
-    grid-column-end: span 12;
-  }
-  .offset-md-0 {
-    grid-column-start: 1;
-  }
-  .offset-md-1 {
-    grid-column-start: 2;
-  }
-  .offset-md-2 {
-    grid-column-start: 3;
-  }
-  .offset-md-3 {
-    grid-column-start: 4;
-  }
-  .offset-md-4 {
-    grid-column-start: 5;
-  }
-  .offset-md-5 {
-    grid-column-start: 6;
-  }
-  .offset-md-6 {
-    grid-column-start: 7;
-  }
-  .offset-md-7 {
-    grid-column-start: 8;
-  }
-  .offset-md-8 {
-    grid-column-start: 9;
-  }
-  .offset-md-9 {
-    grid-column-start: 10;
-  }
-  .offset-md-10 {
-    grid-column-start: 11;
-  }
-  .offset-md-11 {
-    grid-column-start: 12;
-  }
-}
-@media (min-width: 950px) {
-  .col-lg-1 {
-    grid-column-end: span 1;
-  }
-  .col-lg-2 {
-    grid-column-end: span 2;
-  }
-  .col-lg-3 {
-    grid-column-end: span 3;
-  }
-  .col-lg-4 {
-    grid-column-end: span 4;
-  }
-  .col-lg-5 {
-    grid-column-end: span 5;
-  }
-  .col-lg-6 {
-    grid-column-end: span 6;
-  }
-  .col-lg-7 {
-    grid-column-end: span 7;
-  }
-  .col-lg-8 {
-    grid-column-end: span 8;
-  }
-  .col-lg-9 {
-    grid-column-end: span 9;
-  }
-  .col-lg-10 {
-    grid-column-end: span 10;
-  }
-  .col-lg-11 {
-    grid-column-end: span 11;
-  }
-  .col-lg-12 {
-    grid-column-end: span 12;
-  }
-  .offset-lg-0 {
-    grid-column-start: 1;
-  }
-  .offset-lg-1 {
-    grid-column-start: 2;
-  }
-  .offset-lg-2 {
-    grid-column-start: 3;
-  }
-  .offset-lg-3 {
-    grid-column-start: 4;
-  }
-  .offset-lg-4 {
-    grid-column-start: 5;
-  }
-  .offset-lg-5 {
-    grid-column-start: 6;
-  }
-  .offset-lg-6 {
-    grid-column-start: 7;
-  }
-  .offset-lg-7 {
-    grid-column-start: 8;
-  }
-  .offset-lg-8 {
-    grid-column-start: 9;
-  }
-  .offset-lg-9 {
-    grid-column-start: 10;
-  }
-  .offset-lg-10 {
-    grid-column-start: 11;
-  }
-  .offset-lg-11 {
-    grid-column-start: 12;
-  }
-}
-@media (min-width: 1200px) {
-  .col-xl-1 {
-    grid-column-end: span 1;
-  }
-  .col-xl-2 {
-    grid-column-end: span 2;
-  }
-  .col-xl-3 {
-    grid-column-end: span 3;
-  }
-  .col-xl-4 {
-    grid-column-end: span 4;
-  }
-  .col-xl-5 {
-    grid-column-end: span 5;
-  }
-  .col-xl-6 {
-    grid-column-end: span 6;
-  }
-  .col-xl-7 {
-    grid-column-end: span 7;
-  }
-  .col-xl-8 {
-    grid-column-end: span 8;
-  }
-  .col-xl-9 {
-    grid-column-end: span 9;
-  }
-  .col-xl-10 {
-    grid-column-end: span 10;
-  }
-  .col-xl-11 {
-    grid-column-end: span 11;
-  }
-  .col-xl-12 {
-    grid-column-end: span 12;
-  }
-  .offset-xl-0 {
-    grid-column-start: 1;
-  }
-  .offset-xl-1 {
-    grid-column-start: 2;
-  }
-  .offset-xl-2 {
-    grid-column-start: 3;
-  }
-  .offset-xl-3 {
-    grid-column-start: 4;
-  }
-  .offset-xl-4 {
-    grid-column-start: 5;
-  }
-  .offset-xl-5 {
-    grid-column-start: 6;
-  }
-  .offset-xl-6 {
-    grid-column-start: 7;
-  }
-  .offset-xl-7 {
-    grid-column-start: 8;
-  }
-  .offset-xl-8 {
-    grid-column-start: 9;
-  }
-  .offset-xl-9 {
-    grid-column-start: 10;
-  }
-  .offset-xl-10 {
-    grid-column-start: 11;
-  }
-  .offset-xl-11 {
-    grid-column-start: 12;
-  }
-}
-@media (min-width: 1450px) {
-  .col-xxl-1 {
-    grid-column-end: span 1;
-  }
-  .col-xxl-2 {
-    grid-column-end: span 2;
-  }
-  .col-xxl-3 {
-    grid-column-end: span 3;
-  }
-  .col-xxl-4 {
-    grid-column-end: span 4;
-  }
-  .col-xxl-5 {
-    grid-column-end: span 5;
-  }
-  .col-xxl-6 {
-    grid-column-end: span 6;
-  }
-  .col-xxl-7 {
-    grid-column-end: span 7;
-  }
-  .col-xxl-8 {
-    grid-column-end: span 8;
-  }
-  .col-xxl-9 {
-    grid-column-end: span 9;
-  }
-  .col-xxl-10 {
-    grid-column-end: span 10;
-  }
-  .col-xxl-11 {
-    grid-column-end: span 11;
-  }
-  .col-xxl-12 {
-    grid-column-end: span 12;
-  }
-  .offset-xxl-0 {
-    grid-column-start: 1;
-  }
-  .offset-xxl-1 {
-    grid-column-start: 2;
-  }
-  .offset-xxl-2 {
-    grid-column-start: 3;
-  }
-  .offset-xxl-3 {
-    grid-column-start: 4;
-  }
-  .offset-xxl-4 {
-    grid-column-start: 5;
-  }
-  .offset-xxl-5 {
-    grid-column-start: 6;
-  }
-  .offset-xxl-6 {
-    grid-column-start: 7;
-  }
-  .offset-xxl-7 {
-    grid-column-start: 8;
-  }
-  .offset-xxl-8 {
-    grid-column-start: 9;
-  }
-  .offset-xxl-9 {
-    grid-column-start: 10;
-  }
-  .offset-xxl-10 {
-    grid-column-start: 11;
-  }
-  .offset-xxl-11 {
-    grid-column-start: 12;
-  }
-}
-/* CSS Grid Media Queries */
-@media (max-width: 510px) {
-  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xxl-1, .col-xxl-2, .col-xxl-3, .col-xxl-4, .col-xxl-5, .col-xxl-6, .col-xxl-7, .col-xxl-8, .col-xxl-9, .col-xxl-10, .col-xxl-11, .col-xxl-12 {
-    grid-column-end: span 12;
-  }
-  .offset-0, .offset-1, .offset-2, .offset-3, .offset-4, .offset-5, .offset-6, .offset-7, .offset-8, .offset-9, .offset-10, .offset-11, .offset-md-0, .offset-md-1, .offset-md-2, .offset-md-3, .offset-md-4, .offset-md-5, .offset-md-6, .offset-md-7, .offset-md-8, .offset-md-9, .offset-md-10, .offset-md-11, .offset-lg-0, .offset-lg-1, .offset-lg-2, .offset-lg-3, .offset-lg-4, .offset-lg-5, .offset-lg-6, .offset-lg-7, .offset-lg-8, .offset-lg-9, .offset-lg-10, .offset-lg-11, .offset-xl-0, .offset-xl-1, .offset-xl-2, .offset-xl-3, .offset-xl-4, .offset-xl-5, .offset-xl-6, .offset-xl-7, .offset-xl-8, .offset-xl-9, .offset-xl-10, .offset-xl-11, .offset-xxl-0, .offset-xxl-1, .offset-xxl-2, .offset-xxl-3, .offset-xxl-4, .offset-xxl-5, .offset-xxl-6, .offset-xxl-7, .offset-xxl-8, .offset-xxl-9, .offset-xxl-10, .offset-xxl-11 {
-    grid-column-start: 1;
-  }
-}
 /**
  * Typography
  */
@@ -1407,6 +898,7 @@ main {
   line-height: var(--pico-line-height);
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -3147,7 +2639,7 @@ body:has(dialog[open]) {
 /**
 * Notification (<dialog>)
 */
-dialog[role=alert] {
+.pico dialog[role=alert] {
   position: fixed;
   top: unset;
   right: var(--pico-spacing);
@@ -3174,18 +2666,18 @@ dialog[role=alert] {
   -moz-user-select: none;
   user-select: none;
 }
-dialog[role=alert] > * {
+.pico dialog[role=alert] * {
   color: var(--pico-primary-inverse);
   font-weight: var(--pico-font-weight);
   font-size: var(--pico-font-size);
   line-height: var(--pico-line-height);
 }
 
-dialog[data-backdrop=false][role=alert]::backdrop {
+.pico dialog[data-backdrop=false][role=alert]::backdrop {
   display: none;
 }
 
-dialog[role=alert][open] {
+.pico dialog[role=alert][open] {
   opacity: 1;
   transition: opacity var(--pico-transition);
 }

@@ -216,8 +216,8 @@
 
   // Tooltip ([data-tooltip])
   @if map.get($modules, "components/tooltip") {
-    #{$css-var-prefix}tooltip-background-color: var(#{$css-var-prefix}contrast-background);
-    #{$css-var-prefix}tooltip-color: var(#{$css-var-prefix}contrast-inverse);
+    #{$css-var-prefix}tooltip-background-color: var(#{$css-var-prefix}contrast-inverse);
+    #{$css-var-prefix}tooltip-color: var(#{$css-var-prefix}contrast-background);
   }
 
   // Form validation icons

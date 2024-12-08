@@ -55,6 +55,7 @@
     line-height: var(#{$css-var-prefix}line-height);
     text-align: center;
     text-decoration: none;
+    cursor: pointer;
     user-select: none;
 
     @if $enable-transitions {

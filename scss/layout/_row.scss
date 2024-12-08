@@ -5,7 +5,7 @@
 
 /* Source inspired by https://github.com/sophie-thomas/CSS-Grid/blob/main/assets/scss/grid.scss */
 
-@if map.get($modules, "layout/row") {
+@if map.get($modules, "layout/row") and $enable-classes {
   $helper-cols: "";
   $helper-offset: "";
   /*--- CSS Grid ---*/

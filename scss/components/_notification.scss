@@ -6,7 +6,7 @@
 	 * Notification (<dialog>)
 	 */
 
-  dialog[role="alert"] {
+  #{$parent-selector} dialog[role="alert"] {
     position: fixed;
     top: unset;
     right: var(#{$css-var-prefix}spacing);
@@ -32,7 +32,7 @@
     user-select: none;
 
     //> p, > h1, > h2, > h3, > h4, > h5, > h6 {
-    > * {
+    * {
       color: var(#{$css-var-prefix}primary-inverse);
       font-weight: var(#{$css-var-prefix}font-weight);
       font-size: var(#{$css-var-prefix}font-size);
@@ -40,11 +40,11 @@
     }
   }
 
-  dialog[data-backdrop="false"][role="alert"]::backdrop {
+  #{$parent-selector} dialog[data-backdrop="false"][role="alert"]::backdrop {
     display: none;
   }
 
-  dialog[role="alert"][open] {
+  #{$parent-selector} dialog[role="alert"][open] {
     opacity: 1;
     transition: opacity var(#{$css-var-prefix}transition);
   }

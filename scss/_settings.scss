@@ -104,6 +104,12 @@ $modules: map.merge(
     "layout/landmarks": true,
     "layout/container": true,
     "layout/section": true,
+
+    // V3 Notes
+    // Add <aside> to layout folder, and have it auto build the a grid system
+    // will add notes someplace about idea on how to enable.
+    // use grid-template
+    // maybe only then keep the grid and remove the row system.
     "layout/grid": true,
     "layout/row": true,
     "layout/overflow-auto": true,
@@ -126,19 +132,32 @@ $modules: map.merge(
     "forms/input-file": true,
     "forms/input-range": true,
     "forms/input-search": true,
+    // V3 Notes
+    // Remove original pico validation in favor of :user-[in]valid
     "forms/validation": true,
 
     // Components
     "components/accordion": true,
     "components/card": true,
+    // V3 Notes
+    // Allow for sub-menus in dropdown
     "components/dropdown": true,
     "components/group": true,
     "components/loading": true,
     "components/modal": true,
+    // V3 Notes
+    // incorperate the <menu> tag into navigations.
     "components/nav": true,
     "components/progress": true,
     "components/tooltip": true,
+
+    // V3 Notes
+    // Notification should be redone to be more in line with Pico's design
     "components/notification": true,
+
+    // V3 Notes
+    // timeline disabled by default because its more out of the scope of this project,
+    // and should be moved to a separate "extras" repository, to be included.
     "components/timeline": true,
 
     // Utilities

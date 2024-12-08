@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:math";
 @use "../../colors" as *;
 @use "../../settings" as *;
 @use "../../helpers/functions";
@@ -58,8 +59,8 @@
 
     // Spacings for form elements and button
     @if map.get($modules, "content/button") or map.get($modules, "forms/basic") {
-      #{$css-var-prefix}form-element-spacing-vertical: 0.75rem;
-      #{$css-var-prefix}form-element-spacing-horizontal: 1rem;
+      #{$css-var-prefix}form-element-spacing-vertical: calc(var(--pico-spacing) * 0.5); // 0.75rem
+      #{$css-var-prefix}form-element-spacing-horizontal: calc(var(--pico-spacing) * 0.75); // 1rem
     }
 
     // Font weight for form labels & fieldsets legend
@@ -415,7 +416,7 @@
   // Loading icon (animated)
   @if map.get($modules, "components/loading") {
     // Change the icon color to white for buttons
-    #{$parent-selector} [aria-busy="true"]:not(input, select, textarea) {
+    #{$parent-selector} [aria-busy="true"]:not(input, select, textarea, html, form) {
       $selector: '&:is(button, [type="submit"], [type="button"], [type="reset"], [role="button"])';
       @if $enable-classes {
         $selector: "#{$selector}:not(.outline)";

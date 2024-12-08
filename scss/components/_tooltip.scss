@@ -205,6 +205,7 @@
         50% {
           opacity: 0;
         }
+
         to {
           transform: var(#{$css-var-prefix}tooltip-caret-slide-to);
           opacity: 1;

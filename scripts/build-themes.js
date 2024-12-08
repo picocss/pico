@@ -107,7 +107,7 @@ themeColors.forEach((themeColor, colorIndex) => {
 		const progress = Math.round((index / length) * 100);
 		const bar = "■".repeat(progress / 10);
 		const empty = "□".repeat(10 - progress / 10);
-		process.stdout.write(`[@picocss/pico] ✨ ${bar}${empty} ${color}\r`);
+		process.stdout.write(`[@Yohn/PicoCSS] ✨ ${bar}${empty} ${color}\r`);
 	};
 
 	// Loop through the versions
