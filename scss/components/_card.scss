@@ -51,6 +51,23 @@
         var(#{$css-var-prefix}card-border-color);
       border-bottom-right-radius: var(#{$css-var-prefix}border-radius);
       border-bottom-left-radius: var(#{$css-var-prefix}border-radius);
+
+      // https://github.com/picocss/pico/issues/557#issuecomment-2393213110
+      [type="submit"],
+      [type="reset"],
+      [type="button"],
+      [role="group"] {
+        margin-bottom: 0px;
+
+        &:last-child {
+          margin-bottom: 0px;
+        }
+
+        /* Also remove if next input after button is a hidden input */
+        &:has(+ [type="hidden"]) {
+          margin-bottom: 0px;
+        }
+      }
     }
   }
 }

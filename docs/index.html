@@ -26,11 +26,18 @@
 	<!-- Pico.css -->
 	<link rel="stylesheet" href="pico.min.css" />
 	<link rel="stylesheet" href="pico.colors.min.css" />
+
+  <!--
+        Yohn's Simple CSS Class helpers
+        I might add these to the main PicoCSS later
+  -->
+  <link rel="stylesheet" href="basics.css" />
 	<style>
 		:root {
 			--pico-logo-wordmark: #fff;
 			--pico-logo-small-sparkles: #ff9500;
 			--pico-logo-big-sparkle: #ffbf00;
+
 		}
 	</style>
 </head>
@@ -64,7 +71,10 @@
 				<aside>
 					<nav>
 						<ul>
+              <li><a href="#hamburger-menu">Hamburger Menu</a></li>
+							<li><a href="#tab-regions">Tabs [role="region"]</a></li>
 							<li><a href="#tooltip">Tooltip</a></li>
+							<li><a href="#floating-labels">Floating Labels [role="form"]</a></li>
 							<li><a href="#validation">Validation</a></li>
 							<li><a href="#group">Group</a></li>
 							<li><a href="#rows">Row</a></li>
@@ -83,29 +93,199 @@
 		</div>
 		<main class="col-12 col-md-9 col-lg-10">
 			<article>
-				<header><h2>Yohns PicoCSS Fork</h2></header>
+				<header><h2>Yohns PicoCSS Fork v2.2.0</h2></header>
 				<p>I've merged some open pull requests from the <a href="https://github.com/picocss/pico">original Pico</a> repository, and then added a few more enhancements that I either needed for a project (timeline) or wanted to make the building process of websites easier (<code>:user-valid</code> "validation", using <code>&lt;label&gt;</code> within groups, <code>.row</code> &amp; <code>.row-fluid</code> and the <code>.col-*</code> classes like Bootstrap, <code>.align-*</code> and more.) The demo docs here is the main enhanced that have been added to the <a href="https://picocss.com/">Pico CSS 2.0.6</a> branch, for more docs, refer to the original <a href="https://picocss.com/docs">Pico CSS docs</a>.</p>
 				<hr>
 				<p><code>(OPTIONAL)</code> Some of the demos on this page do require <a href="https://github.com/Yohn/PicoCSS/tree/main/docs/js">Vanilla JavaScript Files</a> to work the same as the preview here. I may get a build script going to compile the javascript plugins / components later. Let me know if this feature would help you.</p>
 				<footer>If this fork has helped you, please <a href="https://github.com/Yohn/PicoCSS">Like</a> this fork!</footer>
 			</article>
+			<hr>
+			<!-- hamburger-menu -->
+			<article id="hamburger-menu">
+				<header>
+          <h2>Hamburger Menu <code>nav[role="navigation"]</code></h2>
+          <h6 class="fw-n">Classless!</h6>
+        </header>
+				<p>Use the default <code>&lt;nav&gt;</code> component in <a href="https://picocss.com/docs/nav">Pico CSS</a> docs, but add the <code>role="navigation"</code> attribute to the <code>&lt;nav&gt;</code>.</p>
+        <h5>Positioning</h5>
+        <p>The default position puts your nav links and burger menu at the end of the line, but <code>data-position="start"</code> will put them at the start of the line.</p>
+        <h5>Breakpoints</h5>
+        <p>Use the <code>data-breakpoint="<strong>**</strong>"</code> to change when the burger menu appears. The different values are <code>md</code>, <code>lg</code>, <code>xl</code> and <code>xxl</code>. These are the same breakpoints <a href="#rows">the .row</a> uses.</p>
+        <h5>Hamburger Icon</h5>
+        <p>Before the list of elements you want to be within the burger menu, add the following:</p>
+        <code>
+          &lt;input type="checkbox" id="YOUR-ID" /&gt;<br>
+          &lt;label for="YOUR-ID" style="font-size: calc(var(--pico-font-size) * 1.5);"&gt;&amp;#x2261;&lt;/label&gt;
+        </code>
+        <p>Change <code>YOUR-ID</code> to whatever id you want to use, but ensure the id for the checkbox, is the same as the id for the label.</p>
+        <blockquote><span style="color: var(--pico-del-color);">DO NOT</span> put the <code>input[type="checkbox"]</code> within the <code>&lt;label&gt;</code> element, it will not work correctly if you do that.</blockquote>
+        <h6>Custom Hamburger Icon?</h6>
+        <p>Replace the <code>&amp;#x2261;</code> with your own icon, svg element, or image.</p>
+        <h5>Collapsed List</h5>
+        <p>Add <code>role="list"</code> attribute to the <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> element for the hamburger menu, and then add <code>role="listitem"</code> attribute to each <code>&lt;li&gt;</code> element.</p>
+        <hr>
+				<nav role="navigation" data-position="start" data-breakpoint="xxlg">
+		    	<ul>
+		    		<li><a href="https://github.com/Yohn/PicoCSS" target="_blank">Yohns Fork</a></li>
+		    	</ul>
+          <ul>
+            <li><strong>Like Us on GitHub!</strong></li>
+          </ul>
+          <input type="checkbox" id="menu-btn" />
+		    	<label for="menu-btn" style="font-size: calc(var(--pico-font-size) * 1.5);">
+		    		&#x2261;
+		    	</label>
+		    	<ol role="list">
+		    		<li role="listitem"><a href="#">Home</a></li>
+		    		<li role="listitem"><a href="#">About</a></li>
+		    		<li role="listitem"><a href="#">Services</a></li>
+		    		<li role="listitem"><a href="#">Login</a></li>
+		    		<li role="listitem"><a href="#">Sign Up</a></li>
+		    	</ol>
+		    </nav>
+			</article>
+			<!-- /hamburger-menu -->
+       <hr>
+			<!-- Tabs -->
+			<article id="tab-regions">
+        <header>
+				  <h2>Tabs <code>section[role="region"]</code></h2>
+          <h6 class="fw-n">Classless!</h6>
+        </header>
+        <h3 class="mt-0">Information</h3>
+        <ul class="pb-0">
+          <li>I wanted this to work without javascript</li>
+          <li>I wanted to use the <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> tags.</li></ul>
+        <h3 class="mt-0">Grips</h3>
+        <ol>
+          <li>I would have liked to use the <code>role</code> attribute values <code>tablist</code>, <code>tab</code>, and <code>tabpanel</code> but the w3 specs says we cant use roles on <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> tags.</li>
+          <li><code>&lt;section&gt;</code> in theory has a default <code>role</code> attribute value of <code>region</code>, though not confirmed, or applied when we are using it for our CSS. So I went with the <code>role="region"</code> attribute to help with selecting the correct element with CSS, classless and no JavaScript!</li>
+
+        </ol>
+        <hr>
+        <h2>Example Tabs with no JavaScript:</h2>
+        <!-- start tab example -->
+				<section role="region">
+	      	<details name="lets-go" open>
+	      		<summary>Tab 1</summary>
+	      		<div>
+	      			<p>Content for Tab 1</p>
+	      			<p>Content for Tab 1</p>
+	      		</div>
+	      	</details>
+	      	<details name="lets-go">
+	      		<summary>Tab 2</summary>
+	      		<div>
+	      			<p>Just a random table</p>
+	      			<table>
+	      				<tr>
+	      					<td>row 1 col 1</td>
+	      					<td>row 1 col 2</td>
+	      					<td>row 1 col 3</td>
+	      				</tr>
+	      				<tr>
+	      					<td>row 2 col 1</td>
+	      					<td>row 2 col 2</td>
+	      					<td>row 2 col 3</td>
+	      				</tr>
+	      				<tr>
+	      					<td>row 3 col 1</td>
+	      					<td>row 3 col 2</td>
+	      					<td>row 3 col 3</td>
+	      				</tr>
+	      			</table>
+	      		</div>
+	      	</details>
+	      	<details name="lets-go">
+	      		<summary>Tab 3</summary>
+	      		<div>
+	      			<form action="javascript:void(0);">
+                <section role="form">
+                  <input type="text" id="name" name="name" placeholder="Name:" required>
+                  <label for="name">Name:</label>
+                 </section>
+                <section role="form">
+                  <input type="email" id="email" name="email" placeholder="Email:" required>
+                  <label for="email">Email:</label>
+                </section>
+                <input type="submit" value="Submit">
+              </form>
+	      		</div>
+	      	</details>
+	      	<details name="lets-go">
+	      		<summary>Tab 4</summary>
+	      		<div>
+	      			<p>Content for Tab 4</p>
+	      		</div>
+	      	</details>
+	      	<details name="lets-go">
+	      		<summary>Tab 5</summary>
+	      		<div>
+	      			<p>Content for Tab 5</p>
+	      		</div>
+	      	</details>
+	      </section>
+        <!-- / tab example -->
+			</article>
+			<!-- /Tabs -->
+			<hr>
 			<!-- Tooltip -->
 			<article id="tooltip">
 				<header><h2>Tooltip</h2></header>
 				<p>For multi-line tooltips, you can now add <code>&amp;#xa;</code> where the line break should go within your tooltip area.</core></p>
-				<label for="test-tooltip" data-tooltip="this is &#xa; a test">
+				<label for="test-tooltip" data-tooltip="this is &#xa; multiline tooltip &#xa; that currently you have &#xa; to put the breaks in: &amp;#xa;">
 					<input type="text" id="test-tooltip" placeholder="Testing">
 				</label>
-				<p>I also wanted to remove the dotted line on input fileds when they are contained within the tooltip element, so that is why this example has the input field with the tooltip on the <code>&lt;label&gt;</code> wrapper.</p>
+				<p>I also wanted to remove the dotted line on input fileds when they are contained within the tooltip element, so that is why this example has the input field with the tooltip on the <code data-tooltip="I do not think there is a way to set the width on the tool tip and have it auto break? Lets see..">&lt;label&gt;</code> wrapper.</p>
 				<code> data-tooltip="this is &amp;#xa; a test"</code>
 			</article>
 			<!-- /Tooltip -->
-			<!-- Validation -->
-			<form action="javascript:void(0);">
-				<article id="validation">
-					<header><h2>Validation</h2></header>
+			<hr>
+      <!-- Floating Labels -->
+			<article id="floating-labels">
+        <header>
+				  <h2>Floating Labels</h2>
+          <h6 class="fw-n">Classless!</h6>
+        </header>
+        <p>For floating labels to work, you need to add the <code>role="form"</code> attribute to a <code>&lt;section&gt;</code> tag, ensure you have a <code>placeholder="example"</code> attribute on your input or textarea tags, and that placeholder value needs to be the same value that is used within the label tag, which would go after your form element.</textarea></code>.</p>
+        <hr>
+        <form action="javascript:void(0);" novalidate>
+          <section role="form">
+      			<input type="text" id="fl-name-ele" placeholder="Name" aria-required="true" aria-labelledby="fl-name">
+      			<label for="fl-name-ele" id="fl-name">Name</label>
+          </section>
+      		<section role="form">
+      			<input type="email" id="fl-email-ele" placeholder="Email" aria-required="true" aria-labelledby="fl-email">
+      			<label for="fl-email-ele" id="fl-email">Email</label>
+      		</section>
+      		<section role="form">
+      			<select id="fl-topic-ele" required aria-required="true" aria-labelledby="fl-topic">
+              <option selected disabled value="">Topic</option>
+              <option>General</option>
+              <option>Support</option>
+              <option>Feedback</option>
+            </select>
+      			<label for="fl-topic-ele" id="fl-topic">Topic</label>
+      		</section>
+      		<section role="form">
+      			<textarea id="fl-message-ele" placeholder="Message" aria-required="true" aria-labelledby="fl-message"></textarea>
+      			<label for="fl-message-ele" id="fl-message">Message</label>
+      		</section>
+        </form>
+      </article>
+			<!-- /Floating Labels -->
+			<hr>
+      <!-- Validation -->
+			<form action="javascript:void(0);" id="validate">
+				<article>
+					<header>
+            <h2>Validation</h2>
+            <h6 class="fw-n">Classless!</h6>
+          </header>
 					<p>
-						Form :user-valid and :user-invalid
+						Using form :user-valid and :user-invalid.</p>
+          <p>You can disable the validation by adding the attribute <code>novalidate</code> to the form tag.
+          <p>Classless except for the file input button previews.</p>
 					</p>
 					<input placeholder="name" type="text" name="test" minlength="4" maxlength="30" pattern="[a-z]{4,30}" required>
 					<small data-valid="this is good!" data-invalid="Min of 4 characters, max of 39, only a-z no caps."></small>
@@ -152,19 +332,24 @@
 				</article>
 			</form>
 			<!-- /Validation -->
+			<hr>
 			<!-- Group -->
 			<article id="group">
-				<header><h2>Group</h2></header>
-				<form action="javascript:void(0);">
-					<fieldset role="group">
+				<header>
+          <h2>Group</h2>
+          <h6 class="fw-n">Classless and no JavaScript!</h6>
+        </header>
+        <p>I wanted to add the label tah to have an input group kind of thing going on.</p>
+				<form action="javascript:void(0);" novalidate>
+					<div role="group">
 						<label for="email">Email:</label>
 						<input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
 						<input type="submit" value="Subscribe" />
-					</fieldset>
+					</div>
 				</form>
 
-				<form action="javascript:void(0);">
-					<fieldset role="group">
+				<form action="javascript:void(0);" novalidate>
+					<div role="group">
 						<label for="ex-browser">Browser:</label>
 						<select id="ex-browser" name="ex-browser">
 							<option value="Firefox">Firefox</option>
@@ -173,7 +358,7 @@
 							<option value="Safari">Safari</option>
 						</select>
 						<input type="submit" value="Save" />
-					</fieldset>
+					</div>
 				</form>
 			</article>
 			<!-- ./ Group -->
@@ -385,7 +570,7 @@
 <!-- Footer -->
 <footer class="container">
 	<small>
-		Built with <a href="https://picocss.com">Pico</a> •
+		Built with <a href="https://github.com/Yohn/PicoCSS">PicoCSS</a> •
 		<a href="https://github.com/Yohn/PicoCSS">
 			Source code
 		</a>
@@ -420,9 +605,11 @@
 <!-- Modal -->
 <script src="js/Modal.js"></script>
 <!-- alert notifications -->
- <script src="js/Notifications.js"></script>
- <script src="js/FileValidator.js"></script>
- <script src="js/Accordion.js"></script>
+<script src="js/Notifications.js"></script>
+<!-- For the file uploader preview -->
+<script src="js/FileValidator.js"></script>
+<!-- Accordions, but I might have found another way to do this recently without javascript ;) -->
+<script src="js/Accordion.js"></script>>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 	const checkFile = document.getElementById("checkFile");

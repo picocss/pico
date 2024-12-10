@@ -34,6 +34,7 @@
 @use "forms/input-range"; // type="range"
 @use "forms/input-search"; // type="search"
 @use "forms/validation"; // validation for all form elements except select[multiple],select[size], input:not([type="button"], [type="reset"], [type="image"], [type="submit"], [type="checkbox"], [type="radio"]
+@use "forms/floating"; // floating labels
 
 // Components
 @use "components/accordion"; // details, summary
@@ -43,10 +44,11 @@
 @use "components/loading"; // aria-busy=true
 @use "components/modal"; // dialog
 @use "components/nav"; // nav
+@use "components/nav-hamburger"; // role="navigation" for hamburger-menu for the nav component
 @use "components/progress"; // progress
 @use "components/tooltip"; // data-tooltip
+@use "components/tab-region"; // section[role="region"] // tabs
 @use "components/notification"; // dialog[role="alert"]
-
 @use "components/timeline"; // addition, kind of out of scope but wanted to add
 
 // Utilities

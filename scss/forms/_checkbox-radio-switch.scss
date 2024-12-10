@@ -136,8 +136,8 @@
   }
 
   // Aria-invalid
-  #{$parent-selector} [type="checkbox"],
-  #{$parent-selector} [type="checkbox"][role="switch"] {
+  #{$parent-selector} :not([novalidate]) [type="checkbox"],
+  #{$parent-selector} :not([novalidate]) [type="checkbox"][role="switch"] {
     &[aria-invalid="false"] {
       &:checked,
       &:checked:active,
@@ -156,9 +156,9 @@
     }
   }
 
-  #{$parent-selector} [type="checkbox"],
-  #{$parent-selector} [type="radio"],
-  #{$parent-selector} [type="checkbox"][role="switch"] {
+  #{$parent-selector} :not([novalidate]) [type="checkbox"],
+  #{$parent-selector} :not([novalidate]) [type="radio"],
+  #{$parent-selector} :not([novalidate]) [type="checkbox"][role="switch"] {
     &[aria-invalid="false"] {
       &:checked,
       &:checked:active,

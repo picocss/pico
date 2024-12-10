@@ -9,8 +9,8 @@
   $helper-cols: "";
   $helper-offset: "";
   /*--- CSS Grid ---*/
-  .row-fluid,
-  .row {
+  #{$parent-selector} .row-fluid,
+  #{$parent-selector} .row {
     display: grid;
     grid-template-columns: repeat($row-columns, 1fr);
     gap: var(#{$css-var-prefix}grid-row-gap) var(#{$css-var-prefix}grid-column-gap);
@@ -26,29 +26,29 @@
     > [class*="col"] > *,
     > [class|="col"] > *,
     > [class~="col"] > * {
-      margin: calc(var(#{$css-var-prefix}block-spacing-vertical) * 0.5) auto;
+      margin: var(#{$css-var-prefix}block-spacing-vertical) auto;
     }
   }
-  .row {
+  #{$parent-selector} .row {
     max-width: map.get(map.get($breakpoints, "xl"), "viewport");
     margin: 0 auto;
   }
   /* Defining columns spans and offsets */
   // Loop through all column spans and define the .grid-column-end number
   @for $col from 1 through $row-columns {
-    .col-#{$col} {
+    #{$parent-selector} .col-#{$col} {
       grid-column-end: span $col;
     }
     @if $col == 1 {
       $helper-cols: ".col-1";
     } @else {
-      $helper-cols: #{$helper-cols} + ", .col-" + #{$col};
+      $helper-cols: #{$helper-cols} + ", #{$parent-selector} .col-" + #{$col};
     }
   }
 
   // Loop through all column offsets and define the .grid-column-start number
   @for $offset from 0 through $row-columns - 1 {
-    .offset-#{$offset} {
+    #{$parent-selector} .offset-#{$offset} {
       grid-column-start: $offset + 1;
     }
     @if $offset == 0 {
@@ -65,15 +65,19 @@
     @if $values {
       @media (min-width: map.get($values, "viewport")) {
         @for $col from 1 through $row-columns {
-          .col-#{$breakpoint}-#{$col} {
+          #{$parent-selector} .col-#{$breakpoint}-#{$col} {
             grid-column-end: span $col;
           }
           @if ($breakpoint != "sm") {
-            $helper-cols: #{$helper-cols} + ", .col-" + #{$breakpoint} + "-" + #{$col};
+            $helper-cols: #{$helper-cols} +
+              ", #{$parent-selector} .col-" +
+              #{$breakpoint} +
+              "-" +
+              #{$col};
           }
         }
         @for $offset from 0 through $row-columns - 1 {
-          .offset-#{$breakpoint}-#{$offset} {
+          #{$parent-selector} .offset-#{$breakpoint}-#{$offset} {
             grid-column-start: $offset + 1;
           }
           @if ($breakpoint != "sm") {

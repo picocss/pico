@@ -6,8 +6,8 @@
    * Container
    */
 
-  .container,
-  .container-fluid {
+  #{$parent-selector} .container,
+  #{$parent-selector} .container-fluid {
     width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -15,7 +15,7 @@
     padding-left: var(#{$css-var-prefix}spacing);
   }
 
-  .container {
+  #{$parent-selector} .container {
     $first-breakpoint: true;
     @each $key, $values in $breakpoints {
       @if $values {

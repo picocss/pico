@@ -1,0 +1,84 @@
+@use "sass:string";
+@use "sass:map";
+@use "sass:math";
+@use "../settings" as *;
+
+@if map.get($modules, "components/nav") {
+  /**
+   * Nav hamburger menu
+   * modified from https: //codepen.io/brentarias/pen/gOQybod
+   */
+  #{$parent-selector} nav[role="navigation"] {
+    z-index: 1;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+
+    &[data-position="start"] {
+      /* remove the 'flex-direction' to move menu to the right */
+      flex-direction: row-reverse;
+    }
+
+    > input[type="checkbox"] {
+      display: none;
+      user-select: none;
+    }
+
+    > label {
+      display: none;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+
+  @each $breakpoint, $values in $breakpoints {
+    $databp: 'nav[role="navigation"]';
+    @if $breakpoint != sm {
+      $databp: #{$databp} + "[data-breakpoint='" + $breakpoint + "']";
+    }
+
+    $viewport: map.get($values, "viewport");
+    @media (max-width: $viewport) {
+      #{$parent-selector} #{$databp} {
+        flex-wrap: wrap;
+        & label {
+          display: block;
+        }
+        & > [role="list"] {
+          flex-direction: column;
+          align-items: flex-start;
+          width: 90vw;
+          max-height: 0;
+          margin: 0 auto;
+          background-color: var(--pico-muted-border-color); //muted-border-color);
+          box-shadow: var(--pico-box-shadow);
+          transition: max-height var(--pico-transition);
+          & li {
+            width: calc(100% - calc(var(--pico-nav-link-spacing-vertical) * 2));
+            margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5)
+              var(--pico-nav-link-spacing-vertical);
+            padding: 0;
+          }
+          & a {
+            display: block;
+            margin: 0;
+            border-bottom: 1px solid transparent;
+            border-radius: 0;
+            transition:
+              border-color var(--pico-transition),
+              color var(--pico-transition);
+          }
+          & a:hover {
+            border-bottom-color: var(--pico-underline);
+            text-decoration: none;
+            //background-color: var(--pico-primary-background) !important;
+            //color: var(--pico-primary-inverse);
+          }
+        }
+        & input[type="checkbox"]:checked ~ [role="list"] {
+          max-height: 100vh;
+        }
+      }
+    }
+  }
+}

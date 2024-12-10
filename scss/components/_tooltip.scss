@@ -24,6 +24,8 @@
       position: absolute;
       bottom: 100%;
       left: 50%;
+      width: 250px;
+      max-width: 250px;
       padding: 0.25rem 0.5rem;
       overflow: hidden;
       transform: translate(-50%, -0.25rem);
@@ -34,9 +36,10 @@
       font-style: normal;
       font-weight: var(#{$css-var-prefix}font-weight);
       font-size: 0.875rem;
+      text-align: center;
       text-decoration: none;
       text-overflow: ellipsis;
-      white-space: pre;
+      white-space: normal;
       opacity: 0;
       pointer-events: none;
     }

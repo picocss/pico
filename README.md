@@ -1,17 +1,3 @@
-# Next release notes:
-
-Planning to release 12/10/2024 (within the next couple hours)
-
-## Issues to address:
-  - I've found with the validation (completed)
-
-## New Components
- - floating labels (completed)
- - tabs (completed)
- - mobile friendly 'nav'
-
----
-
 <p>
   <a href="https://picocss.com" target="_blank">
     <picture>
@@ -25,7 +11,7 @@ Planning to release 12/10/2024 (within the next couple hours)
 [![Github release](https://img.shields.io/github/v/release/Yohn/PicoCSS?color=0172ad&logo=github&logoColor=white)](https://github.com/Yohn/PicoCSS/releases/latest)
 [![npm version](https://img.shields.io/npm/v/@yohns/picocss?color=0172ad)](https://www.npmjs.com/package/@yohns/picocss)
 [![License](https://img.shields.io/badge/license-MIT-%230172ad)](https://github.com/Yohn/PicoCSS/blob/master/LICENSE.md)
-[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/picocss.svg?style=social&label=Follow%20%40picocss)](https://twitter.com/picocss)
+<!-- [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/picocss.svg?style=social&label=Follow%20%40picocss)](https://twitter.com/picocss) -->
 
 ## Yohns Updated Version
 I'm not sure if the original [Pico CSS](https://github.com/picocss/pico) repository is abandoned or not, but I really liked what they had to offer, and wanted to help not let this awesomely simple and easy to use front end framework disappear, so I merged as many of open pull requests that fixed some issues, and / or enhanced the project that were available at the time. I'll try to help keep it viable and do some bug fixes if any arise, and would alway appreciate anyone elses help to continue keeping this alive!
@@ -91,7 +77,7 @@ There are 4 ways to get started with pico.css:
 Alternatively, you can use [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@yohns/picocss) to link pico.css.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.3/css/pico.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.0/css/pico.min.css" />
 ```
 
 ### Install with NPM
@@ -149,7 +135,7 @@ Use the default `.classless` version if you need centered viewports:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.3/css/pico.classless.min.css"
+  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.0/css/pico.classless.min.css"
 />
 ```
 
@@ -158,7 +144,7 @@ Or use the `.fluid.classless` version if you need a fluid container:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.3/css/pico.fluid.classless.min.css"
+  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.0/css/pico.fluid.classless.min.css"
 />
 ```
 
@@ -173,7 +159,7 @@ Then just write pure HTML, and it should look great:
     <meta name="color-scheme" content="light dark" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.1.3/css/pico.classless.min.css"
+      href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.0/css/pico.classless.min.css"
     />
     <title>Hello, world!</title>
   </head>

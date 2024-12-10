@@ -1,5 +1,5 @@
 {
-  "name": "picocss/pico",
+  "name": "yohn/picocss",
   "description": "Minimal CSS Framework for semantic HTML.",
   "keywords": [
     "css",
@@ -14,17 +14,22 @@
     "scss-framework",
     "semantic"
   ],
-  "homepage": "https://picocss.com",
+  "homepage": "https://github.com/Yohn/PicoCSS",
   "authors": [
     {
       "name": "Lucas Larroche",
       "email": "lucas@larroche.com",
       "homepage": "https://lucaslarroche.com",
       "role": "Developer"
+    },
+    {
+      "name": "John Brittain III",
+      "homepage": "https://github.com/Yohn/PicoCSS",
+      "role": "Developer"
     }
   ],
   "support": {
-    "issues": "https://github.com/picocss/pico/issues/"
+    "issues": "https://github.com/Yohn/PicoCSS/issues/"
   },
   "license": "MIT"
 }

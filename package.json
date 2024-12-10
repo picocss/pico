@@ -1,6 +1,6 @@
 {
   "name": "@yohns/picocss",
-  "version": "2.1.3",
+  "version": "2.2.0",
   "description": "Minimal CSS Framework for semantic HTML, updated with enhanced capabilities.",
   "authors": [
     {
@@ -40,7 +40,7 @@
   },
   "scripts": {
     "✨": "run-s build",
-    "build": "run-s start lint \"build:*\" done --silent",
+    "build": "run-s start lint \"build:*\" done",
     "build-dev": "run-s start lint \"build-dev:*\" done",
     "dev": "nodemon -q --watch scss/ --ext scss --exec \"run-s build-dev\"",
     "lint": "run-s \"lint:*\"",
@@ -54,6 +54,7 @@
     "build:autoprefix": "postcss --config css --replace css/*.css !css/*.min.css",
     "build-dev:minify": "cleancss -O1 --with-rebase --batch --batch-suffix .min css/*.css !css/*.min.css",
     "build:minify": "cleancss -O1 --with-rebase --batch --batch-suffix .min css/*.css !css/*.min.css",
+    "build-dev:postbuild": "node scripts/copy-docs-css-files",
     "build:postbuild": "node scripts/copy-docs-css-files",
     "prelint": "echo '[@Yohns/PicoCSS] ✨ Lint'",
     "prebuild:css": "echo '[@Yohns/PicoCSS] ✨ Compile'",

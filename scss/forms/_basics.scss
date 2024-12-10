@@ -257,7 +257,7 @@
   }
 
   // Aria-invalid
-  #{$parent-selector} :where(input, select, textarea) {
+  #{$parent-selector} :not([novalidate]) :where(input, select, textarea) {
     &:not(
         [type="checkbox"],
         [type="radio"],
@@ -331,6 +331,7 @@
     }
 
     &[aria-invalid="true"] {
+      // --pico-form-element-invalid-border-color
       #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-invalid-border-color);
 
       &:is(:active, :focus) {

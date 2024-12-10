@@ -132,6 +132,7 @@ $modules: map.merge(
     "forms/input-file": true,
     "forms/input-range": true,
     "forms/input-search": true,
+    "forms/floating": true,
     // V3 Notes
     // Remove original pico validation in favor of :user-[in]valid
     "forms/validation": true,
@@ -149,7 +150,12 @@ $modules: map.merge(
     // incorperate the <menu> tag into navigations.
     "components/nav": true,
     "components/progress": true,
+    // I wish role="tablist|tab|tabpanel" could be used on <details> and <summary> tag.
+    "components/tab-region": true,
     "components/tooltip": true,
+    // V3 Notes
+    // might find a new way to do this, I'll wait to hear feedback on this approach.
+    "components/nav-hamburger": true,
 
     // V3 Notes
     // Notification should be redone to be more in line with Pico's design
