@@ -1,3 +1,16 @@
+# Next release notes:
+
+Planning to release 12/10/2024 (within the next couple hours)
+
+## Issues to address:
+  - I've found with the validation
+
+## New Components
+ - floating labels
+ - tabs
+
+---
+
 <p>
   <a href="https://picocss.com" target="_blank">
     <picture>
