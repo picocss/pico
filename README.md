@@ -3,11 +3,12 @@
 Planning to release 12/10/2024 (within the next couple hours)
 
 ## Issues to address:
-  - I've found with the validation
+  - I've found with the validation (completed)
 
 ## New Components
- - floating labels
- - tabs
+ - floating labels (completed)
+ - tabs (completed)
+ - mobile friendly 'nav'
 
 ---
 
