@@ -110,7 +110,15 @@
 
         &::after {
           float: left;
+          transform: rotate(90deg);
           background-position: left center;
+        }
+      }
+      &[open] {
+        > summary {
+          &::after {
+            transform: rotate(0);
+          }
         }
       }
     }
