@@ -124,8 +124,13 @@
 				<h5>Collapsed List</h5>
 				<p>Add <code>role="list"</code> attribute to the <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> element for the hamburger menu, and then add <code>role="listitem"</code> attribute to each <code>&lt;li&gt;</code> element.</p>
 				<hr>
-				<h3>Example Hamburger Menu (resize width of screen if you don't see it)</h3>
-				<nav role="navigation" data-position="start" data-breakpoint="xxl">
+				<hgroup>
+          <h3>Example Hamburger Menu</h3>
+          <h6>(resize width of screen if you don't see it)</h6>
+        </hgroup>
+
+        <!-- Start Responsive Nav 1 -->
+				<nav role="navigation" data-position="start" data-breakpoint="lg">
 					<ul>
 						<li><a href="https://github.com/Yohn/PicoCSS" target="_blank">Yohns Fork</a></li>
 					</ul>
@@ -133,10 +138,11 @@
 						<li><strong>Like Us on GitHub!</strong></li>
 					</ul>
 					<input type="checkbox" id="menu-btn" />
-					<label for="menu-btn" style="font-size: calc(var(--pico-font-size) * 1.5);">
+          <!-- role="button" -->
+					<label for="menu-btn" style="font-size: calc(var(--pico-font-size) * 1.3);" aria-label="Menu" aria-controls="nav-example">
 						&#x2261;
 					</label>
-					<ol role="list">
+					<ol id="nav-example" role="list" >
 						<li role="listitem"><a href="#">Home</a></li>
 						<li role="listitem"><a href="#">About</a></li>
 						<li role="listitem"><a href="#">Services</a></li>
@@ -144,7 +150,32 @@
 						<li role="listitem"><a href="#">Sign Up</a></li>
 					</ol>
 				</nav>
-			</article>
+        <!-- End Responsive Nav 1 -->
+
+        <h3>Hamburger Menu Under Nav Example</h3>
+        <!-- Start Responsive Nav 2 -->
+				<nav role="navigation" data-position="end" data-breakpoint="lg">
+					<ul>
+						<li><a href="https://github.com/Yohn/PicoCSS" target="_blank">Yohns Fork</a></li>
+					</ul>
+					<ul>
+						<li><strong>Like Us on GitHub!</strong></li>
+					</ul>
+					<input type="checkbox" id="menu-btn2">
+					<label for="menu-btn2" style="font-size: calc(var(--pico-font-size) * 1.3);" aria-label="Menu" aria-controls="nav-example2">
+						&#x2261;
+					</label>
+					<ol id="nav-example2" role="list">
+						<li role="listitem"><a href="#">Home</a></li>
+						<li role="listitem"><a href="#">About</a></li>
+						<li role="listitem"><a href="#">Services</a></li>
+						<li role="listitem"><a href="#">Login</a></li>
+						<li role="listitem"><a href="#">Sign Up</a></li>
+					</ol>
+				</nav>
+        <!-- End Responsive Nav 2 -->
+
+      </article>
 			<!-- /hamburger-menu -->
 			 <hr>
 			<!-- Tabs -->
@@ -159,7 +190,7 @@
 					<li>I wanted to use the <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> tags.</li></ul>
 				<h3 class="mt-0">Grips</h3>
 				<ol>
-					<li>I would have liked to use the <code>role</code> attribute values <code>tablist</code>, <code>tab</code>, and <code>tabpanel</code> but the w3 specs says we cant use roles on <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> tags.</li>
+					<li>I would have liked to use the <code>role</code> attribute values <code>tablist</code>, <code>tab</code>, and <code>tabpanel</code> but the w3 specs says we cant use roles on <a href="https://www.w3.org/TR/html-aria/#el-details" target="_blank" data-tooltip="W3 Specs for Details"><code>&lt;details&gt;</code></a> and <a href="https://www.w3.org/TR/html-aria/#el-summary" target="_blank" data-tooltip="W3 Specs for Summary"><code>&lt;summary&gt;</code></a> tags.</li>
 					<li><code>&lt;section&gt;</code> in theory has a default <code>role</code> attribute value of <code>region</code>, though not confirmed, or applied when we are using it for our CSS. So I went with the <code>role="region"</code> attribute to help with selecting the correct element with CSS, classless and no JavaScript!</li>
 
 				</ol>
@@ -609,8 +640,10 @@
 <script src="js/Notifications.js"></script>
 <!-- For the file uploader preview -->
 <script src="js/FileValidator.js"></script>
-<!-- Accordions, but I might have found another way to do this recently without javascript ;) -->
-<script src="js/Accordion.js"></script>>
+<!--
+Accordions, but I might have found another way to do this recently without javascript ;)
+ -- >
+<script src="js/Accordion.js"></script>>-->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 	const checkFile = document.getElementById("checkFile");

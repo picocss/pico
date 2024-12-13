@@ -2100,7 +2100,6 @@ main {
   line-height: 1rem;
   list-style-type: none;
   cursor: pointer;
-  transition: color var(--pico-transition);
 }
 .pico details summary:not([role]) {
   color: var(--pico-accordion-close-summary-color);
@@ -2126,7 +2125,6 @@ main {
   background-size: 1rem auto;
   background-repeat: no-repeat;
   content: "";
-  transition: transform var(--pico-transition);
 }
 .pico details summary:focus {
   outline: none;
@@ -2152,16 +2150,16 @@ main {
 .pico details[open] > summary:not([role]):not(:focus) {
   color: var(--pico-accordion-open-summary-color);
 }
-.pico details[open] > summary::after {
-  transform: rotate(0);
-}
-
 [dir=rtl] .pico details summary {
   text-align: right;
 }
 [dir=rtl] .pico details summary::after {
   float: left;
+  transform: rotate(90deg);
   background-position: left center;
+}
+[dir=rtl] .pico details[open] > summary::after {
+  transform: rotate(0);
 }
 
 /**
@@ -2395,6 +2393,46 @@ main {
 .pico [role=search] > *:last-child {
   border-top-right-radius: 5rem;
   border-bottom-right-radius: 5rem;
+}
+
+[dir=rtl] .pico [role=search] > *:not(:first-child),
+[dir=rtl] .pico [role=search] input:not([type=checkbox], [type=radio]):not(:first-child),
+[dir=rtl] .pico [role=search] select:not(:first-child),
+[dir=rtl] .pico [role=search] label:not(:first-child),
+[dir=rtl] .pico [role=group] > *:not(:first-child),
+[dir=rtl] .pico [role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
+[dir=rtl] .pico [role=group] select:not(:first-child),
+[dir=rtl] .pico [role=group] label:not(:first-child) {
+  margin-right: 0;
+  margin-left: auto;
+  border-top-right-radius: 0;
+  border-top-left-radius: var(--pico-border-radius);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: var(--pico-border-radius);
+}
+[dir=rtl] .pico [role=search] > *:not(:last-child),
+[dir=rtl] .pico [role=search] input:not([type=checkbox], [type=radio]):not(:last-child),
+[dir=rtl] .pico [role=search] select:not(:last-child),
+[dir=rtl] .pico [role=search] label:not(:last-child),
+[dir=rtl] .pico [role=group] > *:not(:last-child),
+[dir=rtl] .pico [role=group] input:not([type=checkbox], [type=radio]):not(:last-child),
+[dir=rtl] .pico [role=group] select:not(:last-child),
+[dir=rtl] .pico [role=group] label:not(:last-child) {
+  border-top-right-radius: var(--pico-border-radius);
+  border-top-left-radius: 0;
+  border-bottom-right-radius: var(--pico-border-radius);
+  border-bottom-left-radius: 0;
+}
+[dir=rtl] button:not(:first-child),
+[dir=rtl] [type=submit]:not(:first-child),
+[dir=rtl] [type=reset]:not(:first-child),
+[dir=rtl] [type=button]:not(:first-child),
+[dir=rtl] [role=button]:not(:first-child),
+[dir=rtl] input:not([type=checkbox], [type=radio]):not(:first-child),
+[dir=rtl] select:not(:first-child),
+[dir=rtl] label:not(:first-child) {
+  margin-right: calc(var(--pico-border-width) * -1);
+  margin-left: auto;
 }
 
 /**

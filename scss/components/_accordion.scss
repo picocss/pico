@@ -16,7 +16,7 @@
       cursor: pointer;
 
       @if $enable-transitions {
-        transition: color var(#{$css-var-prefix}transition);
+        //transition: color var(#{$css-var-prefix}transition);
       }
 
       &:not([role]) {
@@ -51,7 +51,7 @@
         content: "";
 
         @if $enable-transitions {
-          transition: transform var(#{$css-var-prefix}transition);
+          //transition: transform var(#{$css-var-prefix}transition);
         }
       }
 
@@ -97,7 +97,7 @@
         }
 
         &::after {
-          transform: rotate(0);
+          //transform: rotate(0);
         }
       }
     }
