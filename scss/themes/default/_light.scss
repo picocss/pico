@@ -180,6 +180,24 @@
   // Loading ([aria-busy=true])
   @if map.get($modules, "components/loading") {
     #{$css-var-prefix}loading-spinner-opacity: 0.5;
+
+    // Loading icon (animated)
+    // Change the icon color to white for .contrast buttons
+    @if $enable-classes {
+      #{$parent-selector} [aria-busy="true"]:not(input, select, textarea) {
+        &.contrast:is(
+            button,
+            [type="submit"],
+            [type="button"],
+            [type="reset"],
+            [role="button"]
+          ):not(.outline) {
+          &::before {
+            filter: invert(1) !important;
+          }
+        }
+      }
+    }
   }
 
   // Modal (<dialog>)
