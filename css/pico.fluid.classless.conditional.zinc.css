@@ -2567,7 +2567,7 @@ body:has(dialog[open]) {
  */
 :where(nav li)::before {
   float: none;
-  content: "\200B";
+  content: " ";
 }
 
 .pico nav,

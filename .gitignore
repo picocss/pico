@@ -32,3 +32,4 @@ Thumbs.db
 .pico
 package-lock.json
 /docs/orig
+/scss/components/_offcanvas.scss

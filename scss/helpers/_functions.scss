@@ -54,3 +54,21 @@
     shadow-layer($box-shadow-elevation, $box-shadow-blur-strength, $box-shadow-opacity, $color),
     0 0 0 0.0625rem #{rgba($color, ($box-shadow-opacity * 0.25))};
 }
+
+// tint-color, shade-color, and shift-color
+// borrowed from Bootstrap 5.3.3
+// MIT License github.com/twbs/bootstrap
+// Tint a color: mix a color with white
+@function tint-color($color, $weight) {
+  @return mix(white, $color, $weight);
+}
+
+// Shade a color: mix a color with black
+@function shade-color($color, $weight) {
+  @return mix(black, $color, $weight);
+}
+
+// Shade the color if the weight is positive, else tint it
+@function shift-color($color, $weight) {
+  @return if($weight > 0, shade-color($color, $weight), tint-color($color, -$weight));
+}

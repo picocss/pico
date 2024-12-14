@@ -1,5 +1,4 @@
 @use "sass:map";
-@use "sass:string";
 @use "../settings" as *;
 
 @if map.get($modules, "components/nav") {
@@ -14,8 +13,9 @@
   // https://github.com/picocss/pico/issues/634#issuecomment-2541600508
   :where(nav li)::before {
     float: none; // fixes safari bug in dropdowns. Previously was: left
-    //content: " "; //\200B"; // makes voice overs realize its a list item
-    content: string.unquote('"\\200B"');
+    content: " "; //\200B"; // makes voice overs realize its a list item
+    //@use "sass:string"; // if we want to use the original \200B content value, we need to add this line to the top.
+    //content: string.unquote('"\\200B"'); // created a big gap between list items
   }
 
   // Pico

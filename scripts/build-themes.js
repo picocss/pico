@@ -4,6 +4,7 @@ const fs = require("fs");
 
 const themeColors = [
 	"amber",
+  "azure",
 	"blue",
 	"cyan",
 	"fuchsia",
