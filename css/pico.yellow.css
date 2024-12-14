@@ -3507,7 +3507,7 @@ body:has(dialog[open]) {
  */
 :where(nav li)::before {
   float: none;
-  content: " ";
+  content: "\200B";
 }
 
 nav,
