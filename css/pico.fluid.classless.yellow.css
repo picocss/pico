@@ -2565,6 +2565,11 @@ body:has(dialog[open]) {
 /**
  * Nav
  */
+:where(nav li)::before {
+  float: none;
+  content: "​";
+}
+
 nav,
 nav ul {
   display: flex;

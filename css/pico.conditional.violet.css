@@ -3505,6 +3505,11 @@ body:has(dialog[open]) {
 /**
  * Nav
  */
+:where(nav li)::before {
+  float: none;
+  content: "​";
+}
+
 .pico nav,
 .pico nav ul {
   display: flex;

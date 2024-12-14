@@ -11,10 +11,10 @@
 
   // Prevent VoiceOver from ignoring list semantics in Safari (opinionated)
   // https://github.com/picocss/pico/issues/634#issuecomment-2541600508
-  //:where(nav li)::before {
-  //  float: left;
-  //  content: "\200B";
-  //}
+  :where(nav li)::before {
+    float: none; // fixes safari bug in dropdowns. Previously was: left
+    content: "\200B"; // makes voice overs realize its a list item
+  }
 
   // Pico
   // ––––––––––––––––––––
