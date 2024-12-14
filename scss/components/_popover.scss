@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "components/popover") {
+  #{$parent-selector} [popover] {
+    border-color: var(#{$css-var-prefix}primary);
+
+    &:popover-open {
+      margin: auto auto;
+    }
+
+    &::backdrop {
+      backdrop-filter: blur(3px);
+      background: rgba(0, 0, 0, 0.7);
+    }
+    button {
+      margin-top: -10px;
+      padding: 0;
+      border: 0 none;
+      background: transparent;
+      color: var(#{$css-var-prefix}primary);
+      font-size: 1.5em;
+      opacity: 0.8;
+    }
+  }
+}

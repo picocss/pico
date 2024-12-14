@@ -10,10 +10,11 @@
   // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
 
   // Prevent VoiceOver from ignoring list semantics in Safari (opinionated)
-  :where(nav li)::before {
-    float: left;
-    content: "\200B";
-  }
+  // https://github.com/picocss/pico/issues/634#issuecomment-2541600508
+  //:where(nav li)::before {
+  //  float: left;
+  //  content: "\200B";
+  //}
 
   // Pico
   // ––––––––––––––––––––

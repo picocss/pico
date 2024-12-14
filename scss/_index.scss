@@ -48,6 +48,8 @@
 @use "components/progress"; // progress
 @use "components/tooltip"; // data-tooltip
 @use "components/tab-region"; // section[role="region"] // tabs
+@use "components/popover"; // dialog[role="alert"]
+// V3 Remove notification in favor of popovers..
 @use "components/notification"; // dialog[role="alert"]
 @use "components/timeline"; // addition, kind of out of scope but wanted to add
 

@@ -1,0 +1,37 @@
+@use "sass:map";
+@use "../settings" as *;
+
+// TODO: Complete this
+// https://mdn.github.io/dom-examples/popover-api/toast-popovers/
+// --pico-ins-color //	success
+// --pico-del-color //	error
+@if map.get($modules, "components/popover-toast") {
+  #{$parent-selector} [popover] {
+    border-color: var(#{$css-var-prefix}primary);
+
+    &[data-status="success"] {
+      border-color: var(--pico-ins-color);
+    }
+    &[data-status="failure"] {
+      border-color: var(--pico-del-color);
+    }
+    &:popover-open {
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
+      inset: unset;
+    }
+    &::backdrop {
+      background: rgba(0, 0, 0, 0.7);
+    }
+    button {
+      margin-top: -10px;
+      padding: 0;
+      border: 0 none;
+      background: transparent;
+      color: var(#{$css-var-prefix}primary);
+      font-size: 1.5em;
+      opacity: 0.8;
+    }
+  }
+}

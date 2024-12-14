@@ -340,6 +340,23 @@ details summary[role=button]:not(.outline)::after {
   --pico-timeline-dot-border-color: var(--pico-primary-background);
   --pico-timeline-arrow-color: var(--pico-card-sectioning-background-color);
 }
+[data-theme=light] [aria-busy=true]:not(input, select, textarea).contrast:is(button,
+[type=submit],
+[type=button],
+[type=reset],
+[role=button]):not(.outline)::before,
+:root:not([data-theme=dark]) [aria-busy=true]:not(input, select, textarea).contrast:is(button,
+[type=submit],
+[type=button],
+[type=reset],
+[role=button]):not(.outline)::before,
+:host(:not([data-theme=dark])) [aria-busy=true]:not(input, select, textarea).contrast:is(button,
+[type=submit],
+[type=button],
+[type=reset],
+[role=button]):not(.outline)::before {
+  filter: invert(1) !important;
+}
 [data-theme=light] input:is([type=submit],
 [type=button],
 [type=reset],
@@ -3488,11 +3505,6 @@ body:has(dialog[open]) {
 /**
  * Nav
  */
-:where(nav li)::before {
-  float: left;
-  content: "​";
-}
-
 nav,
 nav ul {
   display: flex;
@@ -4060,6 +4072,27 @@ section[role=region] details[open] > div {
   padding-bottom: 0;
   opacity: 1;
   transition: opacity var(--pico-transition);
+}
+
+[popover] {
+  border-color: var(--pico-primary);
+}
+[popover]:popover-open {
+  margin: auto auto;
+}
+[popover]::backdrop {
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.7);
+}
+[popover] button {
+  margin-top: -10px;
+  padding: 0;
+  border: 0 none;
+  background: transparent;
+  color: var(--pico-primary);
+  font-size: 1.5em;
+  opacity: 0.8;
 }
 
 /**

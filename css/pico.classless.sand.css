@@ -2602,11 +2602,6 @@ body:has(dialog[open]) {
 /**
  * Nav
  */
-:where(nav li)::before {
-  float: left;
-  content: "​";
-}
-
 nav,
 nav ul {
   display: flex;
@@ -3174,6 +3169,27 @@ section[role=region] details[open] > div {
   padding-bottom: 0;
   opacity: 1;
   transition: opacity var(--pico-transition);
+}
+
+[popover] {
+  border-color: var(--pico-primary);
+}
+[popover]:popover-open {
+  margin: auto auto;
+}
+[popover]::backdrop {
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.7);
+}
+[popover] button {
+  margin-top: -10px;
+  padding: 0;
+  border: 0 none;
+  background: transparent;
+  color: var(--pico-primary);
+  font-size: 1.5em;
+  opacity: 0.8;
 }
 
 /**

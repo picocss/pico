@@ -160,7 +160,7 @@ $modules: map.merge(
     // V3 Notes
     // Notification should be redone to be more in line with Pico's design
     "components/notification": true,
-
+    "components/popover": true,
     // V3 Notes
     // timeline disabled by default because its more out of the scope of this project,
     // and should be moved to a separate "extras" repository, to be included.
