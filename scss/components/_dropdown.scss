@@ -12,12 +12,14 @@
     position: relative;
     border-bottom: none;
 
-    &[open] {
-      > summary,
-      > button,
-      > a {
-        &::after {
-          transform: rotate(0deg);
+    @if $enable-transitions {
+      &[open] {
+        > summary,
+        > button,
+        > a {
+          &::after {
+            transform: rotate(0deg);
+          }
         }
       }
     }
@@ -38,7 +40,6 @@
         //transform: rotate(0deg) translateX(0.2rem);
         transform: rotate(-90deg);
         background-image: var(#{$css-var-prefix}icon-chevron);
-
         background-position: right center;
         background-size: 1rem auto;
         background-repeat: no-repeat;
@@ -143,10 +144,6 @@
     //}
 
     > summary {
-      //&::after {
-      //  transform: rotate(0deg) translateX(0rem);
-      //}
-
       &:not([role]) {
         // Override height
         height: calc(
@@ -215,6 +212,14 @@
 
       &:last-of-type {
         margin-bottom: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
+      }
+
+      details {
+        margin-bottom: 0;
+
+        > summary {
+          line-height: var(#{$css-var-prefix}line-height);
+        }
       }
 
       a {

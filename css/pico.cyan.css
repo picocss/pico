@@ -3116,6 +3116,12 @@ details.dropdown > summary + ul li:first-of-type {
 details.dropdown > summary + ul li:last-of-type {
   margin-bottom: calc(var(--pico-form-element-spacing-vertical) * 0.5);
 }
+details.dropdown > summary + ul li details {
+  margin-bottom: 0;
+}
+details.dropdown > summary + ul li details > summary {
+  line-height: var(--pico-line-height);
+}
 details.dropdown > summary + ul li a {
   display: block;
   margin: calc(var(--pico-form-element-spacing-vertical) * -0.5) calc(var(--pico-form-element-spacing-horizontal) * -1);
