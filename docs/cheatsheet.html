@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,7 +25,7 @@
 	<link rel="manifest" href="manifest.json">
 
 	<!-- Pico.css -->
-	<link rel="stylesheet" href="pico.min.css" />
+	<link rel="stylesheet" href="pico.min.css" id="theme-color-ss"/>
 	<link rel="stylesheet" href="pico.colors.min.css" />
 
 	<!--
@@ -39,16 +40,396 @@
 			--pico-logo-big-sparkle: #ffbf00;
 
 		}
+
+		.three-columns {
+			flex-wrap: wrap;
+			flex-direction: row !important;
+			min-width: 60vw !important;
+		}
+		.three-columns li {
+			flex: 33%;
+		}
+    .two-columns {
+			flex-wrap: wrap;
+			flex-direction: row !important;
+			min-width: 60vw !important;
+    }
+
+		.two-columns li {
+			flex: 40%;
+		}
 	</style>
 </head>
+
 <body>
 
-<div class="container-fluid">
-	<div class="row-fluid">
-		<div class="col-12 col-md-3 col-lg-2">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<main class="col-12">
+				<nav>
+					<ul>
+						<li>
+							<details class="dropdown" open>
+								<summary>Theme</summary>
+								<ul class="three-columns">
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-red-550) !important;" data-theme="red" href="javascript:void(0);">Red</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-pink-550) !important;" data-theme="pink" href="javascript:void(0);">Pink</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-fuchsia-550) !important;" data-theme="fuchsia" href="javascript:void(0);">Fuchsia</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-purple-600) !important;" data-theme="purple" href="javascript:void(0);">Purple</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-violet-600) !important;" data-theme="violet" href="javascript:void(0);">Violet</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-indigo-600) !important;" data-theme="indigo" href="javascript:void(0);">Indigo</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-blue-550) !important;" data-theme="blue" href="javascript:void(0);">Blue</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-azure-550) !important;" data-theme="azure" href="javascript:void(0);">Azure</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-cyan-550) !important;" data-theme="cyan" href="javascript:void(0);">Cyan</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-jade-550) !important;" data-theme="jade" href="javascript:void(0);">Jade</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-green-500) !important;" data-theme="green" href="javascript:void(0);">Green</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-lime-200) !important;" data-theme="lime" href="javascript:void(0);">Lime</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-yellow-100) !important;" data-theme="yellow" href="javascript:void(0);">Yellow</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-amber-200) !important;" data-theme="amber" href="javascript:void(0);">Amber</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-pumpkin-350) !important;" data-theme="pumpkin" href="javascript:void(0);">Pumpkin</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-orange-500) !important;" data-theme="orange" href="javascript:void(0);">Orange</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-sand-200) !important;" data-theme="sand" href="javascript:void(0);">Sand</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-grey-300) !important;" data-theme="grey" href="javascript:void(0);">Grey</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-zinc-550) !important;" data-theme="zinc" href="javascript:void(0);">Zinc</a></li>
+										<li><a class="change-theme" style="border:none; margin:1px; color:#000; background-color: var(--pico-color-slate-600) !important;" data-theme="slate" href="javascript:void(0);">Slate</a></li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<details class="dropdown">
+								<summary>Layout</summary>
+								<ul>
+									<li><a href="#document">Document</a></li>
+									<li><a href="#container">Container</a></li>
+									<li><a href="#landmarks">Landmarks</a></li>
+									<li><a href="#section">Section</a></li>
+									<li><a href="#grid">Grid</a></li>
+									<li><a href="#row">Row</a></li>
+									<li><a href="#overflow-auto">Overflow Auto</a></li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<details class="dropdown">
+								<summary role="button" class="secondary">Content</summary>
+								<ul>
+									<li><a href="#button">Button</a></li>
+									<li><a href="#code">Code</a></li>
+									<li><a href="#embedded">Embedded</a></li>
+									<li><a href="#figure">Figure</a></li>
+									<li><a href="#link">Link</a></li>
+									<li><a href="#misc">Misc</a></li>
+									<li><a href="#table">Table</a></li>
+									<li><a href="#typography">Typography</a></li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<details class="dropdown">
+								<summary role="button" class="contrast">Forms</summary>
+								<ul dir="rtl">
+									<li><a href="#basics.scss">Basics</a></li>
+									<li><a href="#checkbox-radio-switch.scss">Checkbox Radio Switch</a></li>
+									<li><a href="#floating.scss">Floating</a></li>
+									<li><a href="#input-color.scss">Input Color</a></li>
+									<li><a href="#input-date.scss">Input Date</a></li>
+									<li><a href="#input-file.scss">Input File</a></li>
+									<li><a href="#input-range.scss">Input Range</a></li>
+									<li><a href="#input-search.scss">Input Search</a></li>
+									<li><a href="#validation.scss">Validation</a></li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<details class="dropdown">
+								<summary role="button">Components</summary>
+								<ul dir="rtl" class="two-columns">
+									<li><a href="#accordion">Accordion</a></li>
+									<li><a href="#card">Card</a></li>
+									<li><a href="#dropdown">Dropdown</a></li>
+									<li><a href="#group">Group</a></li>
+									<li><a href="#loading">Loading</a></li>
+									<li><a href="#modal">Modal</a></li>
+									<li><a href="#nav-hamburger">Nav Hamburger</a></li>
+									<li><a href="#nav">Nav</a></li>
+									<li><a href="#notification">Notification</a></li>
+									<li><a href="#offcanvas">Offcanvas</a></li>
+									<li><a href="#popover-toast">Popover Toast</a></li>
+									<li><a href="#popover">Popover</a></li>
+									<li><a href="#progress">Progress</a></li>
+									<li><a href="#tab-region">Tab Region</a></li>
+									<li><a href="#timeline">Timeline</a></li>
+									<li><a href="#tooltip">Tooltip</a></li>
+								</ul>
+							</details>
+						</li>
+					</ul>
+				</nav>
+				<section id="layout">
+					<h2 id="container">Container</h2>
+					<p>Example of Container...</p>
+					<h2 id="document">Document</h2>
+					<p>Example of Document...</p>
+					<h2 id="grid">Grid</h2>
+					<p>Example of Grid...</p>
+					<h2 id="landmarks">Landmarks</h2>
+					<p>Example of Landmarks...</p>
+					<h2 id="overflow-auto">Overflow Auto</h2>
+					<p>Example of Overflow Auto...</p>
+					<h2 id="row">Row</h2>
+					<p>Example of Row...</p>
+					<h2 id="section">Section</h2>
+					<p>Example of Section...</p>
+				</section>
 
-    </div>
-  </div>
-</div>
+				<section id="content">
+
+					<h2 id="button">Button</h2>
+					<button aria-busy="true">Button: Contrast adjusted</button>
+          <button aria-busy="true" class="outline">Button: Contrast adjusted</button>
+          <button aria-busy="true" class="contrast">Button: Contrast adjusted</button>
+          <article aria-busy="true">Article</article>
+          <button aria-busy="true" class="contrast">Button: Contrast adjusted</button>
+          <article aria-busy="true" class="contrast">Article: Contrast not adjusted</article>
+
+          <h2 id="code">Code</h2>
+					<p>Example of Code...</p>
+					<h2 id="embedded">Embedded</h2>
+					<p>Example of Embedded...</p>
+					<h2 id="figure">Figure</h2>
+					<p>Example of Figure...</p>
+					<h2 id="link">Link</h2>
+					<p>Example of Link...</p>
+					<h2 id="misc">Misc</h2>
+					<p>Example of Misc...</p>
+					<h2 id="table">Table</h2>
+					<p>Example of Table...</p>
+					<h2 id="typography">Typography</h2>
+					<p>Example of Typography...</p>
+				</section>
+
+				<section id="forms">
+					<h2 id="basics.scss">Basics</h2>
+					<p>Example of Basics...</p>
+					<h2 id="checkbox-radio-switch.scss">Checkbox Radio Switch</h2>
+					<p>Example of Checkbox Radio Switch...</p>
+					<h2 id="floating.scss">Floating</h2>
+					<p>Example of Floating...</p>
+					<h2 id="input-color.scss">Input Color</h2>
+					<p>Example of Input Color...</p>
+					<h2 id="input-date.scss">Input Date</h2>
+					<p>Example of Input Date...</p>
+					<h2 id="input-file.scss">Input File</h2>
+					<p>Example of Input File...</p>
+					<h2 id="input-range.scss">Input Range</h2>
+					<p>Example of Input Range...</p>
+					<h2 id="input-search.scss">Input Search</h2>
+					<p>Example of Input Search...</p>
+					<h2 id="validation.scss">Validation</h2>
+					<p>Example of Validation...</p>
+				</section>
+
+				<section id="components">
+					<article id="accordion">
+						<header>
+							<h2>Accordion</h2>
+						</header>
+						<details>
+							<summary role="button">Accordion Title</summary>
+							<div class="accordion-content">
+								<p>Your content goes here...</p>
+							</div>
+						</details>
+					</article>
+					<article id="card">
+						<header>
+							<h2>Card</h2>
+						</header>
+						<p>Example of Card...</p>
+					</article>
+					<article id="dropdown">
+						<header>
+							<h2>Dropdown</h2>
+						</header>
+						<h4>1. Basic Dropdown</h4>
+						<p>This is a simple dropdown using the <code>&lt;details&gt;</code> element.</p>
+						<details class="dropdown">
+							<summary>Select an option</summary>
+							<ul>
+								<li><a href="#">Option 1</a></li>
+								<li><a href="#">Option 2</a></li>
+								<li><a href="#">Option 3</a></li>
+							</ul>
+						</details>
+						<h4>2. Dropdown as a Button</h4>
+						<p>This version uses a button to trigger the dropdown.</p>
+						<details class="dropdown">
+							<summary role="button">Dropdown Menu</summary>
+							<ul>
+								<li><a href="#">Item 1</a></li>
+								<li><a href="#">Item 2</a></li>
+								<li><a href="#">Item 3</a></li>
+							</ul>
+						</details>
+						<h4>3. Dropdown with Icons</h4>
+						<p>You can include icons for each option in the dropdown.</p>
+						<details class="dropdown">
+							<summary role="button">Select an option</summary>
+							<ul>
+								<li><a href="#"><img src="https://picsum.photos/25/26" alt="Icon 1"> Option 1</a></li>
+								<li><a href="#"><img src="https://picsum.photos/26/25" alt="Icon 2"> Option 2</a></li>
+								<li><a href="#"><img src="https://picsum.photos/25/25" alt="Icon 3"> Option 3</a></li>
+							</ul>
+						</details>
+						<h4>4. Dropdown with Submenu</h4>
+						<p>This example shows how to create a dropdown that includes a submenu.</p>
+						<details class="dropdown">
+							<summary role="button">Main Menu</summary>
+							<ul>
+								<li><a href="#">Option 1</a></li>
+								<li>
+									<details>
+										<summary>Submenu</summary>
+										<ul>
+											<li><a href="#">Sub-option 1</a></li>
+											<li><a href="#">Sub-option 2</a></li>
+										</ul>
+									</details>
+								</li>
+								<li><a href="#">Option 3</a></li>
+							</ul>
+						</details>
+						<h4>5. Dropdown Inside Navigation</h4>
+						<p>This example shows how to integrate the dropdown into a navigation bar.</p>
+						<nav>
+							<ul>
+								<li><a href="#">Home</a></li>
+							</ul>
+							<ul>
+								<li>
+									<details class="dropdown">
+										<summary role="button">Menu</summary>
+										<ul>
+											<li><a href="#">Home</a></li>
+											<li><a href="#">About</a></li>
+											<li><a href="#">Services</a></li>
+											<li><a href="#">Contact</a></li>
+										</ul>
+									</details>
+								</li>
+							</ul>
+						</nav>
+					</article>
+					<article id="group">
+						<header>
+							<h2>Group</h2>
+						</header>
+						<p>Example of Group...</p>
+					</article>
+					<article id="loading">
+						<header>
+							<h2>Loading</h2>
+						</header>
+						<p>Example of Loading...</p>
+					</article>
+					<article id="modal">
+						<header>
+							<h2>Modal</h2>
+						</header>
+						<p>Example of Modal...</p>
+					</article>
+					<article id="nav-hamburger">
+						<header>
+							<h2>Nav Hamburger</h2>
+						</header>
+						<p>Example of Nav Hamburger...</p>
+					</article>
+					<article id="nav">
+						<header>
+							<h2>Nav</h2>
+						</header>
+						<p>Example of Nav...</p>
+					</article>
+					<article id="notification">
+						<header>
+							<h2>Notification</h2>
+						</header>
+						<p>Example of Notification...</p>
+					</article>
+					<article id="offcanvas">
+						<header>
+							<h2>Offcanvas</h2>
+						</header>
+						<p>Example of Offcanvas...</p>
+					</article>
+					<article id="popover-toast">
+						<header>
+							<h2>Popover Toast</h2>
+						</header>
+						<p>Example of Popover Toast...</p>
+					</article>
+					<article id="popover">
+						<header>
+							<h2>Popover</h2>
+						</header>
+						<p>Example of Popover...</p>
+					</article>
+					<article id="progress">
+						<header>
+							<h2>Progress</h2>
+						</header>
+						<p>Example of Progress...</p>
+					</article>
+					<article id="tab-region">
+						<header>
+							<h2>Tab Region</h2>
+						</header>
+						<p>Example of Tab Region...</p>
+					</article>
+					<article id="timeline">
+						<header>
+							<h2>Timeline</h2>
+						</header>
+						<p>Example of Timeline...</p>
+					</article>
+					<article id="tooltip">
+						<header>
+							<h2>Tooltip</h2>
+						</header>
+						<div class="tooltip-container">
+							<button class="tooltip-trigger" data-tooltip="This is the tooltip content" data-placement="top">Hover over
+								me</button>
+						</div>
+					</article>
+				</section>
+			</main>
+		</div>
+	</div>
+<script>
+// Function to change the theme
+function changeTheme(newTheme) {
+	const linkElement = document.getElementById('theme-color-ss');
+	if (linkElement) {
+		linkElement.setAttribute('href', '../css/pico.' + newTheme + '.css');
+	}
+}
+
+// Adding click event listener to all elements with the "change-theme" class
+document.querySelectorAll('.change-theme').forEach(element => {
+	element.addEventListener('click', function() {
+		const newTheme = this.getAttribute('data-theme');
+		changeTheme(newTheme);
+	});
+});
+</script>
 </body>
+
 </html>

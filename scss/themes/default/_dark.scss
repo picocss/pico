@@ -240,16 +240,67 @@
     }
   }
 
+  // Yohn, I think I took care of this in the _styles.scss
   // Chevron icons
+  //@if map.get($modules, "components/accordion") or map.get($modules, "components/dropdown") {
+  //  // Change the icon color to black for accordion and dropdown .contrast buttons
+  //  @if $enable-classes {
+  //    #{$parent-selector} details {
+  //      summary {
+  //        &[role="button"].contrast:not(.outline) {
+  //          &::after {
+  //            filter: brightness(0);
+  //          }
+  //        }
+  //      }
+  //    }
+  //  }
+  //}
+
+  // Chevron icons
+  // Change the icon color to white for accordion and dropdown buttons
   @if map.get($modules, "components/accordion") or map.get($modules, "components/dropdown") {
-    // Change the icon color to black for accordion and dropdown .contrast buttons
-    @if $enable-classes {
-      #{$parent-selector} details {
-        summary {
-          &[role="button"].contrast:not(.outline) {
-            &::after {
-              filter: brightness(0);
+    #{$parent-selector} details {
+      summary {
+        $selector: '&[role="button"]';
+        @if $enable-classes {
+          $selector: "#{$selector}:not(.outline,.contrast,.secondary)";
+        }
+        #{$selector} {
+          &::after {
+            @if theme-colors.get("primary-inverse", "dark") == $black {
+              filter: brightness(100) invert(1);
+            } @else {
+              filter: brightness(100) invert(0);
             }
+          }
+        }
+        @if $enable-classes {
+          &.secondary[role="button"]::after {
+            filter: brightness(100) invert(0);
+          }
+          &.contrast[role="button"]::after {
+            filter: brightness(100) invert(1);
+          }
+        }
+      }
+    }
+  }
+
+  // Loading icon (animated)
+  @if map.get($modules, "components/loading") {
+    // Change the icon color to white for buttons
+    #{$parent-selector} [aria-busy="true"]:not(input, select, textarea, html, form) {
+      $selector: '&:is(button, [type="submit"], [type="button"], [type="reset"], [role="button"])';
+      @if $enable-classes {
+        $selector: "#{$selector}:not(.outline)";
+      }
+      #{$selector} {
+        &::before {
+          @if theme-colors.get("primary-inverse", "dark") == $white {
+            filter: brightness(100) invert(1);
+          } @else {
+            filter: brightness(100) invert(0);
           }
         }
       }

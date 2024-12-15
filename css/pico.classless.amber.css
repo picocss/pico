@@ -186,14 +186,6 @@ input:not([type=submit],
   --pico-form-element-spacing-horizontal: 2rem;
 }
 
-details summary[role=button]::after {
-  filter: brightness(0) invert(1);
-}
-
-[aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
-  filter: brightness(0) invert(0);
-}
-
 /**
  * Color schemes
  */
@@ -301,6 +293,16 @@ details summary[role=button]::after {
   --pico-timeline-dot-background-color: var(--pico-primary-inverse);
   --pico-timeline-dot-border-color: var(--pico-primary-background);
   --pico-timeline-arrow-color: var(--pico-card-sectioning-background-color);
+}
+[data-theme=light] details summary[role=button]::after,
+:root:not([data-theme=dark]) details summary[role=button]::after,
+:host(:not([data-theme=dark])) details summary[role=button]::after {
+  filter: brightness(100) invert(1);
+}
+[data-theme=light] [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
+:root:not([data-theme=dark]) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
+:host(:not([data-theme=dark])) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
+  filter: brightness(0) invert(1);
 }
 [data-theme=light] input:is([type=submit],
 [type=button],
@@ -442,6 +444,14 @@ details summary[role=button]::after {
   [type=file]) {
     --pico-form-element-focus-color: var(--pico-primary-focus);
   }
+  :root:not([data-theme]) details summary[role=button]::after,
+  :host(:not([data-theme])) details summary[role=button]::after {
+    filter: brightness(100) invert(1);
+  }
+  :root:not([data-theme]) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
+  :host(:not([data-theme])) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
+    filter: brightness(100) invert(0);
+  }
 }
 [data-theme=dark] {
   color-scheme: dark;
@@ -553,6 +563,12 @@ details summary[role=button]::after {
 [type=radio],
 [type=file]) {
   --pico-form-element-focus-color: var(--pico-primary-focus);
+}
+[data-theme=dark] details summary[role=button]::after {
+  filter: brightness(100) invert(1);
+}
+[data-theme=dark] [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
+  filter: brightness(100) invert(0);
 }
 
 progress,
@@ -2162,6 +2178,7 @@ details summary::after {
   background-size: 1rem auto;
   background-repeat: no-repeat;
   content: "";
+  transition: transform var(--pico-transition);
 }
 details summary:focus {
   outline: none;
@@ -2187,6 +2204,10 @@ details[open] > summary {
 details[open] > summary:not([role]):not(:focus) {
   color: var(--pico-accordion-open-summary-color);
 }
+details[open] > summary::after {
+  transform: rotate(0);
+}
+
 [dir=rtl] details summary {
   text-align: right;
 }

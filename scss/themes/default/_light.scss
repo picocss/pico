@@ -182,18 +182,69 @@
     #{$css-var-prefix}loading-spinner-opacity: 0.5;
 
     // Loading icon (animated)
+    // Yohn, I think I took care of this in the _styles.scss
     // Change the icon color to white for .contrast buttons
-    @if $enable-classes {
-      #{$parent-selector} [aria-busy="true"]:not(input, select, textarea) {
-        &.contrast:is(
-            button,
-            [type="submit"],
-            [type="button"],
-            [type="reset"],
-            [role="button"]
-          ):not(.outline) {
-          &::before {
-            filter: invert(1) !important;
+    //@if $enable-classes {
+    //  #{$parent-selector} [aria-busy="true"]:not(input, select, textarea) {
+    //    &.contrast:is(
+    //        button,
+    //        [type="submit"],
+    //        [type="button"],
+    //        [type="reset"],
+    //        [role="button"]
+    //      ):not(.outline) {
+    //      &::before {
+    //        filter: invert(1) !important;
+    //      }
+    //    }
+    //  }
+    //}
+  } //
+
+  // Chevron icons
+  // Change the icon color to white for accordion and dropdown buttons
+  @if map.get($modules, "components/accordion") or map.get($modules, "components/dropdown") {
+    #{$parent-selector} details {
+      summary {
+        $selector: '&[role="button"]';
+        @if $enable-classes {
+          $selector: "#{$selector}:not(.outline,.contrast,.secondary)";
+        }
+        #{$selector} {
+          &::after {
+            @if theme-colors.get("primary-inverse", "light") == $white {
+              filter: brightness(100) invert(0);
+            } @else {
+              filter: brightness(100) invert(1);
+            }
+          }
+        }
+        @if $enable-classes {
+          &.secondary[role="button"]::after {
+            filter: brightness(100) invert(1);
+          }
+          &.contrast[role="button"]::after {
+            filter: brightness(100) invert(0);
+          }
+        }
+      }
+    }
+  }
+
+  // Loading icon (animated)
+  @if map.get($modules, "components/loading") {
+    // Change the icon color to white for buttons
+    #{$parent-selector} [aria-busy="true"]:not(input, select, textarea, html, form) {
+      $selector: '&:is(button, [type="submit"], [type="button"], [type="reset"], [role="button"])';
+      @if $enable-classes {
+        $selector: "#{$selector}:not(.outline)";
+      }
+      #{$selector} {
+        &::before {
+          @if theme-colors.get("primary-inverse", "light") == $black {
+            filter: brightness(0) invert(1);
+          } @else {
+            filter: brightness(100) invert(0);
           }
         }
       }

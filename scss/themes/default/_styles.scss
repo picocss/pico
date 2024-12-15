@@ -394,42 +394,4 @@
       }
     }
   }
-
-  // Chevron icons
-  // Change the icon color to white for accordion and dropdown buttons
-  @if map.get($modules, "components/accordion") or map.get($modules, "components/dropdown") {
-    #{$parent-selector} details {
-      summary {
-        $selector: '&[role="button"]';
-        @if $enable-classes {
-          $selector: "#{$selector}:not(.outline)";
-        }
-        #{$selector} {
-          &::after {
-            filter: brightness(0) invert(1);
-          }
-        }
-      }
-    }
-  }
-
-  // Loading icon (animated)
-  @if map.get($modules, "components/loading") {
-    // Change the icon color to white for buttons
-    #{$parent-selector} [aria-busy="true"]:not(input, select, textarea, html, form) {
-      $selector: '&:is(button, [type="submit"], [type="button"], [type="reset"], [role="button"])';
-      @if $enable-classes {
-        $selector: "#{$selector}:not(.outline)";
-      }
-      #{$selector} {
-        &::before {
-          @if theme-colors.get("primary-inverse", "dark") == $white {
-            filter: brightness(0) invert(1);
-          } @else {
-            filter: brightness(0) invert(0);
-          }
-        }
-      }
-    }
-  }
 }

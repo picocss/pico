@@ -186,14 +186,6 @@ input:not([type=submit],
   --pico-form-element-spacing-horizontal: 2rem;
 }
 
-.pico details summary[role=button]::after {
-  filter: brightness(0) invert(1);
-}
-
-.pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
-  filter: brightness(0) invert(0);
-}
-
 /**
  * Color schemes
  */
@@ -301,6 +293,16 @@ input:not([type=submit],
   --pico-timeline-dot-background-color: var(--pico-primary-inverse);
   --pico-timeline-dot-border-color: var(--pico-primary-background);
   --pico-timeline-arrow-color: var(--pico-card-sectioning-background-color);
+}
+[data-theme=light] .pico details summary[role=button]::after,
+:root:not([data-theme=dark]) .pico details summary[role=button]::after,
+:host(:not([data-theme=dark])) .pico details summary[role=button]::after {
+  filter: brightness(100) invert(1);
+}
+[data-theme=light] .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
+:root:not([data-theme=dark]) .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
+:host(:not([data-theme=dark])) .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
+  filter: brightness(0) invert(1);
 }
 [data-theme=light] input:is([type=submit],
 [type=button],
@@ -442,6 +444,14 @@ input:not([type=submit],
   [type=file]) {
     --pico-form-element-focus-color: var(--pico-primary-focus);
   }
+  :root:not([data-theme]) .pico details summary[role=button]::after,
+  :host(:not([data-theme])) .pico details summary[role=button]::after {
+    filter: brightness(100) invert(1);
+  }
+  :root:not([data-theme]) .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
+  :host(:not([data-theme])) .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
+    filter: brightness(100) invert(0);
+  }
 }
 [data-theme=dark] {
   color-scheme: dark;
@@ -553,6 +563,12 @@ input:not([type=submit],
 [type=radio],
 [type=file]) {
   --pico-form-element-focus-color: var(--pico-primary-focus);
+}
+[data-theme=dark] .pico details summary[role=button]::after {
+  filter: brightness(100) invert(1);
+}
+[data-theme=dark] .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
+  filter: brightness(100) invert(0);
 }
 
 .pico progress,
@@ -2162,6 +2178,7 @@ main {
   background-size: 1rem auto;
   background-repeat: no-repeat;
   content: "";
+  transition: transform var(--pico-transition);
 }
 .pico details summary:focus {
   outline: none;
@@ -2187,6 +2204,10 @@ main {
 .pico details[open] > summary:not([role]):not(:focus) {
   color: var(--pico-accordion-open-summary-color);
 }
+.pico details[open] > summary::after {
+  transform: rotate(0);
+}
+
 [dir=rtl] .pico details summary {
   text-align: right;
 }

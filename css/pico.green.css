@@ -219,14 +219,6 @@ nav details.dropdown summary:focus-visible {
   --pico-form-element-spacing-horizontal: 2rem;
 }
 
-details summary[role=button]:not(.outline)::after {
-  filter: brightness(0) invert(1);
-}
-
-[aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
-  filter: brightness(0) invert(1);
-}
-
 /**
  * Color schemes
  */
@@ -340,22 +332,25 @@ details summary[role=button]:not(.outline)::after {
   --pico-timeline-dot-border-color: var(--pico-primary-background);
   --pico-timeline-arrow-color: var(--pico-card-sectioning-background-color);
 }
-[data-theme=light] [aria-busy=true]:not(input, select, textarea).contrast:is(button,
-[type=submit],
-[type=button],
-[type=reset],
-[role=button]):not(.outline)::before,
-:root:not([data-theme=dark]) [aria-busy=true]:not(input, select, textarea).contrast:is(button,
-[type=submit],
-[type=button],
-[type=reset],
-[role=button]):not(.outline)::before,
-:host(:not([data-theme=dark])) [aria-busy=true]:not(input, select, textarea).contrast:is(button,
-[type=submit],
-[type=button],
-[type=reset],
-[role=button]):not(.outline)::before {
-  filter: invert(1) !important;
+[data-theme=light] details summary[role=button]:not(.outline, .contrast, .secondary)::after,
+:root:not([data-theme=dark]) details summary[role=button]:not(.outline, .contrast, .secondary)::after,
+:host(:not([data-theme=dark])) details summary[role=button]:not(.outline, .contrast, .secondary)::after {
+  filter: brightness(100) invert(0);
+}
+[data-theme=light] details summary.secondary[role=button]::after,
+:root:not([data-theme=dark]) details summary.secondary[role=button]::after,
+:host(:not([data-theme=dark])) details summary.secondary[role=button]::after {
+  filter: brightness(100) invert(1);
+}
+[data-theme=light] details summary.contrast[role=button]::after,
+:root:not([data-theme=dark]) details summary.contrast[role=button]::after,
+:host(:not([data-theme=dark])) details summary.contrast[role=button]::after {
+  filter: brightness(100) invert(0);
+}
+[data-theme=light] [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before,
+:root:not([data-theme=dark]) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before,
+:host(:not([data-theme=dark])) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
+  filter: brightness(100) invert(0);
 }
 [data-theme=light] input:is([type=submit],
 [type=button],
@@ -514,9 +509,21 @@ details summary[role=button]:not(.outline)::after {
   [type=file]) {
     --pico-form-element-focus-color: var(--pico-primary-focus);
   }
-  :root:not([data-theme]) details summary[role=button].contrast:not(.outline)::after,
-  :host(:not([data-theme])) details summary[role=button].contrast:not(.outline)::after {
-    filter: brightness(0);
+  :root:not([data-theme]) details summary[role=button]:not(.outline, .contrast, .secondary)::after,
+  :host(:not([data-theme])) details summary[role=button]:not(.outline, .contrast, .secondary)::after {
+    filter: brightness(100) invert(0);
+  }
+  :root:not([data-theme]) details summary.secondary[role=button]::after,
+  :host(:not([data-theme])) details summary.secondary[role=button]::after {
+    filter: brightness(100) invert(0);
+  }
+  :root:not([data-theme]) details summary.contrast[role=button]::after,
+  :host(:not([data-theme])) details summary.contrast[role=button]::after {
+    filter: brightness(100) invert(1);
+  }
+  :root:not([data-theme]) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before,
+  :host(:not([data-theme])) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
+    filter: brightness(100) invert(1);
   }
 }
 [data-theme=dark] {
@@ -642,8 +649,17 @@ details summary[role=button]:not(.outline)::after {
 [type=file]) {
   --pico-form-element-focus-color: var(--pico-primary-focus);
 }
-[data-theme=dark] details summary[role=button].contrast:not(.outline)::after {
-  filter: brightness(0);
+[data-theme=dark] details summary[role=button]:not(.outline, .contrast, .secondary)::after {
+  filter: brightness(100) invert(0);
+}
+[data-theme=dark] details summary.secondary[role=button]::after {
+  filter: brightness(100) invert(0);
+}
+[data-theme=dark] details summary.contrast[role=button]::after {
+  filter: brightness(100) invert(1);
+}
+[data-theme=dark] [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
+  filter: brightness(100) invert(1);
 }
 
 progress,
@@ -2860,6 +2876,7 @@ details summary::after {
   background-size: 1rem auto;
   background-repeat: no-repeat;
   content: "";
+  transition: transform var(--pico-transition);
 }
 details summary:focus {
   outline: none;
@@ -2885,6 +2902,10 @@ details[open] > summary {
 details[open] > summary:not([role]):not(:focus) {
   color: var(--pico-accordion-open-summary-color);
 }
+details[open] > summary::after {
+  transform: rotate(0);
+}
+
 [dir=rtl] details summary {
   text-align: right;
 }
@@ -2986,6 +3007,11 @@ details.dropdown {
   position: relative;
   border-bottom: none;
 }
+details.dropdown[open] > summary::after,
+details.dropdown[open] > button::after,
+details.dropdown[open] > a::after {
+  transform: rotate(0deg);
+}
 details.dropdown > summary::after,
 details.dropdown > button::after,
 details.dropdown > a::after {
@@ -2994,7 +3020,7 @@ details.dropdown > a::after {
   height: calc(1rem * var(--pico-line-height, 1.5));
   margin-inline-start: 0.25rem;
   float: right;
-  transform: rotate(0deg) translateX(0.2rem);
+  transform: rotate(-90deg);
   background-image: var(--pico-icon-chevron);
   background-position: right center;
   background-size: 1rem auto;
@@ -3044,9 +3070,6 @@ details.dropdown > summary:not([role])[aria-invalid=true] {
 nav details.dropdown {
   display: inline;
   margin: calc(var(--pico-nav-element-spacing-vertical) * -1) 0;
-}
-nav details.dropdown > summary::after {
-  transform: rotate(0deg) translateX(0rem);
 }
 nav details.dropdown > summary:not([role]) {
   height: calc(1rem * var(--pico-line-height) + var(--pico-nav-link-spacing-vertical) * 2);

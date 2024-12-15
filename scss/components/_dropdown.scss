@@ -12,6 +12,16 @@
     position: relative;
     border-bottom: none;
 
+    &[open] {
+      > summary,
+      > button,
+      > a {
+        &::after {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
     // Marker
     // ––––––––––––––––––––
     > summary,
@@ -25,8 +35,10 @@
         float: right;
         // TODO: find out why we need this magic number (0.2 rem)
         // for the marker to be aligned with the regular select
-        transform: rotate(0deg) translateX(0.2rem);
+        //transform: rotate(0deg) translateX(0.2rem);
+        transform: rotate(-90deg);
         background-image: var(#{$css-var-prefix}icon-chevron);
+
         background-position: right center;
         background-size: 1rem auto;
         background-repeat: no-repeat;
@@ -126,10 +138,14 @@
     display: inline;
     margin: calc(var(#{$css-var-prefix}nav-element-spacing-vertical) * -1) 0;
 
+    //&[open] > summary::after {
+    //  transform: rotate(-90deg) translateX(0rem);
+    //}
+
     > summary {
-      &::after {
-        transform: rotate(0deg) translateX(0rem);
-      }
+      //&::after {
+      //  transform: rotate(0deg) translateX(0rem);
+      //}
 
       &:not([role]) {
         // Override height
