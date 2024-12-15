@@ -1,10 +1,36 @@
 @use "sass:map";
+@use "sass:math";
+@use "sass:list";
 
 // Settings
 // ––––––––––––––––––––
 
 // Theme color
-$theme-color: "lime" !default; // amber, azure, blue, cyan, fuchsia, green, grey, indigo, jade, lime, orange, pink, pumpkin, purple, red, sand, slate, violet, yellow, zinc
+$yo-themes: (
+  "amber",
+  "azure",
+  "blue",
+  "cyan",
+  "fuchsia",
+  "green",
+  "grey",
+  "indigo",
+  "jade",
+  "lime",
+  "orange",
+  "pink",
+  "pumpkin",
+  "purple",
+  "red",
+  "sand",
+  "slate",
+  "violet",
+  "yellow",
+  "zinc"
+);
+$random: list.nth($yo-themes, math.random(list.length($yo-themes)));
+// picks a random theme to use as default
+$theme-color: $random !default; // amber, azure, blue, cyan, fuchsia, green, grey, indigo, jade, lime, orange, pink, pumpkin, purple, red, sand, slate, violet, yellow, zinc
 
 // Prefix for CSS variables
 $css-var-prefix: "--pico-" !default; // Must start with "--"

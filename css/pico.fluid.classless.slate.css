@@ -2186,82 +2186,202 @@ details[open] > summary::after {
 /**
  * Card (<article>, role="article")
  */
-article,
-[role=article] {
+article:not(:has(> form)),
+[role=article]:not(:has(> form)),
+article > form,
+[role=article] > form {
   margin-bottom: var(--pico-block-spacing-vertical);
   padding: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
   border-radius: var(--pico-border-radius);
   background: var(--pico-card-background-color);
   box-shadow: var(--pico-card-box-shadow);
 }
-article > header,
-article > footer,
-[role=article] > header,
-[role=article] > footer {
+article:not(:has(> form)) > header,
+article:not(:has(> form)) > footer,
+[role=article]:not(:has(> form)) > header,
+[role=article]:not(:has(> form)) > footer,
+article > form > header,
+article > form > footer,
+[role=article] > form > header,
+[role=article] > form > footer {
   margin-right: calc(var(--pico-block-spacing-horizontal) * -1);
   margin-left: calc(var(--pico-block-spacing-horizontal) * -1);
   padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
   background-color: var(--pico-card-sectioning-background-color);
 }
-article > header,
-[role=article] > header {
+article:not(:has(> form)) > header,
+[role=article]:not(:has(> form)) > header,
+article > form > header,
+[role=article] > form > header {
   margin-top: calc(var(--pico-block-spacing-vertical) * -1);
   margin-bottom: var(--pico-block-spacing-vertical);
   border-bottom: var(--pico-border-width) solid var(--pico-card-border-color);
   border-top-right-radius: var(--pico-border-radius);
   border-top-left-radius: var(--pico-border-radius);
 }
-article > header > h1,
-article > header > h2,
-article > header > h3,
-article > header > h4,
-article > header > h5,
-article > header > h6,
-[role=article] > header > h1,
-[role=article] > header > h2,
-[role=article] > header > h3,
-[role=article] > header > h4,
-[role=article] > header > h5,
-[role=article] > header > h6 {
+article:not(:has(> form)) > header > h1,
+article:not(:has(> form)) > header > h2,
+article:not(:has(> form)) > header > h3,
+article:not(:has(> form)) > header > h4,
+article:not(:has(> form)) > header > h5,
+article:not(:has(> form)) > header > h6,
+[role=article]:not(:has(> form)) > header > h1,
+[role=article]:not(:has(> form)) > header > h2,
+[role=article]:not(:has(> form)) > header > h3,
+[role=article]:not(:has(> form)) > header > h4,
+[role=article]:not(:has(> form)) > header > h5,
+[role=article]:not(:has(> form)) > header > h6,
+article > form > header > h1,
+article > form > header > h2,
+article > form > header > h3,
+article > form > header > h4,
+article > form > header > h5,
+article > form > header > h6,
+[role=article] > form > header > h1,
+[role=article] > form > header > h2,
+[role=article] > form > header > h3,
+[role=article] > form > header > h4,
+[role=article] > form > header > h5,
+[role=article] > form > header > h6 {
   margin-bottom: 0;
 }
-article > footer,
-[role=article] > footer {
+article:not(:has(> form)) > header > hgroup > h1,
+article:not(:has(> form)) > header > hgroup > h2,
+article:not(:has(> form)) > header > hgroup > h3,
+article:not(:has(> form)) > header > hgroup > h4,
+article:not(:has(> form)) > header > hgroup > h5,
+article:not(:has(> form)) > header > hgroup > h6,
+[role=article]:not(:has(> form)) > header > hgroup > h1,
+[role=article]:not(:has(> form)) > header > hgroup > h2,
+[role=article]:not(:has(> form)) > header > hgroup > h3,
+[role=article]:not(:has(> form)) > header > hgroup > h4,
+[role=article]:not(:has(> form)) > header > hgroup > h5,
+[role=article]:not(:has(> form)) > header > hgroup > h6,
+article > form > header > hgroup > h1,
+article > form > header > hgroup > h2,
+article > form > header > hgroup > h3,
+article > form > header > hgroup > h4,
+article > form > header > hgroup > h5,
+article > form > header > hgroup > h6,
+[role=article] > form > header > hgroup > h1,
+[role=article] > form > header > hgroup > h2,
+[role=article] > form > header > hgroup > h3,
+[role=article] > form > header > hgroup > h4,
+[role=article] > form > header > hgroup > h5,
+[role=article] > form > header > hgroup > h6 {
+  margin-bottom: 0;
+}
+article:not(:has(> form)) > footer,
+[role=article]:not(:has(> form)) > footer,
+article > form > footer,
+[role=article] > form > footer {
   margin-top: var(--pico-block-spacing-vertical);
   margin-bottom: calc(var(--pico-block-spacing-vertical) * -1);
   border-top: var(--pico-border-width) solid var(--pico-card-border-color);
   border-bottom-right-radius: var(--pico-border-radius);
   border-bottom-left-radius: var(--pico-border-radius);
 }
-article > footer [type=submit],
-article > footer [type=reset],
-article > footer [type=button],
-article > footer [role=group],
-[role=article] > footer [type=submit],
-[role=article] > footer [type=reset],
-[role=article] > footer [type=button],
-[role=article] > footer [role=group] {
+article:not(:has(> form)) > footer [type=submit],
+article:not(:has(> form)) > footer [type=reset],
+article:not(:has(> form)) > footer [type=button],
+article:not(:has(> form)) > footer [role=group],
+article:not(:has(> form)) > footer p,
+article:not(:has(> form)) > footer nav,
+article:not(:has(> form)) > footer ul,
+article:not(:has(> form)) > footer ol,
+[role=article]:not(:has(> form)) > footer [type=submit],
+[role=article]:not(:has(> form)) > footer [type=reset],
+[role=article]:not(:has(> form)) > footer [type=button],
+[role=article]:not(:has(> form)) > footer [role=group],
+[role=article]:not(:has(> form)) > footer p,
+[role=article]:not(:has(> form)) > footer nav,
+[role=article]:not(:has(> form)) > footer ul,
+[role=article]:not(:has(> form)) > footer ol,
+article > form > footer [type=submit],
+article > form > footer [type=reset],
+article > form > footer [type=button],
+article > form > footer [role=group],
+article > form > footer p,
+article > form > footer nav,
+article > form > footer ul,
+article > form > footer ol,
+[role=article] > form > footer [type=submit],
+[role=article] > form > footer [type=reset],
+[role=article] > form > footer [type=button],
+[role=article] > form > footer [role=group],
+[role=article] > form > footer p,
+[role=article] > form > footer nav,
+[role=article] > form > footer ul,
+[role=article] > form > footer ol {
   margin-bottom: 0px;
   /* Also remove if next input after button is a hidden input */
 }
-article > footer [type=submit]:last-child,
-article > footer [type=reset]:last-child,
-article > footer [type=button]:last-child,
-article > footer [role=group]:last-child,
-[role=article] > footer [type=submit]:last-child,
-[role=article] > footer [type=reset]:last-child,
-[role=article] > footer [type=button]:last-child,
-[role=article] > footer [role=group]:last-child {
+article:not(:has(> form)) > footer [type=submit]:last-child,
+article:not(:has(> form)) > footer [type=reset]:last-child,
+article:not(:has(> form)) > footer [type=button]:last-child,
+article:not(:has(> form)) > footer [role=group]:last-child,
+article:not(:has(> form)) > footer p:last-child,
+article:not(:has(> form)) > footer nav:last-child,
+article:not(:has(> form)) > footer ul:last-child,
+article:not(:has(> form)) > footer ol:last-child,
+[role=article]:not(:has(> form)) > footer [type=submit]:last-child,
+[role=article]:not(:has(> form)) > footer [type=reset]:last-child,
+[role=article]:not(:has(> form)) > footer [type=button]:last-child,
+[role=article]:not(:has(> form)) > footer [role=group]:last-child,
+[role=article]:not(:has(> form)) > footer p:last-child,
+[role=article]:not(:has(> form)) > footer nav:last-child,
+[role=article]:not(:has(> form)) > footer ul:last-child,
+[role=article]:not(:has(> form)) > footer ol:last-child,
+article > form > footer [type=submit]:last-child,
+article > form > footer [type=reset]:last-child,
+article > form > footer [type=button]:last-child,
+article > form > footer [role=group]:last-child,
+article > form > footer p:last-child,
+article > form > footer nav:last-child,
+article > form > footer ul:last-child,
+article > form > footer ol:last-child,
+[role=article] > form > footer [type=submit]:last-child,
+[role=article] > form > footer [type=reset]:last-child,
+[role=article] > form > footer [type=button]:last-child,
+[role=article] > form > footer [role=group]:last-child,
+[role=article] > form > footer p:last-child,
+[role=article] > form > footer nav:last-child,
+[role=article] > form > footer ul:last-child,
+[role=article] > form > footer ol:last-child {
   margin-bottom: 0px;
 }
-article > footer [type=submit]:has(+ [type=hidden]),
-article > footer [type=reset]:has(+ [type=hidden]),
-article > footer [type=button]:has(+ [type=hidden]),
-article > footer [role=group]:has(+ [type=hidden]),
-[role=article] > footer [type=submit]:has(+ [type=hidden]),
-[role=article] > footer [type=reset]:has(+ [type=hidden]),
-[role=article] > footer [type=button]:has(+ [type=hidden]),
-[role=article] > footer [role=group]:has(+ [type=hidden]) {
+article:not(:has(> form)) > footer [type=submit]:has(+ [type=hidden]),
+article:not(:has(> form)) > footer [type=reset]:has(+ [type=hidden]),
+article:not(:has(> form)) > footer [type=button]:has(+ [type=hidden]),
+article:not(:has(> form)) > footer [role=group]:has(+ [type=hidden]),
+article:not(:has(> form)) > footer p:has(+ [type=hidden]),
+article:not(:has(> form)) > footer nav:has(+ [type=hidden]),
+article:not(:has(> form)) > footer ul:has(+ [type=hidden]),
+article:not(:has(> form)) > footer ol:has(+ [type=hidden]),
+[role=article]:not(:has(> form)) > footer [type=submit]:has(+ [type=hidden]),
+[role=article]:not(:has(> form)) > footer [type=reset]:has(+ [type=hidden]),
+[role=article]:not(:has(> form)) > footer [type=button]:has(+ [type=hidden]),
+[role=article]:not(:has(> form)) > footer [role=group]:has(+ [type=hidden]),
+[role=article]:not(:has(> form)) > footer p:has(+ [type=hidden]),
+[role=article]:not(:has(> form)) > footer nav:has(+ [type=hidden]),
+[role=article]:not(:has(> form)) > footer ul:has(+ [type=hidden]),
+[role=article]:not(:has(> form)) > footer ol:has(+ [type=hidden]),
+article > form > footer [type=submit]:has(+ [type=hidden]),
+article > form > footer [type=reset]:has(+ [type=hidden]),
+article > form > footer [type=button]:has(+ [type=hidden]),
+article > form > footer [role=group]:has(+ [type=hidden]),
+article > form > footer p:has(+ [type=hidden]),
+article > form > footer nav:has(+ [type=hidden]),
+article > form > footer ul:has(+ [type=hidden]),
+article > form > footer ol:has(+ [type=hidden]),
+[role=article] > form > footer [type=submit]:has(+ [type=hidden]),
+[role=article] > form > footer [type=reset]:has(+ [type=hidden]),
+[role=article] > form > footer [type=button]:has(+ [type=hidden]),
+[role=article] > form > footer [role=group]:has(+ [type=hidden]),
+[role=article] > form > footer p:has(+ [type=hidden]),
+[role=article] > form > footer nav:has(+ [type=hidden]),
+[role=article] > form > footer ul:has(+ [type=hidden]),
+[role=article] > form > footer ol:has(+ [type=hidden]) {
   margin-bottom: 0px;
 }
 
@@ -2519,40 +2639,51 @@ dialog {
   transform: scale(1);
   transition: transform var(--pico-transition);
 }
-dialog > article {
+dialog > article:not(:has(> form)),
+dialog > article > form {
   width: 100%;
 }
 @media (min-width: 576px) {
-  dialog > article {
+  dialog > article:not(:has(> form)),
+  dialog > article > form {
     max-width: 510px;
   }
 }
 @media (min-width: 768px) {
-  dialog > article {
+  dialog > article:not(:has(> form)),
+  dialog > article > form {
     max-width: 700px;
   }
 }
-dialog > article > header > * {
+dialog > article:not(:has(> form)) > header > *,
+dialog > article > form > header > * {
   margin-bottom: 0;
 }
-dialog > article > header :is(a, button)[rel=prev] {
+dialog > article:not(:has(> form)) > header :is(a, button)[rel=prev],
+dialog > article > form > header :is(a, button)[rel=prev] {
   margin: 0;
   margin-left: var(--pico-spacing);
   padding: 0;
   float: right;
 }
-dialog > article > footer {
+dialog > article:not(:has(> form)) > footer,
+dialog > article > form > footer {
   text-align: right;
 }
-dialog > article > footer button,
-dialog > article > footer [role=button] {
+dialog > article:not(:has(> form)) > footer button,
+dialog > article:not(:has(> form)) > footer [role=button],
+dialog > article > form > footer button,
+dialog > article > form > footer [role=button] {
   margin-bottom: 0;
 }
-dialog > article > footer button:not(:first-of-type),
-dialog > article > footer [role=button]:not(:first-of-type) {
+dialog > article:not(:has(> form)) > footer button:not(:first-of-type),
+dialog > article:not(:has(> form)) > footer [role=button]:not(:first-of-type),
+dialog > article > form > footer button:not(:first-of-type),
+dialog > article > form > footer [role=button]:not(:first-of-type) {
   margin-left: calc(var(--pico-spacing) * 0.5);
 }
-dialog > article :is(a, button)[rel=prev] {
+dialog > article:not(:has(> form)) :is(a, button)[rel=prev],
+dialog > article > form :is(a, button)[rel=prev] {
   display: block;
   width: 1rem;
   height: 1rem;
@@ -2568,7 +2699,8 @@ dialog > article :is(a, button)[rel=prev] {
   opacity: 0.5;
   transition: opacity var(--pico-transition);
 }
-dialog > article :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+dialog > article:not(:has(> form)) :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+dialog > article > form :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   opacity: 1;
 }
 dialog:not([open]), dialog[open=false] {

@@ -1,13 +1,15 @@
 @use "sass:map";
 @use "../settings" as *;
 
-@if map.get($modules, "components/card") {
+@if map.get($modules, "components/card") or map.get($modules, "components/modal") {
   /**
    * Card (<article>, role="article")
    */
 
-  #{$parent-selector} article,
-  #{$parent-selector} [role="article"] {
+  #{$parent-selector} article:not(:has(> form)),
+  #{$parent-selector} [role="article"]:not(:has(> form)),
+  #{$parent-selector} article > form,
+  #{$parent-selector} [role="article"] > form {
     margin-bottom: var(#{$css-var-prefix}block-spacing-vertical);
     padding: var(#{$css-var-prefix}block-spacing-vertical)
       var(#{$css-var-prefix}block-spacing-horizontal);
@@ -41,6 +43,17 @@
       > h6 {
         margin-bottom: 0;
       }
+
+      > hgroup {
+        > h1,
+        > h2,
+        > h3,
+        > h4,
+        > h5,
+        > h6 {
+          margin-bottom: 0;
+        }
+      }
     }
 
     > footer {
@@ -56,7 +69,11 @@
       [type="submit"],
       [type="reset"],
       [type="button"],
-      [role="group"] {
+      [role="group"],
+      p,
+      nav,
+      ul,
+      ol {
         margin-bottom: 0px;
 
         &:last-child {

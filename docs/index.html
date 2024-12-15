@@ -94,7 +94,7 @@
 
 		<main class="col-12 col-md-9 col-lg-10">
 			<article>
-				<header><h2>Yohns PicoCSS Fork v2.2.0</h2></header>
+				<header><h2>Yohns PicoCSS Fork v2.2.1 Beta 5</h2><p class="mb-0">Not in npm yet, but will be soon.</p></header>
 				<p>I've merged some open pull requests from the <a href="https://github.com/picocss/pico">original Pico</a> repository, and then added a few more enhancements that I either needed for a project (timeline) or wanted to make the building process of websites easier (<code>:user-valid</code> "validation", using <code>&lt;label&gt;</code> within groups, <code>.row</code> &amp; <code>.row-fluid</code> and the <code>.col-*</code> classes like Bootstrap, <code>.align-*</code> and more.) The demo docs here is the main enhanced that have been added to the <a href="https://picocss.com/">Pico CSS 2.0.6</a> branch, for more docs, refer to the original <a href="https://picocss.com/docs">Pico CSS docs</a>.</p>
 				<hr>
 				<p><code>(OPTIONAL)</code> Some of the demos on this page do require <a href="https://github.com/Yohn/PicoCSS/tree/main/docs/js">Vanilla JavaScript Files</a> to work the same as the preview here. I may get a build script going to compile the javascript plugins / components later. Let me know if this feature would help you.</p>
@@ -501,9 +501,15 @@
 			<!-- Modal -->
 			<article id="modal">
 				<header><h2>Modal</h2></header>
-				<button class="contrast" data-target="modal-example" onclick="toggleModal(event)">
-					Launch demo modal
-				</button>
+				<div class="grid">
+					<button class="contrast" data-target="modal-example" onclick="toggleModal(event)">
+						Launch Demo Modal
+					</button>
+
+					<button data-target="modal-form-example" onclick="toggleModal(event)">
+						Launch Form Modal
+					</button>
+				</div>
 			</article>
 			<!-- ./ Modal -->
 			<hr>
@@ -650,6 +656,54 @@
 				Confirm
 			</button>
 		</footer>
+	</article>
+</dialog>
+
+<dialog id="modal-form-example">
+	<article>
+		<form action="javascript:void(0);" method="POST">
+			<header>
+				<button aria-label="Close" rel="prev" data-target="modal-form-example" onclick="toggleModal(event)"></button>
+				<h3>Modal with a Form!</h3>
+			</header>
+			<section role="form">
+				<input type="text" name="mf-name" id="mf-name" placeholder="Name">
+				<label for="mf-name">Name</label>
+			</section>
+			<section role="form">
+				<input type="password" name="mf-pass" id="mf-pass" placeholder="Password">
+				<label for="mf-pass">Password</label>
+			</section>
+			<p>The <code>&lt;form&gt;</code> tag is the first element within the <code>&lt;article&gt;</code> tag.</p>
+<textarea style="height:50vh;" readonly>
+<dialog id="modal-form-example">
+	<article>
+		<form action="javascript:void(0);" method="POST">
+			<header>
+				<button aria-label="Close" rel="prev" data-target="modal-form-example" onclick="toggleModal(event)"></button>
+				<h3>Modal with a Form!</h3>
+			</header>
+			<section role="form">
+				<input type="text" name="mf-name" id="mf-name" placeholder="Name">
+				<label for="mf-name">Name</label>
+			</section>
+			<section role="form">
+				<input type="password" name="mf-pass" id="mf-pass" placeholder="Password">
+				<label for="mf-pass">Password</label>
+			</section>
+			<footer>
+				<button role="button" class="secondary" data-target="modal-form-example" onclick="toggleModal(event)">Cancel</button>
+				<button autofocus data-target="modal-form-example" onclick="toggleModal(event)">Confirm</button>
+			</footer>
+		</form>
+	</article>
+</dialog>
+</textarea>
+			<footer>
+				<button role="button" class="secondary" data-target="modal-form-example" onclick="toggleModal(event)">Cancel</button>
+				<button autofocus data-target="modal-form-example" onclick="toggleModal(event)">Confirm</button>
+			</footer>
+		</form>
 	</article>
 </dialog>
 <!-- ./ Modal example -->

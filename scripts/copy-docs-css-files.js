@@ -3,7 +3,8 @@ const path = require('path');
 
 // Define the source and destination paths
 const filesToCopy = [
-  { src: 'css/pico.lime.min.css', dest: 'docs/pico.min.css' },
+  { src: 'css/pico.indigo.css', dest: 'docs/pico.css' },
+  { src: 'css/pico.indigo.min.css', dest: 'docs/pico.min.css' },
   { src: 'css/pico.colors.min.css', dest: 'docs/pico.colors.min.css' }
 ];
 

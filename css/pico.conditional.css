@@ -228,19 +228,19 @@ nav details.dropdown summary:focus-visible {
   color-scheme: light;
   --pico-background-color: #fff;
   --pico-color: #373c44;
-  --pico-text-selection-color: rgba(119, 156, 0, 0.25);
+  --pico-text-selection-color: rgba(148, 134, 225, 0.25);
   --pico-muted-color: #646b79;
   --pico-muted-border-color: rgb(231, 234, 239.5);
-  --pico-primary: #577400;
-  --pico-primary-background: #a5d601;
+  --pico-primary: #655cd6;
+  --pico-primary-background: #524ed2;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(87, 116, 0, 0.5);
-  --pico-primary-hover: #435a00;
-  --pico-primary-hover-background: #99c801;
+  --pico-primary-underline: rgba(101, 92, 214, 0.5);
+  --pico-primary-hover: #4040bf;
+  --pico-primary-hover-background: #4040bf;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(119, 156, 0, 0.5);
-  --pico-primary-inverse: #000;
+  --pico-primary-focus: rgba(148, 134, 225, 0.5);
+  --pico-primary-inverse: #fff;
   --pico-secondary: #5d6b89;
   --pico-secondary-background: #525f7a;
   --pico-secondary-border: var(--pico-secondary-background);
@@ -300,7 +300,7 @@ nav details.dropdown summary:focus-visible {
   --pico-switch-background-color: #bfc7d9;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-switch-color: #fff;
-  --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-range-border-color: #dfe3eb;
   --pico-range-active-border-color: #bfc7d9;
   --pico-range-thumb-border-color: var(--pico-background-color);
@@ -335,7 +335,7 @@ nav details.dropdown summary:focus-visible {
 [data-theme=light] .pico details summary[role=button]:not(.outline, .contrast, .secondary)::after,
 :root:not([data-theme=dark]) .pico details summary[role=button]:not(.outline, .contrast, .secondary)::after,
 :host(:not([data-theme=dark])) .pico details summary[role=button]:not(.outline, .contrast, .secondary)::after {
-  filter: brightness(100) invert(1);
+  filter: brightness(100) invert(0);
 }
 [data-theme=light] .pico details summary.secondary[role=button]::after,
 :root:not([data-theme=dark]) .pico details summary.secondary[role=button]::after,
@@ -350,7 +350,7 @@ nav details.dropdown summary:focus-visible {
 [data-theme=light] .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before,
 :root:not([data-theme=dark]) .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before,
 :host(:not([data-theme=dark])) .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
-  filter: brightness(0) invert(1);
+  filter: brightness(100) invert(0);
 }
 [data-theme=light] input:is([type=submit],
 [type=button],
@@ -379,19 +379,19 @@ nav details.dropdown summary:focus-visible {
     color-scheme: dark;
     --pico-background-color: rgb(19, 22.5, 30.5);
     --pico-color: #c2c7d0;
-    --pico-text-selection-color: rgba(130, 171, 0, 0.1875);
+    --pico-text-selection-color: rgba(162, 148, 229, 0.1875);
     --pico-muted-color: #7b8495;
     --pico-muted-border-color: #202632;
-    --pico-primary: #82ab00;
-    --pico-primary-background: #a5d601;
+    --pico-primary: #a294e5;
+    --pico-primary-background: #524ed2;
     --pico-primary-border: var(--pico-primary-background);
-    --pico-primary-underline: rgba(130, 171, 0, 0.5);
-    --pico-primary-hover: #99c801;
-    --pico-primary-hover-background: #b2e51a;
+    --pico-primary-underline: rgba(162, 148, 229, 0.5);
+    --pico-primary-hover: #bdb2ec;
+    --pico-primary-hover-background: #655cd6;
     --pico-primary-hover-border: var(--pico-primary-hover-background);
     --pico-primary-hover-underline: var(--pico-primary-hover);
-    --pico-primary-focus: rgba(130, 171, 0, 0.375);
-    --pico-primary-inverse: #000;
+    --pico-primary-focus: rgba(162, 148, 229, 0.375);
+    --pico-primary-inverse: #fff;
     --pico-secondary: #969eaf;
     --pico-secondary-background: #525f7a;
     --pico-secondary-border: var(--pico-secondary-background);
@@ -451,7 +451,7 @@ nav details.dropdown summary:focus-visible {
     --pico-switch-background-color: #333c4e;
     --pico-switch-checked-background-color: var(--pico-primary-background);
     --pico-switch-color: #fff;
-    --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+    --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     --pico-range-border-color: #202632;
     --pico-range-active-border-color: #2a3140;
     --pico-range-thumb-border-color: var(--pico-background-color);
@@ -511,7 +511,7 @@ nav details.dropdown summary:focus-visible {
   }
   :root:not([data-theme]) .pico details summary[role=button]:not(.outline, .contrast, .secondary)::after,
   :host(:not([data-theme])) .pico details summary[role=button]:not(.outline, .contrast, .secondary)::after {
-    filter: brightness(100) invert(1);
+    filter: brightness(100) invert(0);
   }
   :root:not([data-theme]) .pico details summary.secondary[role=button]::after,
   :host(:not([data-theme])) .pico details summary.secondary[role=button]::after {
@@ -523,26 +523,26 @@ nav details.dropdown summary:focus-visible {
   }
   :root:not([data-theme]) .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before,
   :host(:not([data-theme])) .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
-    filter: brightness(100) invert(0);
+    filter: brightness(100) invert(1);
   }
 }
 [data-theme=dark] {
   color-scheme: dark;
   --pico-background-color: rgb(19, 22.5, 30.5);
   --pico-color: #c2c7d0;
-  --pico-text-selection-color: rgba(130, 171, 0, 0.1875);
+  --pico-text-selection-color: rgba(162, 148, 229, 0.1875);
   --pico-muted-color: #7b8495;
   --pico-muted-border-color: #202632;
-  --pico-primary: #82ab00;
-  --pico-primary-background: #a5d601;
+  --pico-primary: #a294e5;
+  --pico-primary-background: #524ed2;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(130, 171, 0, 0.5);
-  --pico-primary-hover: #99c801;
-  --pico-primary-hover-background: #b2e51a;
+  --pico-primary-underline: rgba(162, 148, 229, 0.5);
+  --pico-primary-hover: #bdb2ec;
+  --pico-primary-hover-background: #655cd6;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(130, 171, 0, 0.375);
-  --pico-primary-inverse: #000;
+  --pico-primary-focus: rgba(162, 148, 229, 0.375);
+  --pico-primary-inverse: #fff;
   --pico-secondary: #969eaf;
   --pico-secondary-background: #525f7a;
   --pico-secondary-border: var(--pico-secondary-background);
@@ -602,7 +602,7 @@ nav details.dropdown summary:focus-visible {
   --pico-switch-background-color: #333c4e;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-switch-color: #fff;
-  --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-range-border-color: #202632;
   --pico-range-active-border-color: #2a3140;
   --pico-range-thumb-border-color: var(--pico-background-color);
@@ -650,7 +650,7 @@ nav details.dropdown summary:focus-visible {
   --pico-form-element-focus-color: var(--pico-primary-focus);
 }
 [data-theme=dark] .pico details summary[role=button]:not(.outline, .contrast, .secondary)::after {
-  filter: brightness(100) invert(1);
+  filter: brightness(100) invert(0);
 }
 [data-theme=dark] .pico details summary.secondary[role=button]::after {
   filter: brightness(100) invert(0);
@@ -659,7 +659,7 @@ nav details.dropdown summary:focus-visible {
   filter: brightness(100) invert(1);
 }
 [data-theme=dark] .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
-  filter: brightness(100) invert(0);
+  filter: brightness(100) invert(1);
 }
 
 .pico progress,
@@ -2921,82 +2921,202 @@ main {
 /**
  * Card (<article>, role="article")
  */
-.pico article,
-.pico [role=article] {
+.pico article:not(:has(> form)),
+.pico [role=article]:not(:has(> form)),
+.pico article > form,
+.pico [role=article] > form {
   margin-bottom: var(--pico-block-spacing-vertical);
   padding: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
   border-radius: var(--pico-border-radius);
   background: var(--pico-card-background-color);
   box-shadow: var(--pico-card-box-shadow);
 }
-.pico article > header,
-.pico article > footer,
-.pico [role=article] > header,
-.pico [role=article] > footer {
+.pico article:not(:has(> form)) > header,
+.pico article:not(:has(> form)) > footer,
+.pico [role=article]:not(:has(> form)) > header,
+.pico [role=article]:not(:has(> form)) > footer,
+.pico article > form > header,
+.pico article > form > footer,
+.pico [role=article] > form > header,
+.pico [role=article] > form > footer {
   margin-right: calc(var(--pico-block-spacing-horizontal) * -1);
   margin-left: calc(var(--pico-block-spacing-horizontal) * -1);
   padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
   background-color: var(--pico-card-sectioning-background-color);
 }
-.pico article > header,
-.pico [role=article] > header {
+.pico article:not(:has(> form)) > header,
+.pico [role=article]:not(:has(> form)) > header,
+.pico article > form > header,
+.pico [role=article] > form > header {
   margin-top: calc(var(--pico-block-spacing-vertical) * -1);
   margin-bottom: var(--pico-block-spacing-vertical);
   border-bottom: var(--pico-border-width) solid var(--pico-card-border-color);
   border-top-right-radius: var(--pico-border-radius);
   border-top-left-radius: var(--pico-border-radius);
 }
-.pico article > header > h1,
-.pico article > header > h2,
-.pico article > header > h3,
-.pico article > header > h4,
-.pico article > header > h5,
-.pico article > header > h6,
-.pico [role=article] > header > h1,
-.pico [role=article] > header > h2,
-.pico [role=article] > header > h3,
-.pico [role=article] > header > h4,
-.pico [role=article] > header > h5,
-.pico [role=article] > header > h6 {
+.pico article:not(:has(> form)) > header > h1,
+.pico article:not(:has(> form)) > header > h2,
+.pico article:not(:has(> form)) > header > h3,
+.pico article:not(:has(> form)) > header > h4,
+.pico article:not(:has(> form)) > header > h5,
+.pico article:not(:has(> form)) > header > h6,
+.pico [role=article]:not(:has(> form)) > header > h1,
+.pico [role=article]:not(:has(> form)) > header > h2,
+.pico [role=article]:not(:has(> form)) > header > h3,
+.pico [role=article]:not(:has(> form)) > header > h4,
+.pico [role=article]:not(:has(> form)) > header > h5,
+.pico [role=article]:not(:has(> form)) > header > h6,
+.pico article > form > header > h1,
+.pico article > form > header > h2,
+.pico article > form > header > h3,
+.pico article > form > header > h4,
+.pico article > form > header > h5,
+.pico article > form > header > h6,
+.pico [role=article] > form > header > h1,
+.pico [role=article] > form > header > h2,
+.pico [role=article] > form > header > h3,
+.pico [role=article] > form > header > h4,
+.pico [role=article] > form > header > h5,
+.pico [role=article] > form > header > h6 {
   margin-bottom: 0;
 }
-.pico article > footer,
-.pico [role=article] > footer {
+.pico article:not(:has(> form)) > header > hgroup > h1,
+.pico article:not(:has(> form)) > header > hgroup > h2,
+.pico article:not(:has(> form)) > header > hgroup > h3,
+.pico article:not(:has(> form)) > header > hgroup > h4,
+.pico article:not(:has(> form)) > header > hgroup > h5,
+.pico article:not(:has(> form)) > header > hgroup > h6,
+.pico [role=article]:not(:has(> form)) > header > hgroup > h1,
+.pico [role=article]:not(:has(> form)) > header > hgroup > h2,
+.pico [role=article]:not(:has(> form)) > header > hgroup > h3,
+.pico [role=article]:not(:has(> form)) > header > hgroup > h4,
+.pico [role=article]:not(:has(> form)) > header > hgroup > h5,
+.pico [role=article]:not(:has(> form)) > header > hgroup > h6,
+.pico article > form > header > hgroup > h1,
+.pico article > form > header > hgroup > h2,
+.pico article > form > header > hgroup > h3,
+.pico article > form > header > hgroup > h4,
+.pico article > form > header > hgroup > h5,
+.pico article > form > header > hgroup > h6,
+.pico [role=article] > form > header > hgroup > h1,
+.pico [role=article] > form > header > hgroup > h2,
+.pico [role=article] > form > header > hgroup > h3,
+.pico [role=article] > form > header > hgroup > h4,
+.pico [role=article] > form > header > hgroup > h5,
+.pico [role=article] > form > header > hgroup > h6 {
+  margin-bottom: 0;
+}
+.pico article:not(:has(> form)) > footer,
+.pico [role=article]:not(:has(> form)) > footer,
+.pico article > form > footer,
+.pico [role=article] > form > footer {
   margin-top: var(--pico-block-spacing-vertical);
   margin-bottom: calc(var(--pico-block-spacing-vertical) * -1);
   border-top: var(--pico-border-width) solid var(--pico-card-border-color);
   border-bottom-right-radius: var(--pico-border-radius);
   border-bottom-left-radius: var(--pico-border-radius);
 }
-.pico article > footer [type=submit],
-.pico article > footer [type=reset],
-.pico article > footer [type=button],
-.pico article > footer [role=group],
-.pico [role=article] > footer [type=submit],
-.pico [role=article] > footer [type=reset],
-.pico [role=article] > footer [type=button],
-.pico [role=article] > footer [role=group] {
+.pico article:not(:has(> form)) > footer [type=submit],
+.pico article:not(:has(> form)) > footer [type=reset],
+.pico article:not(:has(> form)) > footer [type=button],
+.pico article:not(:has(> form)) > footer [role=group],
+.pico article:not(:has(> form)) > footer p,
+.pico article:not(:has(> form)) > footer nav,
+.pico article:not(:has(> form)) > footer ul,
+.pico article:not(:has(> form)) > footer ol,
+.pico [role=article]:not(:has(> form)) > footer [type=submit],
+.pico [role=article]:not(:has(> form)) > footer [type=reset],
+.pico [role=article]:not(:has(> form)) > footer [type=button],
+.pico [role=article]:not(:has(> form)) > footer [role=group],
+.pico [role=article]:not(:has(> form)) > footer p,
+.pico [role=article]:not(:has(> form)) > footer nav,
+.pico [role=article]:not(:has(> form)) > footer ul,
+.pico [role=article]:not(:has(> form)) > footer ol,
+.pico article > form > footer [type=submit],
+.pico article > form > footer [type=reset],
+.pico article > form > footer [type=button],
+.pico article > form > footer [role=group],
+.pico article > form > footer p,
+.pico article > form > footer nav,
+.pico article > form > footer ul,
+.pico article > form > footer ol,
+.pico [role=article] > form > footer [type=submit],
+.pico [role=article] > form > footer [type=reset],
+.pico [role=article] > form > footer [type=button],
+.pico [role=article] > form > footer [role=group],
+.pico [role=article] > form > footer p,
+.pico [role=article] > form > footer nav,
+.pico [role=article] > form > footer ul,
+.pico [role=article] > form > footer ol {
   margin-bottom: 0px;
   /* Also remove if next input after button is a hidden input */
 }
-.pico article > footer [type=submit]:last-child,
-.pico article > footer [type=reset]:last-child,
-.pico article > footer [type=button]:last-child,
-.pico article > footer [role=group]:last-child,
-.pico [role=article] > footer [type=submit]:last-child,
-.pico [role=article] > footer [type=reset]:last-child,
-.pico [role=article] > footer [type=button]:last-child,
-.pico [role=article] > footer [role=group]:last-child {
+.pico article:not(:has(> form)) > footer [type=submit]:last-child,
+.pico article:not(:has(> form)) > footer [type=reset]:last-child,
+.pico article:not(:has(> form)) > footer [type=button]:last-child,
+.pico article:not(:has(> form)) > footer [role=group]:last-child,
+.pico article:not(:has(> form)) > footer p:last-child,
+.pico article:not(:has(> form)) > footer nav:last-child,
+.pico article:not(:has(> form)) > footer ul:last-child,
+.pico article:not(:has(> form)) > footer ol:last-child,
+.pico [role=article]:not(:has(> form)) > footer [type=submit]:last-child,
+.pico [role=article]:not(:has(> form)) > footer [type=reset]:last-child,
+.pico [role=article]:not(:has(> form)) > footer [type=button]:last-child,
+.pico [role=article]:not(:has(> form)) > footer [role=group]:last-child,
+.pico [role=article]:not(:has(> form)) > footer p:last-child,
+.pico [role=article]:not(:has(> form)) > footer nav:last-child,
+.pico [role=article]:not(:has(> form)) > footer ul:last-child,
+.pico [role=article]:not(:has(> form)) > footer ol:last-child,
+.pico article > form > footer [type=submit]:last-child,
+.pico article > form > footer [type=reset]:last-child,
+.pico article > form > footer [type=button]:last-child,
+.pico article > form > footer [role=group]:last-child,
+.pico article > form > footer p:last-child,
+.pico article > form > footer nav:last-child,
+.pico article > form > footer ul:last-child,
+.pico article > form > footer ol:last-child,
+.pico [role=article] > form > footer [type=submit]:last-child,
+.pico [role=article] > form > footer [type=reset]:last-child,
+.pico [role=article] > form > footer [type=button]:last-child,
+.pico [role=article] > form > footer [role=group]:last-child,
+.pico [role=article] > form > footer p:last-child,
+.pico [role=article] > form > footer nav:last-child,
+.pico [role=article] > form > footer ul:last-child,
+.pico [role=article] > form > footer ol:last-child {
   margin-bottom: 0px;
 }
-.pico article > footer [type=submit]:has(+ [type=hidden]),
-.pico article > footer [type=reset]:has(+ [type=hidden]),
-.pico article > footer [type=button]:has(+ [type=hidden]),
-.pico article > footer [role=group]:has(+ [type=hidden]),
-.pico [role=article] > footer [type=submit]:has(+ [type=hidden]),
-.pico [role=article] > footer [type=reset]:has(+ [type=hidden]),
-.pico [role=article] > footer [type=button]:has(+ [type=hidden]),
-.pico [role=article] > footer [role=group]:has(+ [type=hidden]) {
+.pico article:not(:has(> form)) > footer [type=submit]:has(+ [type=hidden]),
+.pico article:not(:has(> form)) > footer [type=reset]:has(+ [type=hidden]),
+.pico article:not(:has(> form)) > footer [type=button]:has(+ [type=hidden]),
+.pico article:not(:has(> form)) > footer [role=group]:has(+ [type=hidden]),
+.pico article:not(:has(> form)) > footer p:has(+ [type=hidden]),
+.pico article:not(:has(> form)) > footer nav:has(+ [type=hidden]),
+.pico article:not(:has(> form)) > footer ul:has(+ [type=hidden]),
+.pico article:not(:has(> form)) > footer ol:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form)) > footer [type=submit]:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form)) > footer [type=reset]:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form)) > footer [type=button]:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form)) > footer [role=group]:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form)) > footer p:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form)) > footer nav:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form)) > footer ul:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form)) > footer ol:has(+ [type=hidden]),
+.pico article > form > footer [type=submit]:has(+ [type=hidden]),
+.pico article > form > footer [type=reset]:has(+ [type=hidden]),
+.pico article > form > footer [type=button]:has(+ [type=hidden]),
+.pico article > form > footer [role=group]:has(+ [type=hidden]),
+.pico article > form > footer p:has(+ [type=hidden]),
+.pico article > form > footer nav:has(+ [type=hidden]),
+.pico article > form > footer ul:has(+ [type=hidden]),
+.pico article > form > footer ol:has(+ [type=hidden]),
+.pico [role=article] > form > footer [type=submit]:has(+ [type=hidden]),
+.pico [role=article] > form > footer [type=reset]:has(+ [type=hidden]),
+.pico [role=article] > form > footer [type=button]:has(+ [type=hidden]),
+.pico [role=article] > form > footer [role=group]:has(+ [type=hidden]),
+.pico [role=article] > form > footer p:has(+ [type=hidden]),
+.pico [role=article] > form > footer nav:has(+ [type=hidden]),
+.pico [role=article] > form > footer ul:has(+ [type=hidden]),
+.pico [role=article] > form > footer ol:has(+ [type=hidden]) {
   margin-bottom: 0px;
 }
 
@@ -3422,40 +3542,53 @@ main {
   transform: scale(1);
   transition: transform var(--pico-transition);
 }
-.pico dialog > article {
+.pico dialog > article:not(:has(> form)),
+.pico dialog > article > form {
   width: 100%;
 }
 @media (min-width: 576px) {
-  .pico dialog > article {
+  .pico dialog > article:not(:has(> form)),
+  .pico dialog > article > form {
     max-width: 510px;
   }
 }
 @media (min-width: 768px) {
-  .pico dialog > article {
+  .pico dialog > article:not(:has(> form)),
+  .pico dialog > article > form {
     max-width: 700px;
   }
 }
-.pico dialog > article > header > * {
+.pico dialog > article:not(:has(> form)) > header > *,
+.pico dialog > article > form > header > * {
   margin-bottom: 0;
 }
-.pico dialog > article > header .close, .pico dialog > article > header :is(a, button)[rel=prev] {
+.pico dialog > article:not(:has(> form)) > header .close, .pico dialog > article:not(:has(> form)) > header :is(a, button)[rel=prev],
+.pico dialog > article > form > header .close,
+.pico dialog > article > form > header :is(a, button)[rel=prev] {
   margin: 0;
   margin-left: var(--pico-spacing);
   padding: 0;
   float: right;
 }
-.pico dialog > article > footer {
+.pico dialog > article:not(:has(> form)) > footer,
+.pico dialog > article > form > footer {
   text-align: right;
 }
-.pico dialog > article > footer button,
-.pico dialog > article > footer [role=button] {
+.pico dialog > article:not(:has(> form)) > footer button,
+.pico dialog > article:not(:has(> form)) > footer [role=button],
+.pico dialog > article > form > footer button,
+.pico dialog > article > form > footer [role=button] {
   margin-bottom: 0;
 }
-.pico dialog > article > footer button:not(:first-of-type),
-.pico dialog > article > footer [role=button]:not(:first-of-type) {
+.pico dialog > article:not(:has(> form)) > footer button:not(:first-of-type),
+.pico dialog > article:not(:has(> form)) > footer [role=button]:not(:first-of-type),
+.pico dialog > article > form > footer button:not(:first-of-type),
+.pico dialog > article > form > footer [role=button]:not(:first-of-type) {
   margin-left: calc(var(--pico-spacing) * 0.5);
 }
-.pico dialog > article .close, .pico dialog > article :is(a, button)[rel=prev] {
+.pico dialog > article:not(:has(> form)) .close, .pico dialog > article:not(:has(> form)) :is(a, button)[rel=prev],
+.pico dialog > article > form .close,
+.pico dialog > article > form :is(a, button)[rel=prev] {
   display: block;
   width: 1rem;
   height: 1rem;
@@ -3471,7 +3604,9 @@ main {
   opacity: 0.5;
   transition: opacity var(--pico-transition);
 }
-.pico dialog > article .close:is([aria-current]:not([aria-current=false]), :hover, :active, :focus), .pico dialog > article :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+.pico dialog > article:not(:has(> form)) .close:is([aria-current]:not([aria-current=false]), :hover, :active, :focus), .pico dialog > article:not(:has(> form)) :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+.pico dialog > article > form .close:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+.pico dialog > article > form :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   opacity: 1;
 }
 .pico dialog:not([open]), .pico dialog[open=false] {

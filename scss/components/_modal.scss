@@ -37,7 +37,8 @@
     }
 
     // Content
-    > article {
+    > article:not(:has(> form)),
+    > article > form {
       $close-selector: if(
         $enable-classes,
         ".close, :is(a, button)[rel=prev]",
