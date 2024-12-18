@@ -120,8 +120,8 @@
   }
 
   // Vertical Nav
-  #{$parent-selector} aside {
-    nav,
+  #{$parent-selector} aside nav {
+    &,
     ol,
     ul,
     li {
