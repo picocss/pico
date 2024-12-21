@@ -59,8 +59,12 @@
 
     // Spacings for form elements and button
     @if map.get($modules, "content/button") or map.get($modules, "forms/basic") {
-      #{$css-var-prefix}form-element-spacing-vertical: calc(var(--pico-spacing) * 0.5); // 0.75rem
-      #{$css-var-prefix}form-element-spacing-horizontal: calc(var(--pico-spacing) * 0.75); // 1rem
+      #{$css-var-prefix}form-element-spacing-vertical: calc(
+        var(#{$css-var-prefix}spacing) * 0.5
+      ); // 0.75rem
+      #{$css-var-prefix}form-element-spacing-horizontal: calc(
+        var(#{$css-var-prefix}spacing) * 0.75
+      ); // 1rem
     }
 
     // Font weight for form labels & fieldsets legend
@@ -392,6 +396,32 @@
       [role="button"] {
         #{$css-var-prefix}form-element-spacing-horizontal: 2rem;
       }
+    }
+  }
+
+  @if map.get($modules, "components/tab") {
+    [role="tablist"] {
+      #{$css-var-prefix}tab-animation: showTab;
+      // will fine tune these next release
+      //button {
+      //  #{$css-var-prefix}form-element-spacing-vertical: calc(var(#{$css-var-prefix}spacing) * 0.5); // 0.75rem
+      //  #{$css-var-prefix}form-element-spacing-horizontal: calc(var(#{$css-var-prefix}spacing) * 0.75); // 1rem
+
+      //  #{$css-var-prefix}tab-padding-vertical: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 1.25);
+      //  #{$css-var-prefix}tab-padding-horizontal: var(#{$css-var-prefix}form-element-spacing-horizontal);
+      //  #{$css-var-prefix}tab-border-color: var(#{$css-var-prefix}primary-background);
+      //  #{$css-var-prefix}tab-background: transparent;
+      //  #{$css-var-prefix}tab-color: var(#{$css-var-prefix}contrast);
+
+      //  &[aria-selected="true"] {
+      //    #{$css-var-prefix}tab-selected-background: var(#{$css-var-prefix}primary-background);
+      //    #{$css-var-prefix}tab-selected-color: var(#{$css-var-prefix}primary-inverse);
+      //  }
+      //  &:hover {
+      //    #{$css-var-prefix}tab-hover-background: var(#{$css-var-prefix}primary-hover-background);
+      //    #{$css-var-prefix}tab-hover-color: var(#{$css-var-prefix}primary-inverse);
+      //  }
+      //}
     }
   }
 }

@@ -176,8 +176,11 @@ $modules: map.merge(
     // incorperate the <menu> tag into navigations.
     "components/nav": true,
     "components/progress": true,
+    "components/tab": true,
+    // [role=tablist]
     // I wish role="tablist|tab|tabpanel" could be used on <details> and <summary> tag.
-    "components/tab-region": true,
+    "components/tab-region": false,
+    // DOES NOT WORK IN CHROME
     "components/tooltip": true,
     // V3 Notes
     // might find a new way to do this, I'll wait to hear feedback on this approach.
@@ -185,7 +188,7 @@ $modules: map.merge(
 
     // V3 Notes
     // Notification should be redone to be more in line with Pico's design
-    "components/notification": true,
+    "components/notification": false,
     "components/popover": true,
     // V3 Notes
     // timeline disabled by default because its more out of the scope of this project,

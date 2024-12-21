@@ -59,6 +59,14 @@
   // Box shadow
   #{$css-var-prefix}box-shadow: functions.shadow($slate-400);
 
+  // Make Accent Colors
+  // colors used in: dropdowns, modals, cards,
+  //                blockquote, tabs, timeline, ect
+  #{$css-var-prefix}accent-bg-color: var(#{$css-var-prefix}background-color);
+  #{$css-var-prefix}accent-section-bg-color: #{color.mix($slate-50, $white, 25%)};
+  #{$css-var-prefix}accent-border-color: var(#{$css-var-prefix}muted-border-color);
+  #{$css-var-prefix}accent-box-shadow: var(#{$css-var-prefix}box-shadow);
+
   // Typography
   @if map.get($modules, "content/typography") {
     // Headings colors

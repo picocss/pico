@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.2.0 (https://github.com/Yohn/PicoCSS)
+ * Pico CSS ✨ v2.2.1 (https://github.com/Yohn/PicoCSS)
  * Copyright 2019-2024 - Licensed under MIT
  */
 /**
@@ -219,6 +219,10 @@ nav details.dropdown summary:focus-visible {
   --pico-form-element-spacing-horizontal: 2rem;
 }
 
+[role=tablist] {
+  --pico-tab-animation: showTab;
+}
+
 /**
  * Color schemes
  */
@@ -262,6 +266,10 @@ nav details.dropdown summary:focus-visible {
   --pico-contrast-focus: rgba(93, 107, 137, 0.25);
   --pico-contrast-inverse: #fff;
   --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(129, 145, 181, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(129, 145, 181, 0.024), 0.0625rem 0.125rem 0.75rem rgba(129, 145, 181, 0.03), 0.1125rem 0.225rem 1.35rem rgba(129, 145, 181, 0.036), 0.2085rem 0.417rem 2.502rem rgba(129, 145, 181, 0.04302), 0.5rem 1rem 6rem rgba(129, 145, 181, 0.06), 0 0 0 0.0625rem rgba(129, 145, 181, 0.015);
+  --pico-accent-bg-color: var(--pico-background-color);
+  --pico-accent-section-bg-color: rgb(251, 251.5, 252.25);
+  --pico-accent-border-color: var(--pico-muted-border-color);
+  --pico-accent-box-shadow: var(--pico-box-shadow);
   --pico-h1-color: #2d3138;
   --pico-h2-color: #373c44;
   --pico-h3-color: #424751;
@@ -413,6 +421,10 @@ nav details.dropdown summary:focus-visible {
     --pico-contrast-focus: rgba(207, 213, 226, 0.25);
     --pico-contrast-inverse: #000;
     --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(7, 8.5, 12, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(7, 8.5, 12, 0.024), 0.0625rem 0.125rem 0.75rem rgba(7, 8.5, 12, 0.03), 0.1125rem 0.225rem 1.35rem rgba(7, 8.5, 12, 0.036), 0.2085rem 0.417rem 2.502rem rgba(7, 8.5, 12, 0.04302), 0.5rem 1rem 6rem rgba(7, 8.5, 12, 0.06), 0 0 0 0.0625rem rgba(7, 8.5, 12, 0.015);
+    --pico-accent-bg-color: #181c25;
+    --pico-accent-section-bg-color: rgb(26, 30.5, 40.25);
+    --pico-accent-border-color: var(--pico-muted-border-color);
+    --pico-accent-box-shadow: var(--pico-box-shadow);
     --pico-h1-color: #f0f1f3;
     --pico-h2-color: #e0e3e7;
     --pico-h3-color: #c2c7d0;
@@ -564,6 +576,10 @@ nav details.dropdown summary:focus-visible {
   --pico-contrast-focus: rgba(207, 213, 226, 0.25);
   --pico-contrast-inverse: #000;
   --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(7, 8.5, 12, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(7, 8.5, 12, 0.024), 0.0625rem 0.125rem 0.75rem rgba(7, 8.5, 12, 0.03), 0.1125rem 0.225rem 1.35rem rgba(7, 8.5, 12, 0.036), 0.2085rem 0.417rem 2.502rem rgba(7, 8.5, 12, 0.04302), 0.5rem 1rem 6rem rgba(7, 8.5, 12, 0.06), 0 0 0 0.0625rem rgba(7, 8.5, 12, 0.015);
+  --pico-accent-bg-color: #181c25;
+  --pico-accent-section-bg-color: rgb(26, 30.5, 40.25);
+  --pico-accent-border-color: var(--pico-muted-border-color);
+  --pico-accent-box-shadow: var(--pico-box-shadow);
   --pico-h1-color: #f0f1f3;
   --pico-h2-color: #e0e3e7;
   --pico-h3-color: #c2c7d0;
@@ -2806,7 +2822,7 @@ main {
   padding: calc(var(--pico-spacing) * 0.25) calc(var(--pico-spacing) * 0.5);
   transform: translateY(-50%) scale(0.85);
   color: var(--pico-form-element-active-border-color);
-  font-size: calc(var(--pico-font-size) * 0.75);
+  font-size: calc(var(--pico-font-size) * 0.85);
   line-height: 1.25;
   -moz-transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -2821,7 +2837,7 @@ main {
   padding: calc(var(--pico-spacing) * 0.25) calc(var(--pico-spacing) * 0.5);
   transform: translateY(-50%) scale(0.85);
   color: var(--pico-form-element-active-border-color);
-  font-size: calc(var(--pico-font-size) * 0.75);
+  font-size: calc(var(--pico-font-size) * 0.85);
   line-height: 1.25;
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -3147,11 +3163,6 @@ main {
   background-repeat: no-repeat;
   content: "";
 }
-
-.pico nav details.dropdown {
-  margin-bottom: 0;
-}
-
 .pico details.dropdown > summary:not([role]) {
   height: calc(1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 2 + var(--pico-border-width) * 2);
   padding: var(--pico-form-element-spacing-vertical) var(--pico-form-element-spacing-horizontal);
@@ -3186,19 +3197,6 @@ main {
   --pico-form-element-active-border-color: var(--pico-form-element-invalid-focus-color);
   --pico-form-element-focus-color: var(--pico-form-element-invalid-focus-color);
 }
-
-.pico nav details.dropdown {
-  display: inline;
-  margin: calc(var(--pico-nav-element-spacing-vertical) * -1) 0;
-}
-.pico nav details.dropdown > summary:not([role]) {
-  height: calc(1rem * var(--pico-line-height) + var(--pico-nav-link-spacing-vertical) * 2);
-  padding: calc(var(--pico-nav-link-spacing-vertical) - var(--pico-border-width) * 2) var(--pico-nav-link-spacing-horizontal);
-}
-.pico nav details.dropdown > summary:not([role]):focus-visible {
-  box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
-}
-
 .pico details.dropdown > summary + ul {
   display: flex;
   z-index: 99;
@@ -3261,17 +3259,9 @@ main {
 .pico details.dropdown > summary + ul li:has(label):hover {
   background-color: var(--pico-dropdown-hover-background-color);
 }
-
 .pico details.dropdown[open] > summary {
   margin-bottom: 0;
 }
-
-.pico details.dropdown[open] > summary + ul {
-  transform: scaleY(1);
-  opacity: 1;
-  transition: opacity var(--pico-transition), transform 0s ease-in-out 0s;
-}
-
 .pico details.dropdown[open] > summary::before {
   display: block;
   z-index: 1;
@@ -3282,6 +3272,24 @@ main {
   background: none;
   content: "";
   cursor: default;
+}
+.pico details.dropdown[open] > summary + ul {
+  transform: scaleY(1);
+  opacity: 1;
+  transition: opacity var(--pico-transition), transform 0s ease-in-out 0s;
+}
+
+.pico nav details.dropdown {
+  display: inline;
+  margin: calc(var(--pico-nav-element-spacing-vertical) * -1) 0;
+  margin-bottom: 0;
+}
+.pico nav details.dropdown > summary:not([role]) {
+  height: calc(1rem * var(--pico-line-height) + var(--pico-nav-link-spacing-vertical) * 2);
+  padding: calc(var(--pico-nav-link-spacing-vertical) - var(--pico-border-width) * 2) var(--pico-nav-link-spacing-horizontal);
+}
+.pico nav details.dropdown > summary:not([role]):focus-visible {
+  box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
 }
 
 .pico label > details.dropdown {
@@ -4192,57 +4200,78 @@ body:has(dialog[open]) {
 }
 
 /**
- * Tab region
- * styling help from: https://github.com/picocss/pico/discussions/608
- * and his demo: https://gistpreview.github.io/?86c08db6793d078757aa795845c19ed3
+ * Tabs
+ * styling help from: https://codepen.io/mikestreety/pen/yVNNNm
  */
-.pico section[role=region] {
+@keyframes showTab {
+  from {
+    scale: 0.75;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+.pico [role=tablist] {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 0;
-}
-.pico section[role=region] details {
-  display: contents;
-  margin-bottom: 0;
   padding-bottom: 0;
 }
-.pico section[role=region] details summary {
+.pico [role=tablist] button {
   flex-grow: 1;
-  order: 0;
-  margin: 0;
-  padding: calc(var(--pico-block-spacing-vertical) * 0.75) calc(var(--pico-block-spacing-horizontal) * 1.5);
-  border-bottom: 1px solid transparent;
-  background-color: var(--pico-card-sectioning-background-color);
-  list-style-type: none;
-  touch-action: manipulation;
-  transition: all var(--pico-transition);
+  order: 1;
+  padding: calc(var(--pico-spacing) * 0.625);
+  border: 0;
+  border-bottom: 1px solid var(--pico-primary-background);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: transparent;
+  color: var(--pico-contrast);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--pico-transition);
 }
-.pico section[role=region] details summary:hover {
-  border-bottom-color: var(--pico-primary-border);
-  background-color: var(--pico-card-background-color);
+.pico [role=tablist] button[aria-selected=true] {
+  background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
 }
-.pico section[role=region] details summary::after {
+.pico [role=tablist] button:hover {
+  background: var(--pico-primary-hover-background);
+  color: var(--pico-primary-inverse);
+}
+.pico [role=tablist] [role=tabpanel] {
+  flex-grow: 1;
+  order: 99;
+  width: 100%;
+  padding: var(--pico-spacing) calc(var(--pico-spacing) * 0.75);
+  background: var(--pico-accent-section-bg-color);
+  animation: var(--pico-tab-animation) var(--pico-transition);
+}
+.pico [role=tablist] [role=tabpanel]:not([hidden]) {
+  display: block;
+}
+.pico [role=tablist] [role=tabpanel][hidden] {
   display: none;
 }
-.pico section[role=region] details > div {
-  opacity: 0;
-}
-.pico section[role=region] details[open] > summary {
-  background-color: var(--pico-primary-background);
-  color: var(--pico-primary-inverse) !important;
-}
-.pico section[role=region] details[open] > summary:hover {
-  background-color: var(--pico-primary-hover-background);
-}
-.pico section[role=region] details[open] > div {
-  order: 1;
-  width: 100%;
-  padding: var(--pico-spacing);
-  padding-bottom: 0;
-  opacity: 1;
-  transition: opacity var(--pico-transition);
+.pico [role=tablist] [role=tabpanel] > *:last-of-type {
+  margin-bottom: 0;
 }
 
+@media (max-width: 45em) {
+  .pico [role=tablist] [role=tabpanel],
+  .pico [role=tablist] button,
+  .pico [role=tablist] label {
+    order: initial;
+  }
+  .pico [role=tablist] label,
+  .pico [role=tablist] [role=tabpanel],
+  .pico [role=tablist] button {
+    width: 100%;
+    margin-top: 0.2rem;
+    margin-right: 0;
+  }
+}
 .pico [popover] {
   border-color: var(--pico-primary);
 }
@@ -4262,52 +4291,6 @@ body:has(dialog[open]) {
   color: var(--pico-primary);
   font-size: 1.5em;
   opacity: 0.8;
-}
-
-/**
-* Notification (<dialog>)
-*/
-.pico dialog[role=alert] {
-  position: fixed;
-  top: unset;
-  right: var(--pico-spacing);
-  bottom: var(--pico-spacing);
-  left: unset;
-  width: auto;
-  min-width: unset;
-  height: auto;
-  min-height: unset;
-  padding: var(--pico-form-element-spacing-vertical) var(--pico-form-element-spacing-horizontal);
-  border: var(--pico-border-width) solid var(--pico-border-color);
-  border-radius: var(--pico-border-radius);
-  -webkit-backdrop-filter: var(--pico-modal-overlay-backdrop-filter);
-  backdrop-filter: var(--pico-modal-overlay-backdrop-filter);
-  background-color: var(--pico-primary-background);
-  box-shadow: var(--pico-box-shadow);
-  color: var(--pico-primary-inverse);
-  font-weight: var(--pico-font-weight);
-  font-size: var(--pico-font-size);
-  line-height: var(--pico-line-height);
-  opacity: 0;
-  transition: opacity var(--pico-transition);
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-}
-.pico dialog[role=alert] * {
-  color: var(--pico-primary-inverse);
-  font-weight: var(--pico-font-weight);
-  font-size: var(--pico-font-size);
-  line-height: var(--pico-line-height);
-}
-
-.pico dialog[data-backdrop=false][role=alert]::backdrop {
-  display: none;
-}
-
-.pico dialog[role=alert][open] {
-  opacity: 1;
-  transition: opacity var(--pico-transition);
 }
 
 .pico .timeline {

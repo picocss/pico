@@ -47,6 +47,7 @@
 @use "components/nav-hamburger"; // role="navigation" for hamburger-menu for the nav component
 @use "components/progress"; // progress
 @use "components/tooltip"; // data-tooltip
+@use "components/tab"; // [role="tablist"] // classless tabs
 @use "components/tab-region"; // section[role="region"] // tabs
 @use "components/popover"; // dialog[role="alert"]
 // V3 Remove notification in favor of popovers..

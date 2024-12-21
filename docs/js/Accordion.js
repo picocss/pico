@@ -1,3 +1,8 @@
+/*
+ * Accordion JavaScript Removed.
+ *
+*/
+
 document.addEventListener("DOMContentLoaded", () => {
 	document.querySelectorAll('details').forEach(el => {
 		let anim = null, opening = false, closing = false

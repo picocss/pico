@@ -54,7 +54,7 @@
       padding: calc(var(--pico-spacing) * 0.25) calc(var(--pico-spacing) * 0.5);
       transform: translateY(-50%) scale(0.85);
       color: var(--pico-form-element-active-border-color);
-      font-size: calc(var(--pico-font-size) * 0.75);
+      font-size: calc(var(--pico-font-size) * 0.85);
       line-height: 1.25;
       transition: all $transition-fast;
     }

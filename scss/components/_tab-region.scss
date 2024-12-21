@@ -23,7 +23,7 @@
         margin: 0;
         padding: calc(var(#{$css-var-prefix}block-spacing-vertical) * 0.75)
           calc(var(#{$css-var-prefix}block-spacing-horizontal) * 1.5);
-        border-bottom: 1px solid transparent;
+        border-bottom: 1px solid transparent; //(#{$css-var-prefix}primary-background);
         background-color: var(#{$css-var-prefix}card-sectioning-background-color);
         list-style-type: none;
         touch-action: manipulation;
