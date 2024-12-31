@@ -63,7 +63,7 @@
 	</style>
 </head>
 
-<body>
+<body id="top">
 	<div class="container-fluid">
 		<div class="row-fluid">
 			<div class="col-12 col-md-3 col-lg-2">
@@ -188,6 +188,7 @@
 								<li><a href="#floating-labels">Floating Labels [role=form]</a></li>
 								<li><a href="#validation">Validation</a></li>
 								<li><a href="#group">Group</a></li>
+								<li><a href="#dropdown-submenu">Dropdown Submenu</a></li>
 								<li><a href="#rows">Row</a></li>
 								<li><a href="#row-offsets">Row Offset</a></li>
 								<li><a href="#row-alignments">Row Alignments</a></li>
@@ -209,7 +210,7 @@
 			<main class="col-12 col-md-9 col-lg-10">
 				<article>
 					<header>
-						<h2>Yohns PicoCSS Fork v2.2.1</h2>
+						<h2>Yohns PicoCSS Fork v2.2.2</h2>
 						<p class="mb-0">Not in npm yet, but will be soon.</p>
 					</header>
 					<p>I've merged some open pull requests from the <a href="https://github.com/picocss/pico">original Pico</a>
@@ -652,8 +653,98 @@
 						<h2>Group</h2>
 						<h6 class="fw-n">Classless and no JavaScript!</h6>
 					</header>
-					<p>I wanted to add the label tah to have an input group kind of thing going on.</p>
+					<ol>
+						<li><code>&lt;label&gt;</code> has been added.</li>
+						<li><code>&lt;legend&gt;</code> has been added. (To be used with <code>&lt;fieldset role="group"&gt;</code></li>
+						<li><code>&lt;details class="dropdown"&gt;</code> has been added.</li>
+					</ol>
+					<h4 id="dropdown-submenu">Dropdown Submenu Example</h4>
+					<p>Click on the <strong>Getting Started</strong> to see the sub-dropdown menu under <strong>About</strong>.</p>
+					<hr>
 					<div>
+						<h3>[role=group] > .dropdown</h3>
+						<div role="group">
+							<details class="dropdown">
+								<summary>Getting Started</summary>
+								<ul>
+									<li>
+										<details class="dropdown">
+											<summary class="secondary">About</summary>
+											<ul>
+												<li><a class="load-page" href="data/What’s new in v2?.json">What’s new in v2?</a></li>
+												<li><a class="load-page" href="data/Mission.json">Mission</a></li>
+												<li><a class="load-page" href="data/Usage scenarios.json">Usage scenarios</a></li>
+												<li><a class="load-page" href="data/Brand.json">Brand</a></li>
+												<li><a class="load-page" href="data/Built With.json">Built With</a></li>
+											</ul>
+										</details>
+									</li>
+									<li>Quick start</li>
+									<li>Version picker New</li>
+									<li>Color schemes</li>
+									<li>Class-less version</li>
+									<li>Conditional styling New</li>
+									<li>RTL</li>
+									<li>CSS Variables</li>
+									<li>Sass</li>
+									<li>Colors New</li>
+								</ul>
+							</details>
+							<details class="dropdown">
+								<summary class="contrast">Layout</summary>
+								<ul>
+									<li><a class="load-page" href="data/Container.json">Container</a></li>
+									<li><a class="load-page" href="data/Landmarks.json">Landmarks &amp; Section</a></li>
+									<li><a class="load-page" href="data/Grid.json">Grid</a></li>
+									<li><a class="load-page" href="data/Row.json">Row</a></li>
+									<li><a class="load-page" href="data/Overflow.json">Overflow</a></li>
+								</ul>
+							</details>
+							<details class="dropdown">
+								<summary>Content</summary>
+								<ul>
+									<li><a class="load-page" href="data/Typography.json">Typography</a></li>
+									<li><a class="load-page" href="data/Link.json">Link</a></li>
+									<li><a class="load-page" href="data/Table.json">Table</a></li>
+								</ul>
+							</details>
+							<details class="dropdown">
+								<summary>Form</summary>
+								<ul>
+									<li><a class="load-page" href="data/Overview.json">Overview</a></li>
+									<li><a class="load-page" href="data/Button.json">Button</a></li>
+									<li><a class="load-page" href="data/Checkboxes.json">Checkboxes</a></li>
+									<li><a class="load-page" href="data/File.json">File</a></li>
+									<li><a class="load-page" href="data/Floating.json">Floating Labels</a></li>
+									<li><a class="load-page" href="data/Input.json">Input</a></li>
+									<li><a class="load-page" href="data/Select.json">Select</a></li>
+									<li><a class="load-page" href="data/Switch.json">Switch</a></li>
+									<li><a class="load-page" href="data/Radios.json">Radios</a></li>
+									<li><a class="load-page" href="data/Range.json">Range</a></li>
+									<li><a class="load-page" href="data/Textarea.json">Textarea</a></li>
+									<li><a class="load-page" href="data/Validation.json">Validation</a></li>
+								</ul>
+							</details>
+							<details class="dropdown">
+								<summary>Components</summary>
+								<ul>
+									<li><a class="load-page" href="data/Accordion.json">Accordion</a></li>
+									<li><a class="load-page" href="data/Card.json">Card</a></li>
+									<li><a class="load-page" href="data/Dropdown.json">Dropdown</a></li>
+									<li><a class="load-page" href="data/Group.json">Group</a></li>
+									<li><a class="load-page" href="data/Loading.json">Loading</a></li>
+									<li><a class="load-page" href="data/Modal.json">Modal</a></li>
+									<li><a class="load-page" href="data/Nav.json">Nav</a></li>
+									<li><a class="load-page" href="data/Popover.json">Popover</a></li>
+									<li><a class="load-page" href="data/Progress.json">Progress</a></li>
+									<li><a class="load-page" href="data/Tabs.json">Tabs</a></li>
+									<li><a class="load-page" href="data/Timeline.json">Timeline</a></li>
+									<li><a class="load-page" href="data/Tooltip.json">Tooltip</a></li>
+								</ul>
+							</details>
+						</div>
+						<hr>
+						<h3>form > [role=group]</h3>
 						<form action="javascript:void(0);" novalidate>
 							<div role="group">
 								<label for="email">Email:</label>
@@ -661,7 +752,8 @@
 								<input type="submit" value="Subscribe" />
 							</div>
 						</form>
-
+						<hr>
+						<h3>form > [role=group] > select</h3>
 						<form action="javascript:void(0);" novalidate>
 							<div role="group">
 								<label for="ex-browser">Browser:</label>
@@ -674,6 +766,23 @@
 								<input type="submit" value="Save" />
 							</div>
 						</form>
+						<hr>
+						<h3>fieldset[role=group] with > legend</h3>
+						<fieldset role="group">
+							<legend>Sort By</legend>
+							<button class="outline secondary">Availability</button>
+							<button class="outline">Relative Profit</button>
+							<button class="outline secondary">Absolute Profit</button>
+						</fieldset>
+						<hr>
+						<h3>div[role=group] with > legend</h3>
+						<div role="group">
+							<legend>Sort By</legend>
+							<button class="outline secondary">Availability</button>
+							<button>Relative Profit</button>
+							<button class="outline secondary">Absolute Profit</button>
+						</div>
+
 					</div>
 				</article>
 				<!-- ./ Group -->
@@ -1326,7 +1435,7 @@
 			function changeTheme(newTheme) {
 				const linkElement = document.getElementById('theme-color-ss');
 				if (linkElement) {
-					linkElement.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Yohn/PicoCSS@2.2.1/css/pico.' + newTheme + '.min.css');
+					linkElement.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Yohn/PicoCSS@2.2.2/css/pico.' + newTheme + '.min.css');
 				}
 			}
 

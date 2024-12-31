@@ -19,7 +19,8 @@
   #{$parent-selector} optgroup,
   #{$parent-selector} select,
   #{$parent-selector} textarea,
-  #{$parent-selector} [role="group"] > label {
+  #{$parent-selector} [role="group"] > label,
+  #{$parent-selector} [role="group"] > legend {
     margin: 0; // 2
     font-size: 1rem; // 1
     line-height: var(#{$css-var-prefix}line-height); // 1
@@ -116,8 +117,10 @@
   // ––––––––––––––––––––
 
   // Force height for alternatives input types
-  #{$parent-selector} input:not([type="checkbox"], [type="radio"], [type="range"], [type="date"]),
-  #{$parent-selector} [role="group"] > label {
+  #{$parent-selector} input:not([type="checkbox"], [type="radio"], [type="range"], [type="date"]) {
+    //,
+    //#{$parent-selector} [role="group"] > label,
+    //#{$parent-selector} [role="group"] > legend {
     height: calc(
       (1rem * var(#{$css-var-prefix}line-height)) +
         (var(#{$css-var-prefix}form-element-spacing-vertical) * 2) +
@@ -159,7 +162,8 @@
   #{$parent-selector} input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
   #{$parent-selector} select,
   #{$parent-selector} textarea,
-  #{$parent-selector} [role="group"] > label {
+  #{$parent-selector} [role="group"] > label,
+  #{$parent-selector} [role="group"] > legend {
     appearance: none;
     padding: var(#{$css-var-prefix}form-element-spacing-vertical)
       var(#{$css-var-prefix}form-element-spacing-horizontal);
@@ -169,7 +173,8 @@
   #{$parent-selector} input,
   #{$parent-selector} select,
   #{$parent-selector} textarea,
-  #{$parent-selector} [role="group"] > label {
+  #{$parent-selector} [role="group"] > label,
+  #{$parent-selector} [role="group"] > legend {
     #{$css-var-prefix}background-color: var(#{$css-var-prefix}form-element-background-color);
     #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-border-color);
     #{$css-var-prefix}color: var(#{$css-var-prefix}form-element-color);
@@ -241,6 +246,7 @@
   // Disabled
   #{$parent-selector} input:not([type="submit"], [type="button"], [type="reset"])[disabled],
   #{$parent-selector} [role="group"] > label,
+  #{$parent-selector} [role="group"] > legend,
   #{$parent-selector} select[disabled],
   #{$parent-selector} textarea[disabled],
   #{$parent-selector} label[aria-disabled="true"],
@@ -252,7 +258,8 @@
   }
 
   #{$parent-selector} label[aria-disabled="true"] input[disabled],
-  #{$parent-selector} [role="group"] > label {
+  #{$parent-selector} [role="group"] > label,
+  #{$parent-selector} [role="group"] > legend {
     opacity: 1;
   }
 
@@ -380,7 +387,8 @@
   #{$parent-selector} textarea::placeholder,
   #{$parent-selector} textarea::-webkit-input-placeholder,
   #{$parent-selector} select:invalid,
-  #{$parent-selector} [role="group"] > label {
+  #{$parent-selector} [role="group"] > label,
+  #{$parent-selector} [role="group"] > legend {
     color: var(#{$css-var-prefix}form-element-placeholder-color);
     opacity: 1;
   }
@@ -389,7 +397,8 @@
   #{$parent-selector} input:not([type="checkbox"], [type="radio"]),
   #{$parent-selector} select,
   #{$parent-selector} textarea,
-  #{$parent-selector} [role="group"] > label {
+  #{$parent-selector} [role="group"] > label,
+  #{$parent-selector} [role="group"] > legend {
     margin-bottom: var(#{$css-var-prefix}spacing);
   }
 

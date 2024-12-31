@@ -1,6 +1,6 @@
 {
   "name": "@yohns/picocss",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "Minimal CSS Framework for semantic HTML, updated with enhanced capabilities.",
   "authors": [
     {
@@ -18,9 +18,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Yohn/PicoCSS.git"
-  },
-  "publishConfig": {
-    "tag": "next"
   },
   "keywords": [
     "css",

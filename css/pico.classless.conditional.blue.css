@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.2.1 (https://github.com/Yohn/PicoCSS)
+ * Pico CSS ✨ v2.2.2 (https://github.com/Yohn/PicoCSS)
  * Copyright 2019-2024 - Licensed under MIT
  */
 /**
@@ -1159,7 +1159,8 @@ main {
 .pico optgroup,
 .pico select,
 .pico textarea,
-.pico [role=group] > label {
+.pico [role=group] > label,
+.pico [role=group] > legend {
   margin: 0;
   font-size: 1rem;
   line-height: var(--pico-line-height);
@@ -1233,8 +1234,7 @@ main {
   border-width: 0;
 }
 
-.pico input:not([type=checkbox], [type=radio], [type=range], [type=date]),
-.pico [role=group] > label {
+.pico input:not([type=checkbox], [type=radio], [type=range], [type=date]) {
   height: calc(1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 2 + var(--pico-border-width) * 2);
 }
 
@@ -1268,7 +1268,8 @@ main {
 .pico input:not([type=checkbox], [type=radio], [type=range], [type=file]),
 .pico select,
 .pico textarea,
-.pico [role=group] > label {
+.pico [role=group] > label,
+.pico [role=group] > legend {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1278,7 +1279,8 @@ main {
 .pico input,
 .pico select,
 .pico textarea,
-.pico [role=group] > label {
+.pico [role=group] > label,
+.pico [role=group] > legend {
   --pico-background-color: var(--pico-form-element-background-color);
   --pico-border-color: var(--pico-form-element-border-color);
   --pico-color: var(--pico-form-element-color);
@@ -1320,6 +1322,7 @@ main {
 
 .pico input:not([type=submit], [type=button], [type=reset])[disabled],
 .pico [role=group] > label,
+.pico [role=group] > legend,
 .pico select[disabled],
 .pico textarea[disabled],
 .pico label[aria-disabled=true],
@@ -1329,7 +1332,8 @@ main {
 }
 
 .pico label[aria-disabled=true] input[disabled],
-.pico [role=group] > label {
+.pico [role=group] > label,
+.pico [role=group] > legend {
   opacity: 1;
 }
 
@@ -1397,7 +1401,8 @@ main {
 .pico textarea::placeholder,
 .pico textarea::-webkit-input-placeholder,
 .pico select:invalid,
-.pico [role=group] > label {
+.pico [role=group] > label,
+.pico [role=group] > legend {
   color: var(--pico-form-element-placeholder-color);
   opacity: 1;
 }
@@ -1405,7 +1410,8 @@ main {
 .pico input:not([type=checkbox], [type=radio]),
 .pico select,
 .pico textarea,
-.pico [role=group] > label {
+.pico [role=group] > label,
+.pico [role=group] > legend {
   margin-bottom: var(--pico-spacing);
 }
 
@@ -2441,6 +2447,10 @@ main {
 /**
  * Group ([role="group"], [role="search"])
  */
+.pico fieldset[role=group] > legend {
+  float: left;
+}
+
 .pico [role=search],
 .pico [role=group] {
   display: inline-flex;
@@ -2453,18 +2463,25 @@ main {
   transition: box-shadow var(--pico-transition);
 }
 .pico [role=search] > label,
-.pico [role=group] > label {
+.pico [role=search] > legend,
+.pico [role=group] > label,
+.pico [role=group] > legend {
+  border-color: var(--pico-secondary-background);
   background-color: var(--pico-secondary-background);
   color: var(--pico-secondary-inverse);
 }
 .pico [role=search] > *,
 .pico [role=search] input:not([type=checkbox], [type=radio]),
 .pico [role=search] select,
-.pico [role=search] label,
+.pico [role=search] > label,
+.pico [role=search] > legend,
+.pico [role=search] > details,
 .pico [role=group] > *,
 .pico [role=group] input:not([type=checkbox], [type=radio]),
 .pico [role=group] select,
-.pico [role=group] label {
+.pico [role=group] > label,
+.pico [role=group] > legend,
+.pico [role=group] > details {
   position: relative;
   flex: 1 1 auto;
   margin-bottom: 0;
@@ -2472,11 +2489,15 @@ main {
 .pico [role=search] > *:not(:first-child),
 .pico [role=search] input:not([type=checkbox], [type=radio]):not(:first-child),
 .pico [role=search] select:not(:first-child),
-.pico [role=search] label:not(:first-child),
+.pico [role=search] > label:not(:first-child),
+.pico [role=search] > legend:not(:first-child),
+.pico [role=search] > details:not(:first-child),
 .pico [role=group] > *:not(:first-child),
 .pico [role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
 .pico [role=group] select:not(:first-child),
-.pico [role=group] label:not(:first-child) {
+.pico [role=group] > label:not(:first-child),
+.pico [role=group] > legend:not(:first-child),
+.pico [role=group] > details:not(:first-child) {
   margin-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -2484,23 +2505,48 @@ main {
 .pico [role=search] > *:not(:last-child),
 .pico [role=search] input:not([type=checkbox], [type=radio]):not(:last-child),
 .pico [role=search] select:not(:last-child),
-.pico [role=search] label:not(:last-child),
+.pico [role=search] > label:not(:last-child),
+.pico [role=search] > legend:not(:last-child),
+.pico [role=search] > details:not(:last-child),
 .pico [role=group] > *:not(:last-child),
 .pico [role=group] input:not([type=checkbox], [type=radio]):not(:last-child),
 .pico [role=group] select:not(:last-child),
-.pico [role=group] label:not(:last-child) {
+.pico [role=group] > label:not(:last-child),
+.pico [role=group] > legend:not(:last-child),
+.pico [role=group] > details:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 .pico [role=search] > *:focus,
 .pico [role=search] input:not([type=checkbox], [type=radio]):focus,
 .pico [role=search] select:focus,
-.pico [role=search] label:focus,
+.pico [role=search] > label:focus,
+.pico [role=search] > legend:focus,
+.pico [role=search] > details:focus,
 .pico [role=group] > *:focus,
 .pico [role=group] input:not([type=checkbox], [type=radio]):focus,
 .pico [role=group] select:focus,
-.pico [role=group] label:focus {
+.pico [role=group] > label:focus,
+.pico [role=group] > legend:focus,
+.pico [role=group] > details:focus {
   z-index: 2;
+}
+.pico [role=search] > details:not(:first-child) > summary,
+.pico [role=group] > details:not(:first-child) > summary {
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.pico [role=search] > details:not(:last-child) > summary,
+.pico [role=group] > details:not(:last-child) > summary {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.pico [role=search] > details > summary,
+.pico [role=search] > details > summary:not([role]),
+.pico [role=group] > details > summary,
+.pico [role=group] > details > summary:not([role]) {
+  height: 100% !important;
 }
 .pico [role=search] button:not(:first-child),
 .pico [role=search] [type=submit]:not(:first-child),
@@ -2509,7 +2555,9 @@ main {
 .pico [role=search] [role=button]:not(:first-child),
 .pico [role=search] input:not([type=checkbox], [type=radio]):not(:first-child),
 .pico [role=search] select:not(:first-child),
-.pico [role=search] label:not(:first-child),
+.pico [role=search] > label:not(:first-child),
+.pico [role=search] > legend:not(:first-child),
+.pico [role=search] > details > summary:not(:first-child),
 .pico [role=group] button:not(:first-child),
 .pico [role=group] [type=submit]:not(:first-child),
 .pico [role=group] [type=reset]:not(:first-child),
@@ -2517,7 +2565,9 @@ main {
 .pico [role=group] [role=button]:not(:first-child),
 .pico [role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
 .pico [role=group] select:not(:first-child),
-.pico [role=group] label:not(:first-child) {
+.pico [role=group] > label:not(:first-child),
+.pico [role=group] > legend:not(:first-child),
+.pico [role=group] > details > summary:not(:first-child) {
   margin-left: calc(var(--pico-border-width) * -1);
 }
 .pico [role=search] button,
@@ -2525,13 +2575,17 @@ main {
 .pico [role=search] [type=reset],
 .pico [role=search] [type=button],
 .pico [role=search] [role=button],
-.pico [role=search] label,
+.pico [role=search] > label,
+.pico [role=search] > legend,
+.pico [role=search] > details > summary,
 .pico [role=group] button,
 .pico [role=group] [type=submit],
 .pico [role=group] [type=reset],
 .pico [role=group] [type=button],
 .pico [role=group] [role=button],
-.pico [role=group] label {
+.pico [role=group] > label,
+.pico [role=group] > legend,
+.pico [role=group] > details > summary {
   width: auto;
 }
 @supports selector(:has(*)) {
@@ -2541,10 +2595,14 @@ main {
   }
   .pico [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) input:not([type=checkbox], [type=radio]),
   .pico [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) select,
-  .pico [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) label,
+  .pico [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) > label,
+  .pico [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) > legend,
+  .pico [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) > details > summary,
   .pico [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) input:not([type=checkbox], [type=radio]),
   .pico [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) select,
-  .pico [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) label {
+  .pico [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) > label,
+  .pico [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) > legend,
+  .pico [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) > details > summary {
     border-color: transparent;
   }
   .pico [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus),
@@ -2556,11 +2614,15 @@ main {
   .pico [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=button],
   .pico [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) [role=button],
   .pico [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) label,
+  .pico [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) > legend,
+  .pico [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) > details > summary,
   .pico [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) button,
   .pico [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=submit],
   .pico [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=button],
   .pico [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [role=button],
-  .pico [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) label {
+  .pico [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) label,
+  .pico [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) > legend,
+  .pico [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) > details > summary {
     --pico-button-box-shadow: 0 0 0 var(--pico-border-width) var(--pico-primary-border);
     --pico-button-hover-box-shadow: 0 0 0 var(--pico-border-width) var(--pico-primary-hover-border);
   }
@@ -2570,12 +2632,16 @@ main {
   .pico [role=search] [type=button]:focus,
   .pico [role=search] [role=button]:focus,
   .pico [role=search] label:focus,
+  .pico [role=search] > legend:focus,
+  .pico [role=search] > details > summary:focus,
   .pico [role=group] button:focus,
   .pico [role=group] [type=submit]:focus,
   .pico [role=group] [type=reset]:focus,
   .pico [role=group] [type=button]:focus,
   .pico [role=group] [role=button]:focus,
-  .pico [role=group] label:focus {
+  .pico [role=group] label:focus,
+  .pico [role=group] > legend:focus,
+  .pico [role=group] > details > summary:focus {
     box-shadow: none;
   }
 }
@@ -2593,10 +2659,14 @@ main {
 [dir=rtl] .pico [role=search] input:not([type=checkbox], [type=radio]):not(:first-child),
 [dir=rtl] .pico [role=search] select:not(:first-child),
 [dir=rtl] .pico [role=search] label:not(:first-child),
+[dir=rtl] .pico [role=search] > legend:not(:first-child),
+[dir=rtl] .pico [role=search] > details > summary:not(:first-child),
 [dir=rtl] .pico [role=group] > *:not(:first-child),
 [dir=rtl] .pico [role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
 [dir=rtl] .pico [role=group] select:not(:first-child),
-[dir=rtl] .pico [role=group] label:not(:first-child) {
+[dir=rtl] .pico [role=group] label:not(:first-child),
+[dir=rtl] .pico [role=group] > legend:not(:first-child),
+[dir=rtl] .pico [role=group] > details > summary:not(:first-child) {
   margin-right: 0;
   margin-left: auto;
   border-top-right-radius: 0;
@@ -2608,10 +2678,14 @@ main {
 [dir=rtl] .pico [role=search] input:not([type=checkbox], [type=radio]):not(:last-child),
 [dir=rtl] .pico [role=search] select:not(:last-child),
 [dir=rtl] .pico [role=search] label:not(:last-child),
+[dir=rtl] .pico [role=search] > legend:not(:last-child),
+[dir=rtl] .pico [role=search] > details > summary:not(:last-child),
 [dir=rtl] .pico [role=group] > *:not(:last-child),
 [dir=rtl] .pico [role=group] input:not([type=checkbox], [type=radio]):not(:last-child),
 [dir=rtl] .pico [role=group] select:not(:last-child),
-[dir=rtl] .pico [role=group] label:not(:last-child) {
+[dir=rtl] .pico [role=group] label:not(:last-child),
+[dir=rtl] .pico [role=group] > legend:not(:last-child),
+[dir=rtl] .pico [role=group] > details > summary:not(:last-child) {
   border-top-right-radius: var(--pico-border-radius);
   border-top-left-radius: 0;
   border-bottom-right-radius: var(--pico-border-radius);
@@ -2624,7 +2698,9 @@ main {
 [dir=rtl] [role=button]:not(:first-child),
 [dir=rtl] input:not([type=checkbox], [type=radio]):not(:first-child),
 [dir=rtl] select:not(:first-child),
-[dir=rtl] label:not(:first-child) {
+[dir=rtl] label:not(:first-child),
+[dir=rtl] > legend:not(:first-child),
+[dir=rtl] > details > summary:not(:first-child) {
   margin-right: calc(var(--pico-border-width) * -1);
   margin-left: auto;
 }
