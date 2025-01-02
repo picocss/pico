@@ -189,21 +189,21 @@
           border-bottom-left-radius: 0;
         }
       }
-    }
 
-    button,
-    [type="submit"],
-    [type="reset"],
-    [type="button"],
-    [role="button"],
-    input:not([type="checkbox"], [type="radio"]),
-    select,
-    label,
-    > legend,
-    > details > summary {
-      &:not(:first-child) {
-        margin-right: calc(var(#{$css-var-prefix}border-width) * -1);
-        margin-left: auto;
+      button,
+      [type="submit"],
+      [type="reset"],
+      [type="button"],
+      [role="button"],
+      input:not([type="checkbox"], [type="radio"]),
+      select,
+      label,
+      > legend,
+      > details > summary {
+        &:not(:first-child) {
+          margin-right: calc(var(#{$css-var-prefix}border-width) * -1);
+          margin-left: auto;
+        }
       }
     }
   }
