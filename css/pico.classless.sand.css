@@ -2691,16 +2691,26 @@ fieldset[role=group] > legend {
   border-bottom-right-radius: var(--pico-border-radius);
   border-bottom-left-radius: 0;
 }
-[dir=rtl] button:not(:first-child),
-[dir=rtl] [type=submit]:not(:first-child),
-[dir=rtl] [type=reset]:not(:first-child),
-[dir=rtl] [type=button]:not(:first-child),
-[dir=rtl] [role=button]:not(:first-child),
-[dir=rtl] input:not([type=checkbox], [type=radio]):not(:first-child),
-[dir=rtl] select:not(:first-child),
-[dir=rtl] label:not(:first-child),
-[dir=rtl] > legend:not(:first-child),
-[dir=rtl] > details > summary:not(:first-child) {
+[dir=rtl] [role=search] button:not(:first-child),
+[dir=rtl] [role=search] [type=submit]:not(:first-child),
+[dir=rtl] [role=search] [type=reset]:not(:first-child),
+[dir=rtl] [role=search] [type=button]:not(:first-child),
+[dir=rtl] [role=search] [role=button]:not(:first-child),
+[dir=rtl] [role=search] input:not([type=checkbox], [type=radio]):not(:first-child),
+[dir=rtl] [role=search] select:not(:first-child),
+[dir=rtl] [role=search] label:not(:first-child),
+[dir=rtl] [role=search] > legend:not(:first-child),
+[dir=rtl] [role=search] > details > summary:not(:first-child),
+[dir=rtl] [role=group] button:not(:first-child),
+[dir=rtl] [role=group] [type=submit]:not(:first-child),
+[dir=rtl] [role=group] [type=reset]:not(:first-child),
+[dir=rtl] [role=group] [type=button]:not(:first-child),
+[dir=rtl] [role=group] [role=button]:not(:first-child),
+[dir=rtl] [role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
+[dir=rtl] [role=group] select:not(:first-child),
+[dir=rtl] [role=group] label:not(:first-child),
+[dir=rtl] [role=group] > legend:not(:first-child),
+[dir=rtl] [role=group] > details > summary:not(:first-child) {
   margin-right: calc(var(--pico-border-width) * -1);
   margin-left: auto;
 }
