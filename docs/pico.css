@@ -232,19 +232,19 @@ nav details.dropdown summary:focus-visible {
   color-scheme: light;
   --pico-background-color: #fff;
   --pico-color: #373c44;
-  --pico-text-selection-color: rgba(167, 128, 212, 0.25);
+  --pico-text-selection-color: rgba(183, 136, 0, 0.25);
   --pico-muted-color: #646b79;
   --pico-muted-border-color: rgb(231, 234, 239.5);
-  --pico-primary: #8352c5;
-  --pico-primary-background: #7540bf;
+  --pico-primary: #876400;
+  --pico-primary-background: #ffbf00;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(131, 82, 197, 0.5);
-  --pico-primary-hover: #6935b3;
-  --pico-primary-hover-background: #6935b3;
+  --pico-primary-underline: rgba(135, 100, 0, 0.5);
+  --pico-primary-hover: #694d00;
+  --pico-primary-hover-background: #e8ae01;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(167, 128, 212, 0.5);
-  --pico-primary-inverse: #fff;
+  --pico-primary-focus: rgba(183, 136, 0, 0.5);
+  --pico-primary-inverse: #000;
   --pico-secondary: #5d6b89;
   --pico-secondary-background: #525f7a;
   --pico-secondary-border: var(--pico-secondary-background);
@@ -308,7 +308,7 @@ nav details.dropdown summary:focus-visible {
   --pico-switch-background-color: #bfc7d9;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-switch-color: #fff;
-  --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
   --pico-range-border-color: #dfe3eb;
   --pico-range-active-border-color: #bfc7d9;
   --pico-range-thumb-border-color: var(--pico-background-color);
@@ -343,7 +343,7 @@ nav details.dropdown summary:focus-visible {
 [data-theme=light] details summary[role=button]:not(.outline, .contrast, .secondary)::after,
 :root:not([data-theme=dark]) details summary[role=button]:not(.outline, .contrast, .secondary)::after,
 :host(:not([data-theme=dark])) details summary[role=button]:not(.outline, .contrast, .secondary)::after {
-  filter: brightness(100) invert(0);
+  filter: brightness(100) invert(1);
 }
 [data-theme=light] details summary.secondary[role=button]::after,
 :root:not([data-theme=dark]) details summary.secondary[role=button]::after,
@@ -358,7 +358,7 @@ nav details.dropdown summary:focus-visible {
 [data-theme=light] [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before,
 :root:not([data-theme=dark]) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before,
 :host(:not([data-theme=dark])) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
-  filter: brightness(100) invert(0);
+  filter: brightness(0) invert(1);
 }
 [data-theme=light] input:is([type=submit],
 [type=button],
@@ -387,19 +387,19 @@ nav details.dropdown summary:focus-visible {
     color-scheme: dark;
     --pico-background-color: rgb(19, 22.5, 30.5);
     --pico-color: #c2c7d0;
-    --pico-text-selection-color: rgba(178, 144, 217, 0.1875);
+    --pico-text-selection-color: rgba(199, 148, 0, 0.1875);
     --pico-muted-color: #7b8495;
     --pico-muted-border-color: #202632;
-    --pico-primary: #b290d9;
-    --pico-primary-background: #7540bf;
+    --pico-primary: #c79400;
+    --pico-primary-background: #ffbf00;
     --pico-primary-border: var(--pico-primary-background);
-    --pico-primary-underline: rgba(178, 144, 217, 0.5);
-    --pico-primary-hover: #c9afe4;
-    --pico-primary-hover-background: #8352c5;
+    --pico-primary-underline: rgba(199, 148, 0, 0.5);
+    --pico-primary-hover: #e8ae01;
+    --pico-primary-hover-background: #fecc63;
     --pico-primary-hover-border: var(--pico-primary-hover-background);
     --pico-primary-hover-underline: var(--pico-primary-hover);
-    --pico-primary-focus: rgba(178, 144, 217, 0.375);
-    --pico-primary-inverse: #fff;
+    --pico-primary-focus: rgba(199, 148, 0, 0.375);
+    --pico-primary-inverse: #000;
     --pico-secondary: #969eaf;
     --pico-secondary-background: #525f7a;
     --pico-secondary-border: var(--pico-secondary-background);
@@ -463,7 +463,7 @@ nav details.dropdown summary:focus-visible {
     --pico-switch-background-color: #333c4e;
     --pico-switch-checked-background-color: var(--pico-primary-background);
     --pico-switch-color: #fff;
-    --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
     --pico-range-border-color: #202632;
     --pico-range-active-border-color: #2a3140;
     --pico-range-thumb-border-color: var(--pico-background-color);
@@ -523,7 +523,7 @@ nav details.dropdown summary:focus-visible {
   }
   :root:not([data-theme]) details summary[role=button]:not(.outline, .contrast, .secondary)::after,
   :host(:not([data-theme])) details summary[role=button]:not(.outline, .contrast, .secondary)::after {
-    filter: brightness(100) invert(0);
+    filter: brightness(100) invert(1);
   }
   :root:not([data-theme]) details summary.secondary[role=button]::after,
   :host(:not([data-theme])) details summary.secondary[role=button]::after {
@@ -535,26 +535,26 @@ nav details.dropdown summary:focus-visible {
   }
   :root:not([data-theme]) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before,
   :host(:not([data-theme])) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
-    filter: brightness(100) invert(1);
+    filter: brightness(100) invert(0);
   }
 }
 [data-theme=dark] {
   color-scheme: dark;
   --pico-background-color: rgb(19, 22.5, 30.5);
   --pico-color: #c2c7d0;
-  --pico-text-selection-color: rgba(178, 144, 217, 0.1875);
+  --pico-text-selection-color: rgba(199, 148, 0, 0.1875);
   --pico-muted-color: #7b8495;
   --pico-muted-border-color: #202632;
-  --pico-primary: #b290d9;
-  --pico-primary-background: #7540bf;
+  --pico-primary: #c79400;
+  --pico-primary-background: #ffbf00;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(178, 144, 217, 0.5);
-  --pico-primary-hover: #c9afe4;
-  --pico-primary-hover-background: #8352c5;
+  --pico-primary-underline: rgba(199, 148, 0, 0.5);
+  --pico-primary-hover: #e8ae01;
+  --pico-primary-hover-background: #fecc63;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(178, 144, 217, 0.375);
-  --pico-primary-inverse: #fff;
+  --pico-primary-focus: rgba(199, 148, 0, 0.375);
+  --pico-primary-inverse: #000;
   --pico-secondary: #969eaf;
   --pico-secondary-background: #525f7a;
   --pico-secondary-border: var(--pico-secondary-background);
@@ -618,7 +618,7 @@ nav details.dropdown summary:focus-visible {
   --pico-switch-background-color: #333c4e;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-switch-color: #fff;
-  --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
   --pico-range-border-color: #202632;
   --pico-range-active-border-color: #2a3140;
   --pico-range-thumb-border-color: var(--pico-background-color);
@@ -666,7 +666,7 @@ nav details.dropdown summary:focus-visible {
   --pico-form-element-focus-color: var(--pico-primary-focus);
 }
 [data-theme=dark] details summary[role=button]:not(.outline, .contrast, .secondary)::after {
-  filter: brightness(100) invert(0);
+  filter: brightness(100) invert(1);
 }
 [data-theme=dark] details summary.secondary[role=button]::after {
   filter: brightness(100) invert(0);
@@ -675,7 +675,7 @@ nav details.dropdown summary:focus-visible {
   filter: brightness(100) invert(1);
 }
 [data-theme=dark] [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button]):not(.outline)::before {
-  filter: brightness(100) invert(1);
+  filter: brightness(100) invert(0);
 }
 
 progress,
