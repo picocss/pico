@@ -48,19 +48,20 @@
   #{$parent-selector} code,
   #{$parent-selector} kbd {
     display: inline-block;
-    padding: 0.375rem;
+    padding: 0.125rem 0.375rem;
+    vertical-align: middle;
   }
 
   #{$parent-selector} pre {
     display: block;
     margin-bottom: var(#{$css-var-prefix}spacing);
-    overflow-x: auto;
 
     > code {
       display: block;
       padding: var(#{$css-var-prefix}spacing);
       background: none;
       line-height: var(#{$css-var-prefix}line-height);
+      overflow-x: auto;
     }
   }
 
