@@ -69,6 +69,7 @@
         background-color: var(#{$css-var-prefix}form-element-background-color);
         color: var(#{$css-var-prefix}form-element-placeholder-color);
         line-height: inherit;
+        text-align: inherit;
         cursor: pointer;
         user-select: none;
 
@@ -134,6 +135,7 @@
         left: 0;
         flex-direction: column;
         width: 100%;
+        min-width: 200px;
         min-width: fit-content;
         margin: 0;
         margin-top: var(#{$css-var-prefix}outline-width);
@@ -175,8 +177,8 @@
           }
 
           details {
+            width: 100%;
             margin-bottom: 0;
-
             > summary {
               line-height: var(#{$css-var-prefix}line-height);
             }

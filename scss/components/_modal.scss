@@ -135,6 +135,71 @@
         touch-action: auto;
       }
     }
+    dialog {
+      // Small modal
+      &.modal-sm {
+        > article {
+          width: 90vw;
+          max-width: 400px;
+        }
+      }
+
+      // Medium modal (default)
+      &.modal-md {
+        > article {
+          width: 90vw;
+          max-width: 600px;
+        }
+      }
+
+      // Large modal
+      &.modal-lg {
+        > article {
+          width: 90vw;
+          max-width: 800px;
+        }
+      }
+
+      // Extra large modal
+      &.modal-xlg {
+        > article {
+          width: 95vw;
+          max-width: 1000px;
+        }
+      }
+
+      // Fullscreen modal
+      &.modal-fs {
+        padding: 0;
+        > article {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 100vw;
+          max-width: 100vw;
+          height: 100vh;
+          max-height: 100vh;
+          //border-radius: 0;
+          margin: 0;
+          //padding: var(--spacing);
+          overflow-y: auto;
+          > footer {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: auto;
+          }
+        }
+      }
+
+      // Handle mobile responsiveness
+      @media (max-width: 576px) {
+        &:not(.modal-fs) {
+          > article {
+            width: 95vw;
+          }
+        }
+      }
+    }
   }
 
   // Prevent scrolling body when modal is open

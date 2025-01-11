@@ -948,6 +948,27 @@
 							Launch Form Modal
 						</button>
 					</div>
+					<hr>
+
+					<header>
+						<h2>Modal Sizes</h2>
+						<h6>Having different modal sizes does require a class.</h6>
+					</header>
+					<p>The main thing will be to add one of the following classes to the <code>&lt;dialog&gt;</code> tag:</p>
+					<ul>
+						<li><code>.modal-sm</code></li>
+						<li><code>.modal-md</code></li>
+						<li><code>.modal-lg</code></li>
+						<li><code>.modal-xlg</code></li>
+						<li><code>.modal-fs</code></li>
+					</ul>
+					<div class="grid">
+						<button type="button" onclick="toggleModal(event)" data-target="small-modal">Small Modal</button>
+						<button type="button" onclick="toggleModal(event)" data-target="medium-modal">Medium Modal</button>
+						<button type="button" onclick="toggleModal(event)" data-target="large-modal">Large Modal</button>
+						<button type="button" onclick="toggleModal(event)" data-target="xlarge-modal">Extra Large Modal</button>
+						<button type="button" onclick="toggleModal(event)" data-target="fullscreen-modal">Fullscreen Modal</button>
+					</div>
 				</article>
 				<!-- ./ Modal -->
 				<hr>
@@ -1354,6 +1375,82 @@
 		</article>
 	</dialog>
 	<!-- ./ Modal example -->
+
+
+<!-- Small Modal -->
+<dialog id="small-modal" class="modal-sm">
+	<article>
+		<header>
+			<a onclick="toggleModal(event)" href="#close" aria-label="Close" class="close" data-target="small-modal"></a>
+			Small Modal
+		</header>
+		<p>This is a small modal with max-width of 400px.</p>
+		<footer>
+			<button onclick="toggleModal(event)" data-target="small-modal" class="secondary">Cancel</button>
+			<button onclick="toggleModal(event)">Confirm</button>
+		</footer>
+	</article>
+</dialog>
+
+<!-- Medium Modal -->
+<dialog id="medium-modal" class="modal-md">
+	<article>
+		<header>
+			<a onclick="toggleModal(event)" href="#close" aria-label="Close" class="close" data-target="medium-modal"></a>
+			Medium Modal
+		</header>
+		<p>This is a medium modal with max-width of 600px.</p>
+		<footer>
+			<button onclick="toggleModal(event)" data-target="medium-modal" class="secondary">Cancel</button>
+			<button onclick="toggleModal(event)">Confirm</button>
+		</footer>
+	</article>
+</dialog>
+
+<!-- Large Modal -->
+<dialog id="large-modal" class="modal-lg">
+	<article>
+		<header>
+			<a onclick="toggleModal(event)" href="#close" aria-label="Close" class="close" data-target="large-modal"></a>
+			Large Modal
+		</header>
+		<p>This is a large modal with max-width of 800px.</p>
+		<footer>
+			<button onclick="toggleModal(event)" data-target="large-modal" class="secondary">Cancel</button>
+			<button onclick="toggleModal(event)">Confirm</button>
+		</footer>
+	</article>
+</dialog>
+
+<!-- Extra Large Modal -->
+<dialog id="xlarge-modal" class="modal-xlg">
+	<article>
+		<header>
+			<a onclick="toggleModal(event)" href="#close" aria-label="Close" class="close" data-target="xlarge-modal"></a>
+			Extra Large Modal
+		</header>
+		<p>This is an extra large modal with max-width of 1000px.</p>
+		<footer>
+			<button onclick="toggleModal(event)" data-target="xlarge-modal" class="secondary">Cancel</button>
+			<button onclick="toggleModal(event)">Confirm</button>
+		</footer>
+	</article>
+</dialog>
+
+<!-- Fullscreen Modal -->
+<dialog id="fullscreen-modal" class="modal-fs">
+	<article>
+		<header>
+			<a onclick="toggleModal(event)" href="#close" aria-label="Close" class="close" data-target="fullscreen-modal"></a>
+			Fullscreen Modal
+		</header>
+		<p>This is a fullscreen modal that takes up the entire viewport.</p>
+		<footer>
+			<button onclick="toggleModal(event)" data-target="fullscreen-modal" class="secondary">Cancel</button>
+			<button onclick="toggleModal(event)">Confirm</button>
+		</footer>
+	</article>
+</dialog>
 
 	<!-- input switch to change light and dark mode -->
 	<script src="js/SwitchColorMode.js"></script>

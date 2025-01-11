@@ -5,7 +5,7 @@
  * Copyright 2019-2025 - Licensed under MIT
  * Modified by Yohn https://github.com/Yohn/PicoCSS
  */
-document.addEventListener("DOMContentLoaded", () => {
+//document.addEventListener("DOMContentLoaded", () => {
 	// Config
 	const isOpenClass = "modal-is-open";
 	const openingClass = "modal-is-opening";
@@ -82,4 +82,4 @@ document.addEventListener("DOMContentLoaded", () => {
 	const isScrollbarVisible = () => {
 		return document.body.scrollHeight > screen.height;
 	};
-})
+//})
