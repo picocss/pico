@@ -691,55 +691,11 @@
 								</ul>
 							</details>
 							<details class="dropdown">
-								<summary class="contrast">Layout</summary>
-								<ul>
-									<li><a class="load-page" href="data/Container.json">Container</a></li>
-									<li><a class="load-page" href="data/Landmarks.json">Landmarks &amp; Section</a></li>
-									<li><a class="load-page" href="data/Grid.json">Grid</a></li>
-									<li><a class="load-page" href="data/Row.json">Row</a></li>
-									<li><a class="load-page" href="data/Overflow.json">Overflow</a></li>
-								</ul>
-							</details>
-							<details class="dropdown">
 								<summary>Content</summary>
 								<ul>
 									<li><a class="load-page" href="data/Typography.json">Typography</a></li>
 									<li><a class="load-page" href="data/Link.json">Link</a></li>
 									<li><a class="load-page" href="data/Table.json">Table</a></li>
-								</ul>
-							</details>
-							<details class="dropdown">
-								<summary>Form</summary>
-								<ul>
-									<li><a class="load-page" href="data/Overview.json">Overview</a></li>
-									<li><a class="load-page" href="data/Button.json">Button</a></li>
-									<li><a class="load-page" href="data/Checkboxes.json">Checkboxes</a></li>
-									<li><a class="load-page" href="data/File.json">File</a></li>
-									<li><a class="load-page" href="data/Floating.json">Floating Labels</a></li>
-									<li><a class="load-page" href="data/Input.json">Input</a></li>
-									<li><a class="load-page" href="data/Select.json">Select</a></li>
-									<li><a class="load-page" href="data/Switch.json">Switch</a></li>
-									<li><a class="load-page" href="data/Radios.json">Radios</a></li>
-									<li><a class="load-page" href="data/Range.json">Range</a></li>
-									<li><a class="load-page" href="data/Textarea.json">Textarea</a></li>
-									<li><a class="load-page" href="data/Validation.json">Validation</a></li>
-								</ul>
-							</details>
-							<details class="dropdown">
-								<summary>Components</summary>
-								<ul>
-									<li><a class="load-page" href="data/Accordion.json">Accordion</a></li>
-									<li><a class="load-page" href="data/Card.json">Card</a></li>
-									<li><a class="load-page" href="data/Dropdown.json">Dropdown</a></li>
-									<li><a class="load-page" href="data/Group.json">Group</a></li>
-									<li><a class="load-page" href="data/Loading.json">Loading</a></li>
-									<li><a class="load-page" href="data/Modal.json">Modal</a></li>
-									<li><a class="load-page" href="data/Nav.json">Nav</a></li>
-									<li><a class="load-page" href="data/Popover.json">Popover</a></li>
-									<li><a class="load-page" href="data/Progress.json">Progress</a></li>
-									<li><a class="load-page" href="data/Tabs.json">Tabs</a></li>
-									<li><a class="load-page" href="data/Timeline.json">Timeline</a></li>
-									<li><a class="load-page" href="data/Tooltip.json">Tooltip</a></li>
 								</ul>
 							</details>
 						</div>
@@ -767,22 +723,20 @@
 							</div>
 						</form>
 						<hr>
-						<h3>fieldset[role=group] with > legend</h3>
-						<fieldset role="group">
-							<legend>Sort By</legend>
-							<button class="outline secondary">Availability</button>
-							<button class="outline">Relative Profit</button>
-							<button class="outline secondary">Absolute Profit</button>
-						</fieldset>
-						<hr>
-						<h3>div[role=group] with > legend</h3>
-						<div role="group">
-							<legend>Sort By</legend>
-							<button class="outline secondary">Availability</button>
-							<button>Relative Profit</button>
-							<button class="outline secondary">Absolute Profit</button>
-						</div>
-
+						<h3>form > [role=group] > label + input + select</h3>
+						<form action="javascript:void(0);" novalidate>
+							<div role="group">
+								<label for="fl3-search">Search:</label>
+								<input name="fl3-search" type="text" placeholder="Find" />
+								<label for="fl3-section">In:</label>
+								<select id="fl3-section" name="fl3-section">
+									<option value="Customers">Customers</option>
+									<option value="Employees">Employees</option>
+									<option value="Vendors">Vendors</option>
+								</select>
+								<input type="submit" value="Save" />
+							</div>
+						</form>
 					</div>
 				</article>
 				<!-- ./ Group -->

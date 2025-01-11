@@ -2,9 +2,10 @@
  * Modal
  *
  * Pico.css - https://picocss.com
- * Copyright 2019-2024 - Licensed under MIT
+ * Copyright 2019-2025 - Licensed under MIT
+ * Modified by Yohn https://github.com/Yohn/PicoCSS
  */
-//document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
 	// Config
 	const isOpenClass = "modal-is-open";
 	const openingClass = "modal-is-opening";
@@ -18,7 +19,15 @@
 		event.preventDefault();
 		const modal = document.getElementById(event.currentTarget.dataset.target);
 		if (!modal) return;
-		modal && (modal.open ? closeModal(modal) : openModal(modal));
+		if(event.currentTarget.dataset.close) {
+			const modalClose = document.getElementById(event.currentTarget.dataset.close);
+			if(modalClose){
+				closeModal(modalClose);
+				setTimeout(() => modal && (modal.open ? closeModal(modal) : openModal(modal)), animationDuration);
+			}
+		} else {
+			modal && (modal.open ? closeModal(modal) : openModal(modal));
+		}
 	};
 
 	// Open modal
@@ -73,4 +82,4 @@
 	const isScrollbarVisible = () => {
 		return document.body.scrollHeight > screen.height;
 	};
-//})
+})

@@ -29,76 +29,82 @@ document.addEventListener("DOMContentLoaded", () => {
 
 class PicoTabs {
 	constructor(tabListContainerSelector) {
-		this.tabListContainer = document.querySelector(tabListContainerSelector);
-		// Check if tablist element exists on the page
-		if (!this.tabListContainer) {
-			console.warn(
-				`No element with ${tabListContainerSelector} found on the page.`
-			);
+		this.tabLists = document.querySelectorAll(tabListContainerSelector);
+
+		// Proceed only if tablists are found
+		if (this.tabLists.length === 0) {
+			console.warn(`No elements with ${tabListContainerSelector} found on the page.`);
 			return;
 		}
 
-		this.tabs = this.tabListContainer.querySelectorAll('[role="tab"]');
-		this.panels = document.querySelectorAll('[role="tabpanel"]');
+		this.tabLists.forEach((tabList) => {
+			const tabs = Array.from(tabList.querySelectorAll('[role="tab"]'));
+			const panels = Array.from(tabList.querySelectorAll('[role="tabpanel"]'));
 
-		// Proceed only if tabs and panels are found
-		if (this.tabs.length === 0 || this.panels.length === 0) {
-			console.warn("No tabs or panels found, initialization aborted.");
-			return;
-		}
+			// Filter out nested tabs and panels
+			const rootTabs = tabs.filter((tab) => tab.closest(tabListContainerSelector) === tabList);
+			const rootPanels = panels.filter((panel) => panel.closest(tabListContainerSelector) === tabList);
 
-		this.init();
+			// Proceed only if root tabs and panels are found
+			if (rootTabs.length === 0 || rootPanels.length === 0) {
+				console.warn("No root tabs or panels found in a tablist, skipping initialization.");
+				return;
+			}
+
+			this.init(tabList, rootTabs, rootPanels);
+		});
 	}
 
-	init() {
-		this.tabs.forEach((tab, index) => {
-			tab.addEventListener("click", () => this.activateTab(index));
-			tab.addEventListener("keydown", (e) => this.handleKeyDown(e, index));
+	init(tabList, tabs, panels) {
+		tabs.forEach((tab, index) => {
+			tab.addEventListener("click", () => this.activateTab(tabs, panels, index));
+			tab.addEventListener("keydown", (e) => this.handleKeyDown(e, tabs, panels, index));
 		});
 	}
 
 	// Activate a tab and corresponding panel
-	activateTab(index) {
-		// Reset all tabs and panels
-		this.tabs.forEach((tab, i) => {
+	activateTab(tabs, panels, index) {
+		// Reset all tabs and panels within the current tablist
+		tabs.forEach((tab, i) => {
 			tab.setAttribute("aria-selected", "false");
 			tab.setAttribute("tabindex", "-1");
-			this.panels[i].setAttribute("hidden", "true");
+			panels[i].setAttribute("hidden", "true");
 		});
 
 		// Activate the specified tab
-		this.tabs[index].setAttribute("aria-selected", "true");
-		this.tabs[index].setAttribute("tabindex", "0");
-		this.panels[index].removeAttribute("hidden");
+		tabs[index].setAttribute("aria-selected", "true");
+		tabs[index].setAttribute("tabindex", "0");
+		panels[index].removeAttribute("hidden");
 
 		// Focus the activated tab
-		this.tabs[index].focus();
+		tabs[index].focus();
 	}
 
 	// Handle keyboard navigation
-	handleKeyDown(event, currentIndex) {
+	handleKeyDown(event, tabs, panels, currentIndex) {
 		switch (event.key) {
 			case "ArrowLeft":
 				event.preventDefault();
-				this.activateTab((currentIndex - 1 + this.tabs.length) % this.tabs.length);
+				this.activateTab(tabs, panels, (currentIndex - 1 + tabs.length) % tabs.length);
 				break;
 			case "ArrowRight":
 				event.preventDefault();
-				this.activateTab((currentIndex + 1) % this.tabs.length);
+				this.activateTab(tabs, panels, (currentIndex + 1) % tabs.length);
 				break;
 			case "Home":
 				event.preventDefault();
-				this.activateTab(0);
+				this.activateTab(tabs, panels, 0);
 				break;
 			case "End":
 				event.preventDefault();
-				this.activateTab(this.tabs.length - 1);
+				this.activateTab(tabs, panels, tabs.length - 1);
 				break;
 			default:
 				break;
 		}
 	}
 }
+
 //document.addEventListener("DOMContentLoaded", () => {
 //	new PicoTabs('[role="tablist"]');
-//})
+//});
