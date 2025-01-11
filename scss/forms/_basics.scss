@@ -42,7 +42,7 @@
   // 2. Correct the color inheritance from `fieldset` elements in IE
   // 3. Remove the padding so developers are not caught out when they zero out
   // `fieldset` elements in all browsers
-  #{$parent-selector} legend {
+  #{$parent-selector} *:not([role="group"]) legend {
     max-width: 100%; // 1
     padding: 0; // 3
     color: inherit; // 2
@@ -138,15 +138,15 @@
   }
 
   // Label & legend
-  #{$parent-selector} label,
-  #{$parent-selector} fieldset legend {
+  #{$parent-selector} *:not([role="group"]) > label,
+  #{$parent-selector} fieldset:not([role="group"]) > legend {
     display: block;
     margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.375);
     color: var(#{$css-var-prefix}color);
     font-weight: var(#{$css-var-prefix}form-label-font-weight, var(#{$css-var-prefix}font-weight));
   }
 
-  #{$parent-selector} fieldset legend {
+  #{$parent-selector} fieldset:not([role="group"]) > legend {
     margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.5);
   }
 
@@ -245,11 +245,11 @@
 
   // Disabled
   #{$parent-selector} input:not([type="submit"], [type="button"], [type="reset"])[disabled],
-  #{$parent-selector} [role="group"] > label,
-  #{$parent-selector} [role="group"] > legend,
   #{$parent-selector} select[disabled],
   #{$parent-selector} textarea[disabled],
   #{$parent-selector} label[aria-disabled="true"],
+  #{$parent-selector} [role="group"] > label[aria-disabled="true"],
+  #{$parent-selector} [role="group"] > legend[aria-disabled="true"],
   #{$parent-selector}
     :where(fieldset[disabled])
     :is(input:not([type="submit"], [type="button"], [type="reset"]), select, textarea) {
@@ -257,9 +257,10 @@
     pointer-events: none;
   }
 
-  #{$parent-selector} label[aria-disabled="true"] input[disabled],
-  #{$parent-selector} [role="group"] > label,
-  #{$parent-selector} [role="group"] > legend {
+  #{$parent-selector} label[aria-disabled="true"] input[disabled] {
+    //},
+    //#{$parent-selector} [role="group"] > label,
+    //#{$parent-selector} [role="group"] > legend {
     opacity: 1;
   }
 

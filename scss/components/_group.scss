@@ -208,3 +208,58 @@
     }
   }
 }
+
+@if map.get($modules, "forms/floating") {
+  #{$parent-selector} [role="group"] > section[role="form"] {
+    flex: 1;
+
+    > *,
+    > input:not([type="checkbox"], [type="radio"]),
+    > select,
+    > label,
+    > legend,
+    > details {
+      // need to check this for details > summary
+      &:focus {
+        z-index: 4;
+      }
+    }
+
+    > input:not([type="checkbox"], [type="radio"]),
+    > select {
+      &:focus {
+        z-index: 10;
+      }
+      + label {
+        z-index: 10;
+        // label was positioned above placeholder..
+        margin-top: 5px;
+      }
+    }
+
+    &:not(:first-child) {
+      > *,
+      > input:not([type="checkbox"], [type="radio"]),
+      > select,
+      > label,
+      > legend,
+      > details > summary {
+        margin-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+
+    &:not(:last-child) {
+      > *,
+      > input:not([type="checkbox"], [type="radio"]),
+      > select,
+      > label,
+      > legend,
+      > details > summary {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+}

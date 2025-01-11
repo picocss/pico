@@ -33,7 +33,7 @@
       transition: 0.3s ease;
     }
 
-    // Used this before I tried: >select:has(option:checked:not([disabled]))~label
+    // Used this before I tried: >select:has(option:checked:not([disabled]))+label
     //> select + label {
     //  position: absolute;
     //  top: -5%;
@@ -49,13 +49,14 @@
     > textarea:not(:placeholder-shown) + label,
     > textarea:focus + label,
     > select:focus + label,
-    > select:has(option:checked:not([disabled])) ~ label {
+    > select:has(option:checked:not([disabled])) + label {
       top: -5%;
-      padding: calc(var(--pico-spacing) * 0.25) calc(var(--pico-spacing) * 0.5);
-      transform: translateY(-50%) scale(0.85);
-      color: var(--pico-form-element-active-border-color);
-      font-size: calc(var(--pico-font-size) * 0.85);
-      line-height: 1.25;
+      padding: calc(var(#{$css-var-prefix}spacing) * 0.15)
+        calc(var(#{$css-var-prefix}spacing) * 0.5);
+      transform: translateY(-55%) scale(0.8);
+      color: var(#{$css-var-prefix}form-element-active-border-color);
+      font-size: var(#{$css-var-prefix}font-size);
+      line-height: 1.15;
       transition: all $transition-fast;
     }
 
