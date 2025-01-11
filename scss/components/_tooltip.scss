@@ -47,6 +47,7 @@
     // Caret
     &[data-placement="top"]::after,
     &::after {
+      width: 0;
       padding: 0;
       transform: translate(-50%, 0rem);
       border-top: 0.3rem solid;
