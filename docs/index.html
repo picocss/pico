@@ -103,14 +103,26 @@
 						<p>A Pico CSS + example with addition to the standard Pico CSS library.</p>
 						<p>Demo page from <a href="https://picocss.com/docs/modal#utilities">picocss.com model docs</a></p>
 					</hgroup>
-					<details class="dropdown">
+					<div class="grid" style="justify-items: center;">
+						<!--
+							For the light / dark mode switch toggle, you need the following:
+							V. 2.2.3 (will be released soon) - you can see the changed in the scss/forms/checkbox-radio-switch.scss
+							<input name="color-mode-toggle" type="checkbox" role="switch">
+							That name="color-mode-toggle" is important
+							And then you'll need the js located at: js/SwitchColorMode.js
+						-->
+						<label>
+							<input aria-label="Toggle Light or Dark Mode" name="color-mode-toggle" value="1" type="checkbox" role="switch">
+						</label>
+					</div>
+					<!--<details class="dropdown">
 						<summary role="button" class="secondary">Theme</summary>
 						<ul>
 							<li><a href="#" data-theme-switcher="auto">Auto</a></li>
 							<li><a href="#" data-theme-switcher="light">Light</a></li>
 							<li><a href="#" data-theme-switcher="dark">Dark</a></li>
 						</ul>
-					</details>
+					</details>-->
 
 					<details class="dropdown">
 						<summary style="background-color:var(--pico-primary-background); color: var(--pico-primary-inverse)">Color
@@ -758,71 +770,71 @@
 					</p>
 					<div class="row-fluid">
 						<div class="col-3">
-							<article class="pico-background-lime-750">col-3</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3</article>
 						</div>
 						<div class="col-6">
-							<article class="pico-background-lime-750">col-6</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-6</article>
 						</div>
 						<div class="col-3">
-							<article class="pico-background-lime-750">col-3</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3</article>
 						</div>
 					</div>
 					<div class="row-fluid">
 						<div class="col-3 offset-1">
-							<article class="pico-background-lime-750">col-3 offset-1</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3 offset-1</article>
 						</div>
 						<div class="col-2">
-							<article class="pico-background-lime-750">col-2</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-2</article>
 						</div>
 						<div class="col-2">
-							<article class="pico-background-lime-750">col-2</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-2</article>
 						</div>
 						<div class="col-3">
-							<article class="pico-background-lime-750">col-3</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3</article>
 						</div>
 					</div>
 					<div class="row-fluid">
 						<div class="col-3">
-							<article class="pico-background-lime-750">col-3</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3</article>
 						</div>
 						<div class="col-3">
-							<article class="pico-background-lime-750">col-3</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3</article>
 						</div>
 						<div class="col-3">
-							<article class="pico-background-lime-750">col-3</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3</article>
 						</div>
 						<div class="col-3">
-							<article class="pico-background-lime-750">col-3</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3</article>
 						</div>
 					</div>
 
 					<div class="row-fluid">
 						<div class="col-2">
-							<article class="pico-background-lime-750">col-2</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-2</article>
 						</div>
 						<div class="col-8">
-							<article class="pico-background-lime-750">col-8</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-8</article>
 						</div>
 						<div class="col-2">
-							<article class="pico-background-lime-750">col-2</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-2</article>
 						</div>
 					</div>
 
 					<div class="row-fluid">
 						<div class="col-5">
-							<article class="pico-background-lime-750">col-5</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-5</article>
 						</div>
 						<div class="col-7">
-							<article class="pico-background-lime-750">col-7</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-7</article>
 						</div>
 					</div>
 
 					<div class="row-fluid">
 						<div class="col-9">
-							<article class="pico-background-lime-750">col-9</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-9</article>
 						</div>
 						<div class="col-3">
-							<article class="pico-background-lime-750">col-3</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3</article>
 						</div>
 					</div>
 				</article>
@@ -838,37 +850,37 @@
 
 					<div class="row-fluid">
 						<div class="col-2 col-md-4">
-							<article class="pico-background-lime-750">col-2, col-md-4</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-2, col-md-4</article>
 						</div>
 						<div class="col-4 offset-8 col-md-6 offset-md-6">
-							<article class="pico-background-lime-750">col-4, offset-8, col-md-6, offset-md-6</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-4, offset-8, col-md-6, offset-md-6</article>
 						</div>
 					</div>
 
 					<div class="row-fluid">
 						<div class="col-5 offset-1 col-md-11">
-							<article class="pico-background-lime-550">col-5, offset-1, col-md-11</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-5, offset-1, col-md-11</article>
 						</div>
 						<div class="col-2 col-md-6">
-							<article class="pico-background-lime-550">col-2, col-md-6</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-2, col-md-6</article>
 						</div>
 						<div class="col-3 offset-9 col-md-6 offset-md-6">
-							<article class="pico-background-lime-550">col-3, offset-9, col-md-6, offset-md-6</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3, offset-9, col-md-6, offset-md-6</article>
 						</div>
 					</div>
 
 					<div class="row-fluid align-center">
 						<div class="col-3 col-md-12 col-lg-6">
-							<article class="pico-background-lime-850">col-3 col-md-12 col-lg-6</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3 col-md-12 col-lg-6</article>
 						</div>
 						<div class="col-3 col-md-12 col-lg-6">
-							<article class="pico-background-lime-850">col-3 col-md-12 col-lg-6</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3 col-md-12 col-lg-6</article>
 						</div>
 						<div class="col-4 col-md-6 col-lg-3">
-							<article class="pico-background-lime-850">col-4 col-md-6 col-lg-3</article>
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-4 col-md-6 col-lg-3</article>
 						</div>
 						<div class="col-6 offset-6 col-md-3 offset-md-9 col-lg-2 offset-lg-10">
-							<article class="pico-background-lime-850">col-6 offset-6 col-md-3 offset-md-9 col-lg-2 offset-lg-10
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-6 offset-6 col-md-3 offset-md-9 col-lg-2 offset-lg-10
 							</article>
 						</div>
 					</div>
@@ -887,17 +899,17 @@
 
 					<div class="row-fluid align-center" id="row-align-example">
 						<div class="col-4">
-							<article class="pico-background-lime-850">col-4</article>
+							<article style="background-color:var(--pico-primary-focus); color:var(--pico-primary-inverse);">col-4</article>
 						</div>
 						<div class="col-4">
-							<article class="pico-background-lime-850">
+							<article style="background-color:var(--pico-primary-focus); color:var(--pico-primary-inverse);">
 								<input type="button" class="change-row-align" data-align="start" value=".align-start">
 								<input type="button" class="change-row-align" data-align="center" value=".align-center">
 								<input type="button" class="change-row-align" data-align="end" value=".align-end">
 							</article>
 						</div>
 						<div class="col-4">
-							<article class="pico-background-lime-850">col-4</article>
+							<article style="background-color:var(--pico-primary-focus); color:var(--pico-primary-inverse);">col-4</article>
 						</div>
 					</div>
 				</article>
@@ -910,13 +922,13 @@
 					</header>
 					<div class="row-fluid">
 						<div class="col-12 col-md-4">
-							<article class="pico-background-lime-650">col-12, col-md-4</article>
+							<article style="background-color:var(--pico-primary-focus); color:var(--pico-primary-inverse);">col-12, col-md-4</article>
 						</div>
 						<div class="col-12 col-md-4">
-							<article class="pico-background-lime-650">col-12, col-md-4</article>
+							<article style="background-color:var(--pico-primary-focus); color:var(--pico-primary-inverse);">col-12, col-md-4</article>
 						</div>
 						<div class="col-12 col-md-4">
-							<article class="pico-background-lime-650">col-12, col-md-4</article>
+							<article style="background-color:var(--pico-primary-focus); color:var(--pico-primary-inverse);">col-12, col-md-4</article>
 						</div>
 					</div>
 				</article>
@@ -1343,8 +1355,8 @@
 	</dialog>
 	<!-- ./ Modal example -->
 
-	<!-- Minimal theme switcher -->
-	<script src="js/MinimalThemeSwitcher.js"></script>
+	<!-- input switch to change light and dark mode -->
+	<script src="js/SwitchColorMode.js"></script>
 
 	<!-- Modal -->
 	<script src="js/Modal.js"></script>
