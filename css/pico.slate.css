@@ -3058,6 +3058,7 @@ details.dropdown > summary:not([role]) {
   background-color: var(--pico-form-element-background-color);
   color: var(--pico-form-element-placeholder-color);
   line-height: inherit;
+  text-align: inherit;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -3091,6 +3092,7 @@ details.dropdown > summary + ul {
   left: 0;
   flex-direction: column;
   width: 100%;
+  min-width: 200px;
   min-width: -moz-fit-content;
   min-width: fit-content;
   margin: 0;
@@ -3122,6 +3124,7 @@ details.dropdown > summary + ul li:last-of-type {
   margin-bottom: calc(var(--pico-form-element-spacing-vertical) * 0.5);
 }
 details.dropdown > summary + ul li details {
+  width: 100%;
   margin-bottom: 0;
 }
 details.dropdown > summary + ul li details > summary {
@@ -3641,6 +3644,47 @@ dialog:not([open]) article, dialog[open=false] article {
 .modal-is-open dialog {
   pointer-events: auto;
   touch-action: auto;
+}
+
+dialog.modal-sm > article {
+  width: 90vw;
+  max-width: 400px;
+}
+dialog.modal-md > article {
+  width: 90vw;
+  max-width: 600px;
+}
+dialog.modal-lg > article {
+  width: 90vw;
+  max-width: 800px;
+}
+dialog.modal-xlg > article {
+  width: 95vw;
+  max-width: 1000px;
+}
+dialog.modal-fs {
+  padding: 0;
+}
+dialog.modal-fs > article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  overflow-y: auto;
+}
+dialog.modal-fs > article > footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+@media (max-width: 576px) {
+  dialog:not(.modal-fs) > article {
+    width: 95vw;
+  }
 }
 
 body:has(dialog[open]) {
