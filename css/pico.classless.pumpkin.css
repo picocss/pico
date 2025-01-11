@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*!
  * Pico CSS ✨ v2.2.2 (https://github.com/Yohn/PicoCSS)
- * Copyright 2019-2024 - Licensed under MIT
+ * Copyright 2019-2025 - Licensed under MIT
  */
 /**
  * Styles
@@ -1176,7 +1176,7 @@ select {
   text-transform: none;
 }
 
-legend {
+*:not([role=group]) legend {
   max-width: 100%;
   padding: 0;
   color: inherit;
@@ -1246,15 +1246,15 @@ fieldset {
   border: 0;
 }
 
-label,
-fieldset legend {
+*:not([role=group]) > label,
+fieldset:not([role=group]) > legend {
   display: block;
   margin-bottom: calc(var(--pico-spacing) * 0.375);
   color: var(--pico-color);
   font-weight: var(--pico-form-label-font-weight, var(--pico-font-weight));
 }
 
-fieldset legend {
+fieldset:not([role=group]) > legend {
   margin-bottom: calc(var(--pico-spacing) * 0.5);
 }
 
@@ -1321,19 +1321,17 @@ input:not([type=submit],
 }
 
 input:not([type=submit], [type=button], [type=reset])[disabled],
-[role=group] > label,
-[role=group] > legend,
 select[disabled],
 textarea[disabled],
 label[aria-disabled=true],
+[role=group] > label[aria-disabled=true],
+[role=group] > legend[aria-disabled=true],
 :where(fieldset[disabled]) :is(input:not([type=submit], [type=button], [type=reset]), select, textarea) {
   opacity: var(--pico-form-element-disabled-opacity);
   pointer-events: none;
 }
 
-label[aria-disabled=true] input[disabled],
-[role=group] > label,
-[role=group] > legend {
+label[aria-disabled=true] input[disabled] {
   opacity: 1;
 }
 
@@ -1799,45 +1797,22 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search]
   background-position: center right 1.125rem, center left 0.75rem;
 }
 
-form:not([novalidate]) input:user-valid:not(:-moz-placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]), form:not([novalidate]) input:user-invalid:not(:-moz-placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]) {
+form:not([novalidate]) {
+  /* File list when selected from the file input */
+}
+form:not([novalidate]) input:user-valid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]), form:not([novalidate]) input:user-invalid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) {
   padding-right: calc(1.5em + 0.75rem);
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
   background-repeat: no-repeat;
 }
-
-form:not([novalidate]) input:user-valid:not(:placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]),
-form:not([novalidate]) input:user-invalid:not(:placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]) {
+form:not([novalidate]) input:user-valid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]),
+form:not([novalidate]) input:user-invalid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) {
   padding-right: calc(1.5em + 0.75rem);
   background-position: right calc(0.375em + 0.1875rem) center;
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
   background-repeat: no-repeat;
 }
-
 form:not([novalidate]) select:user-valid:not([multiple], [size]),
 form:not([novalidate]) select:user-invalid:not([multiple], [size]) {
   padding-right: calc(1.5em + 0.75rem);
@@ -1845,22 +1820,18 @@ form:not([novalidate]) select:user-invalid:not([multiple], [size]) {
   background-position: right 0.75rem center, center right 2.25rem;
   background-repeat: no-repeat;
 }
-
 form:not([novalidate]) select:user-invalid:not([multiple], [size]) {
   background-image: var(--pico-icon-chevron), var(--pico-icon-invalid);
 }
-
 form:not([novalidate]) select:user-valid:not([multiple], [size]) {
   background-image: var(--pico-icon-chevron), var(--pico-icon-valid);
 }
-
 form:not([novalidate]) textarea:user-valid:not(:-moz-placeholder-shown), form:not([novalidate]) textarea:user-invalid:not(:-moz-placeholder-shown) {
   padding-right: calc(1.5em + 0.75rem);
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
   background-repeat: no-repeat;
 }
-
 form:not([novalidate]) textarea:user-valid:not(:placeholder-shown),
 form:not([novalidate]) textarea:user-invalid:not(:placeholder-shown) {
   padding-right: calc(1.5em + 0.75rem);
@@ -1868,210 +1839,101 @@ form:not([novalidate]) textarea:user-invalid:not(:placeholder-shown) {
   background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
   background-repeat: no-repeat;
 }
-
-form:not([novalidate]) input:user-invalid:not(:-moz-placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]), form:not([novalidate]) textarea:user-invalid:not(:-moz-placeholder-shown) {
+form:not([novalidate]) input:user-invalid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]), form:not([novalidate]) textarea:user-invalid:not(:-moz-placeholder-shown) {
   border-color: var(--pico-form-element-invalid-border-color);
   background-image: var(--pico-icon-invalid);
 }
-
-form:not([novalidate]) input:user-invalid:not(:placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]),
+form:not([novalidate]) input:user-invalid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]),
 form:not([novalidate]) select:user-invalid:not([multiple], [size]),
 form:not([novalidate]) textarea:user-invalid:not(:placeholder-shown) {
   border-color: var(--pico-form-element-invalid-border-color);
   background-image: var(--pico-icon-invalid);
 }
-form:not([novalidate]) input:user-invalid:not(:-moz-placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]):focus, form:not([novalidate]) textarea:user-invalid:not(:-moz-placeholder-shown):focus {
+form:not([novalidate]) input:user-invalid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]):focus, form:not([novalidate]) textarea:user-invalid:not(:-moz-placeholder-shown):focus {
   border-color: var(--pico-form-element-invalid-active-border-color);
 }
-form:not([novalidate]) input:user-invalid:not(:placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]):focus,
+form:not([novalidate]) input:user-invalid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]):focus,
 form:not([novalidate]) select:user-invalid:not([multiple], [size]):focus,
 form:not([novalidate]) textarea:user-invalid:not(:placeholder-shown):focus {
   border-color: var(--pico-form-element-invalid-active-border-color);
 }
-
-form:not([novalidate]) input:user-valid:not(:-moz-placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]), form:not([novalidate]) textarea:user-valid:not(:-moz-placeholder-shown) {
+form:not([novalidate]) input:user-valid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]), form:not([novalidate]) textarea:user-valid:not(:-moz-placeholder-shown) {
   border-color: var(--pico-form-element-valid-border-color);
   background-image: var(--pico-icon-valid);
 }
-
-form:not([novalidate]) input:user-valid:not(:placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]),
+form:not([novalidate]) input:user-valid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]),
 form:not([novalidate]) select:user-valid:not([multiple], [size]),
 form:not([novalidate]) textarea:user-valid:not(:placeholder-shown) {
   border-color: var(--pico-form-element-valid-border-color);
   background-image: var(--pico-icon-valid);
 }
-form:not([novalidate]) input:user-valid:not(:-moz-placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]):focus, form:not([novalidate]) textarea:user-valid:not(:-moz-placeholder-shown):focus {
+form:not([novalidate]) input:user-valid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]):focus, form:not([novalidate]) textarea:user-valid:not(:-moz-placeholder-shown):focus {
   border-color: var(--pico-form-element-valid-active-border-color);
 }
-form:not([novalidate]) input:user-valid:not(:placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]):focus,
+form:not([novalidate]) input:user-valid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]):focus,
 form:not([novalidate]) select:user-valid:not([multiple], [size]):focus,
 form:not([novalidate]) textarea:user-valid:not(:placeholder-shown):focus {
   border-color: var(--pico-form-element-valid-active-border-color);
 }
-
 form:not([novalidate]) input:required:user-invalid:is([type=checkbox]) {
   border-color: var(--pico-form-element-invalid-border-color);
 }
-
-form:not([novalidate]) input:user-valid:not(:-moz-placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]) + small[data-valid]::after, form:not([novalidate]) textarea:user-valid:not(:-moz-placeholder-shown) + small[data-valid]::after {
+form:not([novalidate]) input:user-valid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + small[data-valid]::after, form:not([novalidate]) textarea:user-valid:not(:-moz-placeholder-shown) + small[data-valid]::after {
   content: attr(data-valid);
   color: var(--pico-form-element-valid-border-color);
 }
-
-form:not([novalidate]) input:user-valid:not(:placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]) + small[data-valid]::after,
+form:not([novalidate]) input:user-valid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + small[data-valid]::after,
 form:not([novalidate]) select:user-valid:not([multiple], [size]) + small[data-valid]::after,
 form:not([novalidate]) textarea:user-valid:not(:placeholder-shown) + small[data-valid]::after {
   content: attr(data-valid);
   color: var(--pico-form-element-valid-border-color);
 }
-
-form:not([novalidate]) textarea:user-invalid:not(:-moz-placeholder-shown) + small[data-invalid]::after, form:not([novalidate]) input:user-invalid:not(:-moz-placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]) + [data-invalid]::after {
+form:not([novalidate]) textarea:user-invalid:not(:-moz-placeholder-shown) + small[data-invalid]::after, form:not([novalidate]) input:user-invalid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + [data-invalid]::after {
   content: attr(data-invalid);
   color: var(--pico-form-element-invalid-border-color);
 }
-
 form:not([novalidate]) textarea:user-invalid:not(:placeholder-shown) + small[data-invalid]::after,
 form:not([novalidate]) select:user-invalid:not([multiple], [size]) + small[data-invalid]::after,
-form:not([novalidate]) input:user-invalid:not(:placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]) + [data-invalid]::after,
+form:not([novalidate]) input:user-invalid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + [data-invalid]::after,
 form:not([novalidate]) input[type=file]:user-invalid + ul + [data-invalid]::after {
   content: attr(data-invalid);
   color: var(--pico-form-element-invalid-border-color);
 }
-
-form:not([novalidate]) input:user-valid:not(:-moz-placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]) + [data-valid]::after, form:not([novalidate]) input:user-invalid:not(:-moz-placeholder-shown,
-[type=button],
-[type=reset],
-[type=submit],
-[type=checkbox],
-[type=radio]) + [data-invalid]::after, form:not([novalidate]) textarea:user-valid:not(:-moz-placeholder-shown) + [data-valid]::after {
+form:not([novalidate]) input:user-valid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + [data-valid]::after, form:not([novalidate]) input:user-invalid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + [data-invalid]::after, form:not([novalidate]) textarea:user-valid:not(:-moz-placeholder-shown) + [data-valid]::after {
   display: block;
 }
-
-form:not([novalidate]) input:user-valid:not(:placeholder-shown,
-[type=button],
-[type=reset],
-[type=image],
-[type=submit],
-[type=checkbox],
-[type=radio]) + [data-valid]::after,
-form:not([novalidate]) input:user-invalid:not(:placeholder-shown,
-[type=button],
-[type=reset],
-[type=submit],
-[type=checkbox],
-[type=radio]) + [data-invalid]::after,
+form:not([novalidate]) input:user-valid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + [data-valid]::after,
+form:not([novalidate]) input:user-invalid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + [data-invalid]::after,
 form:not([novalidate]) textarea:user-valid:not(:placeholder-shown) + [data-valid]::after,
 form:not([novalidate]) input[type=file]:user-invalid + [data-invalid]::after,
 form:not([novalidate]) input[type=file]:user-invalid + ul + [data-invalid]::after {
   display: block;
 }
-
 form:not([novalidate]) input[type=file]:user-invalid + ul + [data-invalid]::after {
   position: relative;
   top: -2rem;
 }
-
 form:not([novalidate]) input[type=file]:user-invalid::file-selector-button {
   border-color: var(--pico-form-element-invalid-border-color);
   background-color: var(--pico-form-element-invalid-border-color);
 }
-
-/* File list when selected from the file input */
-.file-list {
+form:not([novalidate]) .file-list {
   padding-left: 0;
 }
-.file-list li {
+form:not([novalidate]) .file-list li {
   display: flex;
   align-items: center;
   justify-content: space-between;
   list-style-type: none;
   text-align: center;
 }
-.file-list li:nth-child(2n) {
+form:not([novalidate]) .file-list li:nth-child(2n) {
   background-color: #1b1b1b;
 }
-.file-list li:hover {
+form:not([novalidate]) .file-list li:hover {
   background-color: var(--pico-muted-border-color);
 }
-.file-list li .btn-file-rm {
+form:not([novalidate]) .file-list li .btn-file-rm {
   display: inline-block;
   width: 1rem;
   height: 1rem;
@@ -2088,7 +1950,7 @@ form:not([novalidate]) input[type=file]:user-invalid::file-selector-button {
   opacity: 0.5;
   transition: opacity var(--pico-transition);
 }
-.file-list li .btn-file-rm:hover {
+form:not([novalidate]) .file-list li .btn-file-rm:hover {
   opacity: 1;
 }
 
@@ -2127,11 +1989,11 @@ section[role=form] > select + label {
 }
 section[role=form] > input:not(:-moz-placeholder-shown) + label, section[role=form] > textarea:not(:-moz-placeholder-shown) + label {
   top: -5%;
-  padding: calc(var(--pico-spacing) * 0.25) calc(var(--pico-spacing) * 0.5);
-  transform: translateY(-50%) scale(0.85);
+  padding: calc(var(--pico-spacing) * 0.15) calc(var(--pico-spacing) * 0.5);
+  transform: translateY(-55%) scale(0.8);
   color: var(--pico-form-element-active-border-color);
-  font-size: calc(var(--pico-font-size) * 0.85);
-  line-height: 1.25;
+  font-size: var(--pico-font-size);
+  line-height: 1.15;
   -moz-transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -2140,13 +2002,13 @@ section[role=form] > input:focus + label,
 section[role=form] > textarea:not(:placeholder-shown) + label,
 section[role=form] > textarea:focus + label,
 section[role=form] > select:focus + label,
-section[role=form] > select:has(option:checked:not([disabled])) ~ label {
+section[role=form] > select:has(option:checked:not([disabled])) + label {
   top: -5%;
-  padding: calc(var(--pico-spacing) * 0.25) calc(var(--pico-spacing) * 0.5);
-  transform: translateY(-50%) scale(0.85);
+  padding: calc(var(--pico-spacing) * 0.15) calc(var(--pico-spacing) * 0.5);
+  transform: translateY(-55%) scale(0.8);
   color: var(--pico-form-element-active-border-color);
-  font-size: calc(var(--pico-font-size) * 0.85);
-  line-height: 1.25;
+  font-size: var(--pico-font-size);
+  line-height: 1.15;
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 section[role=form] > input:user-invalid:not(:-moz-placeholder-shown) + label, section[role=form] > textarea:user-invalid:not(:-moz-placeholder-shown) + label {
@@ -2713,6 +2575,46 @@ fieldset[role=group] > legend {
 [dir=rtl] [role=group] > details > summary:not(:first-child) {
   margin-right: calc(var(--pico-border-width) * -1);
   margin-left: auto;
+}
+
+[role=group] > section[role=form] {
+  flex: 1;
+}
+[role=group] > section[role=form] > *:focus,
+[role=group] > section[role=form] > input:not([type=checkbox], [type=radio]):focus,
+[role=group] > section[role=form] > select:focus,
+[role=group] > section[role=form] > label:focus,
+[role=group] > section[role=form] > legend:focus,
+[role=group] > section[role=form] > details:focus {
+  z-index: 4;
+}
+[role=group] > section[role=form] > input:not([type=checkbox], [type=radio]):focus,
+[role=group] > section[role=form] > select:focus {
+  z-index: 10;
+}
+[role=group] > section[role=form] > input:not([type=checkbox], [type=radio]) + label,
+[role=group] > section[role=form] > select + label {
+  z-index: 10;
+  margin-top: 5px;
+}
+[role=group] > section[role=form]:not(:first-child) > *,
+[role=group] > section[role=form]:not(:first-child) > input:not([type=checkbox], [type=radio]),
+[role=group] > section[role=form]:not(:first-child) > select,
+[role=group] > section[role=form]:not(:first-child) > label,
+[role=group] > section[role=form]:not(:first-child) > legend,
+[role=group] > section[role=form]:not(:first-child) > details > summary {
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+[role=group] > section[role=form]:not(:last-child) > *,
+[role=group] > section[role=form]:not(:last-child) > input:not([type=checkbox], [type=radio]),
+[role=group] > section[role=form]:not(:last-child) > select,
+[role=group] > section[role=form]:not(:last-child) > label,
+[role=group] > section[role=form]:not(:last-child) > legend,
+[role=group] > section[role=form]:not(:last-child) > details > summary {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 /**
