@@ -3155,6 +3155,7 @@ body:has(dialog[open]) {
   pointer-events: none;
 }
 .pico [data-tooltip][data-placement=top]::after, .pico [data-tooltip]::after {
+  width: 0;
   padding: 0;
   transform: translate(-50%, 0rem);
   border-top: 0.3rem solid;

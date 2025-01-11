@@ -199,19 +199,19 @@ input:not([type=submit],
   color-scheme: light;
   --pico-background-color: #fff;
   --pico-color: #373c44;
-  --pico-text-selection-color: rgba(149, 144, 130, 0.25);
+  --pico-text-selection-color: rgba(246, 84, 126, 0.25);
   --pico-muted-color: #646b79;
   --pico-muted-border-color: rgb(231, 234, 239.5);
-  --pico-primary: #6e6a60;
-  --pico-primary-background: #ccc6b4;
+  --pico-primary: #c72259;
+  --pico-primary-background: #d92662;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(110, 106, 96, 0.5);
-  --pico-primary-hover: #55524a;
-  --pico-primary-hover-background: #beb8a7;
+  --pico-primary-underline: rgba(199, 34, 89, 0.5);
+  --pico-primary-hover: #9d1945;
+  --pico-primary-hover-background: #c72259;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(149, 144, 130, 0.5);
-  --pico-primary-inverse: #000;
+  --pico-primary-focus: rgba(246, 84, 126, 0.5);
+  --pico-primary-inverse: #fff;
   --pico-secondary: #5d6b89;
   --pico-secondary-background: #525f7a;
   --pico-secondary-border: var(--pico-secondary-background);
@@ -275,7 +275,7 @@ input:not([type=submit],
   --pico-switch-background-color: #bfc7d9;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-switch-color: #fff;
-  --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-range-border-color: #dfe3eb;
   --pico-range-active-border-color: #bfc7d9;
   --pico-range-thumb-border-color: var(--pico-background-color);
@@ -305,12 +305,12 @@ input:not([type=submit],
 [data-theme=light] details summary[role=button]::after,
 :root:not([data-theme=dark]) details summary[role=button]::after,
 :host(:not([data-theme=dark])) details summary[role=button]::after {
-  filter: brightness(100) invert(1);
+  filter: brightness(100) invert(0);
 }
 [data-theme=light] [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
 :root:not([data-theme=dark]) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
 :host(:not([data-theme=dark])) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
-  filter: brightness(0) invert(1);
+  filter: brightness(100) invert(0);
 }
 [data-theme=light] input:is([type=submit],
 [type=button],
@@ -339,19 +339,19 @@ input:not([type=submit],
     color-scheme: dark;
     --pico-background-color: rgb(19, 22.5, 30.5);
     --pico-color: #c2c7d0;
-    --pico-text-selection-color: rgba(163, 158, 143, 0.1875);
+    --pico-text-selection-color: rgba(247, 112, 142, 0.1875);
     --pico-muted-color: #7b8495;
     --pico-muted-border-color: #202632;
-    --pico-primary: #a39e8f;
-    --pico-primary-background: #ccc6b4;
+    --pico-primary: #f7708e;
+    --pico-primary-background: #d92662;
     --pico-primary-border: var(--pico-primary-background);
-    --pico-primary-underline: rgba(163, 158, 143, 0.5);
-    --pico-primary-hover: #beb8a7;
-    --pico-primary-hover-background: #dad4c2;
+    --pico-primary-underline: rgba(247, 112, 142, 0.5);
+    --pico-primary-hover: #f99eae;
+    --pico-primary-hover-background: #f42c6f;
     --pico-primary-hover-border: var(--pico-primary-hover-background);
     --pico-primary-hover-underline: var(--pico-primary-hover);
-    --pico-primary-focus: rgba(163, 158, 143, 0.375);
-    --pico-primary-inverse: #000;
+    --pico-primary-focus: rgba(247, 112, 142, 0.375);
+    --pico-primary-inverse: #fff;
     --pico-secondary: #969eaf;
     --pico-secondary-background: #525f7a;
     --pico-secondary-border: var(--pico-secondary-background);
@@ -415,7 +415,7 @@ input:not([type=submit],
     --pico-switch-background-color: #333c4e;
     --pico-switch-checked-background-color: var(--pico-primary-background);
     --pico-switch-color: #fff;
-    --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+    --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     --pico-range-border-color: #202632;
     --pico-range-active-border-color: #2a3140;
     --pico-range-thumb-border-color: var(--pico-background-color);
@@ -458,30 +458,30 @@ input:not([type=submit],
   }
   :root:not([data-theme]) details summary[role=button]::after,
   :host(:not([data-theme])) details summary[role=button]::after {
-    filter: brightness(100) invert(1);
+    filter: brightness(100) invert(0);
   }
   :root:not([data-theme]) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
   :host(:not([data-theme])) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
-    filter: brightness(100) invert(0);
+    filter: brightness(100) invert(1);
   }
 }
 [data-theme=dark] {
   color-scheme: dark;
   --pico-background-color: rgb(19, 22.5, 30.5);
   --pico-color: #c2c7d0;
-  --pico-text-selection-color: rgba(163, 158, 143, 0.1875);
+  --pico-text-selection-color: rgba(247, 112, 142, 0.1875);
   --pico-muted-color: #7b8495;
   --pico-muted-border-color: #202632;
-  --pico-primary: #a39e8f;
-  --pico-primary-background: #ccc6b4;
+  --pico-primary: #f7708e;
+  --pico-primary-background: #d92662;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(163, 158, 143, 0.5);
-  --pico-primary-hover: #beb8a7;
-  --pico-primary-hover-background: #dad4c2;
+  --pico-primary-underline: rgba(247, 112, 142, 0.5);
+  --pico-primary-hover: #f99eae;
+  --pico-primary-hover-background: #f42c6f;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(163, 158, 143, 0.375);
-  --pico-primary-inverse: #000;
+  --pico-primary-focus: rgba(247, 112, 142, 0.375);
+  --pico-primary-inverse: #fff;
   --pico-secondary: #969eaf;
   --pico-secondary-background: #525f7a;
   --pico-secondary-border: var(--pico-secondary-background);
@@ -545,7 +545,7 @@ input:not([type=submit],
   --pico-switch-background-color: #333c4e;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-switch-color: #fff;
-  --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-range-border-color: #202632;
   --pico-range-active-border-color: #2a3140;
   --pico-range-thumb-border-color: var(--pico-background-color);
@@ -581,10 +581,10 @@ input:not([type=submit],
   --pico-form-element-focus-color: var(--pico-primary-focus);
 }
 [data-theme=dark] details summary[role=button]::after {
-  filter: brightness(100) invert(1);
+  filter: brightness(100) invert(0);
 }
 [data-theme=dark] [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
-  filter: brightness(100) invert(0);
+  filter: brightness(100) invert(1);
 }
 
 progress,
@@ -3192,6 +3192,7 @@ progress::-moz-progress-bar {
   pointer-events: none;
 }
 [data-tooltip][data-placement=top]::after, [data-tooltip]::after {
+  width: 0;
   padding: 0;
   transform: translate(-50%, 0rem);
   border-top: 0.3rem solid;

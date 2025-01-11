@@ -3192,6 +3192,7 @@ progress::-moz-progress-bar {
   pointer-events: none;
 }
 [data-tooltip][data-placement=top]::after, [data-tooltip]::after {
+  width: 0;
   padding: 0;
   transform: translate(-50%, 0rem);
   border-top: 0.3rem solid;
