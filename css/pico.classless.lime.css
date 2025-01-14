@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.2.3 (https://github.com/Yohn/PicoCSS)
+ * Pico CSS ✨ v2.2.4 (https://github.com/Yohn/PicoCSS)
  * Copyright 2019-2025 - Licensed under MIT
  */
 /**
@@ -3172,7 +3172,8 @@ progress::-moz-progress-bar {
   position: absolute;
   bottom: 100%;
   left: 50%;
-  width: 250px;
+  width: -moz-max-content;
+  width: max-content;
   max-width: 250px;
   padding: 0.25rem 0.5rem;
   overflow: hidden;

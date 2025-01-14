@@ -106,7 +106,7 @@
 					<div class="grid" style="justify-items: center;">
 						<!--
 							For the light / dark mode switch toggle, you need the following:
-							V. 2.2.3 (will be released soon) - you can see the changed in the scss/forms/checkbox-radio-switch.scss
+							V. 2.2.3 or newer - you can see the changed in the scss/forms/checkbox-radio-switch.scss
 							<input name="color-mode-toggle" type="checkbox" role="switch">
 							That name="color-mode-toggle" is important
 							And then you'll need the js located at: js/SwitchColorMode.js
@@ -197,6 +197,7 @@
 								<li><a href="#tabs">Tabs [role=tablist]</a></li>
 								<li><a href="#hamburger-menu">Hamburger Menu</a></li>
 								<li><a href="#tooltip">Tooltip</a></li>
+								<li><a href="#ghost-btn">Ghost Buttons</a></li>
 								<li><a href="#floating-labels">Floating Labels [role=form]</a></li>
 								<li><a href="#validation">Validation</a></li>
 								<li><a href="#group">Group</a></li>
@@ -222,7 +223,7 @@
 			<main class="col-12 col-md-9 col-lg-10">
 				<article>
 					<header>
-						<h2>Yohns PicoCSS Fork v2.2.3</h2>
+						<h2>Yohns PicoCSS Fork v2.2.4</h2>
 						<p class="mb-0">Not in npm yet, but will be soon.</p>
 					</header>
 					<p>I've merged some open pull requests from the <a href="https://github.com/picocss/pico">original Pico</a>
@@ -529,8 +530,34 @@
 						so that is why this example has the input field with the tooltip on the <code
 							data-tooltip="I do not think there is a way to set the width on the tool tip and have it auto break? Lets see..">&lt;label&gt;</code>
 						wrapper.</p>
+					<p>We also want the <span data-tooltip="short">tooltip width</span> to not be huge when the tooltip is short.</p>
 				</article>
 				<!-- /Tooltip -->
+				<hr>
+				<article id="ghost-btn">
+					<header>
+						<h2>Ghost Buttons</h2>
+					</header>
+					<p>Ghost buttons are buttons that have a transparent background and border.
+						They are often used as secondary buttons to indicate a less important action.</p>
+					<p>Ghost buttons are created by adding the <code>.ghost</code> class to a button</p>
+					<p><code>.ghost</code> will work on all <code>&lt;button&gt;</code>, <code>[type="button"]</code>, <code>[type="submit"]</code>, <code>[type="reset"]</code>, and <code>[role="button"]</code> elements.</p>
+					<div class="grid">
+						<button type="button" class="ghost">Ghost Button</button>
+						<button type="button" class="ghost secondary">Secondary Ghost Button</button>
+						<button type="button" class="ghost contrast">Contrast Ghost Button</button>
+					</div>
+
+					<hr>
+					<details>
+						<summary>Show the code:</summary>
+						<div>
+							<pre><code class="language-html">&lt;button type="button" class="ghost"&gt;Ghost Button&lt;/button&gt;
+&lt;button type="button" class="ghost secondary"&gt;Secondary Ghost Button&lt;/button&gt;
+&lt;button type="button" class="ghost contrast"&gt;Contrast Ghost Button&lt;/button&gt;</code></pre>
+						</div>
+					</details>
+				</article>
 				<hr>
 				<!-- Floating Labels -->
 				<article id="floating-labels">
@@ -1498,7 +1525,7 @@
 			function changeTheme(newTheme) {
 				const linkElement = document.getElementById('theme-color-ss');
 				if (linkElement) {
-					linkElement.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Yohn/PicoCSS@2.2.3/css/pico.' + newTheme + '.min.css');
+					linkElement.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Yohn/PicoCSS@2.2.4/css/pico.' + newTheme + '.min.css');
 				}
 			}
 

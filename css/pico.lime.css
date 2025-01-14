@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.2.3 (https://github.com/Yohn/PicoCSS)
+ * Pico CSS ✨ v2.2.4 (https://github.com/Yohn/PicoCSS)
  * Copyright 2019-2025 - Licensed under MIT
  */
 /**
@@ -1692,6 +1692,34 @@ button:focus, button:is([aria-current]:not([aria-current=false])):focus,
 :where(fieldset[disabled]) :is(button, [type=submit], [type=button], [type=reset], [role=button]) {
   opacity: 0.5;
   pointer-events: none;
+}
+
+/* Base ghost button style */
+:is(button, [type=button], [type=submit], [type=reset], [role=button]).ghost {
+  --pico-background-color: transparent;
+  --pico-border-color: transparent;
+  --pico-color: var(--pico-primary);
+}
+:is(button, [type=button], [type=submit], [type=reset], [role=button]).ghost:is(:hover, :focus, :active, [aria-current]:not([aria-current=false])) {
+  --pico-background-color: transparent;
+  --pico-border-color: transparent;
+  --pico-color: var(--pico-primary-hover);
+}
+
+/* Secondary ghost button */
+:is(button, [type=button], [type=submit], [type=reset], [role=button]).ghost.secondary {
+  --pico-color: var(--pico-secondary);
+}
+:is(button, [type=button], [type=submit], [type=reset], [role=button]).ghost.secondary:is(:hover, :focus, :active, [aria-current]:not([aria-current=false])) {
+  --pico-color: var(--pico-secondary-hover);
+}
+
+/* Contrast ghost button */
+:is(button, [type=button], [type=submit], [type=reset], [role=button]).ghost.contrast {
+  --pico-color: var(--pico-contrast);
+}
+:is(button, [type=button], [type=submit], [type=reset], [role=button]).ghost.contrast:is(:hover, :focus, :active, [aria-current]:not([aria-current=false])) {
+  --pico-color: var(--pico-contrast-hover);
 }
 
 /**
@@ -4122,7 +4150,8 @@ progress::-moz-progress-bar {
   position: absolute;
   bottom: 100%;
   left: 50%;
-  width: 250px;
+  width: -moz-max-content;
+  width: max-content;
   max-width: 250px;
   padding: 0.25rem 0.5rem;
   overflow: hidden;

@@ -206,4 +206,39 @@
     opacity: 0.5;
     pointer-events: none;
   }
+
+  // Ghost buttons
+  // See: https://github.com/Yohn/PicoCSS/discussions/29
+  @if $enable-classes {
+    $btn-elements: 'button, [type="button"], [type="submit"], [type="reset"], [role="button"]';
+    $btn-is: ':hover, :focus, :active, [aria-current]:not([aria-current="false"])';
+    /* Base ghost button style */
+    #{$parent-selector} :is(#{$btn-elements}).ghost {
+      #{$css-var-prefix}background-color: transparent;
+      #{$css-var-prefix}border-color: transparent;
+      #{$css-var-prefix}color: var(#{$css-var-prefix}primary);
+
+      &:is(#{$btn-is}) {
+        #{$css-var-prefix}background-color: transparent;
+        #{$css-var-prefix}border-color: transparent;
+        #{$css-var-prefix}color: var(#{$css-var-prefix}primary-hover);
+      }
+    }
+
+    /* Secondary ghost button */
+    #{$parent-selector} :is(#{$btn-elements}).ghost.secondary {
+      #{$css-var-prefix}color: var(#{$css-var-prefix}secondary);
+      &:is(#{$btn-is}) {
+        #{$css-var-prefix}color: var(#{$css-var-prefix}secondary-hover);
+      }
+    }
+
+    /* Contrast ghost button */
+    #{$parent-selector} :is(#{$btn-elements}).ghost.contrast {
+      #{$css-var-prefix}color: var(#{$css-var-prefix}contrast);
+      &:is(#{$btn-is}) {
+        #{$css-var-prefix}color: var(#{$css-var-prefix}contrast-hover);
+      }
+    }
+  }
 }

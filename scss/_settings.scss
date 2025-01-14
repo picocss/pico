@@ -177,6 +177,7 @@ $modules: map.merge(
     "components/nav": true,
     "components/progress": true,
     "components/tab": true,
+
     // [role=tablist]
     // I wish role="tablist|tab|tabpanel" could be used on <details> and <summary> tag.
     "components/tab-region": false,
