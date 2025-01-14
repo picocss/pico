@@ -27,7 +27,7 @@
     flex-wrap: wrap; // make sure it wraps
     padding-bottom: 0;
 
-    button {
+    > button[role="tab"] {
       flex-grow: 1;
       order: 1; // Put the labels first
       padding: calc(var(#{$css-var-prefix}spacing) * 0.625);
