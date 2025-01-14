@@ -15,8 +15,10 @@ Good pull requests, patches, improvements, and new features are a fantastic help
 **Please ask before starting work on any significant new features.**
 We recommend that you first [suggest your feature idea in our discussion forums](https://github.com/Yohn/PicoCSS/discussions/categories/ideas).
 
-[`dev`](https://github.com/Yohn/PicoCSS/tree/dev) branch is open for pull requests on `v3`.
+<!-- [`dev`](https://github.com/Yohn/PicoCSS/tree/dev) branch is open for pull requests on `v3`.
 
-[`main`](https://github.com/Yohn/PicoCSS/tree/main) branch is open to pull requests on `v2`.
+[`main`](https://github.com/Yohn/PicoCSS/tree/main) branch is open to pull requests on `v2`. -->
 
-**Do not edit [`/css`](https://github.com/Yohn/PicoCSS/tree/master/css) files directly.** Edit the source files in [`/scss`](https://github.com/Yohn/PicoCSS/tree/master/scss), then recompile the [`/css`](https://github.com/Yohn/PicoCSS/tree/master/css) files with `npm run build`.
+**Do not edit [`/css`](https://github.com/Yohn/PicoCSS/tree/master/css) files directly.** 
+
+Edit the source files in [`/scss`](https://github.com/Yohn/PicoCSS/tree/master/scss), Github will automatically re-compile the css files after the pull request is merged.
