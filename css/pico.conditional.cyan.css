@@ -4300,7 +4300,7 @@ body:has(dialog[open]) {
   flex-wrap: wrap;
   padding-bottom: 0;
 }
-.pico [role=tablist] button {
+.pico [role=tablist] > button[role=tab] {
   flex-grow: 1;
   order: 1;
   padding: calc(var(--pico-spacing) * 0.625);
@@ -4314,11 +4314,11 @@ body:has(dialog[open]) {
   cursor: pointer;
   transition: background-color var(--pico-transition);
 }
-.pico [role=tablist] button[aria-selected=true] {
+.pico [role=tablist] > button[role=tab][aria-selected=true] {
   background: var(--pico-primary-background);
   color: var(--pico-primary-inverse);
 }
-.pico [role=tablist] button:hover {
+.pico [role=tablist] > button[role=tab]:hover {
   background: var(--pico-primary-hover-background);
   color: var(--pico-primary-inverse);
 }

@@ -3285,7 +3285,7 @@ progress::-moz-progress-bar {
   flex-wrap: wrap;
   padding-bottom: 0;
 }
-[role=tablist] button {
+[role=tablist] > button[role=tab] {
   flex-grow: 1;
   order: 1;
   padding: calc(var(--pico-spacing) * 0.625);
@@ -3299,11 +3299,11 @@ progress::-moz-progress-bar {
   cursor: pointer;
   transition: background-color var(--pico-transition);
 }
-[role=tablist] button[aria-selected=true] {
+[role=tablist] > button[role=tab][aria-selected=true] {
   background: var(--pico-primary-background);
   color: var(--pico-primary-inverse);
 }
-[role=tablist] button:hover {
+[role=tablist] > button[role=tab]:hover {
   background: var(--pico-primary-hover-background);
   color: var(--pico-primary-inverse);
 }
