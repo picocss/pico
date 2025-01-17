@@ -1,61 +1,6 @@
 @use "sass:map";
 @use "../settings" as *;
 
-// Variables for striped rows
-$color-dark: var(#{$css-var-prefix}table-row-stripped-background-color);
-$color-light: var(#{$css-var-prefix}background-color);
-
-// Adjust this number to control how many <tr hidden> rows are expected.
-$hidden-levels: $hidden-table-levels;
-
-// Do not change, or remove the following line
-// needed this outside of the mixin to compile, idk why
-// sass --version = 1.83.4 compiled with dart2js 3.6.1
-$selector: "& ~ tr";
-
-// This is the work around because the compiler changes
-// :nth-child(odd of :not(:hidden))  to  :nth-child(oddof:not(:hidden))
-// which makes the stripes fail.
-// Mixin to handle the hidden row with striped backgrounds patterns
-// Thanks Shaggy: https://stackoverflow.com/questions/3773890/zebra-striping-a-table-with-hidden-rows-using-css3/36892714#36892714
-@mixin hidden-row-patterns($levels: 2, $dark-color: $color-dark, $light-color: $color-light) {
-  $current-color-odd: $light-color;
-  $current-color-even: $dark-color;
-  // Generate nested s electors for each level
-  $selector: "& ~ tr";
-
-  &[hidden] {
-    display: none;
-
-    @for $i from 1 through $levels {
-      @if $i > 1 {
-        // Swap colors for next iteration
-        $temp: $current-color-odd;
-        $current-color-odd: $current-color-even;
-        $current-color-even: $temp;
-
-        // Add another level of nesting to the selector
-        $selector: "#{$selector}[hidden] ~ tr";
-      }
-      #{$selector} {
-        &:nth-child(odd) {
-          > th,
-          > td {
-            background: $current-color-odd;
-          }
-        }
-
-        &:nth-child(even) {
-          > th,
-          > td {
-            background: $current-color-even;
-          }
-        }
-      }
-    }
-  }
-}
-
 @if map.get($modules, "content/table") {
   /**
    * Table
@@ -126,23 +71,11 @@ $selector: "& ~ tr";
   @if enable-classes {
     #{$parent-selector} table {
       &.striped {
-        > tbody > tr {
-          &:nth-child(odd) {
-            > th,
-            > td {
-              background: $color-dark;
-            }
-          }
-
-          &:nth-child(even) {
-            > th,
-            > td {
-              background: $color-light;
-            }
-          }
-
-          // Apply the hidden row patterns
-          @include hidden-row-patterns($hidden-levels);
+        /* clean-css ignore:start */
+        tbody tr:nth-child(odd of :not([hidden])) th,
+        tbody tr:nth-child(odd of :not([hidden])) td {
+          /* clean-css ignore:end */
+          background-color: var(#{$css-var-prefix}table-row-stripped-background-color);
         }
       }
     }

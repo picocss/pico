@@ -224,7 +224,7 @@
 			<main class="col-12 col-md-9 col-lg-10">
 				<article>
 					<header>
-						<h2>Yohns PicoCSS Fork v2.2.5</h2>
+						<h2>Yohns PicoCSS Fork v2.2.6</h2>
 						<p class="mb-0">Not in npm yet, but will be soon.</p>
 					</header>
 					<p>I've merged some open pull requests from the <a href="https://github.com/picocss/pico">original Pico</a>
@@ -249,26 +249,10 @@
 						<h2>Tables</h2>
 						<h6 class="fw-n">Striped rows require .striped class</h6>
 					</header>
-					<h6>
-						To have the striped rows, can be solved 2 ways.
-					</h6>
-					<p>
-						The easy way is to set <code>tbody tr:nth-child(odd of :not([hidden]))</code>
-						but unfortunetly, when we minify the CSS it remove the space between odd and of, making the striped lines fail.
-						Until we can find a way to fix the minification of the CSS, we will use a secondary feature that does require some more CSS code.
-					</p>
-					<p>
-						As a result of the minification we are resorting to use an answer that was found on StackOverflow
-						by <a href="https://stackoverflow.com/questions/3773890/zebra-striping-a-table-with-hidden-rows-using-css3/36892714#36892714">Shaggy</a>
-						that I converted into a sass mixin to create more or less nested hidden selectors.
-					</p>
-					<p>The default is currently set to <code>4</code> and can be changed with your settings, or when you include pico in your sass file.</p>
-					<pre class="language-css"><code>@use "pico" with (
-	$hidden-table-levels: 4
-);</code></pre>
-					<p>If you do not intend to have any hidden rows you can set the <code>$hidden-table-levels</code> to 0.</p>
 					<p>Styles for a <code>&lt;caption&gt;</code> element have been added for tables as well.</p>
-					<nav><ul><li>When rows are toggled, the hidden rows have * around the first column.</li></ul><ul><li><button type="button" onclick="document.querySelectorAll('.hidden-table-row').forEach(row => {row.hidden = !row.hidden;});">Toggle Hidden Rows</button></li></ul></nav>
+					<p>For rows that will be hidden, make sure to add the <code>hidden</code> attribute like so: <code>&lt;tr hidden&gt;</code></p>
+					<p>When rows are toggled, the hidden rows have * around the first column.</p>
+					<nav><ul><li></li></ul><ul><li><button type="button" onclick="document.querySelectorAll('.hidden-table-row').forEach(row => {row.hidden = !row.hidden;});">Toggle Hidden Rows</button></li></ul></nav>
 					<table class="striped" id="hidden-row-example">
 						<caption>
 							Solar System Planets
@@ -1655,7 +1639,7 @@
 			function changeTheme(newTheme) {
 				const linkElement = document.getElementById('theme-color-ss');
 				if (linkElement) {
-					linkElement.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Yohn/PicoCSS@2.2.5/css/pico.' + newTheme + '.min.css');
+					linkElement.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Yohn/PicoCSS@2.2.6/css/pico.' + newTheme + '.min.css');
 				}
 			}
 

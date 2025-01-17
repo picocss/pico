@@ -77,7 +77,7 @@ There are 4 ways to get started with pico.css:
 Alternatively, you can use [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@yohns/picocss) to link pico.css.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.5/css/pico.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.6/css/pico.min.css" />
 ```
 
 ### Install with NPM
@@ -135,7 +135,7 @@ Use the default `.classless` version if you need centered viewports:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.5/css/pico.classless.min.css"
+  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.6/css/pico.classless.min.css"
 />
 ```
 
@@ -144,7 +144,7 @@ Or use the `.fluid.classless` version if you need a fluid container:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.5/css/pico.fluid.classless.min.css"
+  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.6/css/pico.fluid.classless.min.css"
 />
 ```
 
@@ -159,7 +159,7 @@ Then just write pure HTML, and it should look great:
     <meta name="color-scheme" content="light dark" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.5/css/pico.classless.min.css"
+      href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.6/css/pico.classless.min.css"
     />
     <title>Hello, world!</title>
   </head>

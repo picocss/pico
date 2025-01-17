@@ -60,11 +60,6 @@ $enable-transitions: true !default;
 // Enable overriding with !important
 $enable-important: true !default;
 
-// How many hidden rows do you expect to have within a table?
-// <tr hidden> is what is accounted for striped rows.
-// if none, put 0 instead of 3.
-$hidden-table-levels: 4 !default;
-
 // Optional parent selector
 // If defined, all HTML tags are wrapped with this selector
 // :root is not wrapped
