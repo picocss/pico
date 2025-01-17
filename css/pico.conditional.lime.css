@@ -134,6 +134,10 @@ h6 {
   --pico-typography-spacing-top: 1.5rem;
 }
 
+table > caption {
+  --pico-font-weight: 600;
+}
+
 thead th,
 thead td,
 tfoot th,
@@ -1732,8 +1736,8 @@ main {
   text-indent: 0;
 }
 
-.pico th,
-.pico td {
+.pico table th,
+.pico table td {
   padding: calc(var(--pico-spacing) / 2) var(--pico-spacing);
   border-bottom: var(--pico-border-width) solid var(--pico-table-border-color);
   background-color: var(--pico-background-color);
@@ -1743,15 +1747,73 @@ main {
   text-align: start;
 }
 
-.pico tfoot th,
-.pico tfoot td {
+.pico table > caption {
+  margin-block: calc(var(--pico-block-spacing-vertical) * 0.5);
+  padding: calc(var(--pico-spacing) / 2) var(--pico-spacing);
+  background-color: var(--pico-table-row-stripped-background-color);
+  color: var(--pico-h3-color);
+  font-weight: var(--pico-font-weight);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.pico table > tfoot th,
+.pico table > tfoot td {
   border-top: var(--pico-border-width) solid var(--pico-table-border-color);
   border-bottom: 0;
 }
 
-.pico table.striped tbody tr:nth-child(odd of :not([hidden])) th,
-.pico table.striped tbody tr:nth-child(odd of :not([hidden])) td {
+.pico table > caption {
+  margin-block: calc(var(--pico-block-spacing-vertical) * 0.5);
   background-color: var(--pico-table-row-stripped-background-color);
+  color: var(--pico-h3-color);
+  font-weight: var(--pico-font-weight);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.pico table.striped > tbody > tr:nth-child(odd) > th,
+.pico table.striped > tbody > tr:nth-child(odd) > td {
+  background: var(--pico-table-row-stripped-background-color);
+}
+.pico table.striped > tbody > tr:nth-child(even) > th,
+.pico table.striped > tbody > tr:nth-child(even) > td {
+  background: var(--pico-background-color);
+}
+.pico table.striped > tbody > tr[hidden] {
+  display: none;
+}
+.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(odd) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(odd) > td {
+  background: var(--pico-background-color);
+}
+.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(even) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(even) > td {
+  background: var(--pico-table-row-stripped-background-color);
+}
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > td {
+  background: var(--pico-table-row-stripped-background-color);
+}
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > td {
+  background: var(--pico-background-color);
+}
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > td {
+  background: var(--pico-background-color);
+}
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > td {
+  background: var(--pico-table-row-stripped-background-color);
+}
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > td {
+  background: var(--pico-table-row-stripped-background-color);
+}
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > td {
+  background: var(--pico-background-color);
 }
 
 /**

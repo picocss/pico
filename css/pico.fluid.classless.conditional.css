@@ -129,6 +129,10 @@ h6 {
   --pico-typography-spacing-top: 1.5rem;
 }
 
+table > caption {
+  --pico-font-weight: 600;
+}
+
 thead th,
 thead td,
 tfoot th,
@@ -199,19 +203,19 @@ input:not([type=submit],
   color-scheme: light;
   --pico-background-color: #fff;
   --pico-color: #373c44;
-  --pico-text-selection-color: rgba(183, 136, 0, 0.25);
+  --pico-text-selection-color: rgba(5, 162, 162, 0.25);
   --pico-muted-color: #646b79;
   --pico-muted-border-color: rgb(231, 234, 239.5);
-  --pico-primary: #876400;
-  --pico-primary-background: #ffbf00;
+  --pico-primary: #047878;
+  --pico-primary-background: #047878;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(135, 100, 0, 0.5);
-  --pico-primary-hover: #694d00;
-  --pico-primary-hover-background: #e8ae01;
+  --pico-primary-underline: rgba(4, 120, 120, 0.5);
+  --pico-primary-hover: #025d5d;
+  --pico-primary-hover-background: #046a6a;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(183, 136, 0, 0.5);
-  --pico-primary-inverse: #000;
+  --pico-primary-focus: rgba(5, 162, 162, 0.5);
+  --pico-primary-inverse: #fff;
   --pico-secondary: #5d6b89;
   --pico-secondary-background: #525f7a;
   --pico-secondary-border: var(--pico-secondary-background);
@@ -275,7 +279,7 @@ input:not([type=submit],
   --pico-switch-background-color: #bfc7d9;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-switch-color: #fff;
-  --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-range-border-color: #dfe3eb;
   --pico-range-active-border-color: #bfc7d9;
   --pico-range-thumb-border-color: var(--pico-background-color);
@@ -305,12 +309,12 @@ input:not([type=submit],
 [data-theme=light] .pico details summary[role=button]::after,
 :root:not([data-theme=dark]) .pico details summary[role=button]::after,
 :host(:not([data-theme=dark])) .pico details summary[role=button]::after {
-  filter: brightness(100) invert(1);
+  filter: brightness(100) invert(0);
 }
 [data-theme=light] .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
 :root:not([data-theme=dark]) .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
 :host(:not([data-theme=dark])) .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
-  filter: brightness(0) invert(1);
+  filter: brightness(100) invert(0);
 }
 [data-theme=light] input:is([type=submit],
 [type=button],
@@ -339,19 +343,19 @@ input:not([type=submit],
     color-scheme: dark;
     --pico-background-color: rgb(19, 22.5, 30.5);
     --pico-color: #c2c7d0;
-    --pico-text-selection-color: rgba(199, 148, 0, 0.1875);
+    --pico-text-selection-color: rgba(10, 177, 177, 0.1875);
     --pico-muted-color: #7b8495;
     --pico-muted-border-color: #202632;
-    --pico-primary: #c79400;
-    --pico-primary-background: #ffbf00;
+    --pico-primary: #0ab1b1;
+    --pico-primary-background: #047878;
     --pico-primary-border: var(--pico-primary-background);
-    --pico-primary-underline: rgba(199, 148, 0, 0.5);
-    --pico-primary-hover: #e8ae01;
-    --pico-primary-hover-background: #fecc63;
+    --pico-primary-underline: rgba(10, 177, 177, 0.5);
+    --pico-primary-hover: #0ccece;
+    --pico-primary-hover-background: #058686;
     --pico-primary-hover-border: var(--pico-primary-hover-background);
     --pico-primary-hover-underline: var(--pico-primary-hover);
-    --pico-primary-focus: rgba(199, 148, 0, 0.375);
-    --pico-primary-inverse: #000;
+    --pico-primary-focus: rgba(10, 177, 177, 0.375);
+    --pico-primary-inverse: #fff;
     --pico-secondary: #969eaf;
     --pico-secondary-background: #525f7a;
     --pico-secondary-border: var(--pico-secondary-background);
@@ -415,7 +419,7 @@ input:not([type=submit],
     --pico-switch-background-color: #333c4e;
     --pico-switch-checked-background-color: var(--pico-primary-background);
     --pico-switch-color: #fff;
-    --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+    --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     --pico-range-border-color: #202632;
     --pico-range-active-border-color: #2a3140;
     --pico-range-thumb-border-color: var(--pico-background-color);
@@ -458,30 +462,30 @@ input:not([type=submit],
   }
   :root:not([data-theme]) .pico details summary[role=button]::after,
   :host(:not([data-theme])) .pico details summary[role=button]::after {
-    filter: brightness(100) invert(1);
+    filter: brightness(100) invert(0);
   }
   :root:not([data-theme]) .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
   :host(:not([data-theme])) .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
-    filter: brightness(100) invert(0);
+    filter: brightness(100) invert(1);
   }
 }
 [data-theme=dark] {
   color-scheme: dark;
   --pico-background-color: rgb(19, 22.5, 30.5);
   --pico-color: #c2c7d0;
-  --pico-text-selection-color: rgba(199, 148, 0, 0.1875);
+  --pico-text-selection-color: rgba(10, 177, 177, 0.1875);
   --pico-muted-color: #7b8495;
   --pico-muted-border-color: #202632;
-  --pico-primary: #c79400;
-  --pico-primary-background: #ffbf00;
+  --pico-primary: #0ab1b1;
+  --pico-primary-background: #047878;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(199, 148, 0, 0.5);
-  --pico-primary-hover: #e8ae01;
-  --pico-primary-hover-background: #fecc63;
+  --pico-primary-underline: rgba(10, 177, 177, 0.5);
+  --pico-primary-hover: #0ccece;
+  --pico-primary-hover-background: #058686;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(199, 148, 0, 0.375);
-  --pico-primary-inverse: #000;
+  --pico-primary-focus: rgba(10, 177, 177, 0.375);
+  --pico-primary-inverse: #fff;
   --pico-secondary: #969eaf;
   --pico-secondary-background: #525f7a;
   --pico-secondary-border: var(--pico-secondary-background);
@@ -545,7 +549,7 @@ input:not([type=submit],
   --pico-switch-background-color: #333c4e;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-switch-color: #fff;
-  --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-range-border-color: #202632;
   --pico-range-active-border-color: #2a3140;
   --pico-range-thumb-border-color: var(--pico-background-color);
@@ -581,10 +585,10 @@ input:not([type=submit],
   --pico-form-element-focus-color: var(--pico-primary-focus);
 }
 [data-theme=dark] .pico details summary[role=button]::after {
-  filter: brightness(100) invert(1);
+  filter: brightness(100) invert(0);
 }
 [data-theme=dark] .pico [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
-  filter: brightness(100) invert(0);
+  filter: brightness(100) invert(1);
 }
 
 .pico progress,
@@ -969,8 +973,8 @@ main {
   text-indent: 0;
 }
 
-.pico th,
-.pico td {
+.pico table th,
+.pico table td {
   padding: calc(var(--pico-spacing) / 2) var(--pico-spacing);
   border-bottom: var(--pico-border-width) solid var(--pico-table-border-color);
   background-color: var(--pico-background-color);
@@ -980,15 +984,73 @@ main {
   text-align: start;
 }
 
-.pico tfoot th,
-.pico tfoot td {
+.pico table > caption {
+  margin-block: calc(var(--pico-block-spacing-vertical) * 0.5);
+  padding: calc(var(--pico-spacing) / 2) var(--pico-spacing);
+  background-color: var(--pico-table-row-stripped-background-color);
+  color: var(--pico-h3-color);
+  font-weight: var(--pico-font-weight);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.pico table > tfoot th,
+.pico table > tfoot td {
   border-top: var(--pico-border-width) solid var(--pico-table-border-color);
   border-bottom: 0;
 }
 
-.pico table.striped tbody tr:nth-child(odd of :not([hidden])) th,
-.pico table.striped tbody tr:nth-child(odd of :not([hidden])) td {
+.pico table > caption {
+  margin-block: calc(var(--pico-block-spacing-vertical) * 0.5);
   background-color: var(--pico-table-row-stripped-background-color);
+  color: var(--pico-h3-color);
+  font-weight: var(--pico-font-weight);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.pico table.striped > tbody > tr:nth-child(odd) > th,
+.pico table.striped > tbody > tr:nth-child(odd) > td {
+  background: var(--pico-table-row-stripped-background-color);
+}
+.pico table.striped > tbody > tr:nth-child(even) > th,
+.pico table.striped > tbody > tr:nth-child(even) > td {
+  background: var(--pico-background-color);
+}
+.pico table.striped > tbody > tr[hidden] {
+  display: none;
+}
+.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(odd) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(odd) > td {
+  background: var(--pico-background-color);
+}
+.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(even) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(even) > td {
+  background: var(--pico-table-row-stripped-background-color);
+}
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > td {
+  background: var(--pico-table-row-stripped-background-color);
+}
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > td {
+  background: var(--pico-background-color);
+}
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > td {
+  background: var(--pico-background-color);
+}
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > td {
+  background: var(--pico-table-row-stripped-background-color);
+}
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > td {
+  background: var(--pico-table-row-stripped-background-color);
+}
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > th,
+.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > td {
+  background: var(--pico-background-color);
 }
 
 /**
