@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.2.5 (https://github.com/Yohn/PicoCSS)
+ * Pico CSS ✨ v2.2.6 (https://github.com/Yohn/PicoCSS)
  * Copyright 2019-2025 - Licensed under MIT
  */
 /**
@@ -236,18 +236,18 @@ nav details.dropdown summary:focus-visible {
   color-scheme: light;
   --pico-background-color: #fff;
   --pico-color: #373c44;
-  --pico-text-selection-color: rgba(246, 84, 126, 0.25);
+  --pico-text-selection-color: rgba(167, 128, 212, 0.25);
   --pico-muted-color: #646b79;
   --pico-muted-border-color: rgb(231, 234, 239.5);
-  --pico-primary: #c72259;
-  --pico-primary-background: #d92662;
+  --pico-primary: #8352c5;
+  --pico-primary-background: #7540bf;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(199, 34, 89, 0.5);
-  --pico-primary-hover: #9d1945;
-  --pico-primary-hover-background: #c72259;
+  --pico-primary-underline: rgba(131, 82, 197, 0.5);
+  --pico-primary-hover: #6935b3;
+  --pico-primary-hover-background: #6935b3;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(246, 84, 126, 0.5);
+  --pico-primary-focus: rgba(167, 128, 212, 0.5);
   --pico-primary-inverse: #fff;
   --pico-secondary: #5d6b89;
   --pico-secondary-background: #525f7a;
@@ -391,18 +391,18 @@ nav details.dropdown summary:focus-visible {
     color-scheme: dark;
     --pico-background-color: rgb(19, 22.5, 30.5);
     --pico-color: #c2c7d0;
-    --pico-text-selection-color: rgba(247, 112, 142, 0.1875);
+    --pico-text-selection-color: rgba(178, 144, 217, 0.1875);
     --pico-muted-color: #7b8495;
     --pico-muted-border-color: #202632;
-    --pico-primary: #f7708e;
-    --pico-primary-background: #d92662;
+    --pico-primary: #b290d9;
+    --pico-primary-background: #7540bf;
     --pico-primary-border: var(--pico-primary-background);
-    --pico-primary-underline: rgba(247, 112, 142, 0.5);
-    --pico-primary-hover: #f99eae;
-    --pico-primary-hover-background: #f42c6f;
+    --pico-primary-underline: rgba(178, 144, 217, 0.5);
+    --pico-primary-hover: #c9afe4;
+    --pico-primary-hover-background: #8352c5;
     --pico-primary-hover-border: var(--pico-primary-hover-background);
     --pico-primary-hover-underline: var(--pico-primary-hover);
-    --pico-primary-focus: rgba(247, 112, 142, 0.375);
+    --pico-primary-focus: rgba(178, 144, 217, 0.375);
     --pico-primary-inverse: #fff;
     --pico-secondary: #969eaf;
     --pico-secondary-background: #525f7a;
@@ -546,18 +546,18 @@ nav details.dropdown summary:focus-visible {
   color-scheme: dark;
   --pico-background-color: rgb(19, 22.5, 30.5);
   --pico-color: #c2c7d0;
-  --pico-text-selection-color: rgba(247, 112, 142, 0.1875);
+  --pico-text-selection-color: rgba(178, 144, 217, 0.1875);
   --pico-muted-color: #7b8495;
   --pico-muted-border-color: #202632;
-  --pico-primary: #f7708e;
-  --pico-primary-background: #d92662;
+  --pico-primary: #b290d9;
+  --pico-primary-background: #7540bf;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(247, 112, 142, 0.5);
-  --pico-primary-hover: #f99eae;
-  --pico-primary-hover-background: #f42c6f;
+  --pico-primary-underline: rgba(178, 144, 217, 0.5);
+  --pico-primary-hover: #c9afe4;
+  --pico-primary-hover-background: #8352c5;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(247, 112, 142, 0.375);
+  --pico-primary-focus: rgba(178, 144, 217, 0.375);
   --pico-primary-inverse: #fff;
   --pico-secondary: #969eaf;
   --pico-secondary-background: #525f7a;
@@ -1772,48 +1772,13 @@ main {
   text-align: center;
 }
 
-.pico table.striped > tbody > tr:nth-child(odd) > th,
-.pico table.striped > tbody > tr:nth-child(odd) > td {
-  background: var(--pico-table-row-stripped-background-color);
+.pico table.striped {
+  /* clean-css ignore:start */
 }
-.pico table.striped > tbody > tr:nth-child(even) > th,
-.pico table.striped > tbody > tr:nth-child(even) > td {
-  background: var(--pico-background-color);
-}
-.pico table.striped > tbody > tr[hidden] {
-  display: none;
-}
-.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(odd) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(odd) > td {
-  background: var(--pico-background-color);
-}
-.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(even) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(even) > td {
-  background: var(--pico-table-row-stripped-background-color);
-}
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > td {
-  background: var(--pico-table-row-stripped-background-color);
-}
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > td {
-  background: var(--pico-background-color);
-}
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > td {
-  background: var(--pico-background-color);
-}
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > td {
-  background: var(--pico-table-row-stripped-background-color);
-}
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > td {
-  background: var(--pico-table-row-stripped-background-color);
-}
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > td {
-  background: var(--pico-background-color);
+.pico table.striped tbody tr:nth-child(odd of :not([hidden])) th,
+.pico table.striped tbody tr:nth-child(odd of :not([hidden])) td {
+  /* clean-css ignore:end */
+  background-color: var(--pico-table-row-stripped-background-color);
 }
 
 /**

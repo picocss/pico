@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.2.5 (https://github.com/Yohn/PicoCSS)
+ * Pico CSS ✨ v2.2.6 (https://github.com/Yohn/PicoCSS)
  * Copyright 2019-2025 - Licensed under MIT
  */
 /**
@@ -1772,48 +1772,13 @@ main {
   text-align: center;
 }
 
-.pico table.striped > tbody > tr:nth-child(odd) > th,
-.pico table.striped > tbody > tr:nth-child(odd) > td {
-  background: var(--pico-table-row-stripped-background-color);
+.pico table.striped {
+  /* clean-css ignore:start */
 }
-.pico table.striped > tbody > tr:nth-child(even) > th,
-.pico table.striped > tbody > tr:nth-child(even) > td {
-  background: var(--pico-background-color);
-}
-.pico table.striped > tbody > tr[hidden] {
-  display: none;
-}
-.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(odd) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(odd) > td {
-  background: var(--pico-background-color);
-}
-.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(even) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr:nth-child(even) > td {
-  background: var(--pico-table-row-stripped-background-color);
-}
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > td {
-  background: var(--pico-table-row-stripped-background-color);
-}
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > td {
-  background: var(--pico-background-color);
-}
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > td {
-  background: var(--pico-background-color);
-}
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > td {
-  background: var(--pico-table-row-stripped-background-color);
-}
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > td {
-  background: var(--pico-table-row-stripped-background-color);
-}
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > th,
-.pico table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > td {
-  background: var(--pico-background-color);
+.pico table.striped tbody tr:nth-child(odd of :not([hidden])) th,
+.pico table.striped tbody tr:nth-child(odd of :not([hidden])) td {
+  /* clean-css ignore:end */
+  background-color: var(--pico-table-row-stripped-background-color);
 }
 
 /**

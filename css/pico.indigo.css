@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.2.5 (https://github.com/Yohn/PicoCSS)
+ * Pico CSS ✨ v2.2.6 (https://github.com/Yohn/PicoCSS)
  * Copyright 2019-2025 - Licensed under MIT
  */
 /**
@@ -1772,48 +1772,13 @@ table > caption {
   text-align: center;
 }
 
-table.striped > tbody > tr:nth-child(odd) > th,
-table.striped > tbody > tr:nth-child(odd) > td {
-  background: var(--pico-table-row-stripped-background-color);
+table.striped {
+  /* clean-css ignore:start */
 }
-table.striped > tbody > tr:nth-child(even) > th,
-table.striped > tbody > tr:nth-child(even) > td {
-  background: var(--pico-background-color);
-}
-table.striped > tbody > tr[hidden] {
-  display: none;
-}
-table.striped > tbody > tr[hidden] ~ tr:nth-child(odd) > th,
-table.striped > tbody > tr[hidden] ~ tr:nth-child(odd) > td {
-  background: var(--pico-background-color);
-}
-table.striped > tbody > tr[hidden] ~ tr:nth-child(even) > th,
-table.striped > tbody > tr[hidden] ~ tr:nth-child(even) > td {
-  background: var(--pico-table-row-stripped-background-color);
-}
-table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > th,
-table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > td {
-  background: var(--pico-table-row-stripped-background-color);
-}
-table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > th,
-table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > td {
-  background: var(--pico-background-color);
-}
-table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > th,
-table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > td {
-  background: var(--pico-background-color);
-}
-table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > th,
-table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > td {
-  background: var(--pico-table-row-stripped-background-color);
-}
-table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > th,
-table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(odd) > td {
-  background: var(--pico-table-row-stripped-background-color);
-}
-table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > th,
-table.striped > tbody > tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr[hidden] ~ tr:nth-child(even) > td {
-  background: var(--pico-background-color);
+table.striped tbody tr:nth-child(odd of :not([hidden])) th,
+table.striped tbody tr:nth-child(odd of :not([hidden])) td {
+  /* clean-css ignore:end */
+  background-color: var(--pico-table-row-stripped-background-color);
 }
 
 /**
