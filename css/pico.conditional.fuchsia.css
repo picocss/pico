@@ -3930,7 +3930,7 @@ body:has(dialog[open]) {
   z-index: 1;
   align-items: center;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 .pico nav[role=navigation][data-position=start] {
   /* remove the 'flex-direction' to move menu to the right */
@@ -3953,6 +3953,10 @@ body:has(dialog[open]) {
 @media (max-width: 510px) {
   .pico nav[role=navigation] {
     flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .pico nav[role=navigation]:has(input[type=checkbox]:checked) {
+    overflow: visible;
   }
   .pico nav[role=navigation] label {
     display: block;
@@ -3990,6 +3994,10 @@ body:has(dialog[open]) {
 @media (max-width: 700px) {
   .pico nav[role=navigation][data-breakpoint=md] {
     flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .pico nav[role=navigation][data-breakpoint=md]:has(input[type=checkbox]:checked) {
+    overflow: visible;
   }
   .pico nav[role=navigation][data-breakpoint=md] label {
     display: block;
@@ -4027,6 +4035,10 @@ body:has(dialog[open]) {
 @media (max-width: 950px) {
   .pico nav[role=navigation][data-breakpoint=lg] {
     flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .pico nav[role=navigation][data-breakpoint=lg]:has(input[type=checkbox]:checked) {
+    overflow: visible;
   }
   .pico nav[role=navigation][data-breakpoint=lg] label {
     display: block;
@@ -4064,6 +4076,10 @@ body:has(dialog[open]) {
 @media (max-width: 1200px) {
   .pico nav[role=navigation][data-breakpoint=xl] {
     flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .pico nav[role=navigation][data-breakpoint=xl]:has(input[type=checkbox]:checked) {
+    overflow: visible;
   }
   .pico nav[role=navigation][data-breakpoint=xl] label {
     display: block;
@@ -4101,6 +4117,10 @@ body:has(dialog[open]) {
 @media (max-width: 1450px) {
   .pico nav[role=navigation][data-breakpoint=xxl] {
     flex-wrap: wrap;
+    overflow: hidden;
+  }
+  .pico nav[role=navigation][data-breakpoint=xxl]:has(input[type=checkbox]:checked) {
+    overflow: visible;
   }
   .pico nav[role=navigation][data-breakpoint=xxl] label {
     display: block;

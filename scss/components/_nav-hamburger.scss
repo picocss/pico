@@ -12,7 +12,7 @@
     z-index: 1;
     align-items: center;
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
 
     &[data-position="start"] {
       /* remove the 'flex-direction' to move menu to the right */
@@ -41,41 +41,47 @@
     @media (max-width: $viewport) {
       #{$parent-selector} #{$databp} {
         flex-wrap: wrap;
-        & label {
+        overflow: hidden;
+
+        &:has(input[type="checkbox"]:checked) {
+          overflow: visible;
+        }
+
+        label {
           display: block;
         }
-        & > [role="list"] {
+        > [role="list"] {
           flex-direction: column;
           align-items: flex-start;
           width: 90vw;
           max-height: 0;
           margin: 0 auto;
-          background-color: var(--pico-muted-border-color); //muted-border-color);
-          box-shadow: var(--pico-box-shadow);
-          transition: max-height var(--pico-transition);
-          & li {
-            width: calc(100% - calc(var(--pico-nav-link-spacing-vertical) * 2));
-            margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5)
-              var(--pico-nav-link-spacing-vertical);
+          background-color: var(#{$css-var-prefix}muted-border-color); //muted-border-color);
+          box-shadow: var(#{$css-var-prefix}box-shadow);
+          transition: max-height var(#{$css-var-prefix}transition);
+          li {
+            width: calc(100% - calc(var(#{$css-var-prefix}nav-link-spacing-vertical) * 2));
+            margin: calc(var(#{$css-var-prefix}nav-link-spacing-vertical) * 0.5)
+              var(#{$css-var-prefix}nav-link-spacing-vertical);
             padding: 0;
           }
-          & a {
+          a {
             display: block;
             margin: 0;
             border-bottom: 1px solid transparent;
             border-radius: 0;
             transition:
-              border-color var(--pico-transition),
-              color var(--pico-transition);
+              border-color var(#{$css-var-prefix}transition),
+              color var(#{$css-var-prefix}transition);
           }
-          & a:hover {
-            border-bottom-color: var(--pico-underline);
+          a:hover {
+            border-bottom-color: var(#{$css-var-prefix}underline);
             text-decoration: none;
-            //background-color: var(--pico-primary-background) !important;
-            //color: var(--pico-primary-inverse);
+            //background-color: var(#{$css-var-prefix}primary-background) !important;
+            //color: var(#{$css-var-prefix}primary-inverse);
           }
         }
-        & input[type="checkbox"]:checked ~ [role="list"] {
+        input[type="checkbox"]:checked ~ [role="list"] {
           max-height: 100vh;
         }
       }

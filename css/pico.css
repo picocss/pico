@@ -236,18 +236,18 @@ nav details.dropdown summary:focus-visible {
   color-scheme: light;
   --pico-background-color: #fff;
   --pico-color: #373c44;
-  --pico-text-selection-color: rgba(246, 84, 126, 0.25);
+  --pico-text-selection-color: rgba(240, 96, 72, 0.25);
   --pico-muted-color: #646b79;
   --pico-muted-border-color: rgb(231, 234, 239.5);
-  --pico-primary: #c72259;
-  --pico-primary-background: #d92662;
+  --pico-primary: #c52f21;
+  --pico-primary-background: #c52f21;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(199, 34, 89, 0.5);
-  --pico-primary-hover: #9d1945;
-  --pico-primary-hover-background: #c72259;
+  --pico-primary-underline: rgba(197, 47, 33, 0.5);
+  --pico-primary-hover: #9b2318;
+  --pico-primary-hover-background: #af291d;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(246, 84, 126, 0.5);
+  --pico-primary-focus: rgba(240, 96, 72, 0.5);
   --pico-primary-inverse: #fff;
   --pico-secondary: #5d6b89;
   --pico-secondary-background: #525f7a;
@@ -391,18 +391,18 @@ nav details.dropdown summary:focus-visible {
     color-scheme: dark;
     --pico-background-color: rgb(19, 22.5, 30.5);
     --pico-color: #c2c7d0;
-    --pico-text-selection-color: rgba(247, 112, 142, 0.1875);
+    --pico-text-selection-color: rgba(241, 121, 97, 0.1875);
     --pico-muted-color: #7b8495;
     --pico-muted-border-color: #202632;
-    --pico-primary: #f7708e;
-    --pico-primary-background: #d92662;
+    --pico-primary: #f17961;
+    --pico-primary-background: #c52f21;
     --pico-primary-border: var(--pico-primary-background);
-    --pico-primary-underline: rgba(247, 112, 142, 0.5);
-    --pico-primary-hover: #f99eae;
-    --pico-primary-hover-background: #f42c6f;
+    --pico-primary-underline: rgba(241, 121, 97, 0.5);
+    --pico-primary-hover: #f5a390;
+    --pico-primary-hover-background: #d93526;
     --pico-primary-hover-border: var(--pico-primary-hover-background);
     --pico-primary-hover-underline: var(--pico-primary-hover);
-    --pico-primary-focus: rgba(247, 112, 142, 0.375);
+    --pico-primary-focus: rgba(241, 121, 97, 0.375);
     --pico-primary-inverse: #fff;
     --pico-secondary: #969eaf;
     --pico-secondary-background: #525f7a;
@@ -546,18 +546,18 @@ nav details.dropdown summary:focus-visible {
   color-scheme: dark;
   --pico-background-color: rgb(19, 22.5, 30.5);
   --pico-color: #c2c7d0;
-  --pico-text-selection-color: rgba(247, 112, 142, 0.1875);
+  --pico-text-selection-color: rgba(241, 121, 97, 0.1875);
   --pico-muted-color: #7b8495;
   --pico-muted-border-color: #202632;
-  --pico-primary: #f7708e;
-  --pico-primary-background: #d92662;
+  --pico-primary: #f17961;
+  --pico-primary-background: #c52f21;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(247, 112, 142, 0.5);
-  --pico-primary-hover: #f99eae;
-  --pico-primary-hover-background: #f42c6f;
+  --pico-primary-underline: rgba(241, 121, 97, 0.5);
+  --pico-primary-hover: #f5a390;
+  --pico-primary-hover-background: #d93526;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(247, 112, 142, 0.375);
+  --pico-primary-focus: rgba(241, 121, 97, 0.375);
   --pico-primary-inverse: #fff;
   --pico-secondary: #969eaf;
   --pico-secondary-background: #525f7a;
@@ -3930,7 +3930,7 @@ nav[role=navigation] {
   z-index: 1;
   align-items: center;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 nav[role=navigation][data-position=start] {
   /* remove the 'flex-direction' to move menu to the right */
@@ -3953,6 +3953,10 @@ nav[role=navigation] > label {
 @media (max-width: 510px) {
   nav[role=navigation] {
     flex-wrap: wrap;
+    overflow: hidden;
+  }
+  nav[role=navigation]:has(input[type=checkbox]:checked) {
+    overflow: visible;
   }
   nav[role=navigation] label {
     display: block;
@@ -3990,6 +3994,10 @@ nav[role=navigation] > label {
 @media (max-width: 700px) {
   nav[role=navigation][data-breakpoint=md] {
     flex-wrap: wrap;
+    overflow: hidden;
+  }
+  nav[role=navigation][data-breakpoint=md]:has(input[type=checkbox]:checked) {
+    overflow: visible;
   }
   nav[role=navigation][data-breakpoint=md] label {
     display: block;
@@ -4027,6 +4035,10 @@ nav[role=navigation] > label {
 @media (max-width: 950px) {
   nav[role=navigation][data-breakpoint=lg] {
     flex-wrap: wrap;
+    overflow: hidden;
+  }
+  nav[role=navigation][data-breakpoint=lg]:has(input[type=checkbox]:checked) {
+    overflow: visible;
   }
   nav[role=navigation][data-breakpoint=lg] label {
     display: block;
@@ -4064,6 +4076,10 @@ nav[role=navigation] > label {
 @media (max-width: 1200px) {
   nav[role=navigation][data-breakpoint=xl] {
     flex-wrap: wrap;
+    overflow: hidden;
+  }
+  nav[role=navigation][data-breakpoint=xl]:has(input[type=checkbox]:checked) {
+    overflow: visible;
   }
   nav[role=navigation][data-breakpoint=xl] label {
     display: block;
@@ -4101,6 +4117,10 @@ nav[role=navigation] > label {
 @media (max-width: 1450px) {
   nav[role=navigation][data-breakpoint=xxl] {
     flex-wrap: wrap;
+    overflow: hidden;
+  }
+  nav[role=navigation][data-breakpoint=xxl]:has(input[type=checkbox]:checked) {
+    overflow: visible;
   }
   nav[role=navigation][data-breakpoint=xxl] label {
     display: block;

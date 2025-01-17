@@ -2952,7 +2952,7 @@ nav[role=navigation] {
   z-index: 1;
   align-items: center;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 nav[role=navigation][data-position=start] {
   /* remove the 'flex-direction' to move menu to the right */
@@ -2975,6 +2975,10 @@ nav[role=navigation] > label {
 @media (max-width: 510px) {
   nav[role=navigation] {
     flex-wrap: wrap;
+    overflow: hidden;
+  }
+  nav[role=navigation]:has(input[type=checkbox]:checked) {
+    overflow: visible;
   }
   nav[role=navigation] label {
     display: block;
@@ -3012,6 +3016,10 @@ nav[role=navigation] > label {
 @media (max-width: 700px) {
   nav[role=navigation][data-breakpoint=md] {
     flex-wrap: wrap;
+    overflow: hidden;
+  }
+  nav[role=navigation][data-breakpoint=md]:has(input[type=checkbox]:checked) {
+    overflow: visible;
   }
   nav[role=navigation][data-breakpoint=md] label {
     display: block;
@@ -3049,6 +3057,10 @@ nav[role=navigation] > label {
 @media (max-width: 950px) {
   nav[role=navigation][data-breakpoint=lg] {
     flex-wrap: wrap;
+    overflow: hidden;
+  }
+  nav[role=navigation][data-breakpoint=lg]:has(input[type=checkbox]:checked) {
+    overflow: visible;
   }
   nav[role=navigation][data-breakpoint=lg] label {
     display: block;
@@ -3086,6 +3098,10 @@ nav[role=navigation] > label {
 @media (max-width: 1200px) {
   nav[role=navigation][data-breakpoint=xl] {
     flex-wrap: wrap;
+    overflow: hidden;
+  }
+  nav[role=navigation][data-breakpoint=xl]:has(input[type=checkbox]:checked) {
+    overflow: visible;
   }
   nav[role=navigation][data-breakpoint=xl] label {
     display: block;
@@ -3123,6 +3139,10 @@ nav[role=navigation] > label {
 @media (max-width: 1450px) {
   nav[role=navigation][data-breakpoint=xxl] {
     flex-wrap: wrap;
+    overflow: hidden;
+  }
+  nav[role=navigation][data-breakpoint=xxl]:has(input[type=checkbox]:checked) {
+    overflow: visible;
   }
   nav[role=navigation][data-breakpoint=xxl] label {
     display: block;
