@@ -194,6 +194,7 @@
 					<aside>
 						<nav>
 							<ul>
+								<li><a href="#tables">Tables</a></li>
 								<li><a href="#tabs">Tabs [role=tablist]</a></li>
 								<li><a href="#hamburger-menu">Hamburger Menu</a></li>
 								<li><a href="#tooltip">Tooltip</a></li>
@@ -241,6 +242,113 @@
 						me know if this feature would help you.</p>
 					<footer>If this fork has helped you, please <a href="https://github.com/Yohn/PicoCSS">Like</a> this fork!
 					</footer>
+				</article>
+				<hr>
+				<article id="tables">
+					<header>
+						<h2>Tables</h2>
+						<h6 class="fw-n">Striped rows require .striped class</h6>
+					</header>
+					<h6>
+						To have the striped rows, can be solved 2 ways.
+					</h6>
+					<p>
+						The easy way is to set <code>tbody tr:nth-child(odd of :not([hidden]))</code>
+						but unfortunetly, when we minify the CSS it remove the space between odd and of, making the striped lines fail.
+						Until we can find a way to fix the minification of the CSS, we will use a secondary feature that does require some more CSS code.
+					</p>
+					<p>
+						As a result of the minification we are resorting to use an answer that was found on StackOverflow
+						by <a href="https://stackoverflow.com/questions/3773890/zebra-striping-a-table-with-hidden-rows-using-css3/36892714#36892714">Shaggy</a>
+						that I converted into a sass mixin to create more or less nested hidden selectors.
+					</p>
+					<p>The default is currently set to <code>4</code> and can be changed with your settings, or when you include pico in your sass file.</p>
+					<pre class="language-css"><code>@use "pico" with (
+	$hidden-table-levels: 4
+);</code></pre>
+					<p>If you do not intend to have any hidden rows you can set the <code>$hidden-table-levels</code> to 0.</p>
+					<p>Styles for a <code>&lt;caption&gt;</code> element have been added for tables as well.</p>
+					<nav><ul><li>When rows are toggled, the hidden rows have * around the first column.</li></ul><ul><li><button type="button" onclick="document.querySelectorAll('.hidden-table-row').forEach(row => {row.hidden = !row.hidden;});">Toggle Hidden Rows</button></li></ul></nav>
+					<table class="striped" id="hidden-row-example">
+						<caption>
+							Solar System Planets
+						</caption>
+						<thead>
+							<tr>
+								<th scope="col">Planet</th>
+								<th scope="col">Diameter (km)</th>
+								<th scope="col">Dist.to Sun (AU)</th>
+								<th scope="col">Orbit (days)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">Mercury</th>
+								<td>4,880</td>
+								<td>0.39</td>
+								<td>88</td>
+							</tr>
+							<tr>
+								<th scope="row">Venus</th>
+								<td>12,104</td>
+								<td>0.72</td>
+								<td>225</td>
+							</tr>
+							<tr hidden class="hidden-table-row">
+								<td colspan="4" style="text-align: center;">*Hidden Row Found*</td>
+							</tr>
+							<tr>
+								<th scope="row">Earth</th>
+								<td>12,742</td>
+								<td>1.00</td>
+								<td>365</td>
+							</tr>
+							<tr>
+								<th scope="row">Mars</th>
+								<td>6,779</td>
+								<td>1.52</td>
+								<td>687</td>
+							</tr>
+							<tr>
+								<th scope="row">Jupiter</th>
+								<td>139,820</td>
+								<td>5.20</td>
+								<td>4,333</td>
+							</tr>
+							<tr>
+								<th scope="row">Saturn</th>
+								<td>116,460</td>
+								<td>9.58</td>
+								<td>10,759</td>
+							</tr>
+							<tr hidden class="hidden-table-row">
+								<th scope="row">* Uranus *</th>
+								<td>50,724</td>
+								<td>19.22</td>
+								<td>30,688</td>
+							</tr>
+							<tr>
+								<th scope="row">Neptune</th>
+								<td>49,244</td>
+								<td>30.05</td>
+								<td>60,182</td>
+							</tr>
+							<tr hidden class="hidden-table-row">
+								<th scope="row">* Pluto *</th>
+								<td>2,377</td>
+								<td>39.48</td>
+								<td>90,560</td>
+							</tr>
+						</tbody>
+						<tfoot>
+							<tr>
+								<th scope="row">Average</th>
+								<td>49,594</td>
+								<td>8.58</td>
+								<td>13,666</td>
+							</tr>
+						</tfoot>
+					</table>
 				</article>
 				<hr>
 				<article id="tabs">
@@ -794,7 +902,7 @@
 						<code>.row</code> has a max width set to the viewport of your <code>xl</code> viewport (1300px by default)
 					</p>
 					<code>.row-fluid</code> max width is 100%.
-					</p>
+					</>
 					<div class="row-fluid">
 						<div class="col-3">
 							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3</article>

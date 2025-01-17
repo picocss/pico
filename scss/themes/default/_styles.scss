@@ -285,6 +285,9 @@
 
   // Table
   @if map.get($modules, "content/table") {
+    table > caption {
+      #{$css-var-prefix}font-weight: 600;
+    }
     thead,
     tfoot {
       th,
