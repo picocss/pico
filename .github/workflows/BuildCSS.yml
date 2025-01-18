@@ -6,11 +6,6 @@ on:
       - main
     paths:
       - 'scss/**'
-  pull_request:
-    branches:
-      - main
-    paths:
-      - 'scss/**'
 
 jobs:
   build:
