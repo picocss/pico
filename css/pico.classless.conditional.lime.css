@@ -1046,12 +1046,8 @@ main {
   text-align: center;
 }
 
-.pico table.striped {
-  /* clean-css ignore:start */
-}
 .pico table.striped tbody tr:nth-child(odd of :not([hidden])) th,
 .pico table.striped tbody tr:nth-child(odd of :not([hidden])) td {
-  /* clean-css ignore:end */
   background-color: var(--pico-table-row-stripped-background-color);
 }
 

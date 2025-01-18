@@ -1772,12 +1772,8 @@ table > caption {
   text-align: center;
 }
 
-table.striped {
-  /* clean-css ignore:start */
-}
 table.striped tbody tr:nth-child(odd of :not([hidden])) th,
 table.striped tbody tr:nth-child(odd of :not([hidden])) td {
-  /* clean-css ignore:end */
   background-color: var(--pico-table-row-stripped-background-color);
 }
 
