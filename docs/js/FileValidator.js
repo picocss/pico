@@ -94,7 +94,10 @@ class FileValidator {
 		const removeButton = document.createElement("button");
 		removeButton.textContent = " ";
 		removeButton.className = "btn-file-rm";
-		removeButton.addEventListener("click", () => this.removeFile(file, listItem));
+		removeButton.addEventListener("click", (event) => {
+			event.stopPropagation(); // Prevent event from bubbling up to modal
+			this.removeFile(file, listItem);
+		});
 
 		listItem.append(removeButton);
 
