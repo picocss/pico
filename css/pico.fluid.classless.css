@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.2.6 (https://github.com/Yohn/PicoCSS)
+ * Pico CSS ✨ v2.2.7 (https://github.com/Yohn/PicoCSS)
  * Copyright 2019-2025 - Licensed under MIT
  */
 /**
@@ -203,19 +203,19 @@ input:not([type=submit],
   color-scheme: light;
   --pico-background-color: #fff;
   --pico-color: #373c44;
-  --pico-text-selection-color: rgba(0, 166, 110, 0.25);
+  --pico-text-selection-color: rgba(210, 122, 1, 0.25);
   --pico-muted-color: #646b79;
   --pico-muted-border-color: rgb(231, 234, 239.5);
-  --pico-primary: #007a50;
-  --pico-primary-background: #007a50;
+  --pico-primary: #9c5900;
+  --pico-primary-background: #ff9500;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(0, 122, 80, 0.5);
-  --pico-primary-hover: #005f3d;
-  --pico-primary-hover-background: #006d46;
+  --pico-primary-underline: rgba(156, 89, 0, 0.5);
+  --pico-primary-hover: #7a4400;
+  --pico-primary-hover-background: #e48500;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(0, 166, 110, 0.5);
-  --pico-primary-inverse: #fff;
+  --pico-primary-focus: rgba(210, 122, 1, 0.5);
+  --pico-primary-inverse: #000;
   --pico-secondary: #5d6b89;
   --pico-secondary-background: #525f7a;
   --pico-secondary-border: var(--pico-secondary-background);
@@ -279,7 +279,7 @@ input:not([type=submit],
   --pico-switch-background-color: #bfc7d9;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-switch-color: #fff;
-  --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
   --pico-range-border-color: #dfe3eb;
   --pico-range-active-border-color: #bfc7d9;
   --pico-range-thumb-border-color: var(--pico-background-color);
@@ -309,12 +309,12 @@ input:not([type=submit],
 [data-theme=light] details summary[role=button]::after,
 :root:not([data-theme=dark]) details summary[role=button]::after,
 :host(:not([data-theme=dark])) details summary[role=button]::after {
-  filter: brightness(100) invert(0);
+  filter: brightness(100) invert(1);
 }
 [data-theme=light] [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
 :root:not([data-theme=dark]) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
 :host(:not([data-theme=dark])) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
-  filter: brightness(100) invert(0);
+  filter: brightness(0) invert(1);
 }
 [data-theme=light] input:is([type=submit],
 [type=button],
@@ -343,19 +343,19 @@ input:not([type=submit],
     color-scheme: dark;
     --pico-background-color: rgb(19, 22.5, 30.5);
     --pico-color: #c2c7d0;
-    --pico-text-selection-color: rgba(0, 180, 120, 0.1875);
+    --pico-text-selection-color: rgba(228, 133, 0, 0.1875);
     --pico-muted-color: #7b8495;
     --pico-muted-border-color: #202632;
-    --pico-primary: #00b478;
-    --pico-primary-background: #007a50;
+    --pico-primary: #e48500;
+    --pico-primary-background: #ff9500;
     --pico-primary-border: var(--pico-primary-background);
-    --pico-primary-underline: rgba(0, 180, 120, 0.5);
-    --pico-primary-hover: #00cc88;
-    --pico-primary-hover-background: #00895a;
+    --pico-primary-underline: rgba(228, 133, 0, 0.5);
+    --pico-primary-hover: #ffa23a;
+    --pico-primary-hover-background: #ffa23a;
     --pico-primary-hover-border: var(--pico-primary-hover-background);
     --pico-primary-hover-underline: var(--pico-primary-hover);
-    --pico-primary-focus: rgba(0, 180, 120, 0.375);
-    --pico-primary-inverse: #fff;
+    --pico-primary-focus: rgba(228, 133, 0, 0.375);
+    --pico-primary-inverse: #000;
     --pico-secondary: #969eaf;
     --pico-secondary-background: #525f7a;
     --pico-secondary-border: var(--pico-secondary-background);
@@ -419,7 +419,7 @@ input:not([type=submit],
     --pico-switch-background-color: #333c4e;
     --pico-switch-checked-background-color: var(--pico-primary-background);
     --pico-switch-color: #fff;
-    --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
     --pico-range-border-color: #202632;
     --pico-range-active-border-color: #2a3140;
     --pico-range-thumb-border-color: var(--pico-background-color);
@@ -462,30 +462,30 @@ input:not([type=submit],
   }
   :root:not([data-theme]) details summary[role=button]::after,
   :host(:not([data-theme])) details summary[role=button]::after {
-    filter: brightness(100) invert(0);
+    filter: brightness(100) invert(1);
   }
   :root:not([data-theme]) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
   :host(:not([data-theme])) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
-    filter: brightness(100) invert(1);
+    filter: brightness(100) invert(0);
   }
 }
 [data-theme=dark] {
   color-scheme: dark;
   --pico-background-color: rgb(19, 22.5, 30.5);
   --pico-color: #c2c7d0;
-  --pico-text-selection-color: rgba(0, 180, 120, 0.1875);
+  --pico-text-selection-color: rgba(228, 133, 0, 0.1875);
   --pico-muted-color: #7b8495;
   --pico-muted-border-color: #202632;
-  --pico-primary: #00b478;
-  --pico-primary-background: #007a50;
+  --pico-primary: #e48500;
+  --pico-primary-background: #ff9500;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(0, 180, 120, 0.5);
-  --pico-primary-hover: #00cc88;
-  --pico-primary-hover-background: #00895a;
+  --pico-primary-underline: rgba(228, 133, 0, 0.5);
+  --pico-primary-hover: #ffa23a;
+  --pico-primary-hover-background: #ffa23a;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(0, 180, 120, 0.375);
-  --pico-primary-inverse: #fff;
+  --pico-primary-focus: rgba(228, 133, 0, 0.375);
+  --pico-primary-inverse: #000;
   --pico-secondary: #969eaf;
   --pico-secondary-background: #525f7a;
   --pico-secondary-border: var(--pico-secondary-background);
@@ -549,7 +549,7 @@ input:not([type=submit],
   --pico-switch-background-color: #333c4e;
   --pico-switch-checked-background-color: var(--pico-primary-background);
   --pico-switch-color: #fff;
-  --pico-switch-thumb-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  --pico-switch-thumb-box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
   --pico-range-border-color: #202632;
   --pico-range-active-border-color: #2a3140;
   --pico-range-thumb-border-color: var(--pico-background-color);
@@ -585,10 +585,10 @@ input:not([type=submit],
   --pico-form-element-focus-color: var(--pico-primary-focus);
 }
 [data-theme=dark] details summary[role=button]::after {
-  filter: brightness(100) invert(0);
+  filter: brightness(100) invert(1);
 }
 [data-theme=dark] [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
-  filter: brightness(100) invert(1);
+  filter: brightness(100) invert(0);
 }
 
 progress,
@@ -2113,8 +2113,8 @@ details[open] > summary::after {
 /**
  * Card (<article>, role="article")
  */
-article:not(:has(> form)),
-[role=article]:not(:has(> form)),
+article:not(:has(> form:first-child)),
+[role=article]:not(:has(> form:first-child)),
 article > form,
 [role=article] > form {
   margin-bottom: var(--pico-block-spacing-vertical);
@@ -2123,10 +2123,10 @@ article > form,
   background: var(--pico-card-background-color);
   box-shadow: var(--pico-card-box-shadow);
 }
-article:not(:has(> form)) > header,
-article:not(:has(> form)) > footer,
-[role=article]:not(:has(> form)) > header,
-[role=article]:not(:has(> form)) > footer,
+article:not(:has(> form:first-child)) > header,
+article:not(:has(> form:first-child)) > footer,
+[role=article]:not(:has(> form:first-child)) > header,
+[role=article]:not(:has(> form:first-child)) > footer,
 article > form > header,
 article > form > footer,
 [role=article] > form > header,
@@ -2136,8 +2136,8 @@ article > form > footer,
   padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
   background-color: var(--pico-card-sectioning-background-color);
 }
-article:not(:has(> form)) > header,
-[role=article]:not(:has(> form)) > header,
+article:not(:has(> form:first-child)) > header,
+[role=article]:not(:has(> form:first-child)) > header,
 article > form > header,
 [role=article] > form > header {
   margin-top: calc(var(--pico-block-spacing-vertical) * -1);
@@ -2146,18 +2146,18 @@ article > form > header,
   border-top-right-radius: var(--pico-border-radius);
   border-top-left-radius: var(--pico-border-radius);
 }
-article:not(:has(> form)) > header > h1,
-article:not(:has(> form)) > header > h2,
-article:not(:has(> form)) > header > h3,
-article:not(:has(> form)) > header > h4,
-article:not(:has(> form)) > header > h5,
-article:not(:has(> form)) > header > h6,
-[role=article]:not(:has(> form)) > header > h1,
-[role=article]:not(:has(> form)) > header > h2,
-[role=article]:not(:has(> form)) > header > h3,
-[role=article]:not(:has(> form)) > header > h4,
-[role=article]:not(:has(> form)) > header > h5,
-[role=article]:not(:has(> form)) > header > h6,
+article:not(:has(> form:first-child)) > header > h1,
+article:not(:has(> form:first-child)) > header > h2,
+article:not(:has(> form:first-child)) > header > h3,
+article:not(:has(> form:first-child)) > header > h4,
+article:not(:has(> form:first-child)) > header > h5,
+article:not(:has(> form:first-child)) > header > h6,
+[role=article]:not(:has(> form:first-child)) > header > h1,
+[role=article]:not(:has(> form:first-child)) > header > h2,
+[role=article]:not(:has(> form:first-child)) > header > h3,
+[role=article]:not(:has(> form:first-child)) > header > h4,
+[role=article]:not(:has(> form:first-child)) > header > h5,
+[role=article]:not(:has(> form:first-child)) > header > h6,
 article > form > header > h1,
 article > form > header > h2,
 article > form > header > h3,
@@ -2172,18 +2172,18 @@ article > form > header > h6,
 [role=article] > form > header > h6 {
   margin-bottom: 0;
 }
-article:not(:has(> form)) > header > hgroup > h1,
-article:not(:has(> form)) > header > hgroup > h2,
-article:not(:has(> form)) > header > hgroup > h3,
-article:not(:has(> form)) > header > hgroup > h4,
-article:not(:has(> form)) > header > hgroup > h5,
-article:not(:has(> form)) > header > hgroup > h6,
-[role=article]:not(:has(> form)) > header > hgroup > h1,
-[role=article]:not(:has(> form)) > header > hgroup > h2,
-[role=article]:not(:has(> form)) > header > hgroup > h3,
-[role=article]:not(:has(> form)) > header > hgroup > h4,
-[role=article]:not(:has(> form)) > header > hgroup > h5,
-[role=article]:not(:has(> form)) > header > hgroup > h6,
+article:not(:has(> form:first-child)) > header > hgroup > h1,
+article:not(:has(> form:first-child)) > header > hgroup > h2,
+article:not(:has(> form:first-child)) > header > hgroup > h3,
+article:not(:has(> form:first-child)) > header > hgroup > h4,
+article:not(:has(> form:first-child)) > header > hgroup > h5,
+article:not(:has(> form:first-child)) > header > hgroup > h6,
+[role=article]:not(:has(> form:first-child)) > header > hgroup > h1,
+[role=article]:not(:has(> form:first-child)) > header > hgroup > h2,
+[role=article]:not(:has(> form:first-child)) > header > hgroup > h3,
+[role=article]:not(:has(> form:first-child)) > header > hgroup > h4,
+[role=article]:not(:has(> form:first-child)) > header > hgroup > h5,
+[role=article]:not(:has(> form:first-child)) > header > hgroup > h6,
 article > form > header > hgroup > h1,
 article > form > header > hgroup > h2,
 article > form > header > hgroup > h3,
@@ -2198,8 +2198,8 @@ article > form > header > hgroup > h6,
 [role=article] > form > header > hgroup > h6 {
   margin-bottom: 0;
 }
-article:not(:has(> form)) > footer,
-[role=article]:not(:has(> form)) > footer,
+article:not(:has(> form:first-child)) > footer,
+[role=article]:not(:has(> form:first-child)) > footer,
 article > form > footer,
 [role=article] > form > footer {
   margin-top: var(--pico-block-spacing-vertical);
@@ -2208,22 +2208,22 @@ article > form > footer,
   border-bottom-right-radius: var(--pico-border-radius);
   border-bottom-left-radius: var(--pico-border-radius);
 }
-article:not(:has(> form)) > footer [type=submit],
-article:not(:has(> form)) > footer [type=reset],
-article:not(:has(> form)) > footer [type=button],
-article:not(:has(> form)) > footer [role=group],
-article:not(:has(> form)) > footer p,
-article:not(:has(> form)) > footer nav,
-article:not(:has(> form)) > footer ul,
-article:not(:has(> form)) > footer ol,
-[role=article]:not(:has(> form)) > footer [type=submit],
-[role=article]:not(:has(> form)) > footer [type=reset],
-[role=article]:not(:has(> form)) > footer [type=button],
-[role=article]:not(:has(> form)) > footer [role=group],
-[role=article]:not(:has(> form)) > footer p,
-[role=article]:not(:has(> form)) > footer nav,
-[role=article]:not(:has(> form)) > footer ul,
-[role=article]:not(:has(> form)) > footer ol,
+article:not(:has(> form:first-child)) > footer [type=submit],
+article:not(:has(> form:first-child)) > footer [type=reset],
+article:not(:has(> form:first-child)) > footer [type=button],
+article:not(:has(> form:first-child)) > footer [role=group],
+article:not(:has(> form:first-child)) > footer p,
+article:not(:has(> form:first-child)) > footer nav,
+article:not(:has(> form:first-child)) > footer ul,
+article:not(:has(> form:first-child)) > footer ol,
+[role=article]:not(:has(> form:first-child)) > footer [type=submit],
+[role=article]:not(:has(> form:first-child)) > footer [type=reset],
+[role=article]:not(:has(> form:first-child)) > footer [type=button],
+[role=article]:not(:has(> form:first-child)) > footer [role=group],
+[role=article]:not(:has(> form:first-child)) > footer p,
+[role=article]:not(:has(> form:first-child)) > footer nav,
+[role=article]:not(:has(> form:first-child)) > footer ul,
+[role=article]:not(:has(> form:first-child)) > footer ol,
 article > form > footer [type=submit],
 article > form > footer [type=reset],
 article > form > footer [type=button],
@@ -2243,22 +2243,22 @@ article > form > footer ol,
   margin-bottom: 0px;
   /* Also remove if next input after button is a hidden input */
 }
-article:not(:has(> form)) > footer [type=submit]:last-child,
-article:not(:has(> form)) > footer [type=reset]:last-child,
-article:not(:has(> form)) > footer [type=button]:last-child,
-article:not(:has(> form)) > footer [role=group]:last-child,
-article:not(:has(> form)) > footer p:last-child,
-article:not(:has(> form)) > footer nav:last-child,
-article:not(:has(> form)) > footer ul:last-child,
-article:not(:has(> form)) > footer ol:last-child,
-[role=article]:not(:has(> form)) > footer [type=submit]:last-child,
-[role=article]:not(:has(> form)) > footer [type=reset]:last-child,
-[role=article]:not(:has(> form)) > footer [type=button]:last-child,
-[role=article]:not(:has(> form)) > footer [role=group]:last-child,
-[role=article]:not(:has(> form)) > footer p:last-child,
-[role=article]:not(:has(> form)) > footer nav:last-child,
-[role=article]:not(:has(> form)) > footer ul:last-child,
-[role=article]:not(:has(> form)) > footer ol:last-child,
+article:not(:has(> form:first-child)) > footer [type=submit]:last-child,
+article:not(:has(> form:first-child)) > footer [type=reset]:last-child,
+article:not(:has(> form:first-child)) > footer [type=button]:last-child,
+article:not(:has(> form:first-child)) > footer [role=group]:last-child,
+article:not(:has(> form:first-child)) > footer p:last-child,
+article:not(:has(> form:first-child)) > footer nav:last-child,
+article:not(:has(> form:first-child)) > footer ul:last-child,
+article:not(:has(> form:first-child)) > footer ol:last-child,
+[role=article]:not(:has(> form:first-child)) > footer [type=submit]:last-child,
+[role=article]:not(:has(> form:first-child)) > footer [type=reset]:last-child,
+[role=article]:not(:has(> form:first-child)) > footer [type=button]:last-child,
+[role=article]:not(:has(> form:first-child)) > footer [role=group]:last-child,
+[role=article]:not(:has(> form:first-child)) > footer p:last-child,
+[role=article]:not(:has(> form:first-child)) > footer nav:last-child,
+[role=article]:not(:has(> form:first-child)) > footer ul:last-child,
+[role=article]:not(:has(> form:first-child)) > footer ol:last-child,
 article > form > footer [type=submit]:last-child,
 article > form > footer [type=reset]:last-child,
 article > form > footer [type=button]:last-child,
@@ -2277,22 +2277,22 @@ article > form > footer ol:last-child,
 [role=article] > form > footer ol:last-child {
   margin-bottom: 0px;
 }
-article:not(:has(> form)) > footer [type=submit]:has(+ [type=hidden]),
-article:not(:has(> form)) > footer [type=reset]:has(+ [type=hidden]),
-article:not(:has(> form)) > footer [type=button]:has(+ [type=hidden]),
-article:not(:has(> form)) > footer [role=group]:has(+ [type=hidden]),
-article:not(:has(> form)) > footer p:has(+ [type=hidden]),
-article:not(:has(> form)) > footer nav:has(+ [type=hidden]),
-article:not(:has(> form)) > footer ul:has(+ [type=hidden]),
-article:not(:has(> form)) > footer ol:has(+ [type=hidden]),
-[role=article]:not(:has(> form)) > footer [type=submit]:has(+ [type=hidden]),
-[role=article]:not(:has(> form)) > footer [type=reset]:has(+ [type=hidden]),
-[role=article]:not(:has(> form)) > footer [type=button]:has(+ [type=hidden]),
-[role=article]:not(:has(> form)) > footer [role=group]:has(+ [type=hidden]),
-[role=article]:not(:has(> form)) > footer p:has(+ [type=hidden]),
-[role=article]:not(:has(> form)) > footer nav:has(+ [type=hidden]),
-[role=article]:not(:has(> form)) > footer ul:has(+ [type=hidden]),
-[role=article]:not(:has(> form)) > footer ol:has(+ [type=hidden]),
+article:not(:has(> form:first-child)) > footer [type=submit]:has(+ [type=hidden]),
+article:not(:has(> form:first-child)) > footer [type=reset]:has(+ [type=hidden]),
+article:not(:has(> form:first-child)) > footer [type=button]:has(+ [type=hidden]),
+article:not(:has(> form:first-child)) > footer [role=group]:has(+ [type=hidden]),
+article:not(:has(> form:first-child)) > footer p:has(+ [type=hidden]),
+article:not(:has(> form:first-child)) > footer nav:has(+ [type=hidden]),
+article:not(:has(> form:first-child)) > footer ul:has(+ [type=hidden]),
+article:not(:has(> form:first-child)) > footer ol:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer [type=submit]:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer [type=reset]:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer [type=button]:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer [role=group]:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer p:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer nav:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer ul:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer ol:has(+ [type=hidden]),
 article > form > footer [type=submit]:has(+ [type=hidden]),
 article > form > footer [type=reset]:has(+ [type=hidden]),
 article > form > footer [type=button]:has(+ [type=hidden]),
@@ -2663,6 +2663,23 @@ a[aria-busy=true] {
   --pico-scrollbar-width: 0px;
 }
 
+dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article:not(:has(> form:first-child)),
+dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article > form:first-child {
+  width: 100%;
+}
+@media (min-width: 576px) {
+  dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article:not(:has(> form:first-child)),
+  dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article > form:first-child {
+    max-width: 510px;
+  }
+}
+@media (min-width: 768px) {
+  dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article:not(:has(> form:first-child)),
+  dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article > form:first-child {
+    max-width: 700px;
+  }
+}
+
 dialog {
   display: grid;
   z-index: 999;
@@ -2686,51 +2703,35 @@ dialog {
   transform: scale(1);
   transition: transform var(--pico-transition);
 }
-dialog > article:not(:has(> form)),
-dialog > article > form {
-  width: 100%;
-}
-@media (min-width: 576px) {
-  dialog > article:not(:has(> form)),
-  dialog > article > form {
-    max-width: 510px;
-  }
-}
-@media (min-width: 768px) {
-  dialog > article:not(:has(> form)),
-  dialog > article > form {
-    max-width: 700px;
-  }
-}
-dialog > article:not(:has(> form)) > header > *,
-dialog > article > form > header > * {
+dialog > article:not(:has(> form:first-child)) > header > *,
+dialog > article > form:first-child > header > * {
   margin-bottom: 0;
 }
-dialog > article:not(:has(> form)) > header :is(a, button)[rel=prev],
-dialog > article > form > header :is(a, button)[rel=prev] {
+dialog > article:not(:has(> form:first-child)) > header :is(a, button)[rel=prev],
+dialog > article > form:first-child > header :is(a, button)[rel=prev] {
   margin: 0;
   margin-left: var(--pico-spacing);
   padding: 0;
   float: right;
 }
-dialog > article:not(:has(> form)) > footer,
-dialog > article > form > footer {
+dialog > article:not(:has(> form:first-child)) > footer,
+dialog > article > form:first-child > footer {
   text-align: right;
 }
-dialog > article:not(:has(> form)) > footer button,
-dialog > article:not(:has(> form)) > footer [role=button],
-dialog > article > form > footer button,
-dialog > article > form > footer [role=button] {
+dialog > article:not(:has(> form:first-child)) > footer button,
+dialog > article:not(:has(> form:first-child)) > footer [role=button],
+dialog > article > form:first-child > footer button,
+dialog > article > form:first-child > footer [role=button] {
   margin-bottom: 0;
 }
-dialog > article:not(:has(> form)) > footer button:not(:first-of-type),
-dialog > article:not(:has(> form)) > footer [role=button]:not(:first-of-type),
-dialog > article > form > footer button:not(:first-of-type),
-dialog > article > form > footer [role=button]:not(:first-of-type) {
+dialog > article:not(:has(> form:first-child)) > footer button:not(:first-of-type),
+dialog > article:not(:has(> form:first-child)) > footer [role=button]:not(:first-of-type),
+dialog > article > form:first-child > footer button:not(:first-of-type),
+dialog > article > form:first-child > footer [role=button]:not(:first-of-type) {
   margin-left: calc(var(--pico-spacing) * 0.5);
 }
-dialog > article:not(:has(> form)) :is(a, button)[rel=prev],
-dialog > article > form :is(a, button)[rel=prev] {
+dialog > article:not(:has(> form:first-child)) :is(a, button)[rel=prev],
+dialog > article > form:first-child :is(a, button)[rel=prev] {
   display: block;
   width: 1rem;
   height: 1rem;
@@ -2746,8 +2747,8 @@ dialog > article > form :is(a, button)[rel=prev] {
   opacity: 0.5;
   transition: opacity var(--pico-transition);
 }
-dialog > article:not(:has(> form)) :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
-dialog > article > form :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+dialog > article:not(:has(> form:first-child)) :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+dialog > article > form:first-child :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   opacity: 1;
 }
 dialog:not([open]), dialog[open=false] {

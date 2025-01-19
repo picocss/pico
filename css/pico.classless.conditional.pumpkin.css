@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.2.6 (https://github.com/Yohn/PicoCSS)
+ * Pico CSS ✨ v2.2.7 (https://github.com/Yohn/PicoCSS)
  * Copyright 2019-2025 - Licensed under MIT
  */
 /**
@@ -2150,8 +2150,8 @@ main {
 /**
  * Card (<article>, role="article")
  */
-.pico article:not(:has(> form)),
-.pico [role=article]:not(:has(> form)),
+.pico article:not(:has(> form:first-child)),
+.pico [role=article]:not(:has(> form:first-child)),
 .pico article > form,
 .pico [role=article] > form {
   margin-bottom: var(--pico-block-spacing-vertical);
@@ -2160,10 +2160,10 @@ main {
   background: var(--pico-card-background-color);
   box-shadow: var(--pico-card-box-shadow);
 }
-.pico article:not(:has(> form)) > header,
-.pico article:not(:has(> form)) > footer,
-.pico [role=article]:not(:has(> form)) > header,
-.pico [role=article]:not(:has(> form)) > footer,
+.pico article:not(:has(> form:first-child)) > header,
+.pico article:not(:has(> form:first-child)) > footer,
+.pico [role=article]:not(:has(> form:first-child)) > header,
+.pico [role=article]:not(:has(> form:first-child)) > footer,
 .pico article > form > header,
 .pico article > form > footer,
 .pico [role=article] > form > header,
@@ -2173,8 +2173,8 @@ main {
   padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
   background-color: var(--pico-card-sectioning-background-color);
 }
-.pico article:not(:has(> form)) > header,
-.pico [role=article]:not(:has(> form)) > header,
+.pico article:not(:has(> form:first-child)) > header,
+.pico [role=article]:not(:has(> form:first-child)) > header,
 .pico article > form > header,
 .pico [role=article] > form > header {
   margin-top: calc(var(--pico-block-spacing-vertical) * -1);
@@ -2183,18 +2183,18 @@ main {
   border-top-right-radius: var(--pico-border-radius);
   border-top-left-radius: var(--pico-border-radius);
 }
-.pico article:not(:has(> form)) > header > h1,
-.pico article:not(:has(> form)) > header > h2,
-.pico article:not(:has(> form)) > header > h3,
-.pico article:not(:has(> form)) > header > h4,
-.pico article:not(:has(> form)) > header > h5,
-.pico article:not(:has(> form)) > header > h6,
-.pico [role=article]:not(:has(> form)) > header > h1,
-.pico [role=article]:not(:has(> form)) > header > h2,
-.pico [role=article]:not(:has(> form)) > header > h3,
-.pico [role=article]:not(:has(> form)) > header > h4,
-.pico [role=article]:not(:has(> form)) > header > h5,
-.pico [role=article]:not(:has(> form)) > header > h6,
+.pico article:not(:has(> form:first-child)) > header > h1,
+.pico article:not(:has(> form:first-child)) > header > h2,
+.pico article:not(:has(> form:first-child)) > header > h3,
+.pico article:not(:has(> form:first-child)) > header > h4,
+.pico article:not(:has(> form:first-child)) > header > h5,
+.pico article:not(:has(> form:first-child)) > header > h6,
+.pico [role=article]:not(:has(> form:first-child)) > header > h1,
+.pico [role=article]:not(:has(> form:first-child)) > header > h2,
+.pico [role=article]:not(:has(> form:first-child)) > header > h3,
+.pico [role=article]:not(:has(> form:first-child)) > header > h4,
+.pico [role=article]:not(:has(> form:first-child)) > header > h5,
+.pico [role=article]:not(:has(> form:first-child)) > header > h6,
 .pico article > form > header > h1,
 .pico article > form > header > h2,
 .pico article > form > header > h3,
@@ -2209,18 +2209,18 @@ main {
 .pico [role=article] > form > header > h6 {
   margin-bottom: 0;
 }
-.pico article:not(:has(> form)) > header > hgroup > h1,
-.pico article:not(:has(> form)) > header > hgroup > h2,
-.pico article:not(:has(> form)) > header > hgroup > h3,
-.pico article:not(:has(> form)) > header > hgroup > h4,
-.pico article:not(:has(> form)) > header > hgroup > h5,
-.pico article:not(:has(> form)) > header > hgroup > h6,
-.pico [role=article]:not(:has(> form)) > header > hgroup > h1,
-.pico [role=article]:not(:has(> form)) > header > hgroup > h2,
-.pico [role=article]:not(:has(> form)) > header > hgroup > h3,
-.pico [role=article]:not(:has(> form)) > header > hgroup > h4,
-.pico [role=article]:not(:has(> form)) > header > hgroup > h5,
-.pico [role=article]:not(:has(> form)) > header > hgroup > h6,
+.pico article:not(:has(> form:first-child)) > header > hgroup > h1,
+.pico article:not(:has(> form:first-child)) > header > hgroup > h2,
+.pico article:not(:has(> form:first-child)) > header > hgroup > h3,
+.pico article:not(:has(> form:first-child)) > header > hgroup > h4,
+.pico article:not(:has(> form:first-child)) > header > hgroup > h5,
+.pico article:not(:has(> form:first-child)) > header > hgroup > h6,
+.pico [role=article]:not(:has(> form:first-child)) > header > hgroup > h1,
+.pico [role=article]:not(:has(> form:first-child)) > header > hgroup > h2,
+.pico [role=article]:not(:has(> form:first-child)) > header > hgroup > h3,
+.pico [role=article]:not(:has(> form:first-child)) > header > hgroup > h4,
+.pico [role=article]:not(:has(> form:first-child)) > header > hgroup > h5,
+.pico [role=article]:not(:has(> form:first-child)) > header > hgroup > h6,
 .pico article > form > header > hgroup > h1,
 .pico article > form > header > hgroup > h2,
 .pico article > form > header > hgroup > h3,
@@ -2235,8 +2235,8 @@ main {
 .pico [role=article] > form > header > hgroup > h6 {
   margin-bottom: 0;
 }
-.pico article:not(:has(> form)) > footer,
-.pico [role=article]:not(:has(> form)) > footer,
+.pico article:not(:has(> form:first-child)) > footer,
+.pico [role=article]:not(:has(> form:first-child)) > footer,
 .pico article > form > footer,
 .pico [role=article] > form > footer {
   margin-top: var(--pico-block-spacing-vertical);
@@ -2245,22 +2245,22 @@ main {
   border-bottom-right-radius: var(--pico-border-radius);
   border-bottom-left-radius: var(--pico-border-radius);
 }
-.pico article:not(:has(> form)) > footer [type=submit],
-.pico article:not(:has(> form)) > footer [type=reset],
-.pico article:not(:has(> form)) > footer [type=button],
-.pico article:not(:has(> form)) > footer [role=group],
-.pico article:not(:has(> form)) > footer p,
-.pico article:not(:has(> form)) > footer nav,
-.pico article:not(:has(> form)) > footer ul,
-.pico article:not(:has(> form)) > footer ol,
-.pico [role=article]:not(:has(> form)) > footer [type=submit],
-.pico [role=article]:not(:has(> form)) > footer [type=reset],
-.pico [role=article]:not(:has(> form)) > footer [type=button],
-.pico [role=article]:not(:has(> form)) > footer [role=group],
-.pico [role=article]:not(:has(> form)) > footer p,
-.pico [role=article]:not(:has(> form)) > footer nav,
-.pico [role=article]:not(:has(> form)) > footer ul,
-.pico [role=article]:not(:has(> form)) > footer ol,
+.pico article:not(:has(> form:first-child)) > footer [type=submit],
+.pico article:not(:has(> form:first-child)) > footer [type=reset],
+.pico article:not(:has(> form:first-child)) > footer [type=button],
+.pico article:not(:has(> form:first-child)) > footer [role=group],
+.pico article:not(:has(> form:first-child)) > footer p,
+.pico article:not(:has(> form:first-child)) > footer nav,
+.pico article:not(:has(> form:first-child)) > footer ul,
+.pico article:not(:has(> form:first-child)) > footer ol,
+.pico [role=article]:not(:has(> form:first-child)) > footer [type=submit],
+.pico [role=article]:not(:has(> form:first-child)) > footer [type=reset],
+.pico [role=article]:not(:has(> form:first-child)) > footer [type=button],
+.pico [role=article]:not(:has(> form:first-child)) > footer [role=group],
+.pico [role=article]:not(:has(> form:first-child)) > footer p,
+.pico [role=article]:not(:has(> form:first-child)) > footer nav,
+.pico [role=article]:not(:has(> form:first-child)) > footer ul,
+.pico [role=article]:not(:has(> form:first-child)) > footer ol,
 .pico article > form > footer [type=submit],
 .pico article > form > footer [type=reset],
 .pico article > form > footer [type=button],
@@ -2280,22 +2280,22 @@ main {
   margin-bottom: 0px;
   /* Also remove if next input after button is a hidden input */
 }
-.pico article:not(:has(> form)) > footer [type=submit]:last-child,
-.pico article:not(:has(> form)) > footer [type=reset]:last-child,
-.pico article:not(:has(> form)) > footer [type=button]:last-child,
-.pico article:not(:has(> form)) > footer [role=group]:last-child,
-.pico article:not(:has(> form)) > footer p:last-child,
-.pico article:not(:has(> form)) > footer nav:last-child,
-.pico article:not(:has(> form)) > footer ul:last-child,
-.pico article:not(:has(> form)) > footer ol:last-child,
-.pico [role=article]:not(:has(> form)) > footer [type=submit]:last-child,
-.pico [role=article]:not(:has(> form)) > footer [type=reset]:last-child,
-.pico [role=article]:not(:has(> form)) > footer [type=button]:last-child,
-.pico [role=article]:not(:has(> form)) > footer [role=group]:last-child,
-.pico [role=article]:not(:has(> form)) > footer p:last-child,
-.pico [role=article]:not(:has(> form)) > footer nav:last-child,
-.pico [role=article]:not(:has(> form)) > footer ul:last-child,
-.pico [role=article]:not(:has(> form)) > footer ol:last-child,
+.pico article:not(:has(> form:first-child)) > footer [type=submit]:last-child,
+.pico article:not(:has(> form:first-child)) > footer [type=reset]:last-child,
+.pico article:not(:has(> form:first-child)) > footer [type=button]:last-child,
+.pico article:not(:has(> form:first-child)) > footer [role=group]:last-child,
+.pico article:not(:has(> form:first-child)) > footer p:last-child,
+.pico article:not(:has(> form:first-child)) > footer nav:last-child,
+.pico article:not(:has(> form:first-child)) > footer ul:last-child,
+.pico article:not(:has(> form:first-child)) > footer ol:last-child,
+.pico [role=article]:not(:has(> form:first-child)) > footer [type=submit]:last-child,
+.pico [role=article]:not(:has(> form:first-child)) > footer [type=reset]:last-child,
+.pico [role=article]:not(:has(> form:first-child)) > footer [type=button]:last-child,
+.pico [role=article]:not(:has(> form:first-child)) > footer [role=group]:last-child,
+.pico [role=article]:not(:has(> form:first-child)) > footer p:last-child,
+.pico [role=article]:not(:has(> form:first-child)) > footer nav:last-child,
+.pico [role=article]:not(:has(> form:first-child)) > footer ul:last-child,
+.pico [role=article]:not(:has(> form:first-child)) > footer ol:last-child,
 .pico article > form > footer [type=submit]:last-child,
 .pico article > form > footer [type=reset]:last-child,
 .pico article > form > footer [type=button]:last-child,
@@ -2314,22 +2314,22 @@ main {
 .pico [role=article] > form > footer ol:last-child {
   margin-bottom: 0px;
 }
-.pico article:not(:has(> form)) > footer [type=submit]:has(+ [type=hidden]),
-.pico article:not(:has(> form)) > footer [type=reset]:has(+ [type=hidden]),
-.pico article:not(:has(> form)) > footer [type=button]:has(+ [type=hidden]),
-.pico article:not(:has(> form)) > footer [role=group]:has(+ [type=hidden]),
-.pico article:not(:has(> form)) > footer p:has(+ [type=hidden]),
-.pico article:not(:has(> form)) > footer nav:has(+ [type=hidden]),
-.pico article:not(:has(> form)) > footer ul:has(+ [type=hidden]),
-.pico article:not(:has(> form)) > footer ol:has(+ [type=hidden]),
-.pico [role=article]:not(:has(> form)) > footer [type=submit]:has(+ [type=hidden]),
-.pico [role=article]:not(:has(> form)) > footer [type=reset]:has(+ [type=hidden]),
-.pico [role=article]:not(:has(> form)) > footer [type=button]:has(+ [type=hidden]),
-.pico [role=article]:not(:has(> form)) > footer [role=group]:has(+ [type=hidden]),
-.pico [role=article]:not(:has(> form)) > footer p:has(+ [type=hidden]),
-.pico [role=article]:not(:has(> form)) > footer nav:has(+ [type=hidden]),
-.pico [role=article]:not(:has(> form)) > footer ul:has(+ [type=hidden]),
-.pico [role=article]:not(:has(> form)) > footer ol:has(+ [type=hidden]),
+.pico article:not(:has(> form:first-child)) > footer [type=submit]:has(+ [type=hidden]),
+.pico article:not(:has(> form:first-child)) > footer [type=reset]:has(+ [type=hidden]),
+.pico article:not(:has(> form:first-child)) > footer [type=button]:has(+ [type=hidden]),
+.pico article:not(:has(> form:first-child)) > footer [role=group]:has(+ [type=hidden]),
+.pico article:not(:has(> form:first-child)) > footer p:has(+ [type=hidden]),
+.pico article:not(:has(> form:first-child)) > footer nav:has(+ [type=hidden]),
+.pico article:not(:has(> form:first-child)) > footer ul:has(+ [type=hidden]),
+.pico article:not(:has(> form:first-child)) > footer ol:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form:first-child)) > footer [type=submit]:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form:first-child)) > footer [type=reset]:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form:first-child)) > footer [type=button]:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form:first-child)) > footer [role=group]:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form:first-child)) > footer p:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form:first-child)) > footer nav:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form:first-child)) > footer ul:has(+ [type=hidden]),
+.pico [role=article]:not(:has(> form:first-child)) > footer ol:has(+ [type=hidden]),
 .pico article > form > footer [type=submit]:has(+ [type=hidden]),
 .pico article > form > footer [type=reset]:has(+ [type=hidden]),
 .pico article > form > footer [type=button]:has(+ [type=hidden]),
@@ -2700,6 +2700,23 @@ main {
   --pico-scrollbar-width: 0px;
 }
 
+.pico dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article:not(:has(> form:first-child)),
+.pico dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article > form:first-child {
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .pico dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article:not(:has(> form:first-child)),
+  .pico dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article > form:first-child {
+    max-width: 510px;
+  }
+}
+@media (min-width: 768px) {
+  .pico dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article:not(:has(> form:first-child)),
+  .pico dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article > form:first-child {
+    max-width: 700px;
+  }
+}
+
 .pico dialog {
   display: grid;
   z-index: 999;
@@ -2723,51 +2740,35 @@ main {
   transform: scale(1);
   transition: transform var(--pico-transition);
 }
-.pico dialog > article:not(:has(> form)),
-.pico dialog > article > form {
-  width: 100%;
-}
-@media (min-width: 576px) {
-  .pico dialog > article:not(:has(> form)),
-  .pico dialog > article > form {
-    max-width: 510px;
-  }
-}
-@media (min-width: 768px) {
-  .pico dialog > article:not(:has(> form)),
-  .pico dialog > article > form {
-    max-width: 700px;
-  }
-}
-.pico dialog > article:not(:has(> form)) > header > *,
-.pico dialog > article > form > header > * {
+.pico dialog > article:not(:has(> form:first-child)) > header > *,
+.pico dialog > article > form:first-child > header > * {
   margin-bottom: 0;
 }
-.pico dialog > article:not(:has(> form)) > header :is(a, button)[rel=prev],
-.pico dialog > article > form > header :is(a, button)[rel=prev] {
+.pico dialog > article:not(:has(> form:first-child)) > header :is(a, button)[rel=prev],
+.pico dialog > article > form:first-child > header :is(a, button)[rel=prev] {
   margin: 0;
   margin-left: var(--pico-spacing);
   padding: 0;
   float: right;
 }
-.pico dialog > article:not(:has(> form)) > footer,
-.pico dialog > article > form > footer {
+.pico dialog > article:not(:has(> form:first-child)) > footer,
+.pico dialog > article > form:first-child > footer {
   text-align: right;
 }
-.pico dialog > article:not(:has(> form)) > footer button,
-.pico dialog > article:not(:has(> form)) > footer [role=button],
-.pico dialog > article > form > footer button,
-.pico dialog > article > form > footer [role=button] {
+.pico dialog > article:not(:has(> form:first-child)) > footer button,
+.pico dialog > article:not(:has(> form:first-child)) > footer [role=button],
+.pico dialog > article > form:first-child > footer button,
+.pico dialog > article > form:first-child > footer [role=button] {
   margin-bottom: 0;
 }
-.pico dialog > article:not(:has(> form)) > footer button:not(:first-of-type),
-.pico dialog > article:not(:has(> form)) > footer [role=button]:not(:first-of-type),
-.pico dialog > article > form > footer button:not(:first-of-type),
-.pico dialog > article > form > footer [role=button]:not(:first-of-type) {
+.pico dialog > article:not(:has(> form:first-child)) > footer button:not(:first-of-type),
+.pico dialog > article:not(:has(> form:first-child)) > footer [role=button]:not(:first-of-type),
+.pico dialog > article > form:first-child > footer button:not(:first-of-type),
+.pico dialog > article > form:first-child > footer [role=button]:not(:first-of-type) {
   margin-left: calc(var(--pico-spacing) * 0.5);
 }
-.pico dialog > article:not(:has(> form)) :is(a, button)[rel=prev],
-.pico dialog > article > form :is(a, button)[rel=prev] {
+.pico dialog > article:not(:has(> form:first-child)) :is(a, button)[rel=prev],
+.pico dialog > article > form:first-child :is(a, button)[rel=prev] {
   display: block;
   width: 1rem;
   height: 1rem;
@@ -2783,8 +2784,8 @@ main {
   opacity: 0.5;
   transition: opacity var(--pico-transition);
 }
-.pico dialog > article:not(:has(> form)) :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
-.pico dialog > article > form :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+.pico dialog > article:not(:has(> form:first-child)) :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+.pico dialog > article > form:first-child :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   opacity: 1;
 }
 .pico dialog:not([open]), .pico dialog[open=false] {
