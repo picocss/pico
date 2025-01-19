@@ -6,8 +6,8 @@
    * Card (<article>, role="article")
    */
 
-  #{$parent-selector} article:not(:has(> form)),
-  #{$parent-selector} [role="article"]:not(:has(> form)),
+  #{$parent-selector} article:not(:has(> form:first-child)),
+  #{$parent-selector} [role="article"]:not(:has(> form:first-child)),
   #{$parent-selector} article > form,
   #{$parent-selector} [role="article"] > form {
     margin-bottom: var(#{$css-var-prefix}block-spacing-vertical);

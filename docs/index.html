@@ -224,8 +224,7 @@
 			<main class="col-12 col-md-9 col-lg-10">
 				<article>
 					<header>
-						<h2>Yohns PicoCSS Fork v2.2.6</h2>
-						<p class="mb-0">Not in npm yet, but will be soon.</p>
+						<h2>Yohns PicoCSS Fork v2.2.7</h2>
 					</header>
 					<p>I've merged some open pull requests from the <a href="https://github.com/picocss/pico">original Pico</a>
 						repository, and then added a few more enhancements that I either needed for a project (timeline) or wanted
@@ -1080,6 +1079,8 @@
 					<header>
 						<h2>Modal</h2>
 					</header>
+					<p><code>&lt;form&gt;</code> tags can be between the <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code>, or wrap around the <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> tags within  the modal.</p>
+					<hr>
 					<div class="grid">
 						<button class="contrast" data-target="modal-example" onclick="toggleModal(event)">
 							Launch Demo Modal
@@ -1093,7 +1094,7 @@
 
 					<header>
 						<h2>Modal Sizes</h2>
-						<h6>Having different modal sizes does require a class.</h6>
+						<h6 class="fw-n">Having different modal sizes does require a class.</h6>
 					</header>
 					<p>The main thing will be to add one of the following classes to the <code>&lt;dialog&gt;</code> tag:</p>
 					<ul>
@@ -1116,7 +1117,7 @@
 				<article id="popover">
 					<header>
 						<h2>Popovers</h2>
-						<p>Popovers will replace the notifications below.</p>
+						<h6 class="fw-n">Popovers will replace the notifications below.</h6>
 					</header>
 
 					<button class="action" popovertarget="popover-example1">Backdrop Close</button>
@@ -1639,7 +1640,7 @@
 			function changeTheme(newTheme) {
 				const linkElement = document.getElementById('theme-color-ss');
 				if (linkElement) {
-					linkElement.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Yohn/PicoCSS@2.2.6/css/pico.' + newTheme + '.min.css');
+					linkElement.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Yohn/PicoCSS@2.2.7/css/pico.' + newTheme + '.min.css');
 				}
 			}
 
