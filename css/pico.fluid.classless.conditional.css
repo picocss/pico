@@ -203,18 +203,18 @@ input:not([type=submit],
   color-scheme: light;
   --pico-background-color: #fff;
   --pico-color: #373c44;
-  --pico-text-selection-color: rgba(2, 154, 232, 0.25);
+  --pico-text-selection-color: rgba(116, 139, 248, 0.25);
   --pico-muted-color: #646b79;
   --pico-muted-border-color: rgb(231, 234, 239.5);
-  --pico-primary: #0172ad;
-  --pico-primary-background: #0172ad;
+  --pico-primary: #2060df;
+  --pico-primary-background: #2060df;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(1, 114, 173, 0.5);
-  --pico-primary-hover: #015887;
-  --pico-primary-hover-background: #02659a;
+  --pico-primary-underline: rgba(32, 96, 223, 0.5);
+  --pico-primary-hover: #184eb8;
+  --pico-primary-hover-background: #1d59d0;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(2, 154, 232, 0.5);
+  --pico-primary-focus: rgba(116, 139, 248, 0.5);
   --pico-primary-inverse: #fff;
   --pico-secondary: #5d6b89;
   --pico-secondary-background: #525f7a;
@@ -343,18 +343,18 @@ input:not([type=submit],
     color-scheme: dark;
     --pico-background-color: rgb(19, 22.5, 30.5);
     --pico-color: #c2c7d0;
-    --pico-text-selection-color: rgba(1, 170, 255, 0.1875);
+    --pico-text-selection-color: rgba(137, 153, 249, 0.1875);
     --pico-muted-color: #7b8495;
     --pico-muted-border-color: #202632;
-    --pico-primary: #01aaff;
-    --pico-primary-background: #0172ad;
+    --pico-primary: #8999f9;
+    --pico-primary-background: #2060df;
     --pico-primary-border: var(--pico-primary-background);
-    --pico-primary-underline: rgba(1, 170, 255, 0.5);
-    --pico-primary-hover: #79c0ff;
-    --pico-primary-hover-background: #017fc0;
+    --pico-primary-underline: rgba(137, 153, 249, 0.5);
+    --pico-primary-hover: #aeb5fb;
+    --pico-primary-hover-background: #3c71f7;
     --pico-primary-hover-border: var(--pico-primary-hover-background);
     --pico-primary-hover-underline: var(--pico-primary-hover);
-    --pico-primary-focus: rgba(1, 170, 255, 0.375);
+    --pico-primary-focus: rgba(137, 153, 249, 0.375);
     --pico-primary-inverse: #fff;
     --pico-secondary: #969eaf;
     --pico-secondary-background: #525f7a;
@@ -473,18 +473,18 @@ input:not([type=submit],
   color-scheme: dark;
   --pico-background-color: rgb(19, 22.5, 30.5);
   --pico-color: #c2c7d0;
-  --pico-text-selection-color: rgba(1, 170, 255, 0.1875);
+  --pico-text-selection-color: rgba(137, 153, 249, 0.1875);
   --pico-muted-color: #7b8495;
   --pico-muted-border-color: #202632;
-  --pico-primary: #01aaff;
-  --pico-primary-background: #0172ad;
+  --pico-primary: #8999f9;
+  --pico-primary-background: #2060df;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(1, 170, 255, 0.5);
-  --pico-primary-hover: #79c0ff;
-  --pico-primary-hover-background: #017fc0;
+  --pico-primary-underline: rgba(137, 153, 249, 0.5);
+  --pico-primary-hover: #aeb5fb;
+  --pico-primary-hover-background: #3c71f7;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(1, 170, 255, 0.375);
+  --pico-primary-focus: rgba(137, 153, 249, 0.375);
   --pico-primary-inverse: #fff;
   --pico-secondary: #969eaf;
   --pico-secondary-background: #525f7a;
@@ -2016,6 +2016,19 @@ main {
   font-size: var(--pico-font-size);
   line-height: 1.15;
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.pico section[role=form] > textarea + label {
+  top: 1rem;
+  transform: translateY(0);
+}
+.pico section[role=form] > textarea:not(:-moz-placeholder-shown) + label {
+  top: 0;
+  transform: translateY(-50%) scale(0.8);
+}
+.pico section[role=form] > textarea:not(:placeholder-shown) + label,
+.pico section[role=form] > textarea:focus + label {
+  top: 0;
+  transform: translateY(-50%) scale(0.8);
 }
 .pico section[role=form] > input:user-invalid:not(:-moz-placeholder-shown) + label, .pico section[role=form] > textarea:user-invalid:not(:-moz-placeholder-shown) + label {
   color: var(--pico-form-element-invalid-border-color);

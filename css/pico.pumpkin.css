@@ -2780,6 +2780,19 @@ section[role=form] > select:has(option:checked:not([disabled])) + label {
   line-height: 1.15;
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+section[role=form] > textarea + label {
+  top: 1rem;
+  transform: translateY(0);
+}
+section[role=form] > textarea:not(:-moz-placeholder-shown) + label {
+  top: 0;
+  transform: translateY(-50%) scale(0.8);
+}
+section[role=form] > textarea:not(:placeholder-shown) + label,
+section[role=form] > textarea:focus + label {
+  top: 0;
+  transform: translateY(-50%) scale(0.8);
+}
 section[role=form] > input:user-invalid:not(:-moz-placeholder-shown) + label, section[role=form] > textarea:user-invalid:not(:-moz-placeholder-shown) + label {
   color: var(--pico-form-element-invalid-border-color);
 }
