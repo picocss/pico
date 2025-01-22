@@ -23,9 +23,9 @@
     > textarea + label,
     > select + label {
       position: absolute;
-      top: 35%;
+      top: 0.55rem;
       left: 0.8rem;
-      transform: translateY(-50%);
+      transform: translateY(0%);
       background: var(#{$css-var-prefix}form-element-background-color);
       color: var(#{$css-var-prefix}form-element-placeholder-color);
       cursor: text;
@@ -38,24 +38,14 @@
     > textarea:focus + label,
     > select:focus + label,
     > select:has(option:checked:not([disabled])) + label {
-      top: -5%;
+      top: 0;
       padding: calc(var(#{$css-var-prefix}spacing) * 0.15)
         calc(var(#{$css-var-prefix}spacing) * 0.5);
-      transform: translateY(-55%) scale(0.8);
+      transform: translateY(-50%) scale(0.8);
       color: var(#{$css-var-prefix}form-element-active-border-color);
       font-size: var(#{$css-var-prefix}font-size);
       line-height: 1.15;
       transition: all $transition-fast;
-    }
-
-    > textarea + label {
-      top: 1rem;
-      transform: translateY(0);
-    }
-    > textarea:not(:placeholder-shown) + label,
-    > textarea:focus + label {
-      top: 0;
-      transform: translateY(-50%) scale(0.8);
     }
 
     @if map.get($modules, "forms/validation") {

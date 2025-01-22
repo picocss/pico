@@ -1,6 +1,6 @@
 {
   "name": "@yohns/picocss",
-  "version": "2.2.7",
+  "version": "2.2.8",
   "description": "Minimal CSS Framework for semantic HTML, updated with enhanced capabilities.",
   "authors": [
     {
@@ -37,10 +37,10 @@
   },
   "scripts": {
     "✨": "run-s build",
-    "build": "run-s start lint \"build:*\" done",
-    "build-dev": "run-s start lint \"build-dev:*\" done",
+    "build": "run-s start lint \"build:*\" done --silent",
+    "build-dev": "run-s start lint \"build-dev:*\" done --silent",
     "dev": "nodemon -q --watch scss/ --ext scss --exec \"run-s build-dev\"",
-    "lint": "run-s \"lint:*\"",
+    "lint": "run-s \"lint:*\" --silent",
     "lint:prettier": "prettier --write --log-level error \"scss/**/*.scss\"",
     "lint:sort-scss": "postcss --config scss ./scss/**/*.scss --replace",
     "build-dev:css": "sass --no-source-map --style expanded --no-error-css scss/:css/",
@@ -72,7 +72,7 @@
     "postcss-cli": "^11.0.0",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.4.2",
-    "sass": "^1.82.0"
+    "sass": "^1.83.4"
   },
   "engines": {
     "node": ">=20"
