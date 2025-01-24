@@ -19,6 +19,7 @@ I'm not sure if the original [Pico CSS](https://github.com/picocss/pico) reposit
 You can see the new features I, and many others have created pull requests for by going to [Yohns Pico CSS](https://yohn.github.io/PicoCSS). This page just has the demos of most of the features I have merged, or added to the project.
 
 ## Extras Built on top of PicoCSS
+ - [Alert, Confirm, and Prompt Dialogs](https://github.com/Yohn/PicoCSS-Datatables/blob/main/src/CustomDialog.js) (Will work on that more later, but it works good!)
  - [YoSelect](https://github.com/Yohn/YoSelect) Searchable `<select>` options, with tagging, image support, and a lot more!
  - [PicoCSS-WYSIWYG](https://github.com/Yohn/PicoCSS-WYSIWYG) Simple editor wih card, accordion, image, links, lists, headers and more
  - [PicoCSS-Datatables](https://github.com/Yohn/PicoCSS-Datatables) Searchable, sortable, editable, filterable table data helper.
