@@ -265,6 +265,13 @@
     // Override height
     margin-bottom: 0;
 
+    &.hide-arrow {
+      > summary::after {
+        display: none;
+        content: none;
+      }
+    }
+
     > summary {
       &:not([role]) {
         // Override height

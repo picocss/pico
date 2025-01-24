@@ -24,7 +24,7 @@
 	<link rel="manifest" href="manifest.json">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
 	<!-- Pico.css -->
-	<link rel="stylesheet" href="pico.min.css" id="theme-color-ss">
+	<link rel="stylesheet" href="pico.css" id="theme-color-ss">
 	<link rel="stylesheet" href="pico.colors.min.css">
 	<!--
 			Yohn's Simple CSS Class helpers
@@ -216,7 +216,7 @@
 			<main class="col-12 col-md-9 col-lg-10">
 				<article>
 					<header>
-						<h2>Yohns PicoCSS Fork v2.2.8</h2>
+						<h2>Yohns PicoCSS Fork v2.2.9</h2>
 					</header>
 					<p>I've merged some open pull requests from the <a href="https://github.com/picocss/pico">original Pico</a>
 						repository, and then added a few more enhancements that I either needed for a project (timeline) or wanted
@@ -230,6 +230,10 @@
 							href="https://github.com/Yohn/PicoCSS/tree/main/docs/js">Vanilla JavaScript Files</a> to work the same as
 						the preview here. I may get a build script going to compile the javascript plugins / components later. Let
 						me know if this feature would help you.</p>
+					<hr>
+					<h3>&lt;details class="hide-arrow"&gt;</h3>
+					<p>With classes enabled, adding the <code>hide-arrow</code> class to your <code>&lt;details class="hide-arrow"&gt;</code> will hide the arrow on the <code>&lt;summary&gt;</code> tag within the accordion and dropdown components.</p>
+
 					<footer>If this fork has helped you, please <a href="https://github.com/Yohn/PicoCSS">Like</a> this fork!
 					</footer>
 				</article>
@@ -531,25 +535,25 @@
 						</ul>
 						<input type="checkbox" id="menu-btn" />
 						<!-- role="button" -->
-						<label for="menu-btn" style="font-size: calc(var(--pico-font-size) * 1.3);" aria-label="Menu"
+						<label for="menu-btn" style="font-size: calc(var(--pico-font-size) * 2);" aria-label="Menu"
 							aria-controls="nav-example"> &equiv; </label>
 						<ol id="nav-example" role="list">
-							<li role="listitem"><a href="#">Home</a></li>
+							<li role="listitem"><a href="javascript:void(0);">Home</a></li>
 							<li role="listitem">
-								<details class="dropdown">
-									<summary class="secondary">About</summary>
+								<details class="dropdown hide-arrow">
+									<summary class="secondary" role="button">About</summary>
 									<ul>
-										<li><a class="load-page" href="#">What’s new in v2?</a></li>
-										<li><a class="load-page" href="#">Mission</a></li>
-										<li><a class="load-page" href="#">Usage scenarios</a></li>
-										<li><a class="load-page" href="#">Brand</a></li>
-										<li><a class="load-page" href="#">Built With</a></li>
+										<li><a href="javascript:void(0);">What’s new in v2?</a></li>
+										<li><a href="javascript:void(0);">Mission</a></li>
+										<li><a href="javascript:void(0);">Usage scenarios</a></li>
+										<li><a href="javascript:void(0);">Brand</a></li>
+										<li><a href="javascript:void(0);">Built With</a></li>
 									</ul>
 								</details>
 							</li>
-							<li role="listitem"><a href="#">Services</a></li>
-							<li role="listitem"><a href="#">Login</a></li>
-							<li role="listitem"><a href="#">Sign Up</a></li>
+							<li role="listitem"><a href="javascript:void(0);">Services</a></li>
+							<li role="listitem"><a href="javascript:void(0);">Login</a></li>
+							<li role="listitem"><a href="javascript:void(0);">Sign Up</a></li>
 						</ol>
 					</nav>
 					<!-- End Responsive Nav 1 -->
@@ -563,28 +567,58 @@
 							<li><strong>Like Us on GitHub!</strong></li>
 						</ul>
 						<input type="checkbox" id="menu-btn2">
-						<label for="menu-btn2" style="font-size: calc(var(--pico-font-size) * 1.3);" aria-label="Menu"
+						<label for="menu-btn2" style="font-size: calc(var(--pico-font-size) * 2);" aria-label="Menu"
 							aria-controls="nav-example2"> &equiv; </label>
 						<ol id="nav-example2" role="list">
-							<li role="listitem"><a href="#">Home</a></li>
+							<li role="listitem"><a href="javascript:void(0);">Home</a></li>
 							<li role="listitem">
-								<details class="dropdown">
-									<summary class="secondary">About</summary>
+								<details class="dropdown hide-arrow">
+									<summary>About 2</summary>
 									<ul>
-										<li><a class="load-page" href="#">What’s new in v2?</a></li>
-										<li><a class="load-page" href="#">Mission</a></li>
-										<li><a class="load-page" href="#">Usage scenarios</a></li>
-										<li><a class="load-page" href="#">Brand</a></li>
-										<li><a class="load-page" href="#">Built With</a></li>
+										<li><a href="javascript:void(0);">What’s new in v2?</a></li>
+										<li><a href="javascript:void(0);">Mission</a></li>
+										<li><a href="javascript:void(0);">Usage scenarios</a></li>
+										<li><a href="javascript:void(0);">Brand</a></li>
+										<li><a href="javascript:void(0);">Built With</a></li>
 									</ul>
 								</details>
 							</li>
-							<li role="listitem"><a href="#">Services</a></li>
-							<li role="listitem"><a href="#">Login</a></li>
-							<li role="listitem"><a href="#">Sign Up</a></li>
+							<li role="listitem"><a href="javascript:void(0);">Services</a></li>
+							<li role="listitem"><a href="javascript:void(0);">Login</a></li>
+							<li role="listitem"><a href="javascript:void(0);">Sign Up</a></li>
 						</ol>
 					</nav>
 					<!-- End Responsive Nav 2 -->
+					<hr>
+					<!-- Start Responsive Nav 3 -->
+					<nav class="container-fluid" role="navigation" data-position="end" data-breakpoint="lg">
+						<input type="checkbox" id="hamburger3">
+						<label for="hamburger3" style="font-size: calc(var(--pico-font-size) * 2);" aria-label="Menu" aria-controls="top-nav">&equiv;</label>
+						<ul id="top-nav" role="list">
+							<li role="listitem"><a href="javascript:void(0);">Pico CSS</a></li>
+							<li role="listitem"><a href="javascript:void(0);">Example</a></li>
+							<li role="listitem">
+								<details class="dropdown hide-arrow">
+									<summary>Submenu</summary>
+									<ul>
+										<li><a href="javascript:void(0);">Another Link</a></li>
+										<li><a href="javascript:void(0);">And Again</a></li>
+									</ul>
+								</details>
+							</li>
+							<li role="listitem"><a href="javascript:void(0);">Final In List</a></li>
+						</ul>
+						<ul></ul> <!-- put empty <ul> or <ol> element here to move the next <ul> or <ol> to the right -->
+						<ul>
+							<li>
+								<form role="search" action="javascript:void(0);" method="get">
+									<input name="search" type="search" value="" placeholder="Find this Article">
+									<input type="hidden" name="id" value="12">
+									<input type="submit" value="Find">
+								</form>
+							</li>
+						</ul>
+					</nav>
 					<hr>
 					<details>
 						<summary>Show the code:</summary>
@@ -1596,7 +1630,7 @@
 			function changeTheme(newTheme) {
 				const linkElement = document.getElementById('theme-color-ss');
 				if (linkElement) {
-					linkElement.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Yohn/PicoCSS@2.2.8/css/pico.' + newTheme + '.min.css');
+					linkElement.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Yohn/PicoCSS@2.2.9/css/pico.' + newTheme + '.min.css');
 				}
 			}
 

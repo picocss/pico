@@ -6,6 +6,8 @@
    * Group ([role="group"], [role="search"])
    */
 
+  /* V3 Remove, modifing the <legend> placement is disabled
+   * in chrome.*/
   #{$parent-selector} fieldset[role="group"] > legend {
     float: left;
   }
