@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.2.8 (https://github.com/Yohn/PicoCSS)
+ * Pico CSS ✨ v2.2.9 (https://github.com/Yohn/PicoCSS)
  * Copyright 2019-2025 - Licensed under MIT
  */
 /**
@@ -2804,7 +2804,13 @@ details {
   display: block;
   margin-bottom: var(--pico-spacing);
 }
+details.hide-arrow > summary::after {
+  display: none;
+  content: none;
+}
 details summary {
+  position: relative;
+  padding-inline-end: var(--pico-block-spacing-horizontal);
   line-height: 1rem;
   list-style-type: none;
   cursor: pointer;
@@ -2823,10 +2829,12 @@ details summary::-moz-list-bullet {
 }
 details summary::after {
   display: block;
+  position: absolute;
+  top: calc(var(--pico-block-spacing-vertical) * 0.5);
+  right: calc(var(--pico-block-spacing-horizontal) * 0.5);
   width: 1rem;
   height: 1rem;
   margin-inline-start: calc(var(--pico-spacing, 1rem) * 0.5);
-  float: right;
   transform: rotate(-90deg);
   background-image: var(--pico-icon-chevron);
   background-position: right center;
@@ -3228,6 +3236,10 @@ nav details.dropdown {
   margin: calc(var(--pico-nav-element-spacing-vertical) * -1) 0;
   margin-bottom: 0;
 }
+nav details.dropdown.hide-arrow > summary::after {
+  display: none;
+  content: none;
+}
 nav details.dropdown > summary:not([role]) {
   height: calc(1rem * var(--pico-line-height) + var(--pico-nav-link-spacing-vertical) * 2);
   padding: calc(var(--pico-nav-link-spacing-vertical) - var(--pico-border-width) * 2) var(--pico-nav-link-spacing-horizontal);
@@ -3243,6 +3255,8 @@ label > details.dropdown {
 /**
  * Group ([role="group"], [role="search"])
  */
+/* V3 Remove, modifing the <legend> placement is disabled
+ * in chrome.*/
 fieldset[role=group] > legend {
   float: left;
 }
@@ -3892,7 +3906,6 @@ aside li [role=button] {
  */
 nav[role=navigation] {
   z-index: 1;
-  align-items: center;
   width: 100%;
   overflow: visible;
 }
@@ -3913,6 +3926,10 @@ nav[role=navigation] > label {
   -moz-user-select: none;
   user-select: none;
 }
+nav[role=navigation] > ul > li > [role=search],
+nav[role=navigation] > ol > li > [role=search] {
+  margin-block-end: 0;
+}
 
 @media (max-width: 510px) {
   nav[role=navigation] {
@@ -3926,6 +3943,7 @@ nav[role=navigation] > label {
     display: block;
   }
   nav[role=navigation] > [role=list] {
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     width: 90vw;
@@ -3933,18 +3951,25 @@ nav[role=navigation] > label {
     margin: 0 auto;
     background-color: var(--pico-muted-border-color);
     box-shadow: var(--pico-box-shadow);
-    transition: max-height var(--pico-transition);
+    opacity: 0;
+    transition: max-height var(--pico-transition), opacity var(--pico-transition);
   }
   nav[role=navigation] > [role=list] li {
     width: calc(100% - var(--pico-nav-link-spacing-vertical) * 2);
     margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5) var(--pico-nav-link-spacing-vertical);
     padding: 0;
   }
+  nav[role=navigation] > [role=list] li > details.dropdown {
+    width: 100%;
+  }
+  nav[role=navigation] > [role=list] li > form[role=search] {
+    margin-block-end: 0;
+  }
   nav[role=navigation] > [role=list] a {
     display: block;
     margin: 0;
-    border-bottom: 1px solid transparent;
     border-radius: 0;
+    border-block-end: 1px solid transparent;
     transition: border-color var(--pico-transition), color var(--pico-transition);
   }
   nav[role=navigation] > [role=list] a:hover {
@@ -3952,7 +3977,9 @@ nav[role=navigation] > label {
     text-decoration: none;
   }
   nav[role=navigation] input[type=checkbox]:checked ~ [role=list] {
+    display: block;
     max-height: 100vh;
+    opacity: 1;
   }
 }
 @media (max-width: 700px) {
@@ -3967,6 +3994,7 @@ nav[role=navigation] > label {
     display: block;
   }
   nav[role=navigation][data-breakpoint=md] > [role=list] {
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     width: 90vw;
@@ -3974,18 +4002,25 @@ nav[role=navigation] > label {
     margin: 0 auto;
     background-color: var(--pico-muted-border-color);
     box-shadow: var(--pico-box-shadow);
-    transition: max-height var(--pico-transition);
+    opacity: 0;
+    transition: max-height var(--pico-transition), opacity var(--pico-transition);
   }
   nav[role=navigation][data-breakpoint=md] > [role=list] li {
     width: calc(100% - var(--pico-nav-link-spacing-vertical) * 2);
     margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5) var(--pico-nav-link-spacing-vertical);
     padding: 0;
   }
+  nav[role=navigation][data-breakpoint=md] > [role=list] li > details.dropdown {
+    width: 100%;
+  }
+  nav[role=navigation][data-breakpoint=md] > [role=list] li > form[role=search] {
+    margin-block-end: 0;
+  }
   nav[role=navigation][data-breakpoint=md] > [role=list] a {
     display: block;
     margin: 0;
-    border-bottom: 1px solid transparent;
     border-radius: 0;
+    border-block-end: 1px solid transparent;
     transition: border-color var(--pico-transition), color var(--pico-transition);
   }
   nav[role=navigation][data-breakpoint=md] > [role=list] a:hover {
@@ -3993,7 +4028,9 @@ nav[role=navigation] > label {
     text-decoration: none;
   }
   nav[role=navigation][data-breakpoint=md] input[type=checkbox]:checked ~ [role=list] {
+    display: block;
     max-height: 100vh;
+    opacity: 1;
   }
 }
 @media (max-width: 950px) {
@@ -4008,6 +4045,7 @@ nav[role=navigation] > label {
     display: block;
   }
   nav[role=navigation][data-breakpoint=lg] > [role=list] {
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     width: 90vw;
@@ -4015,18 +4053,25 @@ nav[role=navigation] > label {
     margin: 0 auto;
     background-color: var(--pico-muted-border-color);
     box-shadow: var(--pico-box-shadow);
-    transition: max-height var(--pico-transition);
+    opacity: 0;
+    transition: max-height var(--pico-transition), opacity var(--pico-transition);
   }
   nav[role=navigation][data-breakpoint=lg] > [role=list] li {
     width: calc(100% - var(--pico-nav-link-spacing-vertical) * 2);
     margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5) var(--pico-nav-link-spacing-vertical);
     padding: 0;
   }
+  nav[role=navigation][data-breakpoint=lg] > [role=list] li > details.dropdown {
+    width: 100%;
+  }
+  nav[role=navigation][data-breakpoint=lg] > [role=list] li > form[role=search] {
+    margin-block-end: 0;
+  }
   nav[role=navigation][data-breakpoint=lg] > [role=list] a {
     display: block;
     margin: 0;
-    border-bottom: 1px solid transparent;
     border-radius: 0;
+    border-block-end: 1px solid transparent;
     transition: border-color var(--pico-transition), color var(--pico-transition);
   }
   nav[role=navigation][data-breakpoint=lg] > [role=list] a:hover {
@@ -4034,7 +4079,9 @@ nav[role=navigation] > label {
     text-decoration: none;
   }
   nav[role=navigation][data-breakpoint=lg] input[type=checkbox]:checked ~ [role=list] {
+    display: block;
     max-height: 100vh;
+    opacity: 1;
   }
 }
 @media (max-width: 1200px) {
@@ -4049,6 +4096,7 @@ nav[role=navigation] > label {
     display: block;
   }
   nav[role=navigation][data-breakpoint=xl] > [role=list] {
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     width: 90vw;
@@ -4056,18 +4104,25 @@ nav[role=navigation] > label {
     margin: 0 auto;
     background-color: var(--pico-muted-border-color);
     box-shadow: var(--pico-box-shadow);
-    transition: max-height var(--pico-transition);
+    opacity: 0;
+    transition: max-height var(--pico-transition), opacity var(--pico-transition);
   }
   nav[role=navigation][data-breakpoint=xl] > [role=list] li {
     width: calc(100% - var(--pico-nav-link-spacing-vertical) * 2);
     margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5) var(--pico-nav-link-spacing-vertical);
     padding: 0;
   }
+  nav[role=navigation][data-breakpoint=xl] > [role=list] li > details.dropdown {
+    width: 100%;
+  }
+  nav[role=navigation][data-breakpoint=xl] > [role=list] li > form[role=search] {
+    margin-block-end: 0;
+  }
   nav[role=navigation][data-breakpoint=xl] > [role=list] a {
     display: block;
     margin: 0;
-    border-bottom: 1px solid transparent;
     border-radius: 0;
+    border-block-end: 1px solid transparent;
     transition: border-color var(--pico-transition), color var(--pico-transition);
   }
   nav[role=navigation][data-breakpoint=xl] > [role=list] a:hover {
@@ -4075,7 +4130,9 @@ nav[role=navigation] > label {
     text-decoration: none;
   }
   nav[role=navigation][data-breakpoint=xl] input[type=checkbox]:checked ~ [role=list] {
+    display: block;
     max-height: 100vh;
+    opacity: 1;
   }
 }
 @media (max-width: 1450px) {
@@ -4090,6 +4147,7 @@ nav[role=navigation] > label {
     display: block;
   }
   nav[role=navigation][data-breakpoint=xxl] > [role=list] {
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     width: 90vw;
@@ -4097,18 +4155,25 @@ nav[role=navigation] > label {
     margin: 0 auto;
     background-color: var(--pico-muted-border-color);
     box-shadow: var(--pico-box-shadow);
-    transition: max-height var(--pico-transition);
+    opacity: 0;
+    transition: max-height var(--pico-transition), opacity var(--pico-transition);
   }
   nav[role=navigation][data-breakpoint=xxl] > [role=list] li {
     width: calc(100% - var(--pico-nav-link-spacing-vertical) * 2);
     margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5) var(--pico-nav-link-spacing-vertical);
     padding: 0;
   }
+  nav[role=navigation][data-breakpoint=xxl] > [role=list] li > details.dropdown {
+    width: 100%;
+  }
+  nav[role=navigation][data-breakpoint=xxl] > [role=list] li > form[role=search] {
+    margin-block-end: 0;
+  }
   nav[role=navigation][data-breakpoint=xxl] > [role=list] a {
     display: block;
     margin: 0;
-    border-bottom: 1px solid transparent;
     border-radius: 0;
+    border-block-end: 1px solid transparent;
     transition: border-color var(--pico-transition), color var(--pico-transition);
   }
   nav[role=navigation][data-breakpoint=xxl] > [role=list] a:hover {
@@ -4116,7 +4181,9 @@ nav[role=navigation] > label {
     text-decoration: none;
   }
   nav[role=navigation][data-breakpoint=xxl] input[type=checkbox]:checked ~ [role=list] {
+    display: block;
     max-height: 100vh;
+    opacity: 1;
   }
 }
 /**

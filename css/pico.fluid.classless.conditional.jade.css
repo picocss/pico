@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.2.8 (https://github.com/Yohn/PicoCSS)
+ * Pico CSS ✨ v2.2.9 (https://github.com/Yohn/PicoCSS)
  * Copyright 2019-2025 - Licensed under MIT
  */
 /**
@@ -2042,6 +2042,8 @@ main {
   margin-bottom: var(--pico-spacing);
 }
 .pico details summary {
+  position: relative;
+  padding-inline-end: var(--pico-block-spacing-horizontal);
   line-height: 1rem;
   list-style-type: none;
   cursor: pointer;
@@ -2060,10 +2062,12 @@ main {
 }
 .pico details summary::after {
   display: block;
+  position: absolute;
+  top: calc(var(--pico-block-spacing-vertical) * 0.5);
+  right: calc(var(--pico-block-spacing-horizontal) * 0.5);
   width: 1rem;
   height: 1rem;
   margin-inline-start: calc(var(--pico-spacing, 1rem) * 0.5);
-  float: right;
   transform: rotate(-90deg);
   background-image: var(--pico-icon-chevron);
   background-position: right center;
@@ -2317,6 +2321,8 @@ main {
 /**
  * Group ([role="group"], [role="search"])
  */
+/* V3 Remove, modifing the <legend> placement is disabled
+ * in chrome.*/
 .pico fieldset[role=group] > legend {
   float: left;
 }
@@ -2877,7 +2883,6 @@ body:has(dialog[open]) {
  */
 .pico nav[role=navigation] {
   z-index: 1;
-  align-items: center;
   width: 100%;
   overflow: visible;
 }
@@ -2898,6 +2903,10 @@ body:has(dialog[open]) {
   -moz-user-select: none;
   user-select: none;
 }
+.pico nav[role=navigation] > ul > li > [role=search],
+.pico nav[role=navigation] > ol > li > [role=search] {
+  margin-block-end: 0;
+}
 
 @media (max-width: 510px) {
   .pico nav[role=navigation] {
@@ -2911,6 +2920,7 @@ body:has(dialog[open]) {
     display: block;
   }
   .pico nav[role=navigation] > [role=list] {
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     width: 90vw;
@@ -2918,18 +2928,25 @@ body:has(dialog[open]) {
     margin: 0 auto;
     background-color: var(--pico-muted-border-color);
     box-shadow: var(--pico-box-shadow);
-    transition: max-height var(--pico-transition);
+    opacity: 0;
+    transition: max-height var(--pico-transition), opacity var(--pico-transition);
   }
   .pico nav[role=navigation] > [role=list] li {
     width: calc(100% - var(--pico-nav-link-spacing-vertical) * 2);
     margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5) var(--pico-nav-link-spacing-vertical);
     padding: 0;
   }
+  .pico nav[role=navigation] > [role=list] li > details.dropdown {
+    width: 100%;
+  }
+  .pico nav[role=navigation] > [role=list] li > form[role=search] {
+    margin-block-end: 0;
+  }
   .pico nav[role=navigation] > [role=list] a {
     display: block;
     margin: 0;
-    border-bottom: 1px solid transparent;
     border-radius: 0;
+    border-block-end: 1px solid transparent;
     transition: border-color var(--pico-transition), color var(--pico-transition);
   }
   .pico nav[role=navigation] > [role=list] a:hover {
@@ -2937,7 +2954,9 @@ body:has(dialog[open]) {
     text-decoration: none;
   }
   .pico nav[role=navigation] input[type=checkbox]:checked ~ [role=list] {
+    display: block;
     max-height: 100vh;
+    opacity: 1;
   }
 }
 @media (max-width: 700px) {
@@ -2952,6 +2971,7 @@ body:has(dialog[open]) {
     display: block;
   }
   .pico nav[role=navigation][data-breakpoint=md] > [role=list] {
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     width: 90vw;
@@ -2959,18 +2979,25 @@ body:has(dialog[open]) {
     margin: 0 auto;
     background-color: var(--pico-muted-border-color);
     box-shadow: var(--pico-box-shadow);
-    transition: max-height var(--pico-transition);
+    opacity: 0;
+    transition: max-height var(--pico-transition), opacity var(--pico-transition);
   }
   .pico nav[role=navigation][data-breakpoint=md] > [role=list] li {
     width: calc(100% - var(--pico-nav-link-spacing-vertical) * 2);
     margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5) var(--pico-nav-link-spacing-vertical);
     padding: 0;
   }
+  .pico nav[role=navigation][data-breakpoint=md] > [role=list] li > details.dropdown {
+    width: 100%;
+  }
+  .pico nav[role=navigation][data-breakpoint=md] > [role=list] li > form[role=search] {
+    margin-block-end: 0;
+  }
   .pico nav[role=navigation][data-breakpoint=md] > [role=list] a {
     display: block;
     margin: 0;
-    border-bottom: 1px solid transparent;
     border-radius: 0;
+    border-block-end: 1px solid transparent;
     transition: border-color var(--pico-transition), color var(--pico-transition);
   }
   .pico nav[role=navigation][data-breakpoint=md] > [role=list] a:hover {
@@ -2978,7 +3005,9 @@ body:has(dialog[open]) {
     text-decoration: none;
   }
   .pico nav[role=navigation][data-breakpoint=md] input[type=checkbox]:checked ~ [role=list] {
+    display: block;
     max-height: 100vh;
+    opacity: 1;
   }
 }
 @media (max-width: 950px) {
@@ -2993,6 +3022,7 @@ body:has(dialog[open]) {
     display: block;
   }
   .pico nav[role=navigation][data-breakpoint=lg] > [role=list] {
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     width: 90vw;
@@ -3000,18 +3030,25 @@ body:has(dialog[open]) {
     margin: 0 auto;
     background-color: var(--pico-muted-border-color);
     box-shadow: var(--pico-box-shadow);
-    transition: max-height var(--pico-transition);
+    opacity: 0;
+    transition: max-height var(--pico-transition), opacity var(--pico-transition);
   }
   .pico nav[role=navigation][data-breakpoint=lg] > [role=list] li {
     width: calc(100% - var(--pico-nav-link-spacing-vertical) * 2);
     margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5) var(--pico-nav-link-spacing-vertical);
     padding: 0;
   }
+  .pico nav[role=navigation][data-breakpoint=lg] > [role=list] li > details.dropdown {
+    width: 100%;
+  }
+  .pico nav[role=navigation][data-breakpoint=lg] > [role=list] li > form[role=search] {
+    margin-block-end: 0;
+  }
   .pico nav[role=navigation][data-breakpoint=lg] > [role=list] a {
     display: block;
     margin: 0;
-    border-bottom: 1px solid transparent;
     border-radius: 0;
+    border-block-end: 1px solid transparent;
     transition: border-color var(--pico-transition), color var(--pico-transition);
   }
   .pico nav[role=navigation][data-breakpoint=lg] > [role=list] a:hover {
@@ -3019,7 +3056,9 @@ body:has(dialog[open]) {
     text-decoration: none;
   }
   .pico nav[role=navigation][data-breakpoint=lg] input[type=checkbox]:checked ~ [role=list] {
+    display: block;
     max-height: 100vh;
+    opacity: 1;
   }
 }
 @media (max-width: 1200px) {
@@ -3034,6 +3073,7 @@ body:has(dialog[open]) {
     display: block;
   }
   .pico nav[role=navigation][data-breakpoint=xl] > [role=list] {
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     width: 90vw;
@@ -3041,18 +3081,25 @@ body:has(dialog[open]) {
     margin: 0 auto;
     background-color: var(--pico-muted-border-color);
     box-shadow: var(--pico-box-shadow);
-    transition: max-height var(--pico-transition);
+    opacity: 0;
+    transition: max-height var(--pico-transition), opacity var(--pico-transition);
   }
   .pico nav[role=navigation][data-breakpoint=xl] > [role=list] li {
     width: calc(100% - var(--pico-nav-link-spacing-vertical) * 2);
     margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5) var(--pico-nav-link-spacing-vertical);
     padding: 0;
   }
+  .pico nav[role=navigation][data-breakpoint=xl] > [role=list] li > details.dropdown {
+    width: 100%;
+  }
+  .pico nav[role=navigation][data-breakpoint=xl] > [role=list] li > form[role=search] {
+    margin-block-end: 0;
+  }
   .pico nav[role=navigation][data-breakpoint=xl] > [role=list] a {
     display: block;
     margin: 0;
-    border-bottom: 1px solid transparent;
     border-radius: 0;
+    border-block-end: 1px solid transparent;
     transition: border-color var(--pico-transition), color var(--pico-transition);
   }
   .pico nav[role=navigation][data-breakpoint=xl] > [role=list] a:hover {
@@ -3060,7 +3107,9 @@ body:has(dialog[open]) {
     text-decoration: none;
   }
   .pico nav[role=navigation][data-breakpoint=xl] input[type=checkbox]:checked ~ [role=list] {
+    display: block;
     max-height: 100vh;
+    opacity: 1;
   }
 }
 @media (max-width: 1450px) {
@@ -3075,6 +3124,7 @@ body:has(dialog[open]) {
     display: block;
   }
   .pico nav[role=navigation][data-breakpoint=xxl] > [role=list] {
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     width: 90vw;
@@ -3082,18 +3132,25 @@ body:has(dialog[open]) {
     margin: 0 auto;
     background-color: var(--pico-muted-border-color);
     box-shadow: var(--pico-box-shadow);
-    transition: max-height var(--pico-transition);
+    opacity: 0;
+    transition: max-height var(--pico-transition), opacity var(--pico-transition);
   }
   .pico nav[role=navigation][data-breakpoint=xxl] > [role=list] li {
     width: calc(100% - var(--pico-nav-link-spacing-vertical) * 2);
     margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5) var(--pico-nav-link-spacing-vertical);
     padding: 0;
   }
+  .pico nav[role=navigation][data-breakpoint=xxl] > [role=list] li > details.dropdown {
+    width: 100%;
+  }
+  .pico nav[role=navigation][data-breakpoint=xxl] > [role=list] li > form[role=search] {
+    margin-block-end: 0;
+  }
   .pico nav[role=navigation][data-breakpoint=xxl] > [role=list] a {
     display: block;
     margin: 0;
-    border-bottom: 1px solid transparent;
     border-radius: 0;
+    border-block-end: 1px solid transparent;
     transition: border-color var(--pico-transition), color var(--pico-transition);
   }
   .pico nav[role=navigation][data-breakpoint=xxl] > [role=list] a:hover {
@@ -3101,7 +3158,9 @@ body:has(dialog[open]) {
     text-decoration: none;
   }
   .pico nav[role=navigation][data-breakpoint=xxl] input[type=checkbox]:checked ~ [role=list] {
+    display: block;
     max-height: 100vh;
+    opacity: 1;
   }
 }
 /**
