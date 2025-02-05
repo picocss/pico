@@ -11,8 +11,6 @@
     width: 100%;
     margin-right: auto;
     margin-left: auto;
-    padding-right: var(#{$css-var-prefix}spacing);
-    padding-left: var(#{$css-var-prefix}spacing);
   }
 
   #{$parent-selector} .container {
@@ -25,6 +23,9 @@
             $first-breakpoint: false;
             padding-right: 0;
             padding-left: 0;
+          } @else {
+            padding-right: var(#{$css-var-prefix}spacing);
+            padding-left: var(#{$css-var-prefix}spacing);
           }
         }
       }
