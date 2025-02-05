@@ -236,18 +236,18 @@ nav details.dropdown summary:focus-visible {
   color-scheme: light;
   --pico-background-color: #fff;
   --pico-color: #373c44;
-  --pico-text-selection-color: rgba(167, 128, 212, 0.25);
+  --pico-text-selection-color: rgba(116, 139, 248, 0.25);
   --pico-muted-color: #646b79;
   --pico-muted-border-color: rgb(231, 234, 239.5);
-  --pico-primary: #8352c5;
-  --pico-primary-background: #7540bf;
+  --pico-primary: #2060df;
+  --pico-primary-background: #2060df;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(131, 82, 197, 0.5);
-  --pico-primary-hover: #6935b3;
-  --pico-primary-hover-background: #6935b3;
+  --pico-primary-underline: rgba(32, 96, 223, 0.5);
+  --pico-primary-hover: #184eb8;
+  --pico-primary-hover-background: #1d59d0;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(167, 128, 212, 0.5);
+  --pico-primary-focus: rgba(116, 139, 248, 0.5);
   --pico-primary-inverse: #fff;
   --pico-secondary: #5d6b89;
   --pico-secondary-background: #525f7a;
@@ -391,18 +391,18 @@ nav details.dropdown summary:focus-visible {
     color-scheme: dark;
     --pico-background-color: rgb(19, 22.5, 30.5);
     --pico-color: #c2c7d0;
-    --pico-text-selection-color: rgba(178, 144, 217, 0.1875);
+    --pico-text-selection-color: rgba(137, 153, 249, 0.1875);
     --pico-muted-color: #7b8495;
     --pico-muted-border-color: #202632;
-    --pico-primary: #b290d9;
-    --pico-primary-background: #7540bf;
+    --pico-primary: #8999f9;
+    --pico-primary-background: #2060df;
     --pico-primary-border: var(--pico-primary-background);
-    --pico-primary-underline: rgba(178, 144, 217, 0.5);
-    --pico-primary-hover: #c9afe4;
-    --pico-primary-hover-background: #8352c5;
+    --pico-primary-underline: rgba(137, 153, 249, 0.5);
+    --pico-primary-hover: #aeb5fb;
+    --pico-primary-hover-background: #3c71f7;
     --pico-primary-hover-border: var(--pico-primary-hover-background);
     --pico-primary-hover-underline: var(--pico-primary-hover);
-    --pico-primary-focus: rgba(178, 144, 217, 0.375);
+    --pico-primary-focus: rgba(137, 153, 249, 0.375);
     --pico-primary-inverse: #fff;
     --pico-secondary: #969eaf;
     --pico-secondary-background: #525f7a;
@@ -546,18 +546,18 @@ nav details.dropdown summary:focus-visible {
   color-scheme: dark;
   --pico-background-color: rgb(19, 22.5, 30.5);
   --pico-color: #c2c7d0;
-  --pico-text-selection-color: rgba(178, 144, 217, 0.1875);
+  --pico-text-selection-color: rgba(137, 153, 249, 0.1875);
   --pico-muted-color: #7b8495;
   --pico-muted-border-color: #202632;
-  --pico-primary: #b290d9;
-  --pico-primary-background: #7540bf;
+  --pico-primary: #8999f9;
+  --pico-primary-background: #2060df;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(178, 144, 217, 0.5);
-  --pico-primary-hover: #c9afe4;
-  --pico-primary-hover-background: #8352c5;
+  --pico-primary-underline: rgba(137, 153, 249, 0.5);
+  --pico-primary-hover: #aeb5fb;
+  --pico-primary-hover-background: #3c71f7;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(178, 144, 217, 0.375);
+  --pico-primary-focus: rgba(137, 153, 249, 0.375);
   --pico-primary-inverse: #fff;
   --pico-secondary: #969eaf;
   --pico-secondary-background: #525f7a;
@@ -763,8 +763,6 @@ section {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: var(--pico-spacing);
-  padding-left: var(--pico-spacing);
 }
 
 @media (min-width: 576px) {
@@ -777,21 +775,29 @@ section {
 @media (min-width: 768px) {
   .container {
     max-width: 700px;
+    padding-right: var(--pico-spacing);
+    padding-left: var(--pico-spacing);
   }
 }
 @media (min-width: 1024px) {
   .container {
     max-width: 950px;
+    padding-right: var(--pico-spacing);
+    padding-left: var(--pico-spacing);
   }
 }
 @media (min-width: 1280px) {
   .container {
     max-width: 1200px;
+    padding-right: var(--pico-spacing);
+    padding-left: var(--pico-spacing);
   }
 }
 @media (min-width: 1536px) {
   .container {
     max-width: 1450px;
+    padding-right: var(--pico-spacing);
+    padding-left: var(--pico-spacing);
   }
 }
 

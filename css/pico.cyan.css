@@ -763,8 +763,6 @@ section {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: var(--pico-spacing);
-  padding-left: var(--pico-spacing);
 }
 
 @media (min-width: 576px) {
@@ -777,21 +775,29 @@ section {
 @media (min-width: 768px) {
   .container {
     max-width: 700px;
+    padding-right: var(--pico-spacing);
+    padding-left: var(--pico-spacing);
   }
 }
 @media (min-width: 1024px) {
   .container {
     max-width: 950px;
+    padding-right: var(--pico-spacing);
+    padding-left: var(--pico-spacing);
   }
 }
 @media (min-width: 1280px) {
   .container {
     max-width: 1200px;
+    padding-right: var(--pico-spacing);
+    padding-left: var(--pico-spacing);
   }
 }
 @media (min-width: 1536px) {
   .container {
     max-width: 1450px;
+    padding-right: var(--pico-spacing);
+    padding-left: var(--pico-spacing);
   }
 }
 
