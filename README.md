@@ -50,21 +50,22 @@ With just the right amount of everything, Pico is great starting point for a cle
 ## Table of contents
 
 1. [Yohns Updated Version](#yohns-updated-version)
-2. [Minimal CSS Framework for Semantic HTML](#minimal-css-framework-for-semantic-html)
-3. [What’s new in v2?](#whats-new-in-v2)
-4. [A Superpowered HTML Reset](#a-superpowered-html-reset)
-5. [Table of contents](#table-of-contents)
-6. [Quick start](#quick-start)
+2. [Extras Built on top of PicoCSS](#extras-built-on-top-of-picocss)
+3. [Minimal CSS Framework for Semantic HTML](#minimal-css-framework-for-semantic-html)
+4. [What’s new in v2?](#whats-new-in-v2)
+5. [A Superpowered HTML Reset](#a-superpowered-html-reset)
+6. [Table of contents](#table-of-contents)
+7. [Quick start](#quick-start)
    1. [Install manually](#install-manually)
    2. [Usage from CDN](#usage-from-cdn)
    3. [Install with NPM](#install-with-npm)
    4. [Starter HTML template](#starter-html-template)
-7. [Class-less version](#class-less-version)
-8. [Limitations](#limitations)
-9. [Documentation](#documentation)
-10. [Browser Support](#browser-support)
-11. [Contributing](#contributing)
-12. [Copyright and license](#copyright-and-license)
+8. [Class-less version](#class-less-version)
+9. [Limitations](#limitations)
+10. [Documentation](#documentation)
+11. [Browser Support](#browser-support)
+12. [Contributing](#contributing)
+13. [Copyright and license](#copyright-and-license)
 
 ## Quick start
 
@@ -83,7 +84,7 @@ There are 4 ways to get started with pico.css:
 Alternatively, you can use [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@yohns/picocss) to link pico.css.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.9/css/pico.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.10/css/pico.min.css" />
 ```
 
 ### Install with NPM
@@ -141,7 +142,7 @@ Use the default `.classless` version if you need centered viewports:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.9/css/pico.classless.min.css"
+  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.10/css/pico.classless.min.css"
 />
 ```
 
@@ -150,7 +151,7 @@ Or use the `.fluid.classless` version if you need a fluid container:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.9/css/pico.fluid.classless.min.css"
+  href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.10/css/pico.fluid.classless.min.css"
 />
 ```
 
@@ -165,7 +166,7 @@ Then just write pure HTML, and it should look great:
     <meta name="color-scheme" content="light dark" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.9/css/pico.classless.min.css"
+      href="https://cdn.jsdelivr.net/npm/@yohns/picocss@2.2.10/css/pico.classless.min.css"
     />
     <title>Hello, world!</title>
   </head>

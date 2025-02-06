@@ -106,8 +106,7 @@
 							And then you'll need the js located at: js/SwitchColorMode.js
 						-->
 						<label>
-							<input aria-label="Toggle Light or Dark Mode" name="color-mode-toggle" value="1" type="checkbox"
-								role="switch">
+							<input aria-label="Toggle Light or Dark Mode" name="color-mode-toggle" value="1" type="checkbox" role="switch">
 						</label>
 					</div>
 					<!--<details class="dropdown">
@@ -187,6 +186,7 @@
 					<aside>
 						<nav>
 							<ul>
+								<li><a href="#color-mode-toggle">Color Mode Switch</a></li>
 								<li><a href="#tables">Tables</a></li>
 								<li><a href="#tabs">Tabs [role=tablist]</a></li>
 								<li><a href="#hamburger-menu">Hamburger Menu</a></li>
@@ -216,7 +216,7 @@
 			<main class="col-12 col-md-9 col-lg-10">
 				<article>
 					<header>
-						<h2>Yohns PicoCSS Fork v2.2.9</h2>
+						<h2>Yohns PicoCSS Fork v2.2.10</h2>
 					</header>
 					<p>I've merged some open pull requests from the <a href="https://github.com/picocss/pico">original Pico</a>
 						repository, and then added a few more enhancements that I either needed for a project (timeline) or wanted
@@ -230,12 +230,31 @@
 							href="https://github.com/Yohn/PicoCSS/tree/main/docs/js">Vanilla JavaScript Files</a> to work the same as
 						the preview here. I may get a build script going to compile the javascript plugins / components later. Let
 						me know if this feature would help you.</p>
-					<hr>
-					<h3>&lt;details class="hide-arrow"&gt;</h3>
-					<p>With classes enabled, adding the <code>hide-arrow</code> class to your <code>&lt;details class="hide-arrow"&gt;</code> will hide the arrow on the <code>&lt;summary&gt;</code> tag within the accordion and dropdown components.</p>
-
 					<footer>If this fork has helped you, please <a href="https://github.com/Yohn/PicoCSS">Like</a> this fork!
 					</footer>
+				</article>
+				<article id="color-mode-toggle">
+					<header>
+						<h2>Color Mode Switch</h2>
+						<h6 class="fw-n">Classless!</h6>
+					</header>
+
+					<div class="grid" style="justify-items: center;">
+						<label>Example:</label>
+						<label>
+							<input aria-label="Toggle Light or Dark Mode" name="color-mode-toggle" value="1" type="checkbox" role="switch">
+						</label>
+					</div>
+					<small class="pt-1" style="text-align: center; display: block;">Only the first switch on the page change the color mode currently. You can tap the other side on the left side abover the navbar to see the color modes change.</small>
+					<hr class="m-0">
+					<p>You will need to include the <a href="js/SwitchColorMode.js">SwitchColorMode.js</a> javascript at the end of your <code>&lt;body&gt;</code> tag.</p>
+					<p>For the switch itself, you really need to ensure the <code>name</code> and the <code>role</code> attributes are found, with the same values.</p>
+					<pre><code class="language-html">&lt;label&gt;
+	&lt;input name="color-mode-toggle" role="switch" type="checkbox" value="1" aria-label="Toggle Light or Dark Mode"&gt;
+&lt;/label&gt;</code></pre>
+					<p>Do not change the <code>name="color-mode-toggle"</code></p>
+					<p>You can assign the default color mode for new visitors by adding <code>data-theme="dark"</code> to your <code>&lt;html&gt;</code> tag. The value can be 1 of the following: <code>dark</code>, <code>light</code>, <code>auto</code>. If auto is set, it will default to the viewers prefered color mode.</p>
+					<p>Color modes are saved across page loads.</p>
 				</article>
 				<hr>
 				<article id="tables">
@@ -933,7 +952,7 @@
 					<p>
 						<code>.row</code> has a max width set to the viewport of your <code>xl</code> viewport (1300px by default)
 					</p>
-					<code>.row-fluid</code> max width is 100%. </>
+					<code>.row-fluid</code> max width is 100%. </a>
 					<div class="row-fluid">
 						<div class="col-3">
 							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3
@@ -1182,6 +1201,9 @@
 					<header>
 						<h2>Accordions</h2>
 					</header>
+					<h3>&lt;details class="hide-arrow"&gt;</h3>
+					<p>With classes enabled, adding the <code>hide-arrow</code> class to your <code>&lt;details class="hide-arrow"&gt;</code> will hide the arrow on the <code>&lt;summary&gt;</code> tag within the accordion and dropdown components.</p>
+					<hr>
 					<details name="example-accordion">
 						<summary>Accordion 1</summary>
 						<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque urna diam, tincidunt nec porta
@@ -1641,7 +1663,7 @@
 			function changeTheme(newTheme) {
 				const linkElement = document.getElementById('theme-color-ss');
 				if (linkElement) {
-					linkElement.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Yohn/PicoCSS@2.2.9/css/pico.' + newTheme + '.min.css');
+					linkElement.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Yohn/PicoCSS@2.2.10/css/pico.' + newTheme + '.min.css');
 				}
 			}
 

@@ -2,7 +2,7 @@
  * Minimal theme switcher using a checkbox
  *
  * Pico.css - https://picocss.com
- * Copyright 2019-2024 - Licensed under MIT
+ * Copyright 2019-2025 - Licensed under MIT
  * Modified by Yohn https://github.com/Yohn/PicoCSS
  */
 
@@ -20,29 +20,33 @@ const SwitchColorMode = {
 			console.error("Theme switcher toggle not found");
 			return;
 		}
-		this.scheme = this.schemeFromLocalStorage;
-		this.initToggle();
+
+		// If first visit, use the theme from <html> attribute; otherwise, use stored preference
+		this.scheme = this.schemeFromLocalStorage ?? this.schemeFromHTML;
+
+		// Set checkbox state based on the applied theme
+		this.checkbox.checked = this.scheme === "dark";
+
+		// Listen for user changes
+		this.checkbox.addEventListener("change", () => {
+			this.scheme = this.checkbox.checked ? "dark" : "light";
+			this.schemeToLocalStorage();
+		});
 	},
 
 	// Get color scheme from local storage
 	get schemeFromLocalStorage() {
-		return window.localStorage?.getItem(this.localStorageKey) ?? this._scheme;
+		return window.localStorage?.getItem(this.localStorageKey);
 	},
 
-	// Preferred color scheme
+	// Get the default theme from the <html> attribute
+	get schemeFromHTML() {
+		return document.documentElement.getAttribute(this.rootAttribute) ?? "auto";
+	},
+
+	// Preferred color scheme from system
 	get preferredColorScheme() {
 		return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-	},
-
-	// Initialize the toggle switch
-	initToggle() {
-		// Set initial checkbox state based on the current scheme
-		this.checkbox.checked = this.scheme === "dark";
-
-		// Listen for changes to the checkbox
-		this.checkbox.addEventListener("change", () => {
-			this.scheme = this.checkbox.checked ? "dark" : "light";
-		});
 	},
 
 	// Set scheme
@@ -53,7 +57,6 @@ const SwitchColorMode = {
 			this._scheme = scheme;
 		}
 		this.applyScheme();
-		this.schemeToLocalStorage();
 	},
 
 	// Get scheme
@@ -63,7 +66,7 @@ const SwitchColorMode = {
 
 	// Apply scheme
 	applyScheme() {
-		document.querySelector("html")?.setAttribute(this.rootAttribute, this.scheme);
+		document.documentElement.setAttribute(this.rootAttribute, this._scheme);
 	},
 
 	// Store scheme to local storage
