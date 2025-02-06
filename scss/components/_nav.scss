@@ -10,9 +10,12 @@
   // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
 
   // Prevent VoiceOver from ignoring list semantics in Safari (opinionated)
+  // https://github.com/picocss/pico/issues/634#issuecomment-2541600508
   :where(nav li)::before {
-    float: left;
-    content: "\200B";
+    float: none; // fixes safari bug in dropdowns. Previously was: left
+    content: " "; //\200B"; // makes voice overs realize its a list item
+    //@use "sass:string"; // if we want to use the original \200B content value, we need to add this line to the top.
+    //content: string.unquote('"\\200B"'); // created a big gap between list items
   }
 
   // Pico

@@ -1,0 +1,146 @@
+@use "sass:map";
+@use "../colors/index" as *;
+@use "../settings" as *;
+
+@if map.get($modules, "forms/validation") {
+  // these are used so much below, and was making it too long for my liking.
+  $excluded-elements: ':placeholder-shown, [type="button"], [type="reset"], [type="image"], [type="submit"], [type="checkbox"], [type="radio"]';
+
+  #{$parent-selector} form:not([novalidate]) {
+    input:user-valid:not(#{$excluded-elements}),
+    input:user-invalid:not(#{$excluded-elements}) {
+      padding-right: calc(1.5em + 0.75rem);
+      background-position: right calc(0.375em + 0.1875rem) center;
+      background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+      background-repeat: no-repeat;
+    }
+
+    select:user-valid:not([multiple], [size]),
+    select:user-invalid:not([multiple], [size]) {
+      padding-right: calc(1.5em + 0.75rem);
+      padding-right: 4.2rem;
+      background-position:
+        right 0.75rem center,
+        center right 2.25rem;
+      background-repeat: no-repeat;
+    }
+
+    select:user-invalid:not([multiple], [size]) {
+      background-image: var(#{$css-var-prefix}icon-chevron), var(#{$css-var-prefix}icon-invalid);
+    }
+
+    select:user-valid:not([multiple], [size]) {
+      background-image: var(#{$css-var-prefix}icon-chevron), var(#{$css-var-prefix}icon-valid);
+    }
+
+    textarea:user-valid:not(:placeholder-shown),
+    textarea:user-invalid:not(:placeholder-shown) {
+      padding-right: calc(1.5em + 0.75rem);
+      background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
+      background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+      background-repeat: no-repeat;
+    }
+
+    input:user-invalid:not(#{$excluded-elements}),
+    select:user-invalid:not([multiple], [size]),
+    textarea:user-invalid:not(:placeholder-shown) {
+      border-color: var(#{$css-var-prefix}form-element-invalid-border-color);
+      background-image: var(#{$css-var-prefix}icon-invalid);
+
+      &:focus {
+        border-color: var(#{$css-var-prefix}form-element-invalid-active-border-color);
+      }
+    }
+
+    input:user-valid:not(#{$excluded-elements}),
+    select:user-valid:not([multiple], [size]),
+    textarea:user-valid:not(:placeholder-shown) {
+      border-color: var(#{$css-var-prefix}form-element-valid-border-color);
+      background-image: var(#{$css-var-prefix}icon-valid);
+
+      &:focus {
+        border-color: var(#{$css-var-prefix}form-element-valid-active-border-color);
+      }
+    }
+
+    input:required:user-invalid:is([type="checkbox"]) {
+      border-color: var(#{$css-var-prefix}form-element-invalid-border-color);
+    }
+
+    input:user-valid:not(#{$excluded-elements}) + small[data-valid]::after,
+    select:user-valid:not([multiple], [size]) + small[data-valid]::after,
+    textarea:user-valid:not(:placeholder-shown) + small[data-valid]::after {
+      content: attr(data-valid);
+      color: var(#{$css-var-prefix}form-element-valid-border-color);
+    }
+
+    textarea:user-invalid:not(:placeholder-shown) + small[data-invalid]::after,
+    select:user-invalid:not([multiple], [size]) + small[data-invalid]::after,
+    input:user-invalid:not(#{$excluded-elements}) + [data-invalid]::after,
+    input[type="file"]:user-invalid + ul + [data-invalid]::after {
+      content: attr(data-invalid);
+      color: var(#{$css-var-prefix}form-element-invalid-border-color);
+    }
+
+    input:user-valid:not(#{$excluded-elements}) + [data-valid]::after,
+    input:user-invalid:not(#{$excluded-elements}) + [data-invalid]::after,
+    textarea:user-valid:not(:placeholder-shown) + [data-valid]::after,
+    input[type="file"]:user-invalid + [data-invalid]::after,
+    input[type="file"]:user-invalid + ul + [data-invalid]::after {
+      display: block;
+    }
+
+    input[type="file"]:user-invalid + ul + [data-invalid]::after {
+      position: relative;
+      top: -2rem;
+    }
+
+    // the file btn
+    input[type="file"]:user-invalid::file-selector-button {
+      border-color: var(#{$css-var-prefix}form-element-invalid-border-color);
+      background-color: var(#{$css-var-prefix}form-element-invalid-border-color);
+    }
+
+    /* File list when selected from the file input */
+    .file-list {
+      padding-left: 0;
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style-type: none;
+        text-align: center;
+
+        &:nth-child(2n) {
+          background-color: $grey-900;
+        }
+
+        &:hover {
+          background-color: var(#{$css-var-prefix}muted-border-color);
+        }
+
+        .btn-file-rm {
+          display: inline-block;
+          width: 1rem;
+          height: 1rem;
+          margin-right: 10px;
+          padding: 0;
+          padding-top: calc(var(#{$css-var-prefix}spacing) * 0.25);
+          border: none;
+          background-image: var(#{$css-var-prefix}icon-red-close);
+          background-position: center;
+          background-size: 1rem;
+          background-repeat: no-repeat;
+          background-color: transparent;
+          color: var(#{$css-var-prefix}element-invalid-border-color);
+          opacity: 0.5;
+          transition: opacity var(#{$css-var-prefix}transition);
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

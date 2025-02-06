@@ -1,6 +1,7 @@
 @use "sass:color";
 @use "sass:math";
 @use "sass:map";
+@use "sass:string";
 @use "settings";
 
 // Determines if the foreground needs to be light or dark
@@ -24,7 +25,9 @@
 @function brightness($color) {
   $color-brightness: round(
     math.div(
-      (color.red($color) * 299) + (color.green($color) * 587) + (color.blue($color) * 114),
+      (color.channel($color, "red", $space: rgb) * 299) +
+        (color.channel($color, "green", $space: rgb) * 587) +
+        (color.channel($color, "blue", $space: rgb) * 114),
       1000
     )
   );
@@ -52,5 +55,9 @@
 
 // Display color as RGB
 @function display-rgb($color) {
-  @return unquote("rgb(" + red($color) + ", " + green($color) + ", " + blue($color) + ")");
+  @return string.unquote(
+    "rgb(" + color.channel($color, "red", $space: rgb) + ", " +
+      color.channel($color, "green", $space: rgb) + ", " +
+      color.channel($color, "blue", $space: rgb) + ")"
+  );
 }

@@ -24,8 +24,8 @@
   // ––––––––––––––––––––
 
   // Cells
-  #{$parent-selector} th,
-  #{$parent-selector} td {
+  #{$parent-selector} table th,
+  #{$parent-selector} table td {
     padding: calc(var(#{$css-var-prefix}spacing) / 2) var(#{$css-var-prefix}spacing);
     border-bottom: var(#{$css-var-prefix}border-width)
       solid
@@ -37,8 +37,18 @@
     text-align: start;
   }
 
+  #{$parent-selector} table > caption {
+    margin-block: calc(var(#{$css-var-prefix}block-spacing-vertical) * 0.5);
+    padding: calc(var(#{$css-var-prefix}spacing) / 2) var(#{$css-var-prefix}spacing);
+    background-color: var(#{$css-var-prefix}table-row-stripped-background-color);
+    color: var(#{$css-var-prefix}h3-color);
+    font-weight: var(#{$css-var-prefix}font-weight);
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
   // Footer
-  #{$parent-selector} tfoot {
+  #{$parent-selector} table > tfoot {
     th,
     td {
       border-top: var(#{$css-var-prefix}border-width)
@@ -48,15 +58,24 @@
     }
   }
 
+  #{$parent-selector} table > caption {
+    margin-block: calc(var(#{$css-var-prefix}block-spacing-vertical) * 0.5);
+    background-color: var(#{$css-var-prefix}table-row-stripped-background-color);
+    color: var(#{$css-var-prefix}h3-color);
+    font-weight: var(#{$css-var-prefix}font-weight);
+    font-size: 1.25rem;
+    text-align: center;
+  }
+
   // Striped
   @if enable-classes {
-    #{$parent-selector} table {
-      &.striped {
-        tbody tr:nth-child(odd) th,
-        tbody tr:nth-child(odd) td {
-          background-color: var(#{$css-var-prefix}table-row-stripped-background-color);
-        }
+    /* clean-css ignore:start */
+    #{$parent-selector} table.striped {
+      tbody tr:nth-child(odd of :not([hidden])) th,
+      tbody tr:nth-child(odd of :not([hidden])) td {
+        background-color: var(#{$css-var-prefix}table-row-stripped-background-color);
       }
     }
+    /* clean-css ignore:end */
   }
 }

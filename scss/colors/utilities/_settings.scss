@@ -10,8 +10,7 @@ $palette: () !default;
 $palette: map.merge(
   (
     // Color families
-    "color-families":
-      (
+    "color-families": (
         red,
         pink,
         fuchsia,
@@ -34,8 +33,7 @@ $palette: map.merge(
         slate
       ),
     // Shades
-    "shades":
-      (
+    "shades": (
         50,
         100,
         150,

@@ -18,7 +18,9 @@
   #{$parent-selector} input,
   #{$parent-selector} optgroup,
   #{$parent-selector} select,
-  #{$parent-selector} textarea {
+  #{$parent-selector} textarea,
+  #{$parent-selector} [role="group"] > label,
+  #{$parent-selector} [role="group"] > legend {
     margin: 0; // 2
     font-size: 1rem; // 1
     line-height: var(#{$css-var-prefix}line-height); // 1
@@ -40,7 +42,7 @@
   // 2. Correct the color inheritance from `fieldset` elements in IE
   // 3. Remove the padding so developers are not caught out when they zero out
   // `fieldset` elements in all browsers
-  #{$parent-selector} legend {
+  #{$parent-selector} *:not([role="group"]) legend {
     max-width: 100%; // 1
     padding: 0; // 3
     color: inherit; // 2
@@ -115,7 +117,10 @@
   // ––––––––––––––––––––
 
   // Force height for alternatives input types
-  #{$parent-selector} input:not([type="checkbox"], [type="radio"], [type="range"]) {
+  #{$parent-selector} input:not([type="checkbox"], [type="radio"], [type="range"], [type="date"]) {
+    //,
+    //#{$parent-selector} [role="group"] > label,
+    //#{$parent-selector} [role="group"] > legend {
     height: calc(
       (1rem * var(#{$css-var-prefix}line-height)) +
         (var(#{$css-var-prefix}form-element-spacing-vertical) * 2) +
@@ -133,15 +138,15 @@
   }
 
   // Label & legend
-  #{$parent-selector} label,
-  #{$parent-selector} fieldset legend {
+  #{$parent-selector} *:not([role="group"]) > label,
+  #{$parent-selector} fieldset:not([role="group"]) > legend {
     display: block;
     margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.375);
     color: var(#{$css-var-prefix}color);
     font-weight: var(#{$css-var-prefix}form-label-font-weight, var(#{$css-var-prefix}font-weight));
   }
 
-  #{$parent-selector} fieldset legend {
+  #{$parent-selector} fieldset:not([role="group"]) > legend {
     margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.5);
   }
 
@@ -156,7 +161,9 @@
   // Reset appearance (Not Checkboxes, Radios, Range and File)
   #{$parent-selector} input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
   #{$parent-selector} select,
-  #{$parent-selector} textarea {
+  #{$parent-selector} textarea,
+  #{$parent-selector} [role="group"] > label,
+  #{$parent-selector} [role="group"] > legend {
     appearance: none;
     padding: var(#{$css-var-prefix}form-element-spacing-vertical)
       var(#{$css-var-prefix}form-element-spacing-horizontal);
@@ -165,7 +172,9 @@
   // Commons styles
   #{$parent-selector} input,
   #{$parent-selector} select,
-  #{$parent-selector} textarea {
+  #{$parent-selector} textarea,
+  #{$parent-selector} [role="group"] > label,
+  #{$parent-selector} [role="group"] > legend {
     #{$css-var-prefix}background-color: var(#{$css-var-prefix}form-element-background-color);
     #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-border-color);
     #{$css-var-prefix}color: var(#{$css-var-prefix}form-element-color);
@@ -239,6 +248,8 @@
   #{$parent-selector} select[disabled],
   #{$parent-selector} textarea[disabled],
   #{$parent-selector} label[aria-disabled="true"],
+  #{$parent-selector} [role="group"] > label[aria-disabled="true"],
+  #{$parent-selector} [role="group"] > legend[aria-disabled="true"],
   #{$parent-selector}
     :where(fieldset[disabled])
     :is(input:not([type="submit"], [type="button"], [type="reset"]), select, textarea) {
@@ -247,11 +258,14 @@
   }
 
   #{$parent-selector} label[aria-disabled="true"] input[disabled] {
+    //},
+    //#{$parent-selector} [role="group"] > label,
+    //#{$parent-selector} [role="group"] > legend {
     opacity: 1;
   }
 
   // Aria-invalid
-  #{$parent-selector} :where(input, select, textarea) {
+  #{$parent-selector} :not([novalidate]) :where(input, select, textarea) {
     &:not(
         [type="checkbox"],
         [type="radio"],
@@ -325,6 +339,7 @@
     }
 
     &[aria-invalid="true"] {
+      // --pico-form-element-invalid-border-color
       #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-invalid-border-color);
 
       &:is(:active, :focus) {
@@ -372,7 +387,9 @@
   #{$parent-selector} input::-webkit-input-placeholder,
   #{$parent-selector} textarea::placeholder,
   #{$parent-selector} textarea::-webkit-input-placeholder,
-  #{$parent-selector} select:invalid {
+  #{$parent-selector} select:invalid,
+  #{$parent-selector} [role="group"] > label,
+  #{$parent-selector} [role="group"] > legend {
     color: var(#{$css-var-prefix}form-element-placeholder-color);
     opacity: 1;
   }
@@ -380,7 +397,9 @@
   // Margin bottom (Not Checkboxes and Radios)
   #{$parent-selector} input:not([type="checkbox"], [type="radio"]),
   #{$parent-selector} select,
-  #{$parent-selector} textarea {
+  #{$parent-selector} textarea,
+  #{$parent-selector} [role="group"] > label,
+  #{$parent-selector} [role="group"] > legend {
     margin-bottom: var(#{$css-var-prefix}spacing);
   }
 
@@ -438,8 +457,13 @@
       }
     }
   }
+
   @if map.get($modules, "layout/grid") and $enable-classes {
     $helper-previous-tags: $helper-previous-tags + ", .grid";
+  }
+
+  @if map.get($modules, "components/dropdown") and $enable-classes {
+    $helper-previous-tags: $helper-previous-tags + ", .dropdown";
   }
 
   #{$parent-selector} :where(#{$helper-previous-tags}) {

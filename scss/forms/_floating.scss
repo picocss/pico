@@ -1,0 +1,63 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "forms/floating") {
+  $transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  #{$parent-selector} section[role="form"] {
+    position: relative;
+    margin-bottom: 0;
+
+    > input::placeholder,
+    > textarea::placeholder {
+      color: rgba(0, 0, 0, 0);
+      transition: color $transition-fast;
+    }
+
+    > input:focus::placeholder,
+    > textarea:focus::placeholder {
+      color: var(--pico-form-element-placeholder-color);
+    }
+
+    > input + label,
+    > textarea + label,
+    > select + label {
+      position: absolute;
+      top: 0.55rem;
+      left: 0.8rem;
+      transform: translateY(0%);
+      background: var(#{$css-var-prefix}form-element-background-color);
+      color: var(#{$css-var-prefix}form-element-placeholder-color);
+      cursor: text;
+      transition: 0.3s ease;
+    }
+
+    > input:not(:placeholder-shown) + label,
+    > input:focus + label,
+    > textarea:not(:placeholder-shown) + label,
+    > textarea:focus + label,
+    > select:focus + label,
+    > select:has(option:checked:not([disabled])) + label {
+      top: 0;
+      padding: calc(var(#{$css-var-prefix}spacing) * 0.15)
+        calc(var(#{$css-var-prefix}spacing) * 0.5);
+      transform: translateY(-50%) scale(0.8);
+      color: var(#{$css-var-prefix}form-element-active-border-color);
+      font-size: var(#{$css-var-prefix}font-size);
+      line-height: 1.15;
+      transition: all $transition-fast;
+    }
+
+    @if map.get($modules, "forms/validation") {
+      > input:user-invalid:not(:placeholder-shown) + label,
+      > textarea:user-invalid:not(:placeholder-shown) + label {
+        color: var(#{$css-var-prefix}form-element-invalid-border-color);
+      }
+
+      > input:user-valid:not(:placeholder-shown) + label,
+      > textarea:user-valid:not(:placeholder-shown) + label {
+        color: var(#{$css-var-prefix}form-element-valid-border-color);
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "components/tab") {
+  /**
+   * Tabs
+   * styling help from: https://codepen.io/mikestreety/pen/yVNNNm
+   */
+
+  @if $enable-transitions {
+    @keyframes showTab {
+      from {
+        //transform: translateY(10px);
+        scale: 0.75;
+        opacity: 0;
+      }
+      to {
+        //transform: translateY(0);
+        scale: 1;
+        opacity: 1;
+      }
+    }
+  }
+
+  #{$parent-selector} [role="tablist"] {
+    display: flex;
+    flex-wrap: wrap; // make sure it wraps
+    padding-bottom: 0;
+
+    > button[role="tab"] {
+      flex-grow: 1;
+      order: 1; // Put the labels first
+      padding: calc(var(#{$css-var-prefix}spacing) * 0.625);
+      border: 0;
+      border-bottom: 1px solid var(#{$css-var-prefix}primary-background);
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+      background: transparent;
+      color: var(#{$css-var-prefix}contrast);
+      font-weight: bold;
+      cursor: pointer;
+
+      @if $enable-transitions {
+        transition: background-color var(#{$css-var-prefix}transition);
+      }
+
+      &[aria-selected="true"] {
+        background: var(#{$css-var-prefix}primary-background);
+        color: var(#{$css-var-prefix}primary-inverse);
+      }
+      &:hover {
+        background: var(#{$css-var-prefix}primary-hover-background);
+        color: var(#{$css-var-prefix}primary-inverse);
+      }
+    }
+
+    [role="tabpanel"] {
+      flex-grow: 1;
+      order: 99; // Put the tabs last
+      width: 100%;
+
+      //calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 2)
+      //var(#{$css-var-prefix}form-element-spacing-horizontal);
+      padding: var(--pico-spacing) calc(var(--pico-spacing) * 0.75);
+      background: var(
+        #{$css-var-prefix}accent-section-bg-color
+      ); //#{$css-var-prefix}card-sectioning-background-color);
+
+      @if $enable-transitions {
+        animation: var(#{$css-var-prefix}tab-animation) var(#{$css-var-prefix}transition);
+      }
+
+      &:not([hidden]) {
+        display: block;
+      }
+      &[hidden] {
+        display: none;
+      }
+      > *:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+  @media (max-width: 45em) {
+    #{$parent-selector} [role="tablist"] {
+      [role="tabpanel"],
+      button,
+      label {
+        order: initial;
+      }
+      label,
+      [role="tabpanel"],
+      button {
+        width: 100%;
+        margin-top: 0.2rem;
+        margin-right: 0;
+      }
+    }
+  }
+}

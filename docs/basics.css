@@ -1,0 +1,88 @@
+/**
+ * Yohn's PicoCSS basics
+ *
+ * I'm starting this here, for now, and will probably add it to the main releases when I build up enough
+ * useful universal classes.
+ *
+ * @author John Brittain III
+ * @link https://yohn.github.io/PicoCSS
+ */
+
+:host, :root {
+	--yoco-spacing-block-1: calc(var(--pico-block-spacing-vertical) * .5);
+	--yoco-spacing-inline-1: calc(var(--pico-block-spacing-horizontal) * .5);
+	--yoco-spacing-block-2: var(--pico-block-spacing-vertical);
+	--yoco-spacing-inline-2: var(--pico-block-spacing-horizontal);
+	--yoco-spacing-block-3: calc(var(--pico-block-spacing-vertical) * 1.5);
+	--yoco-spacing-inline-3: calc(var(--pico-block-spacing-horizontal) * 1.5);
+}
+
+ .m-0 { margin: 0 !important; }
+.mt-0 { margin-block-start: 0 !important; }
+.mb-0 { margin-block-end: 0 !important; }
+.my-0 { margin-block: 0 !important; }
+.ms-0 { margin-inline-start: 0 !important; }
+.me-0 { margin-inline-end: 0 !important; }
+.mx-0 { margin-inline: 0 !important; }
+
+ .m-1  { margin: var(--yoco-spacing-block-1) var(--yoco-spacing-inline-1) !important; }
+.mt-1 { margin-block-start: var(--yoco-spacing-block-1) !important; }
+.mb-1 { margin-block-end: var(--yoco-spacing-block-1) !important; }
+.my-1 { margin-block: var(--yoco-spacing-block-1) !important; }
+.ms-1 { margin-inline-start: var(--yoco-spacing-inline-1) !important; }
+.me-1 { margin-inline-end: var(--yoco-spacing-inline-1) !important; }
+.mx-1 { margin-inline: var(--yoco-spacing-inline-1) !important; }
+
+ .m-2 { margin: var(--yoco-spacing-block-2) var(--yoco-spacing-inline-2) !important; }
+.mt-2 { margin-block-start: var(--yoco-spacing-block-2) !important; }
+.mb-2 { margin-block-end: var(--yoco-spacing-block-2) !important; }
+.my-2 { margin-block: var(--yoco-spacing-block-2) !important; }
+.ms-2 { margin-inline-start: var(--yoco-spacing-inline-2) !important; }
+.me-2 { margin-inline-end: var(--yoco-spacing-inline-2) !important; }
+.mx-2 { margin-inline: var(--yoco-spacing-inline-2) !important; }
+
+ .m-3 { margin: var(--yoco-spacing-block-3) var(--yoco-spacing-inline-3) !important; }
+.mt-3 { margin-block-start: var(--yoco-spacing-block-3) !important; }
+.mb-3 { margin-block-end: var(--yoco-spacing-block-3) !important; }
+.my-3 { margin-block: var(--yoco-spacing-block-3) !important; }
+.ms-3 { margin-inline-start: var(--yoco-spacing-inline-3) !important; }
+.me-3 { margin-inline-end: var(--yoco-spacing-inline-3) !important; }
+.mx-3 { margin-inline: var(--yoco-spacing-inline-3) !important; }
+
+ .p-0 { padding: 0 !important; }
+.pt-0 { padding-block-start: 0 !important; }
+.pb-0 { padding-block-end: 0 !important; }
+.py-0 { padding-block: 0 !important; }
+.ps-0 { padding-inline-start: 0 !important; }
+.pe-0 { padding-inline-end: 0 !important; }
+.px-0 { padding-inline: 0 !important; }
+
+ .p-1 { padding: var(--yoco-spacing-block-1) var(--yoco-spacing-inline-1) !important; }
+.pt-1 { padding-block-start: var(--yoco-spacing-block-1) !important; }
+.pb-1 { padding-block-end: var(--yoco-spacing-block-1) !important; }
+.py-1 { padding-block: var(--yoco-spacing-block-1) !important; }
+.ps-1 { padding-inline-start: var(--yoco-spacing-inline-1) !important; }
+.pe-1 { padding-inline-end: var(--yoco-spacing-inline-1) !important; }
+.px-1 { padding-inline: var(--yoco-spacing-inline-1) !important; }
+
+ .p-2 { padding: var(--yoco-spacing-block-2) var(--yoco-spacing-inline-2) !important; }
+.pt-2 { padding-block-start: var(--yoco-spacing-block-2) !important; }
+.pb-2 { padding-block-end: var(--yoco-spacing-block-2) !important; }
+.py-2 { padding-block: var(--yoco-spacing-block-2) !important; }
+.ps-2 { padding-inline-start: var(--yoco-spacing-inline-2) !important; }
+.pe-2 { padding-inline-end: var(--yoco-spacing-inline-2) !important; }
+.px-2 { padding-inline: var(--yoco-spacing-inline-2) !important; }
+
+ .p-3 { padding: var(--yoco-spacing-block-3) var(--yoco-spacing-inline-3) !important; }
+.pt-3 { padding-block-start: var(--yoco-spacing-block-3) !important; }
+.pb-3 { padding-block-end: var(--yoco-spacing-block-3) !important; }
+.py-3 { padding-block: var(--yoco-spacing-block-3) !important; }
+.ps-3 { padding-inline-start: var(--yoco-spacing-inline-3) !important; }
+.pe-3 { padding-inline-end: var(--yoco-spacing-inline-3) !important; }
+.px-3 { padding-inline: var(--yoco-spacing-inline-3) !important; }
+
+
+.fw-n { font-weight: normal !important; }
+
+
+article > header > h6 {color: var(--pico-primary);}

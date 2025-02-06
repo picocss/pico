@@ -1,0 +1,105 @@
+@use "sass:string";
+@use "sass:map";
+@use "sass:math";
+@use "../settings" as *; // for spacing, breakpoints, and if columns are defined.
+
+/* Source inspired by https://github.com/sophie-thomas/CSS-Grid/blob/main/assets/scss/grid.scss */
+
+@if map.get($modules, "layout/row") and $enable-classes {
+  $helper-cols: "";
+  $helper-offset: "";
+  /*--- CSS Grid ---*/
+  #{$parent-selector} .row-fluid,
+  #{$parent-selector} .row {
+    display: grid;
+    grid-template-columns: repeat($row-columns, 1fr);
+    gap: var(#{$css-var-prefix}grid-row-gap) var(#{$css-var-prefix}grid-column-gap);
+    &.align-center {
+      align-items: center;
+    }
+    &.align-start {
+      align-items: start;
+    }
+    &.align-end {
+      align-items: end;
+    }
+    > [class*="col"] > *,
+    > [class|="col"] > *,
+    > [class~="col"] > * {
+      margin: var(#{$css-var-prefix}block-spacing-vertical) auto;
+    }
+  }
+  #{$parent-selector} .row {
+    max-width: map.get(map.get($breakpoints, "xl"), "viewport");
+    margin: 0 auto;
+  }
+  /* Defining columns spans and offsets */
+  // Loop through all column spans and define the .grid-column-end number
+  @for $col from 1 through $row-columns {
+    #{$parent-selector} .col-#{$col} {
+      grid-column-end: span $col;
+    }
+    @if $col == 1 {
+      $helper-cols: ".col-1";
+    } @else {
+      $helper-cols: #{$helper-cols} + ", #{$parent-selector} .col-" + #{$col};
+    }
+  }
+
+  // Loop through all column offsets and define the .grid-column-start number
+  @for $offset from 0 through $row-columns - 1 {
+    #{$parent-selector} .offset-#{$offset} {
+      grid-column-start: $offset + 1;
+    }
+    @if $offset == 0 {
+      $helper-offset: ".offset-0";
+    } @else {
+      $helper-offset: #{$helper-offset} + ", .offset-" + #{$offset};
+    }
+  }
+  // Defines media queries for each breakpoint and loops through both spans
+  // and offsets to set grid-column-end and grid-column-start
+  // Loop through breakpoints and generate media queries
+
+  @each $breakpoint, $values in $breakpoints {
+    @if $values {
+      @media (min-width: map.get($values, "viewport")) {
+        @for $col from 1 through $row-columns {
+          #{$parent-selector} .col-#{$breakpoint}-#{$col} {
+            grid-column-end: span $col;
+          }
+          @if ($breakpoint != "sm") {
+            $helper-cols: #{$helper-cols} +
+              ", #{$parent-selector} .col-" +
+              #{$breakpoint} +
+              "-" +
+              #{$col};
+          }
+        }
+        @for $offset from 0 through $row-columns - 1 {
+          #{$parent-selector} .offset-#{$breakpoint}-#{$offset} {
+            grid-column-start: $offset + 1;
+          }
+          @if ($breakpoint != "sm") {
+            $helper-offset: #{$helper-offset} + ", .offset-" + #{$breakpoint} + "-" + #{$offset};
+          }
+        }
+      }
+    }
+  }
+
+  /* CSS Grid Media Queries */
+  // Sets the columns to be col-12 with a starting column of 1
+  $sm-size: map.get(map.get($breakpoints, "sm"), "viewport");
+
+  @media (max-width: $sm-size) {
+    //[class*="col-"] {
+    #{$helper-cols} {
+      grid-column-end: span $row-columns;
+    }
+    //[class*="offset-"] {
+    #{$helper-offset} {
+      grid-column-start: 1;
+    }
+  }
+}

@@ -1,0 +1,112 @@
+@use "sass:string";
+@use "sass:map";
+@use "sass:math";
+@use "../settings" as *;
+
+@if map.get($modules, "components/nav") {
+  /**
+   * Nav hamburger menu
+   * modified from https: //codepen.io/brentarias/pen/gOQybod
+   */
+  #{$parent-selector} nav[role="navigation"] {
+    z-index: 1;
+    //align-items: center; // the label for the burger was bouncing
+    width: 100%;
+    overflow: visible;
+
+    &[data-position="start"] {
+      /* remove the 'flex-direction' to move menu to the right */
+      flex-direction: row-reverse;
+    }
+
+    > input[type="checkbox"] {
+      display: none;
+      user-select: none;
+    }
+
+    > label {
+      display: none;
+      cursor: pointer;
+      user-select: none;
+    }
+    > ul,
+    > ol {
+      > li > [role="search"] {
+        margin-block-end: 0;
+      }
+    }
+  }
+
+  @each $breakpoint, $values in $breakpoints {
+    $databp: 'nav[role="navigation"]';
+    @if $breakpoint != sm {
+      $databp: #{$databp} + "[data-breakpoint='" + $breakpoint + "']";
+    }
+
+    $viewport: map.get($values, "viewport");
+    @media (max-width: $viewport) {
+      #{$parent-selector} #{$databp} {
+        flex-wrap: wrap;
+        overflow: hidden;
+
+        &:has(input[type="checkbox"]:checked) {
+          overflow: visible;
+        }
+
+        label {
+          display: block;
+        }
+        > [role="list"] {
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          width: 90vw;
+          max-height: 0;
+          margin: 0 auto;
+          background-color: var(#{$css-var-prefix}muted-border-color); //muted-border-color);
+          box-shadow: var(#{$css-var-prefix}box-shadow);
+          opacity: 0;
+          @if $enable-transitions {
+            transition:
+              max-height var(#{$css-var-prefix}transition),
+              opacity var(#{$css-var-prefix}transition);
+          }
+          li {
+            width: calc(100% - calc(var(#{$css-var-prefix}nav-link-spacing-vertical) * 2));
+            margin: calc(var(#{$css-var-prefix}nav-link-spacing-vertical) * 0.5)
+              var(#{$css-var-prefix}nav-link-spacing-vertical);
+            padding: 0;
+            > details.dropdown {
+              width: 100%;
+            }
+            > form[role="search"] {
+              margin-block-end: 0;
+            }
+          }
+          a {
+            display: block;
+            margin: 0;
+            border-radius: 0;
+            border-block-end: 1px solid transparent;
+            @if $enable-transitions {
+              transition:
+                border-color var(#{$css-var-prefix}transition),
+                color var(#{$css-var-prefix}transition);
+            }
+          }
+          a:hover {
+            border-bottom-color: var(#{$css-var-prefix}underline);
+            text-decoration: none;
+            //background-color: var(#{$css-var-prefix}primary-background) !important;
+            //color: var(#{$css-var-prefix}primary-inverse);
+          }
+        }
+        input[type="checkbox"]:checked ~ [role="list"] {
+          display: block;
+          max-height: 100vh;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

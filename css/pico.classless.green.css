@@ -1,12 +1,13 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.0.6 (https://picocss.com)
- * Copyright 2019-2024 - Licensed under MIT
+ * Pico CSS ✨ v2.2.10 (https://github.com/Yohn/PicoCSS)
+ * Copyright 2019-2025 - Licensed under MIT
  */
 /**
  * Styles
  */
-:root {
+:root,
+:host {
   --pico-font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --pico-font-family-sans-serif: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif, var(--pico-font-family-emoji);
   --pico-font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--pico-font-family-emoji);
@@ -20,11 +21,12 @@
   --pico-outline-width: 0.125rem;
   --pico-transition: 0.2s ease-in-out;
   --pico-spacing: 1rem;
+  --pico-icon-red-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(183.25, 63.5, 59)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
   --pico-typography-spacing-vertical: 1rem;
   --pico-block-spacing-vertical: var(--pico-spacing);
   --pico-block-spacing-horizontal: var(--pico-spacing);
-  --pico-form-element-spacing-vertical: 0.75rem;
-  --pico-form-element-spacing-horizontal: 1rem;
+  --pico-form-element-spacing-vertical: calc(var(--pico-spacing) * 0.5);
+  --pico-form-element-spacing-horizontal: calc(var(--pico-spacing) * 0.75);
   --pico-group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-group-box-shadow-focus-with-button: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
   --pico-group-box-shadow-focus-with-input: 0 0 0 0.0625rem var(--pico-form-element-border-color);
@@ -44,27 +46,32 @@
   --pico-icon-loading: url("data:image/svg+xml,%3Csvg fill='none' height='24' width='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' %3E%3Cstyle%3E g %7B animation: rotate 2s linear infinite; transform-origin: center center; %7D circle %7B stroke-dasharray: 75,100; stroke-dashoffset: -5; animation: dash 1.5s ease-in-out infinite; stroke-linecap: round; %7D @keyframes rotate %7B 0%25 %7B transform: rotate(0deg); %7D 100%25 %7B transform: rotate(360deg); %7D %7D @keyframes dash %7B 0%25 %7B stroke-dasharray: 1,100; stroke-dashoffset: 0; %7D 50%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -17.5; %7D 100%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -62; %7D %7D %3C/style%3E%3Cg%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='rgb(136, 145, 164)' stroke-width='4' /%3E%3C/g%3E%3C/svg%3E");
 }
 @media (min-width: 576px) {
-  :root {
+  :root,
+  :host {
     --pico-font-size: 106.25%;
   }
 }
 @media (min-width: 768px) {
-  :root {
+  :root,
+  :host {
     --pico-font-size: 112.5%;
   }
 }
 @media (min-width: 1024px) {
-  :root {
+  :root,
+  :host {
     --pico-font-size: 118.75%;
   }
 }
 @media (min-width: 1280px) {
-  :root {
+  :root,
+  :host {
     --pico-font-size: 125%;
   }
 }
 @media (min-width: 1536px) {
-  :root {
+  :root,
+  :host {
     --pico-font-size: 131.25%;
   }
 }
@@ -120,6 +127,10 @@ h6 {
   --pico-font-size: 1rem;
   --pico-line-height: 1.25;
   --pico-typography-spacing-top: 1.5rem;
+}
+
+table > caption {
+  --pico-font-weight: 600;
 }
 
 thead th,
@@ -179,24 +190,22 @@ input:not([type=submit],
   --pico-form-element-spacing-horizontal: 2rem;
 }
 
-details summary[role=button]::after {
-  filter: brightness(0) invert(1);
-}
-
-[aria-busy=true]:not(input, select, textarea):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
-  filter: brightness(0) invert(1);
+[role=tablist] {
+  --pico-tab-animation: showTab;
 }
 
 /**
  * Color schemes
  */
 [data-theme=light],
-:root:not([data-theme=dark]) {
+:root:not([data-theme=dark]),
+:host(:not([data-theme=dark])) {
+  color-scheme: light;
   --pico-background-color: #fff;
   --pico-color: #373c44;
   --pico-text-selection-color: rgba(71, 164, 23, 0.25);
   --pico-muted-color: #646b79;
-  --pico-muted-border-color: #e7eaf0;
+  --pico-muted-border-color: rgb(231, 234, 239.5);
   --pico-primary: #33790f;
   --pico-primary-background: #398712;
   --pico-primary-border: var(--pico-primary-background);
@@ -228,27 +237,31 @@ details summary[role=button]::after {
   --pico-contrast-focus: rgba(93, 107, 137, 0.25);
   --pico-contrast-inverse: #fff;
   --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(129, 145, 181, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(129, 145, 181, 0.024), 0.0625rem 0.125rem 0.75rem rgba(129, 145, 181, 0.03), 0.1125rem 0.225rem 1.35rem rgba(129, 145, 181, 0.036), 0.2085rem 0.417rem 2.502rem rgba(129, 145, 181, 0.04302), 0.5rem 1rem 6rem rgba(129, 145, 181, 0.06), 0 0 0 0.0625rem rgba(129, 145, 181, 0.015);
+  --pico-accent-bg-color: var(--pico-background-color);
+  --pico-accent-section-bg-color: rgb(251, 251.5, 252.25);
+  --pico-accent-border-color: var(--pico-muted-border-color);
+  --pico-accent-box-shadow: var(--pico-box-shadow);
   --pico-h1-color: #2d3138;
   --pico-h2-color: #373c44;
   --pico-h3-color: #424751;
   --pico-h4-color: #4d535e;
   --pico-h5-color: #5c6370;
   --pico-h6-color: #646b79;
-  --pico-mark-background-color: #fde7c0;
+  --pico-mark-background-color: rgb(252.5, 230.5, 191.5);
   --pico-mark-color: #0f1114;
-  --pico-ins-color: #1d6a54;
-  --pico-del-color: #883935;
+  --pico-ins-color: rgb(28.5, 105.5, 84);
+  --pico-del-color: rgb(136, 56.5, 53);
   --pico-blockquote-border-color: var(--pico-muted-border-color);
   --pico-blockquote-footer-color: var(--pico-muted-color);
   --pico-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-table-border-color: var(--pico-muted-border-color);
   --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
-  --pico-code-background-color: #f3f5f7;
+  --pico-code-background-color: rgb(243, 244.5, 246.75);
   --pico-code-color: #646b79;
   --pico-code-kbd-background-color: var(--pico-color);
   --pico-code-kbd-color: var(--pico-background-color);
-  --pico-form-element-background-color: #fbfcfc;
+  --pico-form-element-background-color: rgb(251, 251.5, 252.25);
   --pico-form-element-selected-background-color: #dfe3eb;
   --pico-form-element-border-color: #cfd5e2;
   --pico-form-element-color: #23262c;
@@ -257,11 +270,11 @@ details summary[role=button]::after {
   --pico-form-element-active-border-color: var(--pico-primary-border);
   --pico-form-element-focus-color: var(--pico-primary-border);
   --pico-form-element-disabled-opacity: 0.5;
-  --pico-form-element-invalid-border-color: #b86a6b;
-  --pico-form-element-invalid-active-border-color: #c84f48;
+  --pico-form-element-invalid-border-color: rgb(183.5, 105.5, 106.5);
+  --pico-form-element-invalid-active-border-color: rgb(200.25, 79.25, 72.25);
   --pico-form-element-invalid-focus-color: var(--pico-form-element-invalid-active-border-color);
-  --pico-form-element-valid-border-color: #4c9b8a;
-  --pico-form-element-valid-active-border-color: #279977;
+  --pico-form-element-valid-border-color: rgb(76, 154.5, 137.5);
+  --pico-form-element-valid-active-border-color: rgb(39, 152.75, 118.75);
   --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
   --pico-switch-background-color: #bfc7d9;
   --pico-switch-checked-background-color: var(--pico-primary-background);
@@ -279,16 +292,29 @@ details summary[role=button]::after {
   --pico-card-background-color: var(--pico-background-color);
   --pico-card-border-color: var(--pico-muted-border-color);
   --pico-card-box-shadow: var(--pico-box-shadow);
-  --pico-card-sectioning-background-color: #fbfcfc;
+  --pico-card-sectioning-background-color: rgb(251, 251.5, 252.25);
   --pico-loading-spinner-opacity: 0.5;
   --pico-modal-overlay-background-color: rgba(232, 234, 237, 0.75);
   --pico-progress-background-color: #dfe3eb;
   --pico-progress-color: var(--pico-primary-background);
   --pico-tooltip-background-color: var(--pico-contrast-background);
   --pico-tooltip-color: var(--pico-contrast-inverse);
-  --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(76, 155, 138)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-  --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(200, 79, 72)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
-  color-scheme: light;
+  --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(76, 154.5, 137.5)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(200.25, 79.25, 72.25)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+  --pico-timeline-line-color: var(--pico-primary-background);
+  --pico-timeline-dot-background-color: var(--pico-primary-inverse);
+  --pico-timeline-dot-border-color: var(--pico-primary-background);
+  --pico-timeline-arrow-color: var(--pico-card-sectioning-background-color);
+}
+[data-theme=light] details summary[role=button]::after,
+:root:not([data-theme=dark]) details summary[role=button]::after,
+:host(:not([data-theme=dark])) details summary[role=button]::after {
+  filter: brightness(100) invert(0);
+}
+[data-theme=light] [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
+:root:not([data-theme=dark]) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
+:host(:not([data-theme=dark])) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
+  filter: brightness(100) invert(0);
 }
 [data-theme=light] input:is([type=submit],
 [type=button],
@@ -301,13 +327,21 @@ details summary[role=button]::after {
 [type=reset],
 [type=checkbox],
 [type=radio],
+[type=file]),
+:host(:not([data-theme=dark])) input:is([type=submit],
+[type=button],
+[type=reset],
+[type=checkbox],
+[type=radio],
 [type=file]) {
   --pico-form-element-focus-color: var(--pico-primary-focus);
 }
 
 @media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    --pico-background-color: #13171f;
+  :root:not([data-theme]),
+  :host(:not([data-theme])) {
+    color-scheme: dark;
+    --pico-background-color: rgb(19, 22.5, 30.5);
     --pico-color: #c2c7d0;
     --pico-text-selection-color: rgba(78, 179, 27, 0.1875);
     --pico-muted-color: #7b8495;
@@ -342,7 +376,11 @@ details summary[role=button]::after {
     --pico-contrast-hover-underline: var(--pico-contrast-hover);
     --pico-contrast-focus: rgba(207, 213, 226, 0.25);
     --pico-contrast-inverse: #000;
-    --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(7, 9, 12, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(7, 9, 12, 0.024), 0.0625rem 0.125rem 0.75rem rgba(7, 9, 12, 0.03), 0.1125rem 0.225rem 1.35rem rgba(7, 9, 12, 0.036), 0.2085rem 0.417rem 2.502rem rgba(7, 9, 12, 0.04302), 0.5rem 1rem 6rem rgba(7, 9, 12, 0.06), 0 0 0 0.0625rem rgba(7, 9, 12, 0.015);
+    --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(7, 8.5, 12, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(7, 8.5, 12, 0.024), 0.0625rem 0.125rem 0.75rem rgba(7, 8.5, 12, 0.03), 0.1125rem 0.225rem 1.35rem rgba(7, 8.5, 12, 0.036), 0.2085rem 0.417rem 2.502rem rgba(7, 8.5, 12, 0.04302), 0.5rem 1rem 6rem rgba(7, 8.5, 12, 0.06), 0 0 0 0.0625rem rgba(7, 8.5, 12, 0.015);
+    --pico-accent-bg-color: #181c25;
+    --pico-accent-section-bg-color: rgb(26, 30.5, 40.25);
+    --pico-accent-border-color: var(--pico-muted-border-color);
+    --pico-accent-box-shadow: var(--pico-box-shadow);
     --pico-h1-color: #f0f1f3;
     --pico-h2-color: #e0e3e7;
     --pico-h3-color: #c2c7d0;
@@ -352,31 +390,31 @@ details summary[role=button]::after {
     --pico-mark-background-color: #014063;
     --pico-mark-color: #fff;
     --pico-ins-color: #62af9a;
-    --pico-del-color: #ce7e7b;
+    --pico-del-color: rgb(205.5, 126, 123);
     --pico-blockquote-border-color: var(--pico-muted-border-color);
     --pico-blockquote-footer-color: var(--pico-muted-color);
     --pico-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     --pico-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     --pico-table-border-color: var(--pico-muted-border-color);
     --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
-    --pico-code-background-color: #1a1f28;
+    --pico-code-background-color: rgb(26, 30.5, 40.25);
     --pico-code-color: #8891a4;
     --pico-code-kbd-background-color: var(--pico-color);
     --pico-code-kbd-color: var(--pico-background-color);
-    --pico-form-element-background-color: #1c212c;
+    --pico-form-element-background-color: rgb(28, 33, 43.5);
     --pico-form-element-selected-background-color: #2a3140;
     --pico-form-element-border-color: #2a3140;
     --pico-form-element-color: #e0e3e7;
     --pico-form-element-placeholder-color: #8891a4;
-    --pico-form-element-active-background-color: #1a1f28;
+    --pico-form-element-active-background-color: rgb(26, 30.5, 40.25);
     --pico-form-element-active-border-color: var(--pico-primary-border);
     --pico-form-element-focus-color: var(--pico-primary-border);
     --pico-form-element-disabled-opacity: 0.5;
-    --pico-form-element-invalid-border-color: #964a50;
-    --pico-form-element-invalid-active-border-color: #b7403b;
+    --pico-form-element-invalid-border-color: rgb(149.5, 74, 80);
+    --pico-form-element-invalid-active-border-color: rgb(183.25, 63.5, 59);
     --pico-form-element-invalid-focus-color: var(--pico-form-element-invalid-active-border-color);
     --pico-form-element-valid-border-color: #2a7b6f;
-    --pico-form-element-valid-active-border-color: #16896a;
+    --pico-form-element-valid-active-border-color: rgb(22, 137, 105.5);
     --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
     --pico-switch-background-color: #333c4e;
     --pico-switch-checked-background-color: var(--pico-primary-background);
@@ -392,20 +430,29 @@ details summary[role=button]::after {
     --pico-accordion-close-summary-color: var(--pico-color);
     --pico-accordion-open-summary-color: var(--pico-muted-color);
     --pico-card-background-color: #181c25;
-    --pico-card-border-color: var(--pico-card-background-color);
+    --pico-card-border-color: var(--pico-muted-border-color);
     --pico-card-box-shadow: var(--pico-box-shadow);
-    --pico-card-sectioning-background-color: #1a1f28;
+    --pico-card-sectioning-background-color: rgb(26, 30.5, 40.25);
     --pico-loading-spinner-opacity: 0.5;
-    --pico-modal-overlay-background-color: rgba(8, 9, 10, 0.75);
+    --pico-modal-overlay-background-color: rgba(7.5, 8.5, 10, 0.75);
     --pico-progress-background-color: #202632;
     --pico-progress-color: var(--pico-primary-background);
-    --pico-tooltip-background-color: var(--pico-contrast-background);
-    --pico-tooltip-color: var(--pico-contrast-inverse);
+    --pico-tooltip-background-color: var(--pico-contrast-inverse);
+    --pico-tooltip-color: var(--pico-contrast-background);
     --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(42, 123, 111)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-    --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(150, 74, 80)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
-    color-scheme: dark;
+    --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(149.5, 74, 80)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+    --pico-timeline-line-color: var(--pico-primary-background);
+    --pico-timeline-dot-background-color: var(--pico-primary-inverse);
+    --pico-timeline-dot-border-color: var(--pico-primary-background);
+    --pico-timeline-arrow-color: var(--pico-card-sectioning-background-color);
   }
   :root:not([data-theme]) input:is([type=submit],
+  [type=button],
+  [type=reset],
+  [type=checkbox],
+  [type=radio],
+  [type=file]),
+  :host(:not([data-theme])) input:is([type=submit],
   [type=button],
   [type=reset],
   [type=checkbox],
@@ -413,9 +460,18 @@ details summary[role=button]::after {
   [type=file]) {
     --pico-form-element-focus-color: var(--pico-primary-focus);
   }
+  :root:not([data-theme]) details summary[role=button]::after,
+  :host(:not([data-theme])) details summary[role=button]::after {
+    filter: brightness(100) invert(0);
+  }
+  :root:not([data-theme]) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before,
+  :host(:not([data-theme])) [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
+    filter: brightness(100) invert(1);
+  }
 }
 [data-theme=dark] {
-  --pico-background-color: #13171f;
+  color-scheme: dark;
+  --pico-background-color: rgb(19, 22.5, 30.5);
   --pico-color: #c2c7d0;
   --pico-text-selection-color: rgba(78, 179, 27, 0.1875);
   --pico-muted-color: #7b8495;
@@ -450,7 +506,11 @@ details summary[role=button]::after {
   --pico-contrast-hover-underline: var(--pico-contrast-hover);
   --pico-contrast-focus: rgba(207, 213, 226, 0.25);
   --pico-contrast-inverse: #000;
-  --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(7, 9, 12, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(7, 9, 12, 0.024), 0.0625rem 0.125rem 0.75rem rgba(7, 9, 12, 0.03), 0.1125rem 0.225rem 1.35rem rgba(7, 9, 12, 0.036), 0.2085rem 0.417rem 2.502rem rgba(7, 9, 12, 0.04302), 0.5rem 1rem 6rem rgba(7, 9, 12, 0.06), 0 0 0 0.0625rem rgba(7, 9, 12, 0.015);
+  --pico-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(7, 8.5, 12, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(7, 8.5, 12, 0.024), 0.0625rem 0.125rem 0.75rem rgba(7, 8.5, 12, 0.03), 0.1125rem 0.225rem 1.35rem rgba(7, 8.5, 12, 0.036), 0.2085rem 0.417rem 2.502rem rgba(7, 8.5, 12, 0.04302), 0.5rem 1rem 6rem rgba(7, 8.5, 12, 0.06), 0 0 0 0.0625rem rgba(7, 8.5, 12, 0.015);
+  --pico-accent-bg-color: #181c25;
+  --pico-accent-section-bg-color: rgb(26, 30.5, 40.25);
+  --pico-accent-border-color: var(--pico-muted-border-color);
+  --pico-accent-box-shadow: var(--pico-box-shadow);
   --pico-h1-color: #f0f1f3;
   --pico-h2-color: #e0e3e7;
   --pico-h3-color: #c2c7d0;
@@ -460,31 +520,31 @@ details summary[role=button]::after {
   --pico-mark-background-color: #014063;
   --pico-mark-color: #fff;
   --pico-ins-color: #62af9a;
-  --pico-del-color: #ce7e7b;
+  --pico-del-color: rgb(205.5, 126, 123);
   --pico-blockquote-border-color: var(--pico-muted-border-color);
   --pico-blockquote-footer-color: var(--pico-muted-color);
   --pico-button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
   --pico-table-border-color: var(--pico-muted-border-color);
   --pico-table-row-stripped-background-color: rgba(111, 120, 135, 0.0375);
-  --pico-code-background-color: #1a1f28;
+  --pico-code-background-color: rgb(26, 30.5, 40.25);
   --pico-code-color: #8891a4;
   --pico-code-kbd-background-color: var(--pico-color);
   --pico-code-kbd-color: var(--pico-background-color);
-  --pico-form-element-background-color: #1c212c;
+  --pico-form-element-background-color: rgb(28, 33, 43.5);
   --pico-form-element-selected-background-color: #2a3140;
   --pico-form-element-border-color: #2a3140;
   --pico-form-element-color: #e0e3e7;
   --pico-form-element-placeholder-color: #8891a4;
-  --pico-form-element-active-background-color: #1a1f28;
+  --pico-form-element-active-background-color: rgb(26, 30.5, 40.25);
   --pico-form-element-active-border-color: var(--pico-primary-border);
   --pico-form-element-focus-color: var(--pico-primary-border);
   --pico-form-element-disabled-opacity: 0.5;
-  --pico-form-element-invalid-border-color: #964a50;
-  --pico-form-element-invalid-active-border-color: #b7403b;
+  --pico-form-element-invalid-border-color: rgb(149.5, 74, 80);
+  --pico-form-element-invalid-active-border-color: rgb(183.25, 63.5, 59);
   --pico-form-element-invalid-focus-color: var(--pico-form-element-invalid-active-border-color);
   --pico-form-element-valid-border-color: #2a7b6f;
-  --pico-form-element-valid-active-border-color: #16896a;
+  --pico-form-element-valid-active-border-color: rgb(22, 137, 105.5);
   --pico-form-element-valid-focus-color: var(--pico-form-element-valid-active-border-color);
   --pico-switch-background-color: #333c4e;
   --pico-switch-checked-background-color: var(--pico-primary-background);
@@ -500,18 +560,21 @@ details summary[role=button]::after {
   --pico-accordion-close-summary-color: var(--pico-color);
   --pico-accordion-open-summary-color: var(--pico-muted-color);
   --pico-card-background-color: #181c25;
-  --pico-card-border-color: var(--pico-card-background-color);
+  --pico-card-border-color: var(--pico-muted-border-color);
   --pico-card-box-shadow: var(--pico-box-shadow);
-  --pico-card-sectioning-background-color: #1a1f28;
+  --pico-card-sectioning-background-color: rgb(26, 30.5, 40.25);
   --pico-loading-spinner-opacity: 0.5;
-  --pico-modal-overlay-background-color: rgba(8, 9, 10, 0.75);
+  --pico-modal-overlay-background-color: rgba(7.5, 8.5, 10, 0.75);
   --pico-progress-background-color: #202632;
   --pico-progress-color: var(--pico-primary-background);
-  --pico-tooltip-background-color: var(--pico-contrast-background);
-  --pico-tooltip-color: var(--pico-contrast-inverse);
+  --pico-tooltip-background-color: var(--pico-contrast-inverse);
+  --pico-tooltip-color: var(--pico-contrast-background);
   --pico-icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(42, 123, 111)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-  --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(150, 74, 80)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
-  color-scheme: dark;
+  --pico-icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(149.5, 74, 80)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+  --pico-timeline-line-color: var(--pico-primary-background);
+  --pico-timeline-dot-background-color: var(--pico-primary-inverse);
+  --pico-timeline-dot-border-color: var(--pico-primary-background);
+  --pico-timeline-arrow-color: var(--pico-card-sectioning-background-color);
 }
 [data-theme=dark] input:is([type=submit],
 [type=button],
@@ -520,6 +583,12 @@ details summary[role=button]::after {
 [type=radio],
 [type=file]) {
   --pico-form-element-focus-color: var(--pico-primary-focus);
+}
+[data-theme=dark] details summary[role=button]::after {
+  filter: brightness(100) invert(0);
+}
+[data-theme=dark] [aria-busy=true]:not(input, select, textarea, html, form):is(button, [type=submit], [type=button], [type=reset], [role=button])::before {
+  filter: brightness(100) invert(1);
 }
 
 progress,
@@ -546,7 +615,8 @@ progress,
   vertical-align: inherit;
 }
 
-:where(:root) {
+:where(:root),
+:where(:host) {
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -560,14 +630,18 @@ progress,
   text-underline-offset: var(--pico-text-underline-offset);
   text-rendering: optimizeLegibility;
   overflow-wrap: break-word;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
 }
 
 /**
  * Landmarks
  */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100%;
   margin: 0;
@@ -630,6 +704,7 @@ section {
   margin-bottom: var(--pico-block-spacing-vertical);
 }
 
+/* Source inspired by https://github.com/sophie-thomas/CSS-Grid/blob/main/assets/scss/grid.scss */
 /**
  * Typography
  */
@@ -935,8 +1010,8 @@ button:focus, button:is([aria-current]:not([aria-current=false])):focus,
   text-indent: 0;
 }
 
-th,
-td {
+table th,
+table td {
   padding: calc(var(--pico-spacing) / 2) var(--pico-spacing);
   border-bottom: var(--pico-border-width) solid var(--pico-table-border-color);
   background-color: var(--pico-background-color);
@@ -946,17 +1021,38 @@ td {
   text-align: start;
 }
 
-tfoot th,
-tfoot td {
+table > caption {
+  margin-block: calc(var(--pico-block-spacing-vertical) * 0.5);
+  padding: calc(var(--pico-spacing) / 2) var(--pico-spacing);
+  background-color: var(--pico-table-row-stripped-background-color);
+  color: var(--pico-h3-color);
+  font-weight: var(--pico-font-weight);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+table > tfoot th,
+table > tfoot td {
   border-top: var(--pico-border-width) solid var(--pico-table-border-color);
   border-bottom: 0;
 }
 
-table.striped tbody tr:nth-child(odd) th,
-table.striped tbody tr:nth-child(odd) td {
+table > caption {
+  margin-block: calc(var(--pico-block-spacing-vertical) * 0.5);
+  background-color: var(--pico-table-row-stripped-background-color);
+  color: var(--pico-h3-color);
+  font-weight: var(--pico-font-weight);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+/* clean-css ignore:start */
+table.striped tbody tr:nth-child(odd of :not([hidden])) th,
+table.striped tbody tr:nth-child(odd of :not([hidden])) td {
   background-color: var(--pico-table-row-stripped-background-color);
 }
 
+/* clean-css ignore:end */
 /**
  * Embedded content
  */
@@ -988,7 +1084,8 @@ img {
   fill: currentColor;
 }
 
-svg:not(:root) {
+svg:not(:root),
+svg:not(:host) {
   overflow: hidden;
 }
 
@@ -1026,17 +1123,18 @@ kbd {
 code,
 kbd {
   display: inline-block;
-  padding: 0.375rem;
+  padding: 0.125rem 0.375rem;
+  vertical-align: middle;
 }
 
 pre {
   display: block;
   margin-bottom: var(--pico-spacing);
-  overflow-x: auto;
 }
 pre > code {
   display: block;
   padding: var(--pico-spacing);
+  overflow-x: auto;
   background: none;
   line-height: var(--pico-line-height);
 }
@@ -1061,7 +1159,7 @@ figure figcaption {
 }
 
 /**
- * Miscs
+ * Misc
  */
 hr {
   height: 0;
@@ -1086,7 +1184,9 @@ canvas {
 input,
 optgroup,
 select,
-textarea {
+textarea,
+[role=group] > label,
+[role=group] > legend {
   margin: 0;
   font-size: 1rem;
   line-height: var(--pico-line-height);
@@ -1102,7 +1202,7 @@ select {
   text-transform: none;
 }
 
-legend {
+*:not([role=group]) legend {
   max-width: 100%;
   padding: 0;
   color: inherit;
@@ -1160,7 +1260,7 @@ textarea {
   border-width: 0;
 }
 
-input:not([type=checkbox], [type=radio], [type=range]) {
+input:not([type=checkbox], [type=radio], [type=range], [type=date]) {
   height: calc(1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 2 + var(--pico-border-width) * 2);
 }
 
@@ -1172,15 +1272,15 @@ fieldset {
   border: 0;
 }
 
-label,
-fieldset legend {
+*:not([role=group]) > label,
+fieldset:not([role=group]) > legend {
   display: block;
   margin-bottom: calc(var(--pico-spacing) * 0.375);
   color: var(--pico-color);
   font-weight: var(--pico-form-label-font-weight, var(--pico-font-weight));
 }
 
-fieldset legend {
+fieldset:not([role=group]) > legend {
   margin-bottom: calc(var(--pico-spacing) * 0.5);
 }
 
@@ -1193,7 +1293,9 @@ textarea {
 
 input:not([type=checkbox], [type=radio], [type=range], [type=file]),
 select,
-textarea {
+textarea,
+[role=group] > label,
+[role=group] > legend {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1202,7 +1304,9 @@ textarea {
 
 input,
 select,
-textarea {
+textarea,
+[role=group] > label,
+[role=group] > legend {
   --pico-background-color: var(--pico-form-element-background-color);
   --pico-border-color: var(--pico-form-element-border-color);
   --pico-color: var(--pico-form-element-color);
@@ -1246,6 +1350,8 @@ input:not([type=submit], [type=button], [type=reset])[disabled],
 select[disabled],
 textarea[disabled],
 label[aria-disabled=true],
+[role=group] > label[aria-disabled=true],
+[role=group] > legend[aria-disabled=true],
 :where(fieldset[disabled]) :is(input:not([type=submit], [type=button], [type=reset]), select, textarea) {
   opacity: var(--pico-form-element-disabled-opacity);
   pointer-events: none;
@@ -1255,7 +1361,7 @@ label[aria-disabled=true] input[disabled] {
   opacity: 1;
 }
 
-:where(input, select, textarea):not([type=checkbox],
+:not([novalidate]) :where(input, select, textarea):not([type=checkbox],
 [type=radio],
 [type=date],
 [type=datetime-local],
@@ -1271,7 +1377,7 @@ label[aria-disabled=true] input[disabled] {
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
-:where(input, select, textarea):not([type=checkbox],
+:not([novalidate]) :where(input, select, textarea):not([type=checkbox],
 [type=radio],
 [type=date],
 [type=datetime-local],
@@ -1281,7 +1387,7 @@ label[aria-disabled=true] input[disabled] {
 [type=range])[aria-invalid=false]:not(select) {
   background-image: var(--pico-icon-valid);
 }
-:where(input, select, textarea):not([type=checkbox],
+:not([novalidate]) :where(input, select, textarea):not([type=checkbox],
 [type=radio],
 [type=date],
 [type=datetime-local],
@@ -1291,22 +1397,22 @@ label[aria-disabled=true] input[disabled] {
 [type=range])[aria-invalid=true]:not(select) {
   background-image: var(--pico-icon-invalid);
 }
-:where(input, select, textarea)[aria-invalid=false] {
+:not([novalidate]) :where(input, select, textarea)[aria-invalid=false] {
   --pico-border-color: var(--pico-form-element-valid-border-color);
 }
-:where(input, select, textarea)[aria-invalid=false]:is(:active, :focus) {
+:not([novalidate]) :where(input, select, textarea)[aria-invalid=false]:is(:active, :focus) {
   --pico-border-color: var(--pico-form-element-valid-active-border-color) !important;
 }
-:where(input, select, textarea)[aria-invalid=false]:is(:active, :focus):not([type=checkbox], [type=radio]) {
+:not([novalidate]) :where(input, select, textarea)[aria-invalid=false]:is(:active, :focus):not([type=checkbox], [type=radio]) {
   --pico-box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-form-element-valid-focus-color) !important;
 }
-:where(input, select, textarea)[aria-invalid=true] {
+:not([novalidate]) :where(input, select, textarea)[aria-invalid=true] {
   --pico-border-color: var(--pico-form-element-invalid-border-color);
 }
-:where(input, select, textarea)[aria-invalid=true]:is(:active, :focus) {
+:not([novalidate]) :where(input, select, textarea)[aria-invalid=true]:is(:active, :focus) {
   --pico-border-color: var(--pico-form-element-invalid-active-border-color) !important;
 }
-:where(input, select, textarea)[aria-invalid=true]:is(:active, :focus):not([type=checkbox], [type=radio]) {
+:not([novalidate]) :where(input, select, textarea)[aria-invalid=true]:is(:active, :focus):not([type=checkbox], [type=radio]) {
   --pico-box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-form-element-invalid-focus-color) !important;
 }
 
@@ -1318,14 +1424,18 @@ input::placeholder,
 input::-webkit-input-placeholder,
 textarea::placeholder,
 textarea::-webkit-input-placeholder,
-select:invalid {
+select:invalid,
+[role=group] > label,
+[role=group] > legend {
   color: var(--pico-form-element-placeholder-color);
   opacity: 1;
 }
 
 input:not([type=checkbox], [type=radio]),
 select,
-textarea {
+textarea,
+[role=group] > label,
+[role=group] > legend {
   margin-bottom: var(--pico-spacing);
 }
 
@@ -1484,36 +1594,55 @@ label:has([type=checkbox], [type=radio]) {
 [type=checkbox][role=switch][disabled] {
   --pico-background-color: var(--pico-border-color);
 }
+[type=checkbox][role=switch][name=color-mode-toggle]:before {
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-size: contain; /* For WebKit browsers */
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transition: margin 0.1s ease-in-out, background-color 0.1s ease-in-out;
+}
+[type=checkbox][role=switch][name=color-mode-toggle]:checked::before {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278'/%3E%3Cpath d='M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278'/%3E%3Cpath d='M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.73 1.73 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.73 1.73 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.73 1.73 0 0 0 1.097-1.097zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.16 1.16 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.16 1.16 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732z'/%3E%3C/svg%3E");
+  background-color: var(--pico-primary-inverse);
+}
+[type=checkbox][role=switch][name=color-mode-toggle]:not(:checked)::before {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708'/%3E%3C/svg%3E");
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'%3E%3Cpath d='M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708'/%3E%3C/svg%3E");
+  background-color: var(--pico-primary-inverse);
+}
 
-[type=checkbox][aria-invalid=false]:checked, [type=checkbox][aria-invalid=false]:checked:active, [type=checkbox][aria-invalid=false]:checked:focus,
-[type=checkbox][role=switch][aria-invalid=false]:checked,
-[type=checkbox][role=switch][aria-invalid=false]:checked:active,
-[type=checkbox][role=switch][aria-invalid=false]:checked:focus {
+:not([novalidate]) [type=checkbox][aria-invalid=false]:checked, :not([novalidate]) [type=checkbox][aria-invalid=false]:checked:active, :not([novalidate]) [type=checkbox][aria-invalid=false]:checked:focus,
+:not([novalidate]) [type=checkbox][role=switch][aria-invalid=false]:checked,
+:not([novalidate]) [type=checkbox][role=switch][aria-invalid=false]:checked:active,
+:not([novalidate]) [type=checkbox][role=switch][aria-invalid=false]:checked:focus {
   --pico-background-color: var(--pico-form-element-valid-border-color);
 }
-[type=checkbox]:checked[aria-invalid=true], [type=checkbox]:checked:active[aria-invalid=true], [type=checkbox]:checked:focus[aria-invalid=true],
-[type=checkbox][role=switch]:checked[aria-invalid=true],
-[type=checkbox][role=switch]:checked:active[aria-invalid=true],
-[type=checkbox][role=switch]:checked:focus[aria-invalid=true] {
+:not([novalidate]) [type=checkbox]:checked[aria-invalid=true], :not([novalidate]) [type=checkbox]:checked:active[aria-invalid=true], :not([novalidate]) [type=checkbox]:checked:focus[aria-invalid=true],
+:not([novalidate]) [type=checkbox][role=switch]:checked[aria-invalid=true],
+:not([novalidate]) [type=checkbox][role=switch]:checked:active[aria-invalid=true],
+:not([novalidate]) [type=checkbox][role=switch]:checked:focus[aria-invalid=true] {
   --pico-background-color: var(--pico-form-element-invalid-border-color);
 }
 
-[type=checkbox][aria-invalid=false]:checked, [type=checkbox][aria-invalid=false]:checked:active, [type=checkbox][aria-invalid=false]:checked:focus,
-[type=radio][aria-invalid=false]:checked,
-[type=radio][aria-invalid=false]:checked:active,
-[type=radio][aria-invalid=false]:checked:focus,
-[type=checkbox][role=switch][aria-invalid=false]:checked,
-[type=checkbox][role=switch][aria-invalid=false]:checked:active,
-[type=checkbox][role=switch][aria-invalid=false]:checked:focus {
+:not([novalidate]) [type=checkbox][aria-invalid=false]:checked, :not([novalidate]) [type=checkbox][aria-invalid=false]:checked:active, :not([novalidate]) [type=checkbox][aria-invalid=false]:checked:focus,
+:not([novalidate]) [type=radio][aria-invalid=false]:checked,
+:not([novalidate]) [type=radio][aria-invalid=false]:checked:active,
+:not([novalidate]) [type=radio][aria-invalid=false]:checked:focus,
+:not([novalidate]) [type=checkbox][role=switch][aria-invalid=false]:checked,
+:not([novalidate]) [type=checkbox][role=switch][aria-invalid=false]:checked:active,
+:not([novalidate]) [type=checkbox][role=switch][aria-invalid=false]:checked:focus {
   --pico-border-color: var(--pico-form-element-valid-border-color);
 }
-[type=checkbox]:checked[aria-invalid=true], [type=checkbox]:checked:active[aria-invalid=true], [type=checkbox]:checked:focus[aria-invalid=true],
-[type=radio]:checked[aria-invalid=true],
-[type=radio]:checked:active[aria-invalid=true],
-[type=radio]:checked:focus[aria-invalid=true],
-[type=checkbox][role=switch]:checked[aria-invalid=true],
-[type=checkbox][role=switch]:checked:active[aria-invalid=true],
-[type=checkbox][role=switch]:checked:focus[aria-invalid=true] {
+:not([novalidate]) [type=checkbox]:checked[aria-invalid=true], :not([novalidate]) [type=checkbox]:checked:active[aria-invalid=true], :not([novalidate]) [type=checkbox]:checked:focus[aria-invalid=true],
+:not([novalidate]) [type=radio]:checked[aria-invalid=true],
+:not([novalidate]) [type=radio]:checked:active[aria-invalid=true],
+:not([novalidate]) [type=radio]:checked:focus[aria-invalid=true],
+:not([novalidate]) [type=checkbox][role=switch]:checked[aria-invalid=true],
+:not([novalidate]) [type=checkbox][role=switch]:checked:active[aria-invalid=true],
+:not([novalidate]) [type=checkbox][role=switch]:checked:focus[aria-invalid=true] {
   --pico-border-color: var(--pico-form-element-invalid-border-color);
 }
 
@@ -1713,18 +1842,250 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=search]
   background-position: center right 1.125rem, center left 0.75rem;
 }
 
+form:not([novalidate]) {
+  /* File list when selected from the file input */
+}
+form:not([novalidate]) input:user-valid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]), form:not([novalidate]) input:user-invalid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) {
+  padding-right: calc(1.5em + 0.75rem);
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  background-repeat: no-repeat;
+}
+form:not([novalidate]) input:user-valid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]),
+form:not([novalidate]) input:user-invalid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) {
+  padding-right: calc(1.5em + 0.75rem);
+  background-position: right calc(0.375em + 0.1875rem) center;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  background-repeat: no-repeat;
+}
+form:not([novalidate]) select:user-valid:not([multiple], [size]),
+form:not([novalidate]) select:user-invalid:not([multiple], [size]) {
+  padding-right: calc(1.5em + 0.75rem);
+  padding-right: 4.2rem;
+  background-position: right 0.75rem center, center right 2.25rem;
+  background-repeat: no-repeat;
+}
+form:not([novalidate]) select:user-invalid:not([multiple], [size]) {
+  background-image: var(--pico-icon-chevron), var(--pico-icon-invalid);
+}
+form:not([novalidate]) select:user-valid:not([multiple], [size]) {
+  background-image: var(--pico-icon-chevron), var(--pico-icon-valid);
+}
+form:not([novalidate]) textarea:user-valid:not(:-moz-placeholder-shown), form:not([novalidate]) textarea:user-invalid:not(:-moz-placeholder-shown) {
+  padding-right: calc(1.5em + 0.75rem);
+  background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  background-repeat: no-repeat;
+}
+form:not([novalidate]) textarea:user-valid:not(:placeholder-shown),
+form:not([novalidate]) textarea:user-invalid:not(:placeholder-shown) {
+  padding-right: calc(1.5em + 0.75rem);
+  background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  background-repeat: no-repeat;
+}
+form:not([novalidate]) input:user-invalid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]), form:not([novalidate]) textarea:user-invalid:not(:-moz-placeholder-shown) {
+  border-color: var(--pico-form-element-invalid-border-color);
+  background-image: var(--pico-icon-invalid);
+}
+form:not([novalidate]) input:user-invalid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]),
+form:not([novalidate]) select:user-invalid:not([multiple], [size]),
+form:not([novalidate]) textarea:user-invalid:not(:placeholder-shown) {
+  border-color: var(--pico-form-element-invalid-border-color);
+  background-image: var(--pico-icon-invalid);
+}
+form:not([novalidate]) input:user-invalid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]):focus, form:not([novalidate]) textarea:user-invalid:not(:-moz-placeholder-shown):focus {
+  border-color: var(--pico-form-element-invalid-active-border-color);
+}
+form:not([novalidate]) input:user-invalid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]):focus,
+form:not([novalidate]) select:user-invalid:not([multiple], [size]):focus,
+form:not([novalidate]) textarea:user-invalid:not(:placeholder-shown):focus {
+  border-color: var(--pico-form-element-invalid-active-border-color);
+}
+form:not([novalidate]) input:user-valid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]), form:not([novalidate]) textarea:user-valid:not(:-moz-placeholder-shown) {
+  border-color: var(--pico-form-element-valid-border-color);
+  background-image: var(--pico-icon-valid);
+}
+form:not([novalidate]) input:user-valid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]),
+form:not([novalidate]) select:user-valid:not([multiple], [size]),
+form:not([novalidate]) textarea:user-valid:not(:placeholder-shown) {
+  border-color: var(--pico-form-element-valid-border-color);
+  background-image: var(--pico-icon-valid);
+}
+form:not([novalidate]) input:user-valid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]):focus, form:not([novalidate]) textarea:user-valid:not(:-moz-placeholder-shown):focus {
+  border-color: var(--pico-form-element-valid-active-border-color);
+}
+form:not([novalidate]) input:user-valid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]):focus,
+form:not([novalidate]) select:user-valid:not([multiple], [size]):focus,
+form:not([novalidate]) textarea:user-valid:not(:placeholder-shown):focus {
+  border-color: var(--pico-form-element-valid-active-border-color);
+}
+form:not([novalidate]) input:required:user-invalid:is([type=checkbox]) {
+  border-color: var(--pico-form-element-invalid-border-color);
+}
+form:not([novalidate]) input:user-valid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + small[data-valid]::after, form:not([novalidate]) textarea:user-valid:not(:-moz-placeholder-shown) + small[data-valid]::after {
+  content: attr(data-valid);
+  color: var(--pico-form-element-valid-border-color);
+}
+form:not([novalidate]) input:user-valid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + small[data-valid]::after,
+form:not([novalidate]) select:user-valid:not([multiple], [size]) + small[data-valid]::after,
+form:not([novalidate]) textarea:user-valid:not(:placeholder-shown) + small[data-valid]::after {
+  content: attr(data-valid);
+  color: var(--pico-form-element-valid-border-color);
+}
+form:not([novalidate]) textarea:user-invalid:not(:-moz-placeholder-shown) + small[data-invalid]::after, form:not([novalidate]) input:user-invalid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + [data-invalid]::after {
+  content: attr(data-invalid);
+  color: var(--pico-form-element-invalid-border-color);
+}
+form:not([novalidate]) textarea:user-invalid:not(:placeholder-shown) + small[data-invalid]::after,
+form:not([novalidate]) select:user-invalid:not([multiple], [size]) + small[data-invalid]::after,
+form:not([novalidate]) input:user-invalid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + [data-invalid]::after,
+form:not([novalidate]) input[type=file]:user-invalid + ul + [data-invalid]::after {
+  content: attr(data-invalid);
+  color: var(--pico-form-element-invalid-border-color);
+}
+form:not([novalidate]) input:user-valid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + [data-valid]::after, form:not([novalidate]) input:user-invalid:not(:-moz-placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + [data-invalid]::after, form:not([novalidate]) textarea:user-valid:not(:-moz-placeholder-shown) + [data-valid]::after {
+  display: block;
+}
+form:not([novalidate]) input:user-valid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + [data-valid]::after,
+form:not([novalidate]) input:user-invalid:not(:placeholder-shown, [type=button], [type=reset], [type=image], [type=submit], [type=checkbox], [type=radio]) + [data-invalid]::after,
+form:not([novalidate]) textarea:user-valid:not(:placeholder-shown) + [data-valid]::after,
+form:not([novalidate]) input[type=file]:user-invalid + [data-invalid]::after,
+form:not([novalidate]) input[type=file]:user-invalid + ul + [data-invalid]::after {
+  display: block;
+}
+form:not([novalidate]) input[type=file]:user-invalid + ul + [data-invalid]::after {
+  position: relative;
+  top: -2rem;
+}
+form:not([novalidate]) input[type=file]:user-invalid::file-selector-button {
+  border-color: var(--pico-form-element-invalid-border-color);
+  background-color: var(--pico-form-element-invalid-border-color);
+}
+form:not([novalidate]) .file-list {
+  padding-left: 0;
+}
+form:not([novalidate]) .file-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  text-align: center;
+}
+form:not([novalidate]) .file-list li:nth-child(2n) {
+  background-color: #1b1b1b;
+}
+form:not([novalidate]) .file-list li:hover {
+  background-color: var(--pico-muted-border-color);
+}
+form:not([novalidate]) .file-list li .btn-file-rm {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 10px;
+  padding: 0;
+  padding-top: calc(var(--pico-spacing) * 0.25);
+  border: none;
+  background-image: var(--pico-icon-red-close);
+  background-position: center;
+  background-size: 1rem;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  color: var(--pico-element-invalid-border-color);
+  opacity: 0.5;
+  transition: opacity var(--pico-transition);
+}
+form:not([novalidate]) .file-list li .btn-file-rm:hover {
+  opacity: 1;
+}
+
+section[role=form] {
+  position: relative;
+  margin-bottom: 0;
+}
+section[role=form] > input::-moz-placeholder, section[role=form] > textarea::-moz-placeholder {
+  color: rgba(0, 0, 0, 0);
+  -moz-transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+section[role=form] > input::placeholder,
+section[role=form] > textarea::placeholder {
+  color: rgba(0, 0, 0, 0);
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+section[role=form] > input:focus::-moz-placeholder, section[role=form] > textarea:focus::-moz-placeholder {
+  color: var(--pico-form-element-placeholder-color);
+}
+section[role=form] > input:focus::placeholder,
+section[role=form] > textarea:focus::placeholder {
+  color: var(--pico-form-element-placeholder-color);
+}
+section[role=form] > input + label,
+section[role=form] > textarea + label,
+section[role=form] > select + label {
+  position: absolute;
+  top: 0.55rem;
+  left: 0.8rem;
+  transform: translateY(0%);
+  background: var(--pico-form-element-background-color);
+  color: var(--pico-form-element-placeholder-color);
+  cursor: text;
+  transition: 0.3s ease;
+}
+section[role=form] > input:not(:-moz-placeholder-shown) + label, section[role=form] > textarea:not(:-moz-placeholder-shown) + label {
+  top: 0;
+  padding: calc(var(--pico-spacing) * 0.15) calc(var(--pico-spacing) * 0.5);
+  transform: translateY(-50%) scale(0.8);
+  color: var(--pico-form-element-active-border-color);
+  font-size: var(--pico-font-size);
+  line-height: 1.15;
+  -moz-transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+section[role=form] > input:not(:placeholder-shown) + label,
+section[role=form] > input:focus + label,
+section[role=form] > textarea:not(:placeholder-shown) + label,
+section[role=form] > textarea:focus + label,
+section[role=form] > select:focus + label,
+section[role=form] > select:has(option:checked:not([disabled])) + label {
+  top: 0;
+  padding: calc(var(--pico-spacing) * 0.15) calc(var(--pico-spacing) * 0.5);
+  transform: translateY(-50%) scale(0.8);
+  color: var(--pico-form-element-active-border-color);
+  font-size: var(--pico-font-size);
+  line-height: 1.15;
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+section[role=form] > input:user-invalid:not(:-moz-placeholder-shown) + label, section[role=form] > textarea:user-invalid:not(:-moz-placeholder-shown) + label {
+  color: var(--pico-form-element-invalid-border-color);
+}
+section[role=form] > input:user-invalid:not(:placeholder-shown) + label,
+section[role=form] > textarea:user-invalid:not(:placeholder-shown) + label {
+  color: var(--pico-form-element-invalid-border-color);
+}
+section[role=form] > input:user-valid:not(:-moz-placeholder-shown) + label, section[role=form] > textarea:user-valid:not(:-moz-placeholder-shown) + label {
+  color: var(--pico-form-element-valid-border-color);
+}
+section[role=form] > input:user-valid:not(:placeholder-shown) + label,
+section[role=form] > textarea:user-valid:not(:placeholder-shown) + label {
+  color: var(--pico-form-element-valid-border-color);
+}
+
 /**
  * Accordion (<details>)
  */
 details {
   display: block;
-  margin-bottom: var(--pico-spacing);
+  margin-block-end: var(--pico-spacing);
+}
+details:not(.hide-arrow) > summary {
+  padding-inline-end: calc(var(--pico-nav-link-spacing-horizontal) * 3.25);
 }
 details summary {
+  position: relative;
   line-height: 1rem;
   list-style-type: none;
   cursor: pointer;
-  transition: color var(--pico-transition);
 }
 details summary:not([role]) {
   color: var(--pico-accordion-close-summary-color);
@@ -1740,10 +2101,12 @@ details summary::-moz-list-bullet {
 }
 details summary::after {
   display: block;
+  position: absolute;
+  top: calc(var(--pico-block-spacing-vertical) * 0.5);
+  right: calc(var(--pico-block-spacing-horizontal) * 0.5);
   width: 1rem;
   height: 1rem;
   margin-inline-start: calc(var(--pico-spacing, 1rem) * 0.5);
-  float: right;
   transform: rotate(-90deg);
   background-image: var(--pico-icon-chevron);
   background-position: right center;
@@ -1771,7 +2134,7 @@ details summary[role=button]::after {
   height: calc(1rem * var(--pico-line-height, 1.5));
 }
 details[open] > summary {
-  margin-bottom: var(--pico-spacing);
+  margin-block-end: var(--pico-spacing);
 }
 details[open] > summary:not([role]):not(:focus) {
   color: var(--pico-accordion-open-summary-color);
@@ -1785,44 +2148,224 @@ details[open] > summary::after {
 }
 [dir=rtl] details summary::after {
   float: left;
+  transform: rotate(90deg);
   background-position: left center;
+}
+[dir=rtl] details[open] > summary::after {
+  transform: rotate(0);
 }
 
 /**
- * Card (<article>)
+ * Card (<article>, role="article")
  */
-article {
+article:not(:has(> form:first-child)),
+[role=article]:not(:has(> form:first-child)),
+article > form,
+[role=article] > form {
   margin-bottom: var(--pico-block-spacing-vertical);
   padding: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
   border-radius: var(--pico-border-radius);
   background: var(--pico-card-background-color);
   box-shadow: var(--pico-card-box-shadow);
 }
-article > header,
-article > footer {
+article:not(:has(> form:first-child)) > header,
+article:not(:has(> form:first-child)) > footer,
+[role=article]:not(:has(> form:first-child)) > header,
+[role=article]:not(:has(> form:first-child)) > footer,
+article > form > header,
+article > form > footer,
+[role=article] > form > header,
+[role=article] > form > footer {
   margin-right: calc(var(--pico-block-spacing-horizontal) * -1);
   margin-left: calc(var(--pico-block-spacing-horizontal) * -1);
   padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
   background-color: var(--pico-card-sectioning-background-color);
 }
-article > header {
+article:not(:has(> form:first-child)) > header,
+[role=article]:not(:has(> form:first-child)) > header,
+article > form > header,
+[role=article] > form > header {
   margin-top: calc(var(--pico-block-spacing-vertical) * -1);
   margin-bottom: var(--pico-block-spacing-vertical);
   border-bottom: var(--pico-border-width) solid var(--pico-card-border-color);
   border-top-right-radius: var(--pico-border-radius);
   border-top-left-radius: var(--pico-border-radius);
 }
-article > footer {
+article:not(:has(> form:first-child)) > header > h1,
+article:not(:has(> form:first-child)) > header > h2,
+article:not(:has(> form:first-child)) > header > h3,
+article:not(:has(> form:first-child)) > header > h4,
+article:not(:has(> form:first-child)) > header > h5,
+article:not(:has(> form:first-child)) > header > h6,
+[role=article]:not(:has(> form:first-child)) > header > h1,
+[role=article]:not(:has(> form:first-child)) > header > h2,
+[role=article]:not(:has(> form:first-child)) > header > h3,
+[role=article]:not(:has(> form:first-child)) > header > h4,
+[role=article]:not(:has(> form:first-child)) > header > h5,
+[role=article]:not(:has(> form:first-child)) > header > h6,
+article > form > header > h1,
+article > form > header > h2,
+article > form > header > h3,
+article > form > header > h4,
+article > form > header > h5,
+article > form > header > h6,
+[role=article] > form > header > h1,
+[role=article] > form > header > h2,
+[role=article] > form > header > h3,
+[role=article] > form > header > h4,
+[role=article] > form > header > h5,
+[role=article] > form > header > h6 {
+  margin-bottom: 0;
+}
+article:not(:has(> form:first-child)) > header > hgroup > h1,
+article:not(:has(> form:first-child)) > header > hgroup > h2,
+article:not(:has(> form:first-child)) > header > hgroup > h3,
+article:not(:has(> form:first-child)) > header > hgroup > h4,
+article:not(:has(> form:first-child)) > header > hgroup > h5,
+article:not(:has(> form:first-child)) > header > hgroup > h6,
+[role=article]:not(:has(> form:first-child)) > header > hgroup > h1,
+[role=article]:not(:has(> form:first-child)) > header > hgroup > h2,
+[role=article]:not(:has(> form:first-child)) > header > hgroup > h3,
+[role=article]:not(:has(> form:first-child)) > header > hgroup > h4,
+[role=article]:not(:has(> form:first-child)) > header > hgroup > h5,
+[role=article]:not(:has(> form:first-child)) > header > hgroup > h6,
+article > form > header > hgroup > h1,
+article > form > header > hgroup > h2,
+article > form > header > hgroup > h3,
+article > form > header > hgroup > h4,
+article > form > header > hgroup > h5,
+article > form > header > hgroup > h6,
+[role=article] > form > header > hgroup > h1,
+[role=article] > form > header > hgroup > h2,
+[role=article] > form > header > hgroup > h3,
+[role=article] > form > header > hgroup > h4,
+[role=article] > form > header > hgroup > h5,
+[role=article] > form > header > hgroup > h6 {
+  margin-bottom: 0;
+}
+article:not(:has(> form:first-child)) > footer,
+[role=article]:not(:has(> form:first-child)) > footer,
+article > form > footer,
+[role=article] > form > footer {
   margin-top: var(--pico-block-spacing-vertical);
   margin-bottom: calc(var(--pico-block-spacing-vertical) * -1);
   border-top: var(--pico-border-width) solid var(--pico-card-border-color);
   border-bottom-right-radius: var(--pico-border-radius);
   border-bottom-left-radius: var(--pico-border-radius);
 }
+article:not(:has(> form:first-child)) > footer [type=submit],
+article:not(:has(> form:first-child)) > footer [type=reset],
+article:not(:has(> form:first-child)) > footer [type=button],
+article:not(:has(> form:first-child)) > footer [role=group],
+article:not(:has(> form:first-child)) > footer p,
+article:not(:has(> form:first-child)) > footer nav,
+article:not(:has(> form:first-child)) > footer ul,
+article:not(:has(> form:first-child)) > footer ol,
+[role=article]:not(:has(> form:first-child)) > footer [type=submit],
+[role=article]:not(:has(> form:first-child)) > footer [type=reset],
+[role=article]:not(:has(> form:first-child)) > footer [type=button],
+[role=article]:not(:has(> form:first-child)) > footer [role=group],
+[role=article]:not(:has(> form:first-child)) > footer p,
+[role=article]:not(:has(> form:first-child)) > footer nav,
+[role=article]:not(:has(> form:first-child)) > footer ul,
+[role=article]:not(:has(> form:first-child)) > footer ol,
+article > form > footer [type=submit],
+article > form > footer [type=reset],
+article > form > footer [type=button],
+article > form > footer [role=group],
+article > form > footer p,
+article > form > footer nav,
+article > form > footer ul,
+article > form > footer ol,
+[role=article] > form > footer [type=submit],
+[role=article] > form > footer [type=reset],
+[role=article] > form > footer [type=button],
+[role=article] > form > footer [role=group],
+[role=article] > form > footer p,
+[role=article] > form > footer nav,
+[role=article] > form > footer ul,
+[role=article] > form > footer ol {
+  margin-bottom: 0px;
+  /* Also remove if next input after button is a hidden input */
+}
+article:not(:has(> form:first-child)) > footer [type=submit]:last-child,
+article:not(:has(> form:first-child)) > footer [type=reset]:last-child,
+article:not(:has(> form:first-child)) > footer [type=button]:last-child,
+article:not(:has(> form:first-child)) > footer [role=group]:last-child,
+article:not(:has(> form:first-child)) > footer p:last-child,
+article:not(:has(> form:first-child)) > footer nav:last-child,
+article:not(:has(> form:first-child)) > footer ul:last-child,
+article:not(:has(> form:first-child)) > footer ol:last-child,
+[role=article]:not(:has(> form:first-child)) > footer [type=submit]:last-child,
+[role=article]:not(:has(> form:first-child)) > footer [type=reset]:last-child,
+[role=article]:not(:has(> form:first-child)) > footer [type=button]:last-child,
+[role=article]:not(:has(> form:first-child)) > footer [role=group]:last-child,
+[role=article]:not(:has(> form:first-child)) > footer p:last-child,
+[role=article]:not(:has(> form:first-child)) > footer nav:last-child,
+[role=article]:not(:has(> form:first-child)) > footer ul:last-child,
+[role=article]:not(:has(> form:first-child)) > footer ol:last-child,
+article > form > footer [type=submit]:last-child,
+article > form > footer [type=reset]:last-child,
+article > form > footer [type=button]:last-child,
+article > form > footer [role=group]:last-child,
+article > form > footer p:last-child,
+article > form > footer nav:last-child,
+article > form > footer ul:last-child,
+article > form > footer ol:last-child,
+[role=article] > form > footer [type=submit]:last-child,
+[role=article] > form > footer [type=reset]:last-child,
+[role=article] > form > footer [type=button]:last-child,
+[role=article] > form > footer [role=group]:last-child,
+[role=article] > form > footer p:last-child,
+[role=article] > form > footer nav:last-child,
+[role=article] > form > footer ul:last-child,
+[role=article] > form > footer ol:last-child {
+  margin-bottom: 0px;
+}
+article:not(:has(> form:first-child)) > footer [type=submit]:has(+ [type=hidden]),
+article:not(:has(> form:first-child)) > footer [type=reset]:has(+ [type=hidden]),
+article:not(:has(> form:first-child)) > footer [type=button]:has(+ [type=hidden]),
+article:not(:has(> form:first-child)) > footer [role=group]:has(+ [type=hidden]),
+article:not(:has(> form:first-child)) > footer p:has(+ [type=hidden]),
+article:not(:has(> form:first-child)) > footer nav:has(+ [type=hidden]),
+article:not(:has(> form:first-child)) > footer ul:has(+ [type=hidden]),
+article:not(:has(> form:first-child)) > footer ol:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer [type=submit]:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer [type=reset]:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer [type=button]:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer [role=group]:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer p:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer nav:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer ul:has(+ [type=hidden]),
+[role=article]:not(:has(> form:first-child)) > footer ol:has(+ [type=hidden]),
+article > form > footer [type=submit]:has(+ [type=hidden]),
+article > form > footer [type=reset]:has(+ [type=hidden]),
+article > form > footer [type=button]:has(+ [type=hidden]),
+article > form > footer [role=group]:has(+ [type=hidden]),
+article > form > footer p:has(+ [type=hidden]),
+article > form > footer nav:has(+ [type=hidden]),
+article > form > footer ul:has(+ [type=hidden]),
+article > form > footer ol:has(+ [type=hidden]),
+[role=article] > form > footer [type=submit]:has(+ [type=hidden]),
+[role=article] > form > footer [type=reset]:has(+ [type=hidden]),
+[role=article] > form > footer [type=button]:has(+ [type=hidden]),
+[role=article] > form > footer [role=group]:has(+ [type=hidden]),
+[role=article] > form > footer p:has(+ [type=hidden]),
+[role=article] > form > footer nav:has(+ [type=hidden]),
+[role=article] > form > footer ul:has(+ [type=hidden]),
+[role=article] > form > footer ol:has(+ [type=hidden]) {
+  margin-bottom: 0px;
+}
 
 /**
  * Group ([role="group"], [role="search"])
  */
+/* V3 Remove, modifing the <legend> placement is disabled
+ * in chrome.*/
+fieldset[role=group] > legend {
+  float: left;
+}
+
 [role=search],
 [role=group] {
   display: inline-flex;
@@ -1834,12 +2377,26 @@ article > footer {
   vertical-align: middle;
   transition: box-shadow var(--pico-transition);
 }
+[role=search] > label,
+[role=search] > legend,
+[role=group] > label,
+[role=group] > legend {
+  border-color: var(--pico-secondary-background);
+  background-color: var(--pico-secondary-background);
+  color: var(--pico-secondary-inverse);
+}
 [role=search] > *,
 [role=search] input:not([type=checkbox], [type=radio]),
 [role=search] select,
+[role=search] > label,
+[role=search] > legend,
+[role=search] > details,
 [role=group] > *,
 [role=group] input:not([type=checkbox], [type=radio]),
-[role=group] select {
+[role=group] select,
+[role=group] > label,
+[role=group] > legend,
+[role=group] > details {
   position: relative;
   flex: 1 1 auto;
   margin-bottom: 0;
@@ -1847,9 +2404,15 @@ article > footer {
 [role=search] > *:not(:first-child),
 [role=search] input:not([type=checkbox], [type=radio]):not(:first-child),
 [role=search] select:not(:first-child),
+[role=search] > label:not(:first-child),
+[role=search] > legend:not(:first-child),
+[role=search] > details:not(:first-child),
 [role=group] > *:not(:first-child),
 [role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
-[role=group] select:not(:first-child) {
+[role=group] select:not(:first-child),
+[role=group] > label:not(:first-child),
+[role=group] > legend:not(:first-child),
+[role=group] > details:not(:first-child) {
   margin-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -1857,19 +2420,48 @@ article > footer {
 [role=search] > *:not(:last-child),
 [role=search] input:not([type=checkbox], [type=radio]):not(:last-child),
 [role=search] select:not(:last-child),
+[role=search] > label:not(:last-child),
+[role=search] > legend:not(:last-child),
+[role=search] > details:not(:last-child),
 [role=group] > *:not(:last-child),
 [role=group] input:not([type=checkbox], [type=radio]):not(:last-child),
-[role=group] select:not(:last-child) {
+[role=group] select:not(:last-child),
+[role=group] > label:not(:last-child),
+[role=group] > legend:not(:last-child),
+[role=group] > details:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 [role=search] > *:focus,
 [role=search] input:not([type=checkbox], [type=radio]):focus,
 [role=search] select:focus,
+[role=search] > label:focus,
+[role=search] > legend:focus,
+[role=search] > details:focus,
 [role=group] > *:focus,
 [role=group] input:not([type=checkbox], [type=radio]):focus,
-[role=group] select:focus {
+[role=group] select:focus,
+[role=group] > label:focus,
+[role=group] > legend:focus,
+[role=group] > details:focus {
   z-index: 2;
+}
+[role=search] > details:not(:first-child) > summary,
+[role=group] > details:not(:first-child) > summary {
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+[role=search] > details:not(:last-child) > summary,
+[role=group] > details:not(:last-child) > summary {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+[role=search] > details > summary,
+[role=search] > details > summary:not([role]),
+[role=group] > details > summary,
+[role=group] > details > summary:not([role]) {
+  height: 100% !important;
 }
 [role=search] button:not(:first-child),
 [role=search] [type=submit]:not(:first-child),
@@ -1878,13 +2470,19 @@ article > footer {
 [role=search] [role=button]:not(:first-child),
 [role=search] input:not([type=checkbox], [type=radio]):not(:first-child),
 [role=search] select:not(:first-child),
+[role=search] > label:not(:first-child),
+[role=search] > legend:not(:first-child),
+[role=search] > details > summary:not(:first-child),
 [role=group] button:not(:first-child),
 [role=group] [type=submit]:not(:first-child),
 [role=group] [type=reset]:not(:first-child),
 [role=group] [type=button]:not(:first-child),
 [role=group] [role=button]:not(:first-child),
 [role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
-[role=group] select:not(:first-child) {
+[role=group] select:not(:first-child),
+[role=group] > label:not(:first-child),
+[role=group] > legend:not(:first-child),
+[role=group] > details > summary:not(:first-child) {
   margin-left: calc(var(--pico-border-width) * -1);
 }
 [role=search] button,
@@ -1892,11 +2490,17 @@ article > footer {
 [role=search] [type=reset],
 [role=search] [type=button],
 [role=search] [role=button],
+[role=search] > label,
+[role=search] > legend,
+[role=search] > details > summary,
 [role=group] button,
 [role=group] [type=submit],
 [role=group] [type=reset],
 [role=group] [type=button],
-[role=group] [role=button] {
+[role=group] [role=button],
+[role=group] > label,
+[role=group] > legend,
+[role=group] > details > summary {
   width: auto;
 }
 @supports selector(:has(*)) {
@@ -1906,8 +2510,14 @@ article > footer {
   }
   [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) input:not([type=checkbox], [type=radio]),
   [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) select,
+  [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) > label,
+  [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) > legend,
+  [role=search]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) > details > summary,
   [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) input:not([type=checkbox], [type=radio]),
-  [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) select {
+  [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) select,
+  [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) > label,
+  [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) > legend,
+  [role=group]:has(button:focus, [type=submit]:focus, [type=button]:focus, [role=button]:focus) > details > summary {
     border-color: transparent;
   }
   [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus),
@@ -1918,10 +2528,16 @@ article > footer {
   [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=submit],
   [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=button],
   [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) [role=button],
+  [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) label,
+  [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) > legend,
+  [role=search]:has(input:not([type=submit], [type=button]):focus, select:focus) > details > summary,
   [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) button,
   [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=submit],
   [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [type=button],
-  [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [role=button] {
+  [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) [role=button],
+  [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) label,
+  [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) > legend,
+  [role=group]:has(input:not([type=submit], [type=button]):focus, select:focus) > details > summary {
     --pico-button-box-shadow: 0 0 0 var(--pico-border-width) var(--pico-primary-border);
     --pico-button-hover-box-shadow: 0 0 0 var(--pico-border-width) var(--pico-primary-hover-border);
   }
@@ -1930,11 +2546,17 @@ article > footer {
   [role=search] [type=reset]:focus,
   [role=search] [type=button]:focus,
   [role=search] [role=button]:focus,
+  [role=search] label:focus,
+  [role=search] > legend:focus,
+  [role=search] > details > summary:focus,
   [role=group] button:focus,
   [role=group] [type=submit]:focus,
   [role=group] [type=reset]:focus,
   [role=group] [type=button]:focus,
-  [role=group] [role=button]:focus {
+  [role=group] [role=button]:focus,
+  [role=group] label:focus,
+  [role=group] > legend:focus,
+  [role=group] > details > summary:focus {
     box-shadow: none;
   }
 }
@@ -1948,13 +2570,113 @@ article > footer {
   border-bottom-right-radius: 5rem;
 }
 
+[dir=rtl] [role=search] > *:not(:first-child),
+[dir=rtl] [role=search] input:not([type=checkbox], [type=radio]):not(:first-child),
+[dir=rtl] [role=search] select:not(:first-child),
+[dir=rtl] [role=search] label:not(:first-child),
+[dir=rtl] [role=search] > legend:not(:first-child),
+[dir=rtl] [role=search] > details > summary:not(:first-child),
+[dir=rtl] [role=group] > *:not(:first-child),
+[dir=rtl] [role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
+[dir=rtl] [role=group] select:not(:first-child),
+[dir=rtl] [role=group] label:not(:first-child),
+[dir=rtl] [role=group] > legend:not(:first-child),
+[dir=rtl] [role=group] > details > summary:not(:first-child) {
+  margin-right: 0;
+  margin-left: auto;
+  border-top-right-radius: 0;
+  border-top-left-radius: var(--pico-border-radius);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: var(--pico-border-radius);
+}
+[dir=rtl] [role=search] > *:not(:last-child),
+[dir=rtl] [role=search] input:not([type=checkbox], [type=radio]):not(:last-child),
+[dir=rtl] [role=search] select:not(:last-child),
+[dir=rtl] [role=search] label:not(:last-child),
+[dir=rtl] [role=search] > legend:not(:last-child),
+[dir=rtl] [role=search] > details > summary:not(:last-child),
+[dir=rtl] [role=group] > *:not(:last-child),
+[dir=rtl] [role=group] input:not([type=checkbox], [type=radio]):not(:last-child),
+[dir=rtl] [role=group] select:not(:last-child),
+[dir=rtl] [role=group] label:not(:last-child),
+[dir=rtl] [role=group] > legend:not(:last-child),
+[dir=rtl] [role=group] > details > summary:not(:last-child) {
+  border-top-right-radius: var(--pico-border-radius);
+  border-top-left-radius: 0;
+  border-bottom-right-radius: var(--pico-border-radius);
+  border-bottom-left-radius: 0;
+}
+[dir=rtl] [role=search] button:not(:first-child),
+[dir=rtl] [role=search] [type=submit]:not(:first-child),
+[dir=rtl] [role=search] [type=reset]:not(:first-child),
+[dir=rtl] [role=search] [type=button]:not(:first-child),
+[dir=rtl] [role=search] [role=button]:not(:first-child),
+[dir=rtl] [role=search] input:not([type=checkbox], [type=radio]):not(:first-child),
+[dir=rtl] [role=search] select:not(:first-child),
+[dir=rtl] [role=search] label:not(:first-child),
+[dir=rtl] [role=search] > legend:not(:first-child),
+[dir=rtl] [role=search] > details > summary:not(:first-child),
+[dir=rtl] [role=group] button:not(:first-child),
+[dir=rtl] [role=group] [type=submit]:not(:first-child),
+[dir=rtl] [role=group] [type=reset]:not(:first-child),
+[dir=rtl] [role=group] [type=button]:not(:first-child),
+[dir=rtl] [role=group] [role=button]:not(:first-child),
+[dir=rtl] [role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
+[dir=rtl] [role=group] select:not(:first-child),
+[dir=rtl] [role=group] label:not(:first-child),
+[dir=rtl] [role=group] > legend:not(:first-child),
+[dir=rtl] [role=group] > details > summary:not(:first-child) {
+  margin-right: calc(var(--pico-border-width) * -1);
+  margin-left: auto;
+}
+
+[role=group] > section[role=form] {
+  flex: 1;
+}
+[role=group] > section[role=form] > *:focus,
+[role=group] > section[role=form] > input:not([type=checkbox], [type=radio]):focus,
+[role=group] > section[role=form] > select:focus,
+[role=group] > section[role=form] > label:focus,
+[role=group] > section[role=form] > legend:focus,
+[role=group] > section[role=form] > details:focus {
+  z-index: 4;
+}
+[role=group] > section[role=form] > input:not([type=checkbox], [type=radio]):focus,
+[role=group] > section[role=form] > select:focus {
+  z-index: 10;
+}
+[role=group] > section[role=form] > input:not([type=checkbox], [type=radio]) + label,
+[role=group] > section[role=form] > select + label {
+  z-index: 10;
+  margin-top: 5px;
+}
+[role=group] > section[role=form]:not(:first-child) > *,
+[role=group] > section[role=form]:not(:first-child) > input:not([type=checkbox], [type=radio]),
+[role=group] > section[role=form]:not(:first-child) > select,
+[role=group] > section[role=form]:not(:first-child) > label,
+[role=group] > section[role=form]:not(:first-child) > legend,
+[role=group] > section[role=form]:not(:first-child) > details > summary {
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+[role=group] > section[role=form]:not(:last-child) > *,
+[role=group] > section[role=form]:not(:last-child) > input:not([type=checkbox], [type=radio]),
+[role=group] > section[role=form]:not(:last-child) > select,
+[role=group] > section[role=form]:not(:last-child) > label,
+[role=group] > section[role=form]:not(:last-child) > legend,
+[role=group] > section[role=form]:not(:last-child) > details > summary {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 /**
  * Loading ([aria-busy=true])
  */
-[aria-busy=true]:not(input, select, textarea, html) {
+[aria-busy=true]:not(input, select, textarea, html, form) {
   white-space: nowrap;
 }
-[aria-busy=true]:not(input, select, textarea, html)::before {
+[aria-busy=true]:not(input, select, textarea, html, form)::before {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1964,10 +2686,10 @@ article > footer {
   content: "";
   vertical-align: -0.125em;
 }
-[aria-busy=true]:not(input, select, textarea, html):not(:empty)::before {
+[aria-busy=true]:not(input, select, textarea, html, form):not(:empty)::before {
   margin-inline-end: calc(var(--pico-spacing) * 0.5);
 }
-[aria-busy=true]:not(input, select, textarea, html):empty {
+[aria-busy=true]:not(input, select, textarea, html, form):empty {
   text-align: center;
 }
 
@@ -1983,12 +2705,30 @@ a[aria-busy=true] {
 /**
  * Modal (<dialog>)
  */
-:root {
+:root,
+:host {
   --pico-scrollbar-width: 0px;
 }
 
+dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article:not(:has(> form:first-child)),
+dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article > form:first-child {
+  width: 100%;
+}
+@media (min-width: 576px) {
+  dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article:not(:has(> form:first-child)),
+  dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article > form:first-child {
+    max-width: 510px;
+  }
+}
+@media (min-width: 768px) {
+  dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article:not(:has(> form:first-child)),
+  dialog:not(.modal-fs, .modal-xlg, .modal-lg, .modal-md, .modal-sm) > article > form:first-child {
+    max-width: 700px;
+  }
+}
+
 dialog {
-  display: flex;
+  display: grid;
   z-index: 999;
   position: fixed;
   top: 0;
@@ -2001,50 +2741,44 @@ dialog {
   min-width: 100%;
   height: inherit;
   min-height: 100%;
-  padding: 0;
+  padding: var(--pico-spacing);
   border: 0;
   -webkit-backdrop-filter: var(--pico-modal-overlay-backdrop-filter);
   backdrop-filter: var(--pico-modal-overlay-backdrop-filter);
   background-color: var(--pico-modal-overlay-background-color);
   color: var(--pico-color);
+  transform: scale(1);
+  transition: transform var(--pico-transition);
 }
-dialog article {
-  width: 100%;
-  max-height: calc(100vh - var(--pico-spacing) * 2);
-  margin: var(--pico-spacing);
-  overflow: auto;
-}
-@media (min-width: 576px) {
-  dialog article {
-    max-width: 510px;
-  }
-}
-@media (min-width: 768px) {
-  dialog article {
-    max-width: 700px;
-  }
-}
-dialog article > header > * {
+dialog > article:not(:has(> form:first-child)) > header > *,
+dialog > article > form:first-child > header > * {
   margin-bottom: 0;
 }
-dialog article > header :is(a, button)[rel=prev] {
+dialog > article:not(:has(> form:first-child)) > header :is(a, button)[rel=prev],
+dialog > article > form:first-child > header :is(a, button)[rel=prev] {
   margin: 0;
   margin-left: var(--pico-spacing);
   padding: 0;
   float: right;
 }
-dialog article > footer {
+dialog > article:not(:has(> form:first-child)) > footer,
+dialog > article > form:first-child > footer {
   text-align: right;
 }
-dialog article > footer button,
-dialog article > footer [role=button] {
+dialog > article:not(:has(> form:first-child)) > footer button,
+dialog > article:not(:has(> form:first-child)) > footer [role=button],
+dialog > article > form:first-child > footer button,
+dialog > article > form:first-child > footer [role=button] {
   margin-bottom: 0;
 }
-dialog article > footer button:not(:first-of-type),
-dialog article > footer [role=button]:not(:first-of-type) {
+dialog > article:not(:has(> form:first-child)) > footer button:not(:first-of-type),
+dialog > article:not(:has(> form:first-child)) > footer [role=button]:not(:first-of-type),
+dialog > article > form:first-child > footer button:not(:first-of-type),
+dialog > article > form:first-child > footer [role=button]:not(:first-of-type) {
   margin-left: calc(var(--pico-spacing) * 0.5);
 }
-dialog article :is(a, button)[rel=prev] {
+dialog > article:not(:has(> form:first-child)) :is(a, button)[rel=prev],
+dialog > article > form:first-child :is(a, button)[rel=prev] {
   display: block;
   width: 1rem;
   height: 1rem;
@@ -2060,19 +2794,28 @@ dialog article :is(a, button)[rel=prev] {
   opacity: 0.5;
   transition: opacity var(--pico-transition);
 }
-dialog article :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+dialog > article:not(:has(> form:first-child)) :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus),
+dialog > article > form:first-child :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   opacity: 1;
 }
 dialog:not([open]), dialog[open=false] {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+dialog:not([open]) article, dialog[open=false] article {
+  transform: scale(0.7);
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
 }
 
 /**
  * Nav
  */
 :where(nav li)::before {
-  float: left;
-  content: "​";
+  float: none;
+  content: " ";
 }
 
 nav,
@@ -2174,6 +2917,292 @@ aside li [role=button] {
 }
 
 /**
+ * Nav hamburger menu
+ * modified from https: //codepen.io/brentarias/pen/gOQybod
+ */
+nav[role=navigation] {
+  z-index: 1;
+  width: 100%;
+  overflow: visible;
+}
+nav[role=navigation][data-position=start] {
+  /* remove the 'flex-direction' to move menu to the right */
+  flex-direction: row-reverse;
+}
+nav[role=navigation] > input[type=checkbox] {
+  display: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+nav[role=navigation] > label {
+  display: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+nav[role=navigation] > ul > li > [role=search],
+nav[role=navigation] > ol > li > [role=search] {
+  margin-block-end: 0;
+}
+
+@media (max-width: 510px) {
+  nav[role=navigation] {
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  nav[role=navigation]:has(input[type=checkbox]:checked) {
+    overflow: visible;
+  }
+  nav[role=navigation] label {
+    display: block;
+  }
+  nav[role=navigation] > [role=list] {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90vw;
+    max-height: 0;
+    margin: 0 auto;
+    background-color: var(--pico-muted-border-color);
+    box-shadow: var(--pico-box-shadow);
+    opacity: 0;
+    transition: max-height var(--pico-transition), opacity var(--pico-transition);
+  }
+  nav[role=navigation] > [role=list] li {
+    width: calc(100% - var(--pico-nav-link-spacing-vertical) * 2);
+    margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5) var(--pico-nav-link-spacing-vertical);
+    padding: 0;
+  }
+  nav[role=navigation] > [role=list] li > details.dropdown {
+    width: 100%;
+  }
+  nav[role=navigation] > [role=list] li > form[role=search] {
+    margin-block-end: 0;
+  }
+  nav[role=navigation] > [role=list] a {
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    border-block-end: 1px solid transparent;
+    transition: border-color var(--pico-transition), color var(--pico-transition);
+  }
+  nav[role=navigation] > [role=list] a:hover {
+    border-bottom-color: var(--pico-underline);
+    text-decoration: none;
+  }
+  nav[role=navigation] input[type=checkbox]:checked ~ [role=list] {
+    display: block;
+    max-height: 100vh;
+    opacity: 1;
+  }
+}
+@media (max-width: 700px) {
+  nav[role=navigation][data-breakpoint=md] {
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  nav[role=navigation][data-breakpoint=md]:has(input[type=checkbox]:checked) {
+    overflow: visible;
+  }
+  nav[role=navigation][data-breakpoint=md] label {
+    display: block;
+  }
+  nav[role=navigation][data-breakpoint=md] > [role=list] {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90vw;
+    max-height: 0;
+    margin: 0 auto;
+    background-color: var(--pico-muted-border-color);
+    box-shadow: var(--pico-box-shadow);
+    opacity: 0;
+    transition: max-height var(--pico-transition), opacity var(--pico-transition);
+  }
+  nav[role=navigation][data-breakpoint=md] > [role=list] li {
+    width: calc(100% - var(--pico-nav-link-spacing-vertical) * 2);
+    margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5) var(--pico-nav-link-spacing-vertical);
+    padding: 0;
+  }
+  nav[role=navigation][data-breakpoint=md] > [role=list] li > details.dropdown {
+    width: 100%;
+  }
+  nav[role=navigation][data-breakpoint=md] > [role=list] li > form[role=search] {
+    margin-block-end: 0;
+  }
+  nav[role=navigation][data-breakpoint=md] > [role=list] a {
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    border-block-end: 1px solid transparent;
+    transition: border-color var(--pico-transition), color var(--pico-transition);
+  }
+  nav[role=navigation][data-breakpoint=md] > [role=list] a:hover {
+    border-bottom-color: var(--pico-underline);
+    text-decoration: none;
+  }
+  nav[role=navigation][data-breakpoint=md] input[type=checkbox]:checked ~ [role=list] {
+    display: block;
+    max-height: 100vh;
+    opacity: 1;
+  }
+}
+@media (max-width: 950px) {
+  nav[role=navigation][data-breakpoint=lg] {
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  nav[role=navigation][data-breakpoint=lg]:has(input[type=checkbox]:checked) {
+    overflow: visible;
+  }
+  nav[role=navigation][data-breakpoint=lg] label {
+    display: block;
+  }
+  nav[role=navigation][data-breakpoint=lg] > [role=list] {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90vw;
+    max-height: 0;
+    margin: 0 auto;
+    background-color: var(--pico-muted-border-color);
+    box-shadow: var(--pico-box-shadow);
+    opacity: 0;
+    transition: max-height var(--pico-transition), opacity var(--pico-transition);
+  }
+  nav[role=navigation][data-breakpoint=lg] > [role=list] li {
+    width: calc(100% - var(--pico-nav-link-spacing-vertical) * 2);
+    margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5) var(--pico-nav-link-spacing-vertical);
+    padding: 0;
+  }
+  nav[role=navigation][data-breakpoint=lg] > [role=list] li > details.dropdown {
+    width: 100%;
+  }
+  nav[role=navigation][data-breakpoint=lg] > [role=list] li > form[role=search] {
+    margin-block-end: 0;
+  }
+  nav[role=navigation][data-breakpoint=lg] > [role=list] a {
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    border-block-end: 1px solid transparent;
+    transition: border-color var(--pico-transition), color var(--pico-transition);
+  }
+  nav[role=navigation][data-breakpoint=lg] > [role=list] a:hover {
+    border-bottom-color: var(--pico-underline);
+    text-decoration: none;
+  }
+  nav[role=navigation][data-breakpoint=lg] input[type=checkbox]:checked ~ [role=list] {
+    display: block;
+    max-height: 100vh;
+    opacity: 1;
+  }
+}
+@media (max-width: 1200px) {
+  nav[role=navigation][data-breakpoint=xl] {
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  nav[role=navigation][data-breakpoint=xl]:has(input[type=checkbox]:checked) {
+    overflow: visible;
+  }
+  nav[role=navigation][data-breakpoint=xl] label {
+    display: block;
+  }
+  nav[role=navigation][data-breakpoint=xl] > [role=list] {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90vw;
+    max-height: 0;
+    margin: 0 auto;
+    background-color: var(--pico-muted-border-color);
+    box-shadow: var(--pico-box-shadow);
+    opacity: 0;
+    transition: max-height var(--pico-transition), opacity var(--pico-transition);
+  }
+  nav[role=navigation][data-breakpoint=xl] > [role=list] li {
+    width: calc(100% - var(--pico-nav-link-spacing-vertical) * 2);
+    margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5) var(--pico-nav-link-spacing-vertical);
+    padding: 0;
+  }
+  nav[role=navigation][data-breakpoint=xl] > [role=list] li > details.dropdown {
+    width: 100%;
+  }
+  nav[role=navigation][data-breakpoint=xl] > [role=list] li > form[role=search] {
+    margin-block-end: 0;
+  }
+  nav[role=navigation][data-breakpoint=xl] > [role=list] a {
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    border-block-end: 1px solid transparent;
+    transition: border-color var(--pico-transition), color var(--pico-transition);
+  }
+  nav[role=navigation][data-breakpoint=xl] > [role=list] a:hover {
+    border-bottom-color: var(--pico-underline);
+    text-decoration: none;
+  }
+  nav[role=navigation][data-breakpoint=xl] input[type=checkbox]:checked ~ [role=list] {
+    display: block;
+    max-height: 100vh;
+    opacity: 1;
+  }
+}
+@media (max-width: 1450px) {
+  nav[role=navigation][data-breakpoint=xxl] {
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  nav[role=navigation][data-breakpoint=xxl]:has(input[type=checkbox]:checked) {
+    overflow: visible;
+  }
+  nav[role=navigation][data-breakpoint=xxl] label {
+    display: block;
+  }
+  nav[role=navigation][data-breakpoint=xxl] > [role=list] {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90vw;
+    max-height: 0;
+    margin: 0 auto;
+    background-color: var(--pico-muted-border-color);
+    box-shadow: var(--pico-box-shadow);
+    opacity: 0;
+    transition: max-height var(--pico-transition), opacity var(--pico-transition);
+  }
+  nav[role=navigation][data-breakpoint=xxl] > [role=list] li {
+    width: calc(100% - var(--pico-nav-link-spacing-vertical) * 2);
+    margin: calc(var(--pico-nav-link-spacing-vertical) * 0.5) var(--pico-nav-link-spacing-vertical);
+    padding: 0;
+  }
+  nav[role=navigation][data-breakpoint=xxl] > [role=list] li > details.dropdown {
+    width: 100%;
+  }
+  nav[role=navigation][data-breakpoint=xxl] > [role=list] li > form[role=search] {
+    margin-block-end: 0;
+  }
+  nav[role=navigation][data-breakpoint=xxl] > [role=list] a {
+    display: block;
+    margin: 0;
+    border-radius: 0;
+    border-block-end: 1px solid transparent;
+    transition: border-color var(--pico-transition), color var(--pico-transition);
+  }
+  nav[role=navigation][data-breakpoint=xxl] > [role=list] a:hover {
+    border-bottom-color: var(--pico-underline);
+    text-decoration: none;
+  }
+  nav[role=navigation][data-breakpoint=xxl] input[type=checkbox]:checked ~ [role=list] {
+    display: block;
+    max-height: 100vh;
+    opacity: 1;
+  }
+}
+/**
  * Progress
  */
 progress {
@@ -2240,17 +3269,20 @@ progress::-moz-progress-bar {
 [data-tooltip] {
   position: relative;
 }
-[data-tooltip]:not(a, button, input) {
+[data-tooltip]:not(:has(a, button, input, [role=button])):not(a, button, input, [role=button]) {
   border-bottom: 1px dotted;
   text-decoration: none;
   cursor: help;
 }
 [data-tooltip][data-placement=top]::before, [data-tooltip][data-placement=top]::after, [data-tooltip]::before, [data-tooltip]::after {
-  display: block;
+  display: inline-block;
   z-index: 99;
   position: absolute;
   bottom: 100%;
   left: 50%;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 250px;
   padding: 0.25rem 0.5rem;
   overflow: hidden;
   transform: translate(-50%, -0.25rem);
@@ -2261,13 +3293,15 @@ progress::-moz-progress-bar {
   font-style: normal;
   font-weight: var(--pico-font-weight);
   font-size: 0.875rem;
+  text-align: center;
   text-decoration: none;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
   opacity: 0;
   pointer-events: none;
 }
 [data-tooltip][data-placement=top]::after, [data-tooltip]::after {
+  width: 0;
   padding: 0;
   transform: translate(-50%, 0rem);
   border-top: 0.3rem solid;
@@ -2376,6 +3410,189 @@ progress::-moz-progress-bar {
   }
 }
 
+/**
+ * Tabs
+ * styling help from: https://codepen.io/mikestreety/pen/yVNNNm
+ */
+@keyframes showTab {
+  from {
+    scale: 0.75;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+[role=tablist] {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 0;
+}
+[role=tablist] > button[role=tab] {
+  flex-grow: 1;
+  order: 1;
+  padding: calc(var(--pico-spacing) * 0.625);
+  border: 0;
+  border-bottom: 1px solid var(--pico-primary-background);
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background: transparent;
+  color: var(--pico-contrast);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color var(--pico-transition);
+}
+[role=tablist] > button[role=tab][aria-selected=true] {
+  background: var(--pico-primary-background);
+  color: var(--pico-primary-inverse);
+}
+[role=tablist] > button[role=tab]:hover {
+  background: var(--pico-primary-hover-background);
+  color: var(--pico-primary-inverse);
+}
+[role=tablist] [role=tabpanel] {
+  flex-grow: 1;
+  order: 99;
+  width: 100%;
+  padding: var(--pico-spacing) calc(var(--pico-spacing) * 0.75);
+  background: var(--pico-accent-section-bg-color);
+  animation: var(--pico-tab-animation) var(--pico-transition);
+}
+[role=tablist] [role=tabpanel]:not([hidden]) {
+  display: block;
+}
+[role=tablist] [role=tabpanel][hidden] {
+  display: none;
+}
+[role=tablist] [role=tabpanel] > *:last-of-type {
+  margin-bottom: 0;
+}
+
+@media (max-width: 45em) {
+  [role=tablist] [role=tabpanel],
+  [role=tablist] button,
+  [role=tablist] label {
+    order: initial;
+  }
+  [role=tablist] label,
+  [role=tablist] [role=tabpanel],
+  [role=tablist] button {
+    width: 100%;
+    margin-top: 0.2rem;
+    margin-right: 0;
+  }
+}
+[popover] {
+  border-color: var(--pico-primary);
+}
+[popover]:popover-open {
+  margin: auto auto;
+}
+[popover]::backdrop {
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.7);
+}
+[popover] button {
+  margin-top: -10px;
+  padding: 0;
+  border: 0 none;
+  background: transparent;
+  color: var(--pico-primary);
+  font-size: 1.5em;
+  opacity: 0.8;
+}
+
+.timeline {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.timeline::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 6px;
+  margin-left: -3px;
+  background-color: var(--pico-timeline-line-color);
+  content: "";
+}
+.timeline > .point {
+  position: relative;
+  width: 50%;
+  padding: 10px 25px;
+  background-color: inherit;
+}
+.timeline > .point::after {
+  z-index: 1;
+  position: absolute;
+  top: 13px;
+  right: -13px;
+  width: 25px;
+  height: 25px;
+  border: 4px solid var(--pico-timeline-dot-border-color);
+  border-radius: 50%;
+  background-color: var(--pico-timeline-dot-background-color);
+  content: "";
+}
+.timeline > .point.left {
+  left: 0;
+}
+.timeline > .point.left::before {
+  z-index: 1;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border: medium solid var(--pico-timeline-arrow-color);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--pico-timeline-arrow-color);
+  content: " ";
+}
+.timeline > .point.right {
+  left: 50%;
+}
+.timeline > .point.right::before {
+  z-index: 1;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 0;
+  height: 0;
+  border: medium solid var(--pico-timeline-arrow-color);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--pico-timeline-arrow-color) transparent transparent;
+  content: " ";
+}
+.timeline > .point.right::after {
+  left: -13px;
+}
+
+@media screen and (max-width: 600px) {
+  .timeline::after {
+    left: 13px;
+  }
+  .timeline > .point {
+    width: 100%;
+    padding-right: 25px;
+    padding-left: 40px;
+  }
+  .timeline > .point.right {
+    left: 0;
+  }
+  .timeline > .point::after, .timeline > .point.left::after, .timeline > .point.right::after {
+    left: 0;
+  }
+  .timeline > .point.left::before, .timeline > .point.right::before {
+    top: 16px;
+    left: 30px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--pico-timeline-arrow-color) transparent transparent;
+  }
+}
 /**
  * Accessibility & User interaction
  */

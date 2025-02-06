@@ -1,0 +1,7 @@
+// Pico fluid classless conditional version
+@use "../scss" with (
+  $enable-semantic-container: true,
+  $enable-viewport: false,
+  $enable-classes: false,
+  $parent-selector: ".pico"
+);

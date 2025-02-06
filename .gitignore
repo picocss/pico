@@ -30,3 +30,13 @@ Thumbs.db
 
 # Pico
 .pico
+package-lock.json
+/docs/orig
+/scss/components/_offcanvas.scss
+docs/js/DialogManager.js
+docs/modal.html
+
+/.yohn
+_docs/
+
+/zzz

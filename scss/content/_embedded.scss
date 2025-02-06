@@ -47,7 +47,8 @@
   }
 
   // Hide the overflow in IE
-  #{$parent-selector} svg:not(:root) {
+  #{$parent-selector} svg:not(:root),
+  #{$parent-selector} svg:not(:host) {
     overflow: hidden;
   }
 }

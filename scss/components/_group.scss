@@ -6,6 +6,12 @@
    * Group ([role="group"], [role="search"])
    */
 
+  /* V3 Remove, modifing the <legend> placement is disabled
+   * in chrome.*/
+  #{$parent-selector} fieldset[role="group"] > legend {
+    float: left;
+  }
+
   #{$parent-selector} [role="search"],
   #{$parent-selector} [role="group"] {
     display: inline-flex;
@@ -17,9 +23,19 @@
     vertical-align: middle;
     transition: box-shadow var(#{$css-var-prefix}transition);
 
+    > label,
+    > legend {
+      border-color: var(#{$css-var-prefix}secondary-background);
+      background-color: var(#{$css-var-prefix}secondary-background);
+      color: var(#{$css-var-prefix}secondary-inverse);
+    }
+
     > *,
     input:not([type="checkbox"], [type="radio"]),
-    select {
+    select,
+    > label,
+    > legend,
+    > details {
       position: relative;
       flex: 1 1 auto;
       margin-bottom: 0;
@@ -40,13 +56,33 @@
       }
     }
 
+    > details {
+      &:not(:first-child) > summary {
+        margin-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+
+      &:not(:last-child) > summary {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      > summary,
+      > summary:not([role]) {
+        height: 100% !important;
+      }
+    }
+
     button,
     [type="submit"],
     [type="reset"],
     [type="button"],
     [role="button"],
     input:not([type="checkbox"], [type="radio"]),
-    select {
+    select,
+    > label,
+    > legend,
+    > details > summary {
       &:not(:first-child) {
         margin-left: calc(var(#{$css-var-prefix}border-width) * -1);
       }
@@ -56,7 +92,10 @@
     [type="submit"],
     [type="reset"],
     [type="button"],
-    [role="button"] {
+    [role="button"],
+    > label,
+    > legend,
+    > details > summary {
       width: auto;
     }
 
@@ -68,7 +107,10 @@
         );
 
         input:not([type="checkbox"], [type="radio"]),
-        select {
+        select,
+        > label,
+        > legend,
+        > details > summary {
           border-color: transparent;
         }
       }
@@ -83,7 +125,10 @@
         button,
         [type="submit"],
         [type="button"],
-        [role="button"] {
+        [role="button"],
+        label,
+        > legend,
+        > details > summary {
           #{$css-var-prefix}button-box-shadow: 0 0 0 var(#{$css-var-prefix}border-width)
             var(#{$css-var-prefix}primary-border);
           #{$css-var-prefix}button-hover-box-shadow: 0 0 0 var(#{$css-var-prefix}border-width)
@@ -96,7 +141,10 @@
       [type="submit"],
       [type="reset"],
       [type="button"],
-      [role="button"] {
+      [role="button"],
+      label,
+      > legend,
+      > details > summary {
         &:focus {
           box-shadow: none;
         }
@@ -114,6 +162,105 @@
       &:last-child {
         border-top-right-radius: 5rem;
         border-bottom-right-radius: 5rem;
+      }
+    }
+  }
+
+  [dir="rtl"] {
+    #{$parent-selector} [role="search"],
+    #{$parent-selector} [role="group"] {
+      > *,
+      input:not([type="checkbox"], [type="radio"]),
+      select,
+      label,
+      > legend,
+      > details > summary {
+        &:not(:first-child) {
+          margin-right: 0;
+          margin-left: auto;
+          border-top-right-radius: 0;
+          border-top-left-radius: var(#{$css-var-prefix}border-radius);
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: var(#{$css-var-prefix}border-radius);
+        }
+
+        &:not(:last-child) {
+          border-top-right-radius: var(#{$css-var-prefix}border-radius);
+          border-top-left-radius: 0;
+          border-bottom-right-radius: var(#{$css-var-prefix}border-radius);
+          border-bottom-left-radius: 0;
+        }
+      }
+
+      button,
+      [type="submit"],
+      [type="reset"],
+      [type="button"],
+      [role="button"],
+      input:not([type="checkbox"], [type="radio"]),
+      select,
+      label,
+      > legend,
+      > details > summary {
+        &:not(:first-child) {
+          margin-right: calc(var(#{$css-var-prefix}border-width) * -1);
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}
+
+@if map.get($modules, "forms/floating") {
+  #{$parent-selector} [role="group"] > section[role="form"] {
+    flex: 1;
+
+    > *,
+    > input:not([type="checkbox"], [type="radio"]),
+    > select,
+    > label,
+    > legend,
+    > details {
+      // need to check this for details > summary
+      &:focus {
+        z-index: 4;
+      }
+    }
+
+    > input:not([type="checkbox"], [type="radio"]),
+    > select {
+      &:focus {
+        z-index: 10;
+      }
+      + label {
+        z-index: 10;
+        // label was positioned above placeholder..
+        margin-top: 5px;
+      }
+    }
+
+    &:not(:first-child) {
+      > *,
+      > input:not([type="checkbox"], [type="radio"]),
+      > select,
+      > label,
+      > legend,
+      > details > summary {
+        margin-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+
+    &:not(:last-child) {
+      > *,
+      > input:not([type="checkbox"], [type="radio"]),
+      > select,
+      > label,
+      > legend,
+      > details > summary {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
       }
     }
   }

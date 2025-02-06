@@ -1,0 +1,1682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="color-scheme" content="light dark">
+	<title>Preview • Pico CSS</title>
+	<meta name="description" content="A pure HTML example, without dependencies.">
+	<!-- Backwards compatability -->
+	<link rel="icon" sizes="16x16 24x24 32x32 64x64" href="favicon.ico">
+	<!-- All other browsers -->
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<!-- Google Search and Android Chrome -->
+	<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+	<!-- iPhone -->
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="favicon-180x180.png">
+	<!-- iPad Retina -->
+	<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="favicon-167x167.png">
+	<!-- Other iPads -->
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="favicon-152x152.png">
+	<!-- Web application manifest -->
+	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
+	<!-- Pico.css -->
+	<link rel="stylesheet" href="pico.min.css" id="theme-color-ss">
+	<link rel="stylesheet" href="pico.colors.min.css">
+	<!--
+			Yohn's Simple CSS Class helpers
+			I might add these to the main PicoCSS later
+-->
+	<link rel="stylesheet" href="basics.css" />
+	<style>
+		:root {
+			--yopico-logo-wordmark: var(--pico-color);
+			--yopico-logo-big-sparkle: var(--pico-primary-background);
+			/*#ff9500;*/
+			--yopico-logo-small-sparkles: var(--pico-primary);
+			/*#ff9500;*/
+			--yopico-logo-bolts: var(--pico-primary-focus);
+			/*#ffbf00;*/
+			--pico-logo-wordmark: var(--pico-color);
+			--pico-logo-big-sparkle: var(--pico-primary-background);
+			/*#ff9500;*/
+			--pico-logo-small-sparkles: var(--pico-primary);
+			/*#ff9500;*/
+		}
+
+		.three-columns {
+			flex-wrap: wrap;
+			flex-direction: row !important;
+			min-width: 60vw !important;
+		}
+
+		.three-columns li {
+			flex: 33%;
+		}
+	</style>
+</head>
+<body id="top">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="col-12 col-md-3 col-lg-2">
+				<!-- Header -->
+				<header>
+					<hgroup>
+						<svg style="display:none;" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 440 71">
+							<path fill="var(--yopico-logo-wordmark)"
+								d="m5 6 14 3 11 22L47 6l12 4-21 34v21l-10 2-3-23zm67 0 47 4v53l-32 4-22-4-1-49zm4 48h31l1-11-1-25H76zm57-48 45 1 3 37-39 4v18l-11 1zm8 30h29l-1-18h-27zm52-30 11 2v56l-13 1zm27 0 46 2-2 11h-38v35h39l1 11-46 2-6-5V11zm61 0 48 3 1 53-54 2-1-53zm5 48h32V18h-31z" />
+							<path fill="var(--yopico-logo-big-sparkle)"
+								d="m381.12 43.52-21.62-5.53c18.53-4.79 21.41-5.62 21.62-5.83.2-.21 5.91-22.76 6.06-22.95 5.13 17.6 6.5 22.76 6.67 22.95 20.8 5.38 21.15 5.67 21.15 5.91-19.52 5.06-21.44 5.59-21.47 5.59s-5.51 22.23-5.71 22.44l-6.7-22.59z" />
+							<path fill="var(--yopico-logo-bolts)"
+								d="m409.52 8.08 8.41 13.07-3.47 1.54 10.6 11.19-3.47 1.87 13.1 18.75-22.22-14.37 4.24-1.99-13.81-9.2 4.95-2.85-14.58-9.65zm-43.54 0-9.16 13.07 3.78 1.54-11.54 11.19 3.78 1.87-14.26 18.75 24.18-14.37-4.61-1.99 15.03-9.2-5.38-2.85 15.87-9.65-17.68-8.36z" />
+							<path fill="var(--yopico-logo-small-sparkles)"
+								d="m368.54 48.9-6.56-3.9c3.4 5.73 3.91 6.65 3.91 6.75s-3.87 7.16-3.88 7.24c5.36-3.16 6.9-4.12 6.98-4.12 6.33 3.74 6.48 3.75 6.54 3.69-3.58-6.04-3.92-6.65-3.93-6.66s3.84-6.92 3.84-7.03l-6.91 4.02zm37.15.81-6.56-3.9c3.4 5.73 3.91 6.65 3.91 6.75s-3.87 7.16-3.88 7.24c5.36-3.16 6.9-4.12 6.98-4.12 6.33 3.74 6.48 3.75 6.54 3.69-3.58-6.04-3.92-6.65-3.93-6.66s3.84-6.92 3.84-7.03l-6.91 4.02z" />
+						</svg>
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" class="pico-logo"
+							viewBox="0 0 370 164">
+							<path fill="var(--pico-logo-wordmark)"
+								d="m0,164l0,-101.28l21.18,0l1.29,13.31l0,87.97l-22.47,0zm42.93,-27.2c-5.95,0 -10.95,-1.49 -14.98,-4.49c-4.04,-3.08 -7.06,-7.47 -9.08,-13.16c-2.01,-5.69 -3.02,-12.44 -3.02,-20.26c0,-7.91 1.01,-14.66 3.02,-20.25c2.02,-5.69 5.04,-10.03 9.08,-13.02c4.03,-3.09 9.03,-4.63 14.98,-4.63c6.72,0 12.53,1.54 17.43,4.63c4.9,2.99 8.64,7.33 11.24,13.02c2.59,5.59 3.89,12.34 3.89,20.25c0,7.82 -1.3,14.57 -3.89,20.26c-2.6,5.69 -6.34,10.08 -11.24,13.16c-4.9,3 -10.71,4.49 -17.43,4.49zm-5.76,-20.83c2.88,0 5.42,-0.73 7.63,-2.17s3.99,-3.43 5.33,-5.94c1.35,-2.6 2.02,-5.59 2.02,-8.97c0,-3.37 -0.62,-6.31 -1.87,-8.82c-1.25,-2.61 -3.03,-4.63 -5.33,-6.08c-2.21,-1.45 -4.76,-2.17 -7.64,-2.17c-2.88,0 -5.47,0.72 -7.78,2.17c-2.21,1.45 -3.94,3.47 -5.18,6.08c-1.25,2.6 -1.88,5.54 -1.88,8.82c0,3.38 0.63,6.37 1.88,8.97c1.24,2.51 2.97,4.49 5.18,5.94c2.21,1.44 4.76,2.17 7.64,2.17zm50.63,19.09l0,-72.34l22.47,0l0,72.34l-22.47,0zm11.24,-81.6c-3.36,0 -6.34,-1.25 -8.93,-3.76c-2.5,-2.6 -3.75,-5.59 -3.75,-8.97c0,-3.57 1.25,-6.56 3.75,-8.97c2.59,-2.51 5.57,-3.76 8.93,-3.76c3.45,0 6.43,1.25 8.93,3.76c2.5,2.41 3.74,5.4 3.74,8.97c0,3.38 -1.24,6.37 -3.74,8.97c-2.5,2.51 -5.48,3.76 -8.93,3.76zm63.15,83.34c-7.69,0 -14.55,-1.59 -20.6,-4.77c-5.96,-3.28 -10.62,-7.77 -13.98,-13.46c-3.36,-5.79 -5.04,-12.35 -5.04,-19.68c0,-7.42 1.68,-13.98 5.04,-19.67c3.36,-5.69 7.97,-10.13 13.83,-13.31c5.96,-3.28 12.78,-4.92 20.46,-4.92c7.39,0 14.17,1.88 20.31,5.64c6.15,3.76 10.57,9.21 13.26,16.35l-21.33,7.23c-1.05,-2.31 -2.83,-4.19 -5.33,-5.64c-2.4,-1.54 -5.09,-2.31 -8.06,-2.31c-2.98,0 -5.62,0.72 -7.93,2.17c-2.2,1.35 -3.98,3.28 -5.33,5.78c-1.24,2.51 -1.87,5.4 -1.87,8.68s0.63,6.18 1.87,8.68c1.35,2.42 3.17,4.35 5.48,5.79c2.4,1.45 5.09,2.17 8.07,2.17c2.97,0 5.66,-0.77 8.06,-2.31s4.18,-3.57 5.33,-6.08l21.32,7.23c-2.78,7.24 -7.25,12.79 -13.39,16.64c-6.05,3.86 -12.78,5.79 -20.17,5.79zm78.63,0c-7.58,0 -14.31,-1.59 -20.16,-4.77c-5.77,-3.28 -10.33,-7.77 -13.69,-13.46c-3.27,-5.69 -4.9,-12.25 -4.9,-19.68c0,-7.42 1.63,-13.98 4.9,-19.67c3.26,-5.69 7.78,-10.13 13.54,-13.31c5.86,-3.28 12.49,-4.92 19.88,-4.92c7.59,0 14.26,1.64 20.03,4.92c5.85,3.18 10.42,7.62 13.68,13.31c3.27,5.69 4.9,12.25 4.9,19.67c0,7.43 -1.63,13.99 -4.9,19.68c-3.26,5.69 -7.78,10.18 -13.54,13.46c-5.67,3.18 -12.25,4.77 -19.74,4.77zm-0.14,-21.41c2.98,0 5.52,-0.68 7.63,-2.03c2.21,-1.44 3.94,-3.37 5.19,-5.79c1.25,-2.5 1.87,-5.4 1.87,-8.68c0,-3.28 -0.67,-6.12 -2.01,-8.53c-1.25,-2.51 -2.98,-4.44 -5.19,-5.79c-2.21,-1.45 -4.75,-2.17 -7.63,-2.17c-2.89,0 -5.43,0.72 -7.64,2.17c-2.21,1.35 -3.94,3.28 -5.19,5.79c-1.24,2.41 -1.87,5.25 -1.87,8.53c0,3.19 0.63,6.03 1.87,8.54c1.25,2.51 2.98,4.49 5.19,5.93c2.31,1.35 4.9,2.03 7.78,2.03z">
+							</path>
+							<path
+								d="m337.67,104.6a2,2 0 0 0 -1.15,1.15l-7.81,20.32c-0.66,1.71 -3.08,1.71 -3.74,0l-7.81,-20.32a2,2 0 0 0 -1.15,-1.15l-20.32,-7.81c-1.71,-0.66 -1.71,-3.08 0,-3.74l20.32,-7.81a2,2 0 0 0 1.15,-1.15l7.81,-20.32c0.66,-1.71 3.08,-1.71 3.74,0l7.81,20.32c0.2,0.53 0.62,0.95 1.15,1.15l20.32,7.81c1.71,0.66 1.71,3.08 0,3.74l-20.32,7.81z"
+								fill="var(--pico-logo-big-sparkle)"></path>
+							<path fill="var(--pico-logo-small-sparkles)"
+								d="m358.41,59.99c-0.66,1.71 -3.08,1.71 -3.74,0l-2.81,-7.32a2,2 0 0 0 -1.15,-1.15l-7.32,-2.81c-1.71,-0.66 -1.71,-3.08 0,-3.74l7.32,-2.81a2,2 0 0 0 1.15,-1.15l2.81,-7.32c0.66,-1.71 3.08,-1.71 3.74,0l2.81,7.32c0.2,0.53 0.62,0.95 1.15,1.15l7.32,2.81c1.71,0.66 1.71,3.08 0,3.74l-7.32,2.81a2,2 0 0 0 -1.15,1.15l-2.81,7.32z">
+							</path>
+							<path fill="var(--pico-logo-small-sparkles)"
+								d="m302.54,63.87a2,2 0 0 0 -1.15,1.15l-2.81,7.32c-0.66,1.71 -3.08,1.71 -3.74,0l-2.81,-7.32a2,2 0 0 0 -1.15,-1.15l-7.32,-2.81c-1.71,-0.66 -1.71,-3.08 0,-3.74l7.32,-2.81a2,2 0 0 0 1.15,-1.15l2.81,-7.32c0.66,-1.71 3.08,-1.71 3.74,0l2.81,7.32c0.2,0.53 0.62,0.95 1.15,1.15l7.32,2.81c1.71,0.66 1.71,3.08 0,3.74l-7.32,2.81z">
+							</path>
+							<path
+								d="m317.46,37.88c-0.66,1.71 -3.08,1.71 -3.74,0l-2.81,-7.32a2,2 0 0 0 -1.15,-1.15l-7.32,-2.81c-1.71,-0.66 -1.71,-3.08 0,-3.74l7.32,-2.81a2,2 0 0 0 1.15,-1.15l2.81,-7.32c0.66,-1.71 3.08,-1.71 3.74,0l2.81,7.32c0.2,0.53 0.62,0.95 1.15,1.15l7.32,2.81c1.71,0.66 1.71,3.08 0,3.74l-7.32,2.81a2,2 0 0 0 -1.15,1.15l-2.81,7.32z"
+								fill="var(--pico-logo-big-sparkle)"></path>
+						</svg>
+						<hr>
+						<p>A Pico CSS + example with addition to the standard Pico CSS library.</p>
+						<p>Demo page from <a href="https://picocss.com/docs/modal#utilities">picocss.com model docs</a></p>
+					</hgroup>
+					<div class="grid" style="justify-items: center;">
+						<!--
+							For the light / dark mode switch toggle, you need the following:
+							V. 2.2.3 or newer - you can see the changed in the scss/forms/checkbox-radio-switch.scss
+							<input name="color-mode-toggle" type="checkbox" role="switch">
+							That name="color-mode-toggle" is important
+							And then you'll need the js located at: js/SwitchColorMode.js
+						-->
+						<label>
+							<input aria-label="Toggle Light or Dark Mode" name="color-mode-toggle" value="1" type="checkbox" role="switch">
+						</label>
+					</div>
+					<!--<details class="dropdown">
+						<summary role="button" class="secondary">Theme</summary>
+						<ul>
+							<li><a href="#" data-theme-switcher="auto">Auto</a></li>
+							<li><a href="#" data-theme-switcher="light">Light</a></li>
+							<li><a href="#" data-theme-switcher="dark">Dark</a></li>
+						</ul>
+					</details>-->
+					<details class="dropdown">
+						<summary style="background-color:var(--pico-primary-background); color: var(--pico-primary-inverse)">Color
+							Scheme</summary>
+						<ul class="three-columns">
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-red-550) !important;"
+									data-theme="red" href="javascript:void(0);">Red</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-pink-550) !important;"
+									data-theme="pink" href="javascript:void(0);">Pink</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-fuchsia-550) !important;"
+									data-theme="fuchsia" href="javascript:void(0);">Fuchsia</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-purple-600) !important;"
+									data-theme="purple" href="javascript:void(0);">Purple</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-violet-600) !important;"
+									data-theme="violet" href="javascript:void(0);">Violet</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-indigo-600) !important;"
+									data-theme="indigo" href="javascript:void(0);">Indigo</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-blue-550) !important;"
+									data-theme="blue" href="javascript:void(0);">Blue</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-azure-550) !important;"
+									data-theme="azure" href="javascript:void(0);">Azure</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-cyan-550) !important;"
+									data-theme="cyan" href="javascript:void(0);">Cyan</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-jade-550) !important;"
+									data-theme="jade" href="javascript:void(0);">Jade</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-green-500) !important;"
+									data-theme="green" href="javascript:void(0);">Green</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-lime-200) !important;"
+									data-theme="lime" href="javascript:void(0);">Lime</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-yellow-100) !important;"
+									data-theme="yellow" href="javascript:void(0);">Yellow</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-amber-200) !important;"
+									data-theme="amber" href="javascript:void(0);">Amber</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-pumpkin-350) !important;"
+									data-theme="pumpkin" href="javascript:void(0);">Pumpkin</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-orange-500) !important;"
+									data-theme="orange" href="javascript:void(0);">Orange</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-sand-200) !important;"
+									data-theme="sand" href="javascript:void(0);">Sand</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-grey-300) !important;"
+									data-theme="grey" href="javascript:void(0);">Grey</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-zinc-550) !important;"
+									data-theme="zinc" href="javascript:void(0);">Zinc</a></li>
+							<li><a class="change-theme"
+									style="border:none; margin:1px; color:#000; background-color: var(--pico-color-slate-600) !important;"
+									data-theme="slate" href="javascript:void(0);">Slate</a></li>
+						</ul>
+					</details>
+					<aside>
+						<nav>
+							<ul>
+								<li><a href="#color-mode-toggle">Color Mode Switch</a></li>
+								<li><a href="#tables">Tables</a></li>
+								<li><a href="#tabs">Tabs [role=tablist]</a></li>
+								<li><a href="#hamburger-menu">Hamburger Menu</a></li>
+								<li><a href="#tooltip">Tooltip</a></li>
+								<li><a href="#ghost-btn">Ghost Buttons</a></li>
+								<li><a href="#floating-labels">Floating Labels [role=form]</a></li>
+								<li><a href="#validation">Validation</a></li>
+								<li><a href="#group">Group</a></li>
+								<li><a href="#dropdown-submenu">Dropdown Submenu</a></li>
+								<li><a href="#rows">Row</a></li>
+								<li><a href="#row-offsets">Row Offset</a></li>
+								<li><a href="#row-alignments">Row Alignments</a></li>
+								<li><a href="#row-breakpoints">Row Breakpoints</a></li>
+								<li><a href="#modal">Modals</a></li>
+								<li><a href="#popover">Popover (Alerts?)</a></li>
+								<li><a href="#accordions">Accorddions</a></li>
+								<li><a href="#timeline">Timeline</a></li>
+								<li>Deprecated</li>
+								<li><del>Tabs [role="region"]</del> use <a style="display: inline-block;" href="#tabs">Tabs</a></li>
+								<li><del>Notifications</del> use <a style="display: inline-block;" href="#popover">Popover</a></li>
+							</ul>
+						</nav>
+					</aside>
+				</header>
+				<!-- /Header -->
+			</div>
+			<main class="col-12 col-md-9 col-lg-10">
+				<article>
+					<header>
+						<h2>Yohns PicoCSS Fork v2.2.10</h2>
+					</header>
+					<p>I've merged some open pull requests from the <a href="https://github.com/picocss/pico">original Pico</a>
+						repository, and then added a few more enhancements that I either needed for a project (timeline) or wanted
+						to make the building process of websites easier (<code>:user-valid</code> "validation", using
+						<code>&lt;label&gt;</code> within groups, <code>.row</code> &amp; <code>.row-fluid</code> and the
+						<code>.col-*</code> classes like Bootstrap, <code>.align-*</code> and more.) The demo docs here is the main
+						enhanced that have been added to the <a href="https://picocss.com/">Pico CSS 2.0.6</a> branch, for more
+						docs, refer to the original <a href="https://picocss.com/docs">Pico CSS docs</a>. </p>
+					<hr>
+					<p><code>(OPTIONAL)</code> Some of the demos on this page do require <a
+							href="https://github.com/Yohn/PicoCSS/tree/main/docs/js">Vanilla JavaScript Files</a> to work the same as
+						the preview here. I may get a build script going to compile the javascript plugins / components later. Let
+						me know if this feature would help you.</p>
+					<footer>If this fork has helped you, please <a href="https://github.com/Yohn/PicoCSS">Like</a> this fork!
+					</footer>
+				</article>
+				<article id="color-mode-toggle">
+					<header>
+						<h2>Color Mode Switch</h2>
+						<h6 class="fw-n">Classless!</h6>
+					</header>
+
+					<div class="grid" style="justify-items: center;">
+						<label>Example:</label>
+						<label>
+							<input aria-label="Toggle Light or Dark Mode" name="color-mode-toggle" value="1" type="checkbox" role="switch">
+						</label>
+					</div>
+					<small class="pt-1" style="text-align: center; display: block;">Only the first switch on the page change the color mode currently. You can tap the other side on the left side abover the navbar to see the color modes change.</small>
+					<hr class="m-0">
+					<p>You will need to include the <a href="js/SwitchColorMode.js">SwitchColorMode.js</a> javascript at the end of your <code>&lt;body&gt;</code> tag.</p>
+					<p>For the switch itself, you really need to ensure the <code>name</code> and the <code>role</code> attributes are found, with the same values.</p>
+					<pre><code class="language-html">&lt;label&gt;
+	&lt;input name="color-mode-toggle" role="switch" type="checkbox" value="1" aria-label="Toggle Light or Dark Mode"&gt;
+&lt;/label&gt;</code></pre>
+					<p>Do not change the <code>name="color-mode-toggle"</code></p>
+					<p>You can assign the default color mode for new visitors by adding <code>data-theme="dark"</code> to your <code>&lt;html&gt;</code> tag. The value can be 1 of the following: <code>dark</code>, <code>light</code>, <code>auto</code>. If auto is set, it will default to the viewers prefered color mode.</p>
+					<p>Color modes are saved across page loads.</p>
+				</article>
+				<hr>
+				<article id="tables">
+					<header>
+						<h2>Tables</h2>
+						<h6 class="fw-n">Striped rows require .striped class</h6>
+					</header>
+					<p>Styles for a <code>&lt;caption&gt;</code> element have been added for tables as well.</p>
+					<p>For rows that will be hidden, make sure to add the <code>hidden</code> attribute like so:
+						<code>&lt;tr hidden&gt;</code></p>
+					<p>When rows are toggled, the hidden rows have * around the first column.</p>
+					<nav>
+						<ul>
+							<li></li>
+						</ul>
+						<ul>
+							<li><button type="button"
+									onclick="document.querySelectorAll('.hidden-table-row').forEach(row => {row.hidden = !row.hidden;});">Toggle
+									Hidden Rows</button></li>
+						</ul>
+					</nav>
+					<div class="overflow-auto">
+						<table class="striped" id="hidden-row-example">
+							<caption> Solar System Planets </caption>
+							<thead>
+								<tr>
+									<th scope="col">Planet</th>
+									<th scope="col">Diameter (km)</th>
+									<th scope="col">Dist.to Sun (AU)</th>
+									<th scope="col">Orbit (days)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">Mercury</th>
+									<td>4,880</td>
+									<td>0.39</td>
+									<td>88</td>
+								</tr>
+								<tr>
+									<th scope="row">Venus</th>
+									<td>12,104</td>
+									<td>0.72</td>
+									<td>225</td>
+								</tr>
+								<tr hidden class="hidden-table-row">
+									<td colspan="4" style="text-align: center;">*Hidden Row Found*</td>
+								</tr>
+								<tr>
+									<th scope="row">Earth</th>
+									<td>12,742</td>
+									<td>1.00</td>
+									<td>365</td>
+								</tr>
+								<tr>
+									<th scope="row">Mars</th>
+									<td>6,779</td>
+									<td>1.52</td>
+									<td>687</td>
+								</tr>
+								<tr>
+									<th scope="row">Jupiter</th>
+									<td>139,820</td>
+									<td>5.20</td>
+									<td>4,333</td>
+								</tr>
+								<tr>
+									<th scope="row">Saturn</th>
+									<td>116,460</td>
+									<td>9.58</td>
+									<td>10,759</td>
+								</tr>
+								<tr hidden class="hidden-table-row">
+									<th scope="row">* Uranus *</th>
+									<td>50,724</td>
+									<td>19.22</td>
+									<td>30,688</td>
+								</tr>
+								<tr>
+									<th scope="row">Neptune</th>
+									<td>49,244</td>
+									<td>30.05</td>
+									<td>60,182</td>
+								</tr>
+								<tr hidden class="hidden-table-row">
+									<th scope="row">* Pluto *</th>
+									<td>2,377</td>
+									<td>39.48</td>
+									<td>90,560</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th scope="row">Average</th>
+									<td>49,594</td>
+									<td>8.58</td>
+									<td>13,666</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</article>
+				<hr>
+				<article id="tabs">
+					<header>
+						<h2>Responsive Tabs <code>[role="tablist"]</code></h2>
+						<h6 class="fw-n">Classless!</h6>
+						<h6 class="fw-n">Javascirpt is required.</h6>
+					</header>
+					<p>Accessible friendly, with left and right arrow, home and end button triggers to switch between tabs.</p>
+					<p>Make sure to <a href="js/PicoTabs.js">Download PicoTabs.js</a></p>
+					<p>Ensure you have</p>
+					<p>To set up the tabs, follow these steps:</p>
+					<ol>
+						<li>
+							<strong>HTML Structure:</strong>
+							<ul>
+								<li>Each tab button must have the following attributes: <ul>
+										<li><code>role="tab"</code></li>
+										<li><code>id="unique-tab-id"</code> - A unique ID for the tab</li>
+										<li><code>aria-selected="true/false"</code> - Indicates if the tab is selected</li>
+										<li><code>aria-controls="panel-id"</code> - The ID of the associated tab panel</li>
+										<li><code>tabindex="0/-1"</code> - Indicates if the tab is focusable</li>
+									</ul>
+								</li>
+								<li>Each tab panel must have the following attributes: <ul>
+										<li><code>role="tabpanel"</code></li>
+										<li><code>id="panel-id"</code> - A unique ID for the panel</li>
+										<li><code>aria-labelledby="unique-tab-id"</code> - The ID of the associated tab</li>
+										<li><code>hidden</code> - Indicates if the panel is hidden (use <code>hidden</code> attribute for
+											non-active panels)</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong>JavaScript:</strong>
+							<p>The JavaScript file <code>PicoTabs.js</code> is required for the tabs to function correctly. Ensure you
+								include it in your HTML file:</p>
+							<pre><code class="language-html">&lt;script src="js/PicoTabs.js"&gt;&lt;/script&gt;</code></pre>
+							<p>Initialize the tabs by adding the following code:</p>
+							<pre><code class="language-javascript">document.addEventListener("DOMContentLoaded", () => {
+	new PicoTabs('[role="tablist"]');
+});</code></pre>
+						</li>
+						<li>
+							<strong>Keyboard Navigation:</strong>
+							<p>The following keypresses work for the tabs:</p>
+							<ul>
+								<li><code>ArrowLeft</code> - Move to the previous tab</li>
+								<li><code>ArrowRight</code> - Move to the next tab</li>
+								<li><code>Home</code> - Move to the first tab</li>
+								<li><code>End</code> - Move to the last tab</li>
+							</ul>
+						</li>
+					</ol>
+					<h3>Tab Example:</h3>
+					<div role="tablist">
+						<!-- Tab One -->
+						<button id="tabone" role="tab" tabindex="0" aria-selected="true" aria-controls="panel1"> Tab One </button>
+						<div id="panel1" role="tabpanel" aria-labelledby="tabone" tabindex="0">
+							<h3>Tab One Content</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+								ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+								fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+								deserunt mollit anim id est laborum.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+								dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+								ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+								fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+								deserunt mollit anim id est laborum.</p>
+						</div>
+						<!-- Tab Two -->
+						<button id="tabtwo" role="tab" aria-selected="false" aria-controls="panel2" tabindex="-1"> Tab Two </button>
+						<div id="panel2" role="tabpanel" aria-labelledby="tabtwo" hidden>
+							<div>
+								<form action="javascript:void(0);">
+									<h2>Login Below</h2>
+									<section role="form">
+										<input type="email" id="email" name="email" placeholder="Email:" required>
+										<label for="email">Email:</label>
+									</section>
+									<section role="form">
+										<input type="password" id="password" name="password" placeholder="Password:" required>
+										<label for="password">Password:</label>
+									</section>
+									<input type="submit" value="Submit">
+								</form>
+							</div>
+						</div>
+						<!-- Tab Three -->
+						<button id="tabthree" role="tab" aria-selected="false" aria-controls="panel3" tabindex="-1"> Tab Three
+						</button>
+						<div id="panel3" role="tabpanel" aria-labelledby="tabthree" hidden>
+							<h2>Tab Three Content</h2>
+							<table class="striped">
+								<tbody>
+									<tr>
+										<td data-theme="light"><strong>aaa:</strong></td>
+										<td>aaaa</td>
+									</tr>
+									<tr>
+										<td data-theme="light"><strong>aaa:</strong></td>
+										<td>aaaa</td>
+									</tr>
+									<tr data-theme="light">
+										<td><strong>aaa:</strong></td>
+										<td>aaaa</td>
+									</tr>
+									<tr>
+										<td><strong>aaa:</strong></td>
+										<td>aaaa</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<hr>
+					<details>
+						<summary>Show the code:</summary>
+						<div>
+							<pre><code class="language-html">&lt;div role="tablist"&gt;
+	&lt;!-- Tab One --&gt;
+	&lt;button id="tabone" role="tab" tabindex="0" aria-selected="true" aria-controls="panel1"&gt;
+		Tab One
+	&lt;/button&gt;
+	&lt;div id="panel1" role="tabpanel" aria-labelledby="tabone" tabindex="0"&gt;
+		&lt;h1&gt;Tab One Content&lt;/h1&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit...&lt;/p&gt;
+	&lt;/div&gt;
+
+	&lt;!-- Tab Two --&gt;
+	&lt;button id="tabtwo" role="tab" aria-selected="false" aria-controls="panel2" tabindex="-1"&gt;
+		Tab Two
+	&lt;/button&gt;
+	&lt;div id="panel2" role="tabpanel" aria-labelledby="tabtwo" hidden&gt;
+		&lt;h1&gt;Tab Two Content&lt;/h1&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit...&lt;/p&gt;
+	&lt;/div&gt;
+
+	&lt;!-- Tab Three --&gt;
+	&lt;button id="tabthree" role="tab" aria-selected="false" aria-controls="panel3" tabindex="-1"&gt;
+		Tab Three
+	&lt;/button&gt;
+	&lt;div id="panel3" role="tabpanel" aria-labelledby="tabthree" hidden&gt;
+		&lt;h1&gt;Tab Three Content&lt;/h1&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit...&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+						</div>
+					</details>
+				</article>
+				<hr>
+				<!-- hamburger-menu -->
+				<article id="hamburger-menu">
+					<header>
+						<h2>Hamburger Menu <code>nav[role="navigation"]</code></h2>
+						<h6 class="fw-n">Classless!</h6>
+					</header>
+					<p>Use the default <code>&lt;nav&gt;</code> component in <a href="https://picocss.com/docs/nav">Pico CSS</a>
+						docs, but add the <code>role="navigation"</code> attribute to the <code>&lt;nav&gt;</code>.</p>
+					<h5>Positioning</h5>
+					<p>The default position puts your nav links and burger menu at the end of the line, but
+						<code>data-position="start"</code> will put them at the start of the line. </p>
+					<h5>Breakpoints</h5>
+					<p>Use the <code>data-breakpoint="<strong>**</strong>"</code> to change when the burger menu appears. The
+						different values are <code>md</code>, <code>lg</code>, <code>xl</code> and <code>xxl</code>. These are the
+						same breakpoints <a href="#rows">the .row</a> uses.</p>
+					<h5>Hamburger Icon</h5>
+					<p>Before the list of elements you want to be within the burger menu, add the following:</p>
+					<code>
+						&lt;input type="checkbox" id="YOUR-ID" /&gt;<br>
+						&lt;label for="YOUR-ID" style="font-size: calc(var(--pico-font-size) * 1.5);"&gt;&amp;#x2261;&lt;/label&gt;
+					</code>
+					<p>Change <code>YOUR-ID</code> to whatever id you want to use, but ensure the id for the checkbox, is the same
+						as the id for the label.</p>
+					<blockquote><span style="color: var(--pico-del-color);">DO NOT</span> put the
+						<code>input[type="checkbox"]</code> within the <code>&lt;label&gt;</code> element, it will not work
+						correctly if you do that. </blockquote>
+					<h6>Custom Hamburger Icon?</h6>
+					<p>Replace the <code>&amp;#x2261;</code> with your own icon, svg element, or image.</p>
+					<h5>Collapsed List</h5>
+					<p>Add <code>role="list"</code> attribute to the <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> element
+						for the hamburger menu, and then add <code>role="listitem"</code> attribute to each <code>&lt;li&gt;</code>
+						element.</p>
+					<hr>
+					<hgroup>
+						<h3>Example Hamburger Menu</h3>
+						<h6>(resize width of screen if you don't see it)</h6>
+					</hgroup>
+					<!-- Start Responsive Nav 1 -->
+					<nav role="navigation" data-position="start" data-breakpoint="lg">
+						<ul>
+							<li><a href="https://github.com/Yohn/PicoCSS" target="_blank">Yohns Fork</a></li>
+						</ul>
+						<ul>
+							<li><strong>Like Us on GitHub!</strong></li>
+						</ul>
+						<input type="checkbox" id="menu-btn" />
+						<!-- role="button" -->
+						<label for="menu-btn" style="font-size: calc(var(--pico-font-size) * 2);" aria-label="Menu"
+							aria-controls="nav-example"> &equiv; </label>
+						<ol id="nav-example" role="list">
+							<li role="listitem"><a href="javascript:void(0);">Home</a></li>
+							<li role="listitem">
+								<details class="dropdown">
+									<summary class="secondary" role="button">About</summary>
+									<ul>
+										<li><a href="javascript:void(0);">What’s new in v2?</a></li>
+										<li><a href="javascript:void(0);">Mission</a></li>
+										<li><a href="javascript:void(0);">Usage scenarios</a></li>
+										<li><a href="javascript:void(0);">Brand</a></li>
+										<li><a href="javascript:void(0);">Built With</a></li>
+									</ul>
+								</details>
+							</li>
+							<li role="listitem"><a href="javascript:void(0);">Services</a></li>
+							<li role="listitem"><a href="javascript:void(0);">Login</a></li>
+							<li role="listitem"><a href="javascript:void(0);">Sign Up</a></li>
+						</ol>
+					</nav>
+					<!-- End Responsive Nav 1 -->
+					<h3>Hamburger Menu Under Nav Example</h3>
+					<!-- Start Responsive Nav 2 -->
+					<nav role="navigation" data-position="end" data-breakpoint="lg">
+						<ul>
+							<li><a href="https://github.com/Yohn/PicoCSS" target="_blank">Yohns Fork</a></li>
+						</ul>
+						<ul>
+							<li><strong>Like Us on GitHub!</strong></li>
+						</ul>
+						<input type="checkbox" id="menu-btn2">
+						<label for="menu-btn2" style="font-size: calc(var(--pico-font-size) * 2);" aria-label="Menu"
+							aria-controls="nav-example2"> &equiv; </label>
+						<ol id="nav-example2" role="list">
+							<li role="listitem"><a href="javascript:void(0);">Home</a></li>
+							<li role="listitem">
+								<details class="dropdown">
+									<summary>About 2</summary>
+									<ul>
+										<li><a href="javascript:void(0);">What’s new in v2?</a></li>
+										<li><a href="javascript:void(0);">Mission</a></li>
+										<li><a href="javascript:void(0);">Usage scenarios</a></li>
+										<li><a href="javascript:void(0);">Brand</a></li>
+										<li><a href="javascript:void(0);">Built With</a></li>
+									</ul>
+								</details>
+							</li>
+							<li role="listitem"><a href="javascript:void(0);">Services</a></li>
+							<li role="listitem"><a href="javascript:void(0);">Login</a></li>
+							<li role="listitem"><a href="javascript:void(0);">Sign Up</a></li>
+						</ol>
+					</nav>
+					<!-- End Responsive Nav 2 -->
+					<hr>
+					<!-- Start Responsive Nav 3 -->
+					<nav class="container-fluid" role="navigation" data-position="end" data-breakpoint="lg">
+						<input type="checkbox" id="hamburger3">
+						<label for="hamburger3" style="font-size: calc(var(--pico-font-size) * 2);" aria-label="Menu" aria-controls="top-nav">&equiv;</label>
+						<ul id="top-nav" role="list">
+							<li role="listitem"><a href="javascript:void(0);">Pico CSS</a></li>
+							<li role="listitem"><a href="javascript:void(0);">Example</a></li>
+							<li role="listitem">
+								<details class="dropdown">
+									<summary>Submenu</summary>
+									<ul>
+										<li><a href="javascript:void(0);">Another Link</a></li>
+										<li><a href="javascript:void(0);">And Again</a></li>
+										<li>
+											<details class="dropdown">
+												<summary>Another Submenu</summary>
+												<ul>
+													<li><a href="javascript:void(0);">Another Link</a></li>
+													<li><a href="javascript:void(0);">And Again</a></li>
+												</ul>
+											</details>
+										</li>
+									</ul>
+								</details>
+							</li>
+							<li role="listitem"><a href="javascript:void(0);">Final In List</a></li>
+						</ul>
+						<ul></ul> <!-- put empty <ul> or <ol> element here to move the next <ul> or <ol> to the right -->
+						<ul>
+							<li>
+								<form role="search" action="javascript:void(0);" method="get">
+									<input name="search" type="search" value="" placeholder="Find this Article">
+									<input type="hidden" name="id" value="12">
+									<input type="submit" value="Find">
+								</form>
+							</li>
+						</ul>
+					</nav>
+					<hr>
+					<details>
+						<summary>Show the code:</summary>
+						<div>
+							<pre><code class="language-html">&lt;nav role="navigation" data-position="end" data-breakpoint="lg"&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href="https://github.com/Yohn/PicoCSS" target="_blank"&gt;Yohns Fork&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;strong&gt;Like Us on GitHub!&lt;/strong&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;input type="checkbox" id="menu-btn2"&gt;
+	&lt;label for="menu-btn2" style="font-size: calc(var(--pico-font-size) * 1.3);" aria-label="Menu"
+		aria-controls="nav-example2"&gt;
+		&amp;equiv;
+	&lt;/label&gt;
+	&lt;ol id="nav-example2" role="list"&gt;
+		&lt;li role="listitem"&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li role="listitem"&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+		&lt;li role="listitem"&gt;&lt;a href="#"&gt;Services&lt;/a&gt;&lt;/li&gt;
+		&lt;li role="listitem"&gt;&lt;a href="#"&gt;Login&lt;/a&gt;&lt;/li&gt;
+		&lt;li role="listitem"&gt;&lt;a href="#"&gt;Sign Up&lt;/a&gt;&lt;/li&gt;
+	&lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+						</div>
+					</details>
+				</article>
+				<!-- /hamburger-menu -->
+				<hr>
+				<!-- Tooltip -->
+				<article id="tooltip">
+					<header>
+						<h2>Tooltip</h2>
+					</header>
+					<p>Tooltips are now dark background be default for light and dark theme.</p>
+					<label for="test-tooltip" data-tooltip="this is long tooltip that will span multiple lines.">
+						<input type="text" id="test-tooltip" placeholder="Testing">
+					</label>
+					<p>I also wanted to remove the dotted line on input fileds when they are contained within the tooltip element,
+						so that is why this example has the input field with the tooltip on the <code
+							data-tooltip="I do not think there is a way to set the width on the tool tip and have it auto break? Lets see..">&lt;label&gt;</code>
+						wrapper.</p>
+					<p>We also want the <span data-tooltip="short">tooltip width</span> to not be huge when the tooltip is short.
+					</p>
+				</article>
+				<!-- /Tooltip -->
+				<hr>
+				<article id="ghost-btn">
+					<header>
+						<h2>Ghost Buttons</h2>
+					</header>
+					<p>Ghost buttons are buttons that have a transparent background and border. They are often used as secondary
+						buttons to indicate a less important action.</p>
+					<p>Ghost buttons are created by adding the <code>.ghost</code> class to a button</p>
+					<p><code>.ghost</code> will work on all <code>&lt;button&gt;</code>, <code>[type="button"]</code>,
+						<code>[type="submit"]</code>, <code>[type="reset"]</code>, and <code>[role="button"]</code> elements.</p>
+					<div class="grid">
+						<button type="button" class="ghost">Ghost Button</button>
+						<button type="button" class="ghost secondary">Secondary Ghost Button</button>
+						<button type="button" class="ghost contrast">Contrast Ghost Button</button>
+					</div>
+					<hr>
+					<details>
+						<summary>Show the code:</summary>
+						<div>
+							<pre><code class="language-html">&lt;button type="button" class="ghost"&gt;Ghost Button&lt;/button&gt;
+&lt;button type="button" class="ghost secondary"&gt;Secondary Ghost Button&lt;/button&gt;
+&lt;button type="button" class="ghost contrast"&gt;Contrast Ghost Button&lt;/button&gt;</code></pre>
+						</div>
+					</details>
+				</article>
+				<hr>
+				<!-- Floating Labels -->
+				<article id="floating-labels">
+					<header>
+						<h2>Floating Labels</h2>
+						<h6 class="fw-n">Classless!</h6>
+					</header>
+					<p>For floating labels to work, you need to add the <code>role="form"</code> attribute to a
+						<code>&lt;section&gt;</code> tag, ensure you have a <code>placeholder="example"</code> attribute on your
+						input or textarea tags, and that placeholder value needs to be the same value that is used within the label
+						tag, which would go after your form element.</textarea></code>. </p>
+					<hr>
+					<div>
+						<form action="javascript:void(0);" novalidate>
+							<section role="form">
+								<input type="text" id="fl-name-ele" placeholder="Name" aria-required="true" aria-labelledby="fl-name">
+								<label for="fl-name-ele" id="fl-name">Name</label>
+							</section>
+							<!--
+							<small>Your first and last name</small>-->
+							<section role="form">
+								<input type="email" id="fl-email-ele" placeholder="Email" aria-required="true"
+									aria-labelledby="fl-email">
+								<label for="fl-email-ele" id="fl-email">Email</label>
+							</section>
+							<!--
+							<small>Use a valid email address.</small>-->
+							<section role="form">
+								<select id="fl-topic-ele" required aria-required="true" aria-labelledby="fl-topic">
+									<option selected disabled value="">Topic</option>
+									<option>General</option>
+									<option>Support</option>
+									<option>Feedback</option>
+								</select>
+								<label for="fl-topic-ele" id="fl-topic">Topic</label>
+							</section>
+							<!--
+							<small>Please select the best topic for your inquiry.</small>-->
+							<section role="form">
+								<textarea id="fl-message-ele" placeholder="Message" aria-required="true"
+									aria-labelledby="fl-message"></textarea>
+								<label for="fl-message-ele" id="fl-message">Message</label>
+							</section>
+							<!--
+							<small>Be as descriptive as possible</small>-->
+						</form>
+						<hr>
+						<details>
+							<summary class="outline">Show The Code</summary>
+							<div>
+								<pre><code class="language-html">&lt;section role="form"&gt;
+	&lt;input type="email" id="fl-email-ele" placeholder="Email" aria-required="true"
+		aria-labelledby="fl-email"&gt;
+	&lt;label for="fl-email-ele" id="fl-email"&gt;Email&lt;/label&gt;
+&lt;/section&gt;
+&lt;section role="form"&gt;
+	&lt;select id="fl-topic-ele" required aria-required="true" aria-labelledby="fl-topic"&gt;
+		&lt;option selected disabled value=""&gt;Topic&lt;/option&gt;
+		&lt;option&gt;General&lt;/option&gt;
+		&lt;option&gt;Support&lt;/option&gt;
+		&lt;option&gt;Feedback&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;label for="fl-topic-ele" id="fl-topic"&gt;Topic&lt;/label&gt;
+&lt;/section&gt;
+&lt;section role="form"&gt;
+	&lt;textarea id="fl-message-ele" placeholder="Message" aria-required="true"
+		aria-labelledby="fl-message"&gt;&lt;/textarea&gt;
+	&lt;label for="fl-message-ele" id="fl-message"&gt;Message&lt;/label&gt;
+&lt;/section&gt;</code></pre>
+							</div>
+						</details>
+					</div>
+				</article>
+				<!-- /Floating Labels -->
+				<hr>
+				<!-- Validation -->
+				<form action="javascript:void(0);" id="validation">
+					<article>
+						<header>
+							<h2>Validation</h2>
+							<h6 class="fw-n">Classless!</h6>
+						</header>
+						<p> Using form :user-valid and :user-invalid.</p>
+						<p>You can disable the validation by adding the attribute <code>novalidate</code> to the form tag.
+						<p>Classless except for the file input button previews.</p>
+						</p>
+						<input placeholder="name" type="text" name="test" minlength="4" maxlength="30" pattern="[a-z]{4,30}"
+							required>
+						<small data-valid="this is good!" data-invalid="Min of 4 characters, max of 39, only a-z no caps."></small>
+						<input placeholder="Url" type="url" name="test" required>
+						<small data-valid="this is good!" data-invalid="Must be a url."></small>
+						<input placeholder="Email" type="email" name="test" required>
+						<small data-valid="this is good!" data-invalid="Must be a valid email."></small>
+						<select name="favorite-cuisine" required>
+							<option selected disabled value="">Select your favorite cuisine...</option>
+							<option>Italian</option>
+							<option>Japanese</option>
+							<option>Indian</option>
+							<option>Thai</option>
+							<option>French</option>
+						</select>
+						<small data-valid="this is good!" data-invalid="Error.."></small>
+						<input type="date" name="date" required>
+						<small data-valid="this is good!" data-invalid="Error.."></small>
+						<input type="datetime-local" name="datetime-local" required>
+						<small data-valid="this is good!" data-invalid="Error.."></small>
+						<input type="month" name="month" min="2018-03" max="2024-12" placeholder="2024-12" step="1"
+							pattern="[0-9]{4}-[0-9]{2}" required>
+						<small data-valid="this is good!" data-invalid="Format: YYYY-MM"></small>
+						<input type="time" name="time" required>
+						<small data-valid="this is good!" data-invalid="Error.."></small>
+						<header>Check JS for FileValidator class</header>
+						<input type="file" data-max-size="1048576" accept=".jpg,.svg,.png,.gif,.webp" id="checkFile" multiple />
+						<small data-invalid="Only .jpg,.svg,.png,.gif,.webp image types allowed" data-valid="Good!"></small>
+						<textarea minlength="5" placeholder="its always valid?" required></textarea>
+						<small data-valid="this is good!" data-invalid="Min of 5 characters!"></small>
+						<br>
+						<label><input type="checkbox" name="english" required />English </label>
+						<footer>
+							<input type="submit" value="submit" class="btn btn-primary">
+						</footer>
+					</article>
+				</form>
+				<!-- /Validation -->
+				<hr>
+				<!-- Group -->
+				<article id="group">
+					<header>
+						<h2>Group</h2>
+						<h6 class="fw-n">Classless and no JavaScript!</h6>
+					</header>
+					<ol>
+						<li><code>&lt;label&gt;</code> has been added.</li>
+						<li><code>&lt;legend&gt;</code> has been added. (To be used with <code>&lt;fieldset role="group"&gt;</code>
+						</li>
+						<li><code>&lt;details class="dropdown"&gt;</code> has been added.</li>
+					</ol>
+					<h4 id="dropdown-submenu">Dropdown Submenu Example</h4>
+					<p>Click on the <strong>Getting Started</strong> to see the sub-dropdown menu under <strong>About</strong>.
+					</p>
+					<hr>
+					<div>
+						<h3>[role=group] > .dropdown</h3>
+						<div role="group">
+							<details class="dropdown">
+								<summary>Getting Started</summary>
+								<ul>
+									<li>
+										<details class="dropdown">
+											<summary class="secondary">About</summary>
+											<ul>
+												<li><a class="load-page" href="data/What’s new in v2?.json">What’s new in v2?</a></li>
+												<li><a class="load-page" href="data/Mission.json">Mission</a></li>
+												<li><a class="load-page" href="data/Usage scenarios.json">Usage scenarios</a></li>
+												<li><a class="load-page" href="data/Brand.json">Brand</a></li>
+												<li><a class="load-page" href="data/Built With.json">Built With</a></li>
+											</ul>
+										</details>
+									</li>
+									<li>Quick start</li>
+									<li>Version picker New</li>
+									<li>Color schemes</li>
+									<li>Class-less version</li>
+									<li>Conditional styling New</li>
+									<li>RTL</li>
+									<li>CSS Variables</li>
+									<li>Sass</li>
+									<li>Colors New</li>
+								</ul>
+							</details>
+							<details class="dropdown">
+								<summary>Content</summary>
+								<ul>
+									<li><a class="load-page" href="data/Typography.json">Typography</a></li>
+									<li><a class="load-page" href="data/Link.json">Link</a></li>
+									<li><a class="load-page" href="data/Table.json">Table</a></li>
+								</ul>
+							</details>
+						</div>
+						<hr>
+						<h3>form > [role=group]</h3>
+						<form action="javascript:void(0);" novalidate>
+							<div role="group">
+								<label for="email">Email:</label>
+								<input name="email" type="email" placeholder="Enter your email" autocomplete="email" />
+								<input type="submit" value="Subscribe" />
+							</div>
+						</form>
+						<hr>
+						<h3>form > [role=group] > select</h3>
+						<form action="javascript:void(0);" novalidate>
+							<div role="group">
+								<label for="ex-browser">Browser:</label>
+								<select id="ex-browser" name="ex-browser">
+									<option value="Firefox">Firefox</option>
+									<option value="Chrome">Chrome</option>
+									<option value="Opera">Opera</option>
+									<option value="Safari">Safari</option>
+								</select>
+								<input type="submit" value="Save" />
+							</div>
+						</form>
+						<hr>
+						<h3>form > [role=group] > label + input + select</h3>
+						<form action="javascript:void(0);" novalidate>
+							<div role="group">
+								<label for="fl3-search">Search:</label>
+								<input name="fl3-search" type="text" placeholder="Find" />
+								<label for="fl3-section">In:</label>
+								<select id="fl3-section" name="fl3-section">
+									<option value="Customers">Customers</option>
+									<option value="Employees">Employees</option>
+									<option value="Vendors">Vendors</option>
+								</select>
+								<input type="submit" value="Save" />
+							</div>
+						</form>
+					</div>
+				</article>
+				<!-- ./ Group -->
+				<hr>
+				<!-- rows -->
+				<article id="rows">
+					<header>
+						<h2>Rows</h2>
+					</header>
+					<p> Similar to <a href="https://getbootstrap.com/docs/5.3/layout/columns/" target="_blank">Bootstrap
+							5.3.3</a>, with the responsive <code>.col-*COL#*</code>, <code>.col-*BREAKPOINT*-*COL#*</code>,
+						<code>.offset-*COL#*</code>, <code>.offset-*BREAKPOINT*-*COL#*</code>. </p>
+					<p>
+						<code>.row</code> has a max width set to the viewport of your <code>xl</code> viewport (1300px by default)
+					</p>
+					<code>.row-fluid</code> max width is 100%. </a>
+					<div class="row-fluid">
+						<div class="col-3">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3
+							</article>
+						</div>
+						<div class="col-6">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-6
+							</article>
+						</div>
+						<div class="col-3">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3
+							</article>
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="col-3 offset-1">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3
+								offset-1</article>
+						</div>
+						<div class="col-2">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-2
+							</article>
+						</div>
+						<div class="col-2">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-2
+							</article>
+						</div>
+						<div class="col-3">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3
+							</article>
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="col-3">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3
+							</article>
+						</div>
+						<div class="col-3">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3
+							</article>
+						</div>
+						<div class="col-3">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3
+							</article>
+						</div>
+						<div class="col-3">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3
+							</article>
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="col-2">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-2
+							</article>
+						</div>
+						<div class="col-8">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-8
+							</article>
+						</div>
+						<div class="col-2">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-2
+							</article>
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="col-5">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-5
+							</article>
+						</div>
+						<div class="col-7">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-7
+							</article>
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="col-9">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-9
+							</article>
+						</div>
+						<div class="col-3">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3
+							</article>
+						</div>
+					</div>
+				</article>
+				<!-- /rows -->
+				<hr>
+				<!-- offset -->
+				<article id="row-offsets">
+					<header>
+						<h2>Columns with offsets defined by breakpoints</h2>
+					</header>
+					<p>When defining multiple <code>.col-*-*</code> on the same element, the order your put the classes on the
+						element matter.</p>
+					<div class="row-fluid">
+						<div class="col-2 col-md-4">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">
+								col-2, col-md-4</article>
+						</div>
+						<div class="col-4 offset-8 col-md-6 offset-md-6">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">
+								col-4, offset-8, col-md-6, offset-md-6</article>
+						</div>
+					</div>
+					<div class="row-fluid">
+						<div class="col-5 offset-1 col-md-11">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">
+								col-5, offset-1, col-md-11</article>
+						</div>
+						<div class="col-2 col-md-6">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">
+								col-2, col-md-6</article>
+						</div>
+						<div class="col-3 offset-9 col-md-6 offset-md-6">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">
+								col-3, offset-9, col-md-6, offset-md-6</article>
+						</div>
+					</div>
+					<div class="row-fluid align-center">
+						<div class="col-3 col-md-12 col-lg-6">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3
+								col-md-12 col-lg-6</article>
+						</div>
+						<div class="col-3 col-md-12 col-lg-6">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-3
+								col-md-12 col-lg-6</article>
+						</div>
+						<div class="col-4 col-md-6 col-lg-3">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-4
+								col-md-6 col-lg-3</article>
+						</div>
+						<div class="col-6 offset-6 col-md-3 offset-md-9 col-lg-2 offset-lg-10">
+							<article style="background-color:var(--pico-primary-background); color:var(--pico-primary-inverse);">col-6
+								offset-6 col-md-3 offset-md-9 col-lg-2 offset-lg-10 </article>
+						</div>
+					</div>
+				</article>
+				<!-- /row-offsets -->
+				<hr>
+				<!-- row-alignments -->
+				<article id="row-alignments">
+					<header>
+						<h2>Alignment</h2>
+					</header>
+					<p> You can add <code>.align-start</code> (default), <code>.align-center</code> or <code>.align-end</code> to
+						your <code>.row</code> or <code>.row-fluid</code> element to align the containing elements to the top,
+						middle, or bottom.</p>
+					<div class="row-fluid align-center" id="row-align-example">
+						<div class="col-4">
+							<article style="background-color:var(--pico-primary-focus); color:var(--pico-primary-inverse);">col-4
+							</article>
+						</div>
+						<div class="col-4">
+							<article style="background-color:var(--pico-primary-focus); color:var(--pico-primary-inverse);">
+								<input type="button" class="change-row-align" data-align="start" value=".align-start">
+								<input type="button" class="change-row-align" data-align="center" value=".align-center">
+								<input type="button" class="change-row-align" data-align="end" value=".align-end">
+							</article>
+						</div>
+						<div class="col-4">
+							<article style="background-color:var(--pico-primary-focus); color:var(--pico-primary-inverse);">col-4
+							</article>
+						</div>
+					</div>
+				</article>
+				<!-- /row-alignments -->
+				<hr>
+				<!-- row-breakpoints -->
+				<article id="row-breakpoints">
+					<header>
+						<h2><code> -md- </code> Breakpoints</h2>
+					</header>
+					<div class="row-fluid">
+						<div class="col-12 col-md-4">
+							<article style="background-color:var(--pico-primary-focus); color:var(--pico-primary-inverse);">col-12,
+								col-md-4</article>
+						</div>
+						<div class="col-12 col-md-4">
+							<article style="background-color:var(--pico-primary-focus); color:var(--pico-primary-inverse);">col-12,
+								col-md-4</article>
+						</div>
+						<div class="col-12 col-md-4">
+							<article style="background-color:var(--pico-primary-focus); color:var(--pico-primary-inverse);">col-12,
+								col-md-4</article>
+						</div>
+					</div>
+				</article>
+				<!-- ./ row-breakpoints -->
+				<hr>
+				<!-- Modal -->
+				<article id="modal">
+					<header>
+						<h2>Modal</h2>
+					</header>
+					<p><code>&lt;form&gt;</code> tags can be between the <code>&lt;header&gt;</code> and
+						<code>&lt;footer&gt;</code>, or wrap around the <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code>
+						tags within the modal.</p>
+					<hr>
+					<div class="grid">
+						<button class="contrast" data-target="modal-example" onclick="toggleModal(event)"> Launch Demo Modal
+						</button>
+						<button data-target="modal-form-example" onclick="toggleModal(event)"> Launch Form Modal </button>
+					</div>
+					<hr>
+					<header>
+						<h2>Modal Sizes</h2>
+						<h6 class="fw-n">Having different modal sizes does require a class.</h6>
+					</header>
+					<p>The main thing will be to add one of the following classes to the <code>&lt;dialog&gt;</code> tag:</p>
+					<ul>
+						<li><code>.modal-sm</code></li>
+						<li><code>.modal-md</code></li>
+						<li><code>.modal-lg</code></li>
+						<li><code>.modal-xlg</code></li>
+						<li><code>.modal-fs</code></li>
+					</ul>
+					<div class="grid">
+						<button type="button" onclick="toggleModal(event)" data-target="small-modal">Small Modal</button>
+						<button type="button" onclick="toggleModal(event)" data-target="medium-modal">Medium Modal</button>
+						<button type="button" onclick="toggleModal(event)" data-target="large-modal">Large Modal</button>
+						<button type="button" onclick="toggleModal(event)" data-target="xlarge-modal">Extra Large Modal</button>
+						<button type="button" onclick="toggleModal(event)" data-target="fullscreen-modal">Fullscreen Modal</button>
+					</div>
+				</article>
+				<!-- ./ Modal -->
+				<hr>
+				<article id="popover">
+					<header>
+						<h2>Popovers</h2>
+						<h6 class="fw-n">Popovers will replace the notifications below.</h6>
+					</header>
+					<button class="action" popovertarget="popover-example1">Backdrop Close</button>
+					<button popovertarget="popover-example2" popovertargetaction="show">Manual Close</button>
+					<article id="popover-example1" popover>
+						<header>
+							<h2>Popover</h2>
+						</header> Click/Tap everywhere else to close <footer>Footer</footer>
+					</article>
+					<article id="popover-example2" popover="manual"> Some Feedback Message With Close Button <button
+							popovertarget="popover-example2" popovertargetaction="hide">&times;</button>
+					</article>
+				</article>
+				<hr>
+				<!-- Accordions -->
+				<article id="accordions">
+					<header>
+						<h2>Accordions</h2>
+					</header>
+					<h3>&lt;details class="hide-arrow"&gt;</h3>
+					<p>With classes enabled, adding the <code>hide-arrow</code> class to your <code>&lt;details class="hide-arrow"&gt;</code> will hide the arrow on the <code>&lt;summary&gt;</code> tag within the accordion and dropdown components.</p>
+					<hr>
+					<details name="example-accordion">
+						<summary>Accordion 1</summary>
+						<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque urna diam, tincidunt nec porta
+							sed, auctor id velit. Etiam venenatis nisl ut orci consequat, vitae tempus quam commodo. Nulla non mauris
+							ipsum. Aliquam eu posuere orci. Nulla convallis lectus rutrum quam hendrerit, in facilisis elit
+							sollicitudin. Mauris pulvinar pulvinar mi, dictum tristique elit auctor quis. Maecenas ac ipsum ultrices,
+							porta turpis sit amet, congue turpis. </p>
+					</details>
+					<details name="example-accordion" open>
+						<summary>Accordion 2</summary>
+						<ul>
+							<li>Vestibulum id elit quis massa interdum sodales.</li>
+							<li>Nunc quis eros vel odio pretium tincidunt nec quis neque.</li>
+							<li>Quisque sed eros non eros ornare elementum.</li>
+							<li>Cras sed libero aliquet, porta dolor quis, dapibus ipsum.</li>
+						</ul>
+					</details>
+				</article>
+				<!-- ./ Accordions -->
+				<hr>
+				<!-- Timeline -->
+				<article id="timeline" style="background-color: transparent;">
+					<header>
+						<h2>Timeline</h2>
+						<br>
+						<details>
+							<summary>View Custom CSS</summary>
+							<div>
+								<pre><code class="language-css">--pico-timeline-line-color: var(--pico-primary-background);
+--pico-timeline-dot-background-color: var(--pico-primary-inverse);
+--pico-timeline-dot-border-color: var(--pico-primary-background);
+--pico-timeline-arrow-color: var(--pico-card-sectioning-background-color);</code></pre>
+							</div>
+						</details>
+					</header>
+					<div class="timeline">
+						<section class="point left">
+							<article>
+								<header>
+									<h3>2017</h3>
+								</header>
+								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea
+									mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
+									primis ea eam.</p>
+							</article>
+						</section>
+						<section class="point right">
+							<article>
+								<header>
+									<h3>2016</h3>
+								</header>
+								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea
+									mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
+									primis ea eam.</p>
+							</article>
+						</section>
+						<section class="point left">
+							<article>
+								<header>
+									<h3>2015</h3>
+								</header>
+								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea
+									mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
+									primis ea eam.</p>
+							</article>
+						</section>
+						<section class="point right">
+							<article>
+								<header>
+									<h3>2012</h3>
+								</header>
+								<p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea
+									mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto
+									primis ea eam.</p>
+							</article>
+						</section>
+					</div>
+				</article>
+				<!-- // Timeline -->
+				<hr>
+				<h2>DO NOT USE THE FOLLOWING</h2>
+				<h3>All CSS and JavaScript have been removed for the following examples, so you will only be seeing the raw
+					examples, without styling</h3>
+				<details>
+					<summary>Show Old Tabs</summary>
+					<h2>The tabs below will be removed in a future version.</h2>
+					<!-- Tabs -->
+					<article id="tab-regions">
+						<header>
+							<h2>Tabs <code>section[role="region"]</code></h2>
+							<h3 class="fw-n">DOES NOT WORK IN CHROME</h3>
+						</header>
+						<h3 class="mt-0">Information</h3>
+						<ul class="pb-0">
+							<li>I wanted this to work without javascript</li>
+							<li>I wanted to use the <code>&lt;details&gt;</code> and <code>&lt;summary&gt;</code> tags.</li>
+						</ul>
+						<h3 class="mt-0">Grips</h3>
+						<ol>
+							<li>I would have liked to use the <code>role</code> attribute values <code>tablist</code>,
+								<code>tab</code>, and <code>tabpanel</code> but the w3 specs says we cant use roles on <a
+									href="https://www.w3.org/TR/html-aria/#el-details" target="_blank"
+									data-tooltip="W3 Specs for Details"><code>&lt;details&gt;</code></a> and <a
+									href="https://www.w3.org/TR/html-aria/#el-summary" target="_blank"
+									data-tooltip="W3 Specs for Summary"><code>&lt;summary&gt;</code></a> tags. </li>
+							<li><code>&lt;section&gt;</code> in theory has a default <code>role</code> attribute value of
+								<code>region</code>, though not confirmed, or applied when we are using it for our CSS. So I went with
+								the <code>role="region"</code> attribute to help with selecting the correct element with CSS, classless
+								and no JavaScript! </li>
+						</ol>
+						<hr>
+						<h2>Example Tabs with no JavaScript:</h2>
+						<!-- start tab example -->
+						<section role="region">
+							<details name="lets-go" open>
+								<summary>Tab 1</summary>
+								<div>
+									<p>Content for Tab 1</p>
+									<p>Content for Tab 1</p>
+								</div>
+							</details>
+							<details name="lets-go">
+								<summary>Tab 2</summary>
+								<div>
+									<p>Just a random table</p>
+									<table>
+										<tr>
+											<td>row 1 col 1</td>
+											<td>row 1 col 2</td>
+											<td>row 1 col 3</td>
+										</tr>
+										<tr>
+											<td>row 2 col 1</td>
+											<td>row 2 col 2</td>
+											<td>row 2 col 3</td>
+										</tr>
+										<tr>
+											<td>row 3 col 1</td>
+											<td>row 3 col 2</td>
+											<td>row 3 col 3</td>
+										</tr>
+									</table>
+								</div>
+							</details>
+							<details name="lets-go">
+								<summary>Tab 3</summary>
+								<div>
+									<form action="javascript:void(0);">
+										<section role="form">
+											<input type="text" id="name" name="name" placeholder="Name:" required>
+											<label for="name">Name:</label>
+										</section>
+										<section role="form">
+											<input type="email" id="email" name="email" placeholder="Email:" required>
+											<label for="email">Email:</label>
+										</section>
+										<input type="submit" value="Submit">
+									</form>
+								</div>
+							</details>
+							<details name="lets-go">
+								<summary>Tab 4</summary>
+								<div>
+									<p>Content for Tab 4</p>
+								</div>
+							</details>
+							<details name="lets-go">
+								<summary>Tab 5</summary>
+								<div>
+									<p>Content for Tab 5</p>
+								</div>
+							</details>
+						</section>
+						<hr>
+						<details>
+							<summary>Show the code:</summary>
+							<div>
+								<pre><code class="language-html">&lt;section role="region"&gt;
+	&lt;details name="lets-go" open&gt;
+		&lt;summary&gt;Tab 1&lt;/summary&gt;
+		&lt;div&gt;
+			&lt;p&gt;Content for Tab 1&lt;/p&gt;
+			&lt;p&gt;Content for Tab 1&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/details&gt;
+	&lt;details name="lets-go"&gt;
+		&lt;summary&gt;Tab 2&lt;/summary&gt;
+		&lt;div&gt;
+			&lt;p&gt;Just a random table&lt;/p&gt;
+			&lt;table&gt;
+				&lt;tr&gt;
+					&lt;td&gt;row 1 col 1&lt;/td&gt;
+					&lt;td&gt;row 1 col 2&lt;/td&gt;
+					&lt;td&gt;row 1 col 3&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;row 2 col 1&lt;/td&gt;
+					&lt;td&gt;row 2 col 2&lt;/td&gt;
+					&lt;td&gt;row 2 col 3&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;row 3 col 1&lt;/td&gt;
+					&lt;td&gt;row 3 col 2&lt;/td&gt;
+					&lt;td&gt;row 3 col 3&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/table&gt;
+		&lt;/div&gt;
+	&lt;/details&gt;
+	&lt;details name="lets-go"&gt;
+		&lt;summary&gt;Tab 3&lt;/summary&gt;
+		&lt;div&gt;
+			&lt;form action="javascript:void(0);"&gt;
+				&lt;section role="form"&gt;
+					&lt;input type="text" id="name" name="name" placeholder="Name:" required&gt;
+					&lt;label for="name"&gt;Name:&lt;/label&gt;
+				&lt;/section&gt;
+				&lt;section role="form"&gt;
+					&lt;input type="email" id="email" name="email" placeholder="Email:" required&gt;
+					&lt;label for="email"&gt;Email:&lt;/label&gt;
+				&lt;/section&gt;
+				&lt;input type="submit" value="Submit"&gt;
+			&lt;/form&gt;
+		&lt;/div&gt;
+	&lt;/details&gt;
+	&lt;details name="lets-go"&gt;
+		&lt;summary&gt;Tab 4&lt;/summary&gt;
+		&lt;div&gt;
+			&lt;p&gt;Content for Tab 4&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/details&gt;
+	&lt;details name="lets-go"&gt;
+		&lt;summary&gt;Tab 5&lt;/summary&gt;
+		&lt;div&gt;
+			&lt;p&gt;Content for Tab 5&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/details&gt;
+&lt;/section&gt;</code></pre>
+							</div>
+						</details>
+						<!-- / tab example -->
+					</article>
+					<!-- /Tabs -->
+				</details>
+				<hr>
+				<details>
+					<summary>Show Old Notifications</summary>
+					<h2>The Notifications below will be removed in a future version.</h2>
+					<!-- notifications -->
+					<article id="notifications">
+						<header>
+							<h2>Notificaton</h2>
+							<h3>DEPRECATED</h3>
+						</header>
+						<button onclick="showNotification('Accessible short notice.')"> Short Notificaton </button>
+						<button onclick="showNotification({ html: `
+							<section>
+								<h2>Many news!</h2>
+								<p>This is fantastic!</p>
+								<button class='contrast' onclick='closeNotification()'>OK</button>
+							</section>`,
+							delay: 60 * 1000 })"> Big Notificaton </button>
+						<!-- accessible dialog based notification element -->
+						<dialog role="alert" data-backdrop="false"></dialog>
+					</article>
+					<!-- /notifications -->
+				</details>
+			</main>
+		</div>
+	</div>
+	<!-- Footer -->
+	<footer class="container">
+		<small> Built with <a href="https://github.com/Yohn/PicoCSS">PicoCSS</a> • <a
+				href="https://github.com/Yohn/PicoCSS"> Source code </a>
+		</small>
+	</footer>
+	<!-- ./ Footer -->
+	<!-- Modal example -->
+	<dialog id="modal-example">
+		<article>
+			<header>
+				<button aria-label="Close" rel="prev" data-target="modal-example" onclick="toggleModal(event)"></button>
+				<h3>Confirm your action!</h3>
+			</header>
+			<p> Cras sit amet maximus risus. Pellentesque sodales odio sit amet augue finibus pellentesque. Nullam finibus
+				risus non semper euismod. </p>
+			<footer>
+				<button role="button" class="secondary" data-target="modal-example" onclick="toggleModal(event)">Cancel</button>
+				<button autofocus data-target="modal-example" onclick="toggleModal(event)"> Confirm </button>
+			</footer>
+		</article>
+	</dialog>
+	<dialog id="modal-form-example">
+		<article>
+			<form action="javascript:void(0);" method="POST">
+				<header>
+					<button aria-label="Close" rel="prev" data-target="modal-form-example" onclick="toggleModal(event)"></button>
+					<h3>Modal with a Form!</h3>
+				</header>
+				<section role="form">
+					<input autofocus type="text" name="mf-name" id="mf-name" placeholder="Name" aria-labelledby="mf-name-label">
+					<label for="mf-name" id="mf-name-label">Name</label>
+				</section>
+				<section role="form">
+					<input type="password" name="mf-pass" id="mf-pass" placeholder="Password" aria-labelledby="mf-pass-label">
+					<label for="mf-pass" id="mf-pass-label">Password</label>
+				</section>
+				<p>The <code>&lt;form&gt;</code> tag is the first element within the <code>&lt;article&gt;</code> tag.</p>
+				<div>
+					<pre><code class="language-html">&lt;dialog id="modal-form-example"&gt;
+	&lt;article&gt;
+		&lt;form action="javascript:void(0);" method="POST"&gt;
+			&lt;header&gt;
+				&lt;button aria-label="Close" rel="prev" data-target="modal-form-example" onclick="toggleModal(event)"&gt;&lt;/button&gt;
+				&lt;h3&gt;Modal with a Form!&lt;/h3&gt;
+			&lt;/header&gt;
+			&lt;section role="form"&gt;
+				&lt;input autofocus type="text" name="mf-name" id="mf-name" placeholder="Name"&gt;
+				&lt;label for="mf-name"&gt;Name&lt;/label&gt;
+			&lt;/section&gt;
+			&lt;section role="form"&gt;
+				&lt;input type="password" name="mf-pass" id="mf-pass" placeholder="Password"&gt;
+				&lt;label for="mf-pass"&gt;Password&lt;/label&gt;
+			&lt;/section&gt;
+			&lt;footer&gt;
+				&lt;div class="grid"&gt;
+					&lt;button role="button" class="secondary" data-target="modal-form-example" onclick="toggleModal(event)"&gt;&amp;cross; Cancel&lt;/button&gt;
+					&lt;div&gt;&lt;/div&gt;
+					&lt;button data-target="modal-form-example" onclick="toggleModal(event)"&gt;&amp;check; Confirm&lt;/button&gt;
+				&lt;/div&gt;
+			&lt;/footer&gt;
+		&lt;/form&gt;
+	&lt;/article&gt;
+&lt;/dialog&gt;</code></pre>
+				</div>
+				<footer>
+					<div class="grid">
+						<button role="button" class="secondary" data-target="modal-form-example"
+							onclick="toggleModal(event)">&cross; Cancel</button>
+						<div></div>
+						<button data-target="modal-form-example" onclick="toggleModal(event)">&check; Confirm</button>
+					</div>
+				</footer>
+			</form>
+		</article>
+	</dialog>
+	<!-- ./ Modal example -->
+	<!-- Small Modal -->
+	<dialog id="small-modal" class="modal-sm">
+		<article>
+			<header>
+				<a onclick="toggleModal(event)" href="#close" aria-label="Close" class="close" data-target="small-modal"></a>
+				Small Modal
+			</header>
+			<p>This is a small modal with max-width of 400px.</p>
+			<footer>
+				<button onclick="toggleModal(event)" data-target="small-modal" class="secondary">Cancel</button>
+				<button onclick="toggleModal(event)">Confirm</button>
+			</footer>
+		</article>
+	</dialog>
+	<!-- Medium Modal -->
+	<dialog id="medium-modal" class="modal-md">
+		<article>
+			<header>
+				<a onclick="toggleModal(event)" href="#close" aria-label="Close" class="close" data-target="medium-modal"></a>
+				Medium Modal
+			</header>
+			<p>This is a medium modal with max-width of 600px.</p>
+			<footer>
+				<button onclick="toggleModal(event)" data-target="medium-modal" class="secondary">Cancel</button>
+				<button onclick="toggleModal(event)">Confirm</button>
+			</footer>
+		</article>
+	</dialog>
+	<!-- Large Modal -->
+	<dialog id="large-modal" class="modal-lg">
+		<article>
+			<header>
+				<a onclick="toggleModal(event)" href="#close" aria-label="Close" class="close" data-target="large-modal"></a>
+				Large Modal
+			</header>
+			<p>This is a large modal with max-width of 800px.</p>
+			<footer>
+				<button onclick="toggleModal(event)" data-target="large-modal" class="secondary">Cancel</button>
+				<button onclick="toggleModal(event)">Confirm</button>
+			</footer>
+		</article>
+	</dialog>
+	<!-- Extra Large Modal -->
+	<dialog id="xlarge-modal" class="modal-xlg">
+		<article>
+			<header>
+				<a onclick="toggleModal(event)" href="#close" aria-label="Close" class="close" data-target="xlarge-modal"></a>
+				Extra Large Modal
+			</header>
+			<p>This is an extra large modal with max-width of 1000px.</p>
+			<footer>
+				<button onclick="toggleModal(event)" data-target="xlarge-modal" class="secondary">Cancel</button>
+				<button onclick="toggleModal(event)">Confirm</button>
+			</footer>
+		</article>
+	</dialog>
+	<!-- Fullscreen Modal -->
+	<dialog id="fullscreen-modal" class="modal-fs">
+		<article>
+			<header>
+				<a onclick="toggleModal(event)" href="#close" aria-label="Close" class="close"
+					data-target="fullscreen-modal"></a> Fullscreen Modal
+			</header>
+			<p>This is a fullscreen modal that takes up the entire viewport.</p>
+			<footer>
+				<button onclick="toggleModal(event)" data-target="fullscreen-modal" class="secondary">Cancel</button>
+				<button onclick="toggleModal(event)">Confirm</button>
+			</footer>
+		</article>
+	</dialog>
+	<!-- input switch to change light and dark mode -->
+	<script src="js/SwitchColorMode.js"></script>
+	<!-- Modal -->
+	<script src="js/Modal.js"></script>
+	<!-- For the file uploader preview -->
+	<script src="js/FileValidator.js"></script>
+	<!-- For the Tabs - [role=tablist] component. -->
+	<script src="js/PicoTabs.js"></script>
+	<!-- alert notifications to be removed --
+	 REMOVED Use the popover
+	<script src="js/Notifications.js"></script>-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const checkFile = document.getElementById("checkFile");
+			new FileValidator(checkFile);
+
+			const alignButtons = document.querySelectorAll(".change-row-align");
+			const alignRow = document.getElementById("row-align-example");
+			alignButtons.forEach((button) => {
+				button.addEventListener("click", () => {
+					let dir = button.getAttribute('data-align');
+					console.log(dir)
+					if (dir == 'start') {
+						alignRow.classList.remove('align-center', 'align-end');
+						alignRow.classList.add('align-start');
+					} else if (dir == 'center') {
+						alignRow.classList.remove('align-start', 'align-end');
+						alignRow.classList.add('align-center');
+					} else {
+						alignRow.classList.remove('align-start', 'align-center');
+						alignRow.classList.add('align-end');
+					}
+				});
+			});
+			document.querySelectorAll('pre code').forEach((el) => {
+				hljs.highlightElement(el);
+			});
+
+			// Function to change the theme
+			function changeTheme(newTheme) {
+				const linkElement = document.getElementById('theme-color-ss');
+				if (linkElement) {
+					linkElement.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Yohn/PicoCSS@2.2.10/css/pico.' + newTheme + '.min.css');
+				}
+			}
+
+			// Adding click event listener to all elements with the "change-theme" class
+			document.querySelectorAll('.change-theme').forEach(element => {
+				element.addEventListener('click', function () {
+					const newTheme = this.getAttribute('data-theme');
+					changeTheme(newTheme);
+				});
+			});
+
+			new PicoTabs('[role="tablist"]');
+		});
+	</script>
+</body>
+</html>

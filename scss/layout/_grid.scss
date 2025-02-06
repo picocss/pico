@@ -7,7 +7,7 @@
    * Minimal grid system with auto-layout columns
    */
 
-  .grid {
+  #{$parent-selector} .grid {
     grid-column-gap: var(#{$css-var-prefix}grid-column-gap);
     grid-row-gap: var(#{$css-var-prefix}grid-row-gap);
     display: grid;
@@ -20,7 +20,7 @@
     }
 
     & > * {
-      min-width: 0; // HACK for childs in overflow
+      min-width: 0; // HACK for children in overflow
     }
   }
 }

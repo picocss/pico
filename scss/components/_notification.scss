@@ -1,0 +1,51 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "components/notification") {
+  /**
+	 * Notification (<dialog>)
+	 */
+
+  #{$parent-selector} dialog[role="alert"] {
+    position: fixed;
+    top: unset;
+    right: var(#{$css-var-prefix}spacing);
+    bottom: var(#{$css-var-prefix}spacing);
+    left: unset;
+    width: auto;
+    min-width: unset;
+    height: auto;
+    min-height: unset;
+    padding: var(#{$css-var-prefix}form-element-spacing-vertical)
+      var(#{$css-var-prefix}form-element-spacing-horizontal);
+    border: var(#{$css-var-prefix}border-width) solid var(#{$css-var-prefix}border-color);
+    border-radius: var(#{$css-var-prefix}border-radius);
+    backdrop-filter: var(#{$css-var-prefix}modal-overlay-backdrop-filter);
+    background-color: var(#{$css-var-prefix}primary-background);
+    box-shadow: var(#{$css-var-prefix}box-shadow);
+    color: var(#{$css-var-prefix}primary-inverse);
+    font-weight: var(#{$css-var-prefix}font-weight);
+    font-size: var(#{$css-var-prefix}font-size);
+    line-height: var(#{$css-var-prefix}line-height);
+    opacity: 0;
+    transition: opacity var(#{$css-var-prefix}transition);
+    user-select: none;
+
+    //> p, > h1, > h2, > h3, > h4, > h5, > h6 {
+    * {
+      color: var(#{$css-var-prefix}primary-inverse);
+      font-weight: var(#{$css-var-prefix}font-weight);
+      font-size: var(#{$css-var-prefix}font-size);
+      line-height: var(#{$css-var-prefix}line-height);
+    }
+  }
+
+  #{$parent-selector} dialog[data-backdrop="false"][role="alert"]::backdrop {
+    display: none;
+  }
+
+  #{$parent-selector} dialog[role="alert"][open] {
+    opacity: 1;
+    transition: opacity var(#{$css-var-prefix}transition);
+  }
+}

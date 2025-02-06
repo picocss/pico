@@ -1,0 +1,79 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "components/tab-region") {
+  /**
+   * Tab region
+   * styling help from: https://github.com/picocss/pico/discussions/608
+   * and his demo: https://gistpreview.github.io/?86c08db6793d078757aa795845c19ed3
+   */
+  #{$parent-selector} section[role="region"] {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+
+    details {
+      display: contents;
+      margin-bottom: 0;
+      padding-bottom: 0;
+
+      summary {
+        flex-grow: 1;
+        order: 0;
+        margin: 0;
+        padding: calc(var(#{$css-var-prefix}block-spacing-vertical) * 0.75)
+          calc(var(#{$css-var-prefix}block-spacing-horizontal) * 1.5);
+        border-bottom: 1px solid transparent; //(#{$css-var-prefix}primary-background);
+        background-color: var(#{$css-var-prefix}card-sectioning-background-color);
+        list-style-type: none;
+        touch-action: manipulation;
+        transition: all var(#{$css-var-prefix}transition);
+
+        &:hover {
+          border-bottom-color: var(#{$css-var-prefix}primary-border);
+          background-color: var(#{$css-var-prefix}card-background-color);
+        }
+
+        &::after {
+          display: none;
+          // with the - icon instead of chevron
+          //transform: rotate(0deg);
+          //background-image: var(#{$css-var-prefix}icon-minus);
+          //background-position: center;
+          //background-size: .75em auto;
+        }
+      }
+
+      > div {
+        opacity: 0;
+      }
+
+      &[open] {
+        > summary {
+          background-color: var(#{$css-var-prefix}primary-background);
+          color: var(#{$css-var-prefix}primary-inverse) !important;
+
+          &:hover {
+            background-color: var(#{$css-var-prefix}primary-hover-background);
+          }
+
+          //&::after {
+          // black chevron icon
+          // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(0, 0, 0)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+          //}
+        }
+
+        // end for summary, keep here
+
+        > div {
+          order: 1;
+          width: 100%;
+          padding: var(#{$css-var-prefix}spacing);
+          padding-bottom: 0;
+          opacity: 1;
+          transition: opacity var(#{$css-var-prefix}transition);
+        }
+      }
+    }
+  }
+}
