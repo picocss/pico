@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * Pico CSS ✨ v2.2.9 (https://github.com/Yohn/PicoCSS)
+ * Pico CSS ✨ v2.2.10 (https://github.com/Yohn/PicoCSS)
  * Copyright 2019-2025 - Licensed under MIT
  */
 /**
@@ -236,18 +236,18 @@ nav details.dropdown summary:focus-visible {
   color-scheme: light;
   --pico-background-color: #fff;
   --pico-color: #373c44;
-  --pico-text-selection-color: rgba(167, 128, 212, 0.25);
+  --pico-text-selection-color: rgba(244, 93, 44, 0.25);
   --pico-muted-color: #646b79;
   --pico-muted-border-color: rgb(231, 234, 239.5);
-  --pico-primary: #8352c5;
-  --pico-primary-background: #7540bf;
+  --pico-primary: #bd3c13;
+  --pico-primary-background: #d24317;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(131, 82, 197, 0.5);
-  --pico-primary-hover: #6935b3;
-  --pico-primary-hover-background: #6935b3;
+  --pico-primary-underline: rgba(189, 60, 19, 0.5);
+  --pico-primary-hover: #942d0d;
+  --pico-primary-hover-background: #bd3c13;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(167, 128, 212, 0.5);
+  --pico-primary-focus: rgba(244, 93, 44, 0.5);
   --pico-primary-inverse: #fff;
   --pico-secondary: #5d6b89;
   --pico-secondary-background: #525f7a;
@@ -391,18 +391,18 @@ nav details.dropdown summary:focus-visible {
     color-scheme: dark;
     --pico-background-color: rgb(19, 22.5, 30.5);
     --pico-color: #c2c7d0;
-    --pico-text-selection-color: rgba(178, 144, 217, 0.1875);
+    --pico-text-selection-color: rgba(245, 107, 61, 0.1875);
     --pico-muted-color: #7b8495;
     --pico-muted-border-color: #202632;
-    --pico-primary: #b290d9;
-    --pico-primary-background: #7540bf;
+    --pico-primary: #f56b3d;
+    --pico-primary-background: #d24317;
     --pico-primary-border: var(--pico-primary-background);
-    --pico-primary-underline: rgba(178, 144, 217, 0.5);
-    --pico-primary-hover: #c9afe4;
-    --pico-primary-hover-background: #8352c5;
+    --pico-primary-underline: rgba(245, 107, 61, 0.5);
+    --pico-primary-hover: #f8a283;
+    --pico-primary-hover-background: #e74b1a;
     --pico-primary-hover-border: var(--pico-primary-hover-background);
     --pico-primary-hover-underline: var(--pico-primary-hover);
-    --pico-primary-focus: rgba(178, 144, 217, 0.375);
+    --pico-primary-focus: rgba(245, 107, 61, 0.375);
     --pico-primary-inverse: #fff;
     --pico-secondary: #969eaf;
     --pico-secondary-background: #525f7a;
@@ -546,18 +546,18 @@ nav details.dropdown summary:focus-visible {
   color-scheme: dark;
   --pico-background-color: rgb(19, 22.5, 30.5);
   --pico-color: #c2c7d0;
-  --pico-text-selection-color: rgba(178, 144, 217, 0.1875);
+  --pico-text-selection-color: rgba(245, 107, 61, 0.1875);
   --pico-muted-color: #7b8495;
   --pico-muted-border-color: #202632;
-  --pico-primary: #b290d9;
-  --pico-primary-background: #7540bf;
+  --pico-primary: #f56b3d;
+  --pico-primary-background: #d24317;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(178, 144, 217, 0.5);
-  --pico-primary-hover: #c9afe4;
-  --pico-primary-hover-background: #8352c5;
+  --pico-primary-underline: rgba(245, 107, 61, 0.5);
+  --pico-primary-hover: #f8a283;
+  --pico-primary-hover-background: #e74b1a;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(178, 144, 217, 0.375);
+  --pico-primary-focus: rgba(245, 107, 61, 0.375);
   --pico-primary-inverse: #fff;
   --pico-secondary: #969eaf;
   --pico-secondary-background: #525f7a;
