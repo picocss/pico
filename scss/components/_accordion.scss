@@ -101,10 +101,8 @@
       > summary {
         margin-block-end: var(#{$css-var-prefix}spacing);
 
-        &:not([role]) {
-          &:not(:focus) {
-            color: var(#{$css-var-prefix}accordion-open-summary-color);
-          }
+        &:not([role]):not(:focus) {
+          color: var(#{$css-var-prefix}accordion-open-summary-color);
         }
 
         &::after {
