@@ -24,7 +24,7 @@
 	<link rel="manifest" href="manifest.json">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css">
 	<!-- Pico.css -->
-	<link rel="stylesheet" href="pico.css" id="theme-color-ss">
+	<link rel="stylesheet" href="pico.min.css" id="theme-color-ss">
 	<link rel="stylesheet" href="pico.colors.min.css">
 	<!--
 			Yohn's Simple CSS Class helpers
@@ -238,7 +238,7 @@
 					</footer>
 				</article>
 				<hr>
-				<article id="tables">
+				<iv id="tables">
 					<header>
 						<h2>Tables</h2>
 						<h6 class="fw-n">Striped rows require .striped class</h6>
@@ -257,84 +257,86 @@
 									Hidden Rows</button></li>
 						</ul>
 					</nav>
-					<table class="striped" id="hidden-row-example">
-						<caption> Solar System Planets </caption>
-						<thead>
-							<tr>
-								<th scope="col">Planet</th>
-								<th scope="col">Diameter (km)</th>
-								<th scope="col">Dist.to Sun (AU)</th>
-								<th scope="col">Orbit (days)</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th scope="row">Mercury</th>
-								<td>4,880</td>
-								<td>0.39</td>
-								<td>88</td>
-							</tr>
-							<tr>
-								<th scope="row">Venus</th>
-								<td>12,104</td>
-								<td>0.72</td>
-								<td>225</td>
-							</tr>
-							<tr hidden class="hidden-table-row">
-								<td colspan="4" style="text-align: center;">*Hidden Row Found*</td>
-							</tr>
-							<tr>
-								<th scope="row">Earth</th>
-								<td>12,742</td>
-								<td>1.00</td>
-								<td>365</td>
-							</tr>
-							<tr>
-								<th scope="row">Mars</th>
-								<td>6,779</td>
-								<td>1.52</td>
-								<td>687</td>
-							</tr>
-							<tr>
-								<th scope="row">Jupiter</th>
-								<td>139,820</td>
-								<td>5.20</td>
-								<td>4,333</td>
-							</tr>
-							<tr>
-								<th scope="row">Saturn</th>
-								<td>116,460</td>
-								<td>9.58</td>
-								<td>10,759</td>
-							</tr>
-							<tr hidden class="hidden-table-row">
-								<th scope="row">* Uranus *</th>
-								<td>50,724</td>
-								<td>19.22</td>
-								<td>30,688</td>
-							</tr>
-							<tr>
-								<th scope="row">Neptune</th>
-								<td>49,244</td>
-								<td>30.05</td>
-								<td>60,182</td>
-							</tr>
-							<tr hidden class="hidden-table-row">
-								<th scope="row">* Pluto *</th>
-								<td>2,377</td>
-								<td>39.48</td>
-								<td>90,560</td>
-							</tr>
-						</tbody>
-						<tfoot>
-							<tr>
-								<th scope="row">Average</th>
-								<td>49,594</td>
-								<td>8.58</td>
-								<td>13,666</td>
-							</tr>
-						</tfoot>
-					</table>
+					<div class="overflow-auto">
+						<table class="striped" id="hidden-row-example">
+							<caption> Solar System Planets </caption>
+							<thead>
+								<tr>
+									<th scope="col">Planet</th>
+									<th scope="col">Diameter (km)</th>
+									<th scope="col">Dist.to Sun (AU)</th>
+									<th scope="col">Orbit (days)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">Mercury</th>
+									<td>4,880</td>
+									<td>0.39</td>
+									<td>88</td>
+								</tr>
+								<tr>
+									<th scope="row">Venus</th>
+									<td>12,104</td>
+									<td>0.72</td>
+									<td>225</td>
+								</tr>
+								<tr hidden class="hidden-table-row">
+									<td colspan="4" style="text-align: center;">*Hidden Row Found*</td>
+								</tr>
+								<tr>
+									<th scope="row">Earth</th>
+									<td>12,742</td>
+									<td>1.00</td>
+									<td>365</td>
+								</tr>
+								<tr>
+									<th scope="row">Mars</th>
+									<td>6,779</td>
+									<td>1.52</td>
+									<td>687</td>
+								</tr>
+								<tr>
+									<th scope="row">Jupiter</th>
+									<td>139,820</td>
+									<td>5.20</td>
+									<td>4,333</td>
+								</tr>
+								<tr>
+									<th scope="row">Saturn</th>
+									<td>116,460</td>
+									<td>9.58</td>
+									<td>10,759</td>
+								</tr>
+								<tr hidden class="hidden-table-row">
+									<th scope="row">* Uranus *</th>
+									<td>50,724</td>
+									<td>19.22</td>
+									<td>30,688</td>
+								</tr>
+								<tr>
+									<th scope="row">Neptune</th>
+									<td>49,244</td>
+									<td>30.05</td>
+									<td>60,182</td>
+								</tr>
+								<tr hidden class="hidden-table-row">
+									<th scope="row">* Pluto *</th>
+									<td>2,377</td>
+									<td>39.48</td>
+									<td>90,560</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th scope="row">Average</th>
+									<td>49,594</td>
+									<td>8.58</td>
+									<td>13,666</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
 				</article>
 				<hr>
 				<article id="tabs">

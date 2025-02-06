@@ -9,24 +9,21 @@
   #{$parent-selector} .container,
   #{$parent-selector} .container-fluid {
     width: 100%;
-    margin-right: auto;
-    margin-left: auto;
+    margin-inline: auto;
+    padding-inline: var(#{$css-var-prefix}block-spacing-horizontal);
   }
 
   #{$parent-selector} .container {
-    $first-breakpoint: true;
+    //$first-breakpoint: true;
     @each $key, $values in $breakpoints {
       @if $values {
         @media (min-width: map.get($values, "breakpoint")) {
           max-width: map.get($values, "viewport");
-          @if $first-breakpoint {
-            $first-breakpoint: false;
-            padding-right: 0;
-            padding-left: 0;
-          } @else {
-            padding-right: var(#{$css-var-prefix}spacing);
-            padding-left: var(#{$css-var-prefix}spacing);
-          }
+          //@if $first-breakpoint {
+          //  $first-breakpoint: false;
+          //  padding-right: 0;
+          //  padding-left: 0;
+          //}
         }
       }
     }
