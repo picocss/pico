@@ -14,16 +14,15 @@
   }
 
   #{$parent-selector} .container {
-    //$first-breakpoint: true;
+    $first-breakpoint: true;
     @each $key, $values in $breakpoints {
       @if $values {
         @media (min-width: map.get($values, "breakpoint")) {
           max-width: map.get($values, "viewport");
-          //@if $first-breakpoint {
-          //  $first-breakpoint: false;
-          //  padding-right: 0;
-          //  padding-left: 0;
-          //}
+          @if $first-breakpoint {
+            $first-breakpoint: false;
+            padding-inline: 0;
+          }
         }
       }
     }

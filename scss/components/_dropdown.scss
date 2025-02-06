@@ -138,7 +138,7 @@
         min-width: 200px;
         min-width: fit-content;
         margin: 0;
-        margin-top: var(#{$css-var-prefix}outline-width);
+        margin-block-start: var(#{$css-var-prefix}outline-width);
         padding: 0;
         border: var(#{$css-var-prefix}border-width)
           solid
@@ -163,22 +163,22 @@
 
         li {
           width: 100%;
-          margin-bottom: 0;
+          margin-block-end: 0;
           padding: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5)
             var(#{$css-var-prefix}form-element-spacing-horizontal);
           list-style: none;
 
           &:first-of-type {
-            margin-top: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
+            margin-block-start: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
           }
 
           &:last-of-type {
-            margin-bottom: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
+            margin-block-end: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
           }
 
           details {
             width: 100%;
-            margin-bottom: 0;
+            margin-block-end: 0;
             > summary {
               line-height: var(#{$css-var-prefix}line-height);
             }
@@ -224,7 +224,7 @@
       // Button opened
       // inside container type accordion
       // ––––––––––––––––––––
-      margin-bottom: 0;
+      margin-block-end: 0;
 
       // Close for dropdown
       // inside container type accordion
@@ -263,7 +263,7 @@
     display: inline;
     margin: calc(var(#{$css-var-prefix}nav-element-spacing-vertical) * -1) 0;
     // Override height
-    margin-bottom: 0;
+    margin-block-end: 0;
 
     &.hide-arrow {
       > summary::after {
@@ -294,11 +294,15 @@
         }
       }
     }
+
+    &:not(.hide-arrow) > summary {
+      padding-inline-end: calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * 3.25);
+    }
   }
 
   // Label
   // ––––––––––––––––––––
   #{$parent-selector} label > details.dropdown {
-    margin-top: calc(var(#{$css-var-prefix}spacing) * 0.25);
+    margin-block-start: calc(var(#{$css-var-prefix}spacing) * 0.25);
   }
 }

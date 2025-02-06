@@ -7,7 +7,7 @@
    */
   #{$parent-selector} details {
     display: block;
-    margin-bottom: var(#{$css-var-prefix}spacing);
+    margin-block-end: var(#{$css-var-prefix}spacing);
 
     @if $enable-classes {
       &.hide-arrow > summary::after {
@@ -16,9 +16,13 @@
       }
     }
 
+    &:not(.hide-arrow) > summary {
+      padding-inline-end: calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * 3.25);
+    }
+
     summary {
       position: relative;
-      padding-inline-end: var(#{$css-var-prefix}block-spacing-horizontal);
+      //padding-inline-end: var(#{$css-var-prefix}block-spacing-horizontal);
       line-height: 1rem;
       list-style-type: none;
       cursor: pointer;
@@ -91,13 +95,11 @@
         }
       }
     }
-    //!
-    //!
-    //!
+
     // Open
     &[open] {
       > summary {
-        margin-bottom: var(#{$css-var-prefix}spacing);
+        margin-block-end: var(#{$css-var-prefix}spacing);
 
         &:not([role]) {
           &:not(:focus) {
