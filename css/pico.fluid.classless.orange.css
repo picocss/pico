@@ -2039,11 +2039,13 @@ section[role=form] > textarea:user-valid:not(:placeholder-shown) + label {
  */
 details {
   display: block;
-  margin-bottom: var(--pico-spacing);
+  margin-block-end: var(--pico-spacing);
+}
+details:not(.hide-arrow) > summary {
+  padding-inline-end: calc(var(--pico-nav-link-spacing-horizontal) * 3.25);
 }
 details summary {
   position: relative;
-  padding-inline-end: var(--pico-block-spacing-horizontal);
   line-height: 1rem;
   list-style-type: none;
   cursor: pointer;
@@ -2095,7 +2097,7 @@ details summary[role=button]::after {
   height: calc(1rem * var(--pico-line-height, 1.5));
 }
 details[open] > summary {
-  margin-bottom: var(--pico-spacing);
+  margin-block-end: var(--pico-spacing);
 }
 details[open] > summary:not([role]):not(:focus) {
   color: var(--pico-accordion-open-summary-color);

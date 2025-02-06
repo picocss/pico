@@ -203,18 +203,18 @@ input:not([type=submit],
   color-scheme: light;
   --pico-background-color: #fff;
   --pico-color: #373c44;
-  --pico-text-selection-color: rgba(158, 146, 0, 0.25);
+  --pico-text-selection-color: rgba(119, 156, 0, 0.25);
   --pico-muted-color: #646b79;
   --pico-muted-border-color: rgb(231, 234, 239.5);
-  --pico-primary: #756b00;
-  --pico-primary-background: #f2df0d;
+  --pico-primary: #577400;
+  --pico-primary-background: #a5d601;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(117, 107, 0, 0.5);
-  --pico-primary-hover: #5b5300;
-  --pico-primary-hover-background: #e8d600;
+  --pico-primary-underline: rgba(87, 116, 0, 0.5);
+  --pico-primary-hover: #435a00;
+  --pico-primary-hover-background: #99c801;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(158, 146, 0, 0.5);
+  --pico-primary-focus: rgba(119, 156, 0, 0.5);
   --pico-primary-inverse: #000;
   --pico-secondary: #5d6b89;
   --pico-secondary-background: #525f7a;
@@ -343,18 +343,18 @@ input:not([type=submit],
     color-scheme: dark;
     --pico-background-color: rgb(19, 22.5, 30.5);
     --pico-color: #c2c7d0;
-    --pico-text-selection-color: rgba(173, 159, 0, 0.1875);
+    --pico-text-selection-color: rgba(130, 171, 0, 0.1875);
     --pico-muted-color: #7b8495;
     --pico-muted-border-color: #202632;
-    --pico-primary: #ad9f00;
-    --pico-primary-background: #f2df0d;
+    --pico-primary: #82ab00;
+    --pico-primary-background: #a5d601;
     --pico-primary-border: var(--pico-primary-background);
-    --pico-primary-underline: rgba(173, 159, 0, 0.5);
-    --pico-primary-hover: #caba01;
-    --pico-primary-hover-background: rgb(247.5, 232, 96.5);
+    --pico-primary-underline: rgba(130, 171, 0, 0.5);
+    --pico-primary-hover: #99c801;
+    --pico-primary-hover-background: #b2e51a;
     --pico-primary-hover-border: var(--pico-primary-hover-background);
     --pico-primary-hover-underline: var(--pico-primary-hover);
-    --pico-primary-focus: rgba(173, 159, 0, 0.375);
+    --pico-primary-focus: rgba(130, 171, 0, 0.375);
     --pico-primary-inverse: #000;
     --pico-secondary: #969eaf;
     --pico-secondary-background: #525f7a;
@@ -473,18 +473,18 @@ input:not([type=submit],
   color-scheme: dark;
   --pico-background-color: rgb(19, 22.5, 30.5);
   --pico-color: #c2c7d0;
-  --pico-text-selection-color: rgba(173, 159, 0, 0.1875);
+  --pico-text-selection-color: rgba(130, 171, 0, 0.1875);
   --pico-muted-color: #7b8495;
   --pico-muted-border-color: #202632;
-  --pico-primary: #ad9f00;
-  --pico-primary-background: #f2df0d;
+  --pico-primary: #82ab00;
+  --pico-primary-background: #a5d601;
   --pico-primary-border: var(--pico-primary-background);
-  --pico-primary-underline: rgba(173, 159, 0, 0.5);
-  --pico-primary-hover: #caba01;
-  --pico-primary-hover-background: rgb(247.5, 232, 96.5);
+  --pico-primary-underline: rgba(130, 171, 0, 0.5);
+  --pico-primary-hover: #99c801;
+  --pico-primary-hover-background: #b2e51a;
   --pico-primary-hover-border: var(--pico-primary-hover-background);
   --pico-primary-hover-underline: var(--pico-primary-hover);
-  --pico-primary-focus: rgba(173, 159, 0, 0.375);
+  --pico-primary-focus: rgba(130, 171, 0, 0.375);
   --pico-primary-inverse: #000;
   --pico-secondary: #969eaf;
   --pico-secondary-background: #525f7a;
@@ -2039,11 +2039,13 @@ main {
  */
 .pico details {
   display: block;
-  margin-bottom: var(--pico-spacing);
+  margin-block-end: var(--pico-spacing);
+}
+.pico details:not(.hide-arrow) > summary {
+  padding-inline-end: calc(var(--pico-nav-link-spacing-horizontal) * 3.25);
 }
 .pico details summary {
   position: relative;
-  padding-inline-end: var(--pico-block-spacing-horizontal);
   line-height: 1rem;
   list-style-type: none;
   cursor: pointer;
@@ -2095,7 +2097,7 @@ main {
   height: calc(1rem * var(--pico-line-height, 1.5));
 }
 .pico details[open] > summary {
-  margin-bottom: var(--pico-spacing);
+  margin-block-end: var(--pico-spacing);
 }
 .pico details[open] > summary:not([role]):not(:focus) {
   color: var(--pico-accordion-open-summary-color);

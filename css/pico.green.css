@@ -768,6 +768,7 @@ section {
 @media (min-width: 576px) {
   .container {
     max-width: 510px;
+    padding-inline: 0;
   }
 }
 @media (min-width: 768px) {
@@ -2798,15 +2799,17 @@ section[role=form] > textarea:user-valid:not(:placeholder-shown) + label {
  */
 details {
   display: block;
-  margin-bottom: var(--pico-spacing);
+  margin-block-end: var(--pico-spacing);
 }
 details.hide-arrow > summary::after {
   display: none;
   content: none;
 }
+details:not(.hide-arrow) > summary {
+  padding-inline-end: calc(var(--pico-nav-link-spacing-horizontal) * 3.25);
+}
 details summary {
   position: relative;
-  padding-inline-end: var(--pico-block-spacing-horizontal);
   line-height: 1rem;
   list-style-type: none;
   cursor: pointer;
@@ -2858,7 +2861,7 @@ details summary[role=button]::after {
   height: calc(1rem * var(--pico-line-height, 1.5));
 }
 details[open] > summary {
-  margin-bottom: var(--pico-spacing);
+  margin-block-end: var(--pico-spacing);
 }
 details[open] > summary:not([role]):not(:focus) {
   color: var(--pico-accordion-open-summary-color);
@@ -3154,7 +3157,7 @@ details.dropdown > summary + ul {
   min-width: -moz-fit-content;
   min-width: fit-content;
   margin: 0;
-  margin-top: var(--pico-outline-width);
+  margin-block-start: var(--pico-outline-width);
   padding: 0;
   border: var(--pico-border-width) solid var(--pico-dropdown-border-color);
   border-radius: var(--pico-border-radius);
@@ -3171,19 +3174,19 @@ details.dropdown > summary + ul[dir=rtl] {
 }
 details.dropdown > summary + ul li {
   width: 100%;
-  margin-bottom: 0;
+  margin-block-end: 0;
   padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) var(--pico-form-element-spacing-horizontal);
   list-style: none;
 }
 details.dropdown > summary + ul li:first-of-type {
-  margin-top: calc(var(--pico-form-element-spacing-vertical) * 0.5);
+  margin-block-start: calc(var(--pico-form-element-spacing-vertical) * 0.5);
 }
 details.dropdown > summary + ul li:last-of-type {
-  margin-bottom: calc(var(--pico-form-element-spacing-vertical) * 0.5);
+  margin-block-end: calc(var(--pico-form-element-spacing-vertical) * 0.5);
 }
 details.dropdown > summary + ul li details {
   width: 100%;
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 details.dropdown > summary + ul li details > summary {
   line-height: var(--pico-line-height);
@@ -3208,7 +3211,7 @@ details.dropdown > summary + ul li:has(label):hover {
   background-color: var(--pico-dropdown-hover-background-color);
 }
 details.dropdown[open] > summary {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 details.dropdown[open] > summary::before {
   display: block;
@@ -3230,7 +3233,7 @@ details.dropdown[open] > summary + ul {
 nav details.dropdown {
   display: inline;
   margin: calc(var(--pico-nav-element-spacing-vertical) * -1) 0;
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 nav details.dropdown.hide-arrow > summary::after {
   display: none;
@@ -3243,9 +3246,12 @@ nav details.dropdown > summary:not([role]) {
 nav details.dropdown > summary:not([role]):focus-visible {
   box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
 }
+nav details.dropdown:not(.hide-arrow) > summary {
+  padding-inline-end: calc(var(--pico-nav-link-spacing-horizontal) * 3.25);
+}
 
 label > details.dropdown {
-  margin-top: calc(var(--pico-spacing) * 0.25);
+  margin-block-start: calc(var(--pico-spacing) * 0.25);
 }
 
 /**
