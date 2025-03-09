@@ -988,7 +988,8 @@ main {
   font-family: var(--pico-font-family);
 }
 
-.pico pre code {
+.pico pre code,
+.pico pre samp {
   font-size: inherit;
   font-family: inherit;
 }
@@ -1000,7 +1001,8 @@ main {
 
 .pico pre,
 .pico code,
-.pico kbd {
+.pico kbd,
+.pico samp {
   border-radius: var(--pico-border-radius);
   background: var(--pico-code-background-color);
   color: var(--pico-code-color);
@@ -1009,7 +1011,8 @@ main {
 }
 
 .pico code,
-.pico kbd {
+.pico kbd,
+.pico samp {
   display: inline-block;
   padding: 0.375rem;
 }
@@ -1019,7 +1022,8 @@ main {
   margin-bottom: var(--pico-spacing);
   overflow-x: auto;
 }
-.pico pre > code {
+.pico pre > code,
+.pico pre > samp {
   display: block;
   padding: var(--pico-spacing);
   background: none;

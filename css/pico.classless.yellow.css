@@ -1025,7 +1025,8 @@ samp {
   font-family: var(--pico-font-family);
 }
 
-pre code {
+pre code,
+pre samp {
   font-size: inherit;
   font-family: inherit;
 }
@@ -1037,7 +1038,8 @@ pre {
 
 pre,
 code,
-kbd {
+kbd,
+samp {
   border-radius: var(--pico-border-radius);
   background: var(--pico-code-background-color);
   color: var(--pico-code-color);
@@ -1046,7 +1048,8 @@ kbd {
 }
 
 code,
-kbd {
+kbd,
+samp {
   display: inline-block;
   padding: 0.375rem;
 }
@@ -1056,7 +1059,8 @@ pre {
   margin-bottom: var(--pico-spacing);
   overflow-x: auto;
 }
-pre > code {
+pre > code,
+pre > samp {
   display: block;
   padding: var(--pico-spacing);
   background: none;
