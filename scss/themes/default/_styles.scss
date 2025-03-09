@@ -9,7 +9,8 @@
    * Styles
    */
 
-  :root {
+  :root,
+  :host {
     // Typography
     #{$css-var-prefix}font-family-emoji:
       "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
