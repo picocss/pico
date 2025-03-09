@@ -9,7 +9,7 @@
   #{$parent-selector} [data-tooltip] {
     position: relative;
 
-    &:not(a, button, input) {
+    &:not(a, button, input, [role="button"]) {
       border-bottom: 1px dotted;
       text-decoration: none;
       cursor: help;
