@@ -6,7 +6,8 @@
 /**
  * Styles
  */
-:root {
+:root,
+:host {
   --pico-font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --pico-font-family-sans-serif: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif, var(--pico-font-family-emoji);
   --pico-font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--pico-font-family-emoji);
@@ -44,27 +45,32 @@
   --pico-icon-loading: url("data:image/svg+xml,%3Csvg fill='none' height='24' width='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' %3E%3Cstyle%3E g %7B animation: rotate 2s linear infinite; transform-origin: center center; %7D circle %7B stroke-dasharray: 75,100; stroke-dashoffset: -5; animation: dash 1.5s ease-in-out infinite; stroke-linecap: round; %7D @keyframes rotate %7B 0%25 %7B transform: rotate(0deg); %7D 100%25 %7B transform: rotate(360deg); %7D %7D @keyframes dash %7B 0%25 %7B stroke-dasharray: 1,100; stroke-dashoffset: 0; %7D 50%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -17.5; %7D 100%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -62; %7D %7D %3C/style%3E%3Cg%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='rgb(136, 145, 164)' stroke-width='4' /%3E%3C/g%3E%3C/svg%3E");
 }
 @media (min-width: 576px) {
-  :root {
+  :root,
+  :host {
     --pico-font-size: 106.25%;
   }
 }
 @media (min-width: 768px) {
-  :root {
+  :root,
+  :host {
     --pico-font-size: 112.5%;
   }
 }
 @media (min-width: 1024px) {
-  :root {
+  :root,
+  :host {
     --pico-font-size: 118.75%;
   }
 }
 @media (min-width: 1280px) {
-  :root {
+  :root,
+  :host {
     --pico-font-size: 125%;
   }
 }
 @media (min-width: 1536px) {
-  :root {
+  :root,
+  :host {
     --pico-font-size: 131.25%;
   }
 }
@@ -191,7 +197,8 @@ details summary[role=button]::after {
  * Color schemes
  */
 [data-theme=light],
-:root:not([data-theme=dark]) {
+:root:not([data-theme=dark]),
+:host(:not([data-theme=dark])) {
   --pico-background-color: #fff;
   --pico-color: #373c44;
   --pico-text-selection-color: rgba(145, 145, 145, 0.25);
@@ -301,12 +308,19 @@ details summary[role=button]::after {
 [type=reset],
 [type=checkbox],
 [type=radio],
+[type=file]),
+:host(:not([data-theme=dark])) input:is([type=submit],
+[type=button],
+[type=reset],
+[type=checkbox],
+[type=radio],
 [type=file]) {
   --pico-form-element-focus-color: var(--pico-primary-focus);
 }
 
 @media only screen and (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
+  :root:not([data-theme]),
+  :host(:not([data-theme])) {
     --pico-background-color: rgb(19, 22.5, 30.5);
     --pico-color: #c2c7d0;
     --pico-text-selection-color: rgba(158, 158, 158, 0.1875);
@@ -406,6 +420,12 @@ details summary[role=button]::after {
     color-scheme: dark;
   }
   :root:not([data-theme]) input:is([type=submit],
+  [type=button],
+  [type=reset],
+  [type=checkbox],
+  [type=radio],
+  [type=file]),
+  :host(:not([data-theme])) input:is([type=submit],
   [type=button],
   [type=reset],
   [type=checkbox],
@@ -546,7 +566,8 @@ progress,
   vertical-align: inherit;
 }
 
-:where(:root) {
+:where(:root),
+:where(:host) {
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
@@ -988,7 +1009,8 @@ img {
   fill: currentColor;
 }
 
-svg:not(:root) {
+svg:not(:root),
+svg:not(:host) {
   overflow: hidden;
 }
 
@@ -1983,7 +2005,8 @@ a[aria-busy=true] {
 /**
  * Modal (<dialog>)
  */
-:root {
+:root,
+:host {
   --pico-scrollbar-width: 0px;
 }
 

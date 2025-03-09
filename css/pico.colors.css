@@ -3,7 +3,8 @@
  * Pico CSS ✨ v2.0.6 (https://picocss.com)
  * Copyright 2019-2024 - Licensed under MIT
  */
-:root {
+:root,
+:host {
   --pico-color-red-950: #1c0d06;
   --pico-color-red-900: #30130a;
   --pico-color-red-850: #45150c;
