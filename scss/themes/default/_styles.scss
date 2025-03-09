@@ -144,7 +144,7 @@
     }
   }
 
-  // Responsives spacings
+  // Responsive spacings
   @if $enable-responsive-spacings {
     // Landmarks and section
     @if map.get($modules, "layout/landmarks") or map.get($modules, "layout/section") {
