@@ -2025,7 +2025,7 @@ details.dropdown {
   position: relative;
   border-bottom: none;
 }
-details.dropdown summary::after,
+details.dropdown > summary::after,
 details.dropdown > button::after,
 details.dropdown > a::after {
   display: block;
@@ -2045,7 +2045,7 @@ nav details.dropdown {
   margin-bottom: 0;
 }
 
-details.dropdown summary:not([role]) {
+details.dropdown > summary:not([role]) {
   height: calc(1rem * var(--pico-line-height) + var(--pico-form-element-spacing-vertical) * 2 + var(--pico-border-width) * 2);
   padding: var(--pico-form-element-spacing-vertical) var(--pico-form-element-spacing-horizontal);
   border: var(--pico-border-width) solid var(--pico-form-element-border-color);
@@ -2059,22 +2059,22 @@ details.dropdown summary:not([role]) {
   user-select: none;
   transition: background-color var(--pico-transition), border-color var(--pico-transition), color var(--pico-transition), box-shadow var(--pico-transition);
 }
-details.dropdown summary:not([role]):active, details.dropdown summary:not([role]):focus {
+details.dropdown > summary:not([role]):active, details.dropdown > summary:not([role]):focus {
   border-color: var(--pico-form-element-active-border-color);
   background-color: var(--pico-form-element-active-background-color);
 }
-details.dropdown summary:not([role]):focus {
+details.dropdown > summary:not([role]):focus {
   box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-form-element-focus-color);
 }
-details.dropdown summary:not([role]):focus-visible {
+details.dropdown > summary:not([role]):focus-visible {
   outline: none;
 }
-details.dropdown summary:not([role])[aria-invalid=false] {
+details.dropdown > summary:not([role])[aria-invalid=false] {
   --pico-form-element-border-color: var(--pico-form-element-valid-border-color);
   --pico-form-element-active-border-color: var(--pico-form-element-valid-focus-color);
   --pico-form-element-focus-color: var(--pico-form-element-valid-focus-color);
 }
-details.dropdown summary:not([role])[aria-invalid=true] {
+details.dropdown > summary:not([role])[aria-invalid=true] {
   --pico-form-element-border-color: var(--pico-form-element-invalid-border-color);
   --pico-form-element-active-border-color: var(--pico-form-element-invalid-focus-color);
   --pico-form-element-focus-color: var(--pico-form-element-invalid-focus-color);
@@ -2084,18 +2084,18 @@ nav details.dropdown {
   display: inline;
   margin: calc(var(--pico-nav-element-spacing-vertical) * -1) 0;
 }
-nav details.dropdown summary::after {
+nav details.dropdown > summary::after {
   transform: rotate(0deg) translateX(0rem);
 }
-nav details.dropdown summary:not([role]) {
+nav details.dropdown > summary:not([role]) {
   height: calc(1rem * var(--pico-line-height) + var(--pico-nav-link-spacing-vertical) * 2);
   padding: calc(var(--pico-nav-link-spacing-vertical) - var(--pico-border-width) * 2) var(--pico-nav-link-spacing-horizontal);
 }
-nav details.dropdown summary:not([role]):focus-visible {
+nav details.dropdown > summary:not([role]):focus-visible {
   box-shadow: 0 0 0 var(--pico-outline-width) var(--pico-primary-focus);
 }
 
-details.dropdown summary + ul {
+details.dropdown > summary + ul {
   display: flex;
   z-index: 99;
   position: absolute;
@@ -2116,23 +2116,23 @@ details.dropdown summary + ul {
   opacity: 0;
   transition: opacity var(--pico-transition), transform 0s ease-in-out 1s;
 }
-details.dropdown summary + ul[dir=rtl] {
+details.dropdown > summary + ul[dir=rtl] {
   right: 0;
   left: auto;
 }
-details.dropdown summary + ul li {
+details.dropdown > summary + ul li {
   width: 100%;
   margin-bottom: 0;
   padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) var(--pico-form-element-spacing-horizontal);
   list-style: none;
 }
-details.dropdown summary + ul li:first-of-type {
+details.dropdown > summary + ul li:first-of-type {
   margin-top: calc(var(--pico-form-element-spacing-vertical) * 0.5);
 }
-details.dropdown summary + ul li:last-of-type {
+details.dropdown > summary + ul li:last-of-type {
   margin-bottom: calc(var(--pico-form-element-spacing-vertical) * 0.5);
 }
-details.dropdown summary + ul li a {
+details.dropdown > summary + ul li a {
   display: block;
   margin: calc(var(--pico-form-element-spacing-vertical) * -0.5) calc(var(--pico-form-element-spacing-horizontal) * -1);
   padding: calc(var(--pico-form-element-spacing-vertical) * 0.5) var(--pico-form-element-spacing-horizontal);
@@ -2142,27 +2142,27 @@ details.dropdown summary + ul li a {
   text-decoration: none;
   text-overflow: ellipsis;
 }
-details.dropdown summary + ul li a:hover, details.dropdown summary + ul li a:focus, details.dropdown summary + ul li a:active, details.dropdown summary + ul li a:focus-visible, details.dropdown summary + ul li a[aria-current]:not([aria-current=false]) {
+details.dropdown > summary + ul li a:hover, details.dropdown > summary + ul li a:focus, details.dropdown > summary + ul li a:active, details.dropdown > summary + ul li a:focus-visible, details.dropdown > summary + ul li a[aria-current]:not([aria-current=false]) {
   background-color: var(--pico-dropdown-hover-background-color);
 }
-details.dropdown summary + ul li label {
+details.dropdown > summary + ul li label {
   width: 100%;
 }
-details.dropdown summary + ul li:has(label):hover {
+details.dropdown > summary + ul li:has(label):hover {
   background-color: var(--pico-dropdown-hover-background-color);
 }
 
-details.dropdown[open] summary {
+details.dropdown[open] > summary {
   margin-bottom: 0;
 }
 
-details.dropdown[open] summary + ul {
+details.dropdown[open] > summary + ul {
   transform: scaleY(1);
   opacity: 1;
   transition: opacity var(--pico-transition), transform 0s ease-in-out 0s;
 }
 
-details.dropdown[open] summary::before {
+details.dropdown[open] > summary::before {
   display: block;
   z-index: 1;
   position: fixed;
