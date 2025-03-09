@@ -936,8 +936,8 @@ tfoot td {
   border-bottom: 0;
 }
 
-table.striped tbody tr:nth-child(odd) th,
-table.striped tbody tr:nth-child(odd) td {
+table.striped tbody tr:nth-child(odd of :not([hidden])) th,
+table.striped tbody tr:nth-child(odd of :not([hidden])) td {
   background-color: var(--pico-table-row-stripped-background-color);
 }
 
