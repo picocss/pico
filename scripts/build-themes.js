@@ -129,7 +129,7 @@ themeColors.forEach((themeColor, colorIndex) => {
       path.join(tempScssFoldername, `${version.name}.${themeColor}.scss`),
       {
         outputStyle: "compressed",
-        silenceDeprecations: ["global-builtin", "color-functions", "mixed-decls"],
+        silenceDeprecations: ["global-builtin", "color-functions"],
       },
     );
 
