@@ -2230,7 +2230,7 @@ main {
 .pico [data-tooltip] {
   position: relative;
 }
-.pico [data-tooltip]:not(a, button, input) {
+.pico [data-tooltip]:not(a, button, input, [role=button]) {
   border-bottom: 1px dotted;
   text-decoration: none;
   cursor: help;

@@ -2230,7 +2230,7 @@ progress::-moz-progress-bar {
 [data-tooltip] {
   position: relative;
 }
-[data-tooltip]:not(a, button, input) {
+[data-tooltip]:not(a, button, input, [role=button]) {
   border-bottom: 1px dotted;
   text-decoration: none;
   cursor: help;
