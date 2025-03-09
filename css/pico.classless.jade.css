@@ -1977,10 +1977,10 @@ article > footer {
 /**
  * Loading ([aria-busy=true])
  */
-[aria-busy=true]:not(input, select, textarea, html) {
+[aria-busy=true]:not(input, select, textarea, html, form) {
   white-space: nowrap;
 }
-[aria-busy=true]:not(input, select, textarea, html)::before {
+[aria-busy=true]:not(input, select, textarea, html, form)::before {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1990,10 +1990,10 @@ article > footer {
   content: "";
   vertical-align: -0.125em;
 }
-[aria-busy=true]:not(input, select, textarea, html):not(:empty)::before {
+[aria-busy=true]:not(input, select, textarea, html, form):not(:empty)::before {
   margin-inline-end: calc(var(--pico-spacing) * 0.5);
 }
-[aria-busy=true]:not(input, select, textarea, html):empty {
+[aria-busy=true]:not(input, select, textarea, html, form):empty {
   text-align: center;
 }
 

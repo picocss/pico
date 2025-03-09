@@ -1977,10 +1977,10 @@ main {
 /**
  * Loading ([aria-busy=true])
  */
-.pico [aria-busy=true]:not(input, select, textarea, html) {
+.pico [aria-busy=true]:not(input, select, textarea, html, form) {
   white-space: nowrap;
 }
-.pico [aria-busy=true]:not(input, select, textarea, html)::before {
+.pico [aria-busy=true]:not(input, select, textarea, html, form)::before {
   display: inline-block;
   width: 1em;
   height: 1em;
@@ -1990,10 +1990,10 @@ main {
   content: "";
   vertical-align: -0.125em;
 }
-.pico [aria-busy=true]:not(input, select, textarea, html):not(:empty)::before {
+.pico [aria-busy=true]:not(input, select, textarea, html, form):not(:empty)::before {
   margin-inline-end: calc(var(--pico-spacing) * 0.5);
 }
-.pico [aria-busy=true]:not(input, select, textarea, html):empty {
+.pico [aria-busy=true]:not(input, select, textarea, html, form):empty {
   text-align: center;
 }
 
