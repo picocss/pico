@@ -49,7 +49,7 @@
     "done": "echo '\\033[32m[@picocss/pico] ✨ Done\\033[0m'"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "caniuse-lite": "1.0.30001702",
     "clean-css-cli": "^5.6.3",
     "css-declaration-sorter": "^7.2.0",
