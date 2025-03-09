@@ -2008,43 +2008,43 @@ main {
   background-color: var(--pico-modal-overlay-background-color);
   color: var(--pico-color);
 }
-.pico dialog article {
+.pico dialog > article {
   width: 100%;
   max-height: calc(100vh - var(--pico-spacing) * 2);
   margin: var(--pico-spacing);
   overflow: auto;
 }
 @media (min-width: 576px) {
-  .pico dialog article {
+  .pico dialog > article {
     max-width: 510px;
   }
 }
 @media (min-width: 768px) {
-  .pico dialog article {
+  .pico dialog > article {
     max-width: 700px;
   }
 }
-.pico dialog article > header > * {
+.pico dialog > article > header > * {
   margin-bottom: 0;
 }
-.pico dialog article > header :is(a, button)[rel=prev] {
+.pico dialog > article > header :is(a, button)[rel=prev] {
   margin: 0;
   margin-left: var(--pico-spacing);
   padding: 0;
   float: right;
 }
-.pico dialog article > footer {
+.pico dialog > article > footer {
   text-align: right;
 }
-.pico dialog article > footer button,
-.pico dialog article > footer [role=button] {
+.pico dialog > article > footer button,
+.pico dialog > article > footer [role=button] {
   margin-bottom: 0;
 }
-.pico dialog article > footer button:not(:first-of-type),
-.pico dialog article > footer [role=button]:not(:first-of-type) {
+.pico dialog > article > footer button:not(:first-of-type),
+.pico dialog > article > footer [role=button]:not(:first-of-type) {
   margin-left: calc(var(--pico-spacing) * 0.5);
 }
-.pico dialog article :is(a, button)[rel=prev] {
+.pico dialog > article :is(a, button)[rel=prev] {
   display: block;
   width: 1rem;
   height: 1rem;
@@ -2060,7 +2060,7 @@ main {
   opacity: 0.5;
   transition: opacity var(--pico-transition);
 }
-.pico dialog article :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+.pico dialog > article :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   opacity: 1;
 }
 .pico dialog:not([open]), .pico dialog[open=false] {

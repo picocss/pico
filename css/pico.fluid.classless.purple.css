@@ -1971,43 +1971,43 @@ dialog {
   background-color: var(--pico-modal-overlay-background-color);
   color: var(--pico-color);
 }
-dialog article {
+dialog > article {
   width: 100%;
   max-height: calc(100vh - var(--pico-spacing) * 2);
   margin: var(--pico-spacing);
   overflow: auto;
 }
 @media (min-width: 576px) {
-  dialog article {
+  dialog > article {
     max-width: 510px;
   }
 }
 @media (min-width: 768px) {
-  dialog article {
+  dialog > article {
     max-width: 700px;
   }
 }
-dialog article > header > * {
+dialog > article > header > * {
   margin-bottom: 0;
 }
-dialog article > header :is(a, button)[rel=prev] {
+dialog > article > header :is(a, button)[rel=prev] {
   margin: 0;
   margin-left: var(--pico-spacing);
   padding: 0;
   float: right;
 }
-dialog article > footer {
+dialog > article > footer {
   text-align: right;
 }
-dialog article > footer button,
-dialog article > footer [role=button] {
+dialog > article > footer button,
+dialog > article > footer [role=button] {
   margin-bottom: 0;
 }
-dialog article > footer button:not(:first-of-type),
-dialog article > footer [role=button]:not(:first-of-type) {
+dialog > article > footer button:not(:first-of-type),
+dialog > article > footer [role=button]:not(:first-of-type) {
   margin-left: calc(var(--pico-spacing) * 0.5);
 }
-dialog article :is(a, button)[rel=prev] {
+dialog > article :is(a, button)[rel=prev] {
   display: block;
   width: 1rem;
   height: 1rem;
@@ -2023,7 +2023,7 @@ dialog article :is(a, button)[rel=prev] {
   opacity: 0.5;
   transition: opacity var(--pico-transition);
 }
-dialog article :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+dialog > article :is(a, button)[rel=prev]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
   opacity: 1;
 }
 dialog:not([open]), dialog[open=false] {
