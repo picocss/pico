@@ -14,7 +14,7 @@
 
     // Marker
     // ––––––––––––––––––––
-    summary,
+    > summary,
     > button,
     > a {
       &::after {
@@ -43,10 +43,10 @@
     margin-bottom: 0;
   }
 
-  // Bouton as a select
+  // Button as a select
   // inside container type accordion
   // ––––––––––––––––––––
-  #{$parent-selector} details.dropdown summary:not([role]) {
+  #{$parent-selector} details.dropdown > summary:not([role]) {
     height: calc(
       1rem *
         var(#{$css-var-prefix}line-height) +
@@ -126,7 +126,7 @@
     display: inline;
     margin: calc(var(#{$css-var-prefix}nav-element-spacing-vertical) * -1) 0;
 
-    summary {
+    > summary {
       &::after {
         transform: rotate(0deg) translateX(0rem);
       }
@@ -156,7 +156,7 @@
 
   // Submenu
   // ––––––––––––––––––––
-  #{$parent-selector} details.dropdown summary + ul {
+  #{$parent-selector} details.dropdown > summary + ul {
     display: flex;
     z-index: 99;
     position: absolute;
@@ -236,14 +236,14 @@
   // Button opened
   // inside container type accordion
   // ––––––––––––––––––––
-  #{$parent-selector} details.dropdown[open] summary {
+  #{$parent-selector} details.dropdown[open] > summary {
     margin-bottom: 0;
   }
 
   // Menu opened
   // ––––––––––––––––––––
   // 1. Inside container type accordion
-  #{$parent-selector} details.dropdown[open] summary {
+  #{$parent-selector} details.dropdown[open] > summary {
     + ul {
       transform: scaleY(1);
       opacity: 1;
@@ -259,7 +259,7 @@
   // Close for dropdown
   // inside container type accordion
   // ––––––––––––––––––––
-  #{$parent-selector} details.dropdown[open] summary {
+  #{$parent-selector} details.dropdown[open] > summary {
     &::before {
       display: block;
       z-index: 1;

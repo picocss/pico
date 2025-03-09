@@ -34,7 +34,8 @@
   // 3. Use a 4-space tab width in all browsers (opinionated)
   // 4. Remove the grey highlight on links in iOS (opinionated)
   // 5. Prevent adjustments of font size after orientation changes in iOS
-  :where(:root) {
+  :where(:root),
+  :where(:host) {
     -webkit-tap-highlight-color: transparent; // 4
     -webkit-text-size-adjust: 100%; // 5
     text-size-adjust: 100%; // 5

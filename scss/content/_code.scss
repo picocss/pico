@@ -21,7 +21,8 @@
     font-family: var(#{$css-var-prefix}font-family); // 1
   }
 
-  #{$parent-selector} pre code {
+  #{$parent-selector} pre code,
+  #{$parent-selector} pre samp {
     font-size: inherit;
     font-family: inherit;
   }
@@ -37,7 +38,8 @@
 
   #{$parent-selector} pre,
   #{$parent-selector} code,
-  #{$parent-selector} kbd {
+  #{$parent-selector} kbd,
+  #{$parent-selector} samp {
     border-radius: var(#{$css-var-prefix}border-radius);
     background: var(#{$css-var-prefix}code-background-color);
     color: var(#{$css-var-prefix}code-color);
@@ -46,7 +48,8 @@
   }
 
   #{$parent-selector} code,
-  #{$parent-selector} kbd {
+  #{$parent-selector} kbd,
+  #{$parent-selector} samp {
     display: inline-block;
     padding: 0.375rem;
   }
@@ -56,7 +59,8 @@
     margin-bottom: var(#{$css-var-prefix}spacing);
     overflow-x: auto;
 
-    > code {
+    > code,
+    > samp {
       display: block;
       padding: var(#{$css-var-prefix}spacing);
       background: none;

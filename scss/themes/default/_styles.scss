@@ -9,15 +9,17 @@
    * Styles
    */
 
-  :root {
+  :root,
+  :host {
     // Typography
-    #{$css-var-prefix}font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-      "Noto Color Emoji";
-    #{$css-var-prefix}font-family-sans-serif: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu,
-      Cantarell, Helvetica, Arial, "Helvetica Neue", sans-serif,
+    #{$css-var-prefix}font-family-emoji:
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    #{$css-var-prefix}font-family-sans-serif:
+      system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue",
+      sans-serif, var(#{$css-var-prefix}font-family-emoji);
+    #{$css-var-prefix}font-family-monospace:
+      ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace,
       var(#{$css-var-prefix}font-family-emoji);
-    #{$css-var-prefix}font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
-      Consolas, "Liberation Mono", monospace, var(#{$css-var-prefix}font-family-emoji);
     #{$css-var-prefix}font-family: var(#{$css-var-prefix}font-family-sans-serif);
     #{$css-var-prefix}line-height: 1.5;
     #{$css-var-prefix}font-weight: 400;
@@ -143,7 +145,7 @@
     }
   }
 
-  // Responsives spacings
+  // Responsive spacings
   @if $enable-responsive-spacings {
     // Landmarks and section
     @if map.get($modules, "layout/landmarks") or map.get($modules, "layout/section") {

@@ -7,7 +7,7 @@
    */
 
   // Everything except form elements
-  #{$parent-selector} [aria-busy="true"]:not(input, select, textarea, html) {
+  #{$parent-selector} [aria-busy="true"]:not(input, select, textarea, html, form) {
     white-space: nowrap;
 
     &::before {
