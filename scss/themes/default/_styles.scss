@@ -230,6 +230,7 @@
     // Small
     small {
       #{$css-var-prefix}font-size: 0.875em;
+      font-size: var(#{$css-var-prefix}font-size);
     }
 
     // Headings
