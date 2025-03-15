@@ -127,9 +127,7 @@ themeColors.forEach((themeColor, colorIndex) => {
     // Compile the file
     const result = sass.compile(
       path.join(tempScssFoldername, `${version.name}.${themeColor}.scss`),
-      {
-        outputStyle: "compressed",
-      },
+      { outputStyle: "compressed" },
     );
 
     // Write the file
