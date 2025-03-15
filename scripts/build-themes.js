@@ -103,7 +103,7 @@ themeColors.forEach((themeColor, colorIndex) => {
     },
   ];
 
-  const displayAsciiProgress = ({length, index, color}) => {
+  const displayAsciiProgress = ({ length, index, color }) => {
     const progress = Math.round((index / length) * 100);
     const bar = "■".repeat(progress / 10);
     const empty = "□".repeat(10 - progress / 10);

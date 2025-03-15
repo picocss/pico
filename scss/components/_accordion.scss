@@ -15,12 +15,12 @@
       list-style-type: none;
       cursor: pointer;
 
-      &:not([role]) {
-        color: var(#{$css-var-prefix}accordion-close-summary-color);
-      }
-
       @if $enable-transitions {
         transition: color var(#{$css-var-prefix}transition);
+      }
+
+      &:not([role]) {
+        color: var(#{$css-var-prefix}accordion-close-summary-color);
       }
 
       // Reset marker

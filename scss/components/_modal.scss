@@ -6,7 +6,8 @@
    * Modal (<dialog>)
    */
 
-  :root {
+  :root,
+  :host {
     #{$css-var-prefix}scrollbar-width: 0px;
   }
 
@@ -31,7 +32,7 @@
     color: var(#{$css-var-prefix}color);
 
     // Content
-    article {
+    > article {
       $close-selector: if(
         $enable-classes,
         ".close, :is(a, button)[rel=prev]",

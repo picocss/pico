@@ -1,3 +1,4 @@
+@use "sass:list";
 @use "sass:map";
 @use "../../colors";
 @use "settings";
@@ -9,10 +10,11 @@
   $css-var-color-prefix: #{settings.$css-var-prefix}#{$color-property-name};
 
   @if $enable-css-vars {
-    :root {
+    :root,
+    :host {
       // Loop through color families
       @each $family, $colors in colors.$colors {
-        @if index(map.get(settings.$palette, "color-families"), $family) {
+        @if list.index(map.get(settings.$palette, "color-families"), $family) {
           $css-var-family-name: #{$css-var-color-prefix}-#{$family};
 
           // Loop through colors
@@ -24,7 +26,7 @@
 
             // Shades
             @else if
-              index(map.get(settings.$palette, "shades"), $shade) and
+              list.index(map.get(settings.$palette, "shades"), $shade) and
               map.get(settings.$palette, "enable-shades")
             {
               #{$css-var-family-name}-#{$shade}: #{utils.display-color($color-value)};

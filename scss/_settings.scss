@@ -49,8 +49,7 @@ $breakpoints: map.deep-merge(
   (
     // Small (landscape phones)
     // Font size: 17px
-    sm:
-      (
+    sm: (
         breakpoint: 576px,
         viewport: 510px,
         root-font-size: 106.25%,
@@ -58,8 +57,7 @@ $breakpoints: map.deep-merge(
 
     // Medium (tablets)
     // Font size: 18px
-    md:
-      (
+    md: (
         breakpoint: 768px,
         viewport: 700px,
         root-font-size: 112.5%,
@@ -67,8 +65,7 @@ $breakpoints: map.deep-merge(
 
     // Large
     // Font size: 19px
-    lg:
-      (
+    lg: (
         breakpoint: 1024px,
         viewport: 950px,
         root-font-size: 118.75%,
@@ -76,8 +73,7 @@ $breakpoints: map.deep-merge(
 
     // Extra large
     // Font size: 20px
-    xl:
-      (
+    xl: (
         breakpoint: 1280px,
         viewport: 1200px,
         root-font-size: 125%,
@@ -85,8 +81,7 @@ $breakpoints: map.deep-merge(
 
     // Extra extra large
     // Font size: 21px
-    xxl:
-      (
+    xxl: (
         breakpoint: 1536px,
         viewport: 1450px,
         root-font-size: 131.25%,
@@ -118,7 +113,7 @@ $modules: map.merge(
     "content/table": true,
     "content/code": true,
     "content/figure": true,
-    "content/miscs": true,
+    "content/misc": true,
 
     // Forms
     "forms/basics": true,

@@ -22,7 +22,7 @@
 @use "content/embedded"; // audio, canvas, iframe, img, svg, video
 @use "content/code"; // pre, code, ...
 @use "content/figure"; // figure, figcaption
-@use "content/miscs"; // hr, template, [hidden], dialog, canvas
+@use "content/misc"; // hr, template, [hidden], dialog, canvas
 
 // Forms
 @use "forms/basics"; // input, select, textarea, label, fieldset, legend

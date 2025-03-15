@@ -24,7 +24,8 @@
 @function brightness($color) {
   $color-brightness: round(
     math.div(
-      (color.red($color) * 299) + (color.green($color) * 587) + (color.blue($color) * 114),
+      (color.channel($color, "red") * 299) + (color.channel($color, "green") * 587) +
+        (color.channel($color, "blue") * 114),
       1000
     )
   );
@@ -52,5 +53,8 @@
 
 // Display color as RGB
 @function display-rgb($color) {
-  @return unquote("rgb(" + red($color) + ", " + green($color) + ", " + blue($color) + ")");
+  @return unquote(
+    "rgb(" + color.channel($color, "red") + ", " + color.channel($color, "green") + ", " +
+      color.channel($color, "blue") + ")"
+  );
 }

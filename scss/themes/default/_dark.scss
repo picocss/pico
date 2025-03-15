@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "sass:map";
 @use "../../colors" as *;
 @use "../../settings" as *;
@@ -6,7 +7,8 @@
 
 // Default: Dark theme
 @mixin theme {
-  #{$css-var-prefix}background-color: #{mix($slate-950, $slate-900)};
+  color-scheme: dark;
+  #{$css-var-prefix}background-color: #{color.mix($slate-950, $slate-900)};
 
   // Text color
   #{$css-var-prefix}color: #{$zinc-200};
@@ -55,7 +57,7 @@
   #{$css-var-prefix}contrast-inverse: #{$black};
 
   // Box shadow
-  #{$css-var-prefix}box-shadow: functions.shadow(mix($black, $slate-950));
+  #{$css-var-prefix}box-shadow: functions.shadow(color.mix($black, $slate-950));
 
   // Typography
   @if map.get($modules, "content/typography") {
@@ -72,8 +74,8 @@
     #{$css-var-prefix}mark-color: #{$white};
 
     // Inserted (<ins>) & Deleted (<del>)
-    #{$css-var-prefix}ins-color: #{mix($jade-450, $zinc-200)};
-    #{$css-var-prefix}del-color: #{mix($red-500, $zinc-200)};
+    #{$css-var-prefix}ins-color: #{color.mix($jade-450, $zinc-200)};
+    #{$css-var-prefix}del-color: #{color.mix($red-500, $zinc-200)};
 
     // Blockquote
     #{$css-var-prefix}blockquote-border-color: var(#{$css-var-prefix}muted-border-color);
@@ -96,7 +98,7 @@
 
   // Code
   @if map.get($modules, "content/code") {
-    #{$css-var-prefix}code-background-color: #{mix($slate-900, $slate-850, 75%)};
+    #{$css-var-prefix}code-background-color: #{color.mix($slate-900, $slate-850, 75%)};
     #{$css-var-prefix}code-color: #{$zinc-400};
     #{$css-var-prefix}code-kbd-background-color: var(#{$css-var-prefix}color);
     #{$css-var-prefix}code-kbd-color: var(#{$css-var-prefix}background-color);
@@ -104,37 +106,37 @@
 
   // Form elements
   @if map.get($modules, "forms/basics") {
-    #{$css-var-prefix}form-element-background-color: #{mix($slate-900, $slate-850)};
+    #{$css-var-prefix}form-element-background-color: #{color.mix($slate-900, $slate-850)};
     #{$css-var-prefix}form-element-selected-background-color: #{$slate-800};
     #{$css-var-prefix}form-element-border-color: #{$slate-800};
     #{$css-var-prefix}form-element-color: #{$zinc-100};
     #{$css-var-prefix}form-element-placeholder-color: #{$zinc-400};
-    #{$css-var-prefix}form-element-active-background-color: #{mix($slate-900, $slate-850, 75%)};
+    #{$css-var-prefix}form-element-active-background-color: #{color.mix(
+        $slate-900,
+        $slate-850,
+        75%
+      )};
     #{$css-var-prefix}form-element-active-border-color: var(#{$css-var-prefix}primary-border);
     #{$css-var-prefix}form-element-focus-color: var(#{$css-var-prefix}primary-border);
     #{$css-var-prefix}form-element-disabled-opacity: 0.5;
-    #{$css-var-prefix}form-element-invalid-border-color: #{mix($red-500, $slate-600)};
-    #{$css-var-prefix}form-element-invalid-active-border-color: #{mix($red-500, $slate-600, 75%)};
+    #{$css-var-prefix}form-element-invalid-border-color: #{color.mix($red-500, $slate-600)};
+    #{$css-var-prefix}form-element-invalid-active-border-color: #{color.mix(
+        $red-500,
+        $slate-600,
+        75%
+      )};
     #{$css-var-prefix}form-element-invalid-focus-color: var(
       #{$css-var-prefix}form-element-invalid-active-border-color
     );
-    #{$css-var-prefix}form-element-valid-border-color: #{mix($jade-450, $slate-600)};
-    #{$css-var-prefix}form-element-valid-active-border-color: #{mix($jade-450, $slate-600, 75%)};
+    #{$css-var-prefix}form-element-valid-border-color: #{color.mix($jade-450, $slate-600)};
+    #{$css-var-prefix}form-element-valid-active-border-color: #{color.mix(
+        $jade-450,
+        $slate-600,
+        75%
+      )};
     #{$css-var-prefix}form-element-valid-focus-color: var(
       #{$css-var-prefix}form-element-valid-active-border-color
     );
-
-    // Focus for buttons, radio and select
-    input:is(
-        [type="submit"],
-        [type="button"],
-        [type="reset"],
-        [type="checkbox"],
-        [type="radio"],
-        [type="file"]
-      ) {
-      #{$css-var-prefix}form-element-focus-color: var(#{$css-var-prefix}primary-focus);
-    }
   }
 
   // Switch (input[type="checkbox"][role="switch"])
@@ -167,7 +169,7 @@
     #{$css-var-prefix}card-background-color: #{$slate-900};
     #{$css-var-prefix}card-border-color: var(#{$css-var-prefix}card-background-color);
     #{$css-var-prefix}card-box-shadow: var(#{$css-var-prefix}box-shadow);
-    #{$css-var-prefix}card-sectioning-background-color: #{mix($slate-900, $slate-850, 75%)};
+    #{$css-var-prefix}card-sectioning-background-color: #{color.mix($slate-900, $slate-850, 75%)};
   }
 
   // Dropdown (details.dropdown)
@@ -186,7 +188,7 @@
 
   // Modal (<dialog>)
   @if map.get($modules, "components/modal") {
-    #{$css-var-prefix}modal-overlay-background-color: #{rgba(mix($black, $zinc-950), 0.75)};
+    #{$css-var-prefix}modal-overlay-background-color: #{rgba(color.mix($black, $zinc-950), 0.75)};
   }
 
   // Progress
@@ -199,6 +201,26 @@
   @if map.get($modules, "components/tooltip") {
     #{$css-var-prefix}tooltip-background-color: var(#{$css-var-prefix}contrast-background);
     #{$css-var-prefix}tooltip-color: var(#{$css-var-prefix}contrast-inverse);
+  }
+
+  // Form validation icons
+  @if map.get($modules, "forms/basics") {
+    #{$css-var-prefix}icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb(color.mix($jade-450, $slate-600))}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    #{$css-var-prefix}icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb(color.mix($red-500, $slate-600))}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+  }
+
+  // Focus for buttons, radio and select
+  @if map.get($modules, "forms/basics") {
+    input:is(
+        [type="submit"],
+        [type="button"],
+        [type="reset"],
+        [type="checkbox"],
+        [type="radio"],
+        [type="file"]
+      ) {
+      #{$css-var-prefix}form-element-focus-color: var(#{$css-var-prefix}primary-focus);
+    }
   }
 
   // Chevron icons
@@ -215,12 +237,6 @@
         }
       }
     }
-  }
-
-  // Form validation icons
-  @if map.get($modules, "forms/basics") {
-    #{$css-var-prefix}icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb(mix($jade-450, $slate-600))}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
-    #{$css-var-prefix}icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb(mix($red-500, $slate-600))}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
   }
 
   // Loading icon (animated)
@@ -242,7 +258,4 @@
       }
     }
   }
-
-  // Document
-  color-scheme: dark;
 }
