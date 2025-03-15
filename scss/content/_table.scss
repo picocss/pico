@@ -50,13 +50,13 @@
 
   // Striped
   @if enable-classes {
-    #{$parent-selector} table {
-      &.striped {
-        tbody tr:nth-child(odd) th,
-        tbody tr:nth-child(odd) td {
-          background-color: var(#{$css-var-prefix}table-row-stripped-background-color);
-        }
+    /* clean-css ignore:start */
+    #{$parent-selector} table.striped {
+      tbody tr:nth-child(odd of :not([hidden])) th,
+      tbody tr:nth-child(odd of :not([hidden])) td {
+        background-color: var(#{$css-var-prefix}table-row-stripped-background-color);
       }
     }
+    /* clean-css ignore:end */
   }
 }
