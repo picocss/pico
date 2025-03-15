@@ -1,8 +1,9 @@
 @use "sass:color";
+@use "sass:string";
 
 // Display color as RGB
 @function display-rgb($color) {
-  @return unquote(
+  @return string.unquote(
     "rgb(" + color.channel($color, "red") + ", " + color.channel($color, "green") + ", " +
       color.channel($color, "blue") + ")"
   );

@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "sass:map";
 @use "../../colors" as *;
 @use "../../settings" as *;
@@ -442,7 +443,7 @@ $color-mappings: (
       "primary-background": $yellow-100,
       "primary-underline": rgba($yellow-350, 0.5),
       "primary-hover": $yellow-250,
-      "primary-hover-background": mix($yellow-100, $yellow-50),
+      "primary-hover-background": color.mix($yellow-100, $yellow-50),
       "primary-focus": rgba($yellow-350, 0.375),
       "primary-inverse": $black,
       "switch-thumb-box-shadow": 0 0 0.5rem rgba($black, 0.25),

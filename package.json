@@ -36,7 +36,7 @@
     "lint": "run-s \"lint:*\" --silent",
     "lint:prettier": "prettier --write --log-level silent 'scss/**/*.scss'",
     "lint:sort-scss": "postcss --config scss ./scss/**/*.scss --replace",
-    "build:css": "sass --no-source-map --style expanded --no-error-css scss/:css/ --silence-deprecation=global-builtin",
+    "build:css": "sass --no-source-map --style expanded --no-error-css scss/:css/",
     "build:themes": "node scripts/build-themes",
     "build:autoprefix": "postcss --config css --replace css/*.css !css/*.min.css",
     "build:minify": "cleancss -O1 --with-rebase --batch --batch-suffix .min css/*.css !css/*.min.css",
