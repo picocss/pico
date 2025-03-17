@@ -3,10 +3,11 @@
 
 @if map.get($modules, "components/card") {
   /**
-   * Card (<article>)
+   * Card (<article>, role="article")
    */
 
-  #{$parent-selector} article {
+  #{$parent-selector} article,
+  #{$parent-selector} [role="article"] {
     margin-bottom: var(#{$css-var-prefix}block-spacing-vertical);
     padding: var(#{$css-var-prefix}block-spacing-vertical)
       var(#{$css-var-prefix}block-spacing-horizontal);
