@@ -27,7 +27,14 @@
   #{$parent-selector} #{$semantic-root-element} {
     > header,
     > main,
-    > footer {
+    > footer,
+    > div[style="display: contents"] > header,
+    > div[style="display: contents"] > main,
+    > div[style="display: contents"] > footer {
+      // Target "display: contents" to support Svelte forcing a wrapping div
+      // - https: //github.com/sveltejs/kit/discussions/7585
+      // ––––––––––––––––––––
+
       // <header>, <main>, <footer> as containers
       @if $enable-semantic-container {
         $first-breakpoint: true;
