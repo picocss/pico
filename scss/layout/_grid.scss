@@ -18,9 +18,35 @@
         grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
       }
     }
-
+    
     & > * {
       min-width: 0; // HACK for children in overflow
     }
   }
+  .grid-2 {
+     grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3 {
+     grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-4 {
+     grid-template-columns: repeat(4, 1fr);
+  }
+  .grid-5 {
+     grid-template-columns: repeat(5, 1fr);
+  }
+  .grid-6 {
+     grid-template-columns: repeat(6, 1fr);
+  }
+  .grid-8 {
+     grid-template-columns: repeat(8, 1fr);
+  }
+  @if map.get($breakpoints, "md") {
+    @media only screen and (max-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
+      .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-8 {
+         grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+    
 }
