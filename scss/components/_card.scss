@@ -15,7 +15,9 @@
     box-shadow: var(#{$css-var-prefix}card-box-shadow);
 
     > header,
-    > footer {
+    > footer,
+    > details > summary > header,
+    > details > footer {
       margin-right: calc(var(#{$css-var-prefix}block-spacing-horizontal) * -1);
       margin-left: calc(var(#{$css-var-prefix}block-spacing-horizontal) * -1);
       padding: calc(var(#{$css-var-prefix}block-spacing-vertical) * 0.66)
@@ -23,7 +25,8 @@
       background-color: var(#{$css-var-prefix}card-sectioning-background-color);
     }
 
-    > header {
+    > header,
+    > details > summary > header {
       margin-top: calc(var(#{$css-var-prefix}block-spacing-vertical) * -1);
       margin-bottom: var(#{$css-var-prefix}block-spacing-vertical);
       border-bottom: var(#{$css-var-prefix}border-width)
@@ -33,7 +36,7 @@
       border-top-left-radius: var(#{$css-var-prefix}border-radius);
     }
 
-    > footer {
+    > footer > details > footer {
       margin-top: var(#{$css-var-prefix}block-spacing-vertical);
       margin-bottom: calc(var(#{$css-var-prefix}block-spacing-vertical) * -1);
       border-top: var(#{$css-var-prefix}border-width)
@@ -41,6 +44,17 @@
         var(#{$css-var-prefix}card-border-color);
       border-bottom-right-radius: var(#{$css-var-prefix}border-radius);
       border-bottom-left-radius: var(#{$css-var-prefix}border-radius);
+    }
+
+    > details > summary {
+      position: relative;
+    }
+
+    > details > summary::after {
+      position: absolute;
+      top: 50%;
+      right: 0.5rem;
+      margin-top: calc(var(--pico-block-spacing-vertical) * -0.5);
     }
   }
 }
