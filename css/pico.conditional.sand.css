@@ -1990,13 +1990,15 @@ main {
  * Card (<article>)
  */
 .pico article {
-  height: -moz-min-content;
-  height: min-content;
   margin-bottom: var(--pico-block-spacing-vertical);
   padding: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
   border-radius: var(--pico-border-radius);
   background: var(--pico-card-background-color);
   box-shadow: var(--pico-card-box-shadow);
+}
+.pico article:not(:has(details[open])) {
+  height: -moz-min-content;
+  height: min-content;
 }
 .pico article > header,
 .pico article > footer,
