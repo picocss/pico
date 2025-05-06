@@ -1996,26 +1996,42 @@ article {
   background: var(--pico-card-background-color);
   box-shadow: var(--pico-card-box-shadow);
 }
+article:not(:has(details[open])) {
+  height: -moz-min-content;
+  height: min-content;
+}
 article > header,
-article > footer {
+article > footer,
+article > details > summary > header,
+article > details > footer {
   margin-right: calc(var(--pico-block-spacing-horizontal) * -1);
   margin-left: calc(var(--pico-block-spacing-horizontal) * -1);
   padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
   background-color: var(--pico-card-sectioning-background-color);
 }
-article > header {
+article > header,
+article > details > summary > header {
   margin-top: calc(var(--pico-block-spacing-vertical) * -1);
   margin-bottom: var(--pico-block-spacing-vertical);
   border-bottom: var(--pico-border-width) solid var(--pico-card-border-color);
   border-top-right-radius: var(--pico-border-radius);
   border-top-left-radius: var(--pico-border-radius);
 }
-article > footer {
+article > footer > details > footer {
   margin-top: var(--pico-block-spacing-vertical);
   margin-bottom: calc(var(--pico-block-spacing-vertical) * -1);
   border-top: var(--pico-border-width) solid var(--pico-card-border-color);
   border-bottom-right-radius: var(--pico-border-radius);
   border-bottom-left-radius: var(--pico-border-radius);
+}
+article > details > summary {
+  position: relative;
+}
+article > details > summary::after {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  margin-top: calc(var(--pico-block-spacing-vertical) * -0.5);
 }
 
 /**
