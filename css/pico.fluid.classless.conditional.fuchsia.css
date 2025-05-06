@@ -1788,25 +1788,37 @@ main {
   box-shadow: var(--pico-card-box-shadow);
 }
 .pico article > header,
-.pico article > footer {
+.pico article > footer,
+.pico article > details > summary > header,
+.pico article > details > footer {
   margin-right: calc(var(--pico-block-spacing-horizontal) * -1);
   margin-left: calc(var(--pico-block-spacing-horizontal) * -1);
   padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
   background-color: var(--pico-card-sectioning-background-color);
 }
-.pico article > header {
+.pico article > header,
+.pico article > details > summary > header {
   margin-top: calc(var(--pico-block-spacing-vertical) * -1);
   margin-bottom: var(--pico-block-spacing-vertical);
   border-bottom: var(--pico-border-width) solid var(--pico-card-border-color);
   border-top-right-radius: var(--pico-border-radius);
   border-top-left-radius: var(--pico-border-radius);
 }
-.pico article > footer {
+.pico article > footer > details > footer {
   margin-top: var(--pico-block-spacing-vertical);
   margin-bottom: calc(var(--pico-block-spacing-vertical) * -1);
   border-top: var(--pico-border-width) solid var(--pico-card-border-color);
   border-bottom-right-radius: var(--pico-border-radius);
   border-bottom-left-radius: var(--pico-border-radius);
+}
+.pico article > details > summary {
+  position: relative;
+}
+.pico article > details > summary::after {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  margin-top: calc(var(--pico-block-spacing-vertical) * -0.5);
 }
 
 /**
