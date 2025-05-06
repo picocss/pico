@@ -7,13 +7,13 @@
    */
 
   #{$parent-selector} article {
+    height: min-content;
     margin-bottom: var(#{$css-var-prefix}block-spacing-vertical);
     padding: var(#{$css-var-prefix}block-spacing-vertical)
       var(#{$css-var-prefix}block-spacing-horizontal);
     border-radius: var(#{$css-var-prefix}border-radius);
     background: var(#{$css-var-prefix}card-background-color);
     box-shadow: var(#{$css-var-prefix}card-box-shadow);
-    height: min-content;
 
     > header,
     > footer,

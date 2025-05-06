@@ -1781,6 +1781,8 @@ details[open] > summary::after {
  * Card (<article>)
  */
 article {
+  height: -moz-min-content;
+  height: min-content;
   margin-bottom: var(--pico-block-spacing-vertical);
   padding: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
   border-radius: var(--pico-border-radius);
