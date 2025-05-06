@@ -13,6 +13,7 @@
     border-radius: var(#{$css-var-prefix}border-radius);
     background: var(#{$css-var-prefix}card-background-color);
     box-shadow: var(#{$css-var-prefix}card-box-shadow);
+    height: min-content;
 
     > header,
     > footer,
