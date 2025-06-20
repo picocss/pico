@@ -1708,12 +1708,18 @@ main {
 .pico details {
   display: block;
   margin-bottom: var(--pico-spacing);
+  interpolate-size: allow-keywords;
+}
+.pico details::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition: block-size var(--pico-transition), content-visibility var(--pico-transition) allow-discrete;
 }
 .pico details summary {
   line-height: 1rem;
   list-style-type: none;
   cursor: pointer;
-  transition: color var(--pico-transition);
+  transition: color var(--pico-transition), margin-bottom var(--pico-transition);
 }
 .pico details summary:not([role]) {
   color: var(--pico-accordion-close-summary-color);
@@ -1758,6 +1764,9 @@ main {
 }
 .pico details summary[role=button]::after {
   height: calc(1rem * var(--pico-line-height, 1.5));
+}
+.pico details[open] {
+  block-size: auto;
 }
 .pico details[open] > summary {
   margin-bottom: var(--pico-spacing);

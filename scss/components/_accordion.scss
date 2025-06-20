@@ -10,13 +10,26 @@
     display: block;
     margin-bottom: var(#{$css-var-prefix}spacing);
 
+    interpolate-size: allow-keywords;
+    @if $enable-transitions {
+      &::details-content {
+        block-size: 0;
+        overflow: hidden;
+        transition:
+          block-size var(#{$css-var-prefix}transition),
+          content-visibility var(#{$css-var-prefix}transition) allow-discrete;
+      }
+    }
+
     summary {
       line-height: 1rem;
       list-style-type: none;
       cursor: pointer;
 
       @if $enable-transitions {
-        transition: color var(#{$css-var-prefix}transition);
+        transition:
+          color var(#{$css-var-prefix}transition),
+          margin-bottom var(#{$css-var-prefix}transition);
       }
 
       &:not([role]) {
@@ -85,6 +98,8 @@
 
     // Open
     &[open] {
+      block-size: auto;
+
       > summary {
         margin-bottom: var(#{$css-var-prefix}spacing);
 
