@@ -2265,6 +2265,7 @@ progress::-moz-progress-bar {
  * Tooltip ([data-tooltip])
  */
 [data-tooltip] {
+  display: inline-block;
   position: relative;
 }
 [data-tooltip]:not(a, button, input, [role=button]) {

@@ -2265,6 +2265,7 @@ main {
  * Tooltip ([data-tooltip])
  */
 .pico [data-tooltip] {
+  display: inline-block;
   position: relative;
 }
 .pico [data-tooltip]:not(a, button, input, [role=button]) {
