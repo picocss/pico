@@ -57,7 +57,7 @@
   #{$css-var-prefix}contrast-inverse: #{$black};
 
   // Box shadow
-  #{$css-var-prefix}box-shadow: functions.shadow(color.mix($black, $slate-950));
+  #{$css-var-prefix}box-shadow: 0 0 1.5rem -0.2rem #{rgba(color.mix($black, $slate-950), 0.25)};
 
   // Typography
   @if map.get($modules, "content/typography") {
