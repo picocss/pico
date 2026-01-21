@@ -34,9 +34,9 @@
     // Content
     > article {
       $close-selector: if(
-        $enable-classes,
-        ".close, :is(a, button)[rel=prev]",
-        ":is(a, button)[rel=prev]"
+        sass($enable-classes): ".close, :is(a, button)[rel=prev]"
+          ;
+          else: ":is(a, button)[rel=prev]",
       );
       width: 100%;
       max-height: calc(100vh - var(#{$css-var-prefix}spacing) * 2);
