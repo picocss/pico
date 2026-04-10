@@ -9,27 +9,35 @@
    * Color schemes
    */
 
-  // Light color scheme (Default)
-  // Can be forced with data-theme="light"
-  [data-theme="light"],
-  :root:not([data-theme="dark"]),
-  :host(:not([data-theme="dark"])) {
-    @include light.theme;
-  }
+  @if $enable-dark-mode {
+    // Light color scheme (Default)
+    // Can be forced with data-theme="light"
+    [data-theme="light"],
+    :root:not([data-theme="dark"]),
+    :host(:not([data-theme="dark"])) {
+      @include light.theme;
+    }
 
-  // Dark color scheme (Auto)
-  // Automatically enabled if user has Dark mode enabled
-  @media only screen and (prefers-color-scheme: dark) {
-    :root:not([data-theme]),
-    :host(:not([data-theme])) {
+    // Dark color scheme (Auto)
+    // Automatically enabled if user has Dark mode enabled
+    @media only screen and (prefers-color-scheme: dark) {
+      :root:not([data-theme]),
+      :host(:not([data-theme])) {
+        @include dark.theme;
+      }
+    }
+
+    // Dark color scheme (Forced)
+    // Enabled if forced with data-theme="dark"
+    [data-theme="dark"] {
       @include dark.theme;
     }
-  }
-
-  // Dark color scheme (Forced)
-  // Enabled if forced with data-theme="dark"
-  [data-theme="dark"] {
-    @include dark.theme;
+  } @else {
+    // Light-only mode
+    :root,
+    :host {
+      @include light.theme;
+    }
   }
 
   #{$parent-selector} progress,

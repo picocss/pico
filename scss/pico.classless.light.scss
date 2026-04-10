@@ -1,0 +1,6 @@
+// Pico classless light-only version
+@use "index" with (
+  $enable-semantic-container: true,
+  $enable-classes: false,
+  $enable-dark-mode: false
+);
