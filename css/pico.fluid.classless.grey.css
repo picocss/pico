@@ -1840,17 +1840,6 @@ article > footer {
 [role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
 [role=group] select:not(:first-child) {
   margin-left: 0;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-[role=search] > *:not(:last-child),
-[role=search] input:not([type=checkbox], [type=radio]):not(:last-child),
-[role=search] select:not(:last-child),
-[role=group] > *:not(:last-child),
-[role=group] input:not([type=checkbox], [type=radio]):not(:last-child),
-[role=group] select:not(:last-child) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
 }
 [role=search] > *:focus,
 [role=search] input:not([type=checkbox], [type=radio]):focus,
@@ -1859,6 +1848,29 @@ article > footer {
 [role=group] input:not([type=checkbox], [type=radio]):focus,
 [role=group] select:focus {
   z-index: 2;
+}
+[role=search] > :not([hidden], [type=hidden]) ~ :not([hidden], [type=hidden]),
+[role=group] > :not([hidden], [type=hidden]) ~ :not([hidden], [type=hidden]) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+@supports selector(:has(*)) {
+  [role=search] > :not([hidden], [type=hidden]):has(~ :not([hidden], [type=hidden])),
+  [role=group] > :not([hidden], [type=hidden]):has(~ :not([hidden], [type=hidden])) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+@supports not selector(:has(*)) {
+  [role=search] > *:not(:last-child),
+  [role=search] input:not([type=checkbox], [type=radio]):not(:last-child),
+  [role=search] select:not(:last-child),
+  [role=group] > *:not(:last-child),
+  [role=group] input:not([type=checkbox], [type=radio]):not(:last-child),
+  [role=group] select:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 [role=search] button:not(:first-child),
 [role=search] [type=submit]:not(:first-child),
@@ -1928,13 +1940,11 @@ article > footer {
   }
 }
 
-[role=search] > *:first-child {
-  border-top-left-radius: 5rem;
-  border-bottom-left-radius: 5rem;
-}
-[role=search] > *:last-child {
+[role=search] > :not([hidden], [type=hidden]) {
   border-top-right-radius: 5rem;
+  border-top-left-radius: 5rem;
   border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
 }
 
 /**

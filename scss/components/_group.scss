@@ -26,17 +26,36 @@
 
       &:not(:first-child) {
         margin-left: 0;
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-      }
-
-      &:not(:last-child) {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
       }
 
       &:focus {
         z-index: 2;
+      }
+    }
+
+    // Reset radius using visible siblings only, so a [hidden] or
+    // [type="hidden"] element doesn't shift which child is treated as the
+    // visual first/last child.
+    > :not([hidden], [type="hidden"]) ~ :not([hidden], [type="hidden"]) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    @supports selector(:has(*)) {
+      > :not([hidden], [type="hidden"]):has(~ :not([hidden], [type="hidden"])) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+
+    @supports not selector(:has(*)) {
+      > *,
+      input:not([type="checkbox"], [type="radio"]),
+      select {
+        &:not(:last-child) {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
       }
     }
 
@@ -105,16 +124,14 @@
   }
 
   #{$parent-selector} [role="search"] {
-    > * {
-      &:first-child {
-        border-top-left-radius: 5rem;
-        border-bottom-left-radius: 5rem;
-      }
-
-      &:last-child {
-        border-top-right-radius: 5rem;
-        border-bottom-right-radius: 5rem;
-      }
+    // Apply the pill radius to every visible child by default; the shared
+    // rules above (ignoring [hidden] / [type="hidden"]) then strip it from
+    // the inner sides, leaving it only on the visual first/last child.
+    > :not([hidden], [type="hidden"]) {
+      border-top-right-radius: 5rem;
+      border-top-left-radius: 5rem;
+      border-bottom-right-radius: 5rem;
+      border-bottom-left-radius: 5rem;
     }
   }
 }

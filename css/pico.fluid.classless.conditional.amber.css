@@ -1840,17 +1840,6 @@ main {
 .pico [role=group] input:not([type=checkbox], [type=radio]):not(:first-child),
 .pico [role=group] select:not(:first-child) {
   margin-left: 0;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.pico [role=search] > *:not(:last-child),
-.pico [role=search] input:not([type=checkbox], [type=radio]):not(:last-child),
-.pico [role=search] select:not(:last-child),
-.pico [role=group] > *:not(:last-child),
-.pico [role=group] input:not([type=checkbox], [type=radio]):not(:last-child),
-.pico [role=group] select:not(:last-child) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
 }
 .pico [role=search] > *:focus,
 .pico [role=search] input:not([type=checkbox], [type=radio]):focus,
@@ -1859,6 +1848,29 @@ main {
 .pico [role=group] input:not([type=checkbox], [type=radio]):focus,
 .pico [role=group] select:focus {
   z-index: 2;
+}
+.pico [role=search] > :not([hidden], [type=hidden]) ~ :not([hidden], [type=hidden]),
+.pico [role=group] > :not([hidden], [type=hidden]) ~ :not([hidden], [type=hidden]) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+@supports selector(:has(*)) {
+  .pico [role=search] > :not([hidden], [type=hidden]):has(~ :not([hidden], [type=hidden])),
+  .pico [role=group] > :not([hidden], [type=hidden]):has(~ :not([hidden], [type=hidden])) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+@supports not selector(:has(*)) {
+  .pico [role=search] > *:not(:last-child),
+  .pico [role=search] input:not([type=checkbox], [type=radio]):not(:last-child),
+  .pico [role=search] select:not(:last-child),
+  .pico [role=group] > *:not(:last-child),
+  .pico [role=group] input:not([type=checkbox], [type=radio]):not(:last-child),
+  .pico [role=group] select:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 .pico [role=search] button:not(:first-child),
 .pico [role=search] [type=submit]:not(:first-child),
@@ -1928,13 +1940,11 @@ main {
   }
 }
 
-.pico [role=search] > *:first-child {
-  border-top-left-radius: 5rem;
-  border-bottom-left-radius: 5rem;
-}
-.pico [role=search] > *:last-child {
+.pico [role=search] > :not([hidden], [type=hidden]) {
   border-top-right-radius: 5rem;
+  border-top-left-radius: 5rem;
   border-bottom-right-radius: 5rem;
+  border-bottom-left-radius: 5rem;
 }
 
 /**
