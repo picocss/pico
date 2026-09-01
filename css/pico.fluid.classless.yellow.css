@@ -819,6 +819,8 @@ button,
 [type=reset],
 [type=button] {
   -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
 }
 
 button,
@@ -1114,11 +1116,14 @@ textarea {
 
 [type=search] {
   -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
   outline-offset: -2px;
 }
 
 [type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
+  appearance: none;
 }
 
 ::-webkit-file-upload-button {
@@ -1626,6 +1631,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
 }
 [type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
+  appearance: none;
   width: 1.25rem;
   height: 1.25rem;
   margin-top: -0.4375rem;
@@ -1638,6 +1644,8 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
 }
 [type=range]::-moz-range-thumb {
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 1.25rem;
   height: 1.25rem;
   margin-top: -0.4375rem;
@@ -1650,6 +1658,7 @@ input:not([type=checkbox], [type=radio], [type=range], [type=file])[type=time] {
 }
 [type=range]::-ms-thumb {
   -webkit-appearance: none;
+  appearance: none;
   width: 1.25rem;
   height: 1.25rem;
   margin-top: -0.4375rem;

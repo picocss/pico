@@ -27,6 +27,7 @@
   #{$parent-selector} [type="reset"],
   #{$parent-selector} [type="button"] {
     -webkit-appearance: button;
+    appearance: button;
   }
 
   // Pico

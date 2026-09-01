@@ -68,12 +68,14 @@
   // 2. Correct the outline style in Safari
   #{$parent-selector} [type="search"] {
     -webkit-appearance: textfield; // 1
+    appearance: textfield; // 1
     outline-offset: -2px; // 2
   }
 
   // Remove the inner padding in Chrome and Safari on macOS
   #{$parent-selector} [type="search"]::-webkit-search-decoration {
     -webkit-appearance: none;
+    appearance: none;
   }
 
   // 1. Correct the inability to style clickable types in iOS and Safari
