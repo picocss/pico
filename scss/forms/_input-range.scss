@@ -23,6 +23,7 @@ $border-thumb: 2px;
 // Slider Thumb
 @mixin slider-thumb {
   -webkit-appearance: none;
+  appearance: none;
   width: $height-thumb;
   height: $height-thumb;
   margin-top: #{(-($height-thumb * 0.5) + ($height-track * 0.5))};
