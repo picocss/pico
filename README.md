@@ -231,8 +231,8 @@ Pico CSS is designed and tested for the latest stable Chrome, Firefox, Edge, and
 
 ## Contributing
 
-If you are interested in contributing to Pico CSS, please read our [contributing guidelines](https://github.com/picocss/pico/blob/master/.github/CONTRIBUTING.md).
+If you are interested in contributing to Pico CSS, please read our [contributing guidelines](https://github.com/picocss/pico/blob/main/.github/CONTRIBUTING.md).
 
 ## Copyright and license
 
-Licensed under the [MIT License](https://github.com/picocss/pico/blob/master/LICENSE.md).
+Licensed under the [MIT License](https://github.com/picocss/pico/blob/main/LICENSE.md).
