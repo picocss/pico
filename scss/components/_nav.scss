@@ -84,7 +84,8 @@
       align-items: center;
       justify-content: start;
 
-      & ul li {
+      & ul li,
+      & ol li {
         &:not(:first-child) {
           margin-inline-start: var(#{$css-var-prefix}nav-link-spacing-horizontal);
         }
@@ -147,7 +148,8 @@
   [dir="rtl"] {
     #{$parent-selector} nav {
       &[aria-label="breadcrumb"] {
-        & ul li {
+        & ul li,
+        & ol li {
           &:not(:last-child) {
             ::after {
               content: "\\";
