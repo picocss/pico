@@ -50,10 +50,10 @@
 
   // Striped
   @if enable-classes {
-    #{$parent-selector} table {
-      &.striped {
-        tbody tr:nth-child(odd) th,
-        tbody tr:nth-child(odd) td {
+    #{$parent-selector} table.striped {
+      tbody tr:is(:nth-child(odd of :not([hidden]))) {
+        th,
+        td {
           background-color: var(#{$css-var-prefix}table-row-stripped-background-color);
         }
       }
