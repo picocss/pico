@@ -38,6 +38,10 @@ $enable-transitions: true !default;
 // Enable overriding with !important
 $enable-important: true !default;
 
+// Enable dark mode
+// Light-only mode if disabled
+$enable-dark-mode: true !default;
+
 // Optional parent selector
 // If defined, all HTML tags are wrapped with this selector
 // :root is not wrapped
