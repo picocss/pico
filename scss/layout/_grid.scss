@@ -1,10 +1,19 @@
 @use "sass:map";
 @use "../settings" as *;
 
+// Mixin for generating column span classes
+@mixin generate-cols($prefix) {
+  @for $i from 1 through 12 {
+    .#{$prefix}-#{$i} {
+      grid-column: span #{$i};
+    }
+  }
+}
+
 @if map.get($modules, "layout/grid") and $enable-classes {
   /**
    * Grid
-   * Minimal grid system with auto-layout columns
+   * Minimal grid system with auto-layout and explicit column spans
    */
 
   .grid {
@@ -13,6 +22,7 @@
     display: grid;
     grid-template-columns: 1fr;
 
+    // Auto-fit columns on medium+ screens when no explicit spans
     @if map.get($breakpoints, "md") {
       @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
         grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
@@ -21,6 +31,22 @@
 
     & > * {
       min-width: 0; // HACK for children in overflow
+    }
+  }
+
+  // 12-column explicit grid mode
+  // Applied when any col-* class is present
+  .grid:has(> [class*="col-"]) {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  // Explicit column spans (mobile-first)
+  @include generate-cols("col");
+
+  // Medium breakpoint (tablet and up)
+  @if map.get($breakpoints, "md") {
+    @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
+      @include generate-cols("col-md");
     }
   }
 }
