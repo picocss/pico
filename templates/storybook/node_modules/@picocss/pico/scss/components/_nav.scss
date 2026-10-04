@@ -1,0 +1,160 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "components/nav") {
+  /**
+   * Nav
+   */
+
+  // Reboot based on :
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+
+  // Prevent VoiceOver from ignoring list semantics in Safari (opinionated)
+  :where(nav li)::before {
+    float: left;
+    content: "\200B";
+  }
+
+  // Pico
+  // ––––––––––––––––––––
+
+  #{$parent-selector} nav,
+  #{$parent-selector} nav ul {
+    display: flex;
+  }
+
+  #{$parent-selector} nav {
+    justify-content: space-between;
+    overflow: visible;
+
+    ol,
+    ul {
+      align-items: center;
+      margin-bottom: 0;
+      padding: 0;
+      list-style: none;
+
+      &:first-of-type {
+        margin-left: calc(var(#{$css-var-prefix}nav-element-spacing-horizontal) * -1);
+      }
+      &:last-of-type {
+        margin-right: calc(var(#{$css-var-prefix}nav-element-spacing-horizontal) * -1);
+      }
+    }
+
+    li {
+      display: inline-block;
+      margin: 0;
+      padding: var(#{$css-var-prefix}nav-element-spacing-vertical)
+        var(#{$css-var-prefix}nav-element-spacing-horizontal);
+
+      :where(a, [role="link"]) {
+        display: inline-block;
+        margin: calc(var(#{$css-var-prefix}nav-link-spacing-vertical) * -1)
+          calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * -1);
+        padding: var(#{$css-var-prefix}nav-link-spacing-vertical)
+          var(#{$css-var-prefix}nav-link-spacing-horizontal);
+        border-radius: var(#{$css-var-prefix}border-radius);
+
+        &:not(:hover) {
+          text-decoration: none;
+        }
+      }
+
+      // Minimal support for buttons and forms elements
+      button,
+      [role="button"],
+      [type="button"],
+      input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
+      select {
+        height: auto;
+        margin-right: inherit;
+        margin-bottom: 0;
+        margin-left: inherit;
+        padding: calc(
+            var(#{$css-var-prefix}nav-link-spacing-vertical) -
+              (var(#{$css-var-prefix}border-width) * 2)
+          )
+          var(#{$css-var-prefix}nav-link-spacing-horizontal);
+      }
+    }
+
+    // Breadcrumb
+    &[aria-label="breadcrumb"] {
+      align-items: center;
+      justify-content: start;
+
+      & ul li {
+        &:not(:first-child) {
+          margin-inline-start: var(#{$css-var-prefix}nav-link-spacing-horizontal);
+        }
+
+        a {
+          margin: calc(var(#{$css-var-prefix}nav-link-spacing-vertical) * -1) 0;
+          margin-inline-start: calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * -1);
+        }
+
+        &:not(:last-child) {
+          &::after {
+            display: inline-block;
+            position: absolute;
+            width: calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * 4);
+            margin: 0 calc(var(#{$css-var-prefix}nav-link-spacing-horizontal) * -1);
+            content: var(#{$css-var-prefix}nav-breadcrumb-divider);
+            color: var(#{$css-var-prefix}muted-color);
+            text-align: center;
+            text-decoration: none;
+            white-space: nowrap;
+          }
+        }
+      }
+
+      // Minimal support for aria-current
+      & a[aria-current]:not([aria-current="false"]) {
+        background-color: transparent;
+        color: inherit;
+        text-decoration: none;
+        pointer-events: none;
+      }
+    }
+  }
+
+  // Vertical Nav
+  #{$parent-selector} aside {
+    nav,
+    ol,
+    ul,
+    li {
+      display: block;
+    }
+
+    li {
+      padding: calc(var(#{$css-var-prefix}nav-element-spacing-vertical) * 0.5)
+        var(#{$css-var-prefix}nav-element-spacing-horizontal);
+
+      a {
+        display: block;
+      }
+
+      // Minimal support for links as buttons
+      [role="button"] {
+        margin: inherit;
+      }
+    }
+  }
+
+  // Breadcrumb RTL
+  [dir="rtl"] {
+    #{$parent-selector} nav {
+      &[aria-label="breadcrumb"] {
+        & ul li {
+          &:not(:last-child) {
+            ::after {
+              content: "\\";
+            }
+          }
+        }
+      }
+    }
+  }
+}

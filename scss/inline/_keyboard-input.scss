@@ -1,0 +1,43 @@
+/** SASS for the <kbd> HTML element
+ *
+ * Found in scss/content/_code.scss#18: `#{\$parent-selector} kbd,`
+ * Found in scss/content/_code.scss#41: `#{\$parent-selector} kbd,`
+ * Found in scss/content/_code.scss#51: `#{\$parent-selector} kbd,`
+ * Found in scss/content/_code.scss#71: `// kbd`
+ * Found in scss/content/_code.scss#72: `#{\$parent-selector} kbd {`
+ * Found in scss/content/_code.scss#73: `background-color: var(#{\$css-var-prefix}code-kbd-background-color);`
+ * Found in scss/content/_code.scss#74: `color: var(#{\$css-var-prefix}code-kbd-color);`
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/code") {
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // 1. Correct the inheritance and scaling of font size in all browsers
+  // 2. Correct the odd `em` font sizing in all browsers
+  #{$parent-selector} kbd {
+    display: inline-block;
+    padding: 0.375rem;
+    border-radius: var(#{$css-var-prefix}border-radius);
+    background: var(#{$css-var-prefix}code-background-color);
+    background-color: var(#{$css-var-prefix}code-kbd-background-color);
+    color: var(#{$css-var-prefix}code-color);
+    color: var(#{$css-var-prefix}code-kbd-color);
+    font-weight: var(#{$css-var-prefix}font-weight);
+    font-size: 0.875em; // 2
+    line-height: initial;
+    font-family: var(#{$css-var-prefix}font-family); // 1
+    vertical-align: baseline;
+  }
+
+  // Pico
+  // ––––––––––––––––––––
+
+  // kbd
+}

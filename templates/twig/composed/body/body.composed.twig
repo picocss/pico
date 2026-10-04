@@ -1,0 +1,28 @@
+{#
+  This file is auto-generated.
+
+  Body - Composed Example
+  The body element represents the content of an HTML document. All the contents such as text, images, headings, links, tables, etc. are placed between the body tags.
+
+  CONTENT MODEL:
+  - Can be a child of: HTML
+  - Can contain: Anchor, Abbreviation, Address, Area, Article, Aside, Audio, Bold, BidirectionalIsolation, BidirectionalOverride, Blockquote, BreakElement, Button, Canvas, Citation, Code, Data, DataList, DeletedText, Details, Definition, Dialog, Division, DefinitionList, Emphasis, Embed, Fieldset, Figure, Footer, Form, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, Header, HorizontalRule, Italic, InlineFrame, Image, Input, InsertedText, KeyboardInput, Label, Main, Map, MarkedText, Meter, Navigation, NoScript, ObjectElement, OrderedList, Output, Paragraph, Picture, PreformattedText, Progress, Quotation, Ruby, Strikethrough, SampleOutput, Script, Section, Select, Small, Span, Strong, Subscript, Superscript, Table, Template, Textarea, Time, Underline, UnorderedList, Variable, Video, WordBreakOpportunity
+  - UNIQUE: Only one allowed per document
+  - UNIQUE PER PARENT: Only one allowed per parent element
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block body_composed %}
+{% embed '../block/body.twig' with {
+  class: 'example'
+} %}
+  {% block content %}
+  {% include '../inline/a.twig' with {'content': 'Example content'} %}
+  {% include '../inline/a.twig' with {'content': 'Example content'} %}
+  {% include '../inline/abbr.twig' with {'content': 'Example content'} %}
+  {% include '../inline/abbr.twig' with {'content': 'Example content'} %}
+  {% endblock %}
+{% endembed %}
+{% endblock %}

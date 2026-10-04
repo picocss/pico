@@ -1,0 +1,28 @@
+/** SASS for the <legend> HTML element
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "forms/basics") {
+  // 1. Correct the text wrapping in Edge and IE
+  // 2. Correct the color inheritance from `fieldset` elements in IE
+  // 3. Remove the padding so developers are not caught out when they zero out
+  // `fieldset` elements in all browsers
+  #{$parent-selector} legend {
+    max-width: 100%; // 1
+    padding: 0; // 3
+    color: inherit; // 2
+    white-space: normal; // 1
+  }
+
+  // Label & legend
+  #{$parent-selector} fieldset legend {
+    display: block;
+    margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.375);
+    margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.5);
+    color: var(#{$css-var-prefix}color);
+    font-weight: var(#{$css-var-prefix}form-label-font-weight, var(#{$css-var-prefix}font-weight));
+  }
+}

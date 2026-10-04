@@ -1,0 +1,28 @@
+{#
+  This file is auto-generated.
+
+  Meta - The meta element provides metadata about the HTML document. Metadata will not be displayed on the page, but is machine-readable. Mainly used in the head but allowed inside the body if itemprop attribute is set.
+
+  Symfony UX Twig Component (Anonymous)
+  @see https://symfony.com/bundles/ux-twig-component/current/index.html
+
+  Usage:
+    <twig:Meta class="custom-class" httpEquiv="content-language" />
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigComponentsGenerator.php
+#}
+{% apply spaceless %}
+<meta
+  {% if this.charset is defined and this.charset is not null %}charset="{{ this.charset }}"{% endif %}
+  {% if this.class is defined and this.class is not null %}class="{{ this.class }}"{% endif %}
+  {% if this.content is defined and this.content is not null %}content="{{ this.content }}"{% endif %}
+  {% if this.hidden is defined and this.hidden is not null %}hidden="{{ this.hidden }}"{% endif %}
+  {% if this.httpEquiv is not null %}http-equiv="{{ this.httpEquiv.value }}"{% endif %}
+  {% if this.id is defined and this.id is not null %}id="{{ this.id }}"{% endif %}
+  {% if this.lang is defined and this.lang is not null %}lang="{{ this.lang }}"{% endif %}
+  {% if this.name is defined and this.name is not null %}name="{{ this.name }}"{% endif %}
+  {% if this.scheme is defined and this.scheme is not null %}scheme="{{ this.scheme }}"{% endif %}
+  {% if this.title is defined and this.title is not null %}title="{{ this.title }}"{% endif %}
+/>

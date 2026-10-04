@@ -1,0 +1,67 @@
+{
+  "name": "@picocss/pico",
+  "version": "2.1.1",
+  "description": "Minimal CSS Framework for semantic HTML",
+  "author": "Lucas Larroche",
+  "main": "css/pico.min.css",
+  "homepage": "https://picocss.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/picocss/pico.git"
+  },
+  "publishConfig": {
+    "tag": "next"
+  },
+  "keywords": [
+    "css",
+    "css-framework",
+    "dark-mode",
+    "dark-theme",
+    "lightweight",
+    "minimal",
+    "minimalist",
+    "minimalistic",
+    "native-html",
+    "scss-framework",
+    "semantic"
+  ],
+  "bugs": {
+    "url": "https://github.com/picocss/pico/issues"
+  },
+  "scripts": {
+    "✨": "run-s build",
+    "build": "run-s start lint \"build:*\" done --silent",
+    "dev": "nodemon -q --watch scss/ --ext scss --exec 'run-s build'",
+    "lint": "run-s \"lint:*\" --silent",
+    "lint:prettier": "prettier --write --log-level silent 'scss/**/*.scss'",
+    "lint:sort-scss": "postcss --config scss ./scss/**/*.scss --replace",
+    "build:css": "sass --no-source-map --style expanded --no-error-css scss/:css/",
+    "build:themes": "node scripts/build-themes",
+    "build:autoprefix": "postcss --config css --replace css/*.css !css/*.min.css",
+    "build:minify": "cleancss -O1 --with-rebase --batch --batch-suffix .min css/*.css !css/*.min.css",
+    "prelint": "echo '[@picocss/pico] ✨ Lint'",
+    "prebuild:css": "echo '[@picocss/pico] ✨ Compile'",
+    "prebuild:themes": "echo '[@picocss/pico] ✨ Compile themes'",
+    "prebuild:autoprefix": "echo '[@picocss/pico] ✨ Autoprefix'",
+    "prebuild:minify": "echo '[@picocss/pico] ✨ Minify'",
+    "start": "echo '\\033[96m[@picocss/pico] ✨ Start\\033[0m'",
+    "done": "echo '\\033[32m[@picocss/pico] ✨ Done\\033[0m'"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "caniuse-lite": "1.0.30001704",
+    "clean-css-cli": "^5.6.3",
+    "css-declaration-sorter": "^7.2.0",
+    "nodemon": "^3.1.9",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "postcss-scss": "^4.0.9",
+    "prettier": "^3.5.3",
+    "sass": "^1.85.1"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}

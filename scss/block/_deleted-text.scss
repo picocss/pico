@@ -1,0 +1,14 @@
+/** SASS for the <del> HTML element
+ *
+ * Add your styles here
+ */
+
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/typography") or map.get($elements, "block/deleted-text") {
+  // del
+  #{$parent-selector} del {
+    color: var(#{$css-var-prefix}del-color);
+  }
+}

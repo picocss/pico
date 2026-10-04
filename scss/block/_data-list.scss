@@ -1,0 +1,9 @@
+/** SASS for the <datalist> HTML element
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($elements, "block/data-list") {
+}

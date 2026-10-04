@@ -1,0 +1,17 @@
+/** SASS for the <article> HTML element
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "components/card") or map.get($elements, "block/article") {
+  #{$parent-selector} article {
+    margin-bottom: var(#{$css-var-prefix}block-spacing-vertical);
+    padding: var(#{$css-var-prefix}block-spacing-vertical)
+      var(#{$css-var-prefix}block-spacing-horizontal);
+    border-radius: var(#{$css-var-prefix}border-radius);
+    background: var(#{$css-var-prefix}card-background-color);
+    box-shadow: var(#{$css-var-prefix}card-box-shadow);
+  }
+}

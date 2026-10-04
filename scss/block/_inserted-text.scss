@@ -1,0 +1,13 @@
+/** SASS for the <ins> HTML element
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/typography") {
+  #{$parent-selector} ins {
+    color: var(#{$css-var-prefix}ins-color);
+    text-decoration: none;
+  }
+}

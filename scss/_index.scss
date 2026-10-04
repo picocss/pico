@@ -47,3 +47,8 @@
 // Utilities
 @use "utilities/accessibility"; // -ms-touch-action, aria-*
 @use "utilities/reduce-motion"; // prefers-reduced-motion
+
+// Inline & Block Level Elements
+@use "block/block";
+@use "inline/inline";
+@use "void/void";

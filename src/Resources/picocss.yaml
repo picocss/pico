@@ -1,0 +1,136 @@
+# Dark/Light Mode
+'/^(?!area|base|br|col|embed|head|hr|link|meta|noscript|output|param|script|style|source|track|title|wbr$)[a-z][a-z0-9]*$/':
+   attributes:
+    data-theme:
+      description: 'Choose between light and dark mode. Overrides the OS default if set.'
+      type: enum|string
+      choices:
+        - light
+        - dark
+    data-tooltip:
+      description: 'Give extra context and information by adding tooltips.'
+      type: string
+    data-placement:
+      description: 'Choose the position of a tooltip. Depends on data-tooltip attribute.'
+      type: enum|string
+      choices:
+        - top
+        - left
+        - right
+        - bottom
+      defaultValue: top
+
+# Role Button
+'/^(a|button|div|span)$/':
+  attributes:
+    role:
+      description: 'The role attribute is used to define the purpose of an element.'
+      type: enum
+      choices:
+        - button
+    class:
+      description: 'The class attribute is used to define equal styles for multiple elements.'
+      required: true
+      defaultValue: ''
+      type: enum|string
+      choices:
+        - secondary
+        - contrast
+        - outline
+        - secondary outline
+        - contrast outline
+
+# Role group
+'/^(div|fieldset)$/':
+   attributes:
+    role:
+      description: 'The role attribute is used to define the purpose of an element.'
+      type: enum
+      choices:
+        - group
+
+# Role Search
+input:
+   attributes:
+    role:
+      description: 'The role attribute is used to define the purpose of an element.'
+      type: enum
+      choices:
+        - search
+
+# aria current for navigational and interactive elements (opinionated - Pico only uses true/false)
+'/^(a|button|li|nav|input)$/':
+  attributes:
+    aria-current:
+      description: 'Indicates the current item within a container or set of related elements.'
+      type: enum
+      defaultValue: 'false'
+      choices:
+        - 'false'
+        - 'page'
+        - 'step'
+        - 'location'
+        - 'date'
+        - 'time'
+        - 'true'
+
+# all non-void elements, except form and html
+'/^(?!area|base|body|br|col|embed|head|hr|img|input|link|meta|meter|noscript|output|param|progress|script|source|track|wbr|script|select|style|textarea|title|html|form$)[a-z][a-z0-9]*$/':
+  attributes:
+    aria-busy:
+      description: 'The aria-busy attribute is used to indicate whether an element is currently busy or not.'
+      type: enum
+      defaultValue: 'false'
+      choices:
+        - 'true'
+        - 'false'
+
+'/^(?!a|area|base|body|button|br|col|embed|head|hr|input|link|meta|meter|noscript|output|param|progress|script|source|track|wbr|script|select|style|textarea|title|html|form$)[a-z][a-z0-9]*$/':
+  attributes:
+    aria-hidden:
+      description: 'Indicates whether the element is exposed to an accessibility API. Use with caution on interactive elements. Set to true only on decorative elements such as icons, or when nav isnt visible'
+      type: enum
+      defaultValue: 'false'
+      choices:
+        - 'false'
+        - 'true'
+
+# all non-void elements, but interactive elements
+'/^(?!area|base|body|br|col|embed|head|hr|img|link|meta|meter|noscript|output|param|progress|script|source|track|wbr|script|style|title|html|form$)[a-z][a-z0-9]*$/':
+  attributes:
+    aria-controls:
+      description: 'Identifies the element(s) whose contents or presence are controlled by this element. Value is a list of IDs separated by a space'
+      type: string
+
+# interactive elements
+'/^(input|select|textarea|fieldset|form)$/':
+  attributes:
+    aria-invalid:
+      description: 'Indicates that the value entered does not conform to the expected format.'
+      type: enum
+      defaultValue: 'false'
+      choices:
+        - 'false'
+        - 'true'
+        - 'grammar'
+        - 'spelling'
+
+# interactive elements plus landmark and container elements
+'/^(a|button|input|select|textarea|nav|main|aside|section|header|footer|form|div|iframe|img|svg|details|summary)$/':
+  attributes:
+    aria-label:
+      description: 'Defines a string value that labels the current element for assistive technologies.'
+      type: enum|string
+      choices:
+        - 'breadcrumb'
+
+# interactive elements plus labelable elements
+'/^(input|select|textarea|button|fieldset|a|label)$/':
+  attributes:
+    aria-disabled:
+      description: 'Indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.'
+      type: enum
+      defaultValue: 'false'
+      choices:
+        - 'false'
+        - 'true'

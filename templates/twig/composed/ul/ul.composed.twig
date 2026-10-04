@@ -1,0 +1,24 @@
+{#
+  This file is auto-generated.
+
+  Ul - Composed Example
+  The ul element represents an unordered list of items, namely a collection of items that do not have a numerical ordering, and their order in the list is meaningless.
+
+  CONTENT MODEL:
+  - Can be a child of: Article, Aside, Body, DefinitionDescription, Details, Dialog, Division, Footer, Header, ListItem, Main, Paragraph, Section, Slot, Template
+  - Can contain: ListItem
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block ul_composed %}
+{% embed '../block/ul.twig' with {
+  class: 'example'
+} %}
+  {% block content %}
+  {% include '../block/li.twig' with {'content': 'Item 1'} %}
+  {% include '../block/li.twig' with {'content': 'Item 2'} %}
+  {% endblock %}
+{% endembed %}
+{% endblock %}

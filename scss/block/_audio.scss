@@ -1,0 +1,24 @@
+/** SASS for the <audio> HTML element
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/embedded") or map.get($elements, "block/audio") {
+  // Change the alignment on media elements in all browsers (opinionated)
+  #{$parent-selector} :where(audio, canvas, iframe, img, svg, video) {
+    vertical-align: middle;
+  }
+
+  // Add the correct display in IE 9-
+  #{$parent-selector} audio {
+    display: inline-block;
+  }
+
+  // Add the correct display in iOS 4-7
+  #{$parent-selector} audio:not([controls]) {
+    display: none;
+    height: 0;
+  }
+}

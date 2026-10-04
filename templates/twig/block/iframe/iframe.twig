@@ -1,0 +1,55 @@
+{#
+  This file is auto-generated.
+
+  Iframe - The iframe element represents a nested browsing context, effectively embedding another HTML page into the current page.
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block iframe %}
+{% set ariaAtomic_choices = {'false': true, 'true': true} %}
+{% set ariaBusy_choices = {'true': true, 'false': true} %}
+{% set ariaHidden_choices = {'false': true, 'true': true} %}
+{% set ariaLive_choices = {'off': true, 'polite': true, 'assertive': true} %}
+{% set ariaRelevant_choices = {'additions': true, 'removals': true, 'text': true, 'all': true, 'additions text': true} %}
+{% set dir_choices = {'ltr': true, 'rtl': true, 'auto': true} %}
+{% set popover_choices = {'auto': true, 'hint': true, 'manual': true} %}
+{% set referrerpolicy_choices = {'no-referrer': true, 'no-referrer-when-downgrade': true, 'origin': true, 'origin-when-cross-origin': true, 'same-origin': true, 'strict-origin': true, 'strict-origin-when-cross-origin': true, 'unsafe-url': true} %}
+{% set role_choices = {'alert': true, 'application': true, 'article': true, 'banner': true, 'button': true, 'checkbox': true, 'complementary': true, 'contentinfo': true, 'dialog': true, 'form': true, 'grid': true, 'group': true, 'heading': true, 'img': true, 'link': true, 'list': true, 'listbox': true, 'listitem': true, 'main': true, 'menu': true, 'menubar': true, 'menuitem': true, 'navigation': true, 'none': true, 'presentation': true, 'radio': true, 'region': true, 'search': true, 'status': true, 'tab': true, 'tablist': true, 'tabpanel': true, 'textbox': true, 'toolbar': true, 'tooltip': true} %}
+<iframe
+  {% if allowfullscreen is defined and allowfullscreen|length > 0 %}allowfullscreen="{{ allowfullscreen }}"{% endif %}
+  {% if ariaAtomic is defined and ariaAtomic|length > 0 and ariaAtomic_choices[ariaAtomic] is defined %}aria-atomic="{{ ariaAtomic }}"{% endif %}
+  {% if ariaBusy is defined and ariaBusy|length > 0 and ariaBusy_choices[ariaBusy] is defined %}aria-busy="{{ ariaBusy }}"{% endif %}
+  {% if ariaControls is defined and ariaControls|length > 0 %}aria-controls="{{ ariaControls }}"{% endif %}
+  {% if ariaDescribedby is defined and ariaDescribedby|length > 0 %}aria-describedby="{{ ariaDescribedby }}"{% endif %}
+  {% if ariaDetails is defined and ariaDetails|length > 0 %}aria-details="{{ ariaDetails }}"{% endif %}
+  {% if ariaHidden is defined and ariaHidden|length > 0 and ariaHidden_choices[ariaHidden] is defined %}aria-hidden="{{ ariaHidden }}"{% endif %}
+  {% if ariaKeyshortcuts is defined and ariaKeyshortcuts|length > 0 %}aria-keyshortcuts="{{ ariaKeyshortcuts }}"{% endif %}
+  {% if ariaLabel is defined and ariaLabel|length > 0 %}aria-label="{{ ariaLabel }}"{% endif %}
+  {% if ariaLabelledby is defined and ariaLabelledby|length > 0 %}aria-labelledby="{{ ariaLabelledby }}"{% endif %}
+  {% if ariaLive is defined and ariaLive|length > 0 and ariaLive_choices[ariaLive] is defined %}aria-live="{{ ariaLive }}"{% endif %}
+  {% if ariaRelevant is defined and ariaRelevant|length > 0 and ariaRelevant_choices[ariaRelevant] is defined %}aria-relevant="{{ ariaRelevant }}"{% endif %}
+  {% if ariaRoledescription is defined and ariaRoledescription|length > 0 %}aria-roledescription="{{ ariaRoledescription }}"{% endif %}
+  {% if class is defined and class|length > 0 %}class="{{ class }}"{% endif %}
+  {% if dir is defined and dir|length > 0 and dir_choices[dir] is defined %}dir="{{ dir }}"{% endif %}
+  {% if height is defined and height|length > 0 %}height="{{ height }}"{% endif %}
+  {% if hidden is defined and hidden|length > 0 %}hidden="{{ hidden }}"{% endif %}
+  {% if id is defined and id|length > 0 %}id="{{ id }}"{% endif %}
+  {% if lang is defined and lang|length > 0 %}lang="{{ lang }}"{% endif %}
+  {% if name is defined and name|length > 0 %}name="{{ name }}"{% endif %}
+  {% if popover is defined and popover|length > 0 and popover_choices[popover] is defined %}popover="{{ popover }}"{% endif %}
+  {% if referrerpolicy is defined and referrerpolicy|length > 0 and referrerpolicy_choices[referrerpolicy] is defined %}referrerpolicy="{{ referrerpolicy }}"{% endif %}
+  {% if role is defined and role|length > 0 and role_choices[role] is defined %}role="{{ role }}"{% endif %}
+  {% if attribute(_context, 'sandbox') is defined and attribute(_context, 'sandbox')|length > 0 %}sandbox="{{ attribute(_context, 'sandbox') }}"{% endif %}
+  {% if seamless is defined and seamless|length > 0 %}seamless="{{ seamless }}"{% endif %}
+  {% if slot is defined and slot|length > 0 %}slot="{{ slot }}"{% endif %}
+  {% if src is defined and src|length > 0 %}src="{{ src }}"{% endif %}
+  {% if srcdoc is defined and srcdoc|length > 0 %}srcdoc="{{ srcdoc }}"{% endif %}
+  {% if style is defined and style|length > 0 %}style="{{ style }}"{% endif %}
+  {% if tabindex is defined and tabindex|length > 0 %}tabindex="{{ tabindex }}"{% endif %}
+  {% if title is defined and title|length > 0 %}title="{{ title }}"{% endif %}
+  {% if width is defined and width|length > 0 %}width="{{ width }}"{% endif %}>
+  {% block content %}{{- content|raw -}}{% endblock %}
+</iframe>
+{% endblock %}

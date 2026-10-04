@@ -1,0 +1,51 @@
+/** SASS for the <pre> HTML element
+ *
+ * * Found in scss/content/_code.scss#31: `#{\$parent-selector} pre {`
+ * Found in scss/content/_code.scss#39: `#{\$parent-selector} pre,`
+ * Found in scss/content/_code.scss#57: `#{\$parent-selector} pre {`
+ * Found in scss/content/_typography.scss#43: `#{\$parent-selector} pre,`
+ * Found in scss/content/_typography.scss#90: `:where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) {`
+ *
+ * Add your styles here
+ */
+
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/typography") {
+  #{$parent-selector} pre {
+    margin-top: 0;
+    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
+    color: var(#{$css-var-prefix}color);
+    font-style: normal;
+    font-weight: var(#{$css-var-prefix}font-weight);
+  }
+}
+
+@if map.get($modules, "content/code") {
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // 1. Correct the inheritance and scaling of font size in all browsers
+  // 2. Correct the odd `em` font sizing in all browsers
+  #{$parent-selector} pre {
+    font-size: 0.875em; // 2
+    font-family: var(#{$css-var-prefix}font-family); // 1
+    // Prevent overflow of the container in all browsers (opinionated)
+    -ms-overflow-style: scrollbar;
+    display: block;
+    margin-bottom: var(#{$css-var-prefix}spacing);
+    overflow: auto;
+    overflow-x: auto;
+    border-radius: var(#{$css-var-prefix}border-radius);
+    background: var(#{$css-var-prefix}code-background-color);
+    color: var(#{$css-var-prefix}code-color);
+    font-weight: var(#{$css-var-prefix}font-weight);
+    line-height: initial;
+  }
+
+  // Pico
+  // ––––––––––––––––––––
+}

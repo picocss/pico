@@ -1,0 +1,13 @@
+/** SASS for the <b> HTML element
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/typography") {
+  // Add the correct font weight in Chrome, Edge, and Safari
+  #{$parent-selector} b {
+    font-weight: bolder;
+  }
+}

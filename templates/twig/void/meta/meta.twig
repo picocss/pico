@@ -1,0 +1,23 @@
+{#
+  This file is auto-generated.
+
+  Meta - The meta element provides metadata about the HTML document. Metadata will not be displayed on the page, but is machine-readable. Mainly used in the head but allowed inside the body if itemprop attribute is set.
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block meta %}
+{% set httpEquiv_choices = {'content-language': true, 'content-type': true, 'default-style': true, 'refresh': true} %}
+<meta
+  {% if charset is defined and charset|length > 0 %}charset="{{ charset }}"{% endif %}
+  {% if class is defined and class|length > 0 %}class="{{ class }}"{% endif %}
+  {% if content is defined and content|length > 0 %}content="{{ content }}"{% endif %}
+  {% if hidden is defined and hidden|length > 0 %}hidden="{{ hidden }}"{% endif %}
+  {% if httpEquiv is defined and httpEquiv|length > 0 and httpEquiv_choices[httpEquiv] is defined %}http-equiv="{{ httpEquiv }}"{% endif %}
+  {% if id is defined and id|length > 0 %}id="{{ id }}"{% endif %}
+  {% if lang is defined and lang|length > 0 %}lang="{{ lang }}"{% endif %}
+  {% if name is defined and name|length > 0 %}name="{{ name }}"{% endif %}
+  {% if scheme is defined and scheme|length > 0 %}scheme="{{ scheme }}"{% endif %}
+  {% if title is defined and title|length > 0 %}title="{{ title }}"{% endif %}/>
+{% endblock %}

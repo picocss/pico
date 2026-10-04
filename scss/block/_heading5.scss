@@ -1,0 +1,29 @@
+/** SASS for the <h5> HTML element
+ *
+ * Add your styles here
+ */
+
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/typography") {
+  #{$parent-selector}
+    :where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) {
+    ~ :is(h1, h2, h3, h4, h5, h6) {
+      margin-top: var(#{$css-var-prefix}typography-spacing-top);
+    }
+  }
+
+  #{$parent-selector} h5 {
+    #{$css-var-prefix}color: var(#{$css-var-prefix}h5-color);
+    margin-top: 0;
+    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
+    color: var(#{$css-var-prefix}color);
+    font-weight: var(#{$css-var-prefix}font-weight);
+    font-size: var(#{$css-var-prefix}font-size);
+    line-height: var(#{$css-var-prefix}line-height);
+    font-family: var(#{$css-var-prefix}font-family);
+  }
+
+  // Headings
+}

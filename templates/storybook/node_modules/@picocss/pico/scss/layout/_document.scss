@@ -1,0 +1,53 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "layout/document") {
+  /**
+   * Document
+   * Content-box & Responsive typography
+   */
+
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // 1. Add border box sizing in all browsers (opinionated)
+  // 2. Backgrounds do not repeat by default (opinionated)
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box; // 1
+    background-repeat: no-repeat; // 2
+  }
+
+  // 1. Add text decoration inheritance in all browsers (opinionated)
+  // 2. Add vertical alignment inheritance in all browsers (opinionated)
+  ::before,
+  ::after {
+    text-decoration: inherit; // 1
+    vertical-align: inherit; // 2
+  }
+
+  // 1. Change the line height in all browsers (opinionated)
+  // 2. Breaks words to prevent overflow in all browsers (opinionated)
+  // 3. Use a 4-space tab width in all browsers (opinionated)
+  // 4. Remove the grey highlight on links in iOS (opinionated)
+  // 5. Prevent adjustments of font size after orientation changes in iOS
+  :where(:root),
+  :where(:host) {
+    -webkit-tap-highlight-color: transparent; // 4
+    -webkit-text-size-adjust: 100%; // 5
+    text-size-adjust: 100%; // 5
+    background-color: var(#{$css-var-prefix}background-color);
+    color: var(#{$css-var-prefix}color);
+    font-weight: var(#{$css-var-prefix}font-weight);
+    font-size: var(#{$css-var-prefix}font-size);
+    line-height: var(#{$css-var-prefix}line-height); // 1
+    font-family: var(#{$css-var-prefix}font-family);
+    text-underline-offset: var(#{$css-var-prefix}text-underline-offset);
+    text-rendering: optimizeLegibility;
+    overflow-wrap: break-word; // 2
+    tab-size: 4; // 3
+  }
+}

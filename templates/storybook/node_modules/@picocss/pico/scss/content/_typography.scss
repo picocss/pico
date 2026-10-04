@@ -1,0 +1,182 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/typography") {
+  /**
+   * Typography
+   */
+
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // Add the correct font weight in Chrome, Edge, and Safari
+  #{$parent-selector} b,
+  #{$parent-selector} strong {
+    font-weight: bolder;
+  }
+
+  // Prevent `sub` and `sup` elements from affecting the line height in all browsers
+  #{$parent-selector} sub,
+  #{$parent-selector} sup {
+    position: relative;
+    font-size: 0.75em;
+    line-height: 0;
+    vertical-align: baseline;
+  }
+  #{$parent-selector} sub {
+    bottom: -0.25em;
+  }
+  #{$parent-selector} sup {
+    top: -0.5em;
+  }
+
+  // Pico
+  // ––––––––––––––––––––
+
+  #{$parent-selector} address,
+  #{$parent-selector} blockquote,
+  #{$parent-selector} dl,
+  #{$parent-selector} ol,
+  #{$parent-selector} p,
+  #{$parent-selector} pre,
+  #{$parent-selector} table,
+  #{$parent-selector} ul {
+    margin-top: 0;
+    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
+    color: var(#{$css-var-prefix}color);
+    font-style: normal;
+    font-weight: var(#{$css-var-prefix}font-weight);
+  }
+
+  // Headings
+  #{$parent-selector} h1,
+  #{$parent-selector} h2,
+  #{$parent-selector} h3,
+  #{$parent-selector} h4,
+  #{$parent-selector} h5,
+  #{$parent-selector} h6 {
+    margin-top: 0;
+    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
+    color: var(#{$css-var-prefix}color);
+    font-weight: var(#{$css-var-prefix}font-weight);
+    font-size: var(#{$css-var-prefix}font-size);
+    line-height: var(#{$css-var-prefix}line-height);
+    font-family: var(#{$css-var-prefix}font-family);
+  }
+
+  #{$parent-selector} h1 {
+    #{$css-var-prefix}color: var(#{$css-var-prefix}h1-color);
+  }
+  #{$parent-selector} h2 {
+    #{$css-var-prefix}color: var(#{$css-var-prefix}h2-color);
+  }
+  #{$parent-selector} h3 {
+    #{$css-var-prefix}color: var(#{$css-var-prefix}h3-color);
+  }
+  #{$parent-selector} h4 {
+    #{$css-var-prefix}color: var(#{$css-var-prefix}h4-color);
+  }
+  #{$parent-selector} h5 {
+    #{$css-var-prefix}color: var(#{$css-var-prefix}h5-color);
+  }
+  #{$parent-selector} h6 {
+    #{$css-var-prefix}color: var(#{$css-var-prefix}h6-color);
+  }
+
+  // Margin-top for headings after a block
+  #{$parent-selector}
+    :where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) {
+    ~ :is(h1, h2, h3, h4, h5, h6) {
+      margin-top: var(#{$css-var-prefix}typography-spacing-top);
+    }
+  }
+
+  // Paragraphs
+  #{$parent-selector} p {
+    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
+  }
+
+  // Heading group
+  #{$parent-selector} hgroup {
+    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
+
+    > * {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    > *:not(:first-child):last-child {
+      #{$css-var-prefix}color: var(#{$css-var-prefix}muted-color);
+      #{$css-var-prefix}font-weight: unset;
+      font-size: 1rem;
+    }
+  }
+
+  // Lists
+  #{$parent-selector} :where(ol, ul) {
+    li {
+      margin-bottom: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.25);
+    }
+  }
+
+  // Margin-top for nested lists
+  // 1. Remove the margin on nested lists in Chrome, Edge, IE, and Safari
+  #{$parent-selector} :where(dl, ol, ul) :where(dl, ol, ul) {
+    margin: 0; // 1
+    margin-top: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.25);
+  }
+
+  #{$parent-selector} ul li {
+    list-style: square;
+  }
+
+  // Highlighted text
+  #{$parent-selector} mark {
+    padding: 0.125rem 0.25rem;
+    background-color: var(#{$css-var-prefix}mark-background-color);
+    color: var(#{$css-var-prefix}mark-color);
+    vertical-align: baseline;
+  }
+
+  // Blockquote
+  #{$parent-selector} blockquote {
+    display: block;
+    margin: var(#{$css-var-prefix}typography-spacing-vertical) 0;
+    padding: var(#{$css-var-prefix}spacing);
+    border-right: none;
+    border-left: 0.25rem solid var(#{$css-var-prefix}blockquote-border-color);
+    border-inline-start: 0.25rem solid var(#{$css-var-prefix}blockquote-border-color);
+    border-inline-end: none;
+
+    footer {
+      margin-top: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.5);
+      color: var(#{$css-var-prefix}blockquote-footer-color);
+    }
+  }
+
+  // Abbreviations
+  // 1. Remove underline decoration in Chrome, Edge, IE, Opera, and Safari
+  #{$parent-selector} abbr[title] {
+    border-bottom: 1px dotted;
+    text-decoration: none; // 1
+    cursor: help;
+  }
+
+  // Ins
+  #{$parent-selector} ins {
+    color: var(#{$css-var-prefix}ins-color);
+    text-decoration: none;
+  }
+
+  // del
+  #{$parent-selector} del {
+    color: var(#{$css-var-prefix}del-color);
+  }
+
+  // selection
+  #{$parent-selector} ::selection {
+    background-color: var(#{$css-var-prefix}text-selection-color);
+  }
+}

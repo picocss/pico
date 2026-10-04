@@ -1,0 +1,52 @@
+{#
+  This file is auto-generated.
+
+  Progress - The progress element represents the completion progress of a task.
+
+  Symfony UX Twig Component (Anonymous)
+  @see https://symfony.com/bundles/ux-twig-component/current/index.html
+
+  Usage:
+    <twig:Progress ariaAtomic="false" ariaLive="off">
+      Content goes here
+    </twig:Progress>
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigComponentsGenerator.php
+#}
+{% apply spaceless %}
+<progress
+  {% if this.accesskey is defined and this.accesskey is not null %}accesskey="{{ this.accesskey }}"{% endif %}
+  {% if this.ariaAtomic is not null %}aria-atomic="{{ this.ariaAtomic.value }}"{% endif %}
+  {% if this.ariaDetails is defined and this.ariaDetails is not null %}aria-details="{{ this.ariaDetails }}"{% endif %}
+  {% if this.ariaKeyshortcuts is defined and this.ariaKeyshortcuts is not null %}aria-keyshortcuts="{{ this.ariaKeyshortcuts }}"{% endif %}
+  {% if this.ariaLive is not null %}aria-live="{{ this.ariaLive.value }}"{% endif %}
+  {% if this.ariaRelevant is not null %}aria-relevant="{{ this.ariaRelevant.value }}"{% endif %}
+  {% if this.ariaRoledescription is defined and this.ariaRoledescription is not null %}aria-roledescription="{{ this.ariaRoledescription }}"{% endif %}
+  {% if this.ariaValuemax is defined and this.ariaValuemax is not null %}aria-valuemax="{{ this.ariaValuemax }}"{% endif %}
+  {% if this.ariaValuemin is defined and this.ariaValuemin is not null %}aria-valuemin="{{ this.ariaValuemin }}"{% endif %}
+  {% if this.ariaValuenow is defined and this.ariaValuenow is not null %}aria-valuenow="{{ this.ariaValuenow }}"{% endif %}
+  {% if this.ariaValuetext is defined and this.ariaValuetext is not null %}aria-valuetext="{{ this.ariaValuetext }}"{% endif %}
+  {% if this.autocapitalize is not null %}autocapitalize="{{ this.autocapitalize.value }}"{% endif %}
+  {% if this.autofocus is defined and this.autofocus is not null %}autofocus="{{ this.autofocus }}"{% endif %}
+  {% if this.class is defined and this.class is not null %}class="{{ this.class }}"{% endif %}
+  {% if this.contenteditable is not null %}contenteditable="{{ this.contenteditable.value }}"{% endif %}
+  {% if this.dir is not null %}dir="{{ this.dir.value }}"{% endif %}
+  {% if this.draggable is defined and this.draggable is not null %}draggable="{{ this.draggable }}"{% endif %}
+  {% if this.hidden is defined and this.hidden is not null %}hidden="{{ this.hidden }}"{% endif %}
+  {% if this.id is defined and this.id is not null %}id="{{ this.id }}"{% endif %}
+  {% if this.inputmode is not null %}inputmode="{{ this.inputmode.value }}"{% endif %}
+  {% if this.lang is defined and this.lang is not null %}lang="{{ this.lang }}"{% endif %}
+  {% if this.max is defined and this.max is not null %}max="{{ this.max }}"{% endif %}
+  {% if this.slot is defined and this.slot is not null %}slot="{{ this.slot }}"{% endif %}
+  {% if this.spellcheck is not null %}spellcheck="{{ this.spellcheck.value }}"{% endif %}
+  {% if this.style is defined and this.style is not null %}style="{{ this.style }}"{% endif %}
+  {% if this.tabindex is defined and this.tabindex is not null %}tabindex="{{ this.tabindex }}"{% endif %}
+  {% if this.title is defined and this.title is not null %}title="{{ this.title }}"{% endif %}
+  {% if this.translate is not null %}translate="{{ this.translate.value }}"{% endif %}
+  {% if this.value is defined and this.value is not null %}value="{{ this.value }}"{% endif %}
+>
+  {%- block content %}{% endblock -%}
+</progress>
+{% endapply %}

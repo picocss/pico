@@ -1,0 +1,20 @@
+{#
+  This file is auto-generated.
+
+  Source - The source element allows authors to specify multiple media resources for media elements. It is an empty element. It is commonly used within the picture element.
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block source %}
+<source
+  {% if class is defined and class|length > 0 %}class="{{ class }}"{% endif %}
+  {% if hidden is defined and hidden|length > 0 %}hidden="{{ hidden }}"{% endif %}
+  {% if id is defined and id|length > 0 %}id="{{ id }}"{% endif %}
+  {% if media is defined and media|length > 0 %}media="{{ media }}"{% endif %}
+  {% if sizes is defined and sizes|length > 0 %}sizes="{{ sizes }}"{% endif %}
+  {% if src is defined and src|length > 0 %}src="{{ src }}"{% endif %}
+  {% if srcset is defined and srcset|length > 0 %}srcset="{{ srcset }}"{% endif %}
+  {% if type is defined and type|length > 0 %}type="{{ type }}"{% endif %}/>
+{% endblock %}

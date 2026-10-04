@@ -1,0 +1,435 @@
+@use "sass:map";
+@use "../../colors" as *;
+@use "../../settings" as *;
+@use "../../helpers/functions";
+@use "theme-colors";
+
+@if map.get($modules, "themes/default") {
+  /**
+   * Styles
+   */
+
+  :root,
+  :host {
+    // Typography
+    #{$css-var-prefix}font-family-emoji:
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    #{$css-var-prefix}font-family-sans-serif:
+      system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, Helvetica, Arial, "Helvetica Neue",
+      sans-serif, var(#{$css-var-prefix}font-family-emoji);
+    #{$css-var-prefix}font-family-monospace:
+      ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace,
+      var(#{$css-var-prefix}font-family-emoji);
+    #{$css-var-prefix}font-family: var(#{$css-var-prefix}font-family-sans-serif);
+    #{$css-var-prefix}line-height: 1.5;
+    #{$css-var-prefix}font-weight: 400;
+    #{$css-var-prefix}font-size: 100%;
+    #{$css-var-prefix}text-underline-offset: 0.1rem;
+
+    // Borders
+    #{$css-var-prefix}border-radius: 0.25rem;
+    #{$css-var-prefix}border-width: 0.0625rem;
+    #{$css-var-prefix}outline-width: 0.125rem;
+
+    // Transitions
+    #{$css-var-prefix}transition: 0.2s ease-in-out;
+
+    // Spacings
+    #{$css-var-prefix}spacing: 1rem;
+
+    // Spacings for typography elements
+    @if map.get($modules, "content/typography") {
+      #{$css-var-prefix}typography-spacing-vertical: 1rem;
+    }
+
+    // Spacings for body > header, body > main, body > footer, section, article
+    @if map.get($modules, "layout/landmarks") or
+      map.get($modules, "layout/section") or
+      map.get($modules, "components/card") or
+      map.get($modules, "components/modal")
+    {
+      #{$css-var-prefix}block-spacing-vertical: var(#{$css-var-prefix}spacing);
+      #{$css-var-prefix}block-spacing-horizontal: var(#{$css-var-prefix}spacing);
+    }
+
+    @if map.get($modules, "layout/grid") and $enable-classes {
+      #{$css-var-prefix}grid-column-gap: var(#{$css-var-prefix}spacing);
+      #{$css-var-prefix}grid-row-gap: var(#{$css-var-prefix}spacing);
+    }
+
+    // Spacings for form elements and button
+    @if map.get($modules, "content/button") or map.get($modules, "forms/basic") {
+      #{$css-var-prefix}form-element-spacing-vertical: 0.75rem;
+      #{$css-var-prefix}form-element-spacing-horizontal: 1rem;
+    }
+
+    // Font weight for form labels & fieldsets legend
+    @if map.get($modules, "forms/basic") {
+      #{$css-var-prefix}form-label-font-weight: var(#{$css-var-prefix}font-weight);
+    }
+
+    // Group (role="group")
+    @if map.get($modules, "components/group") {
+      #{$css-var-prefix}group-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+      #{$css-var-prefix}group-box-shadow-focus-with-button: 0
+        0
+        0
+        var(#{$css-var-prefix}outline-width)
+        var(#{$css-var-prefix}primary-focus);
+      #{$css-var-prefix}group-box-shadow-focus-with-input: 0
+        0
+        0
+        0.0625rem
+        var(#{$css-var-prefix}form-element-border-color);
+    }
+
+    // Modal (<dialog>)
+    @if map.get($modules, "components/modal") {
+      #{$css-var-prefix}modal-overlay-backdrop-filter: blur(0.375rem);
+    }
+
+    // Spacings for nav component
+    @if map.get($modules, "components/nav") {
+      #{$css-var-prefix}nav-element-spacing-vertical: 1rem;
+      #{$css-var-prefix}nav-element-spacing-horizontal: 0.5rem;
+      #{$css-var-prefix}nav-link-spacing-vertical: 0.5rem;
+      #{$css-var-prefix}nav-link-spacing-horizontal: 0.5rem;
+      #{$css-var-prefix}nav-breadcrumb-divider: ">";
+    }
+
+    // Checkboxes icons
+    @if map.get($modules, "forms/checkbox-radio-switch") {
+      #{$css-var-prefix}icon-checkbox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($white)}' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+      #{$css-var-prefix}icon-minus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($white)}' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='5' y1='12' x2='19' y2='12'%3E%3C/line%3E%3C/svg%3E");
+    }
+
+    // Chevron icons
+    @if map.get($modules, "forms/basics") or
+      map.get($modules, "components/accordion") or
+      map.get($modules, "components/dropdown")
+    {
+      #{$css-var-prefix}icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    }
+
+    // Datetime icons
+    @if map.get($modules, "forms/input-date") {
+      #{$css-var-prefix}icon-date: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+      #{$css-var-prefix}icon-time: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cpolyline points='12 6 12 12 16 14'%3E%3C/polyline%3E%3C/svg%3E");
+    }
+
+    // Search icon
+    @if map.get($modules, "forms/input-search") {
+      #{$css-var-prefix}icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+    }
+
+    // Close icon
+    @if map.get($modules, "components/modal") {
+      #{$css-var-prefix}icon-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'%3E%3C/line%3E%3Cline x1='6' y1='6' x2='18' y2='18'%3E%3C/line%3E%3C/svg%3E");
+    }
+
+    // Loading icon (animated)
+    @if map.get($modules, "components/loading") {
+      // Inspired by https://codepen.io/aleksander351/pen/KzgKPo
+      #{$css-var-prefix}icon-loading: url("data:image/svg+xml,%3Csvg fill='none' height='24' width='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' %3E%3Cstyle%3E g %7B animation: rotate 2s linear infinite; transform-origin: center center; %7D circle %7B stroke-dasharray: 75,100; stroke-dashoffset: -5; animation: dash 1.5s ease-in-out infinite; stroke-linecap: round; %7D @keyframes rotate %7B 0%25 %7B transform: rotate(0deg); %7D 100%25 %7B transform: rotate(360deg); %7D %7D @keyframes dash %7B 0%25 %7B stroke-dasharray: 1,100; stroke-dashoffset: 0; %7D 50%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -17.5; %7D 100%25 %7B stroke-dasharray: 44.5,100; stroke-dashoffset: -62; %7D %7D %3C/style%3E%3Cg%3E%3Ccircle cx='12' cy='12' r='10' fill='none' stroke='#{functions.display-rgb($zinc-400)}' stroke-width='4' /%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    // Responsive root font size
+    @if $enable-responsive-typography {
+      @each $key, $values in $breakpoints {
+        @if $values {
+          @media (min-width: map.get($values, "breakpoint")) {
+            #{$css-var-prefix}font-size: map.get($values, "root-font-size");
+          }
+        }
+      }
+    }
+  }
+
+  // Responsive spacings
+  @if $enable-responsive-spacings {
+    // Landmarks and section
+    @if map.get($modules, "layout/landmarks") or map.get($modules, "layout/section") {
+      #{$semantic-root-element} > header,
+      #{$semantic-root-element} > main,
+      #{$semantic-root-element} > footer,
+      section {
+        @each $key, $values in $breakpoints {
+          @if $values {
+            @media (min-width: map.get($values, "breakpoint")) {
+              $multiplier: 1;
+              @if $key == "sm" {
+                $multiplier: 1.25;
+              } @else if $key == "md" {
+                $multiplier: 1.5;
+              } @else if $key == "lg" {
+                $multiplier: 1.75;
+              } @else if $key == "xl" {
+                $multiplier: 2;
+              } @else if $key == "xxl" {
+                $multiplier: 2.25;
+              }
+
+              #{$css-var-prefix}block-spacing-vertical: calc(
+                var(#{$css-var-prefix}spacing) * $multiplier
+              );
+            }
+          }
+        }
+      }
+    }
+
+    // Card (<article>)
+    @if map.get($modules, "components/card") {
+      article {
+        @each $key, $values in $breakpoints {
+          @if $values {
+            @media (min-width: map.get($values, "breakpoint")) {
+              $multiplier: 1;
+              @if $key == "sm" {
+                $multiplier: 1.25;
+              } @else if $key == "md" {
+                $multiplier: 1.5;
+              } @else if $key == "lg" {
+                $multiplier: 1.75;
+              } @else if $key == "xl" {
+                $multiplier: 2;
+              } @else if $key == "xxl" {
+                $multiplier: 2.25;
+              }
+
+              #{$css-var-prefix}block-spacing-vertical: calc(
+                var(#{$css-var-prefix}spacing) * $multiplier
+              );
+              #{$css-var-prefix}block-spacing-horizontal: calc(
+                var(#{$css-var-prefix}spacing) * $multiplier
+              );
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Link
+  @if map.get($modules, "content/link") {
+    a {
+      #{$css-var-prefix}text-decoration: underline;
+
+      // Secondary & Contrast
+      @if $enable-classes {
+        &.secondary,
+        &.contrast {
+          #{$css-var-prefix}text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // Typography
+  @if map.get($modules, "content/typography") {
+    // Small
+    small {
+      #{$css-var-prefix}font-size: 0.875em;
+    }
+
+    // Headings
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      #{$css-var-prefix}font-weight: 700;
+    }
+
+    h1 {
+      #{$css-var-prefix}font-size: 2rem;
+      #{$css-var-prefix}line-height: 1.125;
+      #{$css-var-prefix}typography-spacing-top: 3rem;
+    }
+
+    h2 {
+      #{$css-var-prefix}font-size: 1.75rem;
+      #{$css-var-prefix}line-height: 1.15;
+      #{$css-var-prefix}typography-spacing-top: 2.625rem;
+    }
+
+    h3 {
+      #{$css-var-prefix}font-size: 1.5rem;
+      #{$css-var-prefix}line-height: 1.175;
+      #{$css-var-prefix}typography-spacing-top: 2.25rem;
+    }
+
+    h4 {
+      #{$css-var-prefix}font-size: 1.25rem;
+      #{$css-var-prefix}line-height: 1.2;
+      #{$css-var-prefix}typography-spacing-top: 1.874rem;
+    }
+
+    h5 {
+      #{$css-var-prefix}font-size: 1.125rem;
+      #{$css-var-prefix}line-height: 1.225;
+      #{$css-var-prefix}typography-spacing-top: 1.6875rem;
+    }
+
+    h6 {
+      #{$css-var-prefix}font-size: 1rem;
+      #{$css-var-prefix}line-height: 1.25;
+      #{$css-var-prefix}typography-spacing-top: 1.5rem;
+    }
+  }
+
+  // Table
+  @if map.get($modules, "content/table") {
+    thead,
+    tfoot {
+      th,
+      td {
+        #{$css-var-prefix}font-weight: 600;
+        #{$css-var-prefix}border-width: 0.1875rem;
+      }
+    }
+  }
+
+  // Code
+  @if map.get($modules, "content/code") {
+    pre,
+    code,
+    kbd,
+    samp {
+      #{$css-var-prefix}font-family: var(#{$css-var-prefix}font-family-monospace);
+    }
+
+    kbd {
+      #{$css-var-prefix}font-weight: bolder;
+    }
+  }
+
+  // Inputs and Selects
+  input:not(
+      [type="submit"],
+      [type="button"],
+      [type="reset"],
+      [type="checkbox"],
+      [type="radio"],
+      [type="file"]
+    ),
+  :where(select, textarea) {
+    #{$css-var-prefix}outline-width: 0.0625rem;
+  }
+
+  [type="search"] {
+    #{$css-var-prefix}border-radius: 5rem;
+  }
+
+  // Checkboxes, Radios and Switches
+  @if map.get($modules, "forms/checkbox-radio-switch") {
+    [type="checkbox"],
+    [type="radio"] {
+      #{$css-var-prefix}border-width: 0.125rem;
+    }
+
+    [type="checkbox"][role="switch"] {
+      #{$css-var-prefix}border-width: 0.1875rem;
+    }
+  }
+
+  // Dropdown (details.dropdown)
+  @if map.get($modules, "components/dropdown") and $enable-classes {
+    details.dropdown {
+      summary:not([role="button"]) {
+        #{$css-var-prefix}outline-width: 0.0625rem;
+      }
+    }
+    nav {
+      details.dropdown {
+        summary:focus-visible {
+          #{$css-var-prefix}outline-width: 0.125rem;
+        }
+      }
+    }
+  }
+
+  // Group (role="group")
+  @if map.get($modules, "components/group") {
+    [role="search"] {
+      #{$css-var-prefix}border-radius: 5rem;
+    }
+
+    [role="search"],
+    [role="group"] {
+      @if $enable-classes {
+        &:has(
+            button.secondary:focus,
+            [type="submit"].secondary:focus,
+            [type="button"].secondary:focus,
+            [role="button"].secondary:focus
+          ) {
+          #{$css-var-prefix}group-box-shadow-focus-with-button: 0
+            0
+            0
+            var(#{$css-var-prefix}outline-width)
+            var(#{$css-var-prefix}secondary-focus);
+        }
+
+        &:has(
+            button.contrast:focus,
+            [type="submit"].contrast:focus,
+            [type="button"].contrast:focus,
+            [role="button"].contrast:focus
+          ) {
+          #{$css-var-prefix}group-box-shadow-focus-with-button: 0
+            0
+            0
+            var(#{$css-var-prefix}outline-width)
+            var(#{$css-var-prefix}contrast-focus);
+        }
+      }
+
+      button,
+      [type="submit"],
+      [type="button"],
+      [role="button"] {
+        #{$css-var-prefix}form-element-spacing-horizontal: 2rem;
+      }
+    }
+  }
+
+  // Chevron icons
+  // Change the icon color to white for accordion and dropdown buttons
+  @if map.get($modules, "components/accordion") or map.get($modules, "components/dropdown") {
+    #{$parent-selector} details {
+      summary {
+        $selector: '&[role="button"]';
+        @if $enable-classes {
+          $selector: "#{$selector}:not(.outline)";
+        }
+        #{$selector} {
+          &::after {
+            filter: brightness(0) invert(1);
+          }
+        }
+      }
+    }
+  }
+
+  // Loading icon (animated)
+  @if map.get($modules, "components/loading") {
+    // Change the icon color to white for buttons
+    #{$parent-selector} [aria-busy="true"]:not(input, select, textarea) {
+      $selector: '&:is(button, [type="submit"], [type="button"], [type="reset"], [role="button"])';
+      @if $enable-classes {
+        $selector: "#{$selector}:not(.outline)";
+      }
+      #{$selector} {
+        &::before {
+          @if theme-colors.get("primary-inverse", "dark") == $white {
+            filter: brightness(0) invert(1);
+          } @else {
+            filter: brightness(0) invert(0);
+          }
+        }
+      }
+    }
+  }
+}

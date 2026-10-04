@@ -1,0 +1,24 @@
+{#
+  This file is auto-generated.
+
+  Menu - Composed Example
+  The menu element represents a group of commands that a user can perform or activate. It can be used for toolbars, context menus, or listing form controls.
+
+  CONTENT MODEL:
+  - Can contain: Button, Form, ListItem, Script, Template
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block menu_composed %}
+{% embed '../block/menu.twig' with {
+  class: 'example'
+} %}
+  {% block content %}
+  {% include '../inline/button.twig' with {'content': 'Button 1'} %}
+  {% include '../inline/button.twig' with {'content': 'Button 2'} %}
+  {% include '../block/form.twig' with {'content': 'Example content'} %}
+  {% endblock %}
+{% endembed %}
+{% endblock %}

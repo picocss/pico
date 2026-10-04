@@ -14,7 +14,7 @@
   // 1. Add the correct display in Edge 18- and IE
   // 2. Add the correct vertical alignment in Chrome, Edge, and Firefox
   #{$parent-selector} progress {
-    display: inline-block; // 1
+    // 1
     vertical-align: baseline; // 2
   }
 

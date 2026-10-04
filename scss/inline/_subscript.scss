@@ -1,0 +1,17 @@
+/** SASS for the <sub> HTML element
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/typography") {
+  // Prevent `sub` and `sup` elements from affecting the line height in all browsers
+  #{$parent-selector} sub {
+    position: relative;
+    bottom: -0.25em;
+    font-size: 0.75em;
+    line-height: 0;
+    vertical-align: baseline;
+  }
+}

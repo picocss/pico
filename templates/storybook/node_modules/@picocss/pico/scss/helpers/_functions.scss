@@ -1,0 +1,55 @@
+@use "sass:color";
+@use "sass:string";
+
+// Display color as RGB
+@function display-rgb($color) {
+  @return string.unquote(
+    "rgb(" + color.channel($color, "red") + ", " + color.channel($color, "green") + ", " +
+      color.channel($color, "blue") + ")"
+  );
+}
+
+// Generate a shadow layer
+@function shadow-layer($elevation, $blur, $opacity, $color) {
+  @return #{($elevation * 0.5)} #{$elevation} #{$blur} #{rgba($color, $opacity)};
+}
+
+// Generate a shadow with 7 layers
+@function shadow($color) {
+  $box-shadow-elevation: 1rem;
+  $box-shadow-blur-strength: 6rem;
+  $box-shadow-opacity: 0.06;
+
+  @return shadow-layer(
+      $box-shadow-elevation * 0.029,
+      $box-shadow-blur-strength * 0.029,
+      $box-shadow-opacity * 0.283,
+      $color
+    ),
+    shadow-layer(
+      $box-shadow-elevation * 0.067,
+      $box-shadow-blur-strength * 0.067,
+      $box-shadow-opacity * 0.4,
+      $color
+    ),
+    shadow-layer(
+      $box-shadow-elevation * 0.125,
+      $box-shadow-blur-strength * 0.125,
+      $box-shadow-opacity * 0.5,
+      $color
+    ),
+    shadow-layer(
+      $box-shadow-elevation * 0.225,
+      $box-shadow-blur-strength * 0.225,
+      $box-shadow-opacity * 0.6,
+      $color
+    ),
+    shadow-layer(
+      $box-shadow-elevation * 0.417,
+      $box-shadow-blur-strength * 0.417,
+      $box-shadow-opacity * 0.717,
+      $color
+    ),
+    shadow-layer($box-shadow-elevation, $box-shadow-blur-strength, $box-shadow-opacity, $color),
+    0 0 0 0.0625rem #{rgba($color, ($box-shadow-opacity * 0.25))};
+}

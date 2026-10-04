@@ -1,0 +1,23 @@
+{#
+  This file is auto-generated.
+
+  Title - The title element defines the title of the document, shown in a browser's title bar or a page's tab. It is only text, not meant to be displayed.
+
+  Symfony UX Twig Component (Anonymous)
+  @see https://symfony.com/bundles/ux-twig-component/current/index.html
+
+  Usage:
+    <twig:Title>
+      Content goes here
+    </twig:Title>
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigComponentsGenerator.php
+#}
+{% apply spaceless %}
+<title
+>
+  {%- block content %}{% endblock -%}
+</title>
+{% endapply %}

@@ -1,0 +1,23 @@
+/** SASS for the <hr> HTML element
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/misc") {
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // 1. Correct the inheritance of border color in Firefox
+  // 2. Add the correct box sizing in Firefox
+  #{$parent-selector} hr {
+    height: 0; // 2
+    margin: var(#{$css-var-prefix}typography-spacing-vertical) 0;
+    border: 0;
+    border-top: 1px solid var(#{$css-var-prefix}muted-border-color);
+    color: inherit; // 1
+  }
+}

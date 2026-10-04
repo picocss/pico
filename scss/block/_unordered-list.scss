@@ -1,0 +1,34 @@
+/** SASS for the <ul> HTML element
+ *
+ * Found in scss/components/_dropdown.scss#159: `#{\$parent-selector} details.dropdown > summary + ul {`
+ * Found in scss/components/_dropdown.scss#247: `+ ul {`
+ * * Found in scss/components/_nav.scss#22: `#{\$parent-selector} nav ul {`
+ * Found in scss/components/_nav.scss#31: `ul {`
+ * Found in scss/components/_nav.scss#126: `ul,`
+ * Found in scss/content/_typography.scss#45: `#{\$parent-selector} ul {`
+ * Found in scss/content/_typography.scss#90: `:where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) {`
+ * Found in scss/content/_typography.scss#118: `#{\$parent-selector} :where(ol, ul) {`
+ * Found in scss/content/_typography.scss#126: `#{\$parent-selector} :where(dl, ol, ul) :where(dl, ol, ul) {`
+ *
+ * Add your styles here
+ */
+
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/typography") {
+  #{$parent-selector} ul {
+    margin-top: 0;
+    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
+    color: var(#{$css-var-prefix}color);
+    font-style: normal;
+    font-weight: var(#{$css-var-prefix}font-weight);
+  }
+
+  // Margin-top for nested lists
+  // 1. Remove the margin on nested lists in Chrome, Edge, IE, and Safari
+  #{$parent-selector} :where(dl, ol, ul) :where(dl, ol, ul) {
+    margin: 0; // 1
+    margin-top: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.25);
+  }
+}

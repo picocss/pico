@@ -1,0 +1,26 @@
+/** SASS for the <img> HTML element
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/embedded") {
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // Change the alignment on media elements in all browsers (opinionated)
+  #{$parent-selector} :where(audio, canvas, iframe, img, svg, video) {
+    vertical-align: middle;
+  }
+
+  // 1. Remove the border on images inside links in IE 10.
+  // 2. Responsive by default
+  #{$parent-selector} img {
+    max-width: 100%; // 2
+    height: auto; // 2
+    border-style: none; // 1
+  }
+}

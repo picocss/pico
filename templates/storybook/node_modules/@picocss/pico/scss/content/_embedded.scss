@@ -1,0 +1,54 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/embedded") {
+  /**
+   * Embedded content
+   */
+
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // Change the alignment on media elements in all browsers (opinionated)
+  #{$parent-selector} :where(audio, canvas, iframe, img, svg, video) {
+    vertical-align: middle;
+  }
+
+  // Add the correct display in IE 9-
+  #{$parent-selector} audio,
+  #{$parent-selector} video {
+    display: inline-block;
+  }
+
+  // Add the correct display in iOS 4-7
+  #{$parent-selector} audio:not([controls]) {
+    display: none;
+    height: 0;
+  }
+
+  // Remove the border on iframes in all browsers (opinionated)
+  #{$parent-selector} :where(iframe) {
+    border-style: none;
+  }
+
+  // 1. Remove the border on images inside links in IE 10.
+  // 2. Responsive by default
+  #{$parent-selector} img {
+    max-width: 100%; // 2
+    height: auto; // 2
+    border-style: none; // 1
+  }
+
+  // Change the fill color to match the text color in all browsers (opinionated)
+  #{$parent-selector} :where(svg:not([fill])) {
+    fill: currentColor;
+  }
+
+  // Hide the overflow in IE
+  #{$parent-selector} svg:not(:root),
+  #{$parent-selector} svg:not(:host) {
+    overflow: hidden;
+  }
+}

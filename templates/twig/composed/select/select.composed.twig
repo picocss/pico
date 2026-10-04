@@ -1,0 +1,25 @@
+{#
+  This file is auto-generated.
+
+  Select - Composed Example
+  The select element represents a control for selecting amongst a set of options.
+
+  CONTENT MODEL:
+  - Can be a child of: Aside, Body, DefinitionDescription, Dialog, Division, Fieldset, Footer, Form, Header, Main, MarkedText, Paragraph, Section, Slot, Template
+  - Can contain: OptionGroup, Option
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block select_composed %}
+{% embed '../inline/select.twig' with {
+  class: 'example'
+} %}
+  {% block content %}
+  {% include '../block/optgroup.twig' with {'content': 'Example content'} %}
+  {% include '../block/optgroup.twig' with {'content': 'Example content'} %}
+  {% include '../block/option.twig' with {'content': 'Option 1'} %}
+  {% endblock %}
+{% endembed %}
+{% endblock %}

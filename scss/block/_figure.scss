@@ -1,0 +1,14 @@
+/** SASS for the <figure> HTML element
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/figure") {
+  #{$parent-selector} figure {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+}

@@ -1,0 +1,17 @@
+{#
+  This file is auto-generated.
+
+  Wbr - The wbr element represents a word break opportunity.
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block wbr %}
+{% set dir_choices = {'ltr': true, 'rtl': true, 'auto': true} %}
+<wbr
+  {% if class is defined and class|length > 0 %}class="{{ class }}"{% endif %}
+  {% if dir is defined and dir|length > 0 and dir_choices[dir] is defined %}dir="{{ dir }}"{% endif %}
+  {% if hidden is defined and hidden|length > 0 %}hidden="{{ hidden }}"{% endif %}
+  {% if id is defined and id|length > 0 %}id="{{ id }}"{% endif %}/>
+{% endblock %}

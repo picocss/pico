@@ -1,0 +1,23 @@
+/** SASS for the <svg> HTML element
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/embedded") {
+  // Change the alignment on media elements in all browsers (opinionated)
+  #{$parent-selector} :where(audio, canvas, iframe, img, svg, video) {
+    vertical-align: middle;
+  }
+  // Change the fill color to match the text color in all browsers (opinionated)
+  #{$parent-selector} :where(svg:not([fill])) {
+    fill: currentColor;
+  }
+
+  // Hide the overflow in IE
+  #{$parent-selector} svg:not(:root),
+  #{$parent-selector} svg:not(:host) {
+    overflow: hidden;
+  }
+}

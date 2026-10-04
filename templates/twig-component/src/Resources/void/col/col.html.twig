@@ -1,0 +1,23 @@
+{#
+  This file is auto-generated.
+
+  Col - The col element represents a column in a table.
+
+  Symfony UX Twig Component (Anonymous)
+  @see https://symfony.com/bundles/ux-twig-component/current/index.html
+
+  Usage:
+    <twig:Col class="custom-class" id="my-col" />
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigComponentsGenerator.php
+#}
+{% apply spaceless %}
+<col
+  {% if this.class is defined and this.class is not null %}class="{{ this.class }}"{% endif %}
+  {% if this.id is defined and this.id is not null %}id="{{ this.id }}"{% endif %}
+  {% if this.span is defined and this.span is not null %}span="{{ this.span }}"{% endif %}
+  {% if this.style is defined and this.style is not null %}style="{{ this.style }}"{% endif %}
+  {% if this.width is defined and this.width is not null %}width="{{ this.width }}"{% endif %}
+/>

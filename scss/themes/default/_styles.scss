@@ -307,13 +307,13 @@
 
   // Inputs and Selects
   input:not(
-      [type="submit"],
-      [type="button"],
-      [type="reset"],
-      [type="checkbox"],
-      [type="radio"],
-      [type="file"]
-    ),
+    [type="submit"],
+    [type="button"],
+    [type="reset"],
+    [type="checkbox"],
+    [type="radio"],
+    [type="file"]
+  ),
   :where(select, textarea) {
     #{$css-var-prefix}outline-width: 0.0625rem;
   }
@@ -360,11 +360,11 @@
     [role="group"] {
       @if $enable-classes {
         &:has(
-            button.secondary:focus,
-            [type="submit"].secondary:focus,
-            [type="button"].secondary:focus,
-            [role="button"].secondary:focus
-          ) {
+          button.secondary:focus,
+          [type="submit"].secondary:focus,
+          [type="button"].secondary:focus,
+          [role="button"].secondary:focus
+        ) {
           #{$css-var-prefix}group-box-shadow-focus-with-button: 0
             0
             0
@@ -373,11 +373,11 @@
         }
 
         &:has(
-            button.contrast:focus,
-            [type="submit"].contrast:focus,
-            [type="button"].contrast:focus,
-            [role="button"].contrast:focus
-          ) {
+          button.contrast:focus,
+          [type="submit"].contrast:focus,
+          [type="button"].contrast:focus,
+          [role="button"].contrast:focus
+        ) {
           #{$css-var-prefix}group-box-shadow-focus-with-button: 0
             0
             0

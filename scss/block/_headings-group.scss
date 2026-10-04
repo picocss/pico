@@ -1,0 +1,23 @@
+/** SASS for the <hgroup> HTML element
+ *
+ * Add your styles here
+ */
+// Heading group
+@use "sass:map";
+@use "../settings" as *;
+@if map.get($modules, "content/typography") {
+  #{$parent-selector} hgroup {
+    margin-bottom: var(#{$css-var-prefix}typography-spacing-vertical);
+
+    > * {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    > *:not(:first-child):last-child {
+      #{$css-var-prefix}color: var(#{$css-var-prefix}muted-color);
+      #{$css-var-prefix}font-weight: unset;
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/code") {
+  /**
+   * Code
+   */
+
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // 1. Correct the inheritance and scaling of font size in all browsers
+  // 2. Correct the odd `em` font sizing in all browsers
+  #{$parent-selector} pre,
+  #{$parent-selector} code,
+  #{$parent-selector} kbd,
+  #{$parent-selector} samp {
+    font-size: 0.875em; // 2
+    font-family: var(#{$css-var-prefix}font-family); // 1
+  }
+
+  #{$parent-selector} pre code,
+  #{$parent-selector} pre samp {
+    font-size: inherit;
+    font-family: inherit;
+  }
+
+  // Prevent overflow of the container in all browsers (opinionated)
+  #{$parent-selector} pre {
+    -ms-overflow-style: scrollbar;
+    overflow: auto;
+  }
+
+  // Pico
+  // ––––––––––––––––––––
+
+  #{$parent-selector} pre,
+  #{$parent-selector} code,
+  #{$parent-selector} kbd,
+  #{$parent-selector} samp {
+    border-radius: var(#{$css-var-prefix}border-radius);
+    background: var(#{$css-var-prefix}code-background-color);
+    color: var(#{$css-var-prefix}code-color);
+    font-weight: var(#{$css-var-prefix}font-weight);
+    line-height: initial;
+  }
+
+  #{$parent-selector} code,
+  #{$parent-selector} kbd,
+  #{$parent-selector} samp {
+    display: inline-block;
+    padding: 0.375rem;
+  }
+
+  #{$parent-selector} pre {
+    display: block;
+    margin-bottom: var(#{$css-var-prefix}spacing);
+    overflow-x: auto;
+
+    > code,
+    > samp {
+      display: block;
+      padding: var(#{$css-var-prefix}spacing);
+      background: none;
+      line-height: var(#{$css-var-prefix}line-height);
+    }
+  }
+
+  // kbd
+  #{$parent-selector} kbd {
+    background-color: var(#{$css-var-prefix}code-kbd-background-color);
+    color: var(#{$css-var-prefix}code-kbd-color);
+    vertical-align: baseline;
+  }
+}

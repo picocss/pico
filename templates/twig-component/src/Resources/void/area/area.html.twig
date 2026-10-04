@@ -1,0 +1,43 @@
+{#
+  This file is auto-generated.
+
+  Area - The area element represents either a hyperlink with some text and a corresponding area on an image map, or a dead area on an image map.
+
+  Symfony UX Twig Component (Anonymous)
+  @see https://symfony.com/bundles/ux-twig-component/current/index.html
+
+  Usage:
+    <twig:Area autocapitalize="none" class="custom-class" />
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigComponentsGenerator.php
+#}
+{% apply spaceless %}
+<area
+  {% if this.accesskey is defined and this.accesskey is not null %}accesskey="{{ this.accesskey }}"{% endif %}
+  {% if this.alt is defined and this.alt is not null %}alt="{{ this.alt }}"{% endif %}
+  {% if this.autocapitalize is not null %}autocapitalize="{{ this.autocapitalize.value }}"{% endif %}
+  {% if this.autofocus is defined and this.autofocus is not null %}autofocus="{{ this.autofocus }}"{% endif %}
+  {% if this.class is defined and this.class is not null %}class="{{ this.class }}"{% endif %}
+  {% if this.contenteditable is not null %}contenteditable="{{ this.contenteditable.value }}"{% endif %}
+  {% if this.coords is defined and this.coords is not null %}coords="{{ this.coords }}"{% endif %}
+  {% if this.dir is not null %}dir="{{ this.dir.value }}"{% endif %}
+  {% if this.download is defined and this.download is not null %}download="{{ this.download }}"{% endif %}
+  {% if this.draggable is defined and this.draggable is not null %}draggable="{{ this.draggable }}"{% endif %}
+  {% if this.hidden is defined and this.hidden is not null %}hidden="{{ this.hidden }}"{% endif %}
+  {% if this.href is defined and this.href is not null %}href="{{ this.href }}"{% endif %}
+  {% if this.hreflang is defined and this.hreflang is not null %}hreflang="{{ this.hreflang }}"{% endif %}
+  {% if this.id is defined and this.id is not null %}id="{{ this.id }}"{% endif %}
+  {% if this.inputmode is not null %}inputmode="{{ this.inputmode.value }}"{% endif %}
+  {% if this.lang is defined and this.lang is not null %}lang="{{ this.lang }}"{% endif %}
+  {% if this.rel is not null %}rel="{{ this.rel.value }}"{% endif %}
+  {% if this.shape is not null %}shape="{{ this.shape.value }}"{% endif %}
+  {% if this.spellcheck is not null %}spellcheck="{{ this.spellcheck.value }}"{% endif %}
+  {% if this.style is defined and this.style is not null %}style="{{ this.style }}"{% endif %}
+  {% if this.tabindex is defined and this.tabindex is not null %}tabindex="{{ this.tabindex }}"{% endif %}
+  {% if this.target is not null %}target="{{ this.target.value }}"{% endif %}
+  {% if this.title is defined and this.title is not null %}title="{{ this.title }}"{% endif %}
+  {% if this.translate is not null %}translate="{{ this.translate.value }}"{% endif %}
+  {% if this.type is defined and this.type is not null %}type="{{ this.type }}"{% endif %}
+/>

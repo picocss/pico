@@ -1,0 +1,24 @@
+{#
+  This file is auto-generated.
+
+  Style - The style element is used to embed CSS styles directly into an HTML document.
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block style %}
+{% set dir_choices = {'ltr': true, 'rtl': true, 'auto': true} %}
+{% set type_choices = {'text/css': true} %}
+<style
+  {% if class is defined and class|length > 0 %}class="{{ class }}"{% endif %}
+  {% if dir is defined and dir|length > 0 and dir_choices[dir] is defined %}dir="{{ dir }}"{% endif %}
+  {% if id is defined and id|length > 0 %}id="{{ id }}"{% endif %}
+  {% if lang is defined and lang|length > 0 %}lang="{{ lang }}"{% endif %}
+  {% if media is defined and media|length > 0 %}media="{{ media }}"{% endif %}
+  {% if nonce is defined and nonce|length > 0 %}nonce="{{ nonce }}"{% endif %}
+  {% if title is defined and title|length > 0 %}title="{{ title }}"{% endif %}
+  {% if type is defined and type|length > 0 and type_choices[type] is defined %}type="{{ type }}"{% endif %}>
+  {% block content %}{{- content|raw -}}{% endblock %}
+</style>
+{% endblock %}

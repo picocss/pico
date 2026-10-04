@@ -1,0 +1,17 @@
+{#
+  This file is auto-generated.
+
+  Col - The col element represents a column in a table.
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block col %}
+<col
+  {% if class is defined and class|length > 0 %}class="{{ class }}"{% endif %}
+  {% if id is defined and id|length > 0 %}id="{{ id }}"{% endif %}
+  {% if span is defined and span|length > 0 %}span="{{ span }}"{% endif %}
+  {% if style is defined and style|length > 0 %}style="{{ style }}"{% endif %}
+  {% if width is defined and width|length > 0 %}width="{{ width }}"{% endif %}/>
+{% endblock %}

@@ -1,0 +1,57 @@
+/** SASS for the <code> HTML element
+ *
+ * Found in scss/content/_code.scss#4: `@if map.get($modules, "content/code") {`
+ * Found in scss/content/_code.scss#17: `#{\$parent-selector} code,`
+ * Found in scss/content/_code.scss#24: `#{\$parent-selector} pre code,`
+ * Found in scss/content/_code.scss#40: `#{\$parent-selector} code,`
+ * Found in scss/content/_code.scss#44: `background: var(#{\$css-var-prefix}code-background-color);`
+ * Found in scss/content/_code.scss#45: `color: var(#{\$css-var-prefix}code-color);`
+ * Found in scss/content/_code.scss#50: `#{\$parent-selector} code,`
+ * Found in scss/content/_code.scss#62: `> code,`
+ * Found in scss/content/_code.scss#73: `background-color: var(#{\$css-var-prefix}code-kbd-background-color);`
+ * Found in scss/content/_code.scss#74: `color: var(#{\$css-var-prefix}code-kbd-color);`
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/code") {
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // 1. Correct the inheritance and scaling of font size in all browsers
+  // 2. Correct the odd `em` font sizing in all browsers
+  #{$parent-selector} code {
+    font-size: 0.875em; // 2
+    font-family: var(#{$css-var-prefix}font-family); // 1
+  }
+
+  #{$parent-selector} pre code {
+    font-size: inherit;
+    font-family: inherit;
+  }
+
+  // Pico
+  // ––––––––––––––––––––
+  #{$parent-selector} code {
+    display: inline-block;
+    padding: 0.375rem;
+    border-radius: var(#{$css-var-prefix}border-radius);
+    background: var(#{$css-var-prefix}code-background-color);
+    color: var(#{$css-var-prefix}code-color);
+    font-weight: var(#{$css-var-prefix}font-weight);
+    line-height: initial;
+  }
+
+  #{$parent-selector} pre {
+    > code {
+      display: block;
+      padding: var(#{$css-var-prefix}spacing);
+      background: none;
+      line-height: var(#{$css-var-prefix}line-height);
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{#
+  This file is auto-generated.
+
+  Link - The link element defines a link between a document and an external resource. It is used to link to external stylesheets.
+
+  Symfony UX Twig Component (Anonymous)
+  @see https://symfony.com/bundles/ux-twig-component/current/index.html
+
+  Usage:
+    <twig:Link class="custom-class" crossorigin="anonymous" />
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigComponentsGenerator.php
+#}
+{% apply spaceless %}
+<link
+  {% if this.class is defined and this.class is not null %}class="{{ this.class }}"{% endif %}
+  {% if this.crossorigin is not null %}crossorigin="{{ this.crossorigin.value }}"{% endif %}
+  {% if this.dir is not null %}dir="{{ this.dir.value }}"{% endif %}
+  {% if this.hidden is defined and this.hidden is not null %}hidden="{{ this.hidden }}"{% endif %}
+  {% if this.href is defined and this.href is not null %}href="{{ this.href }}"{% endif %}
+  {% if this.hreflang is defined and this.hreflang is not null %}hreflang="{{ this.hreflang }}"{% endif %}
+  {% if this.id is defined and this.id is not null %}id="{{ this.id }}"{% endif %}
+  {% if this.integrity is defined and this.integrity is not null %}integrity="{{ this.integrity }}"{% endif %}
+  {% if this.lang is defined and this.lang is not null %}lang="{{ this.lang }}"{% endif %}
+  {% if this.media is defined and this.media is not null %}media="{{ this.media }}"{% endif %}
+  {% if this.referrerpolicy is not null %}referrerpolicy="{{ this.referrerpolicy.value }}"{% endif %}
+  {% if this.rel is not null %}rel="{{ this.rel.value }}"{% endif %}
+  {% if this.sizes is defined and this.sizes is not null %}sizes="{{ this.sizes }}"{% endif %}
+  {% if this.style is defined and this.style is not null %}style="{{ this.style }}"{% endif %}
+  {% if this.title is defined and this.title is not null %}title="{{ this.title }}"{% endif %}
+  {% if this.type is defined and this.type is not null %}type="{{ this.type }}"{% endif %}
+/>

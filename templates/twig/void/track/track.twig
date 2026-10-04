@@ -1,0 +1,23 @@
+{#
+  This file is auto-generated.
+
+  Track - The track element is used as a child of the media elements—audio and video. It lets you specify timed text tracks (or time-based data), for example to automatically handle subtitles. The tracks are formatted in WebVTT format (.vtt files) — Web Video Text Tracks.
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block track %}
+{% set kind_choices = {'captions': true, 'chapters': true, 'descriptions': true, 'metadata': true, 'subtitles': true} %}
+<track
+  {% if class is defined and class|length > 0 %}class="{{ class }}"{% endif %}
+  {% if default is defined and default|length > 0 %}default="{{ default }}"{% endif %}
+  {% if hidden is defined and hidden|length > 0 %}hidden="{{ hidden }}"{% endif %}
+  {% if id is defined and id|length > 0 %}id="{{ id }}"{% endif %}
+  {% if kind is defined and kind|length > 0 and kind_choices[kind] is defined %}kind="{{ kind }}"{% endif %}
+  {% if label is defined and label|length > 0 %}label="{{ label }}"{% endif %}
+  {% if lang is defined and lang|length > 0 %}lang="{{ lang }}"{% endif %}
+  {% if src is defined and src|length > 0 %}src="{{ src }}"{% endif %}
+  {% if srclang is defined and srclang|length > 0 %}srclang="{{ srclang }}"{% endif %}
+  {% if style is defined and style|length > 0 %}style="{{ style }}"{% endif %}/>
+{% endblock %}

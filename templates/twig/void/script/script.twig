@@ -1,0 +1,31 @@
+{#
+  This file is auto-generated.
+
+  Script - The script element is used to embed or reference an executable script within an HTML document. Scripts without async or defer attributes, as well as inline scripts, are fetched and executed immediately, before the browser continues to parse the page.
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block script %}
+{% set crossorigin_choices = {'anonymous': true, 'use-credentials': true} %}
+{% set referrerpolicy_choices = {'no-referrer': true, 'no-referrer-when-downgrade': true, 'origin': true, 'origin-when-cross-origin': true, 'same-origin': true, 'strict-origin': true, 'strict-origin-when-cross-origin': true, 'unsafe-url': true} %}
+{% set type_choices = {'text/javascript': true, 'module': true} %}
+<script
+  {% if async is defined and async|length > 0 %}async="{{ async }}"{% endif %}
+  {% if charset is defined and charset|length > 0 %}charset="{{ charset }}"{% endif %}
+  {% if class is defined and class|length > 0 %}class="{{ class }}"{% endif %}
+  {% if crossorigin is defined and crossorigin|length > 0 and crossorigin_choices[crossorigin] is defined %}crossorigin="{{ crossorigin }}"{% endif %}
+  {% if defer is defined and defer|length > 0 %}defer="{{ defer }}"{% endif %}
+  {% if hidden is defined and hidden|length > 0 %}hidden="{{ hidden }}"{% endif %}
+  {% if id is defined and id|length > 0 %}id="{{ id }}"{% endif %}
+  {% if integrity is defined and integrity|length > 0 %}integrity="{{ integrity }}"{% endif %}
+  {% if lang is defined and lang|length > 0 %}lang="{{ lang }}"{% endif %}
+  {% if nonce is defined and nonce|length > 0 %}nonce="{{ nonce }}"{% endif %}
+  {% if referrerpolicy is defined and referrerpolicy|length > 0 and referrerpolicy_choices[referrerpolicy] is defined %}referrerpolicy="{{ referrerpolicy }}"{% endif %}
+  {% if src is defined and src|length > 0 %}src="{{ src }}"{% endif %}
+  {% if title is defined and title|length > 0 %}title="{{ title }}"{% endif %}
+  {% if type is defined and type|length > 0 and type_choices[type] is defined %}type="{{ type }}"{% endif %}>
+  {% block content %}{{- content|raw -}}{% endblock %}
+</script>
+{% endblock %}

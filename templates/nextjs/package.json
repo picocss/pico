@@ -1,0 +1,32 @@
+{
+  "name": "@vardumper/extended-htmldocument-nextjs",
+  "version": "1.0.0",
+  "description": "Type-safe, auto-generated React components for all HTML5 elements with full ARIA support",
+  "main": "index.ts",
+  "types": "index.ts",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "react",
+    "nextjs",
+    "typescript",
+    "html5",
+    "aria",
+    "accessibility",
+    "components"
+  ],
+  "author": "vardumper <info@erikpoehler.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "typescript": "^5.6.3"
+  },
+  "packageManager": "yarn@4.10.3"
+}

@@ -1,0 +1,102 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "components/progress") {
+  /**
+   * Progress
+   */
+
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // 1. Add the correct display in Edge 18- and IE
+  // 2. Add the correct vertical alignment in Chrome, Edge, and Firefox
+  #{$parent-selector} progress {
+    display: inline-block; // 1
+    vertical-align: baseline; // 2
+  }
+
+  // Pico
+  // ––––––––––––––––––––
+
+  #{$parent-selector} progress {
+    // Reset the default appearance
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    // Styles
+    display: inline-block;
+    appearance: none;
+    width: 100%;
+    height: 0.5rem;
+    margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.5);
+    overflow: hidden;
+
+    // Remove Firefox and Opera border
+    border: 0;
+    border-radius: var(#{$css-var-prefix}border-radius);
+    background-color: var(#{$css-var-prefix}progress-background-color);
+
+    // IE10 uses `color` to set the bar background-color
+    color: var(#{$css-var-prefix}progress-color);
+
+    &::-webkit-progress-bar {
+      border-radius: var(#{$css-var-prefix}border-radius);
+      background: none;
+    }
+
+    &[value]::-webkit-progress-value {
+      background-color: var(#{$css-var-prefix}progress-color);
+
+      @if $enable-transitions {
+        transition: inline-size var(#{$css-var-prefix}transition);
+      }
+    }
+
+    &::-moz-progress-bar {
+      background-color: var(#{$css-var-prefix}progress-color);
+    }
+
+    // Indeterminate state
+    @media (prefers-reduced-motion: no-preference) {
+      &:indeterminate {
+        background: var(#{$css-var-prefix}progress-background-color)
+          linear-gradient(
+            to right,
+            var(#{$css-var-prefix}progress-color) 30%,
+            var(#{$css-var-prefix}progress-background-color) 30%
+          )
+          top left / 150% 150% no-repeat;
+        animation: progress-indeterminate 1s linear infinite;
+
+        &[value]::-webkit-progress-value {
+          background-color: transparent;
+        }
+
+        &::-moz-progress-bar {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  [dir="rtl"] {
+    @media (prefers-reduced-motion: no-preference) {
+      #{$parent-selector} progress:indeterminate {
+        animation-direction: reverse;
+      }
+    }
+  }
+
+  @keyframes progress-indeterminate {
+    0% {
+      background-position: 200% 0;
+    }
+
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}

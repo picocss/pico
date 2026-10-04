@@ -1,0 +1,276 @@
+/** SASS for the <select> HTML element
+ *
+ * Found in scss/components/_group.scss#22: `select {`
+ * Found in scss/components/_group.scss#49: `select {`
+ * Found in scss/components/_group.scss#71: `select {`
+ * Found in scss/components/_group.scss#77: `&:has(input:not([type="submit"], [type="button"]):focus, select:focus) {`
+ * Found in scss/components/_loading.scss#10: `#{\$parent-selector} [aria-busy="true"]:not(input, select, textarea, html, form) {`
+ * Found in scss/components/_nav.scss#69: `select {`
+ * Found in scss/forms/_basics.scss#6: `$helper-previous-tags: "input, select, textarea, fieldset";`
+ * Found in scss/forms/_basics.scss#20: `#{\$parent-selector} select,`
+ * Found in scss/forms/_basics.scss#35: `#{\$parent-selector} select {`
+ * Found in scss/forms/_basics.scss#151: `#{\$parent-selector} select,`
+ * Found in scss/forms/_basics.scss#158: `#{\$parent-selector} select,`
+ * Found in scss/forms/_basics.scss#167: `#{\$parent-selector} select,`
+ * Found in scss/forms/_basics.scss#200: `#{\$parent-selector} :where(select, textarea):not([readonly]) {`
+ * Found in scss/forms/_basics.scss#211: `#{\$parent-selector} :where(select, textarea):not([readonly]) {`
+ * Found in scss/forms/_basics.scss#227: `#{\$parent-selector} :where(select, textarea):not([readonly]) {`
+ * Found in scss/forms/_basics.scss#244: `:is(input:not([type="submit"], [type="button"], [type="reset"]), select, textarea) {`
+ * Found in scss/forms/_basics.scss#254: `#{\$parent-selector} :where(input, select, textarea) {`
+ * Found in scss/forms/_basics.scss#361: `#{\$parent-selector} :where(input, select, textarea) {`
+ * Found in scss/forms/_basics.scss#375: `#{\$parent-selector} select:invalid {`
+ * Found in scss/forms/_basics.scss#382: `#{\$parent-selector} select,`
+ * Found in scss/forms/_basics.scss#388: `#{\$parent-selector} select {`
+ * Found in scss/forms/_basics.scss#389: `// Unstyle the caret on `<select>`s in IE10+.`
+ * Found in scss/forms/_basics.scss#417: `#{\$parent-selector} select {`
+ * Found in scss/forms/_basics.scss#467: `> :where(input, select, textarea) {`
+ * Found in scss/utilities/_accessibility.scss#44: `#{\$parent-selector} select,`
+ *
+ * Add your styles here
+ */
+
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "utilities/accessibility") {
+  // User interaction
+  // Remove the tapping delay in IE 10
+  #{$parent-selector} select {
+    -ms-touch-action: manipulation;
+  }
+}
+
+@if map.get($modules, "forms/basics") {
+  #{$parent-selector} select {
+    appearance: none;
+    width: 100%;
+    padding: var(#{$css-var-prefix}form-element-spacing-vertical)
+      var(#{$css-var-prefix}form-element-spacing-horizontal);
+  }
+  // Commons styles
+  #{$parent-selector} select {
+    #{$css-var-prefix}background-color: var(#{$css-var-prefix}form-element-background-color);
+    #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-border-color);
+    #{$css-var-prefix}color: var(#{$css-var-prefix}form-element-color);
+    #{$css-var-prefix}box-shadow: none;
+    border: var(#{$css-var-prefix}border-width) solid var(#{$css-var-prefix}border-color);
+    border-radius: var(#{$css-var-prefix}border-radius);
+    outline: none;
+    background-color: var(#{$css-var-prefix}background-color);
+    box-shadow: var(#{$css-var-prefix}box-shadow);
+    color: var(#{$css-var-prefix}color);
+    font-weight: var(#{$css-var-prefix}font-weight);
+
+    @if $enable-transitions {
+      transition:
+        background-color var(#{$css-var-prefix}transition),
+        border-color var(#{$css-var-prefix}transition),
+        color var(#{$css-var-prefix}transition),
+        box-shadow var(#{$css-var-prefix}transition);
+    }
+  }
+  #{$parent-selector} :where(select, textarea):not([readonly]) {
+    &:is(:active, :focus) {
+      #{$css-var-prefix}background-color: var(
+        #{$css-var-prefix}form-element-active-background-color
+      );
+    }
+  }
+  // Active & Focus
+  #{$parent-selector} :where(select, textarea):not([readonly]) {
+    &:is(:active, :focus) {
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-active-border-color);
+    }
+  }
+
+  // Focus
+  #{$parent-selector} :where(select, textarea):not([readonly]) {
+    &:focus {
+      #{$css-var-prefix}box-shadow: 0
+        0
+        0
+        var(#{$css-var-prefix}outline-width)
+        var(#{$css-var-prefix}form-element-focus-color);
+    }
+  }
+
+  // Disabled
+  #{$parent-selector} select[disabled],
+  #{$parent-selector}
+    :where(fieldset[disabled])
+    :is(input:not([type="submit"], [type="button"], [type="reset"]), select, textarea) {
+    opacity: var(#{$css-var-prefix}form-element-disabled-opacity);
+    pointer-events: none;
+  }
+
+  // Aria-invalid
+  #{$parent-selector} :where(input, select, textarea) {
+    &:not(
+      [type="checkbox"],
+      [type="radio"],
+      [type="date"],
+      [type="datetime-local"],
+      [type="month"],
+      [type="time"],
+      [type="week"],
+      [type="range"]
+    ) {
+      &[aria-invalid] {
+        @if $enable-important {
+          padding-right: calc(
+            var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem
+          ) !important;
+          padding-left: var(#{$css-var-prefix}form-element-spacing-horizontal);
+          padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal) !important;
+          padding-inline-end: calc(
+            var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem
+          ) !important;
+        } @else {
+          padding-right: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
+          padding-left: var(#{$css-var-prefix}form-element-spacing-horizontal);
+          padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal);
+          padding-inline-end: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
+        }
+        background-position: center right 0.75rem;
+        background-size: 1rem auto;
+        background-repeat: no-repeat;
+      }
+
+      &[aria-invalid="false"]:not(select) {
+        background-image: var(#{$css-var-prefix}icon-valid);
+      }
+
+      &[aria-invalid="true"]:not(select) {
+        background-image: var(#{$css-var-prefix}icon-invalid);
+      }
+    }
+
+    &[aria-invalid="false"] {
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-valid-border-color);
+
+      &:is(:active, :focus) {
+        @if $enable-important {
+          #{$css-var-prefix}border-color: var(
+            #{$css-var-prefix}form-element-valid-active-border-color
+          ) !important;
+
+          &:not([type="checkbox"], [type="radio"]) {
+            #{$css-var-prefix}box-shadow: 0
+              0
+              0
+              var(#{$css-var-prefix}outline-width)
+              var(#{$css-var-prefix}form-element-valid-focus-color) !important;
+          }
+        } @else {
+          #{$css-var-prefix}border-color: var(
+            #{$css-var-prefix}form-element-valid-active-border-color
+          );
+
+          &:not([type="checkbox"], [type="radio"]) {
+            #{$css-var-prefix}box-shadow: 0
+              0
+              0
+              var(#{$css-var-prefix}outline-width)
+              var(#{$css-var-prefix}form-element-valid-focus-color);
+          }
+        }
+      }
+    }
+
+    &[aria-invalid="true"] {
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-invalid-border-color);
+
+      &:is(:active, :focus) {
+        @if $enable-important {
+          #{$css-var-prefix}border-color: var(
+            #{$css-var-prefix}form-element-invalid-active-border-color
+          ) !important;
+
+          &:not([type="checkbox"], [type="radio"]) {
+            #{$css-var-prefix}box-shadow: 0
+              0
+              0
+              var(#{$css-var-prefix}outline-width)
+              var(#{$css-var-prefix}form-element-invalid-focus-color) !important;
+          }
+        } @else {
+          #{$css-var-prefix}border-color: var(
+            #{$css-var-prefix}form-element-invalid-active-border-color
+          );
+
+          &:not([type="checkbox"], [type="radio"]) {
+            #{$css-var-prefix}box-shadow: 0
+              0
+              0
+              var(#{$css-var-prefix}outline-width)
+              var(#{$css-var-prefix}form-element-invalid-focus-color);
+          }
+        }
+      }
+    }
+  }
+  [dir="rtl"] {
+    #{$parent-selector} :where(input, select, textarea) {
+      &:not([type="checkbox"], [type="radio"]) {
+        &:is([aria-invalid], [aria-invalid="true"], [aria-invalid="false"]) {
+          background-position: center left 0.75rem;
+        }
+      }
+    }
+  }
+
+  // Placeholder
+  #{$parent-selector} select:invalid {
+    color: var(#{$css-var-prefix}form-element-placeholder-color);
+    opacity: 1;
+  }
+
+  // Margin bottom (Not Checkboxes and Radios)
+  #{$parent-selector} select {
+    margin-bottom: var(#{$css-var-prefix}spacing);
+  }
+
+  // Select
+  #{$parent-selector} select {
+    // Unstyle the caret on `<select>`s in IE10+.
+    &::-ms-expand {
+      border: 0;
+      background-color: transparent;
+    }
+
+    &:not([multiple], [size]) {
+      padding-right: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
+      padding-left: var(#{$css-var-prefix}form-element-spacing-horizontal);
+      padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal);
+      padding-inline-end: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
+      background-image: var(#{$css-var-prefix}icon-chevron);
+      background-position: center right 0.75rem;
+      background-size: 1rem auto;
+      background-repeat: no-repeat;
+    }
+
+    &[multiple] {
+      option {
+        &:checked {
+          background: var(#{$css-var-prefix}form-element-selected-background-color);
+          color: var(#{$css-var-prefix}form-element-color);
+        }
+      }
+    }
+  }
+
+  [dir="rtl"] {
+    #{$parent-selector} select {
+      &:not([multiple], [size]) {
+        background-position: center left 0.75rem;
+      }
+    }
+  }
+
+  // Styles for Input inside a label
+  #{$parent-selector} label {
+    > :where(input, select, textarea) {
+      margin-top: calc(var(#{$css-var-prefix}spacing) * 0.25);
+    }
+  }
+}

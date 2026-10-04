@@ -1,0 +1,280 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "components/dropdown") and $enable-classes {
+  /**
+   * Dropdown (details.dropdown)
+   */
+
+  // Container
+  // ––––––––––––––––––––
+  #{$parent-selector} details.dropdown {
+    position: relative;
+    border-bottom: none;
+
+    // Marker
+    // ––––––––––––––––––––
+    > summary,
+    > button,
+    > a {
+      &::after {
+        display: block;
+        width: 1rem;
+        height: calc(1rem * var(#{$css-var-prefix}line-height, 1.5));
+        margin-inline-start: 0.25rem;
+        float: right;
+        // TODO: find out why we need this magic number (0.2 rem)
+        // for the marker to be aligned with the regular select
+        transform: rotate(0deg) translateX(0.2rem);
+        background-image: var(#{$css-var-prefix}icon-chevron);
+        background-position: right center;
+        background-size: 1rem auto;
+        background-repeat: no-repeat;
+        content: "";
+      }
+    }
+  }
+
+  // Container type accordion
+  // inside a nav
+  // ––––––––––––––––––––
+  #{$parent-selector} nav details.dropdown {
+    // Override height
+    margin-bottom: 0;
+  }
+
+  // Button as a select
+  // inside container type accordion
+  // ––––––––––––––––––––
+  #{$parent-selector} details.dropdown > summary:not([role]) {
+    height: calc(
+      1rem *
+        var(#{$css-var-prefix}line-height) +
+        var(#{$css-var-prefix}form-element-spacing-vertical) *
+        2 +
+        var(#{$css-var-prefix}border-width) *
+        2
+    );
+    padding: var(#{$css-var-prefix}form-element-spacing-vertical)
+      var(#{$css-var-prefix}form-element-spacing-horizontal);
+    border: var(#{$css-var-prefix}border-width)
+      solid
+      var(#{$css-var-prefix}form-element-border-color);
+    border-radius: var(#{$css-var-prefix}border-radius);
+    background-color: var(#{$css-var-prefix}form-element-background-color);
+    color: var(#{$css-var-prefix}form-element-placeholder-color);
+    line-height: inherit;
+    cursor: pointer;
+    user-select: none;
+
+    @if $enable-transitions {
+      transition:
+        background-color var(#{$css-var-prefix}transition),
+        border-color var(#{$css-var-prefix}transition),
+        color var(#{$css-var-prefix}transition),
+        box-shadow var(#{$css-var-prefix}transition);
+    }
+
+    &:active,
+    &:focus {
+      border-color: var(#{$css-var-prefix}form-element-active-border-color);
+      background-color: var(#{$css-var-prefix}form-element-active-background-color);
+    }
+
+    &:focus {
+      box-shadow: 0
+        0
+        0
+        var(#{$css-var-prefix}outline-width)
+        var(#{$css-var-prefix}form-element-focus-color);
+    }
+
+    // Reset focus visible from accordion component
+    &:focus-visible {
+      outline: none;
+    }
+
+    // Aria-invalid
+    &[aria-invalid="false"] {
+      #{$css-var-prefix}form-element-border-color: var(
+        #{$css-var-prefix}form-element-valid-border-color
+      );
+      #{$css-var-prefix}form-element-active-border-color: var(
+        #{$css-var-prefix}form-element-valid-focus-color
+      );
+      #{$css-var-prefix}form-element-focus-color: var(
+        #{$css-var-prefix}form-element-valid-focus-color
+      );
+    }
+
+    &[aria-invalid="true"] {
+      #{$css-var-prefix}form-element-border-color: var(
+        #{$css-var-prefix}form-element-invalid-border-color
+      );
+      #{$css-var-prefix}form-element-active-border-color: var(
+        #{$css-var-prefix}form-element-invalid-focus-color
+      );
+      #{$css-var-prefix}form-element-focus-color: var(
+        #{$css-var-prefix}form-element-invalid-focus-color
+      );
+    }
+  }
+
+  // Dropdown inside a nav
+  // ––––––––––––––––––––
+  #{$parent-selector} nav details.dropdown {
+    display: inline;
+    margin: calc(var(#{$css-var-prefix}nav-element-spacing-vertical) * -1) 0;
+
+    > summary {
+      &::after {
+        transform: rotate(0deg) translateX(0rem);
+      }
+
+      &:not([role]) {
+        // Override height
+        height: calc(
+          (1rem * var(#{$css-var-prefix}line-height)) +
+            (var(#{$css-var-prefix}nav-link-spacing-vertical) * 2)
+        );
+        padding: calc(
+            var(#{$css-var-prefix}nav-link-spacing-vertical) -
+              (var(#{$css-var-prefix}border-width) * 2)
+          )
+          var(#{$css-var-prefix}nav-link-spacing-horizontal);
+
+        &:focus-visible {
+          box-shadow: 0
+            0
+            0
+            var(#{$css-var-prefix}outline-width)
+            var(#{$css-var-prefix}primary-focus);
+        }
+      }
+    }
+  }
+
+  // Submenu
+  // ––––––––––––––––––––
+  #{$parent-selector} details.dropdown > summary + ul {
+    display: flex;
+    z-index: 99;
+    position: absolute;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    min-width: fit-content;
+    margin: 0;
+    margin-top: var(#{$css-var-prefix}outline-width);
+    padding: 0;
+    border: var(#{$css-var-prefix}border-width) solid var(#{$css-var-prefix}dropdown-border-color);
+    border-radius: var(#{$css-var-prefix}border-radius);
+    background-color: var(#{$css-var-prefix}dropdown-background-color);
+    box-shadow: var(#{$css-var-prefix}dropdown-box-shadow);
+    color: var(#{$css-var-prefix}dropdown-color);
+    white-space: nowrap;
+    opacity: 0;
+
+    @if $enable-transitions {
+      transition:
+        opacity var(#{$css-var-prefix}transition),
+        transform 0s ease-in-out 1s;
+    }
+
+    &[dir="rtl"] {
+      right: 0;
+      left: auto;
+    }
+
+    li {
+      width: 100%;
+      margin-bottom: 0;
+      padding: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5)
+        var(#{$css-var-prefix}form-element-spacing-horizontal);
+      list-style: none;
+
+      &:first-of-type {
+        margin-top: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
+      }
+
+      &:last-of-type {
+        margin-bottom: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5);
+      }
+
+      a {
+        display: block;
+        margin: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * -0.5)
+          calc(var(#{$css-var-prefix}form-element-spacing-horizontal) * -1);
+        padding: calc(var(#{$css-var-prefix}form-element-spacing-vertical) * 0.5)
+          var(#{$css-var-prefix}form-element-spacing-horizontal);
+        overflow: hidden;
+        border-radius: 0;
+        color: var(#{$css-var-prefix}dropdown-color);
+        text-decoration: none;
+        text-overflow: ellipsis;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &:focus-visible,
+        &[aria-current]:not([aria-current="false"]) {
+          background-color: var(#{$css-var-prefix}dropdown-hover-background-color);
+        }
+      }
+
+      label {
+        width: 100%;
+      }
+
+      // Not working in Firefox, which doesn't support the `:has()` pseudo-class
+      &:has(label):hover {
+        background-color: var(#{$css-var-prefix}dropdown-hover-background-color);
+      }
+    }
+  }
+
+  // Button opened
+  // inside container type accordion
+  // ––––––––––––––––––––
+  #{$parent-selector} details.dropdown[open] > summary {
+    margin-bottom: 0;
+  }
+
+  // Menu opened
+  // ––––––––––––––––––––
+  // 1. Inside container type accordion
+  #{$parent-selector} details.dropdown[open] > summary {
+    + ul {
+      transform: scaleY(1);
+      opacity: 1;
+
+      @if $enable-transitions {
+        transition:
+          opacity var(#{$css-var-prefix}transition),
+          transform 0s ease-in-out 0s;
+      }
+    }
+  }
+
+  // Close for dropdown
+  // inside container type accordion
+  // ––––––––––––––––––––
+  #{$parent-selector} details.dropdown[open] > summary {
+    &::before {
+      display: block;
+      z-index: 1;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      inset: 0;
+      background: none;
+      content: "";
+      cursor: default;
+    }
+  }
+  // Label
+  // ––––––––––––––––––––
+  #{$parent-selector} label > details.dropdown {
+    margin-top: calc(var(#{$css-var-prefix}spacing) * 0.25);
+  }
+}

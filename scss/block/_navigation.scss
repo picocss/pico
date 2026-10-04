@@ -1,0 +1,38 @@
+/** SASS for the <nav> HTML element
+ *
+ * Found in scss/components/_dropdown.scss#39: `// inside a nav`
+ * Found in scss/components/_dropdown.scss#41: `#{\$parent-selector} nav details.dropdown {`
+ * Found in scss/components/_dropdown.scss#123: `// Dropdown inside a nav`
+ * Found in scss/components/_dropdown.scss#125: `#{\$parent-selector} nav details.dropdown {`
+ * Found in scss/components/_dropdown.scss#127: `margin: calc(var(#{\$css-var-prefix}nav-element-spacing-vertical) * -1) 0;`
+ * Found in scss/components/_dropdown.scss#138: `(var(#{\$css-var-prefix}nav-link-spacing-vertical) * 2)`
+ * Found in scss/components/_dropdown.scss#141: `var(#{\$css-var-prefix}nav-link-spacing-vertical) -`
+ * Found in scss/components/_dropdown.scss#144: `var(#{\$css-var-prefix}nav-link-spacing-horizontal);`
+ * Found in scss/components/_nav.scss#4: `@if map.get($modules, "components/nav") {`
+ * Found in scss/components/_nav.scss#13: `:where(nav li)::before {`
+ * Found in scss/components/_nav.scss#21: `#{\$parent-selector} nav,`
+ * Found in scss/components/_nav.scss#22: `#{\$parent-selector} nav ul {`
+ * Found in scss/components/_nav.scss#26: `#{\$parent-selector} nav {`
+ * Found in scss/components/_nav.scss#38: `margin-left: calc(var(#{\$css-var-prefix}nav-element-spacing-horizontal) * -1);`
+ * Found in scss/components/_nav.scss#41: `margin-right: calc(var(#{\$css-var-prefix}nav-element-spacing-horizontal) * -1);`
+ * Found in scss/components/_nav.scss#48: `padding: var(#{\$css-var-prefix}nav-element-spacing-vertical)`
+ * Found in scss/components/_nav.scss#49: `var(#{\$css-var-prefix}nav-element-spacing-horizontal);`
+ * Found in scss/components/_nav.scss#53: `margin: calc(var(#{\$css-var-prefix}nav-link-spacing-vertical) * -1)`
+ * Found in scss/components/_nav.scss#54: `calc(var(#{\$css-var-prefix}nav-link-spacing-horizontal) * -1);`
+ * Found in scss/components/_nav.scss#55: `padding: var(#{\$css-var-prefix}nav-link-spacing-vertical)`
+ * Found in scss/components/_nav.scss#56: `var(#{\$css-var-prefix}nav-link-spacing-horizontal);`
+ * Found in scss/components/_nav.scss#75: `var(#{\$css-var-prefix}nav-link-spacing-vertical) -`
+ * Found in scss/components/_nav.scss#78: `var(#{\$css-var-prefix}nav-link-spacing-horizontal);`
+ * Found in scss/components/_nav.scss#89: `margin-inline-start: var(#{\$css-var-prefix}nav-link-spacing-horizontal);`
+ * Found in scss/components/_nav.scss#93: `margin: calc(var(#{\$css-var-prefix}nav-link-spacing-vertical) * -1) 0;`
+ * Found in scss/components/_nav.scss#94: `margin-inline-start: calc(var(#{\$css-var-prefix}nav-link-spacing-horizontal) * -1);`
+ * Found in scss/components/_nav.scss#101: `width: calc(var(#{\$css-var-prefix}nav-link-spacing-horizontal) * 4);`
+ * Found in scss/components/_nav.scss#102: `margin: 0 calc(var(#{\$css-var-prefix}nav-link-spacing-horizontal) * -1);`
+ * Found in scss/components/_nav.scss#103: `content: var(#{\$css-var-prefix}nav-breadcrumb-divider);`
+ * Found in scss/components/_nav.scss#124: `nav,`
+ * Found in scss/components/_nav.scss#132: `padding: calc(var(#{\$css-var-prefix}nav-element-spacing-vertical) * 0.5)`
+ * Found in scss/components/_nav.scss#133: `var(#{\$css-var-prefix}nav-element-spacing-horizontal);`
+ * Found in scss/components/_nav.scss#148: `#{\$parent-selector} nav {`
+ *
+ * Add your styles here
+ */

@@ -1,0 +1,43 @@
+{#
+  This file is auto-generated.
+
+  Body - The body element represents the content of an HTML document. All the contents such as text, images, headings, links, tables, etc. are placed between the body tags.
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block body %}
+{% set dir_choices = {'ltr': true, 'rtl': true, 'auto': true} %}
+{% set translate_choices = {'yes': true, 'no': true} %}
+<body
+  {% if accesskey is defined and accesskey|length > 0 %}accesskey="{{ accesskey }}"{% endif %}
+  {% if class is defined and class|length > 0 %}class="{{ class }}"{% endif %}
+  {% if dir is defined and dir|length > 0 and dir_choices[dir] is defined %}dir="{{ dir }}"{% endif %}
+  {% if draggable is defined and draggable|length > 0 %}draggable="{{ draggable }}"{% endif %}
+  {% if hidden is defined and hidden|length > 0 %}hidden="{{ hidden }}"{% endif %}
+  {% if id is defined and id|length > 0 %}id="{{ id }}"{% endif %}
+  {% if lang is defined and lang|length > 0 %}lang="{{ lang }}"{% endif %}
+  {% if onafterprint is defined and onafterprint|length > 0 %}onafterprint="{{ onafterprint }}"{% endif %}
+  {% if onbeforeprint is defined and onbeforeprint|length > 0 %}onbeforeprint="{{ onbeforeprint }}"{% endif %}
+  {% if onbeforeunload is defined and onbeforeunload|length > 0 %}onbeforeunload="{{ onbeforeunload }}"{% endif %}
+  {% if onhashchange is defined and onhashchange|length > 0 %}onhashchange="{{ onhashchange }}"{% endif %}
+  {% if onlanguagechange is defined and onlanguagechange|length > 0 %}onlanguagechange="{{ onlanguagechange }}"{% endif %}
+  {% if onmessage is defined and onmessage|length > 0 %}onmessage="{{ onmessage }}"{% endif %}
+  {% if onmessageerror is defined and onmessageerror|length > 0 %}onmessageerror="{{ onmessageerror }}"{% endif %}
+  {% if onoffline is defined and onoffline|length > 0 %}onoffline="{{ onoffline }}"{% endif %}
+  {% if ononline is defined and ononline|length > 0 %}ononline="{{ ononline }}"{% endif %}
+  {% if onpagehide is defined and onpagehide|length > 0 %}onpagehide="{{ onpagehide }}"{% endif %}
+  {% if onpageshow is defined and onpageshow|length > 0 %}onpageshow="{{ onpageshow }}"{% endif %}
+  {% if onpopstate is defined and onpopstate|length > 0 %}onpopstate="{{ onpopstate }}"{% endif %}
+  {% if onrejectionhandled is defined and onrejectionhandled|length > 0 %}onrejectionhandled="{{ onrejectionhandled }}"{% endif %}
+  {% if onstorage is defined and onstorage|length > 0 %}onstorage="{{ onstorage }}"{% endif %}
+  {% if onunhandledrejection is defined and onunhandledrejection|length > 0 %}onunhandledrejection="{{ onunhandledrejection }}"{% endif %}
+  {% if onunload is defined and onunload|length > 0 %}onunload="{{ onunload }}"{% endif %}
+  {% if style is defined and style|length > 0 %}style="{{ style }}"{% endif %}
+  {% if tabindex is defined and tabindex|length > 0 %}tabindex="{{ tabindex }}"{% endif %}
+  {% if title is defined and title|length > 0 %}title="{{ title }}"{% endif %}
+  {% if translate is defined and translate|length > 0 and translate_choices[translate] is defined %}translate="{{ translate }}"{% endif %}>
+  {% block content %}{{- content|raw -}}{% endblock %}
+</body>
+{% endblock %}

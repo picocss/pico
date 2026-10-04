@@ -1,0 +1,55 @@
+{#
+  This file is auto-generated.
+
+  Iframe - The iframe element represents a nested browsing context, effectively embedding another HTML page into the current page.
+
+  Symfony UX Twig Component (Anonymous)
+  @see https://symfony.com/bundles/ux-twig-component/current/index.html
+
+  Usage:
+    <twig:Iframe ariaAtomic="false" ariaBusy="true">
+      Content goes here
+    </twig:Iframe>
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigComponentsGenerator.php
+#}
+{% apply spaceless %}
+<iframe
+  {% if this.allowfullscreen is defined and this.allowfullscreen is not null %}allowfullscreen="{{ this.allowfullscreen }}"{% endif %}
+  {% if this.ariaAtomic is not null %}aria-atomic="{{ this.ariaAtomic.value }}"{% endif %}
+  {% if this.ariaBusy is not null %}aria-busy="{{ this.ariaBusy.value }}"{% endif %}
+  {% if this.ariaControls is defined and this.ariaControls is not null %}aria-controls="{{ this.ariaControls }}"{% endif %}
+  {% if this.ariaDescribedby is defined and this.ariaDescribedby is not null %}aria-describedby="{{ this.ariaDescribedby }}"{% endif %}
+  {% if this.ariaDetails is defined and this.ariaDetails is not null %}aria-details="{{ this.ariaDetails }}"{% endif %}
+  {% if this.ariaHidden is not null %}aria-hidden="{{ this.ariaHidden.value }}"{% endif %}
+  {% if this.ariaKeyshortcuts is defined and this.ariaKeyshortcuts is not null %}aria-keyshortcuts="{{ this.ariaKeyshortcuts }}"{% endif %}
+  {% if this.ariaLabel is defined and this.ariaLabel is not null %}aria-label="{{ this.ariaLabel }}"{% endif %}
+  {% if this.ariaLabelledby is defined and this.ariaLabelledby is not null %}aria-labelledby="{{ this.ariaLabelledby }}"{% endif %}
+  {% if this.ariaLive is not null %}aria-live="{{ this.ariaLive.value }}"{% endif %}
+  {% if this.ariaRelevant is not null %}aria-relevant="{{ this.ariaRelevant.value }}"{% endif %}
+  {% if this.ariaRoledescription is defined and this.ariaRoledescription is not null %}aria-roledescription="{{ this.ariaRoledescription }}"{% endif %}
+  {% if this.class is defined and this.class is not null %}class="{{ this.class }}"{% endif %}
+  {% if this.dir is not null %}dir="{{ this.dir.value }}"{% endif %}
+  {% if this.height is defined and this.height is not null %}height="{{ this.height }}"{% endif %}
+  {% if this.hidden is defined and this.hidden is not null %}hidden="{{ this.hidden }}"{% endif %}
+  {% if this.id is defined and this.id is not null %}id="{{ this.id }}"{% endif %}
+  {% if this.lang is defined and this.lang is not null %}lang="{{ this.lang }}"{% endif %}
+  {% if this.name is defined and this.name is not null %}name="{{ this.name }}"{% endif %}
+  {% if this.popover is not null %}popover="{{ this.popover.value }}"{% endif %}
+  {% if this.referrerpolicy is not null %}referrerpolicy="{{ this.referrerpolicy.value }}"{% endif %}
+  {% if this.role is not null %}role="{{ this.role.value }}"{% endif %}
+  {% if this.sandbox is defined and this.sandbox is not null %}sandbox="{{ this.sandbox }}"{% endif %}
+  {% if this.seamless is defined and this.seamless is not null %}seamless="{{ this.seamless }}"{% endif %}
+  {% if this.slot is defined and this.slot is not null %}slot="{{ this.slot }}"{% endif %}
+  {% if this.src is defined and this.src is not null %}src="{{ this.src }}"{% endif %}
+  {% if this.srcdoc is defined and this.srcdoc is not null %}srcdoc="{{ this.srcdoc }}"{% endif %}
+  {% if this.style is defined and this.style is not null %}style="{{ this.style }}"{% endif %}
+  {% if this.tabindex is defined and this.tabindex is not null %}tabindex="{{ this.tabindex }}"{% endif %}
+  {% if this.title is defined and this.title is not null %}title="{{ this.title }}"{% endif %}
+  {% if this.width is defined and this.width is not null %}width="{{ this.width }}"{% endif %}
+>
+  {%- block content %}{% endblock -%}
+</iframe>
+{% endapply %}

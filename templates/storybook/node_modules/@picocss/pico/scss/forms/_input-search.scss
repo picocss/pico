@@ -1,0 +1,60 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "forms/input-search") {
+  /**
+   * Input type search
+   */
+
+  // :not() are needed to add Specificity and avoid !important on padding
+  #{$parent-selector} input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
+    &[type="search"] {
+      padding-inline-start: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.75rem);
+      background-image: var(#{$css-var-prefix}icon-search);
+      background-position: center
+        left
+        calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 0.125rem);
+      background-size: 1rem auto;
+      background-repeat: no-repeat;
+
+      &[aria-invalid] {
+        @if $enable-important {
+          padding-inline-start: calc(
+            var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.75rem
+          ) !important;
+        } @else {
+          padding-inline-start: calc(
+            var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.75rem
+          );
+        }
+        background-position:
+          center left 1.125rem,
+          center right 0.75rem;
+      }
+
+      &[aria-invalid="false"] {
+        background-image: var(#{$css-var-prefix}icon-search), var(#{$css-var-prefix}icon-valid);
+      }
+
+      &[aria-invalid="true"] {
+        background-image: var(#{$css-var-prefix}icon-search), var(#{$css-var-prefix}icon-invalid);
+      }
+    }
+  }
+
+  [dir="rtl"] {
+    #{$parent-selector} :where(input) {
+      &:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]) {
+        &[type="search"] {
+          background-position: center right 1.125rem;
+
+          &[aria-invalid] {
+            background-position:
+              center right 1.125rem,
+              center left 0.75rem;
+          }
+        }
+      }
+    }
+  }
+}

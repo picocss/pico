@@ -1,0 +1,15 @@
+/** SASS for the <area> HTML element
+ *
+ * Add your styles here
+ */
+
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "utilities/accessibility") {
+  // User interaction
+  // Remove the tapping delay in IE 10
+  #{$parent-selector} area {
+    -ms-touch-action: manipulation;
+  }
+}

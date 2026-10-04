@@ -1,0 +1,55 @@
+{#
+  This file is auto-generated.
+
+  Label - The label element represents a caption in a user interface. The caption can be associated with a specific form control, known as the label element's labeled control, either using the for attribute, or by putting the form control inside the label element itself.
+
+  Symfony UX Twig Component (Anonymous)
+  @see https://symfony.com/bundles/ux-twig-component/current/index.html
+
+  Usage:
+    <twig:Label ariaAtomic="false" ariaBusy="true">
+      Content goes here
+    </twig:Label>
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigComponentsGenerator.php
+#}
+{% apply spaceless %}
+<label
+  {% if this.accesskey is defined and this.accesskey is not null %}accesskey="{{ this.accesskey }}"{% endif %}
+  {% if this.ariaAtomic is not null %}aria-atomic="{{ this.ariaAtomic.value }}"{% endif %}
+  {% if this.ariaBusy is not null %}aria-busy="{{ this.ariaBusy.value }}"{% endif %}
+  {% if this.ariaControls is defined and this.ariaControls is not null %}aria-controls="{{ this.ariaControls }}"{% endif %}
+  {% if this.ariaDescribedby is defined and this.ariaDescribedby is not null %}aria-describedby="{{ this.ariaDescribedby }}"{% endif %}
+  {% if this.ariaDetails is defined and this.ariaDetails is not null %}aria-details="{{ this.ariaDetails }}"{% endif %}
+  {% if this.ariaDisabled is not null %}aria-disabled="{{ this.ariaDisabled.value }}"{% endif %}
+  {% if this.ariaHidden is not null %}aria-hidden="{{ this.ariaHidden.value }}"{% endif %}
+  {% if this.ariaKeyshortcuts is defined and this.ariaKeyshortcuts is not null %}aria-keyshortcuts="{{ this.ariaKeyshortcuts }}"{% endif %}
+  {% if this.ariaLabelledby is defined and this.ariaLabelledby is not null %}aria-labelledby="{{ this.ariaLabelledby }}"{% endif %}
+  {% if this.ariaLive is not null %}aria-live="{{ this.ariaLive.value }}"{% endif %}
+  {% if this.ariaRelevant is not null %}aria-relevant="{{ this.ariaRelevant.value }}"{% endif %}
+  {% if this.ariaRoledescription is defined and this.ariaRoledescription is not null %}aria-roledescription="{{ this.ariaRoledescription }}"{% endif %}
+  {% if this.autocapitalize is not null %}autocapitalize="{{ this.autocapitalize.value }}"{% endif %}
+  {% if this.autofocus is defined and this.autofocus is not null %}autofocus="{{ this.autofocus }}"{% endif %}
+  {% if this.class is defined and this.class is not null %}class="{{ this.class }}"{% endif %}
+  {% if this.contenteditable is not null %}contenteditable="{{ this.contenteditable.value }}"{% endif %}
+  {% if this.dir is not null %}dir="{{ this.dir.value }}"{% endif %}
+  {% if this.draggable is defined and this.draggable is not null %}draggable="{{ this.draggable }}"{% endif %}
+  {% if this.for is defined and this.for is not null %}for="{{ this.for }}"{% endif %}
+  {% if this.hidden is defined and this.hidden is not null %}hidden="{{ this.hidden }}"{% endif %}
+  {% if this.id is defined and this.id is not null %}id="{{ this.id }}"{% endif %}
+  {% if this.inputmode is not null %}inputmode="{{ this.inputmode.value }}"{% endif %}
+  {% if this.lang is defined and this.lang is not null %}lang="{{ this.lang }}"{% endif %}
+  {% if this.popover is not null %}popover="{{ this.popover.value }}"{% endif %}
+  {% if this.role is not null %}role="{{ this.role.value }}"{% endif %}
+  {% if this.slot is defined and this.slot is not null %}slot="{{ this.slot }}"{% endif %}
+  {% if this.spellcheck is not null %}spellcheck="{{ this.spellcheck.value }}"{% endif %}
+  {% if this.style is defined and this.style is not null %}style="{{ this.style }}"{% endif %}
+  {% if this.tabindex is defined and this.tabindex is not null %}tabindex="{{ this.tabindex }}"{% endif %}
+  {% if this.title is defined and this.title is not null %}title="{{ this.title }}"{% endif %}
+  {% if this.translate is not null %}translate="{{ this.translate.value }}"{% endif %}
+>
+  {%- block content %}{% endblock -%}
+</label>
+{% endapply %}

@@ -1,0 +1,25 @@
+{#
+  This file is auto-generated.
+
+  Ruby - Composed Example
+  The ruby element represents a ruby annotation. Ruby annotations are short runs of text presented alongside base text, primarily used for East Asian typography to indicate pronunciation or to provide a short annotation.
+
+  CONTENT MODEL:
+  - Can be a child of: Article, Aside, Body, DefinitionDescription, Division, Footer, Header, Main, MarkedText, Paragraph, Section
+  - Can contain: RubyParenthesis, RubyText
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block ruby_composed %}
+{% embed '../inline/ruby.twig' with {
+  class: 'example'
+} %}
+  {% block content %}
+  {% include '../inline/rp.twig' with {'content': 'Example content'} %}
+  {% include '../inline/rp.twig' with {'content': 'Example content'} %}
+  {% include '../inline/rt.twig' with {'content': 'Example content'} %}
+  {% endblock %}
+{% endembed %}
+{% endblock %}

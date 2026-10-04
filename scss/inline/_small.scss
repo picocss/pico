@@ -1,0 +1,43 @@
+/** SASS for the <small> HTML element
+ *
+ * Found in scss/forms/_basics.scss#446: `+ small {`
+ * Found in scss/forms/_basics.scss#454: `+ small {`
+ * Found in scss/forms/_basics.scss#459: `+ small {`
+ *
+ * Add your styles here
+ */
+
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "forms/basics") {
+  // Helper
+  $helper-previous-tags: "input, select, textarea, fieldset";
+
+  @if map.get($modules, "layout/grid") and $enable-classes {
+    $helper-previous-tags: $helper-previous-tags + ", .grid";
+  }
+
+  // small follorwing an input, select, textarea, fieldset
+  #{$parent-selector} :where(#{$helper-previous-tags}) {
+    + small {
+      display: block;
+      width: 100%;
+      margin-top: calc(var(#{$css-var-prefix}spacing) * -0.75);
+      margin-bottom: var(#{$css-var-prefix}spacing);
+      color: var(#{$css-var-prefix}muted-color);
+    }
+
+    &[aria-invalid="false"] {
+      + small {
+        color: var(#{$css-var-prefix}ins-color);
+      }
+    }
+
+    &[aria-invalid="true"] {
+      + small {
+        color: var(#{$css-var-prefix}del-color);
+      }
+    }
+  }
+}

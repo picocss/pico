@@ -1,0 +1,177 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "components/modal") {
+  /**
+   * Modal (<dialog>)
+   */
+
+  :root,
+  :host {
+    #{$css-var-prefix}scrollbar-width: 0px;
+  }
+
+  #{$parent-selector} dialog {
+    display: flex;
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    min-width: 100%;
+    height: inherit;
+    min-height: 100%;
+    padding: 0;
+    border: 0;
+    backdrop-filter: var(#{$css-var-prefix}modal-overlay-backdrop-filter);
+    background-color: var(#{$css-var-prefix}modal-overlay-background-color);
+    color: var(#{$css-var-prefix}color);
+
+    // Content
+    > article {
+      $close-selector: if(
+        $enable-classes,
+        ".close, :is(a, button)[rel=prev]",
+        ":is(a, button)[rel=prev]"
+      );
+      width: 100%;
+      max-height: calc(100vh - var(#{$css-var-prefix}spacing) * 2);
+      margin: var(#{$css-var-prefix}spacing);
+      overflow: auto;
+
+      @if map.get($breakpoints, "sm") {
+        @media (min-width: map.get(map.get($breakpoints, "sm"), "breakpoint")) {
+          max-width: map.get(map.get($breakpoints, "sm"), "viewport");
+        }
+      }
+
+      @if map.get($breakpoints, "md") {
+        @media (min-width: map.get(map.get($breakpoints, "md"), "breakpoint")) {
+          max-width: map.get(map.get($breakpoints, "md"), "viewport");
+        }
+      }
+
+      > header {
+        > * {
+          margin-bottom: 0;
+        }
+
+        #{$close-selector} {
+          margin: 0;
+          margin-left: var(#{$css-var-prefix}spacing);
+          padding: 0;
+          float: right;
+        }
+      }
+
+      > footer {
+        text-align: right;
+
+        button,
+        [role="button"] {
+          margin-bottom: 0;
+
+          &:not(:first-of-type) {
+            margin-left: calc(var(#{$css-var-prefix}spacing) * 0.5);
+          }
+        }
+      }
+
+      // Close icon
+      #{$close-selector} {
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        margin-top: calc(var(#{$css-var-prefix}spacing) * -1);
+        margin-bottom: var(#{$css-var-prefix}spacing);
+        margin-left: auto;
+        border: none;
+        background-image: var(#{$css-var-prefix}icon-close);
+        background-position: center;
+        background-size: auto 1rem;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        opacity: 0.5;
+
+        @if $enable-transitions {
+          transition: opacity var(#{$css-var-prefix}transition);
+        }
+
+        &:is([aria-current]:not([aria-current="false"]), :hover, :active, :focus) {
+          opacity: 1;
+        }
+      }
+    }
+
+    // Closed state
+    &:not([open]),
+    &[open="false"] {
+      display: none;
+    }
+  }
+
+  // Utilities
+  @if $enable-classes {
+    .modal-is-open {
+      padding-right: var(#{$css-var-prefix}scrollbar-width, 0px);
+      overflow: hidden;
+      pointer-events: none;
+      touch-action: none;
+
+      dialog {
+        pointer-events: auto;
+        touch-action: auto;
+      }
+    }
+  }
+
+  // Animations
+  @if $enable-classes and $enable-transitions {
+    $animation-duration: 0.2s;
+
+    :where(.modal-is-opening, .modal-is-closing) {
+      dialog,
+      dialog > article {
+        animation-duration: $animation-duration;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: both;
+      }
+
+      dialog {
+        animation-duration: ($animation-duration * 4);
+        animation-name: modal-overlay;
+
+        > article {
+          animation-delay: $animation-duration;
+          animation-name: modal;
+        }
+      }
+    }
+
+    .modal-is-closing {
+      dialog,
+      dialog > article {
+        animation-delay: 0s;
+        animation-direction: reverse;
+      }
+    }
+
+    @keyframes modal-overlay {
+      from {
+        backdrop-filter: none;
+        background-color: transparent;
+      }
+    }
+
+    @keyframes modal {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+    }
+  }
+}

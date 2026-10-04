@@ -1,0 +1,24 @@
+/** SASS for the <li> HTML element
+ *
+ * Found in scss/components/_nav.scss#45: `li {`
+ * Found in scss/components/_nav.scss#87: `& ul li {`
+ * Found in scss/components/_nav.scss#127: `li {`
+ * Found in scss/components/_nav.scss#131: `li {`
+ * Found in scss/components/_nav.scss#150: `& ul li {`
+ * Found in scss/content/_typography.scss#119: `li {`
+ * Found in scss/content/_typography.scss#131: `#{\$parent-selector} ul li {`
+  * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/typography") {
+  #{$parent-selector} ul li {
+    list-style: square;
+  }
+  #{$parent-selector} :where(ol, ul) {
+    li {
+      margin-bottom: calc(var(#{$css-var-prefix}typography-spacing-vertical) * 0.25);
+    }
+  }
+}

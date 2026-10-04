@@ -1,0 +1,30 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "utilities/reduce-motion") and enable-transitions and enable-important {
+  /**
+   * Reduce Motion Features
+   */
+
+  // Based on :
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // 1. Remove animations when motion is reduced (opinionated)
+  // 2. Remove fixed background attachments when motion is reduced (opinionated)
+  // 3. Remove timed scrolling behaviors when motion is reduced (opinionated)
+  // 4. Remove transitions when motion is reduced (opinionated)
+  @media (prefers-reduced-motion: reduce) {
+    #{$parent-selector} *:not([aria-busy="true"]),
+    #{$parent-selector} :not([aria-busy="true"])::before,
+    #{$parent-selector} :not([aria-busy="true"])::after {
+      background-attachment: initial !important; // 2
+      animation-duration: 1ms !important; // 1
+      animation-delay: -1ms !important; // 1
+      animation-iteration-count: 1 !important; // 1
+      scroll-behavior: auto !important; // 3
+      transition-delay: 0s !important; // 4
+      transition-duration: 0s !important; // 4
+    }
+  }
+}

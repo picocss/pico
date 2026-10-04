@@ -1,0 +1,15 @@
+/** SASS for the <abbr> HTML element
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/typography") {
+  // 1. Remove underline decoration in Chrome, Edge, IE, Opera, and Safari
+  #{$parent-selector} abbr[title] {
+    border-bottom: 1px dotted;
+    text-decoration: none; // 1
+    cursor: help;
+  }
+}

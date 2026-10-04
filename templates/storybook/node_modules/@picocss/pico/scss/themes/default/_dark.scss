@@ -1,0 +1,261 @@
+@use "sass:color";
+@use "sass:map";
+@use "../../colors" as *;
+@use "../../settings" as *;
+@use "../../helpers/functions";
+@use "theme-colors";
+
+// Default: Dark theme
+@mixin theme {
+  color-scheme: dark;
+  #{$css-var-prefix}background-color: #{color.mix($slate-950, $slate-900)};
+
+  // Text color
+  #{$css-var-prefix}color: #{$zinc-200};
+
+  // Text selection color
+  #{$css-var-prefix}text-selection-color: theme-colors.get("text-selection-color", "dark");
+
+  // Muted colors
+  #{$css-var-prefix}muted-color: #{$zinc-450};
+  #{$css-var-prefix}muted-border-color: #{$slate-850};
+
+  // Primary colors
+  #{$css-var-prefix}primary: theme-colors.get("primary", "dark");
+  #{$css-var-prefix}primary-background: theme-colors.get("primary-background", "dark");
+  #{$css-var-prefix}primary-border: var(#{$css-var-prefix}primary-background);
+  #{$css-var-prefix}primary-underline: theme-colors.get("primary-underline", "dark");
+  #{$css-var-prefix}primary-hover: theme-colors.get("primary-hover", "dark");
+  #{$css-var-prefix}primary-hover-background: theme-colors.get("primary-hover-background", "dark");
+  #{$css-var-prefix}primary-hover-border: var(#{$css-var-prefix}primary-hover-background);
+  #{$css-var-prefix}primary-hover-underline: var(#{$css-var-prefix}primary-hover);
+  #{$css-var-prefix}primary-focus: theme-colors.get("primary-focus", "dark");
+  #{$css-var-prefix}primary-inverse: theme-colors.get("primary-inverse", "dark");
+
+  // Secondary colors
+  #{$css-var-prefix}secondary: #{$zinc-350};
+  #{$css-var-prefix}secondary-background: #{$slate-600};
+  #{$css-var-prefix}secondary-border: var(#{$css-var-prefix}secondary-background);
+  #{$css-var-prefix}secondary-underline: #{rgba($zinc-350, 0.5)};
+  #{$css-var-prefix}secondary-hover: #{$zinc-250};
+  #{$css-var-prefix}secondary-hover-background: #{$slate-550};
+  #{$css-var-prefix}secondary-hover-border: var(#{$css-var-prefix}secondary-hover-background);
+  #{$css-var-prefix}secondary-hover-underline: var(#{$css-var-prefix}secondary-hover);
+  #{$css-var-prefix}secondary-focus: #{rgba($slate-350, 0.25)};
+  #{$css-var-prefix}secondary-inverse: #{$white};
+
+  // Contrast colors
+  #{$css-var-prefix}contrast: #{$slate-100};
+  #{$css-var-prefix}contrast-background: #{$slate-50};
+  #{$css-var-prefix}contrast-border: var(#{$css-var-prefix}contrast-background);
+  #{$css-var-prefix}contrast-underline: #{rgba($slate-100, 0.5)};
+  #{$css-var-prefix}contrast-hover: #{$white};
+  #{$css-var-prefix}contrast-hover-background: #{$white};
+  #{$css-var-prefix}contrast-hover-border: var(#{$css-var-prefix}contrast-hover-background);
+  #{$css-var-prefix}contrast-hover-underline: var(#{$css-var-prefix}contrast-hover);
+  #{$css-var-prefix}contrast-focus: #{rgba($slate-150, 0.25)};
+  #{$css-var-prefix}contrast-inverse: #{$black};
+
+  // Box shadow
+  #{$css-var-prefix}box-shadow: functions.shadow(color.mix($black, $slate-950));
+
+  // Typography
+  @if map.get($modules, "content/typography") {
+    // Headings colors
+    #{$css-var-prefix}h1-color: #{$zinc-50};
+    #{$css-var-prefix}h2-color: #{$zinc-100};
+    #{$css-var-prefix}h3-color: #{$zinc-200};
+    #{$css-var-prefix}h4-color: #{$zinc-250};
+    #{$css-var-prefix}h5-color: #{$zinc-300};
+    #{$css-var-prefix}h6-color: #{$zinc-400};
+
+    // Highlighted text (<mark>)
+    #{$css-var-prefix}mark-background-color: #{$azure-750};
+    #{$css-var-prefix}mark-color: #{$white};
+
+    // Inserted (<ins>) & Deleted (<del>)
+    #{$css-var-prefix}ins-color: #{color.mix($jade-450, $zinc-200)};
+    #{$css-var-prefix}del-color: #{color.mix($red-500, $zinc-200)};
+
+    // Blockquote
+    #{$css-var-prefix}blockquote-border-color: var(#{$css-var-prefix}muted-border-color);
+    #{$css-var-prefix}blockquote-footer-color: var(#{$css-var-prefix}muted-color);
+  }
+
+  // Button
+  @if map.get($modules, "content/button") {
+    // To disable box-shadow, remove the var or set to '0 0 0 rgba(0, 0, 0, 0)'
+    // Don't use, 'none, 'false, 'null', '0', etc.
+    #{$css-var-prefix}button-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    #{$css-var-prefix}button-hover-box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+
+  // Table
+  @if map.get($modules, "content/table") {
+    #{$css-var-prefix}table-border-color: var(#{$css-var-prefix}muted-border-color);
+    #{$css-var-prefix}table-row-stripped-background-color: #{rgba($zinc-500, 0.0375)};
+  }
+
+  // Code
+  @if map.get($modules, "content/code") {
+    #{$css-var-prefix}code-background-color: #{color.mix($slate-900, $slate-850, 75%)};
+    #{$css-var-prefix}code-color: #{$zinc-400};
+    #{$css-var-prefix}code-kbd-background-color: var(#{$css-var-prefix}color);
+    #{$css-var-prefix}code-kbd-color: var(#{$css-var-prefix}background-color);
+  }
+
+  // Form elements
+  @if map.get($modules, "forms/basics") {
+    #{$css-var-prefix}form-element-background-color: #{color.mix($slate-900, $slate-850)};
+    #{$css-var-prefix}form-element-selected-background-color: #{$slate-800};
+    #{$css-var-prefix}form-element-border-color: #{$slate-800};
+    #{$css-var-prefix}form-element-color: #{$zinc-100};
+    #{$css-var-prefix}form-element-placeholder-color: #{$zinc-400};
+    #{$css-var-prefix}form-element-active-background-color: #{color.mix(
+        $slate-900,
+        $slate-850,
+        75%
+      )};
+    #{$css-var-prefix}form-element-active-border-color: var(#{$css-var-prefix}primary-border);
+    #{$css-var-prefix}form-element-focus-color: var(#{$css-var-prefix}primary-border);
+    #{$css-var-prefix}form-element-disabled-opacity: 0.5;
+    #{$css-var-prefix}form-element-invalid-border-color: #{color.mix($red-500, $slate-600)};
+    #{$css-var-prefix}form-element-invalid-active-border-color: #{color.mix(
+        $red-500,
+        $slate-600,
+        75%
+      )};
+    #{$css-var-prefix}form-element-invalid-focus-color: var(
+      #{$css-var-prefix}form-element-invalid-active-border-color
+    );
+    #{$css-var-prefix}form-element-valid-border-color: #{color.mix($jade-450, $slate-600)};
+    #{$css-var-prefix}form-element-valid-active-border-color: #{color.mix(
+        $jade-450,
+        $slate-600,
+        75%
+      )};
+    #{$css-var-prefix}form-element-valid-focus-color: var(
+      #{$css-var-prefix}form-element-valid-active-border-color
+    );
+  }
+
+  // Switch (input[type="checkbox"][role="switch"])
+  @if map.get($modules, "forms/checkbox-radio-switch") {
+    #{$css-var-prefix}switch-background-color: #{$slate-750};
+    #{$css-var-prefix}switch-checked-background-color: var(#{$css-var-prefix}primary-background);
+    #{$css-var-prefix}switch-color: #{$white};
+    #{$css-var-prefix}switch-thumb-box-shadow: theme-colors.get("switch-thumb-box-shadow", "dark");
+  }
+
+  // Range (input[type="range"])
+  @if map.get($modules, "forms/input-range") {
+    #{$css-var-prefix}range-border-color: #{$slate-850};
+    #{$css-var-prefix}range-active-border-color: #{$slate-800};
+    #{$css-var-prefix}range-thumb-border-color: var(#{$css-var-prefix}background-color);
+    #{$css-var-prefix}range-thumb-color: var(#{$css-var-prefix}secondary-background);
+    #{$css-var-prefix}range-thumb-active-color: var(#{$css-var-prefix}primary-background);
+  }
+
+  // Accordion (<details>)
+  @if map.get($modules, "components/accordion") {
+    #{$css-var-prefix}accordion-border-color: var(#{$css-var-prefix}muted-border-color);
+    #{$css-var-prefix}accordion-active-summary-color: var(#{$css-var-prefix}primary-hover);
+    #{$css-var-prefix}accordion-close-summary-color: var(#{$css-var-prefix}color);
+    #{$css-var-prefix}accordion-open-summary-color: var(#{$css-var-prefix}muted-color);
+  }
+
+  // Card (<article>)
+  @if map.get($modules, "components/card") {
+    #{$css-var-prefix}card-background-color: #{$slate-900};
+    #{$css-var-prefix}card-border-color: var(#{$css-var-prefix}card-background-color);
+    #{$css-var-prefix}card-box-shadow: var(#{$css-var-prefix}box-shadow);
+    #{$css-var-prefix}card-sectioning-background-color: #{color.mix($slate-900, $slate-850, 75%)};
+  }
+
+  // Dropdown (details.dropdown)
+  @if map.get($modules, "components/dropdown") and $enable-classes {
+    #{$css-var-prefix}dropdown-background-color: #{$slate-900};
+    #{$css-var-prefix}dropdown-border-color: #{$slate-850};
+    #{$css-var-prefix}dropdown-box-shadow: var(#{$css-var-prefix}box-shadow);
+    #{$css-var-prefix}dropdown-color: var(#{$css-var-prefix}color);
+    #{$css-var-prefix}dropdown-hover-background-color: #{$slate-850};
+  }
+
+  // Loading ([aria-busy=true])
+  @if map.get($modules, "components/loading") {
+    #{$css-var-prefix}loading-spinner-opacity: 0.5;
+  }
+
+  // Modal (<dialog>)
+  @if map.get($modules, "components/modal") {
+    #{$css-var-prefix}modal-overlay-background-color: #{rgba(color.mix($black, $zinc-950), 0.75)};
+  }
+
+  // Progress
+  @if map.get($modules, "components/progress") {
+    #{$css-var-prefix}progress-background-color: #{$slate-850};
+    #{$css-var-prefix}progress-color: var(#{$css-var-prefix}primary-background);
+  }
+
+  // Tooltip ([data-tooltip])
+  @if map.get($modules, "components/tooltip") {
+    #{$css-var-prefix}tooltip-background-color: var(#{$css-var-prefix}contrast-background);
+    #{$css-var-prefix}tooltip-color: var(#{$css-var-prefix}contrast-inverse);
+  }
+
+  // Form validation icons
+  @if map.get($modules, "forms/basics") {
+    #{$css-var-prefix}icon-valid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb(color.mix($jade-450, $slate-600))}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+    #{$css-var-prefix}icon-invalid: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#{functions.display-rgb(color.mix($red-500, $slate-600))}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='8' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='16' x2='12.01' y2='16'%3E%3C/line%3E%3C/svg%3E");
+  }
+
+  // Focus for buttons, radio and select
+  @if map.get($modules, "forms/basics") {
+    input:is(
+        [type="submit"],
+        [type="button"],
+        [type="reset"],
+        [type="checkbox"],
+        [type="radio"],
+        [type="file"]
+      ) {
+      #{$css-var-prefix}form-element-focus-color: var(#{$css-var-prefix}primary-focus);
+    }
+  }
+
+  // Chevron icons
+  @if map.get($modules, "components/accordion") or map.get($modules, "components/dropdown") {
+    // Change the icon color to black for accordion and dropdown .contrast buttons
+    @if $enable-classes {
+      #{$parent-selector} details {
+        summary {
+          &[role="button"].contrast:not(.outline) {
+            &::after {
+              filter: brightness(0);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Loading icon (animated)
+  @if map.get($modules, "components/loading") {
+    // Change the icon color to black for .contrast buttons
+    @if $enable-classes {
+      #{$parent-selector} [aria-busy="true"]:not(input, select, textarea) {
+        &.contrast:is(
+            button,
+            [type="submit"],
+            [type="button"],
+            [type="reset"],
+            [role="button"]
+          ):not(.outline) {
+          &::before {
+            filter: brightness(0);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,215 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "components/tooltip") {
+  /**
+   * Tooltip ([data-tooltip])
+   */
+
+  #{$parent-selector} [data-tooltip] {
+    position: relative;
+
+    &:not(a, button, input, [role="button"]) {
+      border-bottom: 1px dotted;
+      text-decoration: none;
+      cursor: help;
+    }
+
+    &[data-placement="top"]::before,
+    &[data-placement="top"]::after,
+    &::before,
+    &::after {
+      display: block;
+      z-index: 99;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      padding: 0.25rem 0.5rem;
+      overflow: hidden;
+      transform: translate(-50%, -0.25rem);
+      border-radius: var(#{$css-var-prefix}border-radius);
+      background: var(#{$css-var-prefix}tooltip-background-color);
+      content: attr(data-tooltip);
+      color: var(#{$css-var-prefix}tooltip-color);
+      font-style: normal;
+      font-weight: var(#{$css-var-prefix}font-weight);
+      font-size: 0.875rem;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    // Caret
+    &[data-placement="top"]::after,
+    &::after {
+      padding: 0;
+      transform: translate(-50%, 0rem);
+      border-top: 0.3rem solid;
+      border-right: 0.3rem solid transparent;
+      border-left: 0.3rem solid transparent;
+      border-radius: 0;
+      background-color: transparent;
+      content: "";
+      color: var(#{$css-var-prefix}tooltip-background-color);
+    }
+
+    &[data-placement="bottom"] {
+      &::before,
+      &::after {
+        top: 100%;
+        bottom: auto;
+        transform: translate(-50%, 0.25rem);
+      }
+
+      &:after {
+        transform: translate(-50%, -0.3rem);
+        border: 0.3rem solid transparent;
+        border-bottom: 0.3rem solid;
+      }
+    }
+
+    &[data-placement="left"] {
+      &::before,
+      &::after {
+        top: 50%;
+        right: 100%;
+        bottom: auto;
+        left: auto;
+        transform: translate(-0.25rem, -50%);
+      }
+
+      &:after {
+        transform: translate(0.3rem, -50%);
+        border: 0.3rem solid transparent;
+        border-left: 0.3rem solid;
+      }
+    }
+
+    &[data-placement="right"] {
+      &::before,
+      &::after {
+        top: 50%;
+        right: auto;
+        bottom: auto;
+        left: 100%;
+        transform: translate(0.25rem, -50%);
+      }
+
+      &:after {
+        transform: translate(-0.3rem, -50%);
+        border: 0.3rem solid transparent;
+        border-right: 0.3rem solid;
+      }
+    }
+
+    // Display
+    &:focus,
+    &:hover {
+      &::before,
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    @if $enable-transitions {
+      // Animations, excluding touch devices
+      @media (hover: hover) and (pointer: fine) {
+        // Default (top)
+        &:focus,
+        &:hover {
+          &::before,
+          &::after {
+            #{$css-var-prefix}tooltip-slide-to: translate(-50%, -0.25rem);
+            transform: translate(-50%, 0.75rem);
+            animation-duration: 0.2s;
+            animation-fill-mode: forwards;
+            animation-name: tooltip-slide;
+            opacity: 0;
+          }
+
+          &::after {
+            #{$css-var-prefix}tooltip-caret-slide-to: translate(-50%, 0rem);
+            transform: translate(-50%, -0.25rem);
+            animation-name: tooltip-caret-slide;
+          }
+        }
+
+        // Bottom
+        &[data-placement="bottom"] {
+          &:focus,
+          &:hover {
+            &::before,
+            &::after {
+              #{$css-var-prefix}tooltip-slide-to: translate(-50%, 0.25rem);
+              transform: translate(-50%, -0.75rem);
+              animation-name: tooltip-slide;
+            }
+
+            &::after {
+              #{$css-var-prefix}tooltip-caret-slide-to: translate(-50%, -0.3rem);
+              transform: translate(-50%, -0.5rem);
+              animation-name: tooltip-caret-slide;
+            }
+          }
+        }
+
+        // Left
+        &[data-placement="left"] {
+          &:focus,
+          &:hover {
+            &::before,
+            &::after {
+              #{$css-var-prefix}tooltip-slide-to: translate(-0.25rem, -50%);
+              transform: translate(0.75rem, -50%);
+              animation-name: tooltip-slide;
+            }
+
+            &::after {
+              #{$css-var-prefix}tooltip-caret-slide-to: translate(0.3rem, -50%);
+              transform: translate(0.05rem, -50%);
+              animation-name: tooltip-caret-slide;
+            }
+          }
+        }
+
+        // Right
+        &[data-placement="right"] {
+          &:focus,
+          &:hover {
+            &::before,
+            &::after {
+              #{$css-var-prefix}tooltip-slide-to: translate(0.25rem, -50%);
+              transform: translate(-0.75rem, -50%);
+              animation-name: tooltip-slide;
+            }
+
+            &::after {
+              #{$css-var-prefix}tooltip-caret-slide-to: translate(-0.3rem, -50%);
+              transform: translate(-0.05rem, -50%);
+              animation-name: tooltip-caret-slide;
+            }
+          }
+        }
+      }
+
+      @keyframes tooltip-slide {
+        to {
+          transform: var(#{$css-var-prefix}tooltip-slide-to);
+          opacity: 1;
+        }
+      }
+
+      @keyframes tooltip-caret-slide {
+        50% {
+          opacity: 0;
+        }
+        to {
+          transform: var(#{$css-var-prefix}tooltip-caret-slide-to);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

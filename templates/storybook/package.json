@@ -1,0 +1,29 @@
+{
+  "name": "storybook-test",
+  "packageManager": "yarn@4.10.3",
+  "devDependencies": {
+    "@babel/plugin-transform-typescript": "^7.28.5",
+    "@picocss/pico": "^2.1.1",
+    "@storybook/addon-a11y": "^10.1.10",
+    "@storybook/addon-docs": "^10.1.10",
+    "@storybook/addon-links": "^10.1.10",
+    "@storybook/addon-themes": "^10.1.10",
+    "@storybook/html-vite": "^10.1.10",
+    "@types/node": "^25.0.3",
+    "@typescript-eslint/parser": "^8.50.1",
+    "eslint-plugin-storybook": "^10.1.10",
+    "highlight.js": "^11.11.1",
+    "path": "^0.12.7",
+    "prettier": "^3.7.4",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "storybook": "^10.1.10",
+    "typescript": "^5.9.3",
+    "url": "^0.11.4",
+    "vite": "^7.3.0"
+  },
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  }
+}

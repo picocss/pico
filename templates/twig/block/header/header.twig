@@ -1,0 +1,37 @@
+{#
+  This file is auto-generated.
+
+  Header - The header element represents a container for introductory content or a set of navigational links. It typically contains the section's heading (an h1–h6 element or an hgroup element), but can also contain other content such as a table of contents, a search form, or any relevant logos.
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block header %}
+{% set autocapitalize_choices = {'none': true, 'sentences': true, 'words': true, 'characters': true} %}
+{% set contenteditable_choices = {'true': true, 'false': true, 'inherit': true} %}
+{% set dir_choices = {'ltr': true, 'rtl': true, 'auto': true} %}
+{% set inputmode_choices = {'none': true, 'text': true, 'decimal': true, 'numeric': true, 'email': true, 'tel': true, 'url': true, 'search': true} %}
+{% set spellcheck_choices = {'true': true, 'false': true} %}
+{% set translate_choices = {'yes': true, 'no': true} %}
+<header
+  {% if accesskey is defined and accesskey|length > 0 %}accesskey="{{ accesskey }}"{% endif %}
+  {% if ariaLabel is defined and ariaLabel|length > 0 %}aria-label="{{ ariaLabel }}"{% endif %}
+  {% if autocapitalize is defined and autocapitalize|length > 0 and autocapitalize_choices[autocapitalize] is defined %}autocapitalize="{{ autocapitalize }}"{% endif %}
+  {% if autofocus is defined and autofocus|length > 0 %}autofocus="{{ autofocus }}"{% endif %}
+  {% if class is defined and class|length > 0 %}class="{{ class }}"{% endif %}
+  {% if contenteditable is defined and contenteditable|length > 0 and contenteditable_choices[contenteditable] is defined %}contenteditable="{{ contenteditable }}"{% endif %}
+  {% if dir is defined and dir|length > 0 and dir_choices[dir] is defined %}dir="{{ dir }}"{% endif %}
+  {% if draggable is defined and draggable|length > 0 %}draggable="{{ draggable }}"{% endif %}
+  {% if hidden is defined and hidden|length > 0 %}hidden="{{ hidden }}"{% endif %}
+  {% if id is defined and id|length > 0 %}id="{{ id }}"{% endif %}
+  {% if inputmode is defined and inputmode|length > 0 and inputmode_choices[inputmode] is defined %}inputmode="{{ inputmode }}"{% endif %}
+  {% if lang is defined and lang|length > 0 %}lang="{{ lang }}"{% endif %}
+  {% if spellcheck is defined and spellcheck|length > 0 and spellcheck_choices[spellcheck] is defined %}spellcheck="{{ spellcheck }}"{% endif %}
+  {% if style is defined and style|length > 0 %}style="{{ style }}"{% endif %}
+  {% if tabindex is defined and tabindex|length > 0 %}tabindex="{{ tabindex }}"{% endif %}
+  {% if title is defined and title|length > 0 %}title="{{ title }}"{% endif %}
+  {% if translate is defined and translate|length > 0 and translate_choices[translate] is defined %}translate="{{ translate }}"{% endif %}>
+  {% block content %}{{- content|raw -}}{% endblock %}
+</header>
+{% endblock %}

@@ -1,0 +1,86 @@
+{#
+  This file is auto-generated.
+
+  Select - The select element represents a control for selecting amongst a set of options.
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block select %}
+{% set ariaAtomic_choices = {'false': true, 'true': true} %}
+{% set ariaAutocomplete_choices = {'none': true, 'inline': true, 'list': true, 'both': true} %}
+{% set ariaDisabled_choices = {'false': true, 'true': true} %}
+{% set ariaExpanded_choices = {'false': true, 'true': true, 'undefined': true} %}
+{% set ariaHaspopup_choices = {'false': true, 'true': true, 'menu': true, 'listbox': true, 'tree': true, 'grid': true, 'dialog': true} %}
+{% set ariaInvalid_choices = {'false': true, 'true': true, 'grammar': true, 'spelling': true} %}
+{% set ariaLive_choices = {'off': true, 'polite': true, 'assertive': true} %}
+{% set ariaMultiselectable_choices = {'false': true, 'true': true} %}
+{% set ariaOrientation_choices = {'horizontal': true, 'vertical': true, 'undefined': true} %}
+{% set ariaPressed_choices = {'false': true, 'true': true, 'mixed': true, 'undefined': true} %}
+{% set ariaReadonly_choices = {'false': true, 'true': true} %}
+{% set ariaRelevant_choices = {'additions': true, 'removals': true, 'text': true, 'all': true, 'additions text': true} %}
+{% set ariaRequired_choices = {'false': true, 'true': true} %}
+{% set autocapitalize_choices = {'none': true, 'sentences': true, 'words': true, 'characters': true} %}
+{% set autocomplete_choices = {'off': true, 'on': true} %}
+{% set autocorrect_choices = {'off': true, 'on': true} %}
+{% set contenteditable_choices = {'true': true, 'false': true, 'inherit': true} %}
+{% set dir_choices = {'ltr': true, 'rtl': true, 'auto': true} %}
+{% set inputmode_choices = {'none': true, 'text': true, 'decimal': true, 'numeric': true, 'email': true, 'tel': true, 'url': true, 'search': true} %}
+{% set popover_choices = {'auto': true, 'hint': true, 'manual': true} %}
+{% set role_choices = {'alert': true, 'application': true, 'article': true, 'banner': true, 'button': true, 'checkbox': true, 'complementary': true, 'contentinfo': true, 'dialog': true, 'form': true, 'grid': true, 'group': true, 'heading': true, 'img': true, 'link': true, 'list': true, 'listbox': true, 'listitem': true, 'main': true, 'menu': true, 'menubar': true, 'menuitem': true, 'navigation': true, 'none': true, 'presentation': true, 'radio': true, 'region': true, 'search': true, 'status': true, 'tab': true, 'tablist': true, 'tabpanel': true, 'textbox': true, 'toolbar': true, 'tooltip': true} %}
+{% set spellcheck_choices = {'true': true, 'false': true} %}
+{% set translate_choices = {'yes': true, 'no': true} %}
+<select
+  {% if accesskey is defined and accesskey|length > 0 %}accesskey="{{ accesskey }}"{% endif %}
+  {% if ariaActivedescendant is defined and ariaActivedescendant|length > 0 %}aria-activedescendant="{{ ariaActivedescendant }}"{% endif %}
+  {% if ariaAtomic is defined and ariaAtomic|length > 0 and ariaAtomic_choices[ariaAtomic] is defined %}aria-atomic="{{ ariaAtomic }}"{% endif %}
+  {% if ariaAutocomplete is defined and ariaAutocomplete|length > 0 and ariaAutocomplete_choices[ariaAutocomplete] is defined %}aria-autocomplete="{{ ariaAutocomplete }}"{% endif %}
+  {% if ariaControls is defined and ariaControls|length > 0 %}aria-controls="{{ ariaControls }}"{% endif %}
+  {% if ariaDescribedby is defined and ariaDescribedby|length > 0 %}aria-describedby="{{ ariaDescribedby }}"{% endif %}
+  {% if ariaDetails is defined and ariaDetails|length > 0 %}aria-details="{{ ariaDetails }}"{% endif %}
+  {% if ariaDisabled is defined and ariaDisabled|length > 0 and ariaDisabled_choices[ariaDisabled] is defined %}aria-disabled="{{ ariaDisabled }}"{% endif %}
+  {% if ariaExpanded is defined and ariaExpanded|length > 0 and ariaExpanded_choices[ariaExpanded] is defined %}aria-expanded="{{ ariaExpanded }}"{% endif %}
+  {% if ariaHaspopup is defined and ariaHaspopup|length > 0 and ariaHaspopup_choices[ariaHaspopup] is defined %}aria-haspopup="{{ ariaHaspopup }}"{% endif %}
+  {% if ariaInvalid is defined and ariaInvalid|length > 0 and ariaInvalid_choices[ariaInvalid] is defined %}aria-invalid="{{ ariaInvalid }}"{% endif %}
+  {% if ariaKeyshortcuts is defined and ariaKeyshortcuts|length > 0 %}aria-keyshortcuts="{{ ariaKeyshortcuts }}"{% endif %}
+  {% if ariaLabel is defined and ariaLabel|length > 0 %}aria-label="{{ ariaLabel }}"{% endif %}
+  {% if ariaLabelledby is defined and ariaLabelledby|length > 0 %}aria-labelledby="{{ ariaLabelledby }}"{% endif %}
+  {% if ariaLive is defined and ariaLive|length > 0 and ariaLive_choices[ariaLive] is defined %}aria-live="{{ ariaLive }}"{% endif %}
+  {% if ariaMultiselectable is defined and ariaMultiselectable|length > 0 and ariaMultiselectable_choices[ariaMultiselectable] is defined %}aria-multiselectable="{{ ariaMultiselectable }}"{% endif %}
+  {% if ariaOrientation is defined and ariaOrientation|length > 0 and ariaOrientation_choices[ariaOrientation] is defined %}aria-orientation="{{ ariaOrientation }}"{% endif %}
+  {% if ariaPlaceholder is defined and ariaPlaceholder|length > 0 %}aria-placeholder="{{ ariaPlaceholder }}"{% endif %}
+  {% if ariaPressed is defined and ariaPressed|length > 0 and ariaPressed_choices[ariaPressed] is defined %}aria-pressed="{{ ariaPressed }}"{% endif %}
+  {% if ariaReadonly is defined and ariaReadonly|length > 0 and ariaReadonly_choices[ariaReadonly] is defined %}aria-readonly="{{ ariaReadonly }}"{% endif %}
+  {% if ariaRelevant is defined and ariaRelevant|length > 0 and ariaRelevant_choices[ariaRelevant] is defined %}aria-relevant="{{ ariaRelevant }}"{% endif %}
+  {% if ariaRequired is defined and ariaRequired|length > 0 and ariaRequired_choices[ariaRequired] is defined %}aria-required="{{ ariaRequired }}"{% endif %}
+  {% if ariaRoledescription is defined and ariaRoledescription|length > 0 %}aria-roledescription="{{ ariaRoledescription }}"{% endif %}
+  {% if autocapitalize is defined and autocapitalize|length > 0 and autocapitalize_choices[autocapitalize] is defined %}autocapitalize="{{ autocapitalize }}"{% endif %}
+  {% if autocomplete is defined and autocomplete|length > 0 and autocomplete_choices[autocomplete] is defined %}autocomplete="{{ autocomplete }}"{% endif %}
+  {% if autocorrect is defined and autocorrect|length > 0 and autocorrect_choices[autocorrect] is defined %}autocorrect="{{ autocorrect }}"{% endif %}
+  {% if autofocus is defined and autofocus|length > 0 %}autofocus="{{ autofocus }}"{% endif %}
+  {% if class is defined and class|length > 0 %}class="{{ class }}"{% endif %}
+  {% if contenteditable is defined and contenteditable|length > 0 and contenteditable_choices[contenteditable] is defined %}contenteditable="{{ contenteditable }}"{% endif %}
+  {% if dir is defined and dir|length > 0 and dir_choices[dir] is defined %}dir="{{ dir }}"{% endif %}
+  {% if disabled is defined and disabled|length > 0 %}disabled="{{ disabled }}"{% endif %}
+  {% if draggable is defined and draggable|length > 0 %}draggable="{{ draggable }}"{% endif %}
+  {% if form is defined and form|length > 0 %}form="{{ form }}"{% endif %}
+  {% if hidden is defined and hidden|length > 0 %}hidden="{{ hidden }}"{% endif %}
+  {% if id is defined and id|length > 0 %}id="{{ id }}"{% endif %}
+  {% if inputmode is defined and inputmode|length > 0 and inputmode_choices[inputmode] is defined %}inputmode="{{ inputmode }}"{% endif %}
+  {% if lang is defined and lang|length > 0 %}lang="{{ lang }}"{% endif %}
+  {% if multiple is defined and multiple|length > 0 %}multiple="{{ multiple }}"{% endif %}
+  {% if name is defined and name|length > 0 %}name="{{ name }}"{% endif %}
+  {% if popover is defined and popover|length > 0 and popover_choices[popover] is defined %}popover="{{ popover }}"{% endif %}
+  {% if required is defined and required|length > 0 %}required="{{ required }}"{% endif %}
+  {% if role is defined and role|length > 0 and role_choices[role] is defined %}role="{{ role }}"{% endif %}
+  {% if size is defined and size|length > 0 %}size="{{ size }}"{% endif %}
+  {% if slot is defined and slot|length > 0 %}slot="{{ slot }}"{% endif %}
+  {% if spellcheck is defined and spellcheck|length > 0 and spellcheck_choices[spellcheck] is defined %}spellcheck="{{ spellcheck }}"{% endif %}
+  {% if style is defined and style|length > 0 %}style="{{ style }}"{% endif %}
+  {% if tabindex is defined and tabindex|length > 0 %}tabindex="{{ tabindex }}"{% endif %}
+  {% if title is defined and title|length > 0 %}title="{{ title }}"{% endif %}
+  {% if translate is defined and translate|length > 0 and translate_choices[translate] is defined %}translate="{{ translate }}"{% endif %}>
+  {% block content %}{{- content|raw -}}{% endblock %}
+</select>
+{% endblock %}

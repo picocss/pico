@@ -1,0 +1,50 @@
+{#
+  This file is auto-generated.
+
+  Body - The body element represents the content of an HTML document. All the contents such as text, images, headings, links, tables, etc. are placed between the body tags.
+
+  Symfony UX Twig Component (Anonymous)
+  @see https://symfony.com/bundles/ux-twig-component/current/index.html
+
+  Usage:
+    <twig:Body class="custom-class" dir="ltr">
+      Content goes here
+    </twig:Body>
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigComponentsGenerator.php
+#}
+{% apply spaceless %}
+<body
+  {% if this.accesskey is defined and this.accesskey is not null %}accesskey="{{ this.accesskey }}"{% endif %}
+  {% if this.class is defined and this.class is not null %}class="{{ this.class }}"{% endif %}
+  {% if this.dir is not null %}dir="{{ this.dir.value }}"{% endif %}
+  {% if this.draggable is defined and this.draggable is not null %}draggable="{{ this.draggable }}"{% endif %}
+  {% if this.hidden is defined and this.hidden is not null %}hidden="{{ this.hidden }}"{% endif %}
+  {% if this.id is defined and this.id is not null %}id="{{ this.id }}"{% endif %}
+  {% if this.lang is defined and this.lang is not null %}lang="{{ this.lang }}"{% endif %}
+  {% if this.onafterprint is defined and this.onafterprint is not null %}onafterprint="{{ this.onafterprint }}"{% endif %}
+  {% if this.onbeforeprint is defined and this.onbeforeprint is not null %}onbeforeprint="{{ this.onbeforeprint }}"{% endif %}
+  {% if this.onbeforeunload is defined and this.onbeforeunload is not null %}onbeforeunload="{{ this.onbeforeunload }}"{% endif %}
+  {% if this.onhashchange is defined and this.onhashchange is not null %}onhashchange="{{ this.onhashchange }}"{% endif %}
+  {% if this.onlanguagechange is defined and this.onlanguagechange is not null %}onlanguagechange="{{ this.onlanguagechange }}"{% endif %}
+  {% if this.onmessage is defined and this.onmessage is not null %}onmessage="{{ this.onmessage }}"{% endif %}
+  {% if this.onmessageerror is defined and this.onmessageerror is not null %}onmessageerror="{{ this.onmessageerror }}"{% endif %}
+  {% if this.onoffline is defined and this.onoffline is not null %}onoffline="{{ this.onoffline }}"{% endif %}
+  {% if this.ononline is defined and this.ononline is not null %}ononline="{{ this.ononline }}"{% endif %}
+  {% if this.onpagehide is defined and this.onpagehide is not null %}onpagehide="{{ this.onpagehide }}"{% endif %}
+  {% if this.onpageshow is defined and this.onpageshow is not null %}onpageshow="{{ this.onpageshow }}"{% endif %}
+  {% if this.onpopstate is defined and this.onpopstate is not null %}onpopstate="{{ this.onpopstate }}"{% endif %}
+  {% if this.onrejectionhandled is defined and this.onrejectionhandled is not null %}onrejectionhandled="{{ this.onrejectionhandled }}"{% endif %}
+  {% if this.onstorage is defined and this.onstorage is not null %}onstorage="{{ this.onstorage }}"{% endif %}
+  {% if this.onunhandledrejection is defined and this.onunhandledrejection is not null %}onunhandledrejection="{{ this.onunhandledrejection }}"{% endif %}
+  {% if this.onunload is defined and this.onunload is not null %}onunload="{{ this.onunload }}"{% endif %}
+  {% if this.style is defined and this.style is not null %}style="{{ this.style }}"{% endif %}
+  {% if this.tabindex is defined and this.tabindex is not null %}tabindex="{{ this.tabindex }}"{% endif %}
+  {% if this.title is defined and this.title is not null %}title="{{ this.title }}"{% endif %}
+  {% if this.translate is not null %}translate="{{ this.translate.value }}"{% endif %}
+>
+  {%- block content %}{% endblock -%}
+</body>
+{% endapply %}

@@ -1,0 +1,38 @@
+{#
+  This file is auto-generated.
+
+  Embed - The embed element provides an integration point for an external (typically non-HTML) application or interactive content.
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block embed_block %}{# Note: Block name 'embed' is a reserved word, using 'embed_block' instead. #}
+{% set autocapitalize_choices = {'none': true, 'sentences': true, 'words': true, 'characters': true} %}
+{% set contenteditable_choices = {'true': true, 'false': true, 'inherit': true} %}
+{% set dir_choices = {'ltr': true, 'rtl': true, 'auto': true} %}
+{% set inputmode_choices = {'none': true, 'text': true, 'decimal': true, 'numeric': true, 'email': true, 'tel': true, 'url': true, 'search': true} %}
+{% set spellcheck_choices = {'true': true, 'false': true} %}
+{% set translate_choices = {'yes': true, 'no': true} %}
+<embed
+  {% if accesskey is defined and accesskey|length > 0 %}accesskey="{{ accesskey }}"{% endif %}
+  {% if autocapitalize is defined and autocapitalize|length > 0 and autocapitalize_choices[autocapitalize] is defined %}autocapitalize="{{ autocapitalize }}"{% endif %}
+  {% if autofocus is defined and autofocus|length > 0 %}autofocus="{{ autofocus }}"{% endif %}
+  {% if class is defined and class|length > 0 %}class="{{ class }}"{% endif %}
+  {% if contenteditable is defined and contenteditable|length > 0 and contenteditable_choices[contenteditable] is defined %}contenteditable="{{ contenteditable }}"{% endif %}
+  {% if dir is defined and dir|length > 0 and dir_choices[dir] is defined %}dir="{{ dir }}"{% endif %}
+  {% if draggable is defined and draggable|length > 0 %}draggable="{{ draggable }}"{% endif %}
+  {% if height is defined and height|length > 0 %}height="{{ height }}"{% endif %}
+  {% if hidden is defined and hidden|length > 0 %}hidden="{{ hidden }}"{% endif %}
+  {% if id is defined and id|length > 0 %}id="{{ id }}"{% endif %}
+  {% if inputmode is defined and inputmode|length > 0 and inputmode_choices[inputmode] is defined %}inputmode="{{ inputmode }}"{% endif %}
+  {% if lang is defined and lang|length > 0 %}lang="{{ lang }}"{% endif %}
+  {% if spellcheck is defined and spellcheck|length > 0 and spellcheck_choices[spellcheck] is defined %}spellcheck="{{ spellcheck }}"{% endif %}
+  {% if src is defined and src|length > 0 %}src="{{ src }}"{% endif %}
+  {% if style is defined and style|length > 0 %}style="{{ style }}"{% endif %}
+  {% if tabindex is defined and tabindex|length > 0 %}tabindex="{{ tabindex }}"{% endif %}
+  {% if title is defined and title|length > 0 %}title="{{ title }}"{% endif %}
+  {% if translate is defined and translate|length > 0 and translate_choices[translate] is defined %}translate="{{ translate }}"{% endif %}
+  {% if type is defined and type|length > 0 %}type="{{ type }}"{% endif %}
+  {% if width is defined and width|length > 0 %}width="{{ width }}"{% endif %}/>
+{% endblock %}

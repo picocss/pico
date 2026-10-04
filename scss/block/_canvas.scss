@@ -1,0 +1,20 @@
+/** SASS for the <canvas> HTML element
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/embedded") or map.get($elements, "block/canvas") {
+  // Change the alignment on media elements in all browsers (opinionated)
+  #{$parent-selector} :where(audio, canvas, iframe, img, svg, video) {
+    vertical-align: middle;
+  }
+}
+
+@if map.get($modules, "content/misc") or map.get($elements, "block/canvas") {
+  // Add the correct display in IE 9-
+  #{$parent-selector} canvas {
+    display: inline-block;
+  }
+}

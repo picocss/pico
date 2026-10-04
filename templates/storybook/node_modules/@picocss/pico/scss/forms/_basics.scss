@@ -1,0 +1,471 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "forms/basics") {
+  // Helper
+  $helper-previous-tags: "input, select, textarea, fieldset";
+  /**
+   * Basics form elements
+   */
+
+  // Reboot based on :
+  // - normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css
+  // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
+  // ––––––––––––––––––––
+
+  // 1. Change the font styles in all browsers
+  // 2. Remove the margin in Firefox and Safari
+  #{$parent-selector} input,
+  #{$parent-selector} optgroup,
+  #{$parent-selector} select,
+  #{$parent-selector} textarea {
+    margin: 0; // 2
+    font-size: 1rem; // 1
+    line-height: var(#{$css-var-prefix}line-height); // 1
+    font-family: inherit; // 1
+    letter-spacing: inherit; // 2
+  }
+
+  // Show the overflow in IE.
+  #{$parent-selector} input {
+    overflow: visible;
+  }
+
+  // Remove the inheritance of text transform in Edge, Firefox, and IE
+  #{$parent-selector} select {
+    text-transform: none;
+  }
+
+  // 1. Correct the text wrapping in Edge and IE
+  // 2. Correct the color inheritance from `fieldset` elements in IE
+  // 3. Remove the padding so developers are not caught out when they zero out
+  // `fieldset` elements in all browsers
+  #{$parent-selector} legend {
+    max-width: 100%; // 1
+    padding: 0; // 3
+    color: inherit; // 2
+    white-space: normal; // 1
+  }
+
+  // 1. Remove the default vertical scrollbar in IE
+  #{$parent-selector} textarea {
+    overflow: auto; // 1
+  }
+
+  // Remove the padding in IE 10
+  #{$parent-selector} [type="checkbox"],
+  #{$parent-selector} [type="radio"] {
+    padding: 0;
+  }
+
+  // Correct the cursor style of increment and decrement buttons in Safari
+  #{$parent-selector} ::-webkit-inner-spin-button,
+  #{$parent-selector} ::-webkit-outer-spin-button {
+    height: auto;
+  }
+
+  // 1. Correct the odd appearance in Chrome and Safari
+  // 2. Correct the outline style in Safari
+  #{$parent-selector} [type="search"] {
+    -webkit-appearance: textfield; // 1
+    outline-offset: -2px; // 2
+  }
+
+  // Remove the inner padding in Chrome and Safari on macOS
+  #{$parent-selector} [type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  // 1. Correct the inability to style clickable types in iOS and Safari
+  // 2. Change font properties to `inherit` in Safari
+  #{$parent-selector} ::-webkit-file-upload-button {
+    -webkit-appearance: button; // 1
+    font: inherit; // 2
+  }
+
+  // Remove the inner border and padding of focus outlines in Firefox
+  #{$parent-selector} ::-moz-focus-inner {
+    padding: 0;
+    border-style: none;
+  }
+
+  //  Remove the focus outline in Firefox
+  #{$parent-selector} :-moz-focusring {
+    outline: none;
+  }
+
+  // Remove the additional :invalid styles in Firefox
+  #{$parent-selector} :-moz-ui-invalid {
+    box-shadow: none;
+  }
+
+  // Change the inconsistent appearance in IE (opinionated)
+  #{$parent-selector} ::-ms-expand {
+    display: none;
+  }
+
+  // Remove the border and padding in all browsers (opinionated)
+  #{$parent-selector} [type="file"],
+  #{$parent-selector} [type="range"] {
+    padding: 0;
+    border-width: 0;
+  }
+
+  // Pico
+  // ––––––––––––––––––––
+
+  // Force height for alternatives input types
+  #{$parent-selector} input:not([type="checkbox"], [type="radio"], [type="range"]) {
+    height: calc(
+      (1rem * var(#{$css-var-prefix}line-height)) +
+        (var(#{$css-var-prefix}form-element-spacing-vertical) * 2) +
+        (var(#{$css-var-prefix}border-width) * 2)
+    );
+  }
+
+  // Fieldset
+  #{$parent-selector} fieldset {
+    width: 100%;
+    margin: 0;
+    margin-bottom: var(#{$css-var-prefix}spacing);
+    padding: 0;
+    border: 0;
+  }
+
+  // Label & legend
+  #{$parent-selector} label,
+  #{$parent-selector} fieldset legend {
+    display: block;
+    margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.375);
+    color: var(#{$css-var-prefix}color);
+    font-weight: var(#{$css-var-prefix}form-label-font-weight, var(#{$css-var-prefix}font-weight));
+  }
+
+  #{$parent-selector} fieldset legend {
+    margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.5);
+  }
+
+  // Blocks, 100%
+  #{$parent-selector} input:not([type="checkbox"], [type="radio"]),
+  #{$parent-selector} button[type="submit"],
+  #{$parent-selector} select,
+  #{$parent-selector} textarea {
+    width: 100%;
+  }
+
+  // Reset appearance (Not Checkboxes, Radios, Range and File)
+  #{$parent-selector} input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"]),
+  #{$parent-selector} select,
+  #{$parent-selector} textarea {
+    appearance: none;
+    padding: var(#{$css-var-prefix}form-element-spacing-vertical)
+      var(#{$css-var-prefix}form-element-spacing-horizontal);
+  }
+
+  // Commons styles
+  #{$parent-selector} input,
+  #{$parent-selector} select,
+  #{$parent-selector} textarea {
+    #{$css-var-prefix}background-color: var(#{$css-var-prefix}form-element-background-color);
+    #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-border-color);
+    #{$css-var-prefix}color: var(#{$css-var-prefix}form-element-color);
+    #{$css-var-prefix}box-shadow: none;
+    border: var(#{$css-var-prefix}border-width) solid var(#{$css-var-prefix}border-color);
+    border-radius: var(#{$css-var-prefix}border-radius);
+    outline: none;
+    background-color: var(#{$css-var-prefix}background-color);
+    box-shadow: var(#{$css-var-prefix}box-shadow);
+    color: var(#{$css-var-prefix}color);
+    font-weight: var(#{$css-var-prefix}font-weight);
+
+    @if $enable-transitions {
+      transition:
+        background-color var(#{$css-var-prefix}transition),
+        border-color var(#{$css-var-prefix}transition),
+        color var(#{$css-var-prefix}transition),
+        box-shadow var(#{$css-var-prefix}transition);
+    }
+  }
+
+  // Active & Focus
+  #{$parent-selector}
+    input:not(
+      [type="submit"],
+      [type="button"],
+      [type="reset"],
+      [type="checkbox"],
+      [type="radio"],
+      [readonly]
+    ),
+  #{$parent-selector} :where(select, textarea):not([readonly]) {
+    &:is(:active, :focus) {
+      #{$css-var-prefix}background-color: var(
+        #{$css-var-prefix}form-element-active-background-color
+      );
+    }
+  }
+
+  // Active & Focus
+  #{$parent-selector}
+    input:not([type="submit"], [type="button"], [type="reset"], [role="switch"], [readonly]),
+  #{$parent-selector} :where(select, textarea):not([readonly]) {
+    &:is(:active, :focus) {
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-active-border-color);
+    }
+  }
+
+  // Focus
+  #{$parent-selector}
+    input:not(
+      [type="submit"],
+      [type="button"],
+      [type="reset"],
+      [type="range"],
+      [type="file"],
+      [readonly]
+    ),
+  #{$parent-selector} :where(select, textarea):not([readonly]) {
+    &:focus {
+      #{$css-var-prefix}box-shadow: 0
+        0
+        0
+        var(#{$css-var-prefix}outline-width)
+        var(#{$css-var-prefix}form-element-focus-color);
+    }
+  }
+
+  // Disabled
+  #{$parent-selector} input:not([type="submit"], [type="button"], [type="reset"])[disabled],
+  #{$parent-selector} select[disabled],
+  #{$parent-selector} textarea[disabled],
+  #{$parent-selector} label[aria-disabled="true"],
+  #{$parent-selector}
+    :where(fieldset[disabled])
+    :is(input:not([type="submit"], [type="button"], [type="reset"]), select, textarea) {
+    opacity: var(#{$css-var-prefix}form-element-disabled-opacity);
+    pointer-events: none;
+  }
+
+  #{$parent-selector} label[aria-disabled="true"] input[disabled] {
+    opacity: 1;
+  }
+
+  // Aria-invalid
+  #{$parent-selector} :where(input, select, textarea) {
+    &:not(
+        [type="checkbox"],
+        [type="radio"],
+        [type="date"],
+        [type="datetime-local"],
+        [type="month"],
+        [type="time"],
+        [type="week"],
+        [type="range"]
+      ) {
+      &[aria-invalid] {
+        @if $enable-important {
+          padding-right: calc(
+            var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem
+          ) !important;
+          padding-left: var(#{$css-var-prefix}form-element-spacing-horizontal);
+          padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal) !important;
+          padding-inline-end: calc(
+            var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem
+          ) !important;
+        } @else {
+          padding-right: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
+          padding-left: var(#{$css-var-prefix}form-element-spacing-horizontal);
+          padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal);
+          padding-inline-end: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
+        }
+        background-position: center right 0.75rem;
+        background-size: 1rem auto;
+        background-repeat: no-repeat;
+      }
+
+      &[aria-invalid="false"]:not(select) {
+        background-image: var(#{$css-var-prefix}icon-valid);
+      }
+
+      &[aria-invalid="true"]:not(select) {
+        background-image: var(#{$css-var-prefix}icon-invalid);
+      }
+    }
+
+    &[aria-invalid="false"] {
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-valid-border-color);
+
+      &:is(:active, :focus) {
+        @if $enable-important {
+          #{$css-var-prefix}border-color: var(
+            #{$css-var-prefix}form-element-valid-active-border-color
+          ) !important;
+
+          &:not([type="checkbox"], [type="radio"]) {
+            #{$css-var-prefix}box-shadow: 0
+              0
+              0
+              var(#{$css-var-prefix}outline-width)
+              var(#{$css-var-prefix}form-element-valid-focus-color) !important;
+          }
+        } @else {
+          #{$css-var-prefix}border-color: var(
+            #{$css-var-prefix}form-element-valid-active-border-color
+          );
+
+          &:not([type="checkbox"], [type="radio"]) {
+            #{$css-var-prefix}box-shadow: 0
+              0
+              0
+              var(#{$css-var-prefix}outline-width)
+              var(#{$css-var-prefix}form-element-valid-focus-color);
+          }
+        }
+      }
+    }
+
+    &[aria-invalid="true"] {
+      #{$css-var-prefix}border-color: var(#{$css-var-prefix}form-element-invalid-border-color);
+
+      &:is(:active, :focus) {
+        @if $enable-important {
+          #{$css-var-prefix}border-color: var(
+            #{$css-var-prefix}form-element-invalid-active-border-color
+          ) !important;
+
+          &:not([type="checkbox"], [type="radio"]) {
+            #{$css-var-prefix}box-shadow: 0
+              0
+              0
+              var(#{$css-var-prefix}outline-width)
+              var(#{$css-var-prefix}form-element-invalid-focus-color) !important;
+          }
+        } @else {
+          #{$css-var-prefix}border-color: var(
+            #{$css-var-prefix}form-element-invalid-active-border-color
+          );
+
+          &:not([type="checkbox"], [type="radio"]) {
+            #{$css-var-prefix}box-shadow: 0
+              0
+              0
+              var(#{$css-var-prefix}outline-width)
+              var(#{$css-var-prefix}form-element-invalid-focus-color);
+          }
+        }
+      }
+    }
+  }
+
+  [dir="rtl"] {
+    #{$parent-selector} :where(input, select, textarea) {
+      &:not([type="checkbox"], [type="radio"]) {
+        &:is([aria-invalid], [aria-invalid="true"], [aria-invalid="false"]) {
+          background-position: center left 0.75rem;
+        }
+      }
+    }
+  }
+
+  // Placeholder
+  #{$parent-selector} input::placeholder,
+  #{$parent-selector} input::-webkit-input-placeholder,
+  #{$parent-selector} textarea::placeholder,
+  #{$parent-selector} textarea::-webkit-input-placeholder,
+  #{$parent-selector} select:invalid {
+    color: var(#{$css-var-prefix}form-element-placeholder-color);
+    opacity: 1;
+  }
+
+  // Margin bottom (Not Checkboxes and Radios)
+  #{$parent-selector} input:not([type="checkbox"], [type="radio"]),
+  #{$parent-selector} select,
+  #{$parent-selector} textarea {
+    margin-bottom: var(#{$css-var-prefix}spacing);
+  }
+
+  // Select
+  #{$parent-selector} select {
+    // Unstyle the caret on `<select>`s in IE10+.
+    &::-ms-expand {
+      border: 0;
+      background-color: transparent;
+    }
+
+    &:not([multiple], [size]) {
+      padding-right: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
+      padding-left: var(#{$css-var-prefix}form-element-spacing-horizontal);
+      padding-inline-start: var(#{$css-var-prefix}form-element-spacing-horizontal);
+      padding-inline-end: calc(var(#{$css-var-prefix}form-element-spacing-horizontal) + 1.5rem);
+      background-image: var(#{$css-var-prefix}icon-chevron);
+      background-position: center right 0.75rem;
+      background-size: 1rem auto;
+      background-repeat: no-repeat;
+    }
+
+    &[multiple] {
+      option {
+        &:checked {
+          background: var(#{$css-var-prefix}form-element-selected-background-color);
+          color: var(#{$css-var-prefix}form-element-color);
+        }
+      }
+    }
+  }
+
+  [dir="rtl"] {
+    #{$parent-selector} select {
+      &:not([multiple], [size]) {
+        background-position: center left 0.75rem;
+      }
+    }
+  }
+
+  // Textarea
+  #{$parent-selector} textarea {
+    display: block;
+    resize: vertical;
+
+    &[aria-invalid] {
+      @if $enable-important {
+        #{$css-var-prefix}icon-height: calc(
+          (1rem * var(#{$css-var-prefix}line-height)) +
+            (var(#{$css-var-prefix}form-element-spacing-vertical) * 2) +
+            (var(#{$css-var-prefix}border-width) * 2)
+        );
+        background-position: top right 0.75rem !important;
+        background-size: 1rem var(#{$css-var-prefix}icon-height) !important;
+      }
+    }
+  }
+  @if map.get($modules, "layout/grid") and $enable-classes {
+    $helper-previous-tags: $helper-previous-tags + ", .grid";
+  }
+
+  #{$parent-selector} :where(#{$helper-previous-tags}) {
+    + small {
+      display: block;
+      width: 100%;
+      margin-top: calc(var(#{$css-var-prefix}spacing) * -0.75);
+      margin-bottom: var(#{$css-var-prefix}spacing);
+      color: var(#{$css-var-prefix}muted-color);
+    }
+    &[aria-invalid="false"] {
+      + small {
+        color: var(#{$css-var-prefix}ins-color);
+      }
+    }
+    &[aria-invalid="true"] {
+      + small {
+        color: var(#{$css-var-prefix}del-color);
+      }
+    }
+  }
+
+  // Styles for Input inside a label
+  #{$parent-selector} label {
+    > :where(input, select, textarea) {
+      margin-top: calc(var(#{$css-var-prefix}spacing) * 0.25);
+    }
+  }
+}

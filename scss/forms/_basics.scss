@@ -36,17 +36,6 @@
     text-transform: none;
   }
 
-  // 1. Correct the text wrapping in Edge and IE
-  // 2. Correct the color inheritance from `fieldset` elements in IE
-  // 3. Remove the padding so developers are not caught out when they zero out
-  // `fieldset` elements in all browsers
-  #{$parent-selector} legend {
-    max-width: 100%; // 1
-    padding: 0; // 3
-    color: inherit; // 2
-    white-space: normal; // 1
-  }
-
   // 1. Remove the default vertical scrollbar in IE
   #{$parent-selector} textarea {
     overflow: auto; // 1
@@ -123,26 +112,12 @@
     );
   }
 
-  // Fieldset
-  #{$parent-selector} fieldset {
-    width: 100%;
-    margin: 0;
-    margin-bottom: var(#{$css-var-prefix}spacing);
-    padding: 0;
-    border: 0;
-  }
-
-  // Label & legend
-  #{$parent-selector} label,
-  #{$parent-selector} fieldset legend {
+  // Label
+  #{$parent-selector} label {
     display: block;
     margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.375);
     color: var(#{$css-var-prefix}color);
     font-weight: var(#{$css-var-prefix}form-label-font-weight, var(#{$css-var-prefix}font-weight));
-  }
-
-  #{$parent-selector} fieldset legend {
-    margin-bottom: calc(var(#{$css-var-prefix}spacing) * 0.5);
   }
 
   // Blocks, 100%
@@ -253,15 +228,15 @@
   // Aria-invalid
   #{$parent-selector} :where(input, select, textarea) {
     &:not(
-        [type="checkbox"],
-        [type="radio"],
-        [type="date"],
-        [type="datetime-local"],
-        [type="month"],
-        [type="time"],
-        [type="week"],
-        [type="range"]
-      ) {
+      [type="checkbox"],
+      [type="radio"],
+      [type="date"],
+      [type="datetime-local"],
+      [type="month"],
+      [type="time"],
+      [type="week"],
+      [type="range"]
+    ) {
       &[aria-invalid] {
         @if $enable-important {
           padding-right: calc(
@@ -435,29 +410,6 @@
         );
         background-position: top right 0.75rem !important;
         background-size: 1rem var(#{$css-var-prefix}icon-height) !important;
-      }
-    }
-  }
-  @if map.get($modules, "layout/grid") and $enable-classes {
-    $helper-previous-tags: $helper-previous-tags + ", .grid";
-  }
-
-  #{$parent-selector} :where(#{$helper-previous-tags}) {
-    + small {
-      display: block;
-      width: 100%;
-      margin-top: calc(var(#{$css-var-prefix}spacing) * -0.75);
-      margin-bottom: var(#{$css-var-prefix}spacing);
-      color: var(#{$css-var-prefix}muted-color);
-    }
-    &[aria-invalid="false"] {
-      + small {
-        color: var(#{$css-var-prefix}ins-color);
-      }
-    }
-    &[aria-invalid="true"] {
-      + small {
-        color: var(#{$css-var-prefix}del-color);
       }
     }
   }

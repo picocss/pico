@@ -1,0 +1,60 @@
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+@use "settings";
+
+// Determines if the foreground needs to be light or dark
+// depending on the background color passed.
+// W3C reference: http://www.w3.org/TR/AERT#color-contrast
+// Inspiration: https://codepen.io/davidhalford/pen/ALrbEP
+@function foreground-brightness($background-color) {
+  $background-color-brightness: brightness($background-color);
+  $light-color-brightness: brightness(#ffffff);
+
+  @if math.abs($background-color-brightness) < $light-color-brightness * 0.5 {
+    @return "light";
+  } @else {
+    @return "dark";
+  }
+}
+
+// Calculates the color brightness
+// Color brightness is determined by the following formula:
+// ((Red value X 299) + (Green value X 587) + (Blue value X 114)) / 1000
+@function brightness($color) {
+  $color-brightness: round(
+    math.div(
+      (color.channel($color, "red") * 299) + (color.channel($color, "green") * 587) +
+        (color.channel($color, "blue") * 114),
+      1000
+    )
+  );
+
+  @return $color-brightness;
+}
+
+// Returns the color as RGB, HSL or HEX
+@function display-color($color) {
+  @if map.get(settings.$palette, "export-as") == "rgb" {
+    @return display-rgb($color);
+  }
+  @if map.get(settings.$palette, "export-as") == "hsl" {
+    @return display-hsl($color);
+  }
+  @return $color;
+}
+
+// Display color as HSL
+@function display-hsl($color) {
+  @return unquote(
+    "hsl(#{math.round(hue($color))}, #{math.round(saturation($color))}, #{math.round(lightness($color))})"
+  );
+}
+
+// Display color as RGB
+@function display-rgb($color) {
+  @return unquote(
+    "rgb(" + color.channel($color, "red") + ", " + color.channel($color, "green") + ", " +
+      color.channel($color, "blue") + ")"
+  );
+}

@@ -1,0 +1,14 @@
+{#
+  This file is auto-generated.
+
+  Title - The title element defines the title of the document, shown in a browser's title bar or a page's tab. It is only text, not meant to be displayed.
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block title %}
+<title>
+  {% block content %}{{- content|raw -}}{% endblock %}
+</title>
+{% endblock %}

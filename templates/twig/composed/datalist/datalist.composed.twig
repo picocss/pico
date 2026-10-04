@@ -1,0 +1,24 @@
+{#
+  This file is auto-generated.
+
+  Datalist - Composed Example
+  The datalist element contains a set of option elements that represent the permissible or recommended options available to users.
+
+  CONTENT MODEL:
+  - Can be a child of: Body, Fieldset, Form
+  - Can contain: Option
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block datalist_composed %}
+{% embed '../block/datalist.twig' with {
+  class: 'example'
+} %}
+  {% block content %}
+  {% include '../block/option.twig' with {'content': 'Option 1'} %}
+  {% include '../block/option.twig' with {'content': 'Option 2'} %}
+  {% endblock %}
+{% endembed %}
+{% endblock %}

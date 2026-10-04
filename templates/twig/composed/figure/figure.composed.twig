@@ -1,0 +1,25 @@
+{#
+  This file is auto-generated.
+
+  Figure - Composed Example
+  The figure element represents self-contained content, potentially with an optional caption, which is specified using the (optional) figcaption element.
+
+  CONTENT MODEL:
+  - Can be a child of: Article, Aside, Body, DefinitionDescription, Division, Footer, Header, ListItem, Main, Paragraph, Section
+  - Can contain: FigureCaption, Image
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block figure_composed %}
+{% embed '../block/figure.twig' with {
+  class: 'example'
+} %}
+  {% block content %}
+  {% include '../block/figcaption.twig' with {'content': 'Example content'} %}
+  {% include '../inline/img.twig' with {'src': '/image.jpg', 'alt': 'Example'} %}
+  {% include '../inline/img.twig' with {'src': '/image.jpg', 'alt': 'Example'} %}
+  {% endblock %}
+{% endembed %}
+{% endblock %}

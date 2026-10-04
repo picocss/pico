@@ -1,0 +1,24 @@
+{#
+  This file is auto-generated.
+
+  Ol - Composed Example
+  The ol element represents an ordered list of items. The order of the list is meaningful.
+
+  CONTENT MODEL:
+  - Can be a child of: Article, Aside, Body, DefinitionDescription, Details, Dialog, Division, Footer, Header, ListItem, Main, Paragraph, Section, Slot, Template
+  - Can contain: ListItem
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block ol_composed %}
+{% embed '../block/ol.twig' with {
+  class: 'example'
+} %}
+  {% block content %}
+  {% include '../block/li.twig' with {'content': 'Item 1'} %}
+  {% include '../block/li.twig' with {'content': 'Item 2'} %}
+  {% endblock %}
+{% endembed %}
+{% endblock %}

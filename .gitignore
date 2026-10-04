@@ -12,6 +12,7 @@
 nbproject
 Thumbs.db
 /.vscode/
+/.history/
 
 # Numerous always-ignore extensions
 *.diff
@@ -27,6 +28,13 @@ Thumbs.db
 
 # Folders to ignore
 /node_modules/
+/vendor/
 
 # Pico
 .pico
+/tests
+
+# Yarn
+yarn-error.log
+/.yarn/
+/**node_modules

@@ -17,20 +17,8 @@
   }
 
   // Add the correct display in IE 9-
-  #{$parent-selector} audio,
   #{$parent-selector} video {
     display: inline-block;
-  }
-
-  // Add the correct display in iOS 4-7
-  #{$parent-selector} audio:not([controls]) {
-    display: none;
-    height: 0;
-  }
-
-  // Remove the border on iframes in all browsers (opinionated)
-  #{$parent-selector} :where(iframe) {
-    border-style: none;
   }
 
   // 1. Remove the border on images inside links in IE 10.
@@ -39,16 +27,5 @@
     max-width: 100%; // 2
     height: auto; // 2
     border-style: none; // 1
-  }
-
-  // Change the fill color to match the text color in all browsers (opinionated)
-  #{$parent-selector} :where(svg:not([fill])) {
-    fill: currentColor;
-  }
-
-  // Hide the overflow in IE
-  #{$parent-selector} svg:not(:root),
-  #{$parent-selector} svg:not(:host) {
-    overflow: hidden;
   }
 }

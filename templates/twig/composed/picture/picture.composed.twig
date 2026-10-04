@@ -1,0 +1,25 @@
+{#
+  This file is auto-generated.
+
+  Picture - Composed Example
+  The picture element contains zero or more source elements and one img element to offer alternative versions of an image for different display/device scenarios.
+
+  CONTENT MODEL:
+  - Can be a child of: Article, Aside, Body, DefinitionDescription, Division, Footer, Header, Main, MarkedText, Section
+  - Can contain: Image, Source
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigGenerator.php
+#}
+{% block picture_composed %}
+{% embed '../block/picture.twig' with {
+  class: 'example'
+} %}
+  {% block content %}
+  {% include '../inline/img.twig' with {'src': '/image.jpg', 'alt': 'Example'} %}
+  {% include '../inline/img.twig' with {'src': '/image.jpg', 'alt': 'Example'} %}
+  {% include '../void/source.twig' %}
+  {% endblock %}
+{% endembed %}
+{% endblock %}

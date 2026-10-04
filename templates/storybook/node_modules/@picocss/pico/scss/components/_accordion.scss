@@ -1,0 +1,116 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "components/accordion") {
+  /**
+   * Accordion (<details>)
+   */
+
+  #{$parent-selector} details {
+    display: block;
+    margin-bottom: var(#{$css-var-prefix}spacing);
+
+    summary {
+      line-height: 1rem;
+      list-style-type: none;
+      cursor: pointer;
+
+      @if $enable-transitions {
+        transition: color var(#{$css-var-prefix}transition);
+      }
+
+      &:not([role]) {
+        color: var(#{$css-var-prefix}accordion-close-summary-color);
+      }
+
+      // Reset marker
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::marker {
+        display: none;
+      }
+
+      &::-moz-list-bullet {
+        list-style-type: none;
+      }
+
+      // Marker
+      &::after {
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        margin-inline-start: calc(var(#{$css-var-prefix}spacing, 1rem) * 0.5);
+        float: right;
+        transform: rotate(-90deg);
+        background-image: var(#{$css-var-prefix}icon-chevron);
+        background-position: right center;
+        background-size: 1rem auto;
+        background-repeat: no-repeat;
+        content: "";
+
+        @if $enable-transitions {
+          transition: transform var(#{$css-var-prefix}transition);
+        }
+      }
+
+      &:focus {
+        outline: none;
+
+        &:not([role]) {
+          color: var(#{$css-var-prefix}accordion-active-summary-color);
+        }
+      }
+
+      &:focus-visible {
+        &:not([role]) {
+          outline: var(#{$css-var-prefix}outline-width) solid var(#{$css-var-prefix}primary-focus);
+          outline-offset: calc(var(#{$css-var-prefix}spacing, 1rem) * 0.5);
+          color: var(#{$css-var-prefix}primary);
+        }
+      }
+
+      // Type button
+      &[role="button"] {
+        width: 100%;
+        text-align: left;
+
+        // Marker
+        &::after {
+          height: calc(1rem * var(#{$css-var-prefix}line-height, 1.5));
+        }
+      }
+    }
+
+    // Open
+    &[open] {
+      > summary {
+        margin-bottom: var(#{$css-var-prefix}spacing);
+
+        &:not([role]) {
+          &:not(:focus) {
+            color: var(#{$css-var-prefix}accordion-open-summary-color);
+          }
+        }
+
+        &::after {
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+
+  [dir="rtl"] {
+    #{$parent-selector} details {
+      summary {
+        text-align: right;
+
+        &::after {
+          float: left;
+          background-position: left center;
+        }
+      }
+    }
+  }
+}

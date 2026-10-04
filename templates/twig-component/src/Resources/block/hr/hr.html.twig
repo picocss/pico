@@ -1,0 +1,30 @@
+{#
+  This file is auto-generated.
+
+  Hr - The hr element represents a thematic break between paragraph-level elements. It is typically a horizontal rule or line.
+
+  Symfony UX Twig Component (Anonymous)
+  @see https://symfony.com/bundles/ux-twig-component/current/index.html
+
+  Usage:
+    <twig:Hr align="center" class="custom-class" />
+
+  @author vardumper <info@erikpoehler.com>
+  @package vardumper/extended-htmldocument
+  @see src/TemplateGenerator/TwigComponentsGenerator.php
+#}
+{% apply spaceless %}
+<hr
+  {% if this.align is not null %}align="{{ this.align.value }}"{% endif %}
+  {% if this.class is defined and this.class is not null %}class="{{ this.class }}"{% endif %}
+  {% if this.color is defined and this.color is not null %}color="{{ this.color }}"{% endif %}
+  {% if this.dir is not null %}dir="{{ this.dir.value }}"{% endif %}
+  {% if this.hidden is defined and this.hidden is not null %}hidden="{{ this.hidden }}"{% endif %}
+  {% if this.id is defined and this.id is not null %}id="{{ this.id }}"{% endif %}
+  {% if this.lang is defined and this.lang is not null %}lang="{{ this.lang }}"{% endif %}
+  {% if this.noshade is defined and this.noshade is not null %}noshade="{{ this.noshade }}"{% endif %}
+  {% if this.size is defined and this.size is not null %}size="{{ this.size }}"{% endif %}
+  {% if this.style is defined and this.style is not null %}style="{{ this.style }}"{% endif %}
+  {% if this.title is defined and this.title is not null %}title="{{ this.title }}"{% endif %}
+  {% if this.width is defined and this.width is not null %}width="{{ this.width }}"{% endif %}
+/>

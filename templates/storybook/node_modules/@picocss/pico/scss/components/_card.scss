@@ -1,0 +1,46 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "components/card") {
+  /**
+   * Card (<article>)
+   */
+
+  #{$parent-selector} article {
+    margin-bottom: var(#{$css-var-prefix}block-spacing-vertical);
+    padding: var(#{$css-var-prefix}block-spacing-vertical)
+      var(#{$css-var-prefix}block-spacing-horizontal);
+    border-radius: var(#{$css-var-prefix}border-radius);
+    background: var(#{$css-var-prefix}card-background-color);
+    box-shadow: var(#{$css-var-prefix}card-box-shadow);
+
+    > header,
+    > footer {
+      margin-right: calc(var(#{$css-var-prefix}block-spacing-horizontal) * -1);
+      margin-left: calc(var(#{$css-var-prefix}block-spacing-horizontal) * -1);
+      padding: calc(var(#{$css-var-prefix}block-spacing-vertical) * 0.66)
+        var(#{$css-var-prefix}block-spacing-horizontal);
+      background-color: var(#{$css-var-prefix}card-sectioning-background-color);
+    }
+
+    > header {
+      margin-top: calc(var(#{$css-var-prefix}block-spacing-vertical) * -1);
+      margin-bottom: var(#{$css-var-prefix}block-spacing-vertical);
+      border-bottom: var(#{$css-var-prefix}border-width)
+        solid
+        var(#{$css-var-prefix}card-border-color);
+      border-top-right-radius: var(#{$css-var-prefix}border-radius);
+      border-top-left-radius: var(#{$css-var-prefix}border-radius);
+    }
+
+    > footer {
+      margin-top: var(#{$css-var-prefix}block-spacing-vertical);
+      margin-bottom: calc(var(#{$css-var-prefix}block-spacing-vertical) * -1);
+      border-top: var(#{$css-var-prefix}border-width)
+        solid
+        var(#{$css-var-prefix}card-border-color);
+      border-bottom-right-radius: var(#{$css-var-prefix}border-radius);
+      border-bottom-left-radius: var(#{$css-var-prefix}border-radius);
+    }
+  }
+}

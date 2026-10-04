@@ -1,0 +1,18 @@
+/** SASS for the <iframe> HTML element
+ *
+ * Add your styles here
+ */
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "content/embedded") {
+  // Change the alignment on media elements in all browsers (opinionated)
+  #{$parent-selector} :where(audio, canvas, iframe, img, svg, video) {
+    vertical-align: middle;
+  }
+
+  // Remove the border on iframes in all browsers (opinionated)
+  #{$parent-selector} :where(iframe) {
+    border-style: none;
+  }
+}

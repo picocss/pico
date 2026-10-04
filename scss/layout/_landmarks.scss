@@ -11,12 +11,6 @@
   // - sanitize.css v13.0.0 | CC0 1.0 Universal | github.com/csstools/sanitize.css
   // ––––––––––––––––––––
 
-  // 1. Remove the margin in all browsers (opinionated)
-  body {
-    width: 100%;
-    margin: 0; // 1
-  }
-
   // Render the `main` element consistently in IE
   main {
     display: block;

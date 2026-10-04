@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "../settings" as *;
+
+@if map.get($modules, "layout/overflow-auto") and $enable-classes {
+  /**
+   * Overflow auto
+   */
+
+  #{$parent-selector} .overflow-auto {
+    overflow: auto;
+  }
+}
