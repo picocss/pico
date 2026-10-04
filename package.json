@@ -46,9 +46,19 @@
     "prebuild:autoprefix": "echo '[@picocss/pico] ✨ Autoprefix'",
     "prebuild:minify": "echo '[@picocss/pico] ✨ Minify'",
     "start": "echo '\\033[96m[@picocss/pico] ✨ Start\\033[0m'",
-    "done": "echo '\\033[32m[@picocss/pico] ✨ Done\\033[0m'"
+    "done": "echo '\\033[32m[@picocss/pico] ✨ Done\\033[0m'",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^8.6.12",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-interactions": "^8.6.12",
+    "@storybook/addon-themes": "^8.6.12",
+    "@storybook/blocks": "^8.6.12",
+    "@storybook/html": "^8.6.12",
+    "@storybook/html-vite": "^8.6.12",
+    "@storybook/test": "^8.6.12",
     "autoprefixer": "^10.4.21",
     "caniuse-lite": "1.0.30001704",
     "clean-css-cli": "^5.6.3",
@@ -59,7 +69,9 @@
     "postcss-cli": "^11.0.1",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.5.3",
-    "sass": "^1.85.1"
+    "sass": "^1.85.1",
+    "storybook": "^8.6.12",
+    "vite": "^6.2.5"
   },
   "browserslist": [
     "defaults"
