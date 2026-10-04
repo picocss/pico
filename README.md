@@ -13,6 +13,24 @@
 [![License](https://img.shields.io/badge/license-MIT-%230172ad)](https://github.com/picocss/pico/blob/master/LICENSE.md)
 [![X (formerly Twitter)](https://img.shields.io/twitter/url/https/twitter.com/picocss.svg?style=social&label=Follow%20%40picocss)](https://x.com/picocss)
 
+## Pico CSS is no longer maintained
+
+[v2.1.1](https://github.com/picocss/pico/releases/tag/v2.1.1) is the final release.
+
+**Why**<br>
+Today, AI can generate lightweight, standalone, accessible HTML with just the CSS it needs, so a Minimal CSS Framework for Semantic HTML matters less than it used to. To stay relevant, Pico CSS would need a full rewrite: plain modern CSS instead of Sass, built on features it doesn't use today (OKLCH colors, cascade layers, Popover, anchor positioning) with fallbacks for older browsers, and a native compiler that strips unused CSS and makes customization easy. That would be a different project. Pico CSS stays as it is.
+
+**What this means**
+- Nothing breaks. [npm](https://www.npmjs.com/package/@picocss/pico), the [jsDelivr CDN](https://www.jsdelivr.com/package/npm/@picocss/pico) and [picocss.com](https://picocss.com) stay online for the long term.
+- The repositories are archived. No new issues, PRs or releases.
+- Pico CSS is [MIT licensed](LICENSE.md). You're free to fork it and take it further. See [community forks](https://github.com/picocss/pico/forks).
+- The Pico CSS name and logo are not covered by the MIT license. Please give your fork its own name, so users don't confuse it with the original.
+
+**Thank you**<br>
+What started as a small side project ended up powering thousands of websites. Thank you to everyone who used it, opened issues, sent pull requests and wrote kind messages over the years.
+
+---
+
 ## Minimal CSS Framework for Semantic HTML
 
 A minimalist and lightweight starter kit that prioritizes semantic syntax, making every HTML element responsive and elegant by default.
@@ -231,7 +249,7 @@ Pico CSS is designed and tested for the latest stable Chrome, Firefox, Edge, and
 
 ## Contributing
 
-If you are interested in contributing to Pico CSS, please read our [contributing guidelines](https://github.com/picocss/pico/blob/master/.github/CONTRIBUTING.md).
+Contributions are closed. This repository is archived.
 
 ## Copyright and license
 
