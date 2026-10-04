@@ -36,9 +36,10 @@
       font-size: 0.875rem;
       text-decoration: none;
       text-overflow: ellipsis;
-      white-space: nowrap;
+      white-space: normal;
       opacity: 0;
       pointer-events: none;
+      width: fit-content;
     }
 
     // Caret
