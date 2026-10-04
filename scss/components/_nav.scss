@@ -80,7 +80,8 @@
     }
 
     // Breadcrumb
-    &[aria-label="breadcrumb"] {
+    &[aria-label="breadcrumb"],
+    &[aria-label="Breadcrumb"] {
       align-items: center;
       justify-content: start;
 
