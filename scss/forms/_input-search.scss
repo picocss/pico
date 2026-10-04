@@ -39,6 +39,18 @@
       &[aria-invalid="true"] {
         background-image: var(#{$css-var-prefix}icon-search), var(#{$css-var-prefix}icon-invalid);
       }
+
+      &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 40px;
+        width: 40px;
+        margin-left: 8px;
+        stroke-width: 1px;
+        stroke-linecap: round;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' fill='red'><path d='M202.829 197.172a4 4 0 1 1-5.658 5.656L128 133.658l-69.171 69.17a4 4 0 0 1-5.658-5.656L122.343 128 53.171 58.828a4 4 0 0 1 5.658-5.656L128 122.342l69.171-69.17a4 4 0 0 1 5.658 5.656L133.657 128Z'/></svg>");
+        cursor: pointer;
+      }
     }
   }
 
