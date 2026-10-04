@@ -2099,7 +2099,7 @@ details.dropdown > summary + ul {
   display: flex;
   z-index: 99;
   position: absolute;
-  left: 0;
+  right: 0;
   flex-direction: column;
   width: 100%;
   min-width: -moz-fit-content;
